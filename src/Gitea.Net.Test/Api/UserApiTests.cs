@@ -699,7 +699,7 @@ namespace Gitea.Net.Test.Api
             // TODO uncomment below to test the method and replace null with proper value
             //string username = null;
             //bool? onlyPerformedBy = null;
-            //DateOnly? date = null;
+            //DateTime? date = null;
             //int? page = null;
             //int? limit = null;
             //var response = instance.UserListActivityFeeds(username, onlyPerformedBy, date, page, limit);

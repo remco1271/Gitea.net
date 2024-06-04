@@ -1141,7 +1141,7 @@ namespace Gitea.Net.Api
         /// <param name="limit">page size of results (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>List&lt;Activity&gt;</returns>
-        List<Activity> UserListActivityFeeds(string username, bool? onlyPerformedBy = default(bool?), DateOnly? date = default(DateOnly?), int? page = default(int?), int? limit = default(int?), int operationIndex = 0);
+        List<Activity> UserListActivityFeeds(string username, bool? onlyPerformedBy = default(bool?), DateTime? date = default(DateTime?), int? page = default(int?), int? limit = default(int?), int operationIndex = 0);
 
         /// <summary>
         /// List a user&#39;s activity feeds
@@ -1157,7 +1157,7 @@ namespace Gitea.Net.Api
         /// <param name="limit">page size of results (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ApiResponse of List&lt;Activity&gt;</returns>
-        ApiResponse<List<Activity>> UserListActivityFeedsWithHttpInfo(string username, bool? onlyPerformedBy = default(bool?), DateOnly? date = default(DateOnly?), int? page = default(int?), int? limit = default(int?), int operationIndex = 0);
+        ApiResponse<List<Activity>> UserListActivityFeedsWithHttpInfo(string username, bool? onlyPerformedBy = default(bool?), DateTime? date = default(DateTime?), int? page = default(int?), int? limit = default(int?), int operationIndex = 0);
         /// <summary>
         /// List users blocked by the authenticated user
         /// </summary>
@@ -2911,7 +2911,7 @@ namespace Gitea.Net.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of List&lt;Activity&gt;</returns>
-        System.Threading.Tasks.Task<List<Activity>> UserListActivityFeedsAsync(string username, bool? onlyPerformedBy = default(bool?), DateOnly? date = default(DateOnly?), int? page = default(int?), int? limit = default(int?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<List<Activity>> UserListActivityFeedsAsync(string username, bool? onlyPerformedBy = default(bool?), DateTime? date = default(DateTime?), int? page = default(int?), int? limit = default(int?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
 
         /// <summary>
         /// List a user&#39;s activity feeds
@@ -2928,7 +2928,7 @@ namespace Gitea.Net.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (List&lt;Activity&gt;)</returns>
-        System.Threading.Tasks.Task<ApiResponse<List<Activity>>> UserListActivityFeedsWithHttpInfoAsync(string username, bool? onlyPerformedBy = default(bool?), DateOnly? date = default(DateOnly?), int? page = default(int?), int? limit = default(int?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<ApiResponse<List<Activity>>> UserListActivityFeedsWithHttpInfoAsync(string username, bool? onlyPerformedBy = default(bool?), DateTime? date = default(DateTime?), int? page = default(int?), int? limit = default(int?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
         /// <summary>
         /// List users blocked by the authenticated user
         /// </summary>
@@ -14882,7 +14882,7 @@ namespace Gitea.Net.Api
         /// <param name="limit">page size of results (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>List&lt;Activity&gt;</returns>
-        public List<Activity> UserListActivityFeeds(string username, bool? onlyPerformedBy = default(bool?), DateOnly? date = default(DateOnly?), int? page = default(int?), int? limit = default(int?), int operationIndex = 0)
+        public List<Activity> UserListActivityFeeds(string username, bool? onlyPerformedBy = default(bool?), DateTime? date = default(DateTime?), int? page = default(int?), int? limit = default(int?), int operationIndex = 0)
         {
             Gitea.Net.Client.ApiResponse<List<Activity>> localVarResponse = UserListActivityFeedsWithHttpInfo(username, onlyPerformedBy, date, page, limit);
             return localVarResponse.Data;
@@ -14899,7 +14899,7 @@ namespace Gitea.Net.Api
         /// <param name="limit">page size of results (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ApiResponse of List&lt;Activity&gt;</returns>
-        public Gitea.Net.Client.ApiResponse<List<Activity>> UserListActivityFeedsWithHttpInfo(string username, bool? onlyPerformedBy = default(bool?), DateOnly? date = default(DateOnly?), int? page = default(int?), int? limit = default(int?), int operationIndex = 0)
+        public Gitea.Net.Client.ApiResponse<List<Activity>> UserListActivityFeedsWithHttpInfo(string username, bool? onlyPerformedBy = default(bool?), DateTime? date = default(DateTime?), int? page = default(int?), int? limit = default(int?), int operationIndex = 0)
         {
             // verify the required parameter 'username' is set
             if (username == null)
@@ -15013,7 +15013,7 @@ namespace Gitea.Net.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of List&lt;Activity&gt;</returns>
-        public async System.Threading.Tasks.Task<List<Activity>> UserListActivityFeedsAsync(string username, bool? onlyPerformedBy = default(bool?), DateOnly? date = default(DateOnly?), int? page = default(int?), int? limit = default(int?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<List<Activity>> UserListActivityFeedsAsync(string username, bool? onlyPerformedBy = default(bool?), DateTime? date = default(DateTime?), int? page = default(int?), int? limit = default(int?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
             Gitea.Net.Client.ApiResponse<List<Activity>> localVarResponse = await UserListActivityFeedsWithHttpInfoAsync(username, onlyPerformedBy, date, page, limit, operationIndex, cancellationToken).ConfigureAwait(false);
             return localVarResponse.Data;
@@ -15031,7 +15031,7 @@ namespace Gitea.Net.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (List&lt;Activity&gt;)</returns>
-        public async System.Threading.Tasks.Task<Gitea.Net.Client.ApiResponse<List<Activity>>> UserListActivityFeedsWithHttpInfoAsync(string username, bool? onlyPerformedBy = default(bool?), DateOnly? date = default(DateOnly?), int? page = default(int?), int? limit = default(int?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<Gitea.Net.Client.ApiResponse<List<Activity>>> UserListActivityFeedsWithHttpInfoAsync(string username, bool? onlyPerformedBy = default(bool?), DateTime? date = default(DateTime?), int? page = default(int?), int? limit = default(int?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
             // verify the required parameter 'username' is set
             if (username == null)

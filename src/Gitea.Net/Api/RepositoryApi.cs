@@ -2723,7 +2723,7 @@ namespace Gitea.Net.Api
         /// <param name="limit">page size of results (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>List&lt;Activity&gt;</returns>
-        List<Activity> RepoListActivityFeeds(string owner, string repo, DateOnly? date = default(DateOnly?), int? page = default(int?), int? limit = default(int?), int operationIndex = 0);
+        List<Activity> RepoListActivityFeeds(string owner, string repo, DateTime? date = default(DateTime?), int? page = default(int?), int? limit = default(int?), int operationIndex = 0);
 
         /// <summary>
         /// List a repository&#39;s activity feeds
@@ -2739,7 +2739,7 @@ namespace Gitea.Net.Api
         /// <param name="limit">page size of results (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ApiResponse of List&lt;Activity&gt;</returns>
-        ApiResponse<List<Activity>> RepoListActivityFeedsWithHttpInfo(string owner, string repo, DateOnly? date = default(DateOnly?), int? page = default(int?), int? limit = default(int?), int operationIndex = 0);
+        ApiResponse<List<Activity>> RepoListActivityFeedsWithHttpInfo(string owner, string repo, DateTime? date = default(DateTime?), int? page = default(int?), int? limit = default(int?), int operationIndex = 0);
         /// <summary>
         /// Get specified ref or filtered repository&#39;s refs
         /// </summary>
@@ -7200,7 +7200,7 @@ namespace Gitea.Net.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of List&lt;Activity&gt;</returns>
-        System.Threading.Tasks.Task<List<Activity>> RepoListActivityFeedsAsync(string owner, string repo, DateOnly? date = default(DateOnly?), int? page = default(int?), int? limit = default(int?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<List<Activity>> RepoListActivityFeedsAsync(string owner, string repo, DateTime? date = default(DateTime?), int? page = default(int?), int? limit = default(int?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
 
         /// <summary>
         /// List a repository&#39;s activity feeds
@@ -7217,7 +7217,7 @@ namespace Gitea.Net.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (List&lt;Activity&gt;)</returns>
-        System.Threading.Tasks.Task<ApiResponse<List<Activity>>> RepoListActivityFeedsWithHttpInfoAsync(string owner, string repo, DateOnly? date = default(DateOnly?), int? page = default(int?), int? limit = default(int?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<ApiResponse<List<Activity>>> RepoListActivityFeedsWithHttpInfoAsync(string owner, string repo, DateTime? date = default(DateTime?), int? page = default(int?), int? limit = default(int?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
         /// <summary>
         /// Get specified ref or filtered repository&#39;s refs
         /// </summary>
@@ -35900,7 +35900,7 @@ namespace Gitea.Net.Api
         /// <param name="limit">page size of results (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>List&lt;Activity&gt;</returns>
-        public List<Activity> RepoListActivityFeeds(string owner, string repo, DateOnly? date = default(DateOnly?), int? page = default(int?), int? limit = default(int?), int operationIndex = 0)
+        public List<Activity> RepoListActivityFeeds(string owner, string repo, DateTime? date = default(DateTime?), int? page = default(int?), int? limit = default(int?), int operationIndex = 0)
         {
             Gitea.Net.Client.ApiResponse<List<Activity>> localVarResponse = RepoListActivityFeedsWithHttpInfo(owner, repo, date, page, limit);
             return localVarResponse.Data;
@@ -35917,7 +35917,7 @@ namespace Gitea.Net.Api
         /// <param name="limit">page size of results (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ApiResponse of List&lt;Activity&gt;</returns>
-        public Gitea.Net.Client.ApiResponse<List<Activity>> RepoListActivityFeedsWithHttpInfo(string owner, string repo, DateOnly? date = default(DateOnly?), int? page = default(int?), int? limit = default(int?), int operationIndex = 0)
+        public Gitea.Net.Client.ApiResponse<List<Activity>> RepoListActivityFeedsWithHttpInfo(string owner, string repo, DateTime? date = default(DateTime?), int? page = default(int?), int? limit = default(int?), int operationIndex = 0)
         {
             // verify the required parameter 'owner' is set
             if (owner == null)
@@ -36034,7 +36034,7 @@ namespace Gitea.Net.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of List&lt;Activity&gt;</returns>
-        public async System.Threading.Tasks.Task<List<Activity>> RepoListActivityFeedsAsync(string owner, string repo, DateOnly? date = default(DateOnly?), int? page = default(int?), int? limit = default(int?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<List<Activity>> RepoListActivityFeedsAsync(string owner, string repo, DateTime? date = default(DateTime?), int? page = default(int?), int? limit = default(int?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
             Gitea.Net.Client.ApiResponse<List<Activity>> localVarResponse = await RepoListActivityFeedsWithHttpInfoAsync(owner, repo, date, page, limit, operationIndex, cancellationToken).ConfigureAwait(false);
             return localVarResponse.Data;
@@ -36052,7 +36052,7 @@ namespace Gitea.Net.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (List&lt;Activity&gt;)</returns>
-        public async System.Threading.Tasks.Task<Gitea.Net.Client.ApiResponse<List<Activity>>> RepoListActivityFeedsWithHttpInfoAsync(string owner, string repo, DateOnly? date = default(DateOnly?), int? page = default(int?), int? limit = default(int?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<Gitea.Net.Client.ApiResponse<List<Activity>>> RepoListActivityFeedsWithHttpInfoAsync(string owner, string repo, DateTime? date = default(DateTime?), int? page = default(int?), int? limit = default(int?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
             // verify the required parameter 'owner' is set
             if (owner == null)

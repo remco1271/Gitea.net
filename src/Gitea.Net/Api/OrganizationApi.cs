@@ -784,7 +784,7 @@ namespace Gitea.Net.Api
         /// <param name="limit">page size of results (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>List&lt;Activity&gt;</returns>
-        List<Activity> OrgListActivityFeeds(string org, DateOnly? date = default(DateOnly?), int? page = default(int?), int? limit = default(int?), int operationIndex = 0);
+        List<Activity> OrgListActivityFeeds(string org, DateTime? date = default(DateTime?), int? page = default(int?), int? limit = default(int?), int operationIndex = 0);
 
         /// <summary>
         /// List an organization&#39;s activity feeds
@@ -799,7 +799,7 @@ namespace Gitea.Net.Api
         /// <param name="limit">page size of results (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ApiResponse of List&lt;Activity&gt;</returns>
-        ApiResponse<List<Activity>> OrgListActivityFeedsWithHttpInfo(string org, DateOnly? date = default(DateOnly?), int? page = default(int?), int? limit = default(int?), int operationIndex = 0);
+        ApiResponse<List<Activity>> OrgListActivityFeedsWithHttpInfo(string org, DateTime? date = default(DateTime?), int? page = default(int?), int? limit = default(int?), int operationIndex = 0);
         /// <summary>
         /// List the current user&#39;s organizations
         /// </summary>
@@ -952,7 +952,7 @@ namespace Gitea.Net.Api
         /// <param name="limit">page size of results (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>List&lt;Activity&gt;</returns>
-        List<Activity> OrgListTeamActivityFeeds(long id, DateOnly? date = default(DateOnly?), int? page = default(int?), int? limit = default(int?), int operationIndex = 0);
+        List<Activity> OrgListTeamActivityFeeds(long id, DateTime? date = default(DateTime?), int? page = default(int?), int? limit = default(int?), int operationIndex = 0);
 
         /// <summary>
         /// List a team&#39;s activity feeds
@@ -967,7 +967,7 @@ namespace Gitea.Net.Api
         /// <param name="limit">page size of results (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ApiResponse of List&lt;Activity&gt;</returns>
-        ApiResponse<List<Activity>> OrgListTeamActivityFeedsWithHttpInfo(long id, DateOnly? date = default(DateOnly?), int? page = default(int?), int? limit = default(int?), int operationIndex = 0);
+        ApiResponse<List<Activity>> OrgListTeamActivityFeedsWithHttpInfo(long id, DateTime? date = default(DateTime?), int? page = default(int?), int? limit = default(int?), int operationIndex = 0);
         /// <summary>
         /// List a particular member of team
         /// </summary>
@@ -2312,7 +2312,7 @@ namespace Gitea.Net.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of List&lt;Activity&gt;</returns>
-        System.Threading.Tasks.Task<List<Activity>> OrgListActivityFeedsAsync(string org, DateOnly? date = default(DateOnly?), int? page = default(int?), int? limit = default(int?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<List<Activity>> OrgListActivityFeedsAsync(string org, DateTime? date = default(DateTime?), int? page = default(int?), int? limit = default(int?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
 
         /// <summary>
         /// List an organization&#39;s activity feeds
@@ -2328,7 +2328,7 @@ namespace Gitea.Net.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (List&lt;Activity&gt;)</returns>
-        System.Threading.Tasks.Task<ApiResponse<List<Activity>>> OrgListActivityFeedsWithHttpInfoAsync(string org, DateOnly? date = default(DateOnly?), int? page = default(int?), int? limit = default(int?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<ApiResponse<List<Activity>>> OrgListActivityFeedsWithHttpInfoAsync(string org, DateTime? date = default(DateTime?), int? page = default(int?), int? limit = default(int?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
         /// <summary>
         /// List the current user&#39;s organizations
         /// </summary>
@@ -2515,7 +2515,7 @@ namespace Gitea.Net.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of List&lt;Activity&gt;</returns>
-        System.Threading.Tasks.Task<List<Activity>> OrgListTeamActivityFeedsAsync(long id, DateOnly? date = default(DateOnly?), int? page = default(int?), int? limit = default(int?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<List<Activity>> OrgListTeamActivityFeedsAsync(long id, DateTime? date = default(DateTime?), int? page = default(int?), int? limit = default(int?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
 
         /// <summary>
         /// List a team&#39;s activity feeds
@@ -2531,7 +2531,7 @@ namespace Gitea.Net.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (List&lt;Activity&gt;)</returns>
-        System.Threading.Tasks.Task<ApiResponse<List<Activity>>> OrgListTeamActivityFeedsWithHttpInfoAsync(long id, DateOnly? date = default(DateOnly?), int? page = default(int?), int? limit = default(int?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<ApiResponse<List<Activity>>> OrgListTeamActivityFeedsWithHttpInfoAsync(long id, DateTime? date = default(DateTime?), int? page = default(int?), int? limit = default(int?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
         /// <summary>
         /// List a particular member of team
         /// </summary>
@@ -10791,7 +10791,7 @@ namespace Gitea.Net.Api
         /// <param name="limit">page size of results (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>List&lt;Activity&gt;</returns>
-        public List<Activity> OrgListActivityFeeds(string org, DateOnly? date = default(DateOnly?), int? page = default(int?), int? limit = default(int?), int operationIndex = 0)
+        public List<Activity> OrgListActivityFeeds(string org, DateTime? date = default(DateTime?), int? page = default(int?), int? limit = default(int?), int operationIndex = 0)
         {
             Gitea.Net.Client.ApiResponse<List<Activity>> localVarResponse = OrgListActivityFeedsWithHttpInfo(org, date, page, limit);
             return localVarResponse.Data;
@@ -10807,7 +10807,7 @@ namespace Gitea.Net.Api
         /// <param name="limit">page size of results (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ApiResponse of List&lt;Activity&gt;</returns>
-        public Gitea.Net.Client.ApiResponse<List<Activity>> OrgListActivityFeedsWithHttpInfo(string org, DateOnly? date = default(DateOnly?), int? page = default(int?), int? limit = default(int?), int operationIndex = 0)
+        public Gitea.Net.Client.ApiResponse<List<Activity>> OrgListActivityFeedsWithHttpInfo(string org, DateTime? date = default(DateTime?), int? page = default(int?), int? limit = default(int?), int operationIndex = 0)
         {
             // verify the required parameter 'org' is set
             if (org == null)
@@ -10916,7 +10916,7 @@ namespace Gitea.Net.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of List&lt;Activity&gt;</returns>
-        public async System.Threading.Tasks.Task<List<Activity>> OrgListActivityFeedsAsync(string org, DateOnly? date = default(DateOnly?), int? page = default(int?), int? limit = default(int?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<List<Activity>> OrgListActivityFeedsAsync(string org, DateTime? date = default(DateTime?), int? page = default(int?), int? limit = default(int?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
             Gitea.Net.Client.ApiResponse<List<Activity>> localVarResponse = await OrgListActivityFeedsWithHttpInfoAsync(org, date, page, limit, operationIndex, cancellationToken).ConfigureAwait(false);
             return localVarResponse.Data;
@@ -10933,7 +10933,7 @@ namespace Gitea.Net.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (List&lt;Activity&gt;)</returns>
-        public async System.Threading.Tasks.Task<Gitea.Net.Client.ApiResponse<List<Activity>>> OrgListActivityFeedsWithHttpInfoAsync(string org, DateOnly? date = default(DateOnly?), int? page = default(int?), int? limit = default(int?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<Gitea.Net.Client.ApiResponse<List<Activity>>> OrgListActivityFeedsWithHttpInfoAsync(string org, DateTime? date = default(DateTime?), int? page = default(int?), int? limit = default(int?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
             // verify the required parameter 'org' is set
             if (org == null)
@@ -12465,7 +12465,7 @@ namespace Gitea.Net.Api
         /// <param name="limit">page size of results (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>List&lt;Activity&gt;</returns>
-        public List<Activity> OrgListTeamActivityFeeds(long id, DateOnly? date = default(DateOnly?), int? page = default(int?), int? limit = default(int?), int operationIndex = 0)
+        public List<Activity> OrgListTeamActivityFeeds(long id, DateTime? date = default(DateTime?), int? page = default(int?), int? limit = default(int?), int operationIndex = 0)
         {
             Gitea.Net.Client.ApiResponse<List<Activity>> localVarResponse = OrgListTeamActivityFeedsWithHttpInfo(id, date, page, limit);
             return localVarResponse.Data;
@@ -12481,7 +12481,7 @@ namespace Gitea.Net.Api
         /// <param name="limit">page size of results (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ApiResponse of List&lt;Activity&gt;</returns>
-        public Gitea.Net.Client.ApiResponse<List<Activity>> OrgListTeamActivityFeedsWithHttpInfo(long id, DateOnly? date = default(DateOnly?), int? page = default(int?), int? limit = default(int?), int operationIndex = 0)
+        public Gitea.Net.Client.ApiResponse<List<Activity>> OrgListTeamActivityFeedsWithHttpInfo(long id, DateTime? date = default(DateTime?), int? page = default(int?), int? limit = default(int?), int operationIndex = 0)
         {
             Gitea.Net.Client.RequestOptions localVarRequestOptions = new Gitea.Net.Client.RequestOptions();
 
@@ -12584,7 +12584,7 @@ namespace Gitea.Net.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of List&lt;Activity&gt;</returns>
-        public async System.Threading.Tasks.Task<List<Activity>> OrgListTeamActivityFeedsAsync(long id, DateOnly? date = default(DateOnly?), int? page = default(int?), int? limit = default(int?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<List<Activity>> OrgListTeamActivityFeedsAsync(long id, DateTime? date = default(DateTime?), int? page = default(int?), int? limit = default(int?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
             Gitea.Net.Client.ApiResponse<List<Activity>> localVarResponse = await OrgListTeamActivityFeedsWithHttpInfoAsync(id, date, page, limit, operationIndex, cancellationToken).ConfigureAwait(false);
             return localVarResponse.Data;
@@ -12601,7 +12601,7 @@ namespace Gitea.Net.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (List&lt;Activity&gt;)</returns>
-        public async System.Threading.Tasks.Task<Gitea.Net.Client.ApiResponse<List<Activity>>> OrgListTeamActivityFeedsWithHttpInfoAsync(long id, DateOnly? date = default(DateOnly?), int? page = default(int?), int? limit = default(int?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<Gitea.Net.Client.ApiResponse<List<Activity>>> OrgListTeamActivityFeedsWithHttpInfoAsync(long id, DateTime? date = default(DateTime?), int? page = default(int?), int? limit = default(int?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
 
             Gitea.Net.Client.RequestOptions localVarRequestOptions = new Gitea.Net.Client.RequestOptions();

@@ -489,7 +489,7 @@ namespace Gitea.Net.Test.Api
         {
             // TODO uncomment below to test the method and replace null with proper value
             //string org = null;
-            //DateOnly? date = null;
+            //DateTime? date = null;
             //int? page = null;
             //int? limit = null;
             //var response = instance.OrgListActivityFeeds(org, date, page, limit);
@@ -587,7 +587,7 @@ namespace Gitea.Net.Test.Api
         {
             // TODO uncomment below to test the method and replace null with proper value
             //long id = null;
-            //DateOnly? date = null;
+            //DateTime? date = null;
             //int? page = null;
             //int? limit = null;
             //var response = instance.OrgListTeamActivityFeeds(id, date, page, limit);
