@@ -1,4 +1,4 @@
-# Org.OpenAPITools.Api.UserApi
+# Gitea.Net.Api.UserApi
 
 All URIs are relative to */api/v1*
 
@@ -85,9 +85,9 @@ Create a repository
 ```csharp
 using System.Collections.Generic;
 using System.Diagnostics;
-using Org.OpenAPITools.Api;
-using Org.OpenAPITools.Client;
-using Org.OpenAPITools.Model;
+using Gitea.Net.Api;
+using Gitea.Net.Client;
+using Gitea.Net.Model;
 
 namespace Example
 {
@@ -205,9 +205,9 @@ Create a user-level variable
 ```csharp
 using System.Collections.Generic;
 using System.Diagnostics;
-using Org.OpenAPITools.Api;
-using Org.OpenAPITools.Client;
-using Org.OpenAPITools.Model;
+using Gitea.Net.Api;
+using Gitea.Net.Client;
+using Gitea.Net.Model;
 
 namespace Example
 {
@@ -323,9 +323,9 @@ Delete a secret in a user scope
 ```csharp
 using System.Collections.Generic;
 using System.Diagnostics;
-using Org.OpenAPITools.Api;
-using Org.OpenAPITools.Client;
-using Org.OpenAPITools.Model;
+using Gitea.Net.Api;
+using Gitea.Net.Client;
+using Gitea.Net.Model;
 
 namespace Example
 {
@@ -438,9 +438,9 @@ Delete a user-level variable which is created by current doer
 ```csharp
 using System.Collections.Generic;
 using System.Diagnostics;
-using Org.OpenAPITools.Api;
-using Org.OpenAPITools.Client;
-using Org.OpenAPITools.Model;
+using Gitea.Net.Api;
+using Gitea.Net.Client;
+using Gitea.Net.Model;
 
 namespace Example
 {
@@ -554,9 +554,9 @@ Get user settings
 ```csharp
 using System.Collections.Generic;
 using System.Diagnostics;
-using Org.OpenAPITools.Api;
-using Org.OpenAPITools.Client;
-using Org.OpenAPITools.Model;
+using Gitea.Net.Api;
+using Gitea.Net.Client;
+using Gitea.Net.Model;
 
 namespace Example
 {
@@ -666,9 +666,9 @@ Get a user-level variable which is created by current doer
 ```csharp
 using System.Collections.Generic;
 using System.Diagnostics;
-using Org.OpenAPITools.Api;
-using Org.OpenAPITools.Client;
-using Org.OpenAPITools.Model;
+using Gitea.Net.Api;
+using Gitea.Net.Client;
+using Gitea.Net.Model;
 
 namespace Example
 {
@@ -785,9 +785,9 @@ Get the user-level list of variables which is created by current doer
 ```csharp
 using System.Collections.Generic;
 using System.Diagnostics;
-using Org.OpenAPITools.Api;
-using Org.OpenAPITools.Client;
-using Org.OpenAPITools.Model;
+using Gitea.Net.Api;
+using Gitea.Net.Client;
+using Gitea.Net.Model;
 
 namespace Example
 {
@@ -906,9 +906,9 @@ Get a Token to verify
 ```csharp
 using System.Collections.Generic;
 using System.Diagnostics;
-using Org.OpenAPITools.Api;
-using Org.OpenAPITools.Client;
-using Org.OpenAPITools.Model;
+using Gitea.Net.Api;
+using Gitea.Net.Client;
+using Gitea.Net.Model;
 
 namespace Example
 {
@@ -1019,9 +1019,9 @@ Create or Update a secret value in a user scope
 ```csharp
 using System.Collections.Generic;
 using System.Diagnostics;
-using Org.OpenAPITools.Api;
-using Org.OpenAPITools.Client;
-using Org.OpenAPITools.Model;
+using Gitea.Net.Api;
+using Gitea.Net.Client;
+using Gitea.Net.Model;
 
 namespace Example
 {
@@ -1137,9 +1137,9 @@ Update user settings
 ```csharp
 using System.Collections.Generic;
 using System.Diagnostics;
-using Org.OpenAPITools.Api;
-using Org.OpenAPITools.Client;
-using Org.OpenAPITools.Model;
+using Gitea.Net.Api;
+using Gitea.Net.Client;
+using Gitea.Net.Model;
 
 namespace Example
 {
@@ -1254,9 +1254,9 @@ Update a user-level variable which is created by current doer
 ```csharp
 using System.Collections.Generic;
 using System.Diagnostics;
-using Org.OpenAPITools.Api;
-using Org.OpenAPITools.Client;
-using Org.OpenAPITools.Model;
+using Gitea.Net.Api;
+using Gitea.Net.Client;
+using Gitea.Net.Model;
 
 namespace Example
 {
@@ -1372,9 +1372,9 @@ Add email addresses
 ```csharp
 using System.Collections.Generic;
 using System.Diagnostics;
-using Org.OpenAPITools.Api;
-using Org.OpenAPITools.Client;
-using Org.OpenAPITools.Model;
+using Gitea.Net.Api;
+using Gitea.Net.Client;
+using Gitea.Net.Model;
 
 namespace Example
 {
@@ -1490,9 +1490,9 @@ Block a user
 ```csharp
 using System.Collections.Generic;
 using System.Diagnostics;
-using Org.OpenAPITools.Api;
-using Org.OpenAPITools.Client;
-using Org.OpenAPITools.Model;
+using Gitea.Net.Api;
+using Gitea.Net.Client;
+using Gitea.Net.Model;
 
 namespace Example
 {
@@ -1607,9 +1607,9 @@ Check if one user is following another user
 ```csharp
 using System.Collections.Generic;
 using System.Diagnostics;
-using Org.OpenAPITools.Api;
-using Org.OpenAPITools.Client;
-using Org.OpenAPITools.Model;
+using Gitea.Net.Api;
+using Gitea.Net.Client;
+using Gitea.Net.Model;
 
 namespace Example
 {
@@ -1723,9 +1723,9 @@ Check if a user is blocked by the authenticated user
 ```csharp
 using System.Collections.Generic;
 using System.Diagnostics;
-using Org.OpenAPITools.Api;
-using Org.OpenAPITools.Client;
-using Org.OpenAPITools.Model;
+using Gitea.Net.Api;
+using Gitea.Net.Client;
+using Gitea.Net.Model;
 
 namespace Example
 {
@@ -1837,9 +1837,9 @@ Create a hook
 ```csharp
 using System.Collections.Generic;
 using System.Diagnostics;
-using Org.OpenAPITools.Api;
-using Org.OpenAPITools.Client;
-using Org.OpenAPITools.Model;
+using Gitea.Net.Api;
+using Gitea.Net.Client;
+using Gitea.Net.Model;
 
 namespace Example
 {
@@ -1954,9 +1954,9 @@ creates a new OAuth2 application
 ```csharp
 using System.Collections.Generic;
 using System.Diagnostics;
-using Org.OpenAPITools.Api;
-using Org.OpenAPITools.Client;
-using Org.OpenAPITools.Model;
+using Gitea.Net.Api;
+using Gitea.Net.Client;
+using Gitea.Net.Model;
 
 namespace Example
 {
@@ -2072,9 +2072,9 @@ Create an access token
 ```csharp
 using System.Collections.Generic;
 using System.Diagnostics;
-using Org.OpenAPITools.Api;
-using Org.OpenAPITools.Client;
-using Org.OpenAPITools.Model;
+using Gitea.Net.Api;
+using Gitea.Net.Client;
+using Gitea.Net.Model;
 
 namespace Example
 {
@@ -2193,9 +2193,9 @@ Check whether a user is followed by the authenticated user
 ```csharp
 using System.Collections.Generic;
 using System.Diagnostics;
-using Org.OpenAPITools.Api;
-using Org.OpenAPITools.Client;
-using Org.OpenAPITools.Model;
+using Gitea.Net.Api;
+using Gitea.Net.Client;
+using Gitea.Net.Model;
 
 namespace Example
 {
@@ -2307,9 +2307,9 @@ Whether the authenticated is starring the repo
 ```csharp
 using System.Collections.Generic;
 using System.Diagnostics;
-using Org.OpenAPITools.Api;
-using Org.OpenAPITools.Client;
-using Org.OpenAPITools.Model;
+using Gitea.Net.Api;
+using Gitea.Net.Client;
+using Gitea.Net.Model;
 
 namespace Example
 {
@@ -2423,9 +2423,9 @@ Unfollow a user
 ```csharp
 using System.Collections.Generic;
 using System.Diagnostics;
-using Org.OpenAPITools.Api;
-using Org.OpenAPITools.Client;
-using Org.OpenAPITools.Model;
+using Gitea.Net.Api;
+using Gitea.Net.Client;
+using Gitea.Net.Model;
 
 namespace Example
 {
@@ -2537,9 +2537,9 @@ Remove a GPG key
 ```csharp
 using System.Collections.Generic;
 using System.Diagnostics;
-using Org.OpenAPITools.Api;
-using Org.OpenAPITools.Client;
-using Org.OpenAPITools.Model;
+using Gitea.Net.Api;
+using Gitea.Net.Client;
+using Gitea.Net.Model;
 
 namespace Example
 {
@@ -2652,9 +2652,9 @@ Delete a public key
 ```csharp
 using System.Collections.Generic;
 using System.Diagnostics;
-using Org.OpenAPITools.Api;
-using Org.OpenAPITools.Client;
-using Org.OpenAPITools.Model;
+using Gitea.Net.Api;
+using Gitea.Net.Client;
+using Gitea.Net.Model;
 
 namespace Example
 {
@@ -2767,9 +2767,9 @@ Unstar the given repo
 ```csharp
 using System.Collections.Generic;
 using System.Diagnostics;
-using Org.OpenAPITools.Api;
-using Org.OpenAPITools.Client;
-using Org.OpenAPITools.Model;
+using Gitea.Net.Api;
+using Gitea.Net.Client;
+using Gitea.Net.Model;
 
 namespace Example
 {
@@ -2883,9 +2883,9 @@ Get a GPG key
 ```csharp
 using System.Collections.Generic;
 using System.Diagnostics;
-using Org.OpenAPITools.Api;
-using Org.OpenAPITools.Client;
-using Org.OpenAPITools.Model;
+using Gitea.Net.Api;
+using Gitea.Net.Client;
+using Gitea.Net.Model;
 
 namespace Example
 {
@@ -3001,9 +3001,9 @@ Get a public key
 ```csharp
 using System.Collections.Generic;
 using System.Diagnostics;
-using Org.OpenAPITools.Api;
-using Org.OpenAPITools.Client;
-using Org.OpenAPITools.Model;
+using Gitea.Net.Api;
+using Gitea.Net.Client;
+using Gitea.Net.Model;
 
 namespace Example
 {
@@ -3119,9 +3119,9 @@ List the authenticated user's followers
 ```csharp
 using System.Collections.Generic;
 using System.Diagnostics;
-using Org.OpenAPITools.Api;
-using Org.OpenAPITools.Client;
-using Org.OpenAPITools.Model;
+using Gitea.Net.Api;
+using Gitea.Net.Client;
+using Gitea.Net.Model;
 
 namespace Example
 {
@@ -3238,9 +3238,9 @@ List the users that the authenticated user is following
 ```csharp
 using System.Collections.Generic;
 using System.Diagnostics;
-using Org.OpenAPITools.Api;
-using Org.OpenAPITools.Client;
-using Org.OpenAPITools.Model;
+using Gitea.Net.Api;
+using Gitea.Net.Client;
+using Gitea.Net.Model;
 
 namespace Example
 {
@@ -3357,9 +3357,9 @@ List the authenticated user's GPG keys
 ```csharp
 using System.Collections.Generic;
 using System.Diagnostics;
-using Org.OpenAPITools.Api;
-using Org.OpenAPITools.Client;
-using Org.OpenAPITools.Model;
+using Gitea.Net.Api;
+using Gitea.Net.Client;
+using Gitea.Net.Model;
 
 namespace Example
 {
@@ -3476,9 +3476,9 @@ List the authenticated user's public keys
 ```csharp
 using System.Collections.Generic;
 using System.Diagnostics;
-using Org.OpenAPITools.Api;
-using Org.OpenAPITools.Client;
-using Org.OpenAPITools.Model;
+using Gitea.Net.Api;
+using Gitea.Net.Client;
+using Gitea.Net.Model;
 
 namespace Example
 {
@@ -3597,9 +3597,9 @@ List the repos that the authenticated user owns
 ```csharp
 using System.Collections.Generic;
 using System.Diagnostics;
-using Org.OpenAPITools.Api;
-using Org.OpenAPITools.Client;
-using Org.OpenAPITools.Model;
+using Gitea.Net.Api;
+using Gitea.Net.Client;
+using Gitea.Net.Model;
 
 namespace Example
 {
@@ -3716,9 +3716,9 @@ The repos that the authenticated user has starred
 ```csharp
 using System.Collections.Generic;
 using System.Diagnostics;
-using Org.OpenAPITools.Api;
-using Org.OpenAPITools.Client;
-using Org.OpenAPITools.Model;
+using Gitea.Net.Api;
+using Gitea.Net.Client;
+using Gitea.Net.Model;
 
 namespace Example
 {
@@ -3835,9 +3835,9 @@ List repositories watched by the authenticated user
 ```csharp
 using System.Collections.Generic;
 using System.Diagnostics;
-using Org.OpenAPITools.Api;
-using Org.OpenAPITools.Client;
-using Org.OpenAPITools.Model;
+using Gitea.Net.Api;
+using Gitea.Net.Client;
+using Gitea.Net.Model;
 
 namespace Example
 {
@@ -3954,9 +3954,9 @@ Create a GPG key
 ```csharp
 using System.Collections.Generic;
 using System.Diagnostics;
-using Org.OpenAPITools.Api;
-using Org.OpenAPITools.Client;
-using Org.OpenAPITools.Model;
+using Gitea.Net.Api;
+using Gitea.Net.Client;
+using Gitea.Net.Model;
 
 namespace Example
 {
@@ -4073,9 +4073,9 @@ Create a public key
 ```csharp
 using System.Collections.Generic;
 using System.Diagnostics;
-using Org.OpenAPITools.Api;
-using Org.OpenAPITools.Client;
-using Org.OpenAPITools.Model;
+using Gitea.Net.Api;
+using Gitea.Net.Client;
+using Gitea.Net.Model;
 
 namespace Example
 {
@@ -4191,9 +4191,9 @@ Follow a user
 ```csharp
 using System.Collections.Generic;
 using System.Diagnostics;
-using Org.OpenAPITools.Api;
-using Org.OpenAPITools.Client;
-using Org.OpenAPITools.Model;
+using Gitea.Net.Api;
+using Gitea.Net.Client;
+using Gitea.Net.Model;
 
 namespace Example
 {
@@ -4306,9 +4306,9 @@ Star the given repo
 ```csharp
 using System.Collections.Generic;
 using System.Diagnostics;
-using Org.OpenAPITools.Api;
-using Org.OpenAPITools.Client;
-using Org.OpenAPITools.Model;
+using Gitea.Net.Api;
+using Gitea.Net.Client;
+using Gitea.Net.Model;
 
 namespace Example
 {
@@ -4423,9 +4423,9 @@ List the current user's tracked times
 ```csharp
 using System.Collections.Generic;
 using System.Diagnostics;
-using Org.OpenAPITools.Api;
-using Org.OpenAPITools.Client;
-using Org.OpenAPITools.Model;
+using Gitea.Net.Api;
+using Gitea.Net.Client;
+using Gitea.Net.Model;
 
 namespace Example
 {
@@ -4546,9 +4546,9 @@ delete an access token
 ```csharp
 using System.Collections.Generic;
 using System.Diagnostics;
-using Org.OpenAPITools.Api;
-using Org.OpenAPITools.Client;
-using Org.OpenAPITools.Model;
+using Gitea.Net.Api;
+using Gitea.Net.Client;
+using Gitea.Net.Model;
 
 namespace Example
 {
@@ -4664,9 +4664,9 @@ Delete Avatar
 ```csharp
 using System.Collections.Generic;
 using System.Diagnostics;
-using Org.OpenAPITools.Api;
-using Org.OpenAPITools.Client;
-using Org.OpenAPITools.Model;
+using Gitea.Net.Api;
+using Gitea.Net.Client;
+using Gitea.Net.Model;
 
 namespace Example
 {
@@ -4772,9 +4772,9 @@ Delete email addresses
 ```csharp
 using System.Collections.Generic;
 using System.Diagnostics;
-using Org.OpenAPITools.Api;
-using Org.OpenAPITools.Client;
-using Org.OpenAPITools.Model;
+using Gitea.Net.Api;
+using Gitea.Net.Client;
+using Gitea.Net.Model;
 
 namespace Example
 {
@@ -4886,9 +4886,9 @@ Delete a hook
 ```csharp
 using System.Collections.Generic;
 using System.Diagnostics;
-using Org.OpenAPITools.Api;
-using Org.OpenAPITools.Client;
-using Org.OpenAPITools.Model;
+using Gitea.Net.Api;
+using Gitea.Net.Client;
+using Gitea.Net.Model;
 
 namespace Example
 {
@@ -4999,9 +4999,9 @@ delete an OAuth2 Application
 ```csharp
 using System.Collections.Generic;
 using System.Diagnostics;
-using Org.OpenAPITools.Api;
-using Org.OpenAPITools.Client;
-using Org.OpenAPITools.Model;
+using Gitea.Net.Api;
+using Gitea.Net.Client;
+using Gitea.Net.Model;
 
 namespace Example
 {
@@ -5113,9 +5113,9 @@ Update a hook
 ```csharp
 using System.Collections.Generic;
 using System.Diagnostics;
-using Org.OpenAPITools.Api;
-using Org.OpenAPITools.Client;
-using Org.OpenAPITools.Model;
+using Gitea.Net.Api;
+using Gitea.Net.Client;
+using Gitea.Net.Model;
 
 namespace Example
 {
@@ -5232,9 +5232,9 @@ Get a user
 ```csharp
 using System.Collections.Generic;
 using System.Diagnostics;
-using Org.OpenAPITools.Api;
-using Org.OpenAPITools.Client;
-using Org.OpenAPITools.Model;
+using Gitea.Net.Api;
+using Gitea.Net.Client;
+using Gitea.Net.Model;
 
 namespace Example
 {
@@ -5350,9 +5350,9 @@ Get the authenticated user
 ```csharp
 using System.Collections.Generic;
 using System.Diagnostics;
-using Org.OpenAPITools.Api;
-using Org.OpenAPITools.Client;
-using Org.OpenAPITools.Model;
+using Gitea.Net.Api;
+using Gitea.Net.Client;
+using Gitea.Net.Model;
 
 namespace Example
 {
@@ -5462,9 +5462,9 @@ Get a user's heatmap
 ```csharp
 using System.Collections.Generic;
 using System.Diagnostics;
-using Org.OpenAPITools.Api;
-using Org.OpenAPITools.Client;
-using Org.OpenAPITools.Model;
+using Gitea.Net.Api;
+using Gitea.Net.Client;
+using Gitea.Net.Model;
 
 namespace Example
 {
@@ -5580,9 +5580,9 @@ Get a hook
 ```csharp
 using System.Collections.Generic;
 using System.Diagnostics;
-using Org.OpenAPITools.Api;
-using Org.OpenAPITools.Client;
-using Org.OpenAPITools.Model;
+using Gitea.Net.Api;
+using Gitea.Net.Client;
+using Gitea.Net.Model;
 
 namespace Example
 {
@@ -5697,9 +5697,9 @@ get an OAuth2 Application
 ```csharp
 using System.Collections.Generic;
 using System.Diagnostics;
-using Org.OpenAPITools.Api;
-using Org.OpenAPITools.Client;
-using Org.OpenAPITools.Model;
+using Gitea.Net.Api;
+using Gitea.Net.Client;
+using Gitea.Net.Model;
 
 namespace Example
 {
@@ -5815,9 +5815,9 @@ List the authenticated user's oauth2 applications
 ```csharp
 using System.Collections.Generic;
 using System.Diagnostics;
-using Org.OpenAPITools.Api;
-using Org.OpenAPITools.Client;
-using Org.OpenAPITools.Model;
+using Gitea.Net.Api;
+using Gitea.Net.Client;
+using Gitea.Net.Model;
 
 namespace Example
 {
@@ -5934,9 +5934,9 @@ Get an user's actions runner registration token
 ```csharp
 using System.Collections.Generic;
 using System.Diagnostics;
-using Org.OpenAPITools.Api;
-using Org.OpenAPITools.Client;
-using Org.OpenAPITools.Model;
+using Gitea.Net.Api;
+using Gitea.Net.Client;
+using Gitea.Net.Model;
 
 namespace Example
 {
@@ -6042,9 +6042,9 @@ Get list of all existing stopwatches
 ```csharp
 using System.Collections.Generic;
 using System.Diagnostics;
-using Org.OpenAPITools.Api;
-using Org.OpenAPITools.Client;
-using Org.OpenAPITools.Model;
+using Gitea.Net.Api;
+using Gitea.Net.Client;
+using Gitea.Net.Model;
 
 namespace Example
 {
@@ -6161,9 +6161,9 @@ List the authenticated user's access tokens
 ```csharp
 using System.Collections.Generic;
 using System.Diagnostics;
-using Org.OpenAPITools.Api;
-using Org.OpenAPITools.Client;
-using Org.OpenAPITools.Model;
+using Gitea.Net.Api;
+using Gitea.Net.Client;
+using Gitea.Net.Model;
 
 namespace Example
 {
@@ -6283,9 +6283,9 @@ List a user's activity feeds
 ```csharp
 using System.Collections.Generic;
 using System.Diagnostics;
-using Org.OpenAPITools.Api;
-using Org.OpenAPITools.Client;
-using Org.OpenAPITools.Model;
+using Gitea.Net.Api;
+using Gitea.Net.Client;
+using Gitea.Net.Model;
 
 namespace Example
 {
@@ -6409,9 +6409,9 @@ List users blocked by the authenticated user
 ```csharp
 using System.Collections.Generic;
 using System.Diagnostics;
-using Org.OpenAPITools.Api;
-using Org.OpenAPITools.Client;
-using Org.OpenAPITools.Model;
+using Gitea.Net.Api;
+using Gitea.Net.Client;
+using Gitea.Net.Model;
 
 namespace Example
 {
@@ -6528,9 +6528,9 @@ List the authenticated user's email addresses
 ```csharp
 using System.Collections.Generic;
 using System.Diagnostics;
-using Org.OpenAPITools.Api;
-using Org.OpenAPITools.Client;
-using Org.OpenAPITools.Model;
+using Gitea.Net.Api;
+using Gitea.Net.Client;
+using Gitea.Net.Model;
 
 namespace Example
 {
@@ -6640,9 +6640,9 @@ List the given user's followers
 ```csharp
 using System.Collections.Generic;
 using System.Diagnostics;
-using Org.OpenAPITools.Api;
-using Org.OpenAPITools.Client;
-using Org.OpenAPITools.Model;
+using Gitea.Net.Api;
+using Gitea.Net.Client;
+using Gitea.Net.Model;
 
 namespace Example
 {
@@ -6762,9 +6762,9 @@ List the users that the given user is following
 ```csharp
 using System.Collections.Generic;
 using System.Diagnostics;
-using Org.OpenAPITools.Api;
-using Org.OpenAPITools.Client;
-using Org.OpenAPITools.Model;
+using Gitea.Net.Api;
+using Gitea.Net.Client;
+using Gitea.Net.Model;
 
 namespace Example
 {
@@ -6884,9 +6884,9 @@ List the given user's GPG keys
 ```csharp
 using System.Collections.Generic;
 using System.Diagnostics;
-using Org.OpenAPITools.Api;
-using Org.OpenAPITools.Client;
-using Org.OpenAPITools.Model;
+using Gitea.Net.Api;
+using Gitea.Net.Client;
+using Gitea.Net.Model;
 
 namespace Example
 {
@@ -7006,9 +7006,9 @@ List the authenticated user's webhooks
 ```csharp
 using System.Collections.Generic;
 using System.Diagnostics;
-using Org.OpenAPITools.Api;
-using Org.OpenAPITools.Client;
-using Org.OpenAPITools.Model;
+using Gitea.Net.Api;
+using Gitea.Net.Client;
+using Gitea.Net.Model;
 
 namespace Example
 {
@@ -7125,9 +7125,9 @@ List the given user's public keys
 ```csharp
 using System.Collections.Generic;
 using System.Diagnostics;
-using Org.OpenAPITools.Api;
-using Org.OpenAPITools.Client;
-using Org.OpenAPITools.Model;
+using Gitea.Net.Api;
+using Gitea.Net.Client;
+using Gitea.Net.Model;
 
 namespace Example
 {
@@ -7249,9 +7249,9 @@ List the repos owned by the given user
 ```csharp
 using System.Collections.Generic;
 using System.Diagnostics;
-using Org.OpenAPITools.Api;
-using Org.OpenAPITools.Client;
-using Org.OpenAPITools.Model;
+using Gitea.Net.Api;
+using Gitea.Net.Client;
+using Gitea.Net.Model;
 
 namespace Example
 {
@@ -7371,9 +7371,9 @@ The repos that the given user has starred
 ```csharp
 using System.Collections.Generic;
 using System.Diagnostics;
-using Org.OpenAPITools.Api;
-using Org.OpenAPITools.Client;
-using Org.OpenAPITools.Model;
+using Gitea.Net.Api;
+using Gitea.Net.Client;
+using Gitea.Net.Model;
 
 namespace Example
 {
@@ -7493,9 +7493,9 @@ List the repositories watched by a user
 ```csharp
 using System.Collections.Generic;
 using System.Diagnostics;
-using Org.OpenAPITools.Api;
-using Org.OpenAPITools.Client;
-using Org.OpenAPITools.Model;
+using Gitea.Net.Api;
+using Gitea.Net.Client;
+using Gitea.Net.Model;
 
 namespace Example
 {
@@ -7615,9 +7615,9 @@ List all the teams a user belongs to
 ```csharp
 using System.Collections.Generic;
 using System.Diagnostics;
-using Org.OpenAPITools.Api;
-using Org.OpenAPITools.Client;
-using Org.OpenAPITools.Model;
+using Gitea.Net.Api;
+using Gitea.Net.Client;
+using Gitea.Net.Model;
 
 namespace Example
 {
@@ -7734,9 +7734,9 @@ Search for users
 ```csharp
 using System.Collections.Generic;
 using System.Diagnostics;
-using Org.OpenAPITools.Api;
-using Org.OpenAPITools.Client;
-using Org.OpenAPITools.Model;
+using Gitea.Net.Api;
+using Gitea.Net.Client;
+using Gitea.Net.Model;
 
 namespace Example
 {
@@ -7857,9 +7857,9 @@ Unblock a user
 ```csharp
 using System.Collections.Generic;
 using System.Diagnostics;
-using Org.OpenAPITools.Api;
-using Org.OpenAPITools.Client;
-using Org.OpenAPITools.Model;
+using Gitea.Net.Api;
+using Gitea.Net.Client;
+using Gitea.Net.Model;
 
 namespace Example
 {
@@ -7972,9 +7972,9 @@ Update Avatar
 ```csharp
 using System.Collections.Generic;
 using System.Diagnostics;
-using Org.OpenAPITools.Api;
-using Org.OpenAPITools.Client;
-using Org.OpenAPITools.Model;
+using Gitea.Net.Api;
+using Gitea.Net.Client;
+using Gitea.Net.Model;
 
 namespace Example
 {
@@ -8085,9 +8085,9 @@ update an OAuth2 Application, this includes regenerating the client secret
 ```csharp
 using System.Collections.Generic;
 using System.Diagnostics;
-using Org.OpenAPITools.Api;
-using Org.OpenAPITools.Client;
-using Org.OpenAPITools.Model;
+using Gitea.Net.Api;
+using Gitea.Net.Client;
+using Gitea.Net.Model;
 
 namespace Example
 {
@@ -8205,9 +8205,9 @@ Verify a GPG key
 ```csharp
 using System.Collections.Generic;
 using System.Diagnostics;
-using Org.OpenAPITools.Api;
-using Org.OpenAPITools.Client;
-using Org.OpenAPITools.Model;
+using Gitea.Net.Api;
+using Gitea.Net.Client;
+using Gitea.Net.Model;
 
 namespace Example
 {

@@ -1,4 +1,4 @@
-# Org.OpenAPITools.Model.ContentsResponse
+# Gitea.Net.Model.ContentsResponse
 ContentsResponse contains information about a repo's entry's (dir, file, symlink, submodule) metadata and content
 
 ## Properties

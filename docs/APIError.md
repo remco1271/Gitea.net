@@ -1,4 +1,4 @@
-# Org.OpenAPITools.Model.APIError
+# Gitea.Net.Model.APIError
 APIError is an api error with a message
 
 ## Properties

@@ -1,4 +1,4 @@
-# Org.OpenAPITools.Model.IssueLabelsOption
+# Gitea.Net.Model.IssueLabelsOption
 IssueLabelsOption a collection of labels
 
 ## Properties

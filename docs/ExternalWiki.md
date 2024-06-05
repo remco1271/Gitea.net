@@ -1,4 +1,4 @@
-# Org.OpenAPITools.Model.ExternalWiki
+# Gitea.Net.Model.ExternalWiki
 ExternalWiki represents setting for external wiki
 
 ## Properties

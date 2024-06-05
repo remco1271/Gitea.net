@@ -1,4 +1,4 @@
-# Org.OpenAPITools.Model.GitHook
+# Gitea.Net.Model.GitHook
 GitHook represents a Git repository hook
 
 ## Properties

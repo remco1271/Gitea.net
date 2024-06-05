@@ -1,4 +1,4 @@
-# Org.OpenAPITools.Api.MiscellaneousApi
+# Gitea.Net.Api.MiscellaneousApi
 
 All URIs are relative to */api/v1*
 
@@ -27,9 +27,9 @@ Returns information about a gitignore template
 ```csharp
 using System.Collections.Generic;
 using System.Diagnostics;
-using Org.OpenAPITools.Api;
-using Org.OpenAPITools.Client;
-using Org.OpenAPITools.Model;
+using Gitea.Net.Api;
+using Gitea.Net.Client;
+using Gitea.Net.Model;
 
 namespace Example
 {
@@ -145,9 +145,9 @@ Returns all labels in a template
 ```csharp
 using System.Collections.Generic;
 using System.Diagnostics;
-using Org.OpenAPITools.Api;
-using Org.OpenAPITools.Client;
-using Org.OpenAPITools.Model;
+using Gitea.Net.Api;
+using Gitea.Net.Client;
+using Gitea.Net.Model;
 
 namespace Example
 {
@@ -263,9 +263,9 @@ Returns information about a license template
 ```csharp
 using System.Collections.Generic;
 using System.Diagnostics;
-using Org.OpenAPITools.Api;
-using Org.OpenAPITools.Client;
-using Org.OpenAPITools.Model;
+using Gitea.Net.Api;
+using Gitea.Net.Client;
+using Gitea.Net.Model;
 
 namespace Example
 {
@@ -381,9 +381,9 @@ Returns the nodeinfo of the Gitea application
 ```csharp
 using System.Collections.Generic;
 using System.Diagnostics;
-using Org.OpenAPITools.Api;
-using Org.OpenAPITools.Client;
-using Org.OpenAPITools.Model;
+using Gitea.Net.Api;
+using Gitea.Net.Client;
+using Gitea.Net.Model;
 
 namespace Example
 {
@@ -493,9 +493,9 @@ Get default signing-key.gpg
 ```csharp
 using System.Collections.Generic;
 using System.Diagnostics;
-using Org.OpenAPITools.Api;
-using Org.OpenAPITools.Client;
-using Org.OpenAPITools.Model;
+using Gitea.Net.Api;
+using Gitea.Net.Client;
+using Gitea.Net.Model;
 
 namespace Example
 {
@@ -605,9 +605,9 @@ Returns the version of the Gitea application
 ```csharp
 using System.Collections.Generic;
 using System.Diagnostics;
-using Org.OpenAPITools.Api;
-using Org.OpenAPITools.Client;
-using Org.OpenAPITools.Model;
+using Gitea.Net.Api;
+using Gitea.Net.Client;
+using Gitea.Net.Model;
 
 namespace Example
 {
@@ -717,9 +717,9 @@ Returns a list of all gitignore templates
 ```csharp
 using System.Collections.Generic;
 using System.Diagnostics;
-using Org.OpenAPITools.Api;
-using Org.OpenAPITools.Client;
-using Org.OpenAPITools.Model;
+using Gitea.Net.Api;
+using Gitea.Net.Client;
+using Gitea.Net.Model;
 
 namespace Example
 {
@@ -829,9 +829,9 @@ Returns a list of all label templates
 ```csharp
 using System.Collections.Generic;
 using System.Diagnostics;
-using Org.OpenAPITools.Api;
-using Org.OpenAPITools.Client;
-using Org.OpenAPITools.Model;
+using Gitea.Net.Api;
+using Gitea.Net.Client;
+using Gitea.Net.Model;
 
 namespace Example
 {
@@ -941,9 +941,9 @@ Returns a list of all license templates
 ```csharp
 using System.Collections.Generic;
 using System.Diagnostics;
-using Org.OpenAPITools.Api;
-using Org.OpenAPITools.Client;
-using Org.OpenAPITools.Model;
+using Gitea.Net.Api;
+using Gitea.Net.Client;
+using Gitea.Net.Model;
 
 namespace Example
 {
@@ -1053,9 +1053,9 @@ Render a markdown document as HTML
 ```csharp
 using System.Collections.Generic;
 using System.Diagnostics;
-using Org.OpenAPITools.Api;
-using Org.OpenAPITools.Client;
-using Org.OpenAPITools.Model;
+using Gitea.Net.Api;
+using Gitea.Net.Client;
+using Gitea.Net.Model;
 
 namespace Example
 {
@@ -1171,9 +1171,9 @@ Render raw markdown as HTML
 ```csharp
 using System.Collections.Generic;
 using System.Diagnostics;
-using Org.OpenAPITools.Api;
-using Org.OpenAPITools.Client;
-using Org.OpenAPITools.Model;
+using Gitea.Net.Api;
+using Gitea.Net.Client;
+using Gitea.Net.Model;
 
 namespace Example
 {
@@ -1289,9 +1289,9 @@ Render a markup document as HTML
 ```csharp
 using System.Collections.Generic;
 using System.Diagnostics;
-using Org.OpenAPITools.Api;
-using Org.OpenAPITools.Client;
-using Org.OpenAPITools.Model;
+using Gitea.Net.Api;
+using Gitea.Net.Client;
+using Gitea.Net.Model;
 
 namespace Example
 {

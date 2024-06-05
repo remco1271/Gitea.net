@@ -1,4 +1,4 @@
-# Org.OpenAPITools.Model.LicenseTemplateInfo
+# Gitea.Net.Model.LicenseTemplateInfo
 LicensesInfo contains information about a License
 
 ## Properties

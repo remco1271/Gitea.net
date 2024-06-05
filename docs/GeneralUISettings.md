@@ -1,4 +1,4 @@
-# Org.OpenAPITools.Model.GeneralUISettings
+# Gitea.Net.Model.GeneralUISettings
 GeneralUISettings contains global ui settings exposed by API
 
 ## Properties

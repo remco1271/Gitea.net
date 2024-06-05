@@ -1,4 +1,4 @@
-# Org.OpenAPITools.Model.UserHeatmapData
+# Gitea.Net.Model.UserHeatmapData
 UserHeatmapData represents the data needed to create a heatmap
 
 ## Properties

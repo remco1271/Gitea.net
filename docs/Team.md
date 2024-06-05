@@ -1,4 +1,4 @@
-# Org.OpenAPITools.Model.Team
+# Gitea.Net.Model.Team
 Team represents a team in an organization
 
 ## Properties

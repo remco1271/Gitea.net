@@ -1,4 +1,4 @@
-# Org.OpenAPITools.Api.IssueApi
+# Gitea.Net.Api.IssueApi
 
 All URIs are relative to */api/v1*
 
@@ -82,9 +82,9 @@ Add a label to an issue
 ```csharp
 using System.Collections.Generic;
 using System.Diagnostics;
-using Org.OpenAPITools.Api;
-using Org.OpenAPITools.Client;
-using Org.OpenAPITools.Model;
+using Gitea.Net.Api;
+using Gitea.Net.Client;
+using Gitea.Net.Model;
 
 namespace Example
 {
@@ -207,9 +207,9 @@ Subscribe user to issue
 ```csharp
 using System.Collections.Generic;
 using System.Diagnostics;
-using Org.OpenAPITools.Api;
-using Org.OpenAPITools.Client;
-using Org.OpenAPITools.Model;
+using Gitea.Net.Api;
+using Gitea.Net.Client;
+using Gitea.Net.Model;
 
 namespace Example
 {
@@ -329,9 +329,9 @@ Add tracked time to a issue
 ```csharp
 using System.Collections.Generic;
 using System.Diagnostics;
-using Org.OpenAPITools.Api;
-using Org.OpenAPITools.Client;
-using Org.OpenAPITools.Model;
+using Gitea.Net.Api;
+using Gitea.Net.Client;
+using Gitea.Net.Model;
 
 namespace Example
 {
@@ -455,9 +455,9 @@ Check if user is subscribed to an issue
 ```csharp
 using System.Collections.Generic;
 using System.Diagnostics;
-using Org.OpenAPITools.Api;
-using Org.OpenAPITools.Client;
-using Org.OpenAPITools.Model;
+using Gitea.Net.Api;
+using Gitea.Net.Client;
+using Gitea.Net.Model;
 
 namespace Example
 {
@@ -577,9 +577,9 @@ Remove all labels from an issue
 ```csharp
 using System.Collections.Generic;
 using System.Diagnostics;
-using Org.OpenAPITools.Api;
-using Org.OpenAPITools.Client;
-using Org.OpenAPITools.Model;
+using Gitea.Net.Api;
+using Gitea.Net.Client;
+using Gitea.Net.Model;
 
 namespace Example
 {
@@ -696,9 +696,9 @@ Add a comment to an issue
 ```csharp
 using System.Collections.Generic;
 using System.Diagnostics;
-using Org.OpenAPITools.Api;
-using Org.OpenAPITools.Client;
-using Org.OpenAPITools.Model;
+using Gitea.Net.Api;
+using Gitea.Net.Client;
+using Gitea.Net.Model;
 
 namespace Example
 {
@@ -822,9 +822,9 @@ Create an issue. If using deadline only the date will be taken into account, and
 ```csharp
 using System.Collections.Generic;
 using System.Diagnostics;
-using Org.OpenAPITools.Api;
-using Org.OpenAPITools.Client;
-using Org.OpenAPITools.Model;
+using Gitea.Net.Api;
+using Gitea.Net.Client;
+using Gitea.Net.Model;
 
 namespace Example
 {
@@ -948,9 +948,9 @@ Create an issue attachment
 ```csharp
 using System.Collections.Generic;
 using System.Diagnostics;
-using Org.OpenAPITools.Api;
-using Org.OpenAPITools.Client;
-using Org.OpenAPITools.Model;
+using Gitea.Net.Api;
+using Gitea.Net.Client;
+using Gitea.Net.Model;
 
 namespace Example
 {
@@ -1077,9 +1077,9 @@ Block the issue given in the body by the issue in path
 ```csharp
 using System.Collections.Generic;
 using System.Diagnostics;
-using Org.OpenAPITools.Api;
-using Org.OpenAPITools.Client;
-using Org.OpenAPITools.Model;
+using Gitea.Net.Api;
+using Gitea.Net.Client;
+using Gitea.Net.Model;
 
 namespace Example
 {
@@ -1201,9 +1201,9 @@ Create a comment attachment
 ```csharp
 using System.Collections.Generic;
 using System.Diagnostics;
-using Org.OpenAPITools.Api;
-using Org.OpenAPITools.Client;
-using Org.OpenAPITools.Model;
+using Gitea.Net.Api;
+using Gitea.Net.Client;
+using Gitea.Net.Model;
 
 namespace Example
 {
@@ -1331,9 +1331,9 @@ Make the issue in the url depend on the issue in the form.
 ```csharp
 using System.Collections.Generic;
 using System.Diagnostics;
-using Org.OpenAPITools.Api;
-using Org.OpenAPITools.Client;
-using Org.OpenAPITools.Model;
+using Gitea.Net.Api;
+using Gitea.Net.Client;
+using Gitea.Net.Model;
 
 namespace Example
 {
@@ -1456,9 +1456,9 @@ Create a label
 ```csharp
 using System.Collections.Generic;
 using System.Diagnostics;
-using Org.OpenAPITools.Api;
-using Org.OpenAPITools.Client;
-using Org.OpenAPITools.Model;
+using Gitea.Net.Api;
+using Gitea.Net.Client;
+using Gitea.Net.Model;
 
 namespace Example
 {
@@ -1579,9 +1579,9 @@ Create a milestone
 ```csharp
 using System.Collections.Generic;
 using System.Diagnostics;
-using Org.OpenAPITools.Api;
-using Org.OpenAPITools.Client;
-using Org.OpenAPITools.Model;
+using Gitea.Net.Api;
+using Gitea.Net.Client;
+using Gitea.Net.Model;
 
 namespace Example
 {
@@ -1701,9 +1701,9 @@ Delete an issue
 ```csharp
 using System.Collections.Generic;
 using System.Diagnostics;
-using Org.OpenAPITools.Api;
-using Org.OpenAPITools.Client;
-using Org.OpenAPITools.Model;
+using Gitea.Net.Api;
+using Gitea.Net.Client;
+using Gitea.Net.Model;
 
 namespace Example
 {
@@ -1820,9 +1820,9 @@ Delete a comment
 ```csharp
 using System.Collections.Generic;
 using System.Diagnostics;
-using Org.OpenAPITools.Api;
-using Org.OpenAPITools.Client;
-using Org.OpenAPITools.Model;
+using Gitea.Net.Api;
+using Gitea.Net.Client;
+using Gitea.Net.Model;
 
 namespace Example
 {
@@ -1939,9 +1939,9 @@ Delete a comment
 ```csharp
 using System.Collections.Generic;
 using System.Diagnostics;
-using Org.OpenAPITools.Api;
-using Org.OpenAPITools.Client;
-using Org.OpenAPITools.Model;
+using Gitea.Net.Api;
+using Gitea.Net.Client;
+using Gitea.Net.Model;
 
 namespace Example
 {
@@ -2060,9 +2060,9 @@ Remove a reaction from a comment of an issue
 ```csharp
 using System.Collections.Generic;
 using System.Diagnostics;
-using Org.OpenAPITools.Api;
-using Org.OpenAPITools.Client;
-using Org.OpenAPITools.Model;
+using Gitea.Net.Api;
+using Gitea.Net.Client;
+using Gitea.Net.Model;
 
 namespace Example
 {
@@ -2181,9 +2181,9 @@ Delete an issue attachment
 ```csharp
 using System.Collections.Generic;
 using System.Diagnostics;
-using Org.OpenAPITools.Api;
-using Org.OpenAPITools.Client;
-using Org.OpenAPITools.Model;
+using Gitea.Net.Api;
+using Gitea.Net.Client;
+using Gitea.Net.Model;
 
 namespace Example
 {
@@ -2302,9 +2302,9 @@ Delete a comment attachment
 ```csharp
 using System.Collections.Generic;
 using System.Diagnostics;
-using Org.OpenAPITools.Api;
-using Org.OpenAPITools.Client;
-using Org.OpenAPITools.Model;
+using Gitea.Net.Api;
+using Gitea.Net.Client;
+using Gitea.Net.Model;
 
 namespace Example
 {
@@ -2423,9 +2423,9 @@ Remove a reaction from an issue
 ```csharp
 using System.Collections.Generic;
 using System.Diagnostics;
-using Org.OpenAPITools.Api;
-using Org.OpenAPITools.Client;
-using Org.OpenAPITools.Model;
+using Gitea.Net.Api;
+using Gitea.Net.Client;
+using Gitea.Net.Model;
 
 namespace Example
 {
@@ -2544,9 +2544,9 @@ Delete a label
 ```csharp
 using System.Collections.Generic;
 using System.Diagnostics;
-using Org.OpenAPITools.Api;
-using Org.OpenAPITools.Client;
-using Org.OpenAPITools.Model;
+using Gitea.Net.Api;
+using Gitea.Net.Client;
+using Gitea.Net.Model;
 
 namespace Example
 {
@@ -2662,9 +2662,9 @@ Delete a milestone
 ```csharp
 using System.Collections.Generic;
 using System.Diagnostics;
-using Org.OpenAPITools.Api;
-using Org.OpenAPITools.Client;
-using Org.OpenAPITools.Model;
+using Gitea.Net.Api;
+using Gitea.Net.Client;
+using Gitea.Net.Model;
 
 namespace Example
 {
@@ -2780,9 +2780,9 @@ Delete an issue's existing stopwatch.
 ```csharp
 using System.Collections.Generic;
 using System.Diagnostics;
-using Org.OpenAPITools.Api;
-using Org.OpenAPITools.Client;
-using Org.OpenAPITools.Model;
+using Gitea.Net.Api;
+using Gitea.Net.Client;
+using Gitea.Net.Model;
 
 namespace Example
 {
@@ -2900,9 +2900,9 @@ Unsubscribe user from issue
 ```csharp
 using System.Collections.Generic;
 using System.Diagnostics;
-using Org.OpenAPITools.Api;
-using Org.OpenAPITools.Client;
-using Org.OpenAPITools.Model;
+using Gitea.Net.Api;
+using Gitea.Net.Client;
+using Gitea.Net.Model;
 
 namespace Example
 {
@@ -3022,9 +3022,9 @@ Delete specific tracked time
 ```csharp
 using System.Collections.Generic;
 using System.Diagnostics;
-using Org.OpenAPITools.Api;
-using Org.OpenAPITools.Client;
-using Org.OpenAPITools.Model;
+using Gitea.Net.Api;
+using Gitea.Net.Client;
+using Gitea.Net.Model;
 
 namespace Example
 {
@@ -3144,9 +3144,9 @@ Edit a comment
 ```csharp
 using System.Collections.Generic;
 using System.Diagnostics;
-using Org.OpenAPITools.Api;
-using Org.OpenAPITools.Client;
-using Org.OpenAPITools.Model;
+using Gitea.Net.Api;
+using Gitea.Net.Client;
+using Gitea.Net.Model;
 
 namespace Example
 {
@@ -3271,9 +3271,9 @@ Edit a comment
 ```csharp
 using System.Collections.Generic;
 using System.Diagnostics;
-using Org.OpenAPITools.Api;
-using Org.OpenAPITools.Client;
-using Org.OpenAPITools.Model;
+using Gitea.Net.Api;
+using Gitea.Net.Client;
+using Gitea.Net.Model;
 
 namespace Example
 {
@@ -3399,9 +3399,9 @@ Edit an issue. If using deadline only the date will be taken into account, and t
 ```csharp
 using System.Collections.Generic;
 using System.Diagnostics;
-using Org.OpenAPITools.Api;
-using Org.OpenAPITools.Client;
-using Org.OpenAPITools.Model;
+using Gitea.Net.Api;
+using Gitea.Net.Client;
+using Gitea.Net.Model;
 
 namespace Example
 {
@@ -3525,9 +3525,9 @@ Edit an issue attachment
 ```csharp
 using System.Collections.Generic;
 using System.Diagnostics;
-using Org.OpenAPITools.Api;
-using Org.OpenAPITools.Client;
-using Org.OpenAPITools.Model;
+using Gitea.Net.Api;
+using Gitea.Net.Client;
+using Gitea.Net.Model;
 
 namespace Example
 {
@@ -3652,9 +3652,9 @@ Edit a comment attachment
 ```csharp
 using System.Collections.Generic;
 using System.Diagnostics;
-using Org.OpenAPITools.Api;
-using Org.OpenAPITools.Client;
-using Org.OpenAPITools.Model;
+using Gitea.Net.Api;
+using Gitea.Net.Client;
+using Gitea.Net.Model;
 
 namespace Example
 {
@@ -3779,9 +3779,9 @@ Set an issue deadline. If set to null, the deadline is deleted. If using deadlin
 ```csharp
 using System.Collections.Generic;
 using System.Diagnostics;
-using Org.OpenAPITools.Api;
-using Org.OpenAPITools.Client;
-using Org.OpenAPITools.Model;
+using Gitea.Net.Api;
+using Gitea.Net.Client;
+using Gitea.Net.Model;
 
 namespace Example
 {
@@ -3904,9 +3904,9 @@ Update a label
 ```csharp
 using System.Collections.Generic;
 using System.Diagnostics;
-using Org.OpenAPITools.Api;
-using Org.OpenAPITools.Client;
-using Org.OpenAPITools.Model;
+using Gitea.Net.Api;
+using Gitea.Net.Client;
+using Gitea.Net.Model;
 
 namespace Example
 {
@@ -4029,9 +4029,9 @@ Update a milestone
 ```csharp
 using System.Collections.Generic;
 using System.Diagnostics;
-using Org.OpenAPITools.Api;
-using Org.OpenAPITools.Client;
-using Org.OpenAPITools.Model;
+using Gitea.Net.Api;
+using Gitea.Net.Client;
+using Gitea.Net.Model;
 
 namespace Example
 {
@@ -4153,9 +4153,9 @@ Get a comment
 ```csharp
 using System.Collections.Generic;
 using System.Diagnostics;
-using Org.OpenAPITools.Api;
-using Org.OpenAPITools.Client;
-using Org.OpenAPITools.Model;
+using Gitea.Net.Api;
+using Gitea.Net.Client;
+using Gitea.Net.Model;
 
 namespace Example
 {
@@ -4277,9 +4277,9 @@ Get a list of reactions from a comment of an issue
 ```csharp
 using System.Collections.Generic;
 using System.Diagnostics;
-using Org.OpenAPITools.Api;
-using Org.OpenAPITools.Client;
-using Org.OpenAPITools.Model;
+using Gitea.Net.Api;
+using Gitea.Net.Client;
+using Gitea.Net.Model;
 
 namespace Example
 {
@@ -4400,9 +4400,9 @@ List all comments on an issue
 ```csharp
 using System.Collections.Generic;
 using System.Diagnostics;
-using Org.OpenAPITools.Api;
-using Org.OpenAPITools.Client;
-using Org.OpenAPITools.Model;
+using Gitea.Net.Api;
+using Gitea.Net.Client;
+using Gitea.Net.Model;
 
 namespace Example
 {
@@ -4526,9 +4526,9 @@ List all comments and events on an issue
 ```csharp
 using System.Collections.Generic;
 using System.Diagnostics;
-using Org.OpenAPITools.Api;
-using Org.OpenAPITools.Client;
-using Org.OpenAPITools.Model;
+using Gitea.Net.Api;
+using Gitea.Net.Client;
+using Gitea.Net.Model;
 
 namespace Example
 {
@@ -4656,9 +4656,9 @@ Get an issue
 ```csharp
 using System.Collections.Generic;
 using System.Diagnostics;
-using Org.OpenAPITools.Api;
-using Org.OpenAPITools.Client;
-using Org.OpenAPITools.Model;
+using Gitea.Net.Api;
+using Gitea.Net.Client;
+using Gitea.Net.Model;
 
 namespace Example
 {
@@ -4778,9 +4778,9 @@ Get an issue attachment
 ```csharp
 using System.Collections.Generic;
 using System.Diagnostics;
-using Org.OpenAPITools.Api;
-using Org.OpenAPITools.Client;
-using Org.OpenAPITools.Model;
+using Gitea.Net.Api;
+using Gitea.Net.Client;
+using Gitea.Net.Model;
 
 namespace Example
 {
@@ -4902,9 +4902,9 @@ Get a comment attachment
 ```csharp
 using System.Collections.Generic;
 using System.Diagnostics;
-using Org.OpenAPITools.Api;
-using Org.OpenAPITools.Client;
-using Org.OpenAPITools.Model;
+using Gitea.Net.Api;
+using Gitea.Net.Client;
+using Gitea.Net.Model;
 
 namespace Example
 {
@@ -5026,9 +5026,9 @@ Get a list reactions of an issue
 ```csharp
 using System.Collections.Generic;
 using System.Diagnostics;
-using Org.OpenAPITools.Api;
-using Org.OpenAPITools.Client;
-using Org.OpenAPITools.Model;
+using Gitea.Net.Api;
+using Gitea.Net.Client;
+using Gitea.Net.Model;
 
 namespace Example
 {
@@ -5153,9 +5153,9 @@ Get a single label
 ```csharp
 using System.Collections.Generic;
 using System.Diagnostics;
-using Org.OpenAPITools.Api;
-using Org.OpenAPITools.Client;
-using Org.OpenAPITools.Model;
+using Gitea.Net.Api;
+using Gitea.Net.Client;
+using Gitea.Net.Model;
 
 namespace Example
 {
@@ -5275,9 +5275,9 @@ Get an issue's labels
 ```csharp
 using System.Collections.Generic;
 using System.Diagnostics;
-using Org.OpenAPITools.Api;
-using Org.OpenAPITools.Client;
-using Org.OpenAPITools.Model;
+using Gitea.Net.Api;
+using Gitea.Net.Client;
+using Gitea.Net.Model;
 
 namespace Example
 {
@@ -5397,9 +5397,9 @@ Get a milestone
 ```csharp
 using System.Collections.Generic;
 using System.Diagnostics;
-using Org.OpenAPITools.Api;
-using Org.OpenAPITools.Client;
-using Org.OpenAPITools.Model;
+using Gitea.Net.Api;
+using Gitea.Net.Client;
+using Gitea.Net.Model;
 
 namespace Example
 {
@@ -5519,9 +5519,9 @@ Get all of a repository's opened milestones
 ```csharp
 using System.Collections.Generic;
 using System.Diagnostics;
-using Org.OpenAPITools.Api;
-using Org.OpenAPITools.Client;
-using Org.OpenAPITools.Model;
+using Gitea.Net.Api;
+using Gitea.Net.Client;
+using Gitea.Net.Model;
 
 namespace Example
 {
@@ -5647,9 +5647,9 @@ List all comments in a repository
 ```csharp
 using System.Collections.Generic;
 using System.Diagnostics;
-using Org.OpenAPITools.Api;
-using Org.OpenAPITools.Client;
-using Org.OpenAPITools.Model;
+using Gitea.Net.Api;
+using Gitea.Net.Client;
+using Gitea.Net.Model;
 
 namespace Example
 {
@@ -5775,9 +5775,9 @@ List issues that are blocked by this issue
 ```csharp
 using System.Collections.Generic;
 using System.Diagnostics;
-using Org.OpenAPITools.Api;
-using Org.OpenAPITools.Client;
-using Org.OpenAPITools.Model;
+using Gitea.Net.Api;
+using Gitea.Net.Client;
+using Gitea.Net.Model;
 
 namespace Example
 {
@@ -5901,9 +5901,9 @@ List issue's attachments
 ```csharp
 using System.Collections.Generic;
 using System.Diagnostics;
-using Org.OpenAPITools.Api;
-using Org.OpenAPITools.Client;
-using Org.OpenAPITools.Model;
+using Gitea.Net.Api;
+using Gitea.Net.Client;
+using Gitea.Net.Model;
 
 namespace Example
 {
@@ -6023,9 +6023,9 @@ List comment's attachments
 ```csharp
 using System.Collections.Generic;
 using System.Diagnostics;
-using Org.OpenAPITools.Api;
-using Org.OpenAPITools.Client;
-using Org.OpenAPITools.Model;
+using Gitea.Net.Api;
+using Gitea.Net.Client;
+using Gitea.Net.Model;
 
 namespace Example
 {
@@ -6145,9 +6145,9 @@ List an issue's dependencies, i.e all issues that block this issue.
 ```csharp
 using System.Collections.Generic;
 using System.Diagnostics;
-using Org.OpenAPITools.Api;
-using Org.OpenAPITools.Client;
-using Org.OpenAPITools.Model;
+using Gitea.Net.Api;
+using Gitea.Net.Client;
+using Gitea.Net.Model;
 
 namespace Example
 {
@@ -6271,9 +6271,9 @@ List a repository's issues
 ```csharp
 using System.Collections.Generic;
 using System.Diagnostics;
-using Org.OpenAPITools.Api;
-using Org.OpenAPITools.Client;
-using Org.OpenAPITools.Model;
+using Gitea.Net.Api;
+using Gitea.Net.Client;
+using Gitea.Net.Model;
 
 namespace Example
 {
@@ -6415,9 +6415,9 @@ Get all of a repository's labels
 ```csharp
 using System.Collections.Generic;
 using System.Diagnostics;
-using Org.OpenAPITools.Api;
-using Org.OpenAPITools.Client;
-using Org.OpenAPITools.Model;
+using Gitea.Net.Api;
+using Gitea.Net.Client;
+using Gitea.Net.Model;
 
 namespace Example
 {
@@ -6539,9 +6539,9 @@ Add a reaction to a comment of an issue
 ```csharp
 using System.Collections.Generic;
 using System.Diagnostics;
-using Org.OpenAPITools.Api;
-using Org.OpenAPITools.Client;
-using Org.OpenAPITools.Model;
+using Gitea.Net.Api;
+using Gitea.Net.Client;
+using Gitea.Net.Model;
 
 namespace Example
 {
@@ -6665,9 +6665,9 @@ Add a reaction to an issue
 ```csharp
 using System.Collections.Generic;
 using System.Diagnostics;
-using Org.OpenAPITools.Api;
-using Org.OpenAPITools.Client;
-using Org.OpenAPITools.Model;
+using Gitea.Net.Api;
+using Gitea.Net.Client;
+using Gitea.Net.Model;
 
 namespace Example
 {
@@ -6791,9 +6791,9 @@ Unblock the issue given in the body by the issue in path
 ```csharp
 using System.Collections.Generic;
 using System.Diagnostics;
-using Org.OpenAPITools.Api;
-using Org.OpenAPITools.Client;
-using Org.OpenAPITools.Model;
+using Gitea.Net.Api;
+using Gitea.Net.Client;
+using Gitea.Net.Model;
 
 namespace Example
 {
@@ -6915,9 +6915,9 @@ Remove an issue dependency
 ```csharp
 using System.Collections.Generic;
 using System.Diagnostics;
-using Org.OpenAPITools.Api;
-using Org.OpenAPITools.Client;
-using Org.OpenAPITools.Model;
+using Gitea.Net.Api;
+using Gitea.Net.Client;
+using Gitea.Net.Model;
 
 namespace Example
 {
@@ -7040,9 +7040,9 @@ Remove a label from an issue
 ```csharp
 using System.Collections.Generic;
 using System.Diagnostics;
-using Org.OpenAPITools.Api;
-using Org.OpenAPITools.Client;
-using Org.OpenAPITools.Model;
+using Gitea.Net.Api;
+using Gitea.Net.Client;
+using Gitea.Net.Model;
 
 namespace Example
 {
@@ -7162,9 +7162,9 @@ Replace an issue's labels
 ```csharp
 using System.Collections.Generic;
 using System.Diagnostics;
-using Org.OpenAPITools.Api;
-using Org.OpenAPITools.Client;
-using Org.OpenAPITools.Model;
+using Gitea.Net.Api;
+using Gitea.Net.Client;
+using Gitea.Net.Model;
 
 namespace Example
 {
@@ -7287,9 +7287,9 @@ Reset a tracked time of an issue
 ```csharp
 using System.Collections.Generic;
 using System.Diagnostics;
-using Org.OpenAPITools.Api;
-using Org.OpenAPITools.Client;
-using Org.OpenAPITools.Model;
+using Gitea.Net.Api;
+using Gitea.Net.Client;
+using Gitea.Net.Model;
 
 namespace Example
 {
@@ -7407,9 +7407,9 @@ Search for issues across the repositories that the user has access to
 ```csharp
 using System.Collections.Generic;
 using System.Diagnostics;
-using Org.OpenAPITools.Api;
-using Org.OpenAPITools.Client;
-using Org.OpenAPITools.Model;
+using Gitea.Net.Api;
+using Gitea.Net.Client;
+using Gitea.Net.Model;
 
 namespace Example
 {
@@ -7556,9 +7556,9 @@ Start stopwatch on an issue.
 ```csharp
 using System.Collections.Generic;
 using System.Diagnostics;
-using Org.OpenAPITools.Api;
-using Org.OpenAPITools.Client;
-using Org.OpenAPITools.Model;
+using Gitea.Net.Api;
+using Gitea.Net.Client;
+using Gitea.Net.Model;
 
 namespace Example
 {
@@ -7676,9 +7676,9 @@ Stop an issue's existing stopwatch.
 ```csharp
 using System.Collections.Generic;
 using System.Diagnostics;
-using Org.OpenAPITools.Api;
-using Org.OpenAPITools.Client;
-using Org.OpenAPITools.Model;
+using Gitea.Net.Api;
+using Gitea.Net.Client;
+using Gitea.Net.Model;
 
 namespace Example
 {
@@ -7796,9 +7796,9 @@ Get users who subscribed on an issue.
 ```csharp
 using System.Collections.Generic;
 using System.Diagnostics;
-using Org.OpenAPITools.Api;
-using Org.OpenAPITools.Client;
-using Org.OpenAPITools.Model;
+using Gitea.Net.Api;
+using Gitea.Net.Client;
+using Gitea.Net.Model;
 
 namespace Example
 {
@@ -7922,9 +7922,9 @@ List an issue's tracked times
 ```csharp
 using System.Collections.Generic;
 using System.Diagnostics;
-using Org.OpenAPITools.Api;
-using Org.OpenAPITools.Client;
-using Org.OpenAPITools.Model;
+using Gitea.Net.Api;
+using Gitea.Net.Client;
+using Gitea.Net.Model;
 
 namespace Example
 {
@@ -8054,9 +8054,9 @@ Moves the Pin to the given Position
 ```csharp
 using System.Collections.Generic;
 using System.Diagnostics;
-using Org.OpenAPITools.Api;
-using Org.OpenAPITools.Client;
-using Org.OpenAPITools.Model;
+using Gitea.Net.Api;
+using Gitea.Net.Client;
+using Gitea.Net.Model;
 
 namespace Example
 {
@@ -8175,9 +8175,9 @@ Pin an Issue
 ```csharp
 using System.Collections.Generic;
 using System.Diagnostics;
-using Org.OpenAPITools.Api;
-using Org.OpenAPITools.Client;
-using Org.OpenAPITools.Model;
+using Gitea.Net.Api;
+using Gitea.Net.Client;
+using Gitea.Net.Model;
 
 namespace Example
 {
@@ -8294,9 +8294,9 @@ Unpin an Issue
 ```csharp
 using System.Collections.Generic;
 using System.Diagnostics;
-using Org.OpenAPITools.Api;
-using Org.OpenAPITools.Client;
-using Org.OpenAPITools.Model;
+using Gitea.Net.Api;
+using Gitea.Net.Client;
+using Gitea.Net.Model;
 
 namespace Example
 {

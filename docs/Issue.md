@@ -1,4 +1,4 @@
-# Org.OpenAPITools.Model.Issue
+# Gitea.Net.Model.Issue
 Issue represents an issue in a repository
 
 ## Properties

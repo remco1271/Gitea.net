@@ -1,4 +1,4 @@
-# Org.OpenAPITools.Model.EditBranchProtectionOption
+# Gitea.Net.Model.EditBranchProtectionOption
 EditBranchProtectionOption options for editing a branch protection
 
 ## Properties

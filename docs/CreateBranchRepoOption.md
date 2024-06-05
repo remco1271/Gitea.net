@@ -1,4 +1,4 @@
-# Org.OpenAPITools.Model.CreateBranchRepoOption
+# Gitea.Net.Model.CreateBranchRepoOption
 CreateBranchRepoOption options when creating a branch in a repository
 
 ## Properties

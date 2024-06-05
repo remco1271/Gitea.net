@@ -1,4 +1,4 @@
-# Org.OpenAPITools.Model.WatchInfo
+# Gitea.Net.Model.WatchInfo
 WatchInfo represents an API watch status of one repository
 
 ## Properties

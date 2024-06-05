@@ -1,4 +1,4 @@
-# Org.OpenAPITools.Model.WikiPageMetaData
+# Gitea.Net.Model.WikiPageMetaData
 WikiPageMetaData wiki page meta information
 
 ## Properties

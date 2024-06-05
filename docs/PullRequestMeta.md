@@ -1,4 +1,4 @@
-# Org.OpenAPITools.Model.PullRequestMeta
+# Gitea.Net.Model.PullRequestMeta
 PullRequestMeta PR info if an issue is a PR
 
 ## Properties

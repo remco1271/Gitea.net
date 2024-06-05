@@ -1,4 +1,4 @@
-# Org.OpenAPITools.Model.EditUserOption
+# Gitea.Net.Model.EditUserOption
 EditUserOption edit user options
 
 ## Properties

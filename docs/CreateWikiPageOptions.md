@@ -1,4 +1,4 @@
-# Org.OpenAPITools.Model.CreateWikiPageOptions
+# Gitea.Net.Model.CreateWikiPageOptions
 CreateWikiPageOptions form for creating wiki
 
 ## Properties

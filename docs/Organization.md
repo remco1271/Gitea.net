@@ -1,4 +1,4 @@
-# Org.OpenAPITools.Model.Organization
+# Gitea.Net.Model.Organization
 Organization represents an organization
 
 ## Properties

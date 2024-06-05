@@ -1,4 +1,4 @@
-# Org.OpenAPITools.Model.PullReviewComment
+# Gitea.Net.Model.PullReviewComment
 PullReviewComment represents a comment on a pull request review
 
 ## Properties

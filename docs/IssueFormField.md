@@ -1,4 +1,4 @@
-# Org.OpenAPITools.Model.IssueFormField
+# Gitea.Net.Model.IssueFormField
 IssueFormField represents a form field
 
 ## Properties

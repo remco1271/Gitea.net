@@ -1,4 +1,4 @@
-# Org.OpenAPITools.Model.InternalTracker
+# Gitea.Net.Model.InternalTracker
 InternalTracker represents settings for internal tracker
 
 ## Properties

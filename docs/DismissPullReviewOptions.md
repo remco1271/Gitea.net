@@ -1,4 +1,4 @@
-# Org.OpenAPITools.Model.DismissPullReviewOptions
+# Gitea.Net.Model.DismissPullReviewOptions
 DismissPullReviewOptions are options to dismiss a pull review
 
 ## Properties

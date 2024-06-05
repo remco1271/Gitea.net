@@ -1,4 +1,4 @@
-# Org.OpenAPITools.Model.Reaction
+# Gitea.Net.Model.Reaction
 Reaction contain one reaction
 
 ## Properties

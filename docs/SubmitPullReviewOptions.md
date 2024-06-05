@@ -1,4 +1,4 @@
-# Org.OpenAPITools.Model.SubmitPullReviewOptions
+# Gitea.Net.Model.SubmitPullReviewOptions
 SubmitPullReviewOptions are options to submit a pending pull review
 
 ## Properties

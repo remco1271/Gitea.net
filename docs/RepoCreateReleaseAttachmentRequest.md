@@ -1,4 +1,4 @@
-# Org.OpenAPITools.Model.RepoCreateReleaseAttachmentRequest
+# Gitea.Net.Model.RepoCreateReleaseAttachmentRequest
 
 ## Properties
 

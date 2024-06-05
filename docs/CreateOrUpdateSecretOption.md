@@ -1,4 +1,4 @@
-# Org.OpenAPITools.Model.CreateOrUpdateSecretOption
+# Gitea.Net.Model.CreateOrUpdateSecretOption
 CreateOrUpdateSecretOption options when creating or updating secret
 
 ## Properties

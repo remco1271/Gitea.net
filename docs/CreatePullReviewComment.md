@@ -1,4 +1,4 @@
-# Org.OpenAPITools.Model.CreatePullReviewComment
+# Gitea.Net.Model.CreatePullReviewComment
 CreatePullReviewComment represent a review comment for creation api
 
 ## Properties

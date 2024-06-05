@@ -1,4 +1,4 @@
-# Org.OpenAPITools.Api.PackageApi
+# Gitea.Net.Api.PackageApi
 
 All URIs are relative to */api/v1*
 
@@ -19,9 +19,9 @@ Delete a package
 ```csharp
 using System.Collections.Generic;
 using System.Diagnostics;
-using Org.OpenAPITools.Api;
-using Org.OpenAPITools.Client;
-using Org.OpenAPITools.Model;
+using Gitea.Net.Api;
+using Gitea.Net.Client;
+using Gitea.Net.Model;
 
 namespace Example
 {
@@ -139,9 +139,9 @@ Gets a package
 ```csharp
 using System.Collections.Generic;
 using System.Diagnostics;
-using Org.OpenAPITools.Api;
-using Org.OpenAPITools.Client;
-using Org.OpenAPITools.Model;
+using Gitea.Net.Api;
+using Gitea.Net.Client;
+using Gitea.Net.Model;
 
 namespace Example
 {
@@ -263,9 +263,9 @@ Gets all files of a package
 ```csharp
 using System.Collections.Generic;
 using System.Diagnostics;
-using Org.OpenAPITools.Api;
-using Org.OpenAPITools.Client;
-using Org.OpenAPITools.Model;
+using Gitea.Net.Api;
+using Gitea.Net.Client;
+using Gitea.Net.Model;
 
 namespace Example
 {
@@ -387,9 +387,9 @@ Gets all packages of an owner
 ```csharp
 using System.Collections.Generic;
 using System.Diagnostics;
-using Org.OpenAPITools.Api;
-using Org.OpenAPITools.Client;
-using Org.OpenAPITools.Model;
+using Gitea.Net.Api;
+using Gitea.Net.Client;
+using Gitea.Net.Model;
 
 namespace Example
 {

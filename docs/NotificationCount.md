@@ -1,4 +1,4 @@
-# Org.OpenAPITools.Model.NotificationCount
+# Gitea.Net.Model.NotificationCount
 NotificationCount number of unread notifications
 
 ## Properties

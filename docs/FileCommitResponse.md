@@ -1,4 +1,4 @@
-# Org.OpenAPITools.Model.FileCommitResponse
+# Gitea.Net.Model.FileCommitResponse
 
 ## Properties
 

@@ -1,4 +1,4 @@
-# Org.OpenAPITools.Model.CreateForkOption
+# Gitea.Net.Model.CreateForkOption
 CreateForkOption options for creating a fork
 
 ## Properties

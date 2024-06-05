@@ -1,4 +1,4 @@
-# Org.OpenAPITools.Model.AddCollaboratorOption
+# Gitea.Net.Model.AddCollaboratorOption
 AddCollaboratorOption options when adding a user as a collaborator of a repository
 
 ## Properties

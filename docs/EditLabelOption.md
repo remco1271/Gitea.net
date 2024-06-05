@@ -1,4 +1,4 @@
-# Org.OpenAPITools.Model.EditLabelOption
+# Gitea.Net.Model.EditLabelOption
 EditLabelOption options for editing a label
 
 ## Properties

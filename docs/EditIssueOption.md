@@ -1,4 +1,4 @@
-# Org.OpenAPITools.Model.EditIssueOption
+# Gitea.Net.Model.EditIssueOption
 EditIssueOption options for editing an issue
 
 ## Properties

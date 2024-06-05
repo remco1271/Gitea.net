@@ -1,4 +1,4 @@
-# Org.OpenAPITools.Model.IssueTemplate
+# Gitea.Net.Model.IssueTemplate
 IssueTemplate represents an issue template for a repository
 
 ## Properties

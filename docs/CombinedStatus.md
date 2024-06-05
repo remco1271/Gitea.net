@@ -1,4 +1,4 @@
-# Org.OpenAPITools.Model.CombinedStatus
+# Gitea.Net.Model.CombinedStatus
 CombinedStatus holds the combined state of several statuses for a single commit
 
 ## Properties

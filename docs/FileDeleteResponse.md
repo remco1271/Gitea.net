@@ -1,4 +1,4 @@
-# Org.OpenAPITools.Model.FileDeleteResponse
+# Gitea.Net.Model.FileDeleteResponse
 FileDeleteResponse contains information about a repo's file that was deleted
 
 ## Properties

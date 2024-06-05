@@ -1,4 +1,4 @@
-# Org.OpenAPITools.Model.GPGKey
+# Gitea.Net.Model.GPGKey
 GPGKey a user GPG key to sign commit and tag in repository
 
 ## Properties

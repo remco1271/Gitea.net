@@ -1,4 +1,4 @@
-# Org.OpenAPITools.Model.CreateBranchProtectionOption
+# Gitea.Net.Model.CreateBranchProtectionOption
 CreateBranchProtectionOption options for creating a branch protection
 
 ## Properties

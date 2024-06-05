@@ -1,4 +1,4 @@
-# Org.OpenAPITools.Model.AnnotatedTag
+# Gitea.Net.Model.AnnotatedTag
 AnnotatedTag represents an annotated tag
 
 ## Properties

@@ -1,4 +1,4 @@
-# Org.OpenAPITools.Model.PublicKey
+# Gitea.Net.Model.PublicKey
 PublicKey publickey is a user key to push code to repository
 
 ## Properties

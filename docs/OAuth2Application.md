@@ -1,4 +1,4 @@
-# Org.OpenAPITools.Model.OAuth2Application
+# Gitea.Net.Model.OAuth2Application
 
 ## Properties
 

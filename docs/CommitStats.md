@@ -1,4 +1,4 @@
-# Org.OpenAPITools.Model.CommitStats
+# Gitea.Net.Model.CommitStats
 CommitStats is statistics for a RepoCommit
 
 ## Properties

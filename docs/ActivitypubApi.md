@@ -1,4 +1,4 @@
-# Org.OpenAPITools.Api.ActivitypubApi
+# Gitea.Net.Api.ActivitypubApi
 
 All URIs are relative to */api/v1*
 
@@ -17,9 +17,9 @@ Returns the Person actor for a user
 ```csharp
 using System.Collections.Generic;
 using System.Diagnostics;
-using Org.OpenAPITools.Api;
-using Org.OpenAPITools.Client;
-using Org.OpenAPITools.Model;
+using Gitea.Net.Api;
+using Gitea.Net.Client;
+using Gitea.Net.Model;
 
 namespace Example
 {
@@ -134,9 +134,9 @@ Send to the inbox
 ```csharp
 using System.Collections.Generic;
 using System.Diagnostics;
-using Org.OpenAPITools.Api;
-using Org.OpenAPITools.Client;
-using Org.OpenAPITools.Model;
+using Gitea.Net.Api;
+using Gitea.Net.Client;
+using Gitea.Net.Model;
 
 namespace Example
 {

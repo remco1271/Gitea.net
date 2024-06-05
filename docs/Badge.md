@@ -1,4 +1,4 @@
-# Org.OpenAPITools.Model.Badge
+# Gitea.Net.Model.Badge
 Badge represents a user badge
 
 ## Properties

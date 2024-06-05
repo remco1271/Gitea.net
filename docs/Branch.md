@@ -1,4 +1,4 @@
-# Org.OpenAPITools.Model.Branch
+# Gitea.Net.Model.Branch
 Branch represents a repository branch
 
 ## Properties

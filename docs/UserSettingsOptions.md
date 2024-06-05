@@ -1,4 +1,4 @@
-# Org.OpenAPITools.Model.UserSettingsOptions
+# Gitea.Net.Model.UserSettingsOptions
 UserSettingsOptions represents options to change user settings
 
 ## Properties

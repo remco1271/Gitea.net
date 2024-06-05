@@ -1,4 +1,4 @@
-# Org.OpenAPITools.Model.CreateTagOption
+# Gitea.Net.Model.CreateTagOption
 CreateTagOption options when creating a tag
 
 ## Properties

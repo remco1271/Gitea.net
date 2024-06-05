@@ -1,4 +1,4 @@
-# Org.OpenAPITools.Model.CreateHookOption
+# Gitea.Net.Model.CreateHookOption
 CreateHookOption options when create a hook
 
 ## Properties

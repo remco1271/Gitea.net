@@ -1,4 +1,4 @@
-# Org.OpenAPITools.Model.DeployKey
+# Gitea.Net.Model.DeployKey
 DeployKey a deploy key
 
 ## Properties

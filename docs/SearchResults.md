@@ -1,4 +1,4 @@
-# Org.OpenAPITools.Model.SearchResults
+# Gitea.Net.Model.SearchResults
 SearchResults results of a successful search
 
 ## Properties

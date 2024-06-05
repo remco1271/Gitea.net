@@ -1,4 +1,4 @@
-# Org.OpenAPITools.Model.NotificationSubject
+# Gitea.Net.Model.NotificationSubject
 NotificationSubject contains the notification subject (Issue/Pull/Commit)
 
 ## Properties

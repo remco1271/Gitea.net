@@ -1,4 +1,4 @@
-# Org.OpenAPITools.Model.NodeInfoUsage
+# Gitea.Net.Model.NodeInfoUsage
 NodeInfoUsage contains usage statistics for this server
 
 ## Properties

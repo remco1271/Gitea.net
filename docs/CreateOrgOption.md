@@ -1,4 +1,4 @@
-# Org.OpenAPITools.Model.CreateOrgOption
+# Gitea.Net.Model.CreateOrgOption
 CreateOrgOption options for creating an organization
 
 ## Properties

@@ -1,4 +1,4 @@
-# Org.OpenAPITools.Model.CreateOAuth2ApplicationOptions
+# Gitea.Net.Model.CreateOAuth2ApplicationOptions
 CreateOAuth2ApplicationOptions holds options to create an oauth2 application
 
 ## Properties

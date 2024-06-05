@@ -1,4 +1,4 @@
-# Org.OpenAPITools.Model.WikiCommitList
+# Gitea.Net.Model.WikiCommitList
 WikiCommitList commit/revision list
 
 ## Properties

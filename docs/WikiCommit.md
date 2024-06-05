@@ -1,4 +1,4 @@
-# Org.OpenAPITools.Model.WikiCommit
+# Gitea.Net.Model.WikiCommit
 WikiCommit page commit/revision
 
 ## Properties

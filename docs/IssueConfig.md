@@ -1,4 +1,4 @@
-# Org.OpenAPITools.Model.IssueConfig
+# Gitea.Net.Model.IssueConfig
 
 ## Properties
 

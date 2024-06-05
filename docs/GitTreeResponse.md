@@ -1,4 +1,4 @@
-# Org.OpenAPITools.Model.GitTreeResponse
+# Gitea.Net.Model.GitTreeResponse
 GitTreeResponse returns a git tree
 
 ## Properties

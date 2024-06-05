@@ -1,4 +1,4 @@
-# Org.OpenAPITools.Model.Secret
+# Gitea.Net.Model.Secret
 Secret represents a secret
 
 ## Properties

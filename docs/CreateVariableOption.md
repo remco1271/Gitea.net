@@ -1,4 +1,4 @@
-# Org.OpenAPITools.Model.CreateVariableOption
+# Gitea.Net.Model.CreateVariableOption
 CreateVariableOption the option when creating variable
 
 ## Properties

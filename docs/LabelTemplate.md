@@ -1,4 +1,4 @@
-# Org.OpenAPITools.Model.LabelTemplate
+# Gitea.Net.Model.LabelTemplate
 LabelTemplate info of a Label template
 
 ## Properties

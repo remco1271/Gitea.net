@@ -1,4 +1,4 @@
-# Org.OpenAPITools.Model.CreateLabelOption
+# Gitea.Net.Model.CreateLabelOption
 CreateLabelOption options for creating a label
 
 ## Properties

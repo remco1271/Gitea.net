@@ -1,4 +1,4 @@
-# Org.OpenAPITools.Model.TopicResponse
+# Gitea.Net.Model.TopicResponse
 TopicResponse for returning topics
 
 ## Properties

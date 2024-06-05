@@ -1,4 +1,4 @@
-# Org.OpenAPITools.Model.ActionVariable
+# Gitea.Net.Model.ActionVariable
 ActionVariable return value of the query API
 
 ## Properties

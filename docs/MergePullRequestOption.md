@@ -1,4 +1,4 @@
-# Org.OpenAPITools.Model.MergePullRequestOption
+# Gitea.Net.Model.MergePullRequestOption
 MergePullRequestForm form for merging Pull Request
 
 ## Properties

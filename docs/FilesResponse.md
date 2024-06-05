@@ -1,4 +1,4 @@
-# Org.OpenAPITools.Model.FilesResponse
+# Gitea.Net.Model.FilesResponse
 FilesResponse contains information about multiple files from a repo
 
 ## Properties

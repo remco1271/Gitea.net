@@ -1,4 +1,4 @@
-# Org.OpenAPITools.Model.PayloadUser
+# Gitea.Net.Model.PayloadUser
 PayloadUser represents the author or committer of a commit
 
 ## Properties

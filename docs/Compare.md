@@ -1,4 +1,4 @@
-# Org.OpenAPITools.Model.Compare
+# Gitea.Net.Model.Compare
 
 ## Properties
 

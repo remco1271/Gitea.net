@@ -1,4 +1,4 @@
-# Org.OpenAPITools.Model.NewIssuePinsAllowed
+# Gitea.Net.Model.NewIssuePinsAllowed
 NewIssuePinsAllowed represents an API response that says if new Issue Pins are allowed
 
 ## Properties

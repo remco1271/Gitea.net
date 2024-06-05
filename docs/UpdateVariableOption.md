@@ -1,4 +1,4 @@
-# Org.OpenAPITools.Model.UpdateVariableOption
+# Gitea.Net.Model.UpdateVariableOption
 UpdateVariableOption the option when updating variable
 
 ## Properties

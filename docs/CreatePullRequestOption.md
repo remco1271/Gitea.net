@@ -1,4 +1,4 @@
-# Org.OpenAPITools.Model.CreatePullRequestOption
+# Gitea.Net.Model.CreatePullRequestOption
 CreatePullRequestOption options when creating a pull request
 
 ## Properties

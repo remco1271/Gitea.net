@@ -1,4 +1,4 @@
-# Org.OpenAPITools.Model.ChangeFileOperation
+# Gitea.Net.Model.ChangeFileOperation
 ChangeFileOperation for creating, updating or deleting a file
 
 ## Properties

@@ -1,4 +1,4 @@
-# Org.OpenAPITools.Model.CreateUserOption
+# Gitea.Net.Model.CreateUserOption
 CreateUserOption create user options
 
 ## Properties

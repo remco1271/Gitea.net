@@ -1,4 +1,4 @@
-# Org.OpenAPITools.Model.NodeInfo
+# Gitea.Net.Model.NodeInfo
 NodeInfo contains standardized way of exposing metadata about a server running one of the distributed social networks
 
 ## Properties

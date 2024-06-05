@@ -1,4 +1,4 @@
-# Org.OpenAPITools.Model.RepoTopicOptions
+# Gitea.Net.Model.RepoTopicOptions
 RepoTopicOptions a collection of repo topic names
 
 ## Properties

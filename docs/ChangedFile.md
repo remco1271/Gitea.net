@@ -1,4 +1,4 @@
-# Org.OpenAPITools.Model.ChangedFile
+# Gitea.Net.Model.ChangedFile
 ChangedFile store information about files affected by the pull request
 
 ## Properties

@@ -1,4 +1,4 @@
-# Org.OpenAPITools.Model.UserSearch200Response
+# Gitea.Net.Model.UserSearch200Response
 
 ## Properties
 

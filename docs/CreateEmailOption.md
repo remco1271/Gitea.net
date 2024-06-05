@@ -1,4 +1,4 @@
-# Org.OpenAPITools.Model.CreateEmailOption
+# Gitea.Net.Model.CreateEmailOption
 CreateEmailOption options when creating email addresses
 
 ## Properties

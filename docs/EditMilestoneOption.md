@@ -1,4 +1,4 @@
-# Org.OpenAPITools.Model.EditMilestoneOption
+# Gitea.Net.Model.EditMilestoneOption
 EditMilestoneOption options for editing a milestone
 
 ## Properties

@@ -1,4 +1,4 @@
-# Org.OpenAPITools.Model.GeneralAttachmentSettings
+# Gitea.Net.Model.GeneralAttachmentSettings
 GeneralAttachmentSettings contains global Attachment settings exposed by API
 
 ## Properties

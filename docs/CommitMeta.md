@@ -1,4 +1,4 @@
-# Org.OpenAPITools.Model.CommitMeta
+# Gitea.Net.Model.CommitMeta
 
 ## Properties
 

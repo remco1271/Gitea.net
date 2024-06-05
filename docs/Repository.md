@@ -1,4 +1,4 @@
-# Org.OpenAPITools.Model.Repository
+# Gitea.Net.Model.Repository
 Repository represents a repository
 
 ## Properties

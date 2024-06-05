@@ -1,4 +1,4 @@
-# Org.OpenAPITools.Model.RepositoryMeta
+# Gitea.Net.Model.RepositoryMeta
 RepositoryMeta basic repository information
 
 ## Properties

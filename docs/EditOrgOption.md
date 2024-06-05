@@ -1,4 +1,4 @@
-# Org.OpenAPITools.Model.EditOrgOption
+# Gitea.Net.Model.EditOrgOption
 EditOrgOption options for editing an organization
 
 ## Properties

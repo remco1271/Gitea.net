@@ -1,4 +1,4 @@
-# Org.OpenAPITools.Model.LicensesTemplateListEntry
+# Gitea.Net.Model.LicensesTemplateListEntry
 LicensesListEntry is used for the API
 
 ## Properties

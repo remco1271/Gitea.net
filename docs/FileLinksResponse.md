@@ -1,4 +1,4 @@
-# Org.OpenAPITools.Model.FileLinksResponse
+# Gitea.Net.Model.FileLinksResponse
 FileLinksResponse contains the links for a repo's file
 
 ## Properties

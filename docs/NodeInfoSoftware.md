@@ -1,4 +1,4 @@
-# Org.OpenAPITools.Model.NodeInfoSoftware
+# Gitea.Net.Model.NodeInfoSoftware
 NodeInfoSoftware contains Metadata about server software in use
 
 ## Properties

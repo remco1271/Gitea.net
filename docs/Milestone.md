@@ -1,4 +1,4 @@
-# Org.OpenAPITools.Model.Milestone
+# Gitea.Net.Model.Milestone
 Milestone milestone is a collection of issues on one repository
 
 ## Properties

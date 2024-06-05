@@ -1,4 +1,4 @@
-# Org.OpenAPITools.Model.CommitDateOptions
+# Gitea.Net.Model.CommitDateOptions
 CommitDateOptions store dates for GIT_AUTHOR_DATE and GIT_COMMITTER_DATE
 
 ## Properties

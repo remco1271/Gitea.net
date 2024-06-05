@@ -1,4 +1,4 @@
-# Org.OpenAPITools.Model.Email
+# Gitea.Net.Model.Email
 Email an email address belonging to a user
 
 ## Properties

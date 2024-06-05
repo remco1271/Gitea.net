@@ -1,4 +1,4 @@
-# Org.OpenAPITools.Model.Attachment
+# Gitea.Net.Model.Attachment
 Attachment a generic attachment
 
 ## Properties

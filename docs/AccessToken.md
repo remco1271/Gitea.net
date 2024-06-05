@@ -1,4 +1,4 @@
-# Org.OpenAPITools.Model.AccessToken
+# Gitea.Net.Model.AccessToken
 
 ## Properties
 

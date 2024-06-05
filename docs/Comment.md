@@ -1,4 +1,4 @@
-# Org.OpenAPITools.Model.Comment
+# Gitea.Net.Model.Comment
 Comment represents a comment on a commit or issue
 
 ## Properties

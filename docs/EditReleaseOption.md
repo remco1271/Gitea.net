@@ -1,4 +1,4 @@
-# Org.OpenAPITools.Model.EditReleaseOption
+# Gitea.Net.Model.EditReleaseOption
 EditReleaseOption options when editing a release
 
 ## Properties

@@ -1,4 +1,4 @@
-# Org.OpenAPITools.Model.EditIssueCommentOption
+# Gitea.Net.Model.EditIssueCommentOption
 EditIssueCommentOption options for editing a comment
 
 ## Properties

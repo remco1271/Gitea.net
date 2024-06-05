@@ -1,4 +1,4 @@
-# Org.OpenAPITools.Model.GitignoreTemplateInfo
+# Gitea.Net.Model.GitignoreTemplateInfo
 GitignoreTemplateInfo name and text of a gitignore template
 
 ## Properties

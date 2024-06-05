@@ -1,4 +1,4 @@
-# Org.OpenAPITools.Model.EditPullRequestOption
+# Gitea.Net.Model.EditPullRequestOption
 EditPullRequestOption options when modify pull request
 
 ## Properties

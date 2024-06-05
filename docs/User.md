@@ -1,4 +1,4 @@
-# Org.OpenAPITools.Model.User
+# Gitea.Net.Model.User
 User represents a user
 
 ## Properties

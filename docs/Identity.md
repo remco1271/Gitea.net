@@ -1,4 +1,4 @@
-# Org.OpenAPITools.Model.Identity
+# Gitea.Net.Model.Identity
 Identity for a person's identity like an author or committer
 
 ## Properties

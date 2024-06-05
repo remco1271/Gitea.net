@@ -1,4 +1,4 @@
-# Org.OpenAPITools.Model.DeleteFileOptions
+# Gitea.Net.Model.DeleteFileOptions
 DeleteFileOptions options for deleting files (used for other File structs below) Note: `author` and `committer` are optional (if only one is given, it will be used for the other, otherwise the authenticated user will be used)
 
 ## Properties

@@ -1,4 +1,4 @@
-# Org.OpenAPITools.Model.GeneralAPISettings
+# Gitea.Net.Model.GeneralAPISettings
 GeneralAPISettings contains global api settings exposed by it
 
 ## Properties

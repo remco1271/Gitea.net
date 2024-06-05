@@ -1,4 +1,4 @@
-# Org.OpenAPITools.Model.NodeInfoUsageUsers
+# Gitea.Net.Model.NodeInfoUsageUsers
 NodeInfoUsageUsers contains statistics about the users of this server
 
 ## Properties

@@ -1,4 +1,4 @@
-# Org.OpenAPITools.Model.Activity
+# Gitea.Net.Model.Activity
 
 ## Properties
 

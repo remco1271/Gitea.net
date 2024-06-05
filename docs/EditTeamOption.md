@@ -1,4 +1,4 @@
-# Org.OpenAPITools.Model.EditTeamOption
+# Gitea.Net.Model.EditTeamOption
 EditTeamOption options for editing a team
 
 ## Properties

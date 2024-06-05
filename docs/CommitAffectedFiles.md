@@ -1,4 +1,4 @@
-# Org.OpenAPITools.Model.CommitAffectedFiles
+# Gitea.Net.Model.CommitAffectedFiles
 CommitAffectedFiles store information about files affected by the commit
 
 ## Properties

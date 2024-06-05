@@ -1,4 +1,4 @@
-# Org.OpenAPITools.Model.AddTimeOption
+# Gitea.Net.Model.AddTimeOption
 AddTimeOption options for adding time to an issue
 
 ## Properties

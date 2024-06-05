@@ -1,4 +1,4 @@
-# Org.OpenAPITools.Model.CommitStatus
+# Gitea.Net.Model.CommitStatus
 CommitStatus holds a single status of a single Commit
 
 ## Properties

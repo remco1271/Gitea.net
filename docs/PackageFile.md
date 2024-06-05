@@ -1,4 +1,4 @@
-# Org.OpenAPITools.Model.PackageFile
+# Gitea.Net.Model.PackageFile
 PackageFile represents a package file
 
 ## Properties

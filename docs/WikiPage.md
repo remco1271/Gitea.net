@@ -1,4 +1,4 @@
-# Org.OpenAPITools.Model.WikiPage
+# Gitea.Net.Model.WikiPage
 WikiPage a wiki page
 
 ## Properties

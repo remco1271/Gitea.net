@@ -1,4 +1,4 @@
-# Org.OpenAPITools.Model.Tag
+# Gitea.Net.Model.Tag
 Tag represents a repository tag
 
 ## Properties

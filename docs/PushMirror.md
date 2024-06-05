@@ -1,4 +1,4 @@
-# Org.OpenAPITools.Model.PushMirror
+# Gitea.Net.Model.PushMirror
 PushMirror represents information of a push mirror
 
 ## Properties

@@ -1,4 +1,4 @@
-# Org.OpenAPITools.Model.EditAttachmentOptions
+# Gitea.Net.Model.EditAttachmentOptions
 EditAttachmentOptions options for editing attachments
 
 ## Properties

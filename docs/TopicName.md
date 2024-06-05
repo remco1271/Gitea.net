@@ -1,4 +1,4 @@
-# Org.OpenAPITools.Model.TopicName
+# Gitea.Net.Model.TopicName
 TopicName a list of repo topic names
 
 ## Properties

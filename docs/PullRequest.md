@@ -1,4 +1,4 @@
-# Org.OpenAPITools.Model.PullRequest
+# Gitea.Net.Model.PullRequest
 PullRequest represents a pull request
 
 ## Properties

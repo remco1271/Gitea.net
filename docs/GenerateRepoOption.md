@@ -1,4 +1,4 @@
-# Org.OpenAPITools.Model.GenerateRepoOption
+# Gitea.Net.Model.GenerateRepoOption
 GenerateRepoOption options when creating repository using a template
 
 ## Properties

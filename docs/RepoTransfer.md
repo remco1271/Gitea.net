@@ -1,4 +1,4 @@
-# Org.OpenAPITools.Model.RepoTransfer
+# Gitea.Net.Model.RepoTransfer
 RepoTransfer represents a pending repo transfer
 
 ## Properties

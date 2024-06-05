@@ -1,4 +1,4 @@
-# Org.OpenAPITools.Model.PayloadCommit
+# Gitea.Net.Model.PayloadCommit
 PayloadCommit represents a commit
 
 ## Properties

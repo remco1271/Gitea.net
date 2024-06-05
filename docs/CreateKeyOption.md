@@ -1,4 +1,4 @@
-# Org.OpenAPITools.Model.CreateKeyOption
+# Gitea.Net.Model.CreateKeyOption
 CreateKeyOption options when creating a key
 
 ## Properties

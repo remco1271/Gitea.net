@@ -1,4 +1,4 @@
-# Org.OpenAPITools.Model.NotificationThread
+# Gitea.Net.Model.NotificationThread
 NotificationThread expose Notification on API
 
 ## Properties

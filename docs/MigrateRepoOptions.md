@@ -1,4 +1,4 @@
-# Org.OpenAPITools.Model.MigrateRepoOptions
+# Gitea.Net.Model.MigrateRepoOptions
 MigrateRepoOptions options for migrating repository's this is used to interact with api v1
 
 ## Properties

@@ -1,4 +1,4 @@
-# Org.OpenAPITools.Model.UserBadgeOption
+# Gitea.Net.Model.UserBadgeOption
 UserBadgeOption options for link between users and badges
 
 ## Properties

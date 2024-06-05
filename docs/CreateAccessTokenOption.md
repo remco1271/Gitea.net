@@ -1,4 +1,4 @@
-# Org.OpenAPITools.Model.CreateAccessTokenOption
+# Gitea.Net.Model.CreateAccessTokenOption
 CreateAccessTokenOption options when create access token
 
 ## Properties

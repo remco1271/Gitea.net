@@ -1,4 +1,4 @@
-# Org.OpenAPITools.Model.PullReview
+# Gitea.Net.Model.PullReview
 PullReview represents a pull request review
 
 ## Properties

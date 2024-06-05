@@ -1,4 +1,4 @@
-# Org.OpenAPITools.Model.MarkdownOption
+# Gitea.Net.Model.MarkdownOption
 MarkdownOption markdown options
 
 ## Properties

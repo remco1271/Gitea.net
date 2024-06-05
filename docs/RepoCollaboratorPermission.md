@@ -1,4 +1,4 @@
-# Org.OpenAPITools.Model.RepoCollaboratorPermission
+# Gitea.Net.Model.RepoCollaboratorPermission
 RepoCollaboratorPermission to get repository permission for a collaborator
 
 ## Properties

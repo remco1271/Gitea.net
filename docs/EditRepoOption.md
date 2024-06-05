@@ -1,4 +1,4 @@
-# Org.OpenAPITools.Model.EditRepoOption
+# Gitea.Net.Model.EditRepoOption
 EditRepoOption options when editing a repository's properties
 
 ## Properties

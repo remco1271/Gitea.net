@@ -1,4 +1,4 @@
-# Org.OpenAPITools.Model.GitObject
+# Gitea.Net.Model.GitObject
 
 ## Properties
 

@@ -1,4 +1,4 @@
-# Org.OpenAPITools.Model.GitEntry
+# Gitea.Net.Model.GitEntry
 GitEntry represents a git tree
 
 ## Properties

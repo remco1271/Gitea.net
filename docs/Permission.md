@@ -1,4 +1,4 @@
-# Org.OpenAPITools.Model.Permission
+# Gitea.Net.Model.Permission
 Permission represents a set of permissions
 
 ## Properties

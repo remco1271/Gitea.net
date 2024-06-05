@@ -1,4 +1,4 @@
-# Org.OpenAPITools.Model.OrganizationPermissions
+# Gitea.Net.Model.OrganizationPermissions
 OrganizationPermissions list different users permissions on an organization
 
 ## Properties

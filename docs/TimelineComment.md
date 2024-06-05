@@ -1,4 +1,4 @@
-# Org.OpenAPITools.Model.TimelineComment
+# Gitea.Net.Model.TimelineComment
 TimelineComment represents a timeline comment (comment of any type) on a commit or issue
 
 ## Properties

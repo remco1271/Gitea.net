@@ -1,4 +1,4 @@
-# Org.OpenAPITools.Model.RenameUserOption
+# Gitea.Net.Model.RenameUserOption
 RenameUserOption options when renaming a user
 
 ## Properties

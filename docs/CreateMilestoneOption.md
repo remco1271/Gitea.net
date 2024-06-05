@@ -1,4 +1,4 @@
-# Org.OpenAPITools.Model.CreateMilestoneOption
+# Gitea.Net.Model.CreateMilestoneOption
 CreateMilestoneOption options for creating a milestone
 
 ## Properties

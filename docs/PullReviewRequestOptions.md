@@ -1,4 +1,4 @@
-# Org.OpenAPITools.Model.PullReviewRequestOptions
+# Gitea.Net.Model.PullReviewRequestOptions
 PullReviewRequestOptions are options to add or remove pull review requests
 
 ## Properties

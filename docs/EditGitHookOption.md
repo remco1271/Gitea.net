@@ -1,4 +1,4 @@
-# Org.OpenAPITools.Model.EditGitHookOption
+# Gitea.Net.Model.EditGitHookOption
 EditGitHookOption options when modifying one Git hook
 
 ## Properties

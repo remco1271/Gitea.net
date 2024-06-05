@@ -1,4 +1,4 @@
-# Org.OpenAPITools.Model.Cron
+# Gitea.Net.Model.Cron
 Cron represents a Cron task
 
 ## Properties

@@ -1,4 +1,4 @@
-# Org.OpenAPITools.Model.Label
+# Gitea.Net.Model.Label
 Label a label to an issue or a pr
 
 ## Properties

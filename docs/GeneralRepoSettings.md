@@ -1,4 +1,4 @@
-# Org.OpenAPITools.Model.GeneralRepoSettings
+# Gitea.Net.Model.GeneralRepoSettings
 GeneralRepoSettings contains global repository settings exposed by API
 
 ## Properties

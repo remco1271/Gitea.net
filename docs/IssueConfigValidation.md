@@ -1,4 +1,4 @@
-# Org.OpenAPITools.Model.IssueConfigValidation
+# Gitea.Net.Model.IssueConfigValidation
 
 ## Properties
 

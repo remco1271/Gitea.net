@@ -1,4 +1,4 @@
-# Org.OpenAPITools.Model.CreateGPGKeyOption
+# Gitea.Net.Model.CreateGPGKeyOption
 CreateGPGKeyOption options create user GPG key
 
 ## Properties

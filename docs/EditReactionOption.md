@@ -1,4 +1,4 @@
-# Org.OpenAPITools.Model.EditReactionOption
+# Gitea.Net.Model.EditReactionOption
 EditReactionOption contain the reaction type
 
 ## Properties

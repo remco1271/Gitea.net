@@ -1,4 +1,4 @@
-# Org.OpenAPITools.Model.IssueMeta
+# Gitea.Net.Model.IssueMeta
 IssueMeta basic issue information
 
 ## Properties

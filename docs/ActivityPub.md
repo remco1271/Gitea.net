@@ -1,4 +1,4 @@
-# Org.OpenAPITools.Model.ActivityPub
+# Gitea.Net.Model.ActivityPub
 ActivityPub type
 
 ## Properties

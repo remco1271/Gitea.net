@@ -1,4 +1,4 @@
-# Org.OpenAPITools.Model.CreateStatusOption
+# Gitea.Net.Model.CreateStatusOption
 CreateStatusOption holds the information needed to create a new CommitStatus for a Commit
 
 ## Properties

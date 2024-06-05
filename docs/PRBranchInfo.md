@@ -1,4 +1,4 @@
-# Org.OpenAPITools.Model.PRBranchInfo
+# Gitea.Net.Model.PRBranchInfo
 PRBranchInfo information about a branch
 
 ## Properties

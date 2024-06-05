@@ -1,4 +1,4 @@
-# Org.OpenAPITools.Model.CreateIssueCommentOption
+# Gitea.Net.Model.CreateIssueCommentOption
 CreateIssueCommentOption options for creating a comment on an issue
 
 ## Properties

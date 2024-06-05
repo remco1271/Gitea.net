@@ -1,4 +1,4 @@
-# Org.OpenAPITools.Model.TrackedTime
+# Gitea.Net.Model.TrackedTime
 TrackedTime worked time for an issue / pr
 
 ## Properties

@@ -1,4 +1,4 @@
-# Org.OpenAPITools.Model.CreatePullReviewOptions
+# Gitea.Net.Model.CreatePullReviewOptions
 CreatePullReviewOptions are options to create a pull review
 
 ## Properties

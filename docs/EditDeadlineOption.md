@@ -1,4 +1,4 @@
-# Org.OpenAPITools.Model.EditDeadlineOption
+# Gitea.Net.Model.EditDeadlineOption
 EditDeadlineOption options for creating a deadline
 
 ## Properties

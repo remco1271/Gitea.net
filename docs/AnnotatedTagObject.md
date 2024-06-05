@@ -1,4 +1,4 @@
-# Org.OpenAPITools.Model.AnnotatedTagObject
+# Gitea.Net.Model.AnnotatedTagObject
 AnnotatedTagObject contains meta information of the tag object
 
 ## Properties

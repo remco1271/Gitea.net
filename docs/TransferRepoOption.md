@@ -1,4 +1,4 @@
-# Org.OpenAPITools.Model.TransferRepoOption
+# Gitea.Net.Model.TransferRepoOption
 TransferRepoOption options when transfer a repository's ownership
 
 ## Properties

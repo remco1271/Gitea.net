@@ -1,4 +1,4 @@
-# Org.OpenAPITools.Model.GPGKeyEmail
+# Gitea.Net.Model.GPGKeyEmail
 GPGKeyEmail an email attached to a GPGKey
 
 ## Properties

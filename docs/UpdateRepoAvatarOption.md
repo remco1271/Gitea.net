@@ -1,4 +1,4 @@
-# Org.OpenAPITools.Model.UpdateRepoAvatarOption
+# Gitea.Net.Model.UpdateRepoAvatarOption
 UpdateRepoAvatarUserOption options when updating the repo avatar
 
 ## Properties

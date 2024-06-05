@@ -1,4 +1,4 @@
-# Org.OpenAPITools.Model.TeamSearch200Response
+# Gitea.Net.Model.TeamSearch200Response
 
 ## Properties
 

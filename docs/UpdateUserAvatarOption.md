@@ -1,4 +1,4 @@
-# Org.OpenAPITools.Model.UpdateUserAvatarOption
+# Gitea.Net.Model.UpdateUserAvatarOption
 UpdateUserAvatarUserOption options when updating the user avatar
 
 ## Properties

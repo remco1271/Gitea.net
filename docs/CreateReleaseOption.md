@@ -1,4 +1,4 @@
-# Org.OpenAPITools.Model.CreateReleaseOption
+# Gitea.Net.Model.CreateReleaseOption
 CreateReleaseOption options when creating a release
 
 ## Properties

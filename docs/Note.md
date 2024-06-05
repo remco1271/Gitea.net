@@ -1,4 +1,4 @@
-# Org.OpenAPITools.Model.Note
+# Gitea.Net.Model.Note
 Note contains information related to a git note
 
 ## Properties

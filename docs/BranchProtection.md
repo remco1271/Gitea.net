@@ -1,4 +1,4 @@
-# Org.OpenAPITools.Model.BranchProtection
+# Gitea.Net.Model.BranchProtection
 BranchProtection represents a branch protection for a repository
 
 ## Properties

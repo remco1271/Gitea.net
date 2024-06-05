@@ -1,4 +1,4 @@
-# Org.OpenAPITools.Model.PayloadCommitVerification
+# Gitea.Net.Model.PayloadCommitVerification
 PayloadCommitVerification represents the GPG verification of a commit
 
 ## Properties

@@ -1,4 +1,4 @@
-# Org.OpenAPITools.Model.ExternalTracker
+# Gitea.Net.Model.ExternalTracker
 ExternalTracker represents settings for external tracker
 
 ## Properties

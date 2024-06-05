@@ -1,4 +1,4 @@
-# Org.OpenAPITools.Model.CreatePushMirrorOption
+# Gitea.Net.Model.CreatePushMirrorOption
 
 ## Properties
 

@@ -1,4 +1,4 @@
-# Org.OpenAPITools.Model.GitBlobResponse
+# Gitea.Net.Model.GitBlobResponse
 GitBlobResponse represents a git blob
 
 ## Properties

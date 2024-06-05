@@ -1,4 +1,4 @@
-# Org.OpenAPITools.Model.Hook
+# Gitea.Net.Model.Hook
 Hook a hook is a web hook when one repository changed
 
 ## Properties

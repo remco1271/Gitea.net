@@ -1,4 +1,4 @@
-# Org.OpenAPITools.Model.CreateTeamOption
+# Gitea.Net.Model.CreateTeamOption
 CreateTeamOption options for creating a team
 
 ## Properties

@@ -1,4 +1,4 @@
-# Org.OpenAPITools.Model.Release
+# Gitea.Net.Model.Release
 Release represents a repository release
 
 ## Properties

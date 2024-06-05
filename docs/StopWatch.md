@@ -1,4 +1,4 @@
-# Org.OpenAPITools.Model.StopWatch
+# Gitea.Net.Model.StopWatch
 StopWatch represent a running stopwatch
 
 ## Properties

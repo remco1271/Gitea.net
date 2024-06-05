@@ -1,4 +1,4 @@
-# Org.OpenAPITools.Model.DeleteEmailOption
+# Gitea.Net.Model.DeleteEmailOption
 DeleteEmailOption options when deleting email addresses
 
 ## Properties

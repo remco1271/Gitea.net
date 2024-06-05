@@ -1,4 +1,4 @@
-# Org.OpenAPITools.Model.UserSettings
+# Gitea.Net.Model.UserSettings
 UserSettings represents user settings
 
 ## Properties

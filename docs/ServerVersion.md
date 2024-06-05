@@ -1,4 +1,4 @@
-# Org.OpenAPITools.Model.ServerVersion
+# Gitea.Net.Model.ServerVersion
 ServerVersion wraps the version of the server
 
 ## Properties

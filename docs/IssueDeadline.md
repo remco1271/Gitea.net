@@ -1,4 +1,4 @@
-# Org.OpenAPITools.Model.IssueDeadline
+# Gitea.Net.Model.IssueDeadline
 IssueDeadline represents an issue deadline
 
 ## Properties

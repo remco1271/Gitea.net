@@ -1,4 +1,4 @@
-# Org.OpenAPITools.Model.IssueConfigContactLink
+# Gitea.Net.Model.IssueConfigContactLink
 
 ## Properties
 

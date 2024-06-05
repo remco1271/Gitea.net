@@ -1,4 +1,4 @@
-# Org.OpenAPITools.Model.CreateIssueOption
+# Gitea.Net.Model.CreateIssueOption
 CreateIssueOption options to create one issue
 
 ## Properties
