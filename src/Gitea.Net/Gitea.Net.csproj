@@ -55,8 +55,8 @@
 </PropertyGroup>
   <ItemGroup>
     <PackageReference Include="JsonSubTypes" Version="2.0.1" />
-    <PackageReference Include="RestSharp" Version="112.1.0" />
-    <PackageReference Include="Polly" Version="8.4.2" />
+    <PackageReference Include="RestSharp" Version="111.2.0" />
+    <PackageReference Include="Polly" Version="8.4.0" />
     <PackageReference Include="Microsoft.AspNetCore.SystemWebAdapters" Version="1.3.0" />
     <PackageReference Include="Newtonsoft.Json" Version="13.0.3" />
   </ItemGroup>
