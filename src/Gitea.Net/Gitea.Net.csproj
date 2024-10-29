@@ -37,6 +37,20 @@
   <IncludeSymbols>True</IncludeSymbols>
   <SymbolPackageFormat>snupkg</SymbolPackageFormat>
 </PropertyGroup>
+	<PropertyGroup>
+		<GenerateNuspecDependsOn>$(GenerateNuspecDependsOn);SetPackageVersion</GenerateNuspecDependsOn>
+	</PropertyGroup>
+
+	<Target Name="SetPackageVersion" DependsOnTargets="Build">
+		<PropertyGroup>
+			<!-- <PackageVersion>$([System.DateTime]::Now.ToString(&quot;yyyy.MM.dd.HHmmss&quot;))</PackageVersion> -->
+			<!-- You can customize the format and the rule about how version increases here. -->
+			<PackageVersion>$([System.DateTime]::Now.ToString(&quot;yy.MM.dd&quot;))</PackageVersion>
+		</PropertyGroup>
+	</Target>
+	<PropertyGroup>
+		<GenerateNuspecDependsOn>$(GenerateNuspecDependsOn);SetPackageVersion</GenerateNuspecDependsOn>
+	</PropertyGroup>
 
 <ItemGroup>
 	<None Include="MIT-LICENSE.txt" Pack="true" PackagePath="" />
