@@ -1,0 +1,60 @@
+name: Build
+
+on: 
+  push:
+    branches: [master]
+  pull_request:
+    branches: [master]
+  workflow_dispatch:
+
+permissions:
+  id-token: write
+  actions: write
+  contents: read
+
+env:
+  CODECOV_TOKEN: ${{ secrets.CODECOV_TOKEN }}
+
+jobs:
+  package:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Setup dotnet
+        uses: actions/setup-dotnet@v4
+        with:
+          dotnet-version: |
+            6.0.x
+            8.0.x
+            9.0.x
+      - name: Print dotnet version
+        run: dotnet --info
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - uses: dotnet/nbgv@master
+        with:
+          setAllVars: true
+      - name: Build .NET
+        run: dotnet build -c Release
+      - name: Write Version File
+        run: echo $NBGV_NuGetPackageVersion > version.txt
+      - name: Upload version file as artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: build-version
+          path: version.txt
+      - name: Upload Package Artifacts
+        uses: actions/upload-artifact@v4
+        with:
+          name: packages
+          path: build/Release/*nupkg
+
+  # release:
+  #   runs-on: ubuntu-latest
+  #   if: github.event_name == 'push' && github.ref == 'refs/heads/master'
+  #   steps:
+  #     - name: Invoke Release Workflow
+  #       uses: benc-uk/workflow-dispatch@v1
+  #       with:
+  #         workflow: release.yml
+  #         inputs: '{ "workflow_run_id": "${{ github.run_id }}" }'
