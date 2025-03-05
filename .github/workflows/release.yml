@@ -25,6 +25,14 @@ jobs:
           run-id: ${{ github.event.inputs.workflow_run_id }}
           github-token: ${{ secrets.GITHUB_TOKEN }}
           path: ./
+
+      - name: Download package
+        uses: actions/download-artifact@v4
+        with:
+          name: packages
+          run-id: ${{ github.event.inputs.workflow_run_id }}
+          github-token: ${{ secrets.GITHUB_TOKEN }}
+          path: ./packages
           
       - name: Load version from file
         run: |
@@ -160,10 +168,10 @@ jobs:
 
           # Upload artifacts
           Write-Host "Uploading artifacts..."
-          gh release upload $currentTag (get-item ../src/Gitea.Net/bin/Release/*.nupkg)
+          gh release upload $currentTag (get-item ../packages/*.nupkg)
 
       - name: Publish NuGet Packages
         run: |
-          for f in src/Gitea.Net/bin/Release/*.nupkg; do
+          for f in packages/*.nupkg; do
             dotnet nuget push "$f" -k ${{ secrets.NUGET_API_KEY }} -s https://api.nuget.org/v3/index.json --skip-duplicate
           done
