@@ -37,7 +37,7 @@ jobs:
       - name: Build .NET
         run: dotnet build -c Release
       - name: Create Package
-        run: dotnet pack
+        run: dotnet pack -c Release -p:PackageVersion=$NBGV_NuGetPackageVersion
       - name: Write Version File
         run: echo $NBGV_NuGetPackageVersion > version.txt
       - name: Upload version file as artifact
