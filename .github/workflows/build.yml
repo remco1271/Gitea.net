@@ -51,12 +51,12 @@ jobs:
           name: packages
           path: src/Gitea.Net/bin/Release/*nupkg
 
-  # release:
-  #   runs-on: ubuntu-latest
-  #   if: github.event_name == 'push' && github.ref == 'refs/heads/master'
-  #   steps:
-  #     - name: Invoke Release Workflow
-  #       uses: benc-uk/workflow-dispatch@v1
-  #       with:
-  #         workflow: release.yml
-  #         inputs: '{ "workflow_run_id": "${{ github.run_id }}" }'
+  release:
+    runs-on: ubuntu-latest
+    if: github.event_name == 'push' && github.ref == 'refs/heads/master'
+    steps:
+      - name: Invoke Release Workflow
+        uses: benc-uk/workflow-dispatch@v1
+        with:
+          workflow: release.yml
+          inputs: '{ "workflow_run_id": "${{ github.run_id }}" }'
