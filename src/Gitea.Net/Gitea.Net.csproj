@@ -1,7 +1,7 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
   <PropertyGroup>
     <GenerateAssemblyInfo>false</GenerateAssemblyInfo>
-	<GenerateTargetFrameworkAttribute>false</GenerateTargetFrameworkAttribute>
+    <GenerateTargetFrameworkAttribute>false</GenerateTargetFrameworkAttribute>
     <!-- setting GenerateAssemblyInfo to false causes this bug https://github.com/dotnet/project-system/issues/3934 -->
     <TargetFramework>netstandard2.0</TargetFramework>
     <AssemblyName>Gitea.Net</AssemblyName>
@@ -17,63 +17,61 @@
     <DocumentationFile>bin\$(Configuration)\$(TargetFramework)\Gitea.Net.xml</DocumentationFile>
     <RepositoryUrl>https://github.com/remco1271/Gitea.net.git</RepositoryUrl>
     <RepositoryType>git</RepositoryType>
-    <PackageReleaseNotes></PackageReleaseNotes>
+    <PackageReleaseNotes>
+    </PackageReleaseNotes>
     <GeneratePackageOnBuild>True</GeneratePackageOnBuild>
     <Title>Gitea.Net</Title>
     <PackageProjectUrl>https://github.com/remco1271/Gitea.net</PackageProjectUrl>
     <PackageIcon>Gitea Icon.png</PackageIcon>
     <PackageReadmeFile>README.md</PackageReadmeFile>
   </PropertyGroup>
-	<!-- Set the LangVersion = 8 -->
-<PropertyGroup>
+  <!-- Set the LangVersion = 8 -->
+  <PropertyGroup>
     <TargetFrameworks>netstandard2.0</TargetFrameworks>
-	<!--<TargetFrameworks>netstandard2.0;netstandard2.1</TargetFrameworks>-->
+    <!--<TargetFrameworks>netstandard2.0;netstandard2.1</TargetFrameworks>-->
     <LangVersion>8.0</LangVersion>
-</PropertyGroup>
-<PropertyGroup>
-  <VersionPrefix>1.0.2</VersionPrefix>
-  <VersionSuffix></VersionSuffix>
-  <!--<PackageLicenseFile>MIT-LICENSE.txt</PackageLicenseFile>-->
-  <IncludeSymbols>True</IncludeSymbols>
-  <SymbolPackageFormat>snupkg</SymbolPackageFormat>
-</PropertyGroup>
-	<PropertyGroup>
-		<GenerateNuspecDependsOn>$(GenerateNuspecDependsOn);SetPackageVersion</GenerateNuspecDependsOn>
-	</PropertyGroup>
-
-	<Target Name="SetPackageVersion" DependsOnTargets="Build">
-		<PropertyGroup>
-			<!-- <PackageVersion>$([System.DateTime]::Now.ToString(&quot;yyyy.MM.dd.HHmmss&quot;))</PackageVersion> -->
-			<!-- You can customize the format and the rule about how version increases here. -->
-			<PackageVersion>$([System.DateTime]::Now.ToString(&quot;yy.MM.dd&quot;))</PackageVersion>
-		</PropertyGroup>
-	</Target>
-	<PropertyGroup>
-		<GenerateNuspecDependsOn>$(GenerateNuspecDependsOn);SetPackageVersion</GenerateNuspecDependsOn>
-	</PropertyGroup>
-
-<ItemGroup>
-	<None Include="MIT-LICENSE.txt" Pack="true" PackagePath="" />
-</ItemGroup>
-<PropertyGroup>
-	<PackageLicenseExpression>MIT</PackageLicenseExpression>
-</PropertyGroup>
-
-	<!-- Only enable nullable feature for the supported frameworks -->
-<PropertyGroup Condition=" '$(TargetFramework)' != 'netstandard2.0' ">
+  </PropertyGroup>
+  <PropertyGroup>
+    <VersionPrefix>1.0.2</VersionPrefix>
+    <VersionSuffix>
+    </VersionSuffix>
+    <!--<PackageLicenseFile>MIT-LICENSE.txt</PackageLicenseFile>-->
+    <IncludeSymbols>True</IncludeSymbols>
+    <SymbolPackageFormat>snupkg</SymbolPackageFormat>
+  </PropertyGroup>
+  <PropertyGroup>
+    <GenerateNuspecDependsOn>$(GenerateNuspecDependsOn);SetPackageVersion</GenerateNuspecDependsOn>
+  </PropertyGroup>
+  <Target Name="SetPackageVersion" DependsOnTargets="Build">
+    <PropertyGroup>
+      <!-- <PackageVersion>$([System.DateTime]::Now.ToString(&quot;yyyy.MM.dd.HHmmss&quot;))</PackageVersion> -->
+      <!-- You can customize the format and the rule about how version increases here. -->
+      <PackageVersion>$([System.DateTime]::Now.ToString("yy.MM.dd"))</PackageVersion>
+    </PropertyGroup>
+  </Target>
+  <PropertyGroup>
+    <GenerateNuspecDependsOn>$(GenerateNuspecDependsOn);SetPackageVersion</GenerateNuspecDependsOn>
+  </PropertyGroup>
+  <ItemGroup>
+    <None Include="MIT-LICENSE.txt" Pack="true" PackagePath="" />
+  </ItemGroup>
+  <PropertyGroup>
+    <PackageLicenseExpression>MIT</PackageLicenseExpression>
+  </PropertyGroup>
+  <!-- Only enable nullable feature for the supported frameworks -->
+  <PropertyGroup Condition=" '$(TargetFramework)' != 'netstandard2.0' ">
     <Nullable>enable</Nullable>
-</PropertyGroup>
-<PropertyGroup Condition=" '$(TargetFramework)' == 'netstandard2.0' ">
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(TargetFramework)' == 'netstandard2.0' ">
     <ImplicitUsings>disable</ImplicitUsings>
     <Nullable>disable</Nullable>
-</PropertyGroup>
+  </PropertyGroup>
   <ItemGroup>
-    <PackageReference Include="JsonSubTypes" Version="2.0.1" />
-    <PackageReference Include="RestSharp" Version="112.1.0" />
-    <PackageReference Include="Polly" Version="8.6.1" />
-    <PackageReference Include="Microsoft.AspNetCore.SystemWebAdapters" Version="2.0.0" />
-    <PackageReference Include="Newtonsoft.Json" Version="13.0.3" />
-    <PackageReference Include="System.Text.Json" Version="9.0.6" />
+    <PackageReference Include="JsonSubTypes" />
+    <PackageReference Include="RestSharp" />
+    <PackageReference Include="Polly" />
+    <PackageReference Include="Newtonsoft.Json" />
+    <PackageReference Include="System.Text.Json" />
   </ItemGroup>
   <ItemGroup>
     <None Remove="System.Web" />
