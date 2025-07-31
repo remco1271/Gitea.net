@@ -8,16 +8,17 @@
  */
 
 
-using Xunit;
-
-using System;
-using System.Linq;
-using System.IO;
-using System.Collections.Generic;
-using Gitea.Net.Model;
+using Gitea.Net.Api;
 using Gitea.Net.Client;
-using System.Reflection;
+using Gitea.Net.Model;
 using Newtonsoft.Json;
+using System;
+using System.Collections.Generic;
+using System.IO;
+using System.Linq;
+using System.Reflection;
+using System.Threading.Tasks;
+using Xunit;
 
 namespace Gitea.Net.Test.Model
 {
@@ -30,18 +31,49 @@ namespace Gitea.Net.Test.Model
     /// </remarks>
     public class ReleaseTests : IDisposable
     {
+        public readonly static string GITEA_TOKEN = Environment.GetEnvironmentVariable("VELOPACK_GITEA_TEST_TOKEN");
+        public readonly static string GITEA_REPOURL = "https://gitea.com/remco1271/VelopackGithubUpdateTest.git";
         // TODO uncomment below to declare an instance variable for Release
         //private Release instance;
-
+        private Configuration config;
         public ReleaseTests()
         {
             // TODO uncomment below to create an instance of Release
             //instance = new Release();
+            // Setup Gitea config
+            config = new Configuration();
+            // Example: http://www.Gitea.com/api/v1
+            var uri = new Uri("https://gitea.com");
+            var baseUri = uri.GetLeftPart(System.UriPartial.Authority);
+            config.BasePath = baseUri + "/api/v1";
+        }
+
+
+        [Fact]
+        public async Task GetRealease()
+        {
+            // TODO uncomment below to test the method and replace null with proper value
+            //var result = instance.GetRelease(GITEA_TOKEN, GITEA_REPOURL, "v1.0.0");
+            //Assert.NotNull(result);
+            //https://gitea.com/remco1271/VeloPackTest.git+
+            var apiInstance = new RepositoryApi(config);
+            ApiResponse<Repository> repositoryInfo = await apiInstance.RepoGetWithHttpInfoAsync("remco1271", "VeloPackTest");
+
+            Assert.NotNull(repositoryInfo);
+            Assert.True(repositoryInfo.StatusCode == System.Net.HttpStatusCode.OK);
+            var allReleases = await apiInstance.RepoListReleasesWithHttpInfoAsync("remco1271", "VeloPackTest", page: 1, limit: (int)repositoryInfo.Data.ReleaseCounter);
+            Assert.NotNull(allReleases.Data);
+            Assert.IsType<List<Gitea.Net.Model.Release>>(allReleases.Data);
+            Assert.True(allReleases.Data.Last().TagName == "1.0.0");
+            //Assert.ThrowsAny<ApiException>(() => apiInstance.RepoGetWithHttpInfoAsync("remco1271", "VeloPackTest").ConfigureAwait(true).GetAwaiter());
+
+
         }
 
         public void Dispose()
         {
             // Cleanup when everything is done.
+            
         }
 
         /// <summary>
