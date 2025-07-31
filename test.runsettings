@@ -1,0 +1,13 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- File name extension must be .runsettings -->
+<RunSettings>
+  <RunConfiguration>
+    <EnvironmentVariables>
+      <!-- List of environment variables we want to set-->
+      <!--<VELOPACK_GITEA_SERVER>https://example.giteaserver.com</VELOPACK_GITEA_SERVER>-->
+      <VELOPACK_GITEA_USERNAME>remco1271</VELOPACK_GITEA_USERNAME>
+      <VELOPACK_GITEA_RELEASE_REPO>GiteaTest</VELOPACK_GITEA_RELEASE_REPO>
+      <VELOPACK_GITEA_TEST_TOKEN>Random token here</VELOPACK_GITEA_TEST_TOKEN>
+    </EnvironmentVariables>
+  </RunConfiguration>
+</RunSettings>
