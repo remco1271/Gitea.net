@@ -3573,7 +3573,7 @@ namespace Gitea.Net.Api
             // authentication (Token) required
             if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("token")))
             {
-                localVarRequestOptions.QueryParameters.Add(Gitea.Net.Client.ClientUtils.ParameterToMultiMap("", "token", this.Configuration.GetApiKeyWithPrefix("token")));
+                localVarRequestOptions.HeaderParameters.Add("Authorization", "token " + this.Configuration.GetApiKeyWithPrefix("token"));
             }
 
             // make the HTTP request
@@ -3677,7 +3677,7 @@ namespace Gitea.Net.Api
             // authentication (Token) required
             if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("token")))
             {
-                localVarRequestOptions.QueryParameters.Add(Gitea.Net.Client.ClientUtils.ParameterToMultiMap("", "token", this.Configuration.GetApiKeyWithPrefix("token")));
+                localVarRequestOptions.HeaderParameters.Add("Authorization", "token " + this.Configuration.GetApiKeyWithPrefix("token"));
             }
 
             // make the HTTP request
@@ -3786,7 +3786,7 @@ namespace Gitea.Net.Api
             // authentication (Token) required
             if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("token")))
             {
-                localVarRequestOptions.QueryParameters.Add(Gitea.Net.Client.ClientUtils.ParameterToMultiMap("", "token", this.Configuration.GetApiKeyWithPrefix("token")));
+                localVarRequestOptions.HeaderParameters.Add("Authorization", "token " + this.Configuration.GetApiKeyWithPrefix("token"));
             }
 
             // make the HTTP request
@@ -3897,7 +3897,7 @@ namespace Gitea.Net.Api
             // authentication (Token) required
             if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("token")))
             {
-                localVarRequestOptions.QueryParameters.Add(Gitea.Net.Client.ClientUtils.ParameterToMultiMap("", "token", this.Configuration.GetApiKeyWithPrefix("token")));
+                localVarRequestOptions.HeaderParameters.Add("Authorization", "token " + this.Configuration.GetApiKeyWithPrefix("token"));
             }
 
             // make the HTTP request
@@ -4002,7 +4002,7 @@ namespace Gitea.Net.Api
             // authentication (Token) required
             if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("token")))
             {
-                localVarRequestOptions.QueryParameters.Add(Gitea.Net.Client.ClientUtils.ParameterToMultiMap("", "token", this.Configuration.GetApiKeyWithPrefix("token")));
+                localVarRequestOptions.HeaderParameters.Add("Authorization", "token " + this.Configuration.GetApiKeyWithPrefix("token"));
             }
 
             // make the HTTP request
@@ -4109,7 +4109,7 @@ namespace Gitea.Net.Api
             // authentication (Token) required
             if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("token")))
             {
-                localVarRequestOptions.QueryParameters.Add(Gitea.Net.Client.ClientUtils.ParameterToMultiMap("", "token", this.Configuration.GetApiKeyWithPrefix("token")));
+                localVarRequestOptions.HeaderParameters.Add("Authorization", "token " + this.Configuration.GetApiKeyWithPrefix("token"));
             }
 
             // make the HTTP request
@@ -4214,7 +4214,7 @@ namespace Gitea.Net.Api
             // authentication (Token) required
             if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("token")))
             {
-                localVarRequestOptions.QueryParameters.Add(Gitea.Net.Client.ClientUtils.ParameterToMultiMap("", "token", this.Configuration.GetApiKeyWithPrefix("token")));
+                localVarRequestOptions.HeaderParameters.Add("Authorization", "token " + this.Configuration.GetApiKeyWithPrefix("token"));
             }
 
             // make the HTTP request
@@ -4321,7 +4321,7 @@ namespace Gitea.Net.Api
             // authentication (Token) required
             if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("token")))
             {
-                localVarRequestOptions.QueryParameters.Add(Gitea.Net.Client.ClientUtils.ParameterToMultiMap("", "token", this.Configuration.GetApiKeyWithPrefix("token")));
+                localVarRequestOptions.HeaderParameters.Add("Authorization", "token " + this.Configuration.GetApiKeyWithPrefix("token"));
             }
 
             // make the HTTP request
@@ -4419,7 +4419,7 @@ namespace Gitea.Net.Api
             // authentication (Token) required
             if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("token")))
             {
-                localVarRequestOptions.QueryParameters.Add(Gitea.Net.Client.ClientUtils.ParameterToMultiMap("", "token", this.Configuration.GetApiKeyWithPrefix("token")));
+                localVarRequestOptions.HeaderParameters.Add("Authorization", "token " + this.Configuration.GetApiKeyWithPrefix("token"));
             }
 
             // make the HTTP request
@@ -4519,7 +4519,7 @@ namespace Gitea.Net.Api
             // authentication (Token) required
             if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("token")))
             {
-                localVarRequestOptions.QueryParameters.Add(Gitea.Net.Client.ClientUtils.ParameterToMultiMap("", "token", this.Configuration.GetApiKeyWithPrefix("token")));
+                localVarRequestOptions.HeaderParameters.Add("Authorization", "token " + this.Configuration.GetApiKeyWithPrefix("token"));
             }
 
             // make the HTTP request
@@ -4626,7 +4626,7 @@ namespace Gitea.Net.Api
             // authentication (Token) required
             if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("token")))
             {
-                localVarRequestOptions.QueryParameters.Add(Gitea.Net.Client.ClientUtils.ParameterToMultiMap("", "token", this.Configuration.GetApiKeyWithPrefix("token")));
+                localVarRequestOptions.HeaderParameters.Add("Authorization", "token " + this.Configuration.GetApiKeyWithPrefix("token"));
             }
 
             // make the HTTP request
@@ -4735,7 +4735,7 @@ namespace Gitea.Net.Api
             // authentication (Token) required
             if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("token")))
             {
-                localVarRequestOptions.QueryParameters.Add(Gitea.Net.Client.ClientUtils.ParameterToMultiMap("", "token", this.Configuration.GetApiKeyWithPrefix("token")));
+                localVarRequestOptions.HeaderParameters.Add("Authorization", "token " + this.Configuration.GetApiKeyWithPrefix("token"));
             }
 
             // make the HTTP request
@@ -4845,7 +4845,7 @@ namespace Gitea.Net.Api
             // authentication (Token) required
             if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("token")))
             {
-                localVarRequestOptions.QueryParameters.Add(Gitea.Net.Client.ClientUtils.ParameterToMultiMap("", "token", this.Configuration.GetApiKeyWithPrefix("token")));
+                localVarRequestOptions.HeaderParameters.Add("Authorization", "token " + this.Configuration.GetApiKeyWithPrefix("token"));
             }
 
             // make the HTTP request
@@ -4957,7 +4957,7 @@ namespace Gitea.Net.Api
             // authentication (Token) required
             if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("token")))
             {
-                localVarRequestOptions.QueryParameters.Add(Gitea.Net.Client.ClientUtils.ParameterToMultiMap("", "token", this.Configuration.GetApiKeyWithPrefix("token")));
+                localVarRequestOptions.HeaderParameters.Add("Authorization", "token " + this.Configuration.GetApiKeyWithPrefix("token"));
             }
 
             // make the HTTP request
@@ -5055,7 +5055,7 @@ namespace Gitea.Net.Api
             // authentication (Token) required
             if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("token")))
             {
-                localVarRequestOptions.QueryParameters.Add(Gitea.Net.Client.ClientUtils.ParameterToMultiMap("", "token", this.Configuration.GetApiKeyWithPrefix("token")));
+                localVarRequestOptions.HeaderParameters.Add("Authorization", "token " + this.Configuration.GetApiKeyWithPrefix("token"));
             }
 
             // make the HTTP request
@@ -5155,7 +5155,7 @@ namespace Gitea.Net.Api
             // authentication (Token) required
             if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("token")))
             {
-                localVarRequestOptions.QueryParameters.Add(Gitea.Net.Client.ClientUtils.ParameterToMultiMap("", "token", this.Configuration.GetApiKeyWithPrefix("token")));
+                localVarRequestOptions.HeaderParameters.Add("Authorization", "token " + this.Configuration.GetApiKeyWithPrefix("token"));
             }
 
             // make the HTTP request
@@ -5264,7 +5264,7 @@ namespace Gitea.Net.Api
             // authentication (Token) required
             if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("token")))
             {
-                localVarRequestOptions.QueryParameters.Add(Gitea.Net.Client.ClientUtils.ParameterToMultiMap("", "token", this.Configuration.GetApiKeyWithPrefix("token")));
+                localVarRequestOptions.HeaderParameters.Add("Authorization", "token " + this.Configuration.GetApiKeyWithPrefix("token"));
             }
 
             // make the HTTP request
@@ -5375,7 +5375,7 @@ namespace Gitea.Net.Api
             // authentication (Token) required
             if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("token")))
             {
-                localVarRequestOptions.QueryParameters.Add(Gitea.Net.Client.ClientUtils.ParameterToMultiMap("", "token", this.Configuration.GetApiKeyWithPrefix("token")));
+                localVarRequestOptions.HeaderParameters.Add("Authorization", "token " + this.Configuration.GetApiKeyWithPrefix("token"));
             }
 
             // make the HTTP request
@@ -5478,7 +5478,7 @@ namespace Gitea.Net.Api
             // authentication (Token) required
             if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("token")))
             {
-                localVarRequestOptions.QueryParameters.Add(Gitea.Net.Client.ClientUtils.ParameterToMultiMap("", "token", this.Configuration.GetApiKeyWithPrefix("token")));
+                localVarRequestOptions.HeaderParameters.Add("Authorization", "token " + this.Configuration.GetApiKeyWithPrefix("token"));
             }
 
             // make the HTTP request
@@ -5583,7 +5583,7 @@ namespace Gitea.Net.Api
             // authentication (Token) required
             if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("token")))
             {
-                localVarRequestOptions.QueryParameters.Add(Gitea.Net.Client.ClientUtils.ParameterToMultiMap("", "token", this.Configuration.GetApiKeyWithPrefix("token")));
+                localVarRequestOptions.HeaderParameters.Add("Authorization", "token " + this.Configuration.GetApiKeyWithPrefix("token"));
             }
 
             // make the HTTP request
@@ -5692,7 +5692,7 @@ namespace Gitea.Net.Api
             // authentication (Token) required
             if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("token")))
             {
-                localVarRequestOptions.QueryParameters.Add(Gitea.Net.Client.ClientUtils.ParameterToMultiMap("", "token", this.Configuration.GetApiKeyWithPrefix("token")));
+                localVarRequestOptions.HeaderParameters.Add("Authorization", "token " + this.Configuration.GetApiKeyWithPrefix("token"));
             }
 
             // make the HTTP request
@@ -5803,7 +5803,7 @@ namespace Gitea.Net.Api
             // authentication (Token) required
             if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("token")))
             {
-                localVarRequestOptions.QueryParameters.Add(Gitea.Net.Client.ClientUtils.ParameterToMultiMap("", "token", this.Configuration.GetApiKeyWithPrefix("token")));
+                localVarRequestOptions.HeaderParameters.Add("Authorization", "token " + this.Configuration.GetApiKeyWithPrefix("token"));
             }
 
             // make the HTTP request
@@ -5906,7 +5906,7 @@ namespace Gitea.Net.Api
             // authentication (Token) required
             if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("token")))
             {
-                localVarRequestOptions.QueryParameters.Add(Gitea.Net.Client.ClientUtils.ParameterToMultiMap("", "token", this.Configuration.GetApiKeyWithPrefix("token")));
+                localVarRequestOptions.HeaderParameters.Add("Authorization", "token " + this.Configuration.GetApiKeyWithPrefix("token"));
             }
 
             // make the HTTP request
@@ -6011,7 +6011,7 @@ namespace Gitea.Net.Api
             // authentication (Token) required
             if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("token")))
             {
-                localVarRequestOptions.QueryParameters.Add(Gitea.Net.Client.ClientUtils.ParameterToMultiMap("", "token", this.Configuration.GetApiKeyWithPrefix("token")));
+                localVarRequestOptions.HeaderParameters.Add("Authorization", "token " + this.Configuration.GetApiKeyWithPrefix("token"));
             }
 
             // make the HTTP request
@@ -6122,7 +6122,7 @@ namespace Gitea.Net.Api
             // authentication (Token) required
             if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("token")))
             {
-                localVarRequestOptions.QueryParameters.Add(Gitea.Net.Client.ClientUtils.ParameterToMultiMap("", "token", this.Configuration.GetApiKeyWithPrefix("token")));
+                localVarRequestOptions.HeaderParameters.Add("Authorization", "token " + this.Configuration.GetApiKeyWithPrefix("token"));
             }
 
             // make the HTTP request
@@ -6235,7 +6235,7 @@ namespace Gitea.Net.Api
             // authentication (Token) required
             if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("token")))
             {
-                localVarRequestOptions.QueryParameters.Add(Gitea.Net.Client.ClientUtils.ParameterToMultiMap("", "token", this.Configuration.GetApiKeyWithPrefix("token")));
+                localVarRequestOptions.HeaderParameters.Add("Authorization", "token " + this.Configuration.GetApiKeyWithPrefix("token"));
             }
 
             // make the HTTP request
@@ -6349,7 +6349,7 @@ namespace Gitea.Net.Api
             // authentication (Token) required
             if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("token")))
             {
-                localVarRequestOptions.QueryParameters.Add(Gitea.Net.Client.ClientUtils.ParameterToMultiMap("", "token", this.Configuration.GetApiKeyWithPrefix("token")));
+                localVarRequestOptions.HeaderParameters.Add("Authorization", "token " + this.Configuration.GetApiKeyWithPrefix("token"));
             }
 
             // make the HTTP request
@@ -6465,7 +6465,7 @@ namespace Gitea.Net.Api
             // authentication (Token) required
             if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("token")))
             {
-                localVarRequestOptions.QueryParameters.Add(Gitea.Net.Client.ClientUtils.ParameterToMultiMap("", "token", this.Configuration.GetApiKeyWithPrefix("token")));
+                localVarRequestOptions.HeaderParameters.Add("Authorization", "token " + this.Configuration.GetApiKeyWithPrefix("token"));
             }
 
             // make the HTTP request
@@ -6570,7 +6570,7 @@ namespace Gitea.Net.Api
             // authentication (Token) required
             if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("token")))
             {
-                localVarRequestOptions.QueryParameters.Add(Gitea.Net.Client.ClientUtils.ParameterToMultiMap("", "token", this.Configuration.GetApiKeyWithPrefix("token")));
+                localVarRequestOptions.HeaderParameters.Add("Authorization", "token " + this.Configuration.GetApiKeyWithPrefix("token"));
             }
 
             // make the HTTP request
@@ -6677,7 +6677,7 @@ namespace Gitea.Net.Api
             // authentication (Token) required
             if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("token")))
             {
-                localVarRequestOptions.QueryParameters.Add(Gitea.Net.Client.ClientUtils.ParameterToMultiMap("", "token", this.Configuration.GetApiKeyWithPrefix("token")));
+                localVarRequestOptions.HeaderParameters.Add("Authorization", "token " + this.Configuration.GetApiKeyWithPrefix("token"));
             }
 
             // make the HTTP request
@@ -6785,7 +6785,7 @@ namespace Gitea.Net.Api
             // authentication (Token) required
             if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("token")))
             {
-                localVarRequestOptions.QueryParameters.Add(Gitea.Net.Client.ClientUtils.ParameterToMultiMap("", "token", this.Configuration.GetApiKeyWithPrefix("token")));
+                localVarRequestOptions.HeaderParameters.Add("Authorization", "token " + this.Configuration.GetApiKeyWithPrefix("token"));
             }
 
             // make the HTTP request
@@ -6895,7 +6895,7 @@ namespace Gitea.Net.Api
             // authentication (Token) required
             if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("token")))
             {
-                localVarRequestOptions.QueryParameters.Add(Gitea.Net.Client.ClientUtils.ParameterToMultiMap("", "token", this.Configuration.GetApiKeyWithPrefix("token")));
+                localVarRequestOptions.HeaderParameters.Add("Authorization", "token " + this.Configuration.GetApiKeyWithPrefix("token"));
             }
 
             // make the HTTP request
@@ -7004,7 +7004,7 @@ namespace Gitea.Net.Api
             // authentication (Token) required
             if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("token")))
             {
-                localVarRequestOptions.QueryParameters.Add(Gitea.Net.Client.ClientUtils.ParameterToMultiMap("", "token", this.Configuration.GetApiKeyWithPrefix("token")));
+                localVarRequestOptions.HeaderParameters.Add("Authorization", "token " + this.Configuration.GetApiKeyWithPrefix("token"));
             }
 
             // make the HTTP request
@@ -7115,7 +7115,7 @@ namespace Gitea.Net.Api
             // authentication (Token) required
             if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("token")))
             {
-                localVarRequestOptions.QueryParameters.Add(Gitea.Net.Client.ClientUtils.ParameterToMultiMap("", "token", this.Configuration.GetApiKeyWithPrefix("token")));
+                localVarRequestOptions.HeaderParameters.Add("Authorization", "token " + this.Configuration.GetApiKeyWithPrefix("token"));
             }
 
             // make the HTTP request
@@ -7226,7 +7226,7 @@ namespace Gitea.Net.Api
             // authentication (Token) required
             if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("token")))
             {
-                localVarRequestOptions.QueryParameters.Add(Gitea.Net.Client.ClientUtils.ParameterToMultiMap("", "token", this.Configuration.GetApiKeyWithPrefix("token")));
+                localVarRequestOptions.HeaderParameters.Add("Authorization", "token " + this.Configuration.GetApiKeyWithPrefix("token"));
             }
 
             // make the HTTP request
@@ -7339,7 +7339,7 @@ namespace Gitea.Net.Api
             // authentication (Token) required
             if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("token")))
             {
-                localVarRequestOptions.QueryParameters.Add(Gitea.Net.Client.ClientUtils.ParameterToMultiMap("", "token", this.Configuration.GetApiKeyWithPrefix("token")));
+                localVarRequestOptions.HeaderParameters.Add("Authorization", "token " + this.Configuration.GetApiKeyWithPrefix("token"));
             }
 
             // make the HTTP request
@@ -7444,7 +7444,7 @@ namespace Gitea.Net.Api
             // authentication (Token) required
             if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("token")))
             {
-                localVarRequestOptions.QueryParameters.Add(Gitea.Net.Client.ClientUtils.ParameterToMultiMap("", "token", this.Configuration.GetApiKeyWithPrefix("token")));
+                localVarRequestOptions.HeaderParameters.Add("Authorization", "token " + this.Configuration.GetApiKeyWithPrefix("token"));
             }
 
             // make the HTTP request
@@ -7551,7 +7551,7 @@ namespace Gitea.Net.Api
             // authentication (Token) required
             if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("token")))
             {
-                localVarRequestOptions.QueryParameters.Add(Gitea.Net.Client.ClientUtils.ParameterToMultiMap("", "token", this.Configuration.GetApiKeyWithPrefix("token")));
+                localVarRequestOptions.HeaderParameters.Add("Authorization", "token " + this.Configuration.GetApiKeyWithPrefix("token"));
             }
 
             // make the HTTP request
@@ -7665,7 +7665,7 @@ namespace Gitea.Net.Api
             // authentication (Token) required
             if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("token")))
             {
-                localVarRequestOptions.QueryParameters.Add(Gitea.Net.Client.ClientUtils.ParameterToMultiMap("", "token", this.Configuration.GetApiKeyWithPrefix("token")));
+                localVarRequestOptions.HeaderParameters.Add("Authorization", "token " + this.Configuration.GetApiKeyWithPrefix("token"));
             }
 
             // make the HTTP request
@@ -7781,7 +7781,7 @@ namespace Gitea.Net.Api
             // authentication (Token) required
             if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("token")))
             {
-                localVarRequestOptions.QueryParameters.Add(Gitea.Net.Client.ClientUtils.ParameterToMultiMap("", "token", this.Configuration.GetApiKeyWithPrefix("token")));
+                localVarRequestOptions.HeaderParameters.Add("Authorization", "token " + this.Configuration.GetApiKeyWithPrefix("token"));
             }
 
             // make the HTTP request
@@ -7886,7 +7886,7 @@ namespace Gitea.Net.Api
             // authentication (Token) required
             if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("token")))
             {
-                localVarRequestOptions.QueryParameters.Add(Gitea.Net.Client.ClientUtils.ParameterToMultiMap("", "token", this.Configuration.GetApiKeyWithPrefix("token")));
+                localVarRequestOptions.HeaderParameters.Add("Authorization", "token " + this.Configuration.GetApiKeyWithPrefix("token"));
             }
 
             // make the HTTP request
@@ -7993,7 +7993,7 @@ namespace Gitea.Net.Api
             // authentication (Token) required
             if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("token")))
             {
-                localVarRequestOptions.QueryParameters.Add(Gitea.Net.Client.ClientUtils.ParameterToMultiMap("", "token", this.Configuration.GetApiKeyWithPrefix("token")));
+                localVarRequestOptions.HeaderParameters.Add("Authorization", "token " + this.Configuration.GetApiKeyWithPrefix("token"));
             }
 
             // make the HTTP request
@@ -8092,7 +8092,7 @@ namespace Gitea.Net.Api
             // authentication (Token) required
             if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("token")))
             {
-                localVarRequestOptions.QueryParameters.Add(Gitea.Net.Client.ClientUtils.ParameterToMultiMap("", "token", this.Configuration.GetApiKeyWithPrefix("token")));
+                localVarRequestOptions.HeaderParameters.Add("Authorization", "token " + this.Configuration.GetApiKeyWithPrefix("token"));
             }
 
             // make the HTTP request
@@ -8193,7 +8193,7 @@ namespace Gitea.Net.Api
             // authentication (Token) required
             if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("token")))
             {
-                localVarRequestOptions.QueryParameters.Add(Gitea.Net.Client.ClientUtils.ParameterToMultiMap("", "token", this.Configuration.GetApiKeyWithPrefix("token")));
+                localVarRequestOptions.HeaderParameters.Add("Authorization", "token " + this.Configuration.GetApiKeyWithPrefix("token"));
             }
 
             // make the HTTP request
@@ -8292,7 +8292,7 @@ namespace Gitea.Net.Api
             // authentication (Token) required
             if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("token")))
             {
-                localVarRequestOptions.QueryParameters.Add(Gitea.Net.Client.ClientUtils.ParameterToMultiMap("", "token", this.Configuration.GetApiKeyWithPrefix("token")));
+                localVarRequestOptions.HeaderParameters.Add("Authorization", "token " + this.Configuration.GetApiKeyWithPrefix("token"));
             }
 
             // make the HTTP request
@@ -8393,7 +8393,7 @@ namespace Gitea.Net.Api
             // authentication (Token) required
             if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("token")))
             {
-                localVarRequestOptions.QueryParameters.Add(Gitea.Net.Client.ClientUtils.ParameterToMultiMap("", "token", this.Configuration.GetApiKeyWithPrefix("token")));
+                localVarRequestOptions.HeaderParameters.Add("Authorization", "token " + this.Configuration.GetApiKeyWithPrefix("token"));
             }
 
             // make the HTTP request
@@ -8507,7 +8507,7 @@ namespace Gitea.Net.Api
             // authentication (Token) required
             if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("token")))
             {
-                localVarRequestOptions.QueryParameters.Add(Gitea.Net.Client.ClientUtils.ParameterToMultiMap("", "token", this.Configuration.GetApiKeyWithPrefix("token")));
+                localVarRequestOptions.HeaderParameters.Add("Authorization", "token " + this.Configuration.GetApiKeyWithPrefix("token"));
             }
 
             // make the HTTP request
@@ -8623,7 +8623,7 @@ namespace Gitea.Net.Api
             // authentication (Token) required
             if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("token")))
             {
-                localVarRequestOptions.QueryParameters.Add(Gitea.Net.Client.ClientUtils.ParameterToMultiMap("", "token", this.Configuration.GetApiKeyWithPrefix("token")));
+                localVarRequestOptions.HeaderParameters.Add("Authorization", "token " + this.Configuration.GetApiKeyWithPrefix("token"));
             }
 
             // make the HTTP request
@@ -8724,7 +8724,7 @@ namespace Gitea.Net.Api
             // authentication (Token) required
             if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("token")))
             {
-                localVarRequestOptions.QueryParameters.Add(Gitea.Net.Client.ClientUtils.ParameterToMultiMap("", "token", this.Configuration.GetApiKeyWithPrefix("token")));
+                localVarRequestOptions.HeaderParameters.Add("Authorization", "token " + this.Configuration.GetApiKeyWithPrefix("token"));
             }
 
             // make the HTTP request
@@ -8827,7 +8827,7 @@ namespace Gitea.Net.Api
             // authentication (Token) required
             if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("token")))
             {
-                localVarRequestOptions.QueryParameters.Add(Gitea.Net.Client.ClientUtils.ParameterToMultiMap("", "token", this.Configuration.GetApiKeyWithPrefix("token")));
+                localVarRequestOptions.HeaderParameters.Add("Authorization", "token " + this.Configuration.GetApiKeyWithPrefix("token"));
             }
 
             // make the HTTP request
@@ -8928,7 +8928,7 @@ namespace Gitea.Net.Api
             // authentication (Token) required
             if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("token")))
             {
-                localVarRequestOptions.QueryParameters.Add(Gitea.Net.Client.ClientUtils.ParameterToMultiMap("", "token", this.Configuration.GetApiKeyWithPrefix("token")));
+                localVarRequestOptions.HeaderParameters.Add("Authorization", "token " + this.Configuration.GetApiKeyWithPrefix("token"));
             }
 
             // make the HTTP request
@@ -9031,7 +9031,7 @@ namespace Gitea.Net.Api
             // authentication (Token) required
             if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("token")))
             {
-                localVarRequestOptions.QueryParameters.Add(Gitea.Net.Client.ClientUtils.ParameterToMultiMap("", "token", this.Configuration.GetApiKeyWithPrefix("token")));
+                localVarRequestOptions.HeaderParameters.Add("Authorization", "token " + this.Configuration.GetApiKeyWithPrefix("token"));
             }
 
             // make the HTTP request
@@ -9141,7 +9141,7 @@ namespace Gitea.Net.Api
             // authentication (Token) required
             if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("token")))
             {
-                localVarRequestOptions.QueryParameters.Add(Gitea.Net.Client.ClientUtils.ParameterToMultiMap("", "token", this.Configuration.GetApiKeyWithPrefix("token")));
+                localVarRequestOptions.HeaderParameters.Add("Authorization", "token " + this.Configuration.GetApiKeyWithPrefix("token"));
             }
 
             // make the HTTP request
@@ -9253,7 +9253,7 @@ namespace Gitea.Net.Api
             // authentication (Token) required
             if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("token")))
             {
-                localVarRequestOptions.QueryParameters.Add(Gitea.Net.Client.ClientUtils.ParameterToMultiMap("", "token", this.Configuration.GetApiKeyWithPrefix("token")));
+                localVarRequestOptions.HeaderParameters.Add("Authorization", "token " + this.Configuration.GetApiKeyWithPrefix("token"));
             }
 
             // make the HTTP request
@@ -9363,7 +9363,7 @@ namespace Gitea.Net.Api
             // authentication (Token) required
             if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("token")))
             {
-                localVarRequestOptions.QueryParameters.Add(Gitea.Net.Client.ClientUtils.ParameterToMultiMap("", "token", this.Configuration.GetApiKeyWithPrefix("token")));
+                localVarRequestOptions.HeaderParameters.Add("Authorization", "token " + this.Configuration.GetApiKeyWithPrefix("token"));
             }
 
             // make the HTTP request
@@ -9475,7 +9475,7 @@ namespace Gitea.Net.Api
             // authentication (Token) required
             if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("token")))
             {
-                localVarRequestOptions.QueryParameters.Add(Gitea.Net.Client.ClientUtils.ParameterToMultiMap("", "token", this.Configuration.GetApiKeyWithPrefix("token")));
+                localVarRequestOptions.HeaderParameters.Add("Authorization", "token " + this.Configuration.GetApiKeyWithPrefix("token"));
             }
 
             // make the HTTP request
@@ -9585,7 +9585,7 @@ namespace Gitea.Net.Api
             // authentication (Token) required
             if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("token")))
             {
-                localVarRequestOptions.QueryParameters.Add(Gitea.Net.Client.ClientUtils.ParameterToMultiMap("", "token", this.Configuration.GetApiKeyWithPrefix("token")));
+                localVarRequestOptions.HeaderParameters.Add("Authorization", "token " + this.Configuration.GetApiKeyWithPrefix("token"));
             }
 
             // make the HTTP request
@@ -9697,7 +9697,7 @@ namespace Gitea.Net.Api
             // authentication (Token) required
             if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("token")))
             {
-                localVarRequestOptions.QueryParameters.Add(Gitea.Net.Client.ClientUtils.ParameterToMultiMap("", "token", this.Configuration.GetApiKeyWithPrefix("token")));
+                localVarRequestOptions.HeaderParameters.Add("Authorization", "token " + this.Configuration.GetApiKeyWithPrefix("token"));
             }
 
             // make the HTTP request
@@ -9813,7 +9813,7 @@ namespace Gitea.Net.Api
             // authentication (Token) required
             if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("token")))
             {
-                localVarRequestOptions.QueryParameters.Add(Gitea.Net.Client.ClientUtils.ParameterToMultiMap("", "token", this.Configuration.GetApiKeyWithPrefix("token")));
+                localVarRequestOptions.HeaderParameters.Add("Authorization", "token " + this.Configuration.GetApiKeyWithPrefix("token"));
             }
 
             // make the HTTP request
@@ -9931,7 +9931,7 @@ namespace Gitea.Net.Api
             // authentication (Token) required
             if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("token")))
             {
-                localVarRequestOptions.QueryParameters.Add(Gitea.Net.Client.ClientUtils.ParameterToMultiMap("", "token", this.Configuration.GetApiKeyWithPrefix("token")));
+                localVarRequestOptions.HeaderParameters.Add("Authorization", "token " + this.Configuration.GetApiKeyWithPrefix("token"));
             }
 
             // make the HTTP request
@@ -10041,7 +10041,7 @@ namespace Gitea.Net.Api
             // authentication (Token) required
             if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("token")))
             {
-                localVarRequestOptions.QueryParameters.Add(Gitea.Net.Client.ClientUtils.ParameterToMultiMap("", "token", this.Configuration.GetApiKeyWithPrefix("token")));
+                localVarRequestOptions.HeaderParameters.Add("Authorization", "token " + this.Configuration.GetApiKeyWithPrefix("token"));
             }
 
             // make the HTTP request
@@ -10153,7 +10153,7 @@ namespace Gitea.Net.Api
             // authentication (Token) required
             if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("token")))
             {
-                localVarRequestOptions.QueryParameters.Add(Gitea.Net.Client.ClientUtils.ParameterToMultiMap("", "token", this.Configuration.GetApiKeyWithPrefix("token")));
+                localVarRequestOptions.HeaderParameters.Add("Authorization", "token " + this.Configuration.GetApiKeyWithPrefix("token"));
             }
 
             // make the HTTP request
@@ -10263,7 +10263,7 @@ namespace Gitea.Net.Api
             // authentication (Token) required
             if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("token")))
             {
-                localVarRequestOptions.QueryParameters.Add(Gitea.Net.Client.ClientUtils.ParameterToMultiMap("", "token", this.Configuration.GetApiKeyWithPrefix("token")));
+                localVarRequestOptions.HeaderParameters.Add("Authorization", "token " + this.Configuration.GetApiKeyWithPrefix("token"));
             }
 
             // make the HTTP request
@@ -10375,7 +10375,7 @@ namespace Gitea.Net.Api
             // authentication (Token) required
             if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("token")))
             {
-                localVarRequestOptions.QueryParameters.Add(Gitea.Net.Client.ClientUtils.ParameterToMultiMap("", "token", this.Configuration.GetApiKeyWithPrefix("token")));
+                localVarRequestOptions.HeaderParameters.Add("Authorization", "token " + this.Configuration.GetApiKeyWithPrefix("token"));
             }
 
             // make the HTTP request
@@ -10485,7 +10485,7 @@ namespace Gitea.Net.Api
             // authentication (Token) required
             if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("token")))
             {
-                localVarRequestOptions.QueryParameters.Add(Gitea.Net.Client.ClientUtils.ParameterToMultiMap("", "token", this.Configuration.GetApiKeyWithPrefix("token")));
+                localVarRequestOptions.HeaderParameters.Add("Authorization", "token " + this.Configuration.GetApiKeyWithPrefix("token"));
             }
 
             // make the HTTP request
@@ -10597,7 +10597,7 @@ namespace Gitea.Net.Api
             // authentication (Token) required
             if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("token")))
             {
-                localVarRequestOptions.QueryParameters.Add(Gitea.Net.Client.ClientUtils.ParameterToMultiMap("", "token", this.Configuration.GetApiKeyWithPrefix("token")));
+                localVarRequestOptions.HeaderParameters.Add("Authorization", "token " + this.Configuration.GetApiKeyWithPrefix("token"));
             }
 
             // make the HTTP request
@@ -10699,7 +10699,7 @@ namespace Gitea.Net.Api
             // authentication (Token) required
             if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("token")))
             {
-                localVarRequestOptions.QueryParameters.Add(Gitea.Net.Client.ClientUtils.ParameterToMultiMap("", "token", this.Configuration.GetApiKeyWithPrefix("token")));
+                localVarRequestOptions.HeaderParameters.Add("Authorization", "token " + this.Configuration.GetApiKeyWithPrefix("token"));
             }
 
             // make the HTTP request
@@ -10803,7 +10803,7 @@ namespace Gitea.Net.Api
             // authentication (Token) required
             if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("token")))
             {
-                localVarRequestOptions.QueryParameters.Add(Gitea.Net.Client.ClientUtils.ParameterToMultiMap("", "token", this.Configuration.GetApiKeyWithPrefix("token")));
+                localVarRequestOptions.HeaderParameters.Add("Authorization", "token " + this.Configuration.GetApiKeyWithPrefix("token"));
             }
 
             // make the HTTP request
@@ -10905,7 +10905,7 @@ namespace Gitea.Net.Api
             // authentication (Token) required
             if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("token")))
             {
-                localVarRequestOptions.QueryParameters.Add(Gitea.Net.Client.ClientUtils.ParameterToMultiMap("", "token", this.Configuration.GetApiKeyWithPrefix("token")));
+                localVarRequestOptions.HeaderParameters.Add("Authorization", "token " + this.Configuration.GetApiKeyWithPrefix("token"));
             }
 
             // make the HTTP request
@@ -11009,7 +11009,7 @@ namespace Gitea.Net.Api
             // authentication (Token) required
             if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("token")))
             {
-                localVarRequestOptions.QueryParameters.Add(Gitea.Net.Client.ClientUtils.ParameterToMultiMap("", "token", this.Configuration.GetApiKeyWithPrefix("token")));
+                localVarRequestOptions.HeaderParameters.Add("Authorization", "token " + this.Configuration.GetApiKeyWithPrefix("token"));
             }
 
             // make the HTTP request
@@ -11114,7 +11114,7 @@ namespace Gitea.Net.Api
             // authentication (Token) required
             if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("token")))
             {
-                localVarRequestOptions.QueryParameters.Add(Gitea.Net.Client.ClientUtils.ParameterToMultiMap("", "token", this.Configuration.GetApiKeyWithPrefix("token")));
+                localVarRequestOptions.HeaderParameters.Add("Authorization", "token " + this.Configuration.GetApiKeyWithPrefix("token"));
             }
 
             // make the HTTP request
@@ -11221,7 +11221,7 @@ namespace Gitea.Net.Api
             // authentication (Token) required
             if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("token")))
             {
-                localVarRequestOptions.QueryParameters.Add(Gitea.Net.Client.ClientUtils.ParameterToMultiMap("", "token", this.Configuration.GetApiKeyWithPrefix("token")));
+                localVarRequestOptions.HeaderParameters.Add("Authorization", "token " + this.Configuration.GetApiKeyWithPrefix("token"));
             }
 
             // make the HTTP request
@@ -11335,7 +11335,7 @@ namespace Gitea.Net.Api
             // authentication (Token) required
             if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("token")))
             {
-                localVarRequestOptions.QueryParameters.Add(Gitea.Net.Client.ClientUtils.ParameterToMultiMap("", "token", this.Configuration.GetApiKeyWithPrefix("token")));
+                localVarRequestOptions.HeaderParameters.Add("Authorization", "token " + this.Configuration.GetApiKeyWithPrefix("token"));
             }
 
             // make the HTTP request
@@ -11451,7 +11451,7 @@ namespace Gitea.Net.Api
             // authentication (Token) required
             if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("token")))
             {
-                localVarRequestOptions.QueryParameters.Add(Gitea.Net.Client.ClientUtils.ParameterToMultiMap("", "token", this.Configuration.GetApiKeyWithPrefix("token")));
+                localVarRequestOptions.HeaderParameters.Add("Authorization", "token " + this.Configuration.GetApiKeyWithPrefix("token"));
             }
 
             // make the HTTP request
@@ -11573,7 +11573,7 @@ namespace Gitea.Net.Api
             // authentication (Token) required
             if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("token")))
             {
-                localVarRequestOptions.QueryParameters.Add(Gitea.Net.Client.ClientUtils.ParameterToMultiMap("", "token", this.Configuration.GetApiKeyWithPrefix("token")));
+                localVarRequestOptions.HeaderParameters.Add("Authorization", "token " + this.Configuration.GetApiKeyWithPrefix("token"));
             }
 
             // make the HTTP request
@@ -11697,7 +11697,7 @@ namespace Gitea.Net.Api
             // authentication (Token) required
             if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("token")))
             {
-                localVarRequestOptions.QueryParameters.Add(Gitea.Net.Client.ClientUtils.ParameterToMultiMap("", "token", this.Configuration.GetApiKeyWithPrefix("token")));
+                localVarRequestOptions.HeaderParameters.Add("Authorization", "token " + this.Configuration.GetApiKeyWithPrefix("token"));
             }
 
             // make the HTTP request
@@ -11811,7 +11811,7 @@ namespace Gitea.Net.Api
             // authentication (Token) required
             if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("token")))
             {
-                localVarRequestOptions.QueryParameters.Add(Gitea.Net.Client.ClientUtils.ParameterToMultiMap("", "token", this.Configuration.GetApiKeyWithPrefix("token")));
+                localVarRequestOptions.HeaderParameters.Add("Authorization", "token " + this.Configuration.GetApiKeyWithPrefix("token"));
             }
 
             // make the HTTP request
@@ -11927,7 +11927,7 @@ namespace Gitea.Net.Api
             // authentication (Token) required
             if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("token")))
             {
-                localVarRequestOptions.QueryParameters.Add(Gitea.Net.Client.ClientUtils.ParameterToMultiMap("", "token", this.Configuration.GetApiKeyWithPrefix("token")));
+                localVarRequestOptions.HeaderParameters.Add("Authorization", "token " + this.Configuration.GetApiKeyWithPrefix("token"));
             }
 
             // make the HTTP request
@@ -12023,7 +12023,7 @@ namespace Gitea.Net.Api
             // authentication (Token) required
             if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("token")))
             {
-                localVarRequestOptions.QueryParameters.Add(Gitea.Net.Client.ClientUtils.ParameterToMultiMap("", "token", this.Configuration.GetApiKeyWithPrefix("token")));
+                localVarRequestOptions.HeaderParameters.Add("Authorization", "token " + this.Configuration.GetApiKeyWithPrefix("token"));
             }
 
             // make the HTTP request
@@ -12121,7 +12121,7 @@ namespace Gitea.Net.Api
             // authentication (Token) required
             if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("token")))
             {
-                localVarRequestOptions.QueryParameters.Add(Gitea.Net.Client.ClientUtils.ParameterToMultiMap("", "token", this.Configuration.GetApiKeyWithPrefix("token")));
+                localVarRequestOptions.HeaderParameters.Add("Authorization", "token " + this.Configuration.GetApiKeyWithPrefix("token"));
             }
 
             // make the HTTP request
@@ -12222,7 +12222,7 @@ namespace Gitea.Net.Api
             // authentication (Token) required
             if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("token")))
             {
-                localVarRequestOptions.QueryParameters.Add(Gitea.Net.Client.ClientUtils.ParameterToMultiMap("", "token", this.Configuration.GetApiKeyWithPrefix("token")));
+                localVarRequestOptions.HeaderParameters.Add("Authorization", "token " + this.Configuration.GetApiKeyWithPrefix("token"));
             }
 
             // make the HTTP request
@@ -12325,7 +12325,7 @@ namespace Gitea.Net.Api
             // authentication (Token) required
             if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("token")))
             {
-                localVarRequestOptions.QueryParameters.Add(Gitea.Net.Client.ClientUtils.ParameterToMultiMap("", "token", this.Configuration.GetApiKeyWithPrefix("token")));
+                localVarRequestOptions.HeaderParameters.Add("Authorization", "token " + this.Configuration.GetApiKeyWithPrefix("token"));
             }
 
             // make the HTTP request
@@ -12424,7 +12424,7 @@ namespace Gitea.Net.Api
             // authentication (Token) required
             if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("token")))
             {
-                localVarRequestOptions.QueryParameters.Add(Gitea.Net.Client.ClientUtils.ParameterToMultiMap("", "token", this.Configuration.GetApiKeyWithPrefix("token")));
+                localVarRequestOptions.HeaderParameters.Add("Authorization", "token " + this.Configuration.GetApiKeyWithPrefix("token"));
             }
 
             // make the HTTP request
@@ -12525,7 +12525,7 @@ namespace Gitea.Net.Api
             // authentication (Token) required
             if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("token")))
             {
-                localVarRequestOptions.QueryParameters.Add(Gitea.Net.Client.ClientUtils.ParameterToMultiMap("", "token", this.Configuration.GetApiKeyWithPrefix("token")));
+                localVarRequestOptions.HeaderParameters.Add("Authorization", "token " + this.Configuration.GetApiKeyWithPrefix("token"));
             }
 
             // make the HTTP request
@@ -12624,7 +12624,7 @@ namespace Gitea.Net.Api
             // authentication (Token) required
             if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("token")))
             {
-                localVarRequestOptions.QueryParameters.Add(Gitea.Net.Client.ClientUtils.ParameterToMultiMap("", "token", this.Configuration.GetApiKeyWithPrefix("token")));
+                localVarRequestOptions.HeaderParameters.Add("Authorization", "token " + this.Configuration.GetApiKeyWithPrefix("token"));
             }
 
             // make the HTTP request
@@ -12725,7 +12725,7 @@ namespace Gitea.Net.Api
             // authentication (Token) required
             if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("token")))
             {
-                localVarRequestOptions.QueryParameters.Add(Gitea.Net.Client.ClientUtils.ParameterToMultiMap("", "token", this.Configuration.GetApiKeyWithPrefix("token")));
+                localVarRequestOptions.HeaderParameters.Add("Authorization", "token " + this.Configuration.GetApiKeyWithPrefix("token"));
             }
 
             // make the HTTP request
@@ -12830,7 +12830,7 @@ namespace Gitea.Net.Api
             // authentication (Token) required
             if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("token")))
             {
-                localVarRequestOptions.QueryParameters.Add(Gitea.Net.Client.ClientUtils.ParameterToMultiMap("", "token", this.Configuration.GetApiKeyWithPrefix("token")));
+                localVarRequestOptions.HeaderParameters.Add("Authorization", "token " + this.Configuration.GetApiKeyWithPrefix("token"));
             }
 
             // make the HTTP request
@@ -12937,7 +12937,7 @@ namespace Gitea.Net.Api
             // authentication (Token) required
             if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("token")))
             {
-                localVarRequestOptions.QueryParameters.Add(Gitea.Net.Client.ClientUtils.ParameterToMultiMap("", "token", this.Configuration.GetApiKeyWithPrefix("token")));
+                localVarRequestOptions.HeaderParameters.Add("Authorization", "token " + this.Configuration.GetApiKeyWithPrefix("token"));
             }
 
             // make the HTTP request
@@ -13044,7 +13044,7 @@ namespace Gitea.Net.Api
             // authentication (Token) required
             if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("token")))
             {
-                localVarRequestOptions.QueryParameters.Add(Gitea.Net.Client.ClientUtils.ParameterToMultiMap("", "token", this.Configuration.GetApiKeyWithPrefix("token")));
+                localVarRequestOptions.HeaderParameters.Add("Authorization", "token " + this.Configuration.GetApiKeyWithPrefix("token"));
             }
 
             // make the HTTP request
@@ -13153,7 +13153,7 @@ namespace Gitea.Net.Api
             // authentication (Token) required
             if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("token")))
             {
-                localVarRequestOptions.QueryParameters.Add(Gitea.Net.Client.ClientUtils.ParameterToMultiMap("", "token", this.Configuration.GetApiKeyWithPrefix("token")));
+                localVarRequestOptions.HeaderParameters.Add("Authorization", "token " + this.Configuration.GetApiKeyWithPrefix("token"));
             }
 
             // make the HTTP request
@@ -13251,7 +13251,7 @@ namespace Gitea.Net.Api
             // authentication (Token) required
             if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("token")))
             {
-                localVarRequestOptions.QueryParameters.Add(Gitea.Net.Client.ClientUtils.ParameterToMultiMap("", "token", this.Configuration.GetApiKeyWithPrefix("token")));
+                localVarRequestOptions.HeaderParameters.Add("Authorization", "token " + this.Configuration.GetApiKeyWithPrefix("token"));
             }
 
             // make the HTTP request
@@ -13351,7 +13351,7 @@ namespace Gitea.Net.Api
             // authentication (Token) required
             if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("token")))
             {
-                localVarRequestOptions.QueryParameters.Add(Gitea.Net.Client.ClientUtils.ParameterToMultiMap("", "token", this.Configuration.GetApiKeyWithPrefix("token")));
+                localVarRequestOptions.HeaderParameters.Add("Authorization", "token " + this.Configuration.GetApiKeyWithPrefix("token"));
             }
 
             // make the HTTP request
@@ -13458,7 +13458,7 @@ namespace Gitea.Net.Api
             // authentication (Token) required
             if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("token")))
             {
-                localVarRequestOptions.QueryParameters.Add(Gitea.Net.Client.ClientUtils.ParameterToMultiMap("", "token", this.Configuration.GetApiKeyWithPrefix("token")));
+                localVarRequestOptions.HeaderParameters.Add("Authorization", "token " + this.Configuration.GetApiKeyWithPrefix("token"));
             }
 
             // make the HTTP request
@@ -13567,7 +13567,7 @@ namespace Gitea.Net.Api
             // authentication (Token) required
             if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("token")))
             {
-                localVarRequestOptions.QueryParameters.Add(Gitea.Net.Client.ClientUtils.ParameterToMultiMap("", "token", this.Configuration.GetApiKeyWithPrefix("token")));
+                localVarRequestOptions.HeaderParameters.Add("Authorization", "token " + this.Configuration.GetApiKeyWithPrefix("token"));
             }
 
             // make the HTTP request
@@ -13668,7 +13668,7 @@ namespace Gitea.Net.Api
             // authentication (Token) required
             if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("token")))
             {
-                localVarRequestOptions.QueryParameters.Add(Gitea.Net.Client.ClientUtils.ParameterToMultiMap("", "token", this.Configuration.GetApiKeyWithPrefix("token")));
+                localVarRequestOptions.HeaderParameters.Add("Authorization", "token " + this.Configuration.GetApiKeyWithPrefix("token"));
             }
 
             // make the HTTP request
@@ -13771,7 +13771,7 @@ namespace Gitea.Net.Api
             // authentication (Token) required
             if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("token")))
             {
-                localVarRequestOptions.QueryParameters.Add(Gitea.Net.Client.ClientUtils.ParameterToMultiMap("", "token", this.Configuration.GetApiKeyWithPrefix("token")));
+                localVarRequestOptions.HeaderParameters.Add("Authorization", "token " + this.Configuration.GetApiKeyWithPrefix("token"));
             }
 
             // make the HTTP request
@@ -13872,7 +13872,7 @@ namespace Gitea.Net.Api
             // authentication (Token) required
             if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("token")))
             {
-                localVarRequestOptions.QueryParameters.Add(Gitea.Net.Client.ClientUtils.ParameterToMultiMap("", "token", this.Configuration.GetApiKeyWithPrefix("token")));
+                localVarRequestOptions.HeaderParameters.Add("Authorization", "token " + this.Configuration.GetApiKeyWithPrefix("token"));
             }
 
             // make the HTTP request
@@ -13975,7 +13975,7 @@ namespace Gitea.Net.Api
             // authentication (Token) required
             if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("token")))
             {
-                localVarRequestOptions.QueryParameters.Add(Gitea.Net.Client.ClientUtils.ParameterToMultiMap("", "token", this.Configuration.GetApiKeyWithPrefix("token")));
+                localVarRequestOptions.HeaderParameters.Add("Authorization", "token " + this.Configuration.GetApiKeyWithPrefix("token"));
             }
 
             // make the HTTP request
@@ -14085,7 +14085,7 @@ namespace Gitea.Net.Api
             // authentication (Token) required
             if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("token")))
             {
-                localVarRequestOptions.QueryParameters.Add(Gitea.Net.Client.ClientUtils.ParameterToMultiMap("", "token", this.Configuration.GetApiKeyWithPrefix("token")));
+                localVarRequestOptions.HeaderParameters.Add("Authorization", "token " + this.Configuration.GetApiKeyWithPrefix("token"));
             }
 
             // make the HTTP request
@@ -14197,7 +14197,7 @@ namespace Gitea.Net.Api
             // authentication (Token) required
             if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("token")))
             {
-                localVarRequestOptions.QueryParameters.Add(Gitea.Net.Client.ClientUtils.ParameterToMultiMap("", "token", this.Configuration.GetApiKeyWithPrefix("token")));
+                localVarRequestOptions.HeaderParameters.Add("Authorization", "token " + this.Configuration.GetApiKeyWithPrefix("token"));
             }
 
             // make the HTTP request
@@ -14293,7 +14293,7 @@ namespace Gitea.Net.Api
             // authentication (Token) required
             if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("token")))
             {
-                localVarRequestOptions.QueryParameters.Add(Gitea.Net.Client.ClientUtils.ParameterToMultiMap("", "token", this.Configuration.GetApiKeyWithPrefix("token")));
+                localVarRequestOptions.HeaderParameters.Add("Authorization", "token " + this.Configuration.GetApiKeyWithPrefix("token"));
             }
 
             // make the HTTP request
@@ -14391,7 +14391,7 @@ namespace Gitea.Net.Api
             // authentication (Token) required
             if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("token")))
             {
-                localVarRequestOptions.QueryParameters.Add(Gitea.Net.Client.ClientUtils.ParameterToMultiMap("", "token", this.Configuration.GetApiKeyWithPrefix("token")));
+                localVarRequestOptions.HeaderParameters.Add("Authorization", "token " + this.Configuration.GetApiKeyWithPrefix("token"));
             }
 
             // make the HTTP request
@@ -14501,7 +14501,7 @@ namespace Gitea.Net.Api
             // authentication (Token) required
             if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("token")))
             {
-                localVarRequestOptions.QueryParameters.Add(Gitea.Net.Client.ClientUtils.ParameterToMultiMap("", "token", this.Configuration.GetApiKeyWithPrefix("token")));
+                localVarRequestOptions.HeaderParameters.Add("Authorization", "token " + this.Configuration.GetApiKeyWithPrefix("token"));
             }
 
             // make the HTTP request
@@ -14613,7 +14613,7 @@ namespace Gitea.Net.Api
             // authentication (Token) required
             if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("token")))
             {
-                localVarRequestOptions.QueryParameters.Add(Gitea.Net.Client.ClientUtils.ParameterToMultiMap("", "token", this.Configuration.GetApiKeyWithPrefix("token")));
+                localVarRequestOptions.HeaderParameters.Add("Authorization", "token " + this.Configuration.GetApiKeyWithPrefix("token"));
             }
 
             // make the HTTP request
@@ -14732,7 +14732,7 @@ namespace Gitea.Net.Api
             // authentication (Token) required
             if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("token")))
             {
-                localVarRequestOptions.QueryParameters.Add(Gitea.Net.Client.ClientUtils.ParameterToMultiMap("", "token", this.Configuration.GetApiKeyWithPrefix("token")));
+                localVarRequestOptions.HeaderParameters.Add("Authorization", "token " + this.Configuration.GetApiKeyWithPrefix("token"));
             }
 
             // make the HTTP request
@@ -14853,7 +14853,7 @@ namespace Gitea.Net.Api
             // authentication (Token) required
             if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("token")))
             {
-                localVarRequestOptions.QueryParameters.Add(Gitea.Net.Client.ClientUtils.ParameterToMultiMap("", "token", this.Configuration.GetApiKeyWithPrefix("token")));
+                localVarRequestOptions.HeaderParameters.Add("Authorization", "token " + this.Configuration.GetApiKeyWithPrefix("token"));
             }
 
             // make the HTTP request
@@ -14984,7 +14984,7 @@ namespace Gitea.Net.Api
             // authentication (Token) required
             if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("token")))
             {
-                localVarRequestOptions.QueryParameters.Add(Gitea.Net.Client.ClientUtils.ParameterToMultiMap("", "token", this.Configuration.GetApiKeyWithPrefix("token")));
+                localVarRequestOptions.HeaderParameters.Add("Authorization", "token " + this.Configuration.GetApiKeyWithPrefix("token"));
             }
 
             // make the HTTP request
@@ -15117,7 +15117,7 @@ namespace Gitea.Net.Api
             // authentication (Token) required
             if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("token")))
             {
-                localVarRequestOptions.QueryParameters.Add(Gitea.Net.Client.ClientUtils.ParameterToMultiMap("", "token", this.Configuration.GetApiKeyWithPrefix("token")));
+                localVarRequestOptions.HeaderParameters.Add("Authorization", "token " + this.Configuration.GetApiKeyWithPrefix("token"));
             }
 
             // make the HTTP request
@@ -15227,7 +15227,7 @@ namespace Gitea.Net.Api
             // authentication (Token) required
             if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("token")))
             {
-                localVarRequestOptions.QueryParameters.Add(Gitea.Net.Client.ClientUtils.ParameterToMultiMap("", "token", this.Configuration.GetApiKeyWithPrefix("token")));
+                localVarRequestOptions.HeaderParameters.Add("Authorization", "token " + this.Configuration.GetApiKeyWithPrefix("token"));
             }
 
             // make the HTTP request
@@ -15339,7 +15339,7 @@ namespace Gitea.Net.Api
             // authentication (Token) required
             if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("token")))
             {
-                localVarRequestOptions.QueryParameters.Add(Gitea.Net.Client.ClientUtils.ParameterToMultiMap("", "token", this.Configuration.GetApiKeyWithPrefix("token")));
+                localVarRequestOptions.HeaderParameters.Add("Authorization", "token " + this.Configuration.GetApiKeyWithPrefix("token"));
             }
 
             // make the HTTP request
@@ -15437,7 +15437,7 @@ namespace Gitea.Net.Api
             // authentication (Token) required
             if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("token")))
             {
-                localVarRequestOptions.QueryParameters.Add(Gitea.Net.Client.ClientUtils.ParameterToMultiMap("", "token", this.Configuration.GetApiKeyWithPrefix("token")));
+                localVarRequestOptions.HeaderParameters.Add("Authorization", "token " + this.Configuration.GetApiKeyWithPrefix("token"));
             }
 
             // make the HTTP request
@@ -15537,7 +15537,7 @@ namespace Gitea.Net.Api
             // authentication (Token) required
             if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("token")))
             {
-                localVarRequestOptions.QueryParameters.Add(Gitea.Net.Client.ClientUtils.ParameterToMultiMap("", "token", this.Configuration.GetApiKeyWithPrefix("token")));
+                localVarRequestOptions.HeaderParameters.Add("Authorization", "token " + this.Configuration.GetApiKeyWithPrefix("token"));
             }
 
             // make the HTTP request
@@ -15656,7 +15656,7 @@ namespace Gitea.Net.Api
             // authentication (Token) required
             if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("token")))
             {
-                localVarRequestOptions.QueryParameters.Add(Gitea.Net.Client.ClientUtils.ParameterToMultiMap("", "token", this.Configuration.GetApiKeyWithPrefix("token")));
+                localVarRequestOptions.HeaderParameters.Add("Authorization", "token " + this.Configuration.GetApiKeyWithPrefix("token"));
             }
 
             // make the HTTP request
@@ -15777,7 +15777,7 @@ namespace Gitea.Net.Api
             // authentication (Token) required
             if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("token")))
             {
-                localVarRequestOptions.QueryParameters.Add(Gitea.Net.Client.ClientUtils.ParameterToMultiMap("", "token", this.Configuration.GetApiKeyWithPrefix("token")));
+                localVarRequestOptions.HeaderParameters.Add("Authorization", "token " + this.Configuration.GetApiKeyWithPrefix("token"));
             }
 
             // make the HTTP request
@@ -15896,7 +15896,7 @@ namespace Gitea.Net.Api
             // authentication (Token) required
             if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("token")))
             {
-                localVarRequestOptions.QueryParameters.Add(Gitea.Net.Client.ClientUtils.ParameterToMultiMap("", "token", this.Configuration.GetApiKeyWithPrefix("token")));
+                localVarRequestOptions.HeaderParameters.Add("Authorization", "token " + this.Configuration.GetApiKeyWithPrefix("token"));
             }
 
             // make the HTTP request
@@ -16017,7 +16017,7 @@ namespace Gitea.Net.Api
             // authentication (Token) required
             if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("token")))
             {
-                localVarRequestOptions.QueryParameters.Add(Gitea.Net.Client.ClientUtils.ParameterToMultiMap("", "token", this.Configuration.GetApiKeyWithPrefix("token")));
+                localVarRequestOptions.HeaderParameters.Add("Authorization", "token " + this.Configuration.GetApiKeyWithPrefix("token"));
             }
 
             // make the HTTP request
@@ -16136,7 +16136,7 @@ namespace Gitea.Net.Api
             // authentication (Token) required
             if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("token")))
             {
-                localVarRequestOptions.QueryParameters.Add(Gitea.Net.Client.ClientUtils.ParameterToMultiMap("", "token", this.Configuration.GetApiKeyWithPrefix("token")));
+                localVarRequestOptions.HeaderParameters.Add("Authorization", "token " + this.Configuration.GetApiKeyWithPrefix("token"));
             }
 
             // make the HTTP request
@@ -16257,7 +16257,7 @@ namespace Gitea.Net.Api
             // authentication (Token) required
             if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("token")))
             {
-                localVarRequestOptions.QueryParameters.Add(Gitea.Net.Client.ClientUtils.ParameterToMultiMap("", "token", this.Configuration.GetApiKeyWithPrefix("token")));
+                localVarRequestOptions.HeaderParameters.Add("Authorization", "token " + this.Configuration.GetApiKeyWithPrefix("token"));
             }
 
             // make the HTTP request
@@ -16367,7 +16367,7 @@ namespace Gitea.Net.Api
             // authentication (Token) required
             if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("token")))
             {
-                localVarRequestOptions.QueryParameters.Add(Gitea.Net.Client.ClientUtils.ParameterToMultiMap("", "token", this.Configuration.GetApiKeyWithPrefix("token")));
+                localVarRequestOptions.HeaderParameters.Add("Authorization", "token " + this.Configuration.GetApiKeyWithPrefix("token"));
             }
 
             // make the HTTP request
@@ -16479,7 +16479,7 @@ namespace Gitea.Net.Api
             // authentication (Token) required
             if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("token")))
             {
-                localVarRequestOptions.QueryParameters.Add(Gitea.Net.Client.ClientUtils.ParameterToMultiMap("", "token", this.Configuration.GetApiKeyWithPrefix("token")));
+                localVarRequestOptions.HeaderParameters.Add("Authorization", "token " + this.Configuration.GetApiKeyWithPrefix("token"));
             }
 
             // make the HTTP request
@@ -16604,7 +16604,7 @@ namespace Gitea.Net.Api
             // authentication (Token) required
             if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("token")))
             {
-                localVarRequestOptions.QueryParameters.Add(Gitea.Net.Client.ClientUtils.ParameterToMultiMap("", "token", this.Configuration.GetApiKeyWithPrefix("token")));
+                localVarRequestOptions.HeaderParameters.Add("Authorization", "token " + this.Configuration.GetApiKeyWithPrefix("token"));
             }
 
             // make the HTTP request
@@ -16731,7 +16731,7 @@ namespace Gitea.Net.Api
             // authentication (Token) required
             if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("token")))
             {
-                localVarRequestOptions.QueryParameters.Add(Gitea.Net.Client.ClientUtils.ParameterToMultiMap("", "token", this.Configuration.GetApiKeyWithPrefix("token")));
+                localVarRequestOptions.HeaderParameters.Add("Authorization", "token " + this.Configuration.GetApiKeyWithPrefix("token"));
             }
 
             // make the HTTP request
@@ -16850,7 +16850,7 @@ namespace Gitea.Net.Api
             // authentication (Token) required
             if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("token")))
             {
-                localVarRequestOptions.QueryParameters.Add(Gitea.Net.Client.ClientUtils.ParameterToMultiMap("", "token", this.Configuration.GetApiKeyWithPrefix("token")));
+                localVarRequestOptions.HeaderParameters.Add("Authorization", "token " + this.Configuration.GetApiKeyWithPrefix("token"));
             }
 
             // make the HTTP request
@@ -16971,7 +16971,7 @@ namespace Gitea.Net.Api
             // authentication (Token) required
             if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("token")))
             {
-                localVarRequestOptions.QueryParameters.Add(Gitea.Net.Client.ClientUtils.ParameterToMultiMap("", "token", this.Configuration.GetApiKeyWithPrefix("token")));
+                localVarRequestOptions.HeaderParameters.Add("Authorization", "token " + this.Configuration.GetApiKeyWithPrefix("token"));
             }
 
             // make the HTTP request
@@ -17090,7 +17090,7 @@ namespace Gitea.Net.Api
             // authentication (Token) required
             if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("token")))
             {
-                localVarRequestOptions.QueryParameters.Add(Gitea.Net.Client.ClientUtils.ParameterToMultiMap("", "token", this.Configuration.GetApiKeyWithPrefix("token")));
+                localVarRequestOptions.HeaderParameters.Add("Authorization", "token " + this.Configuration.GetApiKeyWithPrefix("token"));
             }
 
             // make the HTTP request
@@ -17211,7 +17211,7 @@ namespace Gitea.Net.Api
             // authentication (Token) required
             if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("token")))
             {
-                localVarRequestOptions.QueryParameters.Add(Gitea.Net.Client.ClientUtils.ParameterToMultiMap("", "token", this.Configuration.GetApiKeyWithPrefix("token")));
+                localVarRequestOptions.HeaderParameters.Add("Authorization", "token " + this.Configuration.GetApiKeyWithPrefix("token"));
             }
 
             // make the HTTP request
@@ -17330,7 +17330,7 @@ namespace Gitea.Net.Api
             // authentication (Token) required
             if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("token")))
             {
-                localVarRequestOptions.QueryParameters.Add(Gitea.Net.Client.ClientUtils.ParameterToMultiMap("", "token", this.Configuration.GetApiKeyWithPrefix("token")));
+                localVarRequestOptions.HeaderParameters.Add("Authorization", "token " + this.Configuration.GetApiKeyWithPrefix("token"));
             }
 
             // make the HTTP request
@@ -17451,7 +17451,7 @@ namespace Gitea.Net.Api
             // authentication (Token) required
             if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("token")))
             {
-                localVarRequestOptions.QueryParameters.Add(Gitea.Net.Client.ClientUtils.ParameterToMultiMap("", "token", this.Configuration.GetApiKeyWithPrefix("token")));
+                localVarRequestOptions.HeaderParameters.Add("Authorization", "token " + this.Configuration.GetApiKeyWithPrefix("token"));
             }
 
             // make the HTTP request
@@ -17561,7 +17561,7 @@ namespace Gitea.Net.Api
             // authentication (Token) required
             if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("token")))
             {
-                localVarRequestOptions.QueryParameters.Add(Gitea.Net.Client.ClientUtils.ParameterToMultiMap("", "token", this.Configuration.GetApiKeyWithPrefix("token")));
+                localVarRequestOptions.HeaderParameters.Add("Authorization", "token " + this.Configuration.GetApiKeyWithPrefix("token"));
             }
 
             // make the HTTP request
@@ -17673,7 +17673,7 @@ namespace Gitea.Net.Api
             // authentication (Token) required
             if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("token")))
             {
-                localVarRequestOptions.QueryParameters.Add(Gitea.Net.Client.ClientUtils.ParameterToMultiMap("", "token", this.Configuration.GetApiKeyWithPrefix("token")));
+                localVarRequestOptions.HeaderParameters.Add("Authorization", "token " + this.Configuration.GetApiKeyWithPrefix("token"));
             }
 
             // make the HTTP request
@@ -17795,7 +17795,7 @@ namespace Gitea.Net.Api
             // authentication (Token) required
             if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("token")))
             {
-                localVarRequestOptions.QueryParameters.Add(Gitea.Net.Client.ClientUtils.ParameterToMultiMap("", "token", this.Configuration.GetApiKeyWithPrefix("token")));
+                localVarRequestOptions.HeaderParameters.Add("Authorization", "token " + this.Configuration.GetApiKeyWithPrefix("token"));
             }
 
             // make the HTTP request
@@ -17919,7 +17919,7 @@ namespace Gitea.Net.Api
             // authentication (Token) required
             if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("token")))
             {
-                localVarRequestOptions.QueryParameters.Add(Gitea.Net.Client.ClientUtils.ParameterToMultiMap("", "token", this.Configuration.GetApiKeyWithPrefix("token")));
+                localVarRequestOptions.HeaderParameters.Add("Authorization", "token " + this.Configuration.GetApiKeyWithPrefix("token"));
             }
 
             // make the HTTP request
@@ -18024,7 +18024,7 @@ namespace Gitea.Net.Api
             // authentication (Token) required
             if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("token")))
             {
-                localVarRequestOptions.QueryParameters.Add(Gitea.Net.Client.ClientUtils.ParameterToMultiMap("", "token", this.Configuration.GetApiKeyWithPrefix("token")));
+                localVarRequestOptions.HeaderParameters.Add("Authorization", "token " + this.Configuration.GetApiKeyWithPrefix("token"));
             }
 
             // make the HTTP request
@@ -18131,7 +18131,7 @@ namespace Gitea.Net.Api
             // authentication (Token) required
             if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("token")))
             {
-                localVarRequestOptions.QueryParameters.Add(Gitea.Net.Client.ClientUtils.ParameterToMultiMap("", "token", this.Configuration.GetApiKeyWithPrefix("token")));
+                localVarRequestOptions.HeaderParameters.Add("Authorization", "token " + this.Configuration.GetApiKeyWithPrefix("token"));
             }
 
             // make the HTTP request
@@ -18232,7 +18232,7 @@ namespace Gitea.Net.Api
             // authentication (Token) required
             if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("token")))
             {
-                localVarRequestOptions.QueryParameters.Add(Gitea.Net.Client.ClientUtils.ParameterToMultiMap("", "token", this.Configuration.GetApiKeyWithPrefix("token")));
+                localVarRequestOptions.HeaderParameters.Add("Authorization", "token " + this.Configuration.GetApiKeyWithPrefix("token"));
             }
 
             // make the HTTP request
@@ -18335,7 +18335,7 @@ namespace Gitea.Net.Api
             // authentication (Token) required
             if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("token")))
             {
-                localVarRequestOptions.QueryParameters.Add(Gitea.Net.Client.ClientUtils.ParameterToMultiMap("", "token", this.Configuration.GetApiKeyWithPrefix("token")));
+                localVarRequestOptions.HeaderParameters.Add("Authorization", "token " + this.Configuration.GetApiKeyWithPrefix("token"));
             }
 
             // make the HTTP request
@@ -18447,7 +18447,7 @@ namespace Gitea.Net.Api
             // authentication (Token) required
             if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("token")))
             {
-                localVarRequestOptions.QueryParameters.Add(Gitea.Net.Client.ClientUtils.ParameterToMultiMap("", "token", this.Configuration.GetApiKeyWithPrefix("token")));
+                localVarRequestOptions.HeaderParameters.Add("Authorization", "token " + this.Configuration.GetApiKeyWithPrefix("token"));
             }
 
             // make the HTTP request
@@ -18561,7 +18561,7 @@ namespace Gitea.Net.Api
             // authentication (Token) required
             if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("token")))
             {
-                localVarRequestOptions.QueryParameters.Add(Gitea.Net.Client.ClientUtils.ParameterToMultiMap("", "token", this.Configuration.GetApiKeyWithPrefix("token")));
+                localVarRequestOptions.HeaderParameters.Add("Authorization", "token " + this.Configuration.GetApiKeyWithPrefix("token"));
             }
 
             // make the HTTP request
@@ -18659,7 +18659,7 @@ namespace Gitea.Net.Api
             // authentication (Token) required
             if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("token")))
             {
-                localVarRequestOptions.QueryParameters.Add(Gitea.Net.Client.ClientUtils.ParameterToMultiMap("", "token", this.Configuration.GetApiKeyWithPrefix("token")));
+                localVarRequestOptions.HeaderParameters.Add("Authorization", "token " + this.Configuration.GetApiKeyWithPrefix("token"));
             }
 
             // make the HTTP request
@@ -18759,7 +18759,7 @@ namespace Gitea.Net.Api
             // authentication (Token) required
             if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("token")))
             {
-                localVarRequestOptions.QueryParameters.Add(Gitea.Net.Client.ClientUtils.ParameterToMultiMap("", "token", this.Configuration.GetApiKeyWithPrefix("token")));
+                localVarRequestOptions.HeaderParameters.Add("Authorization", "token " + this.Configuration.GetApiKeyWithPrefix("token"));
             }
 
             // make the HTTP request
