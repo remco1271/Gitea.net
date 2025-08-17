@@ -1,47 +1,39 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
   <PropertyGroup>
-    <GenerateAssemblyInfo>false</GenerateAssemblyInfo>
-    <GenerateTargetFrameworkAttribute>false</GenerateTargetFrameworkAttribute>
-    <!-- setting GenerateAssemblyInfo to false causes this bug https://github.com/dotnet/project-system/issues/3934 -->
     <TargetFramework>netstandard2.0</TargetFramework>
+    <LangVersion>8.0</LangVersion>
     <AssemblyName>Gitea.Net</AssemblyName>
-    <PackageId>Gitea.Net.API</PackageId>
     <OutputType>Library</OutputType>
+    <Nullable>annotations</Nullable>
+  </PropertyGroup>
+
+  <PropertyGroup>
+    <Version>1.0.2</Version>
+    <VersionPrefix>1.0.2</VersionPrefix>
+    <IncludeSymbols>True</IncludeSymbols>
+    <SymbolPackageFormat>snupkg</SymbolPackageFormat>
+    <GenerateNuspecDependsOn>$(GenerateNuspecDependsOn);SetPackageVersion</GenerateNuspecDependsOn>
+    <GeneratePackageOnBuild>True</GeneratePackageOnBuild>
+  </PropertyGroup>
+
+  <PropertyGroup>
+    <PackageId>Gitea.Net.API</PackageId>
+    <Title>Gitea.Net</Title>
     <Authors>Remco Fischer</Authors>
     <Company>remco1271</Company>
     <AssemblyTitle>Gitea Library</AssemblyTitle>
     <Description>C# library for the Gitea API</Description>
     <Copyright>Copyright Remco Fischer 2024</Copyright>
     <RootNamespace>Gitea.Net</RootNamespace>
-    <Version>1.0.2</Version>
     <DocumentationFile>bin\$(Configuration)\$(TargetFramework)\Gitea.Net.xml</DocumentationFile>
     <RepositoryUrl>https://github.com/remco1271/Gitea.net.git</RepositoryUrl>
     <RepositoryType>git</RepositoryType>
-    <PackageReleaseNotes>
-    </PackageReleaseNotes>
-    <GeneratePackageOnBuild>True</GeneratePackageOnBuild>
-    <Title>Gitea.Net</Title>
+    <PackageLicenseExpression>MIT</PackageLicenseExpression>
     <PackageProjectUrl>https://github.com/remco1271/Gitea.net</PackageProjectUrl>
     <PackageIcon>Gitea Icon.png</PackageIcon>
     <PackageReadmeFile>README.md</PackageReadmeFile>
   </PropertyGroup>
-  <!-- Set the LangVersion = 8 -->
-  <PropertyGroup>
-    <TargetFrameworks>netstandard2.0</TargetFrameworks>
-    <!--<TargetFrameworks>netstandard2.0;netstandard2.1</TargetFrameworks>-->
-    <LangVersion>8.0</LangVersion>
-  </PropertyGroup>
-  <PropertyGroup>
-    <VersionPrefix>1.0.2</VersionPrefix>
-    <VersionSuffix>
-    </VersionSuffix>
-    <!--<PackageLicenseFile>MIT-LICENSE.txt</PackageLicenseFile>-->
-    <IncludeSymbols>True</IncludeSymbols>
-    <SymbolPackageFormat>snupkg</SymbolPackageFormat>
-  </PropertyGroup>
-  <PropertyGroup>
-    <GenerateNuspecDependsOn>$(GenerateNuspecDependsOn);SetPackageVersion</GenerateNuspecDependsOn>
-  </PropertyGroup>
+
   <Target Name="SetPackageVersion" DependsOnTargets="Build">
     <PropertyGroup>
       <!-- <PackageVersion>$([System.DateTime]::Now.ToString(&quot;yyyy.MM.dd.HHmmss&quot;))</PackageVersion> -->
@@ -49,47 +41,17 @@
       <PackageVersion>$([System.DateTime]::Now.ToString("yy.MM.dd"))</PackageVersion>
     </PropertyGroup>
   </Target>
-  <PropertyGroup>
-    <GenerateNuspecDependsOn>$(GenerateNuspecDependsOn);SetPackageVersion</GenerateNuspecDependsOn>
-  </PropertyGroup>
+
   <ItemGroup>
-    <None Include="MIT-LICENSE.txt" Pack="true" PackagePath="" />
+    <None Include="MIT-LICENSE.txt" Pack="true" PackagePath="\"/>
+    <None Include="..\..\README.md" Pack="true" PackagePath="\"/>
+    <None Include="..\Gitea Icon.png" Pack="true" PackagePath="\"/>
   </ItemGroup>
-  <PropertyGroup>
-    <PackageLicenseExpression>MIT</PackageLicenseExpression>
-  </PropertyGroup>
-  <!-- Only enable nullable feature for the supported frameworks -->
-  <PropertyGroup Condition=" '$(TargetFramework)' != 'netstandard2.0' ">
-    <Nullable>enable</Nullable>
-  </PropertyGroup>
-  <PropertyGroup Condition=" '$(TargetFramework)' == 'netstandard2.0' ">
-    <ImplicitUsings>disable</ImplicitUsings>
-    <Nullable>disable</Nullable>
-  </PropertyGroup>
+
   <ItemGroup>
-    <PackageReference Include="JsonSubTypes" />
-    <PackageReference Include="RestSharp" />
-    <PackageReference Include="Polly" />
-    <PackageReference Include="Newtonsoft.Json" />
-    <PackageReference Include="System.Text.Json" />
+    <PackageReference Include="RestSharp"/>
+    <PackageReference Include="Polly"/>
+    <PackageReference Include="Newtonsoft.Json"/>
   </ItemGroup>
-  <ItemGroup>
-    <None Remove="System.Web" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="..\..\README.md">
-      <Pack>True</Pack>
-      <PackagePath>\</PackagePath>
-    </None>
-    <None Include="..\Gitea Icon.png">
-      <Pack>True</Pack>
-      <PackagePath>\</PackagePath>
-    </None>
-  </ItemGroup>
-  <ItemGroup>
-    <None Update="MIT-LICENSE.txt">
-      <Pack>True</Pack>
-      <PackagePath>\</PackagePath>
-    </None>
-  </ItemGroup>
+
 </Project>
