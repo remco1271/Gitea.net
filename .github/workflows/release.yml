@@ -19,7 +19,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Download build version
-        uses: actions/download-artifact@v4
+        uses: actions/download-artifact@v6
         with:
           name: build-version
           run-id: ${{ github.event.inputs.workflow_run_id }}
@@ -27,7 +27,7 @@ jobs:
           path: ./
 
       - name: Download package
-        uses: actions/download-artifact@v4
+        uses: actions/download-artifact@v6
         with:
           name: packages
           run-id: ${{ github.event.inputs.workflow_run_id }}
