@@ -41,12 +41,12 @@ jobs:
       - name: Write Version File
         run: echo $NBGV_NuGetPackageVersion > version.txt
       - name: Upload version file as artifact
-        uses: actions/upload-artifact@v4
+        uses: actions/upload-artifact@v6
         with:
           name: build-version
           path: version.txt
       - name: Upload Package Artifacts
-        uses: actions/upload-artifact@v4
+        uses: actions/upload-artifact@v6
         with:
           name: packages
           path: src/Gitea.Net/bin/Release/*nupkg
