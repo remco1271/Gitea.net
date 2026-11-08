@@ -105,7 +105,10 @@ jobs:
           Write-Host "Release commit: $releaseCommit"
           Write-Host "Previous tag: $(if ($previousTag) { $previousTag } else { '<none>' })"
 
-          # Tag the release commit (reuse the tag if a previous attempt already pushed it)
+          # Check the tag (reuse it if a previous attempt already created it).
+          # The tag is not pushed with git: GITHUB_TOKEN may not push a ref whose workflow files
+          # differ from the branch ("refusing to allow a GitHub App to create or update workflow"),
+          # which happens when master has moved on. GitHub creates it with the release instead.
           # rev-parse exits with 1 when the tag doesn't exist, which is the normal case here
           $PSNativeCommandUseErrorActionPreference = $false
           $existingTagCommit = git rev-parse -q --verify "refs/tags/$currentTag^{commit}" 2>$null
@@ -116,9 +119,7 @@ jobs:
               }
               Write-Host "Tag $currentTag already exists on the release commit, reusing it."
           } else {
-              Write-Host "Tagging release commit..."
-              git tag $currentTag $releaseCommit
-              git push origin "refs/tags/$currentTag"
+              Write-Host "Tag $currentTag does not exist yet; it will be created on $releaseCommit together with the release."
           }
 
           # Create the GitHub release unless a previous attempt already did
@@ -135,7 +136,8 @@ jobs:
                   "Authorization" = "Bearer ${{ github.token }}"
                   "Accept" = "application/vnd.github+json"
               }
-              $request = @{ "tag_name" = $currentTag }
+              # target_commitish is used when the tag doesn't exist yet
+              $request = @{ "tag_name" = $currentTag; "target_commitish" = $releaseCommit }
               if ($previousTag) { $request["previous_tag_name"] = $previousTag }
               $apiUrl = "https://api.github.com/repos/${{ github.repository }}/releases/generate-notes"
               $response = Invoke-RestMethod -Uri $apiUrl -Method Post -Headers $headers -Body ($request | ConvertTo-Json) -ContentType 'application/json'
@@ -174,7 +176,8 @@ jobs:
               Write-Host "Creating release..."
               $notesFilePath = "../RELEASE_NOTES.md"
               $releaseBody | Out-File -FilePath $notesFilePath -Encoding utf8
-              gh release create $currentTag --title $releaseName --notes-file $notesFilePath $releaseArg --verify-tag
+              # --target creates the tag on the release commit if it doesn't exist yet
+              gh release create $currentTag --title $releaseName --notes-file $notesFilePath $releaseArg --target $releaseCommit
           }
 
           # Upload (or replace) the packages on the release
