@@ -17,6 +17,8 @@ permissions:
 jobs:
   publish:
     runs-on: ubuntu-latest
+    permissions:
+      id-token: write  # enable GitHub OIDC token issuance for this job
     steps:
       - name: Download build version
         uses: actions/download-artifact@v8
@@ -169,9 +171,17 @@ jobs:
           # Upload artifacts
           Write-Host "Uploading artifacts..."
           gh release upload $currentTag (get-item ../packages/*.nupkg)
-
+          
+      # Get a short-lived NuGet API key
+      - name: NuGet login (OIDC → temp API key)
+        uses: NuGet/login@v1
+        id: login
+        with:
+          user: contoso-bot # Recommended: use a secret like ${{ secrets.NUGET_USER }} for your nuget.org username (profile name), NOT your email address
+    
+      # Push the package
       - name: Publish NuGet Packages
         run: |
           for f in packages/*.nupkg; do
-            dotnet nuget push "$f" -k ${{ secrets.NUGET_API_KEY }} -s https://api.nuget.org/v3/index.json --skip-duplicate
+            dotnet nuget push "$f" --api-key ${{steps.login.outputs.NUGET_API_KEY}} --source https://api.nuget.org/v3/index.json
           done
