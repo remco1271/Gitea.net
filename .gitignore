@@ -362,3 +362,6 @@ MigrationBackup/
 # Fody - auto-generated XML schema
 FodyWeavers.xsd
 /test.runsettings
+
+# Local test settings (Gitea token for the live ReleaseTests)
+/src/Gitea.Net.Test/Properties/launchSettings.json

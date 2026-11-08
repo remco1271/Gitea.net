@@ -66,6 +66,17 @@ dotnet pack -c Release
 
 The `.nupkg` and `.snupkg` files are written to `src/Gitea.Net/bin/Release`. Releases are built and published to NuGet by the GitHub Actions workflows.
 
+<a id="tests"></a>
+## Tests
+
+The tests use [xUnit v3](https://xunit.net/docs/getting-started/v3/whats-new) on Microsoft.Testing.Platform (enabled in `global.json`, needs the .NET 10 SDK). Run them with:
+
+```
+dotnet test
+```
+
+The API tests don't need a Gitea server. The live tests in `ReleaseTests` call a real Gitea server, configured with `VELOPACK_GITEA_*` environment variables. To set them locally, copy `src/Gitea.Net.Test/Properties/launchSettings.example.json` to `launchSettings.json` in the same folder and fill in your values; that file is ignored by git. Without a token, the test that edits a release does nothing.
+
 <a id="usage"></a>
 ## Usage
 
