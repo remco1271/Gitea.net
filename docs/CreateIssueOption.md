@@ -12,6 +12,7 @@ Name | Type | Description | Notes
 **DueDate** | **DateTime** |  | [optional] 
 **Labels** | **List&lt;long&gt;** | list of label ids | [optional] 
 **Milestone** | **long** | milestone id | [optional] 
+**Projects** | **List&lt;long&gt;** | list of project ids | [optional] 
 **Ref** | **string** |  | [optional] 
 **Title** | **string** |  | 
 

@@ -5,8 +5,8 @@ GPGKeyEmail an email attached to a GPGKey
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Email** | **string** |  | [optional] 
-**Verified** | **bool** |  | [optional] 
+**Email** | **string** | The email address associated with the GPG key | [optional] 
+**Verified** | **bool** | Whether the email address has been verified | [optional] 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

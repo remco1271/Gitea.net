@@ -5,8 +5,8 @@ WikiCommitList commit/revision list
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Commits** | [**List&lt;WikiCommit&gt;**](WikiCommit.md) |  | [optional] 
-**Count** | **long** |  | [optional] 
+**Commits** | [**List&lt;WikiCommit&gt;**](WikiCommit.md) | The list of wiki commits | [optional] 
+**Count** | **long** | The total count of commits | [optional] 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

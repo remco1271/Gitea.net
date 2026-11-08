@@ -5,6 +5,7 @@ UpdateVariableOption the option when updating variable
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
+**Description** | **string** | Description of the variable to update | [optional] 
 **Name** | **string** | New name for the variable. If the field is empty, the variable name won&#39;t be updated. | [optional] 
 **Value** | **string** | Value of the variable to update | 
 

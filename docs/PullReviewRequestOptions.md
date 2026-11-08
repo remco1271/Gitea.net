@@ -1,5 +1,5 @@
 # Gitea.Net.Model.PullReviewRequestOptions
-PullReviewRequestOptions are options to add or remove pull review requests
+PullReviewRequestOptions are options to add or remove pull request review requests
 
 ## Properties
 

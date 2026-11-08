@@ -12,7 +12,7 @@ Name | Type | Description | Notes
 **IssueLabels** | **string** | Label-Set to use | [optional] 
 **License** | **string** | License to use | [optional] 
 **Name** | **string** | Name of the repository to create | 
-**ObjectFormatName** | **string** | ObjectFormatName of the underlying git repository | [optional] 
+**ObjectFormatName** | **string** | ObjectFormatName of the underlying git repository, empty string for default (sha1) | [optional] 
 **Private** | **bool** | Whether the repository is private | [optional] 
 **Readme** | **string** | Readme of the repository to create | [optional] 
 **Template** | **bool** | Whether the repository is template | [optional] 

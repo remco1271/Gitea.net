@@ -6,7 +6,7 @@ IssueMeta basic issue information
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Index** | **long** |  | [optional] 
-**Owner** | **string** |  | [optional] 
+**Owner** | **string** | owner of the issue&#39;s repo | [optional] 
 **Repo** | **string** |  | [optional] 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)

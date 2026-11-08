@@ -6,6 +6,7 @@ ActionVariable return value of the query API
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Data** | **string** | the value of the variable | [optional] 
+**Description** | **string** | the description of the variable | [optional] 
 **Name** | **string** | the name of the variable | [optional] 
 **OwnerId** | **long** | the owner to which the variable belongs | [optional] 
 **RepoId** | **long** | the repository to which the variable belongs | [optional] 

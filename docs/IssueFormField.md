@@ -9,7 +9,7 @@ Name | Type | Description | Notes
 **Id** | **string** |  | [optional] 
 **Type** | **string** |  | [optional] 
 **Validations** | **Dictionary&lt;string, Object&gt;** |  | [optional] 
-**Visible** | **List&lt;string&gt;** |  | [optional] 
+**Visible** | **List&lt;IssueFormField.VisibleEnum&gt;** |  | [optional] 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

@@ -6,12 +6,18 @@ All URIs are relative to */api/v1*
 |--------|--------------|-------------|
 | [**CreateCurrentUserRepo**](UserApi.md#createcurrentuserrepo) | **POST** /user/repos | Create a repository |
 | [**CreateUserVariable**](UserApi.md#createuservariable) | **POST** /user/actions/variables/{variablename} | Create a user-level variable |
+| [**DeleteUserRunner**](UserApi.md#deleteuserrunner) | **DELETE** /user/actions/runners/{runner_id} | Delete a user-level runner |
 | [**DeleteUserSecret**](UserApi.md#deleteusersecret) | **DELETE** /user/actions/secrets/{secretname} | Delete a secret in a user scope |
 | [**DeleteUserVariable**](UserApi.md#deleteuservariable) | **DELETE** /user/actions/variables/{variablename} | Delete a user-level variable which is created by current doer |
+| [**GetUserRunner**](UserApi.md#getuserrunner) | **GET** /user/actions/runners/{runner_id} | Get a user-level runner |
+| [**GetUserRunners**](UserApi.md#getuserrunners) | **GET** /user/actions/runners | Get user-level runners |
 | [**GetUserSettings**](UserApi.md#getusersettings) | **GET** /user/settings | Get user settings |
 | [**GetUserVariable**](UserApi.md#getuservariable) | **GET** /user/actions/variables/{variablename} | Get a user-level variable which is created by current doer |
 | [**GetUserVariablesList**](UserApi.md#getuservariableslist) | **GET** /user/actions/variables | Get the user-level list of variables which is created by current doer |
+| [**GetUserWorkflowJobs**](UserApi.md#getuserworkflowjobs) | **GET** /user/actions/jobs | Get workflow jobs |
+| [**GetUserWorkflowRuns**](UserApi.md#getuserworkflowruns) | **GET** /user/actions/runs | Get workflow runs |
 | [**GetVerificationToken**](UserApi.md#getverificationtoken) | **GET** /user/gpg_key_token | Get a Token to verify |
+| [**UpdateUserRunner**](UserApi.md#updateuserrunner) | **PATCH** /user/actions/runners/{runner_id} | Update a user-level runner |
 | [**UpdateUserSecret**](UserApi.md#updateusersecret) | **PUT** /user/actions/secrets/{secretname} | Create or Update a secret value in a user scope |
 | [**UpdateUserSettings**](UserApi.md#updateusersettings) | **PATCH** /user/settings | Update user settings |
 | [**UpdateUserVariable**](UserApi.md#updateuservariable) | **PUT** /user/actions/variables/{variablename} | Update a user-level variable which is created by current doer |
@@ -21,26 +27,43 @@ All URIs are relative to */api/v1*
 | [**UserCheckUserBlock**](UserApi.md#usercheckuserblock) | **GET** /user/blocks/{username} | Check if a user is blocked by the authenticated user |
 | [**UserCreateHook**](UserApi.md#usercreatehook) | **POST** /user/hooks | Create a hook |
 | [**UserCreateOAuth2Application**](UserApi.md#usercreateoauth2application) | **POST** /user/applications/oauth2 | creates a new OAuth2 application |
+| [**UserCreateRunnerRegistrationToken**](UserApi.md#usercreaterunnerregistrationtoken) | **POST** /user/actions/runners/registration-token | Get a user&#39;s actions runner registration token |
 | [**UserCreateToken**](UserApi.md#usercreatetoken) | **POST** /users/{username}/tokens | Create an access token |
+| [**UserCurrentAddIssueToProjectColumn**](UserApi.md#usercurrentaddissuetoprojectcolumn) | **POST** /user/projects/{id}/columns/{column_id}/issues/{issue_id} | Add an issue to a project column |
 | [**UserCurrentCheckFollowing**](UserApi.md#usercurrentcheckfollowing) | **GET** /user/following/{username} | Check whether a user is followed by the authenticated user |
 | [**UserCurrentCheckStarring**](UserApi.md#usercurrentcheckstarring) | **GET** /user/starred/{owner}/{repo} | Whether the authenticated is starring the repo |
+| [**UserCurrentCreateProject**](UserApi.md#usercurrentcreateproject) | **POST** /user/projects | Create a project owned by the authenticated user |
+| [**UserCurrentCreateProjectColumn**](UserApi.md#usercurrentcreateprojectcolumn) | **POST** /user/projects/{id}/columns | Create a column in a project |
 | [**UserCurrentDeleteFollow**](UserApi.md#usercurrentdeletefollow) | **DELETE** /user/following/{username} | Unfollow a user |
 | [**UserCurrentDeleteGPGKey**](UserApi.md#usercurrentdeletegpgkey) | **DELETE** /user/gpg_keys/{id} | Remove a GPG key |
 | [**UserCurrentDeleteKey**](UserApi.md#usercurrentdeletekey) | **DELETE** /user/keys/{id} | Delete a public key |
+| [**UserCurrentDeleteProject**](UserApi.md#usercurrentdeleteproject) | **DELETE** /user/projects/{id} | Delete a project |
+| [**UserCurrentDeleteProjectColumn**](UserApi.md#usercurrentdeleteprojectcolumn) | **DELETE** /user/projects/{id}/columns/{column_id} | Delete a project column |
 | [**UserCurrentDeleteStar**](UserApi.md#usercurrentdeletestar) | **DELETE** /user/starred/{owner}/{repo} | Unstar the given repo |
+| [**UserCurrentEditProject**](UserApi.md#usercurrenteditproject) | **PATCH** /user/projects/{id} | Edit a project |
+| [**UserCurrentEditProjectColumn**](UserApi.md#usercurrenteditprojectcolumn) | **PATCH** /user/projects/{id}/columns/{column_id} | Edit a project column |
 | [**UserCurrentGetGPGKey**](UserApi.md#usercurrentgetgpgkey) | **GET** /user/gpg_keys/{id} | Get a GPG key |
 | [**UserCurrentGetKey**](UserApi.md#usercurrentgetkey) | **GET** /user/keys/{id} | Get a public key |
+| [**UserCurrentGetProject**](UserApi.md#usercurrentgetproject) | **GET** /user/projects/{id} | Get a project |
+| [**UserCurrentGetProjectColumn**](UserApi.md#usercurrentgetprojectcolumn) | **GET** /user/projects/{id}/columns/{column_id} | Get a project column |
 | [**UserCurrentListFollowers**](UserApi.md#usercurrentlistfollowers) | **GET** /user/followers | List the authenticated user&#39;s followers |
 | [**UserCurrentListFollowing**](UserApi.md#usercurrentlistfollowing) | **GET** /user/following | List the users that the authenticated user is following |
 | [**UserCurrentListGPGKeys**](UserApi.md#usercurrentlistgpgkeys) | **GET** /user/gpg_keys | List the authenticated user&#39;s GPG keys |
 | [**UserCurrentListKeys**](UserApi.md#usercurrentlistkeys) | **GET** /user/keys | List the authenticated user&#39;s public keys |
+| [**UserCurrentListProjectColumnIssues**](UserApi.md#usercurrentlistprojectcolumnissues) | **GET** /user/projects/{id}/columns/{column_id}/issues | List the issues in a project column |
+| [**UserCurrentListProjectColumns**](UserApi.md#usercurrentlistprojectcolumns) | **GET** /user/projects/{id}/columns | List a project&#39;s columns |
+| [**UserCurrentListProjects**](UserApi.md#usercurrentlistprojects) | **GET** /user/projects | List your projects |
 | [**UserCurrentListRepos**](UserApi.md#usercurrentlistrepos) | **GET** /user/repos | List the repos that the authenticated user owns |
 | [**UserCurrentListStarred**](UserApi.md#usercurrentliststarred) | **GET** /user/starred | The repos that the authenticated user has starred |
 | [**UserCurrentListSubscriptions**](UserApi.md#usercurrentlistsubscriptions) | **GET** /user/subscriptions | List repositories watched by the authenticated user |
+| [**UserCurrentMoveProjectColumns**](UserApi.md#usercurrentmoveprojectcolumns) | **POST** /user/projects/{id}/columns/move | Reorder a project&#39;s columns |
+| [**UserCurrentMoveProjectIssue**](UserApi.md#usercurrentmoveprojectissue) | **POST** /user/projects/{id}/issues/{issue_id}/move | Move an issue between a project&#39;s columns |
 | [**UserCurrentPostGPGKey**](UserApi.md#usercurrentpostgpgkey) | **POST** /user/gpg_keys | Create a GPG key |
 | [**UserCurrentPostKey**](UserApi.md#usercurrentpostkey) | **POST** /user/keys | Create a public key |
 | [**UserCurrentPutFollow**](UserApi.md#usercurrentputfollow) | **PUT** /user/following/{username} | Follow a user |
 | [**UserCurrentPutStar**](UserApi.md#usercurrentputstar) | **PUT** /user/starred/{owner}/{repo} | Star the given repo |
+| [**UserCurrentRemoveIssueFromProjectColumn**](UserApi.md#usercurrentremoveissuefromprojectcolumn) | **DELETE** /user/projects/{id}/columns/{column_id}/issues/{issue_id} | Remove an issue from a project column |
+| [**UserCurrentSetDefaultProjectColumn**](UserApi.md#usercurrentsetdefaultprojectcolumn) | **POST** /user/projects/{id}/columns/{column_id}/default | Set a project&#39;s default column |
 | [**UserCurrentTrackedTimes**](UserApi.md#usercurrenttrackedtimes) | **GET** /user/times | List the current user&#39;s tracked times |
 | [**UserDeleteAccessToken**](UserApi.md#userdeleteaccesstoken) | **DELETE** /users/{username}/tokens/{token} | delete an access token |
 | [**UserDeleteAvatar**](UserApi.md#userdeleteavatar) | **DELETE** /user/avatar | Delete Avatar |
@@ -54,7 +77,6 @@ All URIs are relative to */api/v1*
 | [**UserGetHook**](UserApi.md#usergethook) | **GET** /user/hooks/{id} | Get a hook |
 | [**UserGetOAuth2Application**](UserApi.md#usergetoauth2application) | **GET** /user/applications/oauth2/{id} | get an OAuth2 Application |
 | [**UserGetOauth2Application**](UserApi.md#usergetoauth2application) | **GET** /user/applications/oauth2 | List the authenticated user&#39;s oauth2 applications |
-| [**UserGetRunnerRegistrationToken**](UserApi.md#usergetrunnerregistrationtoken) | **GET** /user/actions/runners/registration-token | Get an user&#39;s actions runner registration token |
 | [**UserGetStopWatches**](UserApi.md#usergetstopwatches) | **GET** /user/stopwatches | Get list of all existing stopwatches |
 | [**UserGetTokens**](UserApi.md#usergettokens) | **GET** /users/{username}/tokens | List the authenticated user&#39;s access tokens |
 | [**UserListActivityFeeds**](UserApi.md#userlistactivityfeeds) | **GET** /users/{username}/activities/feeds | List a user&#39;s activity feeds |
@@ -65,6 +87,7 @@ All URIs are relative to */api/v1*
 | [**UserListGPGKeys**](UserApi.md#userlistgpgkeys) | **GET** /users/{username}/gpg_keys | List the given user&#39;s GPG keys |
 | [**UserListHooks**](UserApi.md#userlisthooks) | **GET** /user/hooks | List the authenticated user&#39;s webhooks |
 | [**UserListKeys**](UserApi.md#userlistkeys) | **GET** /users/{username}/keys | List the given user&#39;s public keys |
+| [**UserListProjects**](UserApi.md#userlistprojects) | **GET** /users/{username}/projects | List a user&#39;s projects |
 | [**UserListRepos**](UserApi.md#userlistrepos) | **GET** /users/{username}/repos | List the repos owned by the given user |
 | [**UserListStarred**](UserApi.md#userliststarred) | **GET** /users/{username}/starred | The repos that the given user has starred |
 | [**UserListSubscriptions**](UserApi.md#userlistsubscriptions) | **GET** /users/{username}/subscriptions | List the repositories watched by a user |
@@ -306,8 +329,122 @@ void (empty response body)
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-| **201** | response when creating a variable |  -  |
-| **204** | response when creating a variable |  -  |
+| **201** | successfully created the user-level variable |  -  |
+| **400** | APIError is error format response |  * message -  <br>  * url -  <br>  |
+| **409** | variable name already exists. |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+<a id="deleteuserrunner"></a>
+# **DeleteUserRunner**
+> void DeleteUserRunner (string runnerId)
+
+Delete a user-level runner
+
+### Example
+```csharp
+using System.Collections.Generic;
+using System.Diagnostics;
+using Gitea.Net.Api;
+using Gitea.Net.Client;
+using Gitea.Net.Model;
+
+namespace Example
+{
+    public class DeleteUserRunnerExample
+    {
+        public static void Main()
+        {
+            Configuration config = new Configuration();
+            config.BasePath = "/api/v1";
+            // Configure API key authorization: TOTPHeader
+            config.AddApiKey("X-GITEA-OTP", "YOUR_API_KEY");
+            // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+            // config.AddApiKeyPrefix("X-GITEA-OTP", "Bearer");
+            // Configure API key authorization: AuthorizationHeaderToken
+            config.AddApiKey("Authorization", "YOUR_API_KEY");
+            // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+            // config.AddApiKeyPrefix("Authorization", "Bearer");
+            // Configure API key authorization: SudoHeader
+            config.AddApiKey("Sudo", "YOUR_API_KEY");
+            // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+            // config.AddApiKeyPrefix("Sudo", "Bearer");
+            // Configure HTTP basic authorization: BasicAuth
+            config.Username = "YOUR_USERNAME";
+            config.Password = "YOUR_PASSWORD";
+            // Configure API key authorization: AccessToken
+            config.AddApiKey("access_token", "YOUR_API_KEY");
+            // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+            // config.AddApiKeyPrefix("access_token", "Bearer");
+            // Configure API key authorization: SudoParam
+            config.AddApiKey("sudo", "YOUR_API_KEY");
+            // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+            // config.AddApiKeyPrefix("sudo", "Bearer");
+            // Configure API key authorization: Token
+            config.AddApiKey("token", "YOUR_API_KEY");
+            // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+            // config.AddApiKeyPrefix("token", "Bearer");
+
+            var apiInstance = new UserApi(config);
+            var runnerId = "runnerId_example";  // string | id of the runner
+
+            try
+            {
+                // Delete a user-level runner
+                apiInstance.DeleteUserRunner(runnerId);
+            }
+            catch (ApiException  e)
+            {
+                Debug.Print("Exception when calling UserApi.DeleteUserRunner: " + e.Message);
+                Debug.Print("Status Code: " + e.ErrorCode);
+                Debug.Print(e.StackTrace);
+            }
+        }
+    }
+}
+```
+
+#### Using the DeleteUserRunnerWithHttpInfo variant
+This returns an ApiResponse object which contains the response data, status code and headers.
+
+```csharp
+try
+{
+    // Delete a user-level runner
+    apiInstance.DeleteUserRunnerWithHttpInfo(runnerId);
+}
+catch (ApiException e)
+{
+    Debug.Print("Exception when calling UserApi.DeleteUserRunnerWithHttpInfo: " + e.Message);
+    Debug.Print("Status Code: " + e.ErrorCode);
+    Debug.Print(e.StackTrace);
+}
+```
+
+### Parameters
+
+| Name | Type | Description | Notes |
+|------|------|-------------|-------|
+| **runnerId** | **string** | id of the runner |  |
+
+### Return type
+
+void (empty response body)
+
+### Authorization
+
+[TOTPHeader](../README.md#TOTPHeader), [AuthorizationHeaderToken](../README.md#AuthorizationHeaderToken), [SudoHeader](../README.md#SudoHeader), [BasicAuth](../README.md#BasicAuth), [AccessToken](../README.md#AccessToken), [SudoParam](../README.md#SudoParam), [Token](../README.md#Token)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: Not defined
+
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+| **204** | runner has been deleted |  -  |
 | **400** | APIError is error format response |  * message -  <br>  * url -  <br>  |
 | **404** | APINotFound is a not found empty response |  -  |
 
@@ -544,9 +681,247 @@ void (empty response body)
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
+<a id="getuserrunner"></a>
+# **GetUserRunner**
+> ActionRunner GetUserRunner (string runnerId)
+
+Get a user-level runner
+
+### Example
+```csharp
+using System.Collections.Generic;
+using System.Diagnostics;
+using Gitea.Net.Api;
+using Gitea.Net.Client;
+using Gitea.Net.Model;
+
+namespace Example
+{
+    public class GetUserRunnerExample
+    {
+        public static void Main()
+        {
+            Configuration config = new Configuration();
+            config.BasePath = "/api/v1";
+            // Configure API key authorization: TOTPHeader
+            config.AddApiKey("X-GITEA-OTP", "YOUR_API_KEY");
+            // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+            // config.AddApiKeyPrefix("X-GITEA-OTP", "Bearer");
+            // Configure API key authorization: AuthorizationHeaderToken
+            config.AddApiKey("Authorization", "YOUR_API_KEY");
+            // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+            // config.AddApiKeyPrefix("Authorization", "Bearer");
+            // Configure API key authorization: SudoHeader
+            config.AddApiKey("Sudo", "YOUR_API_KEY");
+            // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+            // config.AddApiKeyPrefix("Sudo", "Bearer");
+            // Configure HTTP basic authorization: BasicAuth
+            config.Username = "YOUR_USERNAME";
+            config.Password = "YOUR_PASSWORD";
+            // Configure API key authorization: AccessToken
+            config.AddApiKey("access_token", "YOUR_API_KEY");
+            // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+            // config.AddApiKeyPrefix("access_token", "Bearer");
+            // Configure API key authorization: SudoParam
+            config.AddApiKey("sudo", "YOUR_API_KEY");
+            // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+            // config.AddApiKeyPrefix("sudo", "Bearer");
+            // Configure API key authorization: Token
+            config.AddApiKey("token", "YOUR_API_KEY");
+            // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+            // config.AddApiKeyPrefix("token", "Bearer");
+
+            var apiInstance = new UserApi(config);
+            var runnerId = "runnerId_example";  // string | id of the runner
+
+            try
+            {
+                // Get a user-level runner
+                ActionRunner result = apiInstance.GetUserRunner(runnerId);
+                Debug.WriteLine(result);
+            }
+            catch (ApiException  e)
+            {
+                Debug.Print("Exception when calling UserApi.GetUserRunner: " + e.Message);
+                Debug.Print("Status Code: " + e.ErrorCode);
+                Debug.Print(e.StackTrace);
+            }
+        }
+    }
+}
+```
+
+#### Using the GetUserRunnerWithHttpInfo variant
+This returns an ApiResponse object which contains the response data, status code and headers.
+
+```csharp
+try
+{
+    // Get a user-level runner
+    ApiResponse<ActionRunner> response = apiInstance.GetUserRunnerWithHttpInfo(runnerId);
+    Debug.Write("Status Code: " + response.StatusCode);
+    Debug.Write("Response Headers: " + response.Headers);
+    Debug.Write("Response Body: " + response.Data);
+}
+catch (ApiException e)
+{
+    Debug.Print("Exception when calling UserApi.GetUserRunnerWithHttpInfo: " + e.Message);
+    Debug.Print("Status Code: " + e.ErrorCode);
+    Debug.Print(e.StackTrace);
+}
+```
+
+### Parameters
+
+| Name | Type | Description | Notes |
+|------|------|-------------|-------|
+| **runnerId** | **string** | id of the runner |  |
+
+### Return type
+
+[**ActionRunner**](ActionRunner.md)
+
+### Authorization
+
+[TOTPHeader](../README.md#TOTPHeader), [AuthorizationHeaderToken](../README.md#AuthorizationHeaderToken), [SudoHeader](../README.md#SudoHeader), [BasicAuth](../README.md#BasicAuth), [AccessToken](../README.md#AccessToken), [SudoParam](../README.md#SudoParam), [Token](../README.md#Token)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+| **200** | Runner |  -  |
+| **400** | APIError is error format response |  * message -  <br>  * url -  <br>  |
+| **404** | APINotFound is a not found empty response |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+<a id="getuserrunners"></a>
+# **GetUserRunners**
+> ActionRunnersResponse GetUserRunners (bool? disabled = null)
+
+Get user-level runners
+
+### Example
+```csharp
+using System.Collections.Generic;
+using System.Diagnostics;
+using Gitea.Net.Api;
+using Gitea.Net.Client;
+using Gitea.Net.Model;
+
+namespace Example
+{
+    public class GetUserRunnersExample
+    {
+        public static void Main()
+        {
+            Configuration config = new Configuration();
+            config.BasePath = "/api/v1";
+            // Configure API key authorization: TOTPHeader
+            config.AddApiKey("X-GITEA-OTP", "YOUR_API_KEY");
+            // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+            // config.AddApiKeyPrefix("X-GITEA-OTP", "Bearer");
+            // Configure API key authorization: AuthorizationHeaderToken
+            config.AddApiKey("Authorization", "YOUR_API_KEY");
+            // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+            // config.AddApiKeyPrefix("Authorization", "Bearer");
+            // Configure API key authorization: SudoHeader
+            config.AddApiKey("Sudo", "YOUR_API_KEY");
+            // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+            // config.AddApiKeyPrefix("Sudo", "Bearer");
+            // Configure HTTP basic authorization: BasicAuth
+            config.Username = "YOUR_USERNAME";
+            config.Password = "YOUR_PASSWORD";
+            // Configure API key authorization: AccessToken
+            config.AddApiKey("access_token", "YOUR_API_KEY");
+            // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+            // config.AddApiKeyPrefix("access_token", "Bearer");
+            // Configure API key authorization: SudoParam
+            config.AddApiKey("sudo", "YOUR_API_KEY");
+            // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+            // config.AddApiKeyPrefix("sudo", "Bearer");
+            // Configure API key authorization: Token
+            config.AddApiKey("token", "YOUR_API_KEY");
+            // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+            // config.AddApiKeyPrefix("token", "Bearer");
+
+            var apiInstance = new UserApi(config);
+            var disabled = true;  // bool? | filter by disabled status (true or false) (optional) 
+
+            try
+            {
+                // Get user-level runners
+                ActionRunnersResponse result = apiInstance.GetUserRunners(disabled);
+                Debug.WriteLine(result);
+            }
+            catch (ApiException  e)
+            {
+                Debug.Print("Exception when calling UserApi.GetUserRunners: " + e.Message);
+                Debug.Print("Status Code: " + e.ErrorCode);
+                Debug.Print(e.StackTrace);
+            }
+        }
+    }
+}
+```
+
+#### Using the GetUserRunnersWithHttpInfo variant
+This returns an ApiResponse object which contains the response data, status code and headers.
+
+```csharp
+try
+{
+    // Get user-level runners
+    ApiResponse<ActionRunnersResponse> response = apiInstance.GetUserRunnersWithHttpInfo(disabled);
+    Debug.Write("Status Code: " + response.StatusCode);
+    Debug.Write("Response Headers: " + response.Headers);
+    Debug.Write("Response Body: " + response.Data);
+}
+catch (ApiException e)
+{
+    Debug.Print("Exception when calling UserApi.GetUserRunnersWithHttpInfo: " + e.Message);
+    Debug.Print("Status Code: " + e.ErrorCode);
+    Debug.Print(e.StackTrace);
+}
+```
+
+### Parameters
+
+| Name | Type | Description | Notes |
+|------|------|-------------|-------|
+| **disabled** | **bool?** | filter by disabled status (true or false) | [optional]  |
+
+### Return type
+
+[**ActionRunnersResponse**](ActionRunnersResponse.md)
+
+### Authorization
+
+[TOTPHeader](../README.md#TOTPHeader), [AuthorizationHeaderToken](../README.md#AuthorizationHeaderToken), [SudoHeader](../README.md#SudoHeader), [BasicAuth](../README.md#BasicAuth), [AccessToken](../README.md#AccessToken), [SudoParam](../README.md#SudoParam), [Token](../README.md#Token)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+| **200** | RunnerList |  -  |
+| **400** | APIError is error format response |  * message -  <br>  * url -  <br>  |
+| **404** | APINotFound is a not found empty response |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
 <a id="getusersettings"></a>
 # **GetUserSettings**
-> List&lt;UserSettings&gt; GetUserSettings ()
+> UserSettings GetUserSettings ()
 
 Get user settings
 
@@ -599,7 +974,7 @@ namespace Example
             try
             {
                 // Get user settings
-                List<UserSettings> result = apiInstance.GetUserSettings();
+                UserSettings result = apiInstance.GetUserSettings();
                 Debug.WriteLine(result);
             }
             catch (ApiException  e)
@@ -620,7 +995,7 @@ This returns an ApiResponse object which contains the response data, status code
 try
 {
     // Get user settings
-    ApiResponse<List<UserSettings>> response = apiInstance.GetUserSettingsWithHttpInfo();
+    ApiResponse<UserSettings> response = apiInstance.GetUserSettingsWithHttpInfo();
     Debug.Write("Status Code: " + response.StatusCode);
     Debug.Write("Response Headers: " + response.Headers);
     Debug.Write("Response Body: " + response.Data);
@@ -637,7 +1012,7 @@ catch (ApiException e)
 This endpoint does not need any parameter.
 ### Return type
 
-[**List&lt;UserSettings&gt;**](UserSettings.md)
+[**UserSettings**](UserSettings.md)
 
 ### Authorization
 
@@ -896,6 +1271,265 @@ catch (ApiException e)
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
+<a id="getuserworkflowjobs"></a>
+# **GetUserWorkflowJobs**
+> ActionWorkflowJobsResponse GetUserWorkflowJobs (string? status = null, int? page = null, int? limit = null, string? sort = null, string? order = null)
+
+Get workflow jobs
+
+### Example
+```csharp
+using System.Collections.Generic;
+using System.Diagnostics;
+using Gitea.Net.Api;
+using Gitea.Net.Client;
+using Gitea.Net.Model;
+
+namespace Example
+{
+    public class GetUserWorkflowJobsExample
+    {
+        public static void Main()
+        {
+            Configuration config = new Configuration();
+            config.BasePath = "/api/v1";
+            // Configure API key authorization: TOTPHeader
+            config.AddApiKey("X-GITEA-OTP", "YOUR_API_KEY");
+            // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+            // config.AddApiKeyPrefix("X-GITEA-OTP", "Bearer");
+            // Configure API key authorization: AuthorizationHeaderToken
+            config.AddApiKey("Authorization", "YOUR_API_KEY");
+            // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+            // config.AddApiKeyPrefix("Authorization", "Bearer");
+            // Configure API key authorization: SudoHeader
+            config.AddApiKey("Sudo", "YOUR_API_KEY");
+            // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+            // config.AddApiKeyPrefix("Sudo", "Bearer");
+            // Configure HTTP basic authorization: BasicAuth
+            config.Username = "YOUR_USERNAME";
+            config.Password = "YOUR_PASSWORD";
+            // Configure API key authorization: AccessToken
+            config.AddApiKey("access_token", "YOUR_API_KEY");
+            // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+            // config.AddApiKeyPrefix("access_token", "Bearer");
+            // Configure API key authorization: SudoParam
+            config.AddApiKey("sudo", "YOUR_API_KEY");
+            // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+            // config.AddApiKeyPrefix("sudo", "Bearer");
+            // Configure API key authorization: Token
+            config.AddApiKey("token", "YOUR_API_KEY");
+            // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+            // config.AddApiKeyPrefix("token", "Bearer");
+
+            var apiInstance = new UserApi(config);
+            var status = "status_example";  // string? | workflow status (requested, pending, queued, in_progress, failure, success, skipped) (optional) 
+            var page = 56;  // int? | page number of results to return (1-based) (optional) 
+            var limit = 56;  // int? | page size of results (optional) 
+            var sort = "sort_example";  // string? | sort jobs by attribute. Supported values are \"id\". Default is \"id\" (optional) 
+            var order = "order_example";  // string? | sort order, either \"asc\" (ascending) or \"desc\" (descending). Default is \"asc\" (optional) 
+
+            try
+            {
+                // Get workflow jobs
+                ActionWorkflowJobsResponse result = apiInstance.GetUserWorkflowJobs(status, page, limit, sort, order);
+                Debug.WriteLine(result);
+            }
+            catch (ApiException  e)
+            {
+                Debug.Print("Exception when calling UserApi.GetUserWorkflowJobs: " + e.Message);
+                Debug.Print("Status Code: " + e.ErrorCode);
+                Debug.Print(e.StackTrace);
+            }
+        }
+    }
+}
+```
+
+#### Using the GetUserWorkflowJobsWithHttpInfo variant
+This returns an ApiResponse object which contains the response data, status code and headers.
+
+```csharp
+try
+{
+    // Get workflow jobs
+    ApiResponse<ActionWorkflowJobsResponse> response = apiInstance.GetUserWorkflowJobsWithHttpInfo(status, page, limit, sort, order);
+    Debug.Write("Status Code: " + response.StatusCode);
+    Debug.Write("Response Headers: " + response.Headers);
+    Debug.Write("Response Body: " + response.Data);
+}
+catch (ApiException e)
+{
+    Debug.Print("Exception when calling UserApi.GetUserWorkflowJobsWithHttpInfo: " + e.Message);
+    Debug.Print("Status Code: " + e.ErrorCode);
+    Debug.Print(e.StackTrace);
+}
+```
+
+### Parameters
+
+| Name | Type | Description | Notes |
+|------|------|-------------|-------|
+| **status** | **string?** | workflow status (requested, pending, queued, in_progress, failure, success, skipped) | [optional]  |
+| **page** | **int?** | page number of results to return (1-based) | [optional]  |
+| **limit** | **int?** | page size of results | [optional]  |
+| **sort** | **string?** | sort jobs by attribute. Supported values are \&quot;id\&quot;. Default is \&quot;id\&quot; | [optional]  |
+| **order** | **string?** | sort order, either \&quot;asc\&quot; (ascending) or \&quot;desc\&quot; (descending). Default is \&quot;asc\&quot; | [optional]  |
+
+### Return type
+
+[**ActionWorkflowJobsResponse**](ActionWorkflowJobsResponse.md)
+
+### Authorization
+
+[TOTPHeader](../README.md#TOTPHeader), [AuthorizationHeaderToken](../README.md#AuthorizationHeaderToken), [SudoHeader](../README.md#SudoHeader), [BasicAuth](../README.md#BasicAuth), [AccessToken](../README.md#AccessToken), [SudoParam](../README.md#SudoParam), [Token](../README.md#Token)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+| **200** | WorkflowJobsList |  -  |
+| **400** | APIError is error format response |  * message -  <br>  * url -  <br>  |
+| **404** | APINotFound is a not found empty response |  -  |
+| **422** | APIValidationError is error format response related to input validation |  * message -  <br>  * url -  <br>  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+<a id="getuserworkflowruns"></a>
+# **GetUserWorkflowRuns**
+> ActionWorkflowRunsResponse GetUserWorkflowRuns (string? varEvent = null, string? branch = null, string? status = null, string? actor = null, string? headSha = null, int? page = null, int? limit = null)
+
+Get workflow runs
+
+### Example
+```csharp
+using System.Collections.Generic;
+using System.Diagnostics;
+using Gitea.Net.Api;
+using Gitea.Net.Client;
+using Gitea.Net.Model;
+
+namespace Example
+{
+    public class GetUserWorkflowRunsExample
+    {
+        public static void Main()
+        {
+            Configuration config = new Configuration();
+            config.BasePath = "/api/v1";
+            // Configure API key authorization: TOTPHeader
+            config.AddApiKey("X-GITEA-OTP", "YOUR_API_KEY");
+            // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+            // config.AddApiKeyPrefix("X-GITEA-OTP", "Bearer");
+            // Configure API key authorization: AuthorizationHeaderToken
+            config.AddApiKey("Authorization", "YOUR_API_KEY");
+            // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+            // config.AddApiKeyPrefix("Authorization", "Bearer");
+            // Configure API key authorization: SudoHeader
+            config.AddApiKey("Sudo", "YOUR_API_KEY");
+            // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+            // config.AddApiKeyPrefix("Sudo", "Bearer");
+            // Configure HTTP basic authorization: BasicAuth
+            config.Username = "YOUR_USERNAME";
+            config.Password = "YOUR_PASSWORD";
+            // Configure API key authorization: AccessToken
+            config.AddApiKey("access_token", "YOUR_API_KEY");
+            // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+            // config.AddApiKeyPrefix("access_token", "Bearer");
+            // Configure API key authorization: SudoParam
+            config.AddApiKey("sudo", "YOUR_API_KEY");
+            // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+            // config.AddApiKeyPrefix("sudo", "Bearer");
+            // Configure API key authorization: Token
+            config.AddApiKey("token", "YOUR_API_KEY");
+            // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+            // config.AddApiKeyPrefix("token", "Bearer");
+
+            var apiInstance = new UserApi(config);
+            var varEvent = "varEvent_example";  // string? | workflow event name (optional) 
+            var branch = "branch_example";  // string? | workflow branch (optional) 
+            var status = "status_example";  // string? | workflow status (requested, pending, queued, in_progress, failure, success, skipped) (optional) 
+            var actor = "actor_example";  // string? | triggered by user (optional) 
+            var headSha = "headSha_example";  // string? | triggering sha of the workflow run (optional) 
+            var page = 56;  // int? | page number of results to return (1-based) (optional) 
+            var limit = 56;  // int? | page size of results (optional) 
+
+            try
+            {
+                // Get workflow runs
+                ActionWorkflowRunsResponse result = apiInstance.GetUserWorkflowRuns(varEvent, branch, status, actor, headSha, page, limit);
+                Debug.WriteLine(result);
+            }
+            catch (ApiException  e)
+            {
+                Debug.Print("Exception when calling UserApi.GetUserWorkflowRuns: " + e.Message);
+                Debug.Print("Status Code: " + e.ErrorCode);
+                Debug.Print(e.StackTrace);
+            }
+        }
+    }
+}
+```
+
+#### Using the GetUserWorkflowRunsWithHttpInfo variant
+This returns an ApiResponse object which contains the response data, status code and headers.
+
+```csharp
+try
+{
+    // Get workflow runs
+    ApiResponse<ActionWorkflowRunsResponse> response = apiInstance.GetUserWorkflowRunsWithHttpInfo(varEvent, branch, status, actor, headSha, page, limit);
+    Debug.Write("Status Code: " + response.StatusCode);
+    Debug.Write("Response Headers: " + response.Headers);
+    Debug.Write("Response Body: " + response.Data);
+}
+catch (ApiException e)
+{
+    Debug.Print("Exception when calling UserApi.GetUserWorkflowRunsWithHttpInfo: " + e.Message);
+    Debug.Print("Status Code: " + e.ErrorCode);
+    Debug.Print(e.StackTrace);
+}
+```
+
+### Parameters
+
+| Name | Type | Description | Notes |
+|------|------|-------------|-------|
+| **varEvent** | **string?** | workflow event name | [optional]  |
+| **branch** | **string?** | workflow branch | [optional]  |
+| **status** | **string?** | workflow status (requested, pending, queued, in_progress, failure, success, skipped) | [optional]  |
+| **actor** | **string?** | triggered by user | [optional]  |
+| **headSha** | **string?** | triggering sha of the workflow run | [optional]  |
+| **page** | **int?** | page number of results to return (1-based) | [optional]  |
+| **limit** | **int?** | page size of results | [optional]  |
+
+### Return type
+
+[**ActionWorkflowRunsResponse**](ActionWorkflowRunsResponse.md)
+
+### Authorization
+
+[TOTPHeader](../README.md#TOTPHeader), [AuthorizationHeaderToken](../README.md#AuthorizationHeaderToken), [SudoHeader](../README.md#SudoHeader), [BasicAuth](../README.md#BasicAuth), [AccessToken](../README.md#AccessToken), [SudoParam](../README.md#SudoParam), [Token](../README.md#Token)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+| **200** | WorkflowRunsList |  -  |
+| **400** | APIError is error format response |  * message -  <br>  * url -  <br>  |
+| **404** | APINotFound is a not found empty response |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
 <a id="getverificationtoken"></a>
 # **GetVerificationToken**
 > string GetVerificationToken ()
@@ -1005,7 +1639,131 @@ This endpoint does not need any parameter.
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 | **200** | APIString is a string response |  -  |
+| **401** | APIUnauthorizedError is an unauthorized error response |  * message -  <br>  * url -  <br>  |
+| **403** | APIForbiddenError is a forbidden error response |  * message -  <br>  * url -  <br>  |
 | **404** | APINotFound is a not found empty response |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+<a id="updateuserrunner"></a>
+# **UpdateUserRunner**
+> ActionRunner UpdateUserRunner (string runnerId, EditActionRunnerOption? body = null)
+
+Update a user-level runner
+
+### Example
+```csharp
+using System.Collections.Generic;
+using System.Diagnostics;
+using Gitea.Net.Api;
+using Gitea.Net.Client;
+using Gitea.Net.Model;
+
+namespace Example
+{
+    public class UpdateUserRunnerExample
+    {
+        public static void Main()
+        {
+            Configuration config = new Configuration();
+            config.BasePath = "/api/v1";
+            // Configure API key authorization: TOTPHeader
+            config.AddApiKey("X-GITEA-OTP", "YOUR_API_KEY");
+            // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+            // config.AddApiKeyPrefix("X-GITEA-OTP", "Bearer");
+            // Configure API key authorization: AuthorizationHeaderToken
+            config.AddApiKey("Authorization", "YOUR_API_KEY");
+            // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+            // config.AddApiKeyPrefix("Authorization", "Bearer");
+            // Configure API key authorization: SudoHeader
+            config.AddApiKey("Sudo", "YOUR_API_KEY");
+            // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+            // config.AddApiKeyPrefix("Sudo", "Bearer");
+            // Configure HTTP basic authorization: BasicAuth
+            config.Username = "YOUR_USERNAME";
+            config.Password = "YOUR_PASSWORD";
+            // Configure API key authorization: AccessToken
+            config.AddApiKey("access_token", "YOUR_API_KEY");
+            // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+            // config.AddApiKeyPrefix("access_token", "Bearer");
+            // Configure API key authorization: SudoParam
+            config.AddApiKey("sudo", "YOUR_API_KEY");
+            // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+            // config.AddApiKeyPrefix("sudo", "Bearer");
+            // Configure API key authorization: Token
+            config.AddApiKey("token", "YOUR_API_KEY");
+            // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+            // config.AddApiKeyPrefix("token", "Bearer");
+
+            var apiInstance = new UserApi(config);
+            var runnerId = "runnerId_example";  // string | id of the runner
+            var body = new EditActionRunnerOption?(); // EditActionRunnerOption? |  (optional) 
+
+            try
+            {
+                // Update a user-level runner
+                ActionRunner result = apiInstance.UpdateUserRunner(runnerId, body);
+                Debug.WriteLine(result);
+            }
+            catch (ApiException  e)
+            {
+                Debug.Print("Exception when calling UserApi.UpdateUserRunner: " + e.Message);
+                Debug.Print("Status Code: " + e.ErrorCode);
+                Debug.Print(e.StackTrace);
+            }
+        }
+    }
+}
+```
+
+#### Using the UpdateUserRunnerWithHttpInfo variant
+This returns an ApiResponse object which contains the response data, status code and headers.
+
+```csharp
+try
+{
+    // Update a user-level runner
+    ApiResponse<ActionRunner> response = apiInstance.UpdateUserRunnerWithHttpInfo(runnerId, body);
+    Debug.Write("Status Code: " + response.StatusCode);
+    Debug.Write("Response Headers: " + response.Headers);
+    Debug.Write("Response Body: " + response.Data);
+}
+catch (ApiException e)
+{
+    Debug.Print("Exception when calling UserApi.UpdateUserRunnerWithHttpInfo: " + e.Message);
+    Debug.Print("Status Code: " + e.ErrorCode);
+    Debug.Print(e.StackTrace);
+}
+```
+
+### Parameters
+
+| Name | Type | Description | Notes |
+|------|------|-------------|-------|
+| **runnerId** | **string** | id of the runner |  |
+| **body** | [**EditActionRunnerOption?**](EditActionRunnerOption?.md) |  | [optional]  |
+
+### Return type
+
+[**ActionRunner**](ActionRunner.md)
+
+### Authorization
+
+[TOTPHeader](../README.md#TOTPHeader), [AuthorizationHeaderToken](../README.md#AuthorizationHeaderToken), [SudoHeader](../README.md#SudoHeader), [BasicAuth](../README.md#BasicAuth), [AccessToken](../README.md#AccessToken), [SudoParam](../README.md#SudoParam), [Token](../README.md#Token)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+| **200** | Runner |  -  |
+| **400** | APIError is error format response |  * message -  <br>  * url -  <br>  |
+| **404** | APINotFound is a not found empty response |  -  |
+| **422** | APIValidationError is error format response related to input validation |  * message -  <br>  * url -  <br>  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
@@ -1129,7 +1887,7 @@ void (empty response body)
 
 <a id="updateusersettings"></a>
 # **UpdateUserSettings**
-> List&lt;UserSettings&gt; UpdateUserSettings (UserSettingsOptions? body = null)
+> UserSettings UpdateUserSettings (UserSettingsOptions? body = null)
 
 Update user settings
 
@@ -1183,7 +1941,7 @@ namespace Example
             try
             {
                 // Update user settings
-                List<UserSettings> result = apiInstance.UpdateUserSettings(body);
+                UserSettings result = apiInstance.UpdateUserSettings(body);
                 Debug.WriteLine(result);
             }
             catch (ApiException  e)
@@ -1204,7 +1962,7 @@ This returns an ApiResponse object which contains the response data, status code
 try
 {
     // Update user settings
-    ApiResponse<List<UserSettings>> response = apiInstance.UpdateUserSettingsWithHttpInfo(body);
+    ApiResponse<UserSettings> response = apiInstance.UpdateUserSettingsWithHttpInfo(body);
     Debug.Write("Status Code: " + response.StatusCode);
     Debug.Write("Response Headers: " + response.Headers);
     Debug.Write("Response Body: " + response.Data);
@@ -1225,7 +1983,7 @@ catch (ApiException e)
 
 ### Return type
 
-[**List&lt;UserSettings&gt;**](UserSettings.md)
+[**UserSettings**](UserSettings.md)
 
 ### Authorization
 
@@ -1233,7 +1991,7 @@ catch (ApiException e)
 
 ### HTTP request headers
 
- - **Content-Type**: application/json, text/plain
+ - **Content-Type**: application/json
  - **Accept**: application/json
 
 
@@ -1468,7 +2226,7 @@ catch (ApiException e)
 
 ### HTTP request headers
 
- - **Content-Type**: application/json, text/plain
+ - **Content-Type**: application/json
  - **Accept**: application/json
 
 
@@ -1476,6 +2234,8 @@ catch (ApiException e)
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 | **201** | EmailList |  -  |
+| **400** | APIError is error format response |  * message -  <br>  * url -  <br>  |
+| **409** | APIError is error format response |  * message -  <br>  * url -  <br>  |
 | **422** | APIValidationError is error format response related to input validation |  * message -  <br>  * url -  <br>  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
@@ -1531,7 +2291,7 @@ namespace Example
             // config.AddApiKeyPrefix("token", "Bearer");
 
             var apiInstance = new UserApi(config);
-            var username = "username_example";  // string | user to block
+            var username = "username_example";  // string | username of the user to block
             var note = "note_example";  // string? | optional note for the block (optional) 
 
             try
@@ -1571,7 +2331,7 @@ catch (ApiException e)
 
 | Name | Type | Description | Notes |
 |------|------|-------------|-------|
-| **username** | **string** | user to block |  |
+| **username** | **string** | username of the user to block |  |
 | **note** | **string?** | optional note for the block | [optional]  |
 
 ### Return type
@@ -1648,8 +2408,8 @@ namespace Example
             // config.AddApiKeyPrefix("token", "Bearer");
 
             var apiInstance = new UserApi(config);
-            var username = "username_example";  // string | username of following user
-            var target = "target_example";  // string | username of followed user
+            var username = "username_example";  // string | username of the following user
+            var target = "target_example";  // string | username of the followed user
 
             try
             {
@@ -1688,8 +2448,8 @@ catch (ApiException e)
 
 | Name | Type | Description | Notes |
 |------|------|-------------|-------|
-| **username** | **string** | username of following user |  |
-| **target** | **string** | username of followed user |  |
+| **username** | **string** | username of the following user |  |
+| **target** | **string** | username of the followed user |  |
 
 ### Return type
 
@@ -1764,7 +2524,7 @@ namespace Example
             // config.AddApiKeyPrefix("token", "Bearer");
 
             var apiInstance = new UserApi(config);
-            var username = "username_example";  // string | user to check
+            var username = "username_example";  // string | username of the user to check
 
             try
             {
@@ -1803,7 +2563,7 @@ catch (ApiException e)
 
 | Name | Type | Description | Notes |
 |------|------|-------------|-------|
-| **username** | **string** | user to check |  |
+| **username** | **string** | username of the user to check |  |
 
 ### Return type
 
@@ -2050,7 +2810,7 @@ catch (ApiException e)
 
 ### HTTP request headers
 
- - **Content-Type**: application/json, text/plain
+ - **Content-Type**: application/json
  - **Accept**: application/json
 
 
@@ -2059,6 +2819,114 @@ catch (ApiException e)
 |-------------|-------------|------------------|
 | **201** | OAuth2Application |  -  |
 | **400** | APIError is error format response |  * message -  <br>  * url -  <br>  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+<a id="usercreaterunnerregistrationtoken"></a>
+# **UserCreateRunnerRegistrationToken**
+> void UserCreateRunnerRegistrationToken ()
+
+Get a user's actions runner registration token
+
+### Example
+```csharp
+using System.Collections.Generic;
+using System.Diagnostics;
+using Gitea.Net.Api;
+using Gitea.Net.Client;
+using Gitea.Net.Model;
+
+namespace Example
+{
+    public class UserCreateRunnerRegistrationTokenExample
+    {
+        public static void Main()
+        {
+            Configuration config = new Configuration();
+            config.BasePath = "/api/v1";
+            // Configure API key authorization: TOTPHeader
+            config.AddApiKey("X-GITEA-OTP", "YOUR_API_KEY");
+            // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+            // config.AddApiKeyPrefix("X-GITEA-OTP", "Bearer");
+            // Configure API key authorization: AuthorizationHeaderToken
+            config.AddApiKey("Authorization", "YOUR_API_KEY");
+            // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+            // config.AddApiKeyPrefix("Authorization", "Bearer");
+            // Configure API key authorization: SudoHeader
+            config.AddApiKey("Sudo", "YOUR_API_KEY");
+            // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+            // config.AddApiKeyPrefix("Sudo", "Bearer");
+            // Configure HTTP basic authorization: BasicAuth
+            config.Username = "YOUR_USERNAME";
+            config.Password = "YOUR_PASSWORD";
+            // Configure API key authorization: AccessToken
+            config.AddApiKey("access_token", "YOUR_API_KEY");
+            // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+            // config.AddApiKeyPrefix("access_token", "Bearer");
+            // Configure API key authorization: SudoParam
+            config.AddApiKey("sudo", "YOUR_API_KEY");
+            // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+            // config.AddApiKeyPrefix("sudo", "Bearer");
+            // Configure API key authorization: Token
+            config.AddApiKey("token", "YOUR_API_KEY");
+            // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+            // config.AddApiKeyPrefix("token", "Bearer");
+
+            var apiInstance = new UserApi(config);
+
+            try
+            {
+                // Get a user's actions runner registration token
+                apiInstance.UserCreateRunnerRegistrationToken();
+            }
+            catch (ApiException  e)
+            {
+                Debug.Print("Exception when calling UserApi.UserCreateRunnerRegistrationToken: " + e.Message);
+                Debug.Print("Status Code: " + e.ErrorCode);
+                Debug.Print(e.StackTrace);
+            }
+        }
+    }
+}
+```
+
+#### Using the UserCreateRunnerRegistrationTokenWithHttpInfo variant
+This returns an ApiResponse object which contains the response data, status code and headers.
+
+```csharp
+try
+{
+    // Get a user's actions runner registration token
+    apiInstance.UserCreateRunnerRegistrationTokenWithHttpInfo();
+}
+catch (ApiException e)
+{
+    Debug.Print("Exception when calling UserApi.UserCreateRunnerRegistrationTokenWithHttpInfo: " + e.Message);
+    Debug.Print("Status Code: " + e.ErrorCode);
+    Debug.Print(e.StackTrace);
+}
+```
+
+### Parameters
+This endpoint does not need any parameter.
+### Return type
+
+void (empty response body)
+
+### Authorization
+
+[TOTPHeader](../README.md#TOTPHeader), [AuthorizationHeaderToken](../README.md#AuthorizationHeaderToken), [SudoHeader](../README.md#SudoHeader), [BasicAuth](../README.md#BasicAuth), [AccessToken](../README.md#AccessToken), [SudoParam](../README.md#SudoParam), [Token](../README.md#Token)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: Not defined
+
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+| **200** | RegistrationToken is response related to registration token |  * token -  <br>  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
@@ -2113,7 +2981,7 @@ namespace Example
             // config.AddApiKeyPrefix("token", "Bearer");
 
             var apiInstance = new UserApi(config);
-            var username = "username_example";  // string | username of user
+            var username = "username_example";  // string | username of the user whose token is to be created
             var body = new CreateAccessTokenOption?(); // CreateAccessTokenOption? |  (optional) 
 
             try
@@ -2157,7 +3025,7 @@ catch (ApiException e)
 
 | Name | Type | Description | Notes |
 |------|------|-------------|-------|
-| **username** | **string** | username of user |  |
+| **username** | **string** | username of the user whose token is to be created |  |
 | **body** | [**CreateAccessTokenOption?**](CreateAccessTokenOption?.md) |  | [optional]  |
 
 ### Return type
@@ -2180,6 +3048,129 @@ catch (ApiException e)
 | **201** | AccessToken represents an API access token. |  -  |
 | **400** | APIError is error format response |  * message -  <br>  * url -  <br>  |
 | **403** | APIForbiddenError is a forbidden error response |  * message -  <br>  * url -  <br>  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+<a id="usercurrentaddissuetoprojectcolumn"></a>
+# **UserCurrentAddIssueToProjectColumn**
+> void UserCurrentAddIssueToProjectColumn (long id, long columnId, long issueId)
+
+Add an issue to a project column
+
+Assigns the issue to the project if it is not a member yet, then places it in the column.
+
+### Example
+```csharp
+using System.Collections.Generic;
+using System.Diagnostics;
+using Gitea.Net.Api;
+using Gitea.Net.Client;
+using Gitea.Net.Model;
+
+namespace Example
+{
+    public class UserCurrentAddIssueToProjectColumnExample
+    {
+        public static void Main()
+        {
+            Configuration config = new Configuration();
+            config.BasePath = "/api/v1";
+            // Configure API key authorization: TOTPHeader
+            config.AddApiKey("X-GITEA-OTP", "YOUR_API_KEY");
+            // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+            // config.AddApiKeyPrefix("X-GITEA-OTP", "Bearer");
+            // Configure API key authorization: AuthorizationHeaderToken
+            config.AddApiKey("Authorization", "YOUR_API_KEY");
+            // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+            // config.AddApiKeyPrefix("Authorization", "Bearer");
+            // Configure API key authorization: SudoHeader
+            config.AddApiKey("Sudo", "YOUR_API_KEY");
+            // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+            // config.AddApiKeyPrefix("Sudo", "Bearer");
+            // Configure HTTP basic authorization: BasicAuth
+            config.Username = "YOUR_USERNAME";
+            config.Password = "YOUR_PASSWORD";
+            // Configure API key authorization: AccessToken
+            config.AddApiKey("access_token", "YOUR_API_KEY");
+            // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+            // config.AddApiKeyPrefix("access_token", "Bearer");
+            // Configure API key authorization: SudoParam
+            config.AddApiKey("sudo", "YOUR_API_KEY");
+            // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+            // config.AddApiKeyPrefix("sudo", "Bearer");
+            // Configure API key authorization: Token
+            config.AddApiKey("token", "YOUR_API_KEY");
+            // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+            // config.AddApiKeyPrefix("token", "Bearer");
+
+            var apiInstance = new UserApi(config);
+            var id = 789L;  // long | id of the project
+            var columnId = 789L;  // long | id of the column
+            var issueId = 789L;  // long | global id of the issue, not the repository-local index
+
+            try
+            {
+                // Add an issue to a project column
+                apiInstance.UserCurrentAddIssueToProjectColumn(id, columnId, issueId);
+            }
+            catch (ApiException  e)
+            {
+                Debug.Print("Exception when calling UserApi.UserCurrentAddIssueToProjectColumn: " + e.Message);
+                Debug.Print("Status Code: " + e.ErrorCode);
+                Debug.Print(e.StackTrace);
+            }
+        }
+    }
+}
+```
+
+#### Using the UserCurrentAddIssueToProjectColumnWithHttpInfo variant
+This returns an ApiResponse object which contains the response data, status code and headers.
+
+```csharp
+try
+{
+    // Add an issue to a project column
+    apiInstance.UserCurrentAddIssueToProjectColumnWithHttpInfo(id, columnId, issueId);
+}
+catch (ApiException e)
+{
+    Debug.Print("Exception when calling UserApi.UserCurrentAddIssueToProjectColumnWithHttpInfo: " + e.Message);
+    Debug.Print("Status Code: " + e.ErrorCode);
+    Debug.Print(e.StackTrace);
+}
+```
+
+### Parameters
+
+| Name | Type | Description | Notes |
+|------|------|-------------|-------|
+| **id** | **long** | id of the project |  |
+| **columnId** | **long** | id of the column |  |
+| **issueId** | **long** | global id of the issue, not the repository-local index |  |
+
+### Return type
+
+void (empty response body)
+
+### Authorization
+
+[TOTPHeader](../README.md#TOTPHeader), [AuthorizationHeaderToken](../README.md#AuthorizationHeaderToken), [SudoHeader](../README.md#SudoHeader), [BasicAuth](../README.md#BasicAuth), [AccessToken](../README.md#AccessToken), [SudoParam](../README.md#SudoParam), [Token](../README.md#Token)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: Not defined
+
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+| **201** | APIEmpty is an empty response |  -  |
+| **403** | APIForbiddenError is a forbidden error response |  * message -  <br>  * url -  <br>  |
+| **404** | APINotFound is a not found empty response |  -  |
+| **422** | APIValidationError is error format response related to input validation |  * message -  <br>  * url -  <br>  |
+| **423** | APIRepoArchivedError is an error that is raised when an archived repo should be modified |  * message -  <br>  * url -  <br>  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
@@ -2234,7 +3225,7 @@ namespace Example
             // config.AddApiKeyPrefix("token", "Bearer");
 
             var apiInstance = new UserApi(config);
-            var username = "username_example";  // string | username of followed user
+            var username = "username_example";  // string | username of the user to check for authenticated followers
 
             try
             {
@@ -2273,7 +3264,7 @@ catch (ApiException e)
 
 | Name | Type | Description | Notes |
 |------|------|-------------|-------|
-| **username** | **string** | username of followed user |  |
+| **username** | **string** | username of the user to check for authenticated followers |  |
 
 ### Return type
 
@@ -2409,7 +3400,248 @@ void (empty response body)
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 | **204** | APIEmpty is an empty response |  -  |
+| **403** | APIForbiddenError is a forbidden error response |  * message -  <br>  * url -  <br>  |
 | **404** | APINotFound is a not found empty response |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+<a id="usercurrentcreateproject"></a>
+# **UserCurrentCreateProject**
+> Project UserCurrentCreateProject (CreateProjectOption? body = null)
+
+Create a project owned by the authenticated user
+
+### Example
+```csharp
+using System.Collections.Generic;
+using System.Diagnostics;
+using Gitea.Net.Api;
+using Gitea.Net.Client;
+using Gitea.Net.Model;
+
+namespace Example
+{
+    public class UserCurrentCreateProjectExample
+    {
+        public static void Main()
+        {
+            Configuration config = new Configuration();
+            config.BasePath = "/api/v1";
+            // Configure API key authorization: TOTPHeader
+            config.AddApiKey("X-GITEA-OTP", "YOUR_API_KEY");
+            // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+            // config.AddApiKeyPrefix("X-GITEA-OTP", "Bearer");
+            // Configure API key authorization: AuthorizationHeaderToken
+            config.AddApiKey("Authorization", "YOUR_API_KEY");
+            // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+            // config.AddApiKeyPrefix("Authorization", "Bearer");
+            // Configure API key authorization: SudoHeader
+            config.AddApiKey("Sudo", "YOUR_API_KEY");
+            // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+            // config.AddApiKeyPrefix("Sudo", "Bearer");
+            // Configure HTTP basic authorization: BasicAuth
+            config.Username = "YOUR_USERNAME";
+            config.Password = "YOUR_PASSWORD";
+            // Configure API key authorization: AccessToken
+            config.AddApiKey("access_token", "YOUR_API_KEY");
+            // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+            // config.AddApiKeyPrefix("access_token", "Bearer");
+            // Configure API key authorization: SudoParam
+            config.AddApiKey("sudo", "YOUR_API_KEY");
+            // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+            // config.AddApiKeyPrefix("sudo", "Bearer");
+            // Configure API key authorization: Token
+            config.AddApiKey("token", "YOUR_API_KEY");
+            // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+            // config.AddApiKeyPrefix("token", "Bearer");
+
+            var apiInstance = new UserApi(config);
+            var body = new CreateProjectOption?(); // CreateProjectOption? |  (optional) 
+
+            try
+            {
+                // Create a project owned by the authenticated user
+                Project result = apiInstance.UserCurrentCreateProject(body);
+                Debug.WriteLine(result);
+            }
+            catch (ApiException  e)
+            {
+                Debug.Print("Exception when calling UserApi.UserCurrentCreateProject: " + e.Message);
+                Debug.Print("Status Code: " + e.ErrorCode);
+                Debug.Print(e.StackTrace);
+            }
+        }
+    }
+}
+```
+
+#### Using the UserCurrentCreateProjectWithHttpInfo variant
+This returns an ApiResponse object which contains the response data, status code and headers.
+
+```csharp
+try
+{
+    // Create a project owned by the authenticated user
+    ApiResponse<Project> response = apiInstance.UserCurrentCreateProjectWithHttpInfo(body);
+    Debug.Write("Status Code: " + response.StatusCode);
+    Debug.Write("Response Headers: " + response.Headers);
+    Debug.Write("Response Body: " + response.Data);
+}
+catch (ApiException e)
+{
+    Debug.Print("Exception when calling UserApi.UserCurrentCreateProjectWithHttpInfo: " + e.Message);
+    Debug.Print("Status Code: " + e.ErrorCode);
+    Debug.Print(e.StackTrace);
+}
+```
+
+### Parameters
+
+| Name | Type | Description | Notes |
+|------|------|-------------|-------|
+| **body** | [**CreateProjectOption?**](CreateProjectOption?.md) |  | [optional]  |
+
+### Return type
+
+[**Project**](Project.md)
+
+### Authorization
+
+[TOTPHeader](../README.md#TOTPHeader), [AuthorizationHeaderToken](../README.md#AuthorizationHeaderToken), [SudoHeader](../README.md#SudoHeader), [BasicAuth](../README.md#BasicAuth), [AccessToken](../README.md#AccessToken), [SudoParam](../README.md#SudoParam), [Token](../README.md#Token)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+| **201** | Project |  -  |
+| **422** | APIValidationError is error format response related to input validation |  * message -  <br>  * url -  <br>  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+<a id="usercurrentcreateprojectcolumn"></a>
+# **UserCurrentCreateProjectColumn**
+> ProjectColumn UserCurrentCreateProjectColumn (long id, CreateProjectColumnOption? body = null)
+
+Create a column in a project
+
+### Example
+```csharp
+using System.Collections.Generic;
+using System.Diagnostics;
+using Gitea.Net.Api;
+using Gitea.Net.Client;
+using Gitea.Net.Model;
+
+namespace Example
+{
+    public class UserCurrentCreateProjectColumnExample
+    {
+        public static void Main()
+        {
+            Configuration config = new Configuration();
+            config.BasePath = "/api/v1";
+            // Configure API key authorization: TOTPHeader
+            config.AddApiKey("X-GITEA-OTP", "YOUR_API_KEY");
+            // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+            // config.AddApiKeyPrefix("X-GITEA-OTP", "Bearer");
+            // Configure API key authorization: AuthorizationHeaderToken
+            config.AddApiKey("Authorization", "YOUR_API_KEY");
+            // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+            // config.AddApiKeyPrefix("Authorization", "Bearer");
+            // Configure API key authorization: SudoHeader
+            config.AddApiKey("Sudo", "YOUR_API_KEY");
+            // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+            // config.AddApiKeyPrefix("Sudo", "Bearer");
+            // Configure HTTP basic authorization: BasicAuth
+            config.Username = "YOUR_USERNAME";
+            config.Password = "YOUR_PASSWORD";
+            // Configure API key authorization: AccessToken
+            config.AddApiKey("access_token", "YOUR_API_KEY");
+            // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+            // config.AddApiKeyPrefix("access_token", "Bearer");
+            // Configure API key authorization: SudoParam
+            config.AddApiKey("sudo", "YOUR_API_KEY");
+            // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+            // config.AddApiKeyPrefix("sudo", "Bearer");
+            // Configure API key authorization: Token
+            config.AddApiKey("token", "YOUR_API_KEY");
+            // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+            // config.AddApiKeyPrefix("token", "Bearer");
+
+            var apiInstance = new UserApi(config);
+            var id = 789L;  // long | id of the project
+            var body = new CreateProjectColumnOption?(); // CreateProjectColumnOption? |  (optional) 
+
+            try
+            {
+                // Create a column in a project
+                ProjectColumn result = apiInstance.UserCurrentCreateProjectColumn(id, body);
+                Debug.WriteLine(result);
+            }
+            catch (ApiException  e)
+            {
+                Debug.Print("Exception when calling UserApi.UserCurrentCreateProjectColumn: " + e.Message);
+                Debug.Print("Status Code: " + e.ErrorCode);
+                Debug.Print(e.StackTrace);
+            }
+        }
+    }
+}
+```
+
+#### Using the UserCurrentCreateProjectColumnWithHttpInfo variant
+This returns an ApiResponse object which contains the response data, status code and headers.
+
+```csharp
+try
+{
+    // Create a column in a project
+    ApiResponse<ProjectColumn> response = apiInstance.UserCurrentCreateProjectColumnWithHttpInfo(id, body);
+    Debug.Write("Status Code: " + response.StatusCode);
+    Debug.Write("Response Headers: " + response.Headers);
+    Debug.Write("Response Body: " + response.Data);
+}
+catch (ApiException e)
+{
+    Debug.Print("Exception when calling UserApi.UserCurrentCreateProjectColumnWithHttpInfo: " + e.Message);
+    Debug.Print("Status Code: " + e.ErrorCode);
+    Debug.Print(e.StackTrace);
+}
+```
+
+### Parameters
+
+| Name | Type | Description | Notes |
+|------|------|-------------|-------|
+| **id** | **long** | id of the project |  |
+| **body** | [**CreateProjectColumnOption?**](CreateProjectColumnOption?.md) |  | [optional]  |
+
+### Return type
+
+[**ProjectColumn**](ProjectColumn.md)
+
+### Authorization
+
+[TOTPHeader](../README.md#TOTPHeader), [AuthorizationHeaderToken](../README.md#AuthorizationHeaderToken), [SudoHeader](../README.md#SudoHeader), [BasicAuth](../README.md#BasicAuth), [AccessToken](../README.md#AccessToken), [SudoParam](../README.md#SudoParam), [Token](../README.md#Token)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+| **201** | ProjectColumn |  -  |
+| **403** | APIForbiddenError is a forbidden error response |  * message -  <br>  * url -  <br>  |
+| **404** | APINotFound is a not found empty response |  -  |
+| **422** | APIValidationError is error format response related to input validation |  * message -  <br>  * url -  <br>  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
@@ -2464,7 +3696,7 @@ namespace Example
             // config.AddApiKeyPrefix("token", "Bearer");
 
             var apiInstance = new UserApi(config);
-            var username = "username_example";  // string | username of user to unfollow
+            var username = "username_example";  // string | username of the user to unfollow
 
             try
             {
@@ -2503,7 +3735,7 @@ catch (ApiException e)
 
 | Name | Type | Description | Notes |
 |------|------|-------------|-------|
-| **username** | **string** | username of user to unfollow |  |
+| **username** | **string** | username of the user to unfollow |  |
 
 ### Return type
 
@@ -2637,6 +3869,7 @@ void (empty response body)
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 | **204** | APIEmpty is an empty response |  -  |
+| **401** | APIUnauthorizedError is an unauthorized error response |  * message -  <br>  * url -  <br>  |
 | **403** | APIForbiddenError is a forbidden error response |  * message -  <br>  * url -  <br>  |
 | **404** | APINotFound is a not found empty response |  -  |
 
@@ -2752,8 +3985,243 @@ void (empty response body)
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 | **204** | APIEmpty is an empty response |  -  |
+| **401** | APIUnauthorizedError is an unauthorized error response |  * message -  <br>  * url -  <br>  |
 | **403** | APIForbiddenError is a forbidden error response |  * message -  <br>  * url -  <br>  |
 | **404** | APINotFound is a not found empty response |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+<a id="usercurrentdeleteproject"></a>
+# **UserCurrentDeleteProject**
+> void UserCurrentDeleteProject (long id)
+
+Delete a project
+
+### Example
+```csharp
+using System.Collections.Generic;
+using System.Diagnostics;
+using Gitea.Net.Api;
+using Gitea.Net.Client;
+using Gitea.Net.Model;
+
+namespace Example
+{
+    public class UserCurrentDeleteProjectExample
+    {
+        public static void Main()
+        {
+            Configuration config = new Configuration();
+            config.BasePath = "/api/v1";
+            // Configure API key authorization: TOTPHeader
+            config.AddApiKey("X-GITEA-OTP", "YOUR_API_KEY");
+            // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+            // config.AddApiKeyPrefix("X-GITEA-OTP", "Bearer");
+            // Configure API key authorization: AuthorizationHeaderToken
+            config.AddApiKey("Authorization", "YOUR_API_KEY");
+            // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+            // config.AddApiKeyPrefix("Authorization", "Bearer");
+            // Configure API key authorization: SudoHeader
+            config.AddApiKey("Sudo", "YOUR_API_KEY");
+            // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+            // config.AddApiKeyPrefix("Sudo", "Bearer");
+            // Configure HTTP basic authorization: BasicAuth
+            config.Username = "YOUR_USERNAME";
+            config.Password = "YOUR_PASSWORD";
+            // Configure API key authorization: AccessToken
+            config.AddApiKey("access_token", "YOUR_API_KEY");
+            // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+            // config.AddApiKeyPrefix("access_token", "Bearer");
+            // Configure API key authorization: SudoParam
+            config.AddApiKey("sudo", "YOUR_API_KEY");
+            // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+            // config.AddApiKeyPrefix("sudo", "Bearer");
+            // Configure API key authorization: Token
+            config.AddApiKey("token", "YOUR_API_KEY");
+            // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+            // config.AddApiKeyPrefix("token", "Bearer");
+
+            var apiInstance = new UserApi(config);
+            var id = 789L;  // long | id of the project
+
+            try
+            {
+                // Delete a project
+                apiInstance.UserCurrentDeleteProject(id);
+            }
+            catch (ApiException  e)
+            {
+                Debug.Print("Exception when calling UserApi.UserCurrentDeleteProject: " + e.Message);
+                Debug.Print("Status Code: " + e.ErrorCode);
+                Debug.Print(e.StackTrace);
+            }
+        }
+    }
+}
+```
+
+#### Using the UserCurrentDeleteProjectWithHttpInfo variant
+This returns an ApiResponse object which contains the response data, status code and headers.
+
+```csharp
+try
+{
+    // Delete a project
+    apiInstance.UserCurrentDeleteProjectWithHttpInfo(id);
+}
+catch (ApiException e)
+{
+    Debug.Print("Exception when calling UserApi.UserCurrentDeleteProjectWithHttpInfo: " + e.Message);
+    Debug.Print("Status Code: " + e.ErrorCode);
+    Debug.Print(e.StackTrace);
+}
+```
+
+### Parameters
+
+| Name | Type | Description | Notes |
+|------|------|-------------|-------|
+| **id** | **long** | id of the project |  |
+
+### Return type
+
+void (empty response body)
+
+### Authorization
+
+[TOTPHeader](../README.md#TOTPHeader), [AuthorizationHeaderToken](../README.md#AuthorizationHeaderToken), [SudoHeader](../README.md#SudoHeader), [BasicAuth](../README.md#BasicAuth), [AccessToken](../README.md#AccessToken), [SudoParam](../README.md#SudoParam), [Token](../README.md#Token)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: Not defined
+
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+| **204** | APIEmpty is an empty response |  -  |
+| **404** | APINotFound is a not found empty response |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+<a id="usercurrentdeleteprojectcolumn"></a>
+# **UserCurrentDeleteProjectColumn**
+> void UserCurrentDeleteProjectColumn (long id, long columnId)
+
+Delete a project column
+
+The default column cannot be deleted while it is still the column new issues land in.
+
+### Example
+```csharp
+using System.Collections.Generic;
+using System.Diagnostics;
+using Gitea.Net.Api;
+using Gitea.Net.Client;
+using Gitea.Net.Model;
+
+namespace Example
+{
+    public class UserCurrentDeleteProjectColumnExample
+    {
+        public static void Main()
+        {
+            Configuration config = new Configuration();
+            config.BasePath = "/api/v1";
+            // Configure API key authorization: TOTPHeader
+            config.AddApiKey("X-GITEA-OTP", "YOUR_API_KEY");
+            // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+            // config.AddApiKeyPrefix("X-GITEA-OTP", "Bearer");
+            // Configure API key authorization: AuthorizationHeaderToken
+            config.AddApiKey("Authorization", "YOUR_API_KEY");
+            // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+            // config.AddApiKeyPrefix("Authorization", "Bearer");
+            // Configure API key authorization: SudoHeader
+            config.AddApiKey("Sudo", "YOUR_API_KEY");
+            // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+            // config.AddApiKeyPrefix("Sudo", "Bearer");
+            // Configure HTTP basic authorization: BasicAuth
+            config.Username = "YOUR_USERNAME";
+            config.Password = "YOUR_PASSWORD";
+            // Configure API key authorization: AccessToken
+            config.AddApiKey("access_token", "YOUR_API_KEY");
+            // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+            // config.AddApiKeyPrefix("access_token", "Bearer");
+            // Configure API key authorization: SudoParam
+            config.AddApiKey("sudo", "YOUR_API_KEY");
+            // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+            // config.AddApiKeyPrefix("sudo", "Bearer");
+            // Configure API key authorization: Token
+            config.AddApiKey("token", "YOUR_API_KEY");
+            // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+            // config.AddApiKeyPrefix("token", "Bearer");
+
+            var apiInstance = new UserApi(config);
+            var id = 789L;  // long | id of the project
+            var columnId = 789L;  // long | id of the column
+
+            try
+            {
+                // Delete a project column
+                apiInstance.UserCurrentDeleteProjectColumn(id, columnId);
+            }
+            catch (ApiException  e)
+            {
+                Debug.Print("Exception when calling UserApi.UserCurrentDeleteProjectColumn: " + e.Message);
+                Debug.Print("Status Code: " + e.ErrorCode);
+                Debug.Print(e.StackTrace);
+            }
+        }
+    }
+}
+```
+
+#### Using the UserCurrentDeleteProjectColumnWithHttpInfo variant
+This returns an ApiResponse object which contains the response data, status code and headers.
+
+```csharp
+try
+{
+    // Delete a project column
+    apiInstance.UserCurrentDeleteProjectColumnWithHttpInfo(id, columnId);
+}
+catch (ApiException e)
+{
+    Debug.Print("Exception when calling UserApi.UserCurrentDeleteProjectColumnWithHttpInfo: " + e.Message);
+    Debug.Print("Status Code: " + e.ErrorCode);
+    Debug.Print(e.StackTrace);
+}
+```
+
+### Parameters
+
+| Name | Type | Description | Notes |
+|------|------|-------------|-------|
+| **id** | **long** | id of the project |  |
+| **columnId** | **long** | id of the column |  |
+
+### Return type
+
+void (empty response body)
+
+### Authorization
+
+[TOTPHeader](../README.md#TOTPHeader), [AuthorizationHeaderToken](../README.md#AuthorizationHeaderToken), [SudoHeader](../README.md#SudoHeader), [BasicAuth](../README.md#BasicAuth), [AccessToken](../README.md#AccessToken), [SudoParam](../README.md#SudoParam), [Token](../README.md#Token)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: Not defined
+
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+| **204** | APIEmpty is an empty response |  -  |
+| **403** | APIForbiddenError is a forbidden error response |  * message -  <br>  * url -  <br>  |
+| **404** | APINotFound is a not found empty response |  -  |
+| **422** | APIValidationError is error format response related to input validation |  * message -  <br>  * url -  <br>  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
@@ -2869,7 +4337,253 @@ void (empty response body)
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 | **204** | APIEmpty is an empty response |  -  |
+| **403** | APIForbiddenError is a forbidden error response |  * message -  <br>  * url -  <br>  |
 | **404** | APINotFound is a not found empty response |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+<a id="usercurrenteditproject"></a>
+# **UserCurrentEditProject**
+> Project UserCurrentEditProject (long id, EditProjectOption? body = null)
+
+Edit a project
+
+### Example
+```csharp
+using System.Collections.Generic;
+using System.Diagnostics;
+using Gitea.Net.Api;
+using Gitea.Net.Client;
+using Gitea.Net.Model;
+
+namespace Example
+{
+    public class UserCurrentEditProjectExample
+    {
+        public static void Main()
+        {
+            Configuration config = new Configuration();
+            config.BasePath = "/api/v1";
+            // Configure API key authorization: TOTPHeader
+            config.AddApiKey("X-GITEA-OTP", "YOUR_API_KEY");
+            // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+            // config.AddApiKeyPrefix("X-GITEA-OTP", "Bearer");
+            // Configure API key authorization: AuthorizationHeaderToken
+            config.AddApiKey("Authorization", "YOUR_API_KEY");
+            // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+            // config.AddApiKeyPrefix("Authorization", "Bearer");
+            // Configure API key authorization: SudoHeader
+            config.AddApiKey("Sudo", "YOUR_API_KEY");
+            // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+            // config.AddApiKeyPrefix("Sudo", "Bearer");
+            // Configure HTTP basic authorization: BasicAuth
+            config.Username = "YOUR_USERNAME";
+            config.Password = "YOUR_PASSWORD";
+            // Configure API key authorization: AccessToken
+            config.AddApiKey("access_token", "YOUR_API_KEY");
+            // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+            // config.AddApiKeyPrefix("access_token", "Bearer");
+            // Configure API key authorization: SudoParam
+            config.AddApiKey("sudo", "YOUR_API_KEY");
+            // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+            // config.AddApiKeyPrefix("sudo", "Bearer");
+            // Configure API key authorization: Token
+            config.AddApiKey("token", "YOUR_API_KEY");
+            // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+            // config.AddApiKeyPrefix("token", "Bearer");
+
+            var apiInstance = new UserApi(config);
+            var id = 789L;  // long | id of the project
+            var body = new EditProjectOption?(); // EditProjectOption? |  (optional) 
+
+            try
+            {
+                // Edit a project
+                Project result = apiInstance.UserCurrentEditProject(id, body);
+                Debug.WriteLine(result);
+            }
+            catch (ApiException  e)
+            {
+                Debug.Print("Exception when calling UserApi.UserCurrentEditProject: " + e.Message);
+                Debug.Print("Status Code: " + e.ErrorCode);
+                Debug.Print(e.StackTrace);
+            }
+        }
+    }
+}
+```
+
+#### Using the UserCurrentEditProjectWithHttpInfo variant
+This returns an ApiResponse object which contains the response data, status code and headers.
+
+```csharp
+try
+{
+    // Edit a project
+    ApiResponse<Project> response = apiInstance.UserCurrentEditProjectWithHttpInfo(id, body);
+    Debug.Write("Status Code: " + response.StatusCode);
+    Debug.Write("Response Headers: " + response.Headers);
+    Debug.Write("Response Body: " + response.Data);
+}
+catch (ApiException e)
+{
+    Debug.Print("Exception when calling UserApi.UserCurrentEditProjectWithHttpInfo: " + e.Message);
+    Debug.Print("Status Code: " + e.ErrorCode);
+    Debug.Print(e.StackTrace);
+}
+```
+
+### Parameters
+
+| Name | Type | Description | Notes |
+|------|------|-------------|-------|
+| **id** | **long** | id of the project |  |
+| **body** | [**EditProjectOption?**](EditProjectOption?.md) |  | [optional]  |
+
+### Return type
+
+[**Project**](Project.md)
+
+### Authorization
+
+[TOTPHeader](../README.md#TOTPHeader), [AuthorizationHeaderToken](../README.md#AuthorizationHeaderToken), [SudoHeader](../README.md#SudoHeader), [BasicAuth](../README.md#BasicAuth), [AccessToken](../README.md#AccessToken), [SudoParam](../README.md#SudoParam), [Token](../README.md#Token)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+| **200** | Project |  -  |
+| **404** | APINotFound is a not found empty response |  -  |
+| **422** | APIValidationError is error format response related to input validation |  * message -  <br>  * url -  <br>  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+<a id="usercurrenteditprojectcolumn"></a>
+# **UserCurrentEditProjectColumn**
+> ProjectColumn UserCurrentEditProjectColumn (long id, long columnId, EditProjectColumnOption? body = null)
+
+Edit a project column
+
+### Example
+```csharp
+using System.Collections.Generic;
+using System.Diagnostics;
+using Gitea.Net.Api;
+using Gitea.Net.Client;
+using Gitea.Net.Model;
+
+namespace Example
+{
+    public class UserCurrentEditProjectColumnExample
+    {
+        public static void Main()
+        {
+            Configuration config = new Configuration();
+            config.BasePath = "/api/v1";
+            // Configure API key authorization: TOTPHeader
+            config.AddApiKey("X-GITEA-OTP", "YOUR_API_KEY");
+            // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+            // config.AddApiKeyPrefix("X-GITEA-OTP", "Bearer");
+            // Configure API key authorization: AuthorizationHeaderToken
+            config.AddApiKey("Authorization", "YOUR_API_KEY");
+            // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+            // config.AddApiKeyPrefix("Authorization", "Bearer");
+            // Configure API key authorization: SudoHeader
+            config.AddApiKey("Sudo", "YOUR_API_KEY");
+            // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+            // config.AddApiKeyPrefix("Sudo", "Bearer");
+            // Configure HTTP basic authorization: BasicAuth
+            config.Username = "YOUR_USERNAME";
+            config.Password = "YOUR_PASSWORD";
+            // Configure API key authorization: AccessToken
+            config.AddApiKey("access_token", "YOUR_API_KEY");
+            // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+            // config.AddApiKeyPrefix("access_token", "Bearer");
+            // Configure API key authorization: SudoParam
+            config.AddApiKey("sudo", "YOUR_API_KEY");
+            // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+            // config.AddApiKeyPrefix("sudo", "Bearer");
+            // Configure API key authorization: Token
+            config.AddApiKey("token", "YOUR_API_KEY");
+            // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+            // config.AddApiKeyPrefix("token", "Bearer");
+
+            var apiInstance = new UserApi(config);
+            var id = 789L;  // long | id of the project
+            var columnId = 789L;  // long | id of the column
+            var body = new EditProjectColumnOption?(); // EditProjectColumnOption? |  (optional) 
+
+            try
+            {
+                // Edit a project column
+                ProjectColumn result = apiInstance.UserCurrentEditProjectColumn(id, columnId, body);
+                Debug.WriteLine(result);
+            }
+            catch (ApiException  e)
+            {
+                Debug.Print("Exception when calling UserApi.UserCurrentEditProjectColumn: " + e.Message);
+                Debug.Print("Status Code: " + e.ErrorCode);
+                Debug.Print(e.StackTrace);
+            }
+        }
+    }
+}
+```
+
+#### Using the UserCurrentEditProjectColumnWithHttpInfo variant
+This returns an ApiResponse object which contains the response data, status code and headers.
+
+```csharp
+try
+{
+    // Edit a project column
+    ApiResponse<ProjectColumn> response = apiInstance.UserCurrentEditProjectColumnWithHttpInfo(id, columnId, body);
+    Debug.Write("Status Code: " + response.StatusCode);
+    Debug.Write("Response Headers: " + response.Headers);
+    Debug.Write("Response Body: " + response.Data);
+}
+catch (ApiException e)
+{
+    Debug.Print("Exception when calling UserApi.UserCurrentEditProjectColumnWithHttpInfo: " + e.Message);
+    Debug.Print("Status Code: " + e.ErrorCode);
+    Debug.Print(e.StackTrace);
+}
+```
+
+### Parameters
+
+| Name | Type | Description | Notes |
+|------|------|-------------|-------|
+| **id** | **long** | id of the project |  |
+| **columnId** | **long** | id of the column |  |
+| **body** | [**EditProjectColumnOption?**](EditProjectColumnOption?.md) |  | [optional]  |
+
+### Return type
+
+[**ProjectColumn**](ProjectColumn.md)
+
+### Authorization
+
+[TOTPHeader](../README.md#TOTPHeader), [AuthorizationHeaderToken](../README.md#AuthorizationHeaderToken), [SudoHeader](../README.md#SudoHeader), [BasicAuth](../README.md#BasicAuth), [AccessToken](../README.md#AccessToken), [SudoParam](../README.md#SudoParam), [Token](../README.md#Token)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+| **200** | ProjectColumn |  -  |
+| **403** | APIForbiddenError is a forbidden error response |  * message -  <br>  * url -  <br>  |
+| **404** | APINotFound is a not found empty response |  -  |
+| **422** | APIValidationError is error format response related to input validation |  * message -  <br>  * url -  <br>  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
@@ -2987,6 +4701,8 @@ catch (ApiException e)
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 | **200** | GPGKey |  -  |
+| **401** | APIUnauthorizedError is an unauthorized error response |  * message -  <br>  * url -  <br>  |
+| **403** | APIForbiddenError is a forbidden error response |  * message -  <br>  * url -  <br>  |
 | **404** | APINotFound is a not found empty response |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
@@ -3105,6 +4821,246 @@ catch (ApiException e)
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 | **200** | PublicKey |  -  |
+| **401** | APIUnauthorizedError is an unauthorized error response |  * message -  <br>  * url -  <br>  |
+| **403** | APIForbiddenError is a forbidden error response |  * message -  <br>  * url -  <br>  |
+| **404** | APINotFound is a not found empty response |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+<a id="usercurrentgetproject"></a>
+# **UserCurrentGetProject**
+> Project UserCurrentGetProject (long id)
+
+Get a project
+
+### Example
+```csharp
+using System.Collections.Generic;
+using System.Diagnostics;
+using Gitea.Net.Api;
+using Gitea.Net.Client;
+using Gitea.Net.Model;
+
+namespace Example
+{
+    public class UserCurrentGetProjectExample
+    {
+        public static void Main()
+        {
+            Configuration config = new Configuration();
+            config.BasePath = "/api/v1";
+            // Configure API key authorization: TOTPHeader
+            config.AddApiKey("X-GITEA-OTP", "YOUR_API_KEY");
+            // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+            // config.AddApiKeyPrefix("X-GITEA-OTP", "Bearer");
+            // Configure API key authorization: AuthorizationHeaderToken
+            config.AddApiKey("Authorization", "YOUR_API_KEY");
+            // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+            // config.AddApiKeyPrefix("Authorization", "Bearer");
+            // Configure API key authorization: SudoHeader
+            config.AddApiKey("Sudo", "YOUR_API_KEY");
+            // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+            // config.AddApiKeyPrefix("Sudo", "Bearer");
+            // Configure HTTP basic authorization: BasicAuth
+            config.Username = "YOUR_USERNAME";
+            config.Password = "YOUR_PASSWORD";
+            // Configure API key authorization: AccessToken
+            config.AddApiKey("access_token", "YOUR_API_KEY");
+            // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+            // config.AddApiKeyPrefix("access_token", "Bearer");
+            // Configure API key authorization: SudoParam
+            config.AddApiKey("sudo", "YOUR_API_KEY");
+            // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+            // config.AddApiKeyPrefix("sudo", "Bearer");
+            // Configure API key authorization: Token
+            config.AddApiKey("token", "YOUR_API_KEY");
+            // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+            // config.AddApiKeyPrefix("token", "Bearer");
+
+            var apiInstance = new UserApi(config);
+            var id = 789L;  // long | id of the project
+
+            try
+            {
+                // Get a project
+                Project result = apiInstance.UserCurrentGetProject(id);
+                Debug.WriteLine(result);
+            }
+            catch (ApiException  e)
+            {
+                Debug.Print("Exception when calling UserApi.UserCurrentGetProject: " + e.Message);
+                Debug.Print("Status Code: " + e.ErrorCode);
+                Debug.Print(e.StackTrace);
+            }
+        }
+    }
+}
+```
+
+#### Using the UserCurrentGetProjectWithHttpInfo variant
+This returns an ApiResponse object which contains the response data, status code and headers.
+
+```csharp
+try
+{
+    // Get a project
+    ApiResponse<Project> response = apiInstance.UserCurrentGetProjectWithHttpInfo(id);
+    Debug.Write("Status Code: " + response.StatusCode);
+    Debug.Write("Response Headers: " + response.Headers);
+    Debug.Write("Response Body: " + response.Data);
+}
+catch (ApiException e)
+{
+    Debug.Print("Exception when calling UserApi.UserCurrentGetProjectWithHttpInfo: " + e.Message);
+    Debug.Print("Status Code: " + e.ErrorCode);
+    Debug.Print(e.StackTrace);
+}
+```
+
+### Parameters
+
+| Name | Type | Description | Notes |
+|------|------|-------------|-------|
+| **id** | **long** | id of the project |  |
+
+### Return type
+
+[**Project**](Project.md)
+
+### Authorization
+
+[TOTPHeader](../README.md#TOTPHeader), [AuthorizationHeaderToken](../README.md#AuthorizationHeaderToken), [SudoHeader](../README.md#SudoHeader), [BasicAuth](../README.md#BasicAuth), [AccessToken](../README.md#AccessToken), [SudoParam](../README.md#SudoParam), [Token](../README.md#Token)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+| **200** | Project |  -  |
+| **404** | APINotFound is a not found empty response |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+<a id="usercurrentgetprojectcolumn"></a>
+# **UserCurrentGetProjectColumn**
+> ProjectColumn UserCurrentGetProjectColumn (long id, long columnId)
+
+Get a project column
+
+### Example
+```csharp
+using System.Collections.Generic;
+using System.Diagnostics;
+using Gitea.Net.Api;
+using Gitea.Net.Client;
+using Gitea.Net.Model;
+
+namespace Example
+{
+    public class UserCurrentGetProjectColumnExample
+    {
+        public static void Main()
+        {
+            Configuration config = new Configuration();
+            config.BasePath = "/api/v1";
+            // Configure API key authorization: TOTPHeader
+            config.AddApiKey("X-GITEA-OTP", "YOUR_API_KEY");
+            // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+            // config.AddApiKeyPrefix("X-GITEA-OTP", "Bearer");
+            // Configure API key authorization: AuthorizationHeaderToken
+            config.AddApiKey("Authorization", "YOUR_API_KEY");
+            // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+            // config.AddApiKeyPrefix("Authorization", "Bearer");
+            // Configure API key authorization: SudoHeader
+            config.AddApiKey("Sudo", "YOUR_API_KEY");
+            // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+            // config.AddApiKeyPrefix("Sudo", "Bearer");
+            // Configure HTTP basic authorization: BasicAuth
+            config.Username = "YOUR_USERNAME";
+            config.Password = "YOUR_PASSWORD";
+            // Configure API key authorization: AccessToken
+            config.AddApiKey("access_token", "YOUR_API_KEY");
+            // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+            // config.AddApiKeyPrefix("access_token", "Bearer");
+            // Configure API key authorization: SudoParam
+            config.AddApiKey("sudo", "YOUR_API_KEY");
+            // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+            // config.AddApiKeyPrefix("sudo", "Bearer");
+            // Configure API key authorization: Token
+            config.AddApiKey("token", "YOUR_API_KEY");
+            // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+            // config.AddApiKeyPrefix("token", "Bearer");
+
+            var apiInstance = new UserApi(config);
+            var id = 789L;  // long | id of the project
+            var columnId = 789L;  // long | id of the column
+
+            try
+            {
+                // Get a project column
+                ProjectColumn result = apiInstance.UserCurrentGetProjectColumn(id, columnId);
+                Debug.WriteLine(result);
+            }
+            catch (ApiException  e)
+            {
+                Debug.Print("Exception when calling UserApi.UserCurrentGetProjectColumn: " + e.Message);
+                Debug.Print("Status Code: " + e.ErrorCode);
+                Debug.Print(e.StackTrace);
+            }
+        }
+    }
+}
+```
+
+#### Using the UserCurrentGetProjectColumnWithHttpInfo variant
+This returns an ApiResponse object which contains the response data, status code and headers.
+
+```csharp
+try
+{
+    // Get a project column
+    ApiResponse<ProjectColumn> response = apiInstance.UserCurrentGetProjectColumnWithHttpInfo(id, columnId);
+    Debug.Write("Status Code: " + response.StatusCode);
+    Debug.Write("Response Headers: " + response.Headers);
+    Debug.Write("Response Body: " + response.Data);
+}
+catch (ApiException e)
+{
+    Debug.Print("Exception when calling UserApi.UserCurrentGetProjectColumnWithHttpInfo: " + e.Message);
+    Debug.Print("Status Code: " + e.ErrorCode);
+    Debug.Print(e.StackTrace);
+}
+```
+
+### Parameters
+
+| Name | Type | Description | Notes |
+|------|------|-------------|-------|
+| **id** | **long** | id of the project |  |
+| **columnId** | **long** | id of the column |  |
+
+### Return type
+
+[**ProjectColumn**](ProjectColumn.md)
+
+### Authorization
+
+[TOTPHeader](../README.md#TOTPHeader), [AuthorizationHeaderToken](../README.md#AuthorizationHeaderToken), [SudoHeader](../README.md#SudoHeader), [BasicAuth](../README.md#BasicAuth), [AccessToken](../README.md#AccessToken), [SudoParam](../README.md#SudoParam), [Token](../README.md#Token)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+| **200** | ProjectColumn |  -  |
 | **404** | APINotFound is a not found empty response |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
@@ -3463,6 +5419,8 @@ catch (ApiException e)
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 | **200** | GPGKeyList |  -  |
+| **401** | APIUnauthorizedError is an unauthorized error response |  * message -  <br>  * url -  <br>  |
+| **403** | APIForbiddenError is a forbidden error response |  * message -  <br>  * url -  <br>  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
@@ -3584,6 +5542,375 @@ catch (ApiException e)
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 | **200** | PublicKeyList |  -  |
+| **401** | APIUnauthorizedError is an unauthorized error response |  * message -  <br>  * url -  <br>  |
+| **403** | APIForbiddenError is a forbidden error response |  * message -  <br>  * url -  <br>  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+<a id="usercurrentlistprojectcolumnissues"></a>
+# **UserCurrentListProjectColumnIssues**
+> List&lt;Issue&gt; UserCurrentListProjectColumnIssues (long id, long columnId, int? page = null, int? limit = null)
+
+List the issues in a project column
+
+### Example
+```csharp
+using System.Collections.Generic;
+using System.Diagnostics;
+using Gitea.Net.Api;
+using Gitea.Net.Client;
+using Gitea.Net.Model;
+
+namespace Example
+{
+    public class UserCurrentListProjectColumnIssuesExample
+    {
+        public static void Main()
+        {
+            Configuration config = new Configuration();
+            config.BasePath = "/api/v1";
+            // Configure API key authorization: TOTPHeader
+            config.AddApiKey("X-GITEA-OTP", "YOUR_API_KEY");
+            // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+            // config.AddApiKeyPrefix("X-GITEA-OTP", "Bearer");
+            // Configure API key authorization: AuthorizationHeaderToken
+            config.AddApiKey("Authorization", "YOUR_API_KEY");
+            // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+            // config.AddApiKeyPrefix("Authorization", "Bearer");
+            // Configure API key authorization: SudoHeader
+            config.AddApiKey("Sudo", "YOUR_API_KEY");
+            // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+            // config.AddApiKeyPrefix("Sudo", "Bearer");
+            // Configure HTTP basic authorization: BasicAuth
+            config.Username = "YOUR_USERNAME";
+            config.Password = "YOUR_PASSWORD";
+            // Configure API key authorization: AccessToken
+            config.AddApiKey("access_token", "YOUR_API_KEY");
+            // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+            // config.AddApiKeyPrefix("access_token", "Bearer");
+            // Configure API key authorization: SudoParam
+            config.AddApiKey("sudo", "YOUR_API_KEY");
+            // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+            // config.AddApiKeyPrefix("sudo", "Bearer");
+            // Configure API key authorization: Token
+            config.AddApiKey("token", "YOUR_API_KEY");
+            // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+            // config.AddApiKeyPrefix("token", "Bearer");
+
+            var apiInstance = new UserApi(config);
+            var id = 789L;  // long | id of the project
+            var columnId = 789L;  // long | id of the column
+            var page = 56;  // int? | page number of results to return (1-based) (optional) 
+            var limit = 56;  // int? | page size of results (optional) 
+
+            try
+            {
+                // List the issues in a project column
+                List<Issue> result = apiInstance.UserCurrentListProjectColumnIssues(id, columnId, page, limit);
+                Debug.WriteLine(result);
+            }
+            catch (ApiException  e)
+            {
+                Debug.Print("Exception when calling UserApi.UserCurrentListProjectColumnIssues: " + e.Message);
+                Debug.Print("Status Code: " + e.ErrorCode);
+                Debug.Print(e.StackTrace);
+            }
+        }
+    }
+}
+```
+
+#### Using the UserCurrentListProjectColumnIssuesWithHttpInfo variant
+This returns an ApiResponse object which contains the response data, status code and headers.
+
+```csharp
+try
+{
+    // List the issues in a project column
+    ApiResponse<List<Issue>> response = apiInstance.UserCurrentListProjectColumnIssuesWithHttpInfo(id, columnId, page, limit);
+    Debug.Write("Status Code: " + response.StatusCode);
+    Debug.Write("Response Headers: " + response.Headers);
+    Debug.Write("Response Body: " + response.Data);
+}
+catch (ApiException e)
+{
+    Debug.Print("Exception when calling UserApi.UserCurrentListProjectColumnIssuesWithHttpInfo: " + e.Message);
+    Debug.Print("Status Code: " + e.ErrorCode);
+    Debug.Print(e.StackTrace);
+}
+```
+
+### Parameters
+
+| Name | Type | Description | Notes |
+|------|------|-------------|-------|
+| **id** | **long** | id of the project |  |
+| **columnId** | **long** | id of the column |  |
+| **page** | **int?** | page number of results to return (1-based) | [optional]  |
+| **limit** | **int?** | page size of results | [optional]  |
+
+### Return type
+
+[**List&lt;Issue&gt;**](Issue.md)
+
+### Authorization
+
+[TOTPHeader](../README.md#TOTPHeader), [AuthorizationHeaderToken](../README.md#AuthorizationHeaderToken), [SudoHeader](../README.md#SudoHeader), [BasicAuth](../README.md#BasicAuth), [AccessToken](../README.md#AccessToken), [SudoParam](../README.md#SudoParam), [Token](../README.md#Token)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+| **200** | IssueList |  -  |
+| **404** | APINotFound is a not found empty response |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+<a id="usercurrentlistprojectcolumns"></a>
+# **UserCurrentListProjectColumns**
+> List&lt;ProjectColumn&gt; UserCurrentListProjectColumns (long id, int? page = null, int? limit = null)
+
+List a project's columns
+
+### Example
+```csharp
+using System.Collections.Generic;
+using System.Diagnostics;
+using Gitea.Net.Api;
+using Gitea.Net.Client;
+using Gitea.Net.Model;
+
+namespace Example
+{
+    public class UserCurrentListProjectColumnsExample
+    {
+        public static void Main()
+        {
+            Configuration config = new Configuration();
+            config.BasePath = "/api/v1";
+            // Configure API key authorization: TOTPHeader
+            config.AddApiKey("X-GITEA-OTP", "YOUR_API_KEY");
+            // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+            // config.AddApiKeyPrefix("X-GITEA-OTP", "Bearer");
+            // Configure API key authorization: AuthorizationHeaderToken
+            config.AddApiKey("Authorization", "YOUR_API_KEY");
+            // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+            // config.AddApiKeyPrefix("Authorization", "Bearer");
+            // Configure API key authorization: SudoHeader
+            config.AddApiKey("Sudo", "YOUR_API_KEY");
+            // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+            // config.AddApiKeyPrefix("Sudo", "Bearer");
+            // Configure HTTP basic authorization: BasicAuth
+            config.Username = "YOUR_USERNAME";
+            config.Password = "YOUR_PASSWORD";
+            // Configure API key authorization: AccessToken
+            config.AddApiKey("access_token", "YOUR_API_KEY");
+            // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+            // config.AddApiKeyPrefix("access_token", "Bearer");
+            // Configure API key authorization: SudoParam
+            config.AddApiKey("sudo", "YOUR_API_KEY");
+            // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+            // config.AddApiKeyPrefix("sudo", "Bearer");
+            // Configure API key authorization: Token
+            config.AddApiKey("token", "YOUR_API_KEY");
+            // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+            // config.AddApiKeyPrefix("token", "Bearer");
+
+            var apiInstance = new UserApi(config);
+            var id = 789L;  // long | id of the project
+            var page = 56;  // int? | page number of results to return (1-based) (optional) 
+            var limit = 56;  // int? | page size of results (optional) 
+
+            try
+            {
+                // List a project's columns
+                List<ProjectColumn> result = apiInstance.UserCurrentListProjectColumns(id, page, limit);
+                Debug.WriteLine(result);
+            }
+            catch (ApiException  e)
+            {
+                Debug.Print("Exception when calling UserApi.UserCurrentListProjectColumns: " + e.Message);
+                Debug.Print("Status Code: " + e.ErrorCode);
+                Debug.Print(e.StackTrace);
+            }
+        }
+    }
+}
+```
+
+#### Using the UserCurrentListProjectColumnsWithHttpInfo variant
+This returns an ApiResponse object which contains the response data, status code and headers.
+
+```csharp
+try
+{
+    // List a project's columns
+    ApiResponse<List<ProjectColumn>> response = apiInstance.UserCurrentListProjectColumnsWithHttpInfo(id, page, limit);
+    Debug.Write("Status Code: " + response.StatusCode);
+    Debug.Write("Response Headers: " + response.Headers);
+    Debug.Write("Response Body: " + response.Data);
+}
+catch (ApiException e)
+{
+    Debug.Print("Exception when calling UserApi.UserCurrentListProjectColumnsWithHttpInfo: " + e.Message);
+    Debug.Print("Status Code: " + e.ErrorCode);
+    Debug.Print(e.StackTrace);
+}
+```
+
+### Parameters
+
+| Name | Type | Description | Notes |
+|------|------|-------------|-------|
+| **id** | **long** | id of the project |  |
+| **page** | **int?** | page number of results to return (1-based) | [optional]  |
+| **limit** | **int?** | page size of results | [optional]  |
+
+### Return type
+
+[**List&lt;ProjectColumn&gt;**](ProjectColumn.md)
+
+### Authorization
+
+[TOTPHeader](../README.md#TOTPHeader), [AuthorizationHeaderToken](../README.md#AuthorizationHeaderToken), [SudoHeader](../README.md#SudoHeader), [BasicAuth](../README.md#BasicAuth), [AccessToken](../README.md#AccessToken), [SudoParam](../README.md#SudoParam), [Token](../README.md#Token)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+| **200** | ProjectColumnList |  -  |
+| **404** | APINotFound is a not found empty response |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+<a id="usercurrentlistprojects"></a>
+# **UserCurrentListProjects**
+> List&lt;Project&gt; UserCurrentListProjects (string? state = null, int? page = null, int? limit = null)
+
+List your projects
+
+### Example
+```csharp
+using System.Collections.Generic;
+using System.Diagnostics;
+using Gitea.Net.Api;
+using Gitea.Net.Client;
+using Gitea.Net.Model;
+
+namespace Example
+{
+    public class UserCurrentListProjectsExample
+    {
+        public static void Main()
+        {
+            Configuration config = new Configuration();
+            config.BasePath = "/api/v1";
+            // Configure API key authorization: TOTPHeader
+            config.AddApiKey("X-GITEA-OTP", "YOUR_API_KEY");
+            // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+            // config.AddApiKeyPrefix("X-GITEA-OTP", "Bearer");
+            // Configure API key authorization: AuthorizationHeaderToken
+            config.AddApiKey("Authorization", "YOUR_API_KEY");
+            // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+            // config.AddApiKeyPrefix("Authorization", "Bearer");
+            // Configure API key authorization: SudoHeader
+            config.AddApiKey("Sudo", "YOUR_API_KEY");
+            // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+            // config.AddApiKeyPrefix("Sudo", "Bearer");
+            // Configure HTTP basic authorization: BasicAuth
+            config.Username = "YOUR_USERNAME";
+            config.Password = "YOUR_PASSWORD";
+            // Configure API key authorization: AccessToken
+            config.AddApiKey("access_token", "YOUR_API_KEY");
+            // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+            // config.AddApiKeyPrefix("access_token", "Bearer");
+            // Configure API key authorization: SudoParam
+            config.AddApiKey("sudo", "YOUR_API_KEY");
+            // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+            // config.AddApiKeyPrefix("sudo", "Bearer");
+            // Configure API key authorization: Token
+            config.AddApiKey("token", "YOUR_API_KEY");
+            // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+            // config.AddApiKeyPrefix("token", "Bearer");
+
+            var apiInstance = new UserApi(config);
+            var state = "open";  // string? | State of the project (open, closed, all) (optional)  (default to open)
+            var page = 56;  // int? | page number of results to return (1-based) (optional) 
+            var limit = 56;  // int? | page size of results (optional) 
+
+            try
+            {
+                // List your projects
+                List<Project> result = apiInstance.UserCurrentListProjects(state, page, limit);
+                Debug.WriteLine(result);
+            }
+            catch (ApiException  e)
+            {
+                Debug.Print("Exception when calling UserApi.UserCurrentListProjects: " + e.Message);
+                Debug.Print("Status Code: " + e.ErrorCode);
+                Debug.Print(e.StackTrace);
+            }
+        }
+    }
+}
+```
+
+#### Using the UserCurrentListProjectsWithHttpInfo variant
+This returns an ApiResponse object which contains the response data, status code and headers.
+
+```csharp
+try
+{
+    // List your projects
+    ApiResponse<List<Project>> response = apiInstance.UserCurrentListProjectsWithHttpInfo(state, page, limit);
+    Debug.Write("Status Code: " + response.StatusCode);
+    Debug.Write("Response Headers: " + response.Headers);
+    Debug.Write("Response Body: " + response.Data);
+}
+catch (ApiException e)
+{
+    Debug.Print("Exception when calling UserApi.UserCurrentListProjectsWithHttpInfo: " + e.Message);
+    Debug.Print("Status Code: " + e.ErrorCode);
+    Debug.Print(e.StackTrace);
+}
+```
+
+### Parameters
+
+| Name | Type | Description | Notes |
+|------|------|-------------|-------|
+| **state** | **string?** | State of the project (open, closed, all) | [optional] [default to open] |
+| **page** | **int?** | page number of results to return (1-based) | [optional]  |
+| **limit** | **int?** | page size of results | [optional]  |
+
+### Return type
+
+[**List&lt;Project&gt;**](Project.md)
+
+### Authorization
+
+[TOTPHeader](../README.md#TOTPHeader), [AuthorizationHeaderToken](../README.md#AuthorizationHeaderToken), [SudoHeader](../README.md#SudoHeader), [BasicAuth](../README.md#BasicAuth), [AccessToken](../README.md#AccessToken), [SudoParam](../README.md#SudoParam), [Token](../README.md#Token)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+| **200** | ProjectList |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
@@ -3822,6 +6149,7 @@ catch (ApiException e)
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 | **200** | RepositoryList |  -  |
+| **403** | APIForbiddenError is a forbidden error response |  * message -  <br>  * url -  <br>  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
@@ -3944,6 +6272,247 @@ catch (ApiException e)
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
+<a id="usercurrentmoveprojectcolumns"></a>
+# **UserCurrentMoveProjectColumns**
+> void UserCurrentMoveProjectColumns (long id, MoveProjectColumnsOption? body = null)
+
+Reorder a project's columns
+
+Reorders every column of the project at once. The body lists all column IDs in their new order.
+
+### Example
+```csharp
+using System.Collections.Generic;
+using System.Diagnostics;
+using Gitea.Net.Api;
+using Gitea.Net.Client;
+using Gitea.Net.Model;
+
+namespace Example
+{
+    public class UserCurrentMoveProjectColumnsExample
+    {
+        public static void Main()
+        {
+            Configuration config = new Configuration();
+            config.BasePath = "/api/v1";
+            // Configure API key authorization: TOTPHeader
+            config.AddApiKey("X-GITEA-OTP", "YOUR_API_KEY");
+            // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+            // config.AddApiKeyPrefix("X-GITEA-OTP", "Bearer");
+            // Configure API key authorization: AuthorizationHeaderToken
+            config.AddApiKey("Authorization", "YOUR_API_KEY");
+            // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+            // config.AddApiKeyPrefix("Authorization", "Bearer");
+            // Configure API key authorization: SudoHeader
+            config.AddApiKey("Sudo", "YOUR_API_KEY");
+            // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+            // config.AddApiKeyPrefix("Sudo", "Bearer");
+            // Configure HTTP basic authorization: BasicAuth
+            config.Username = "YOUR_USERNAME";
+            config.Password = "YOUR_PASSWORD";
+            // Configure API key authorization: AccessToken
+            config.AddApiKey("access_token", "YOUR_API_KEY");
+            // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+            // config.AddApiKeyPrefix("access_token", "Bearer");
+            // Configure API key authorization: SudoParam
+            config.AddApiKey("sudo", "YOUR_API_KEY");
+            // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+            // config.AddApiKeyPrefix("sudo", "Bearer");
+            // Configure API key authorization: Token
+            config.AddApiKey("token", "YOUR_API_KEY");
+            // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+            // config.AddApiKeyPrefix("token", "Bearer");
+
+            var apiInstance = new UserApi(config);
+            var id = 789L;  // long | id of the project
+            var body = new MoveProjectColumnsOption?(); // MoveProjectColumnsOption? |  (optional) 
+
+            try
+            {
+                // Reorder a project's columns
+                apiInstance.UserCurrentMoveProjectColumns(id, body);
+            }
+            catch (ApiException  e)
+            {
+                Debug.Print("Exception when calling UserApi.UserCurrentMoveProjectColumns: " + e.Message);
+                Debug.Print("Status Code: " + e.ErrorCode);
+                Debug.Print(e.StackTrace);
+            }
+        }
+    }
+}
+```
+
+#### Using the UserCurrentMoveProjectColumnsWithHttpInfo variant
+This returns an ApiResponse object which contains the response data, status code and headers.
+
+```csharp
+try
+{
+    // Reorder a project's columns
+    apiInstance.UserCurrentMoveProjectColumnsWithHttpInfo(id, body);
+}
+catch (ApiException e)
+{
+    Debug.Print("Exception when calling UserApi.UserCurrentMoveProjectColumnsWithHttpInfo: " + e.Message);
+    Debug.Print("Status Code: " + e.ErrorCode);
+    Debug.Print(e.StackTrace);
+}
+```
+
+### Parameters
+
+| Name | Type | Description | Notes |
+|------|------|-------------|-------|
+| **id** | **long** | id of the project |  |
+| **body** | [**MoveProjectColumnsOption?**](MoveProjectColumnsOption?.md) |  | [optional]  |
+
+### Return type
+
+void (empty response body)
+
+### Authorization
+
+[TOTPHeader](../README.md#TOTPHeader), [AuthorizationHeaderToken](../README.md#AuthorizationHeaderToken), [SudoHeader](../README.md#SudoHeader), [BasicAuth](../README.md#BasicAuth), [AccessToken](../README.md#AccessToken), [SudoParam](../README.md#SudoParam), [Token](../README.md#Token)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: Not defined
+
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+| **204** | APIEmpty is an empty response |  -  |
+| **403** | APIForbiddenError is a forbidden error response |  * message -  <br>  * url -  <br>  |
+| **404** | APINotFound is a not found empty response |  -  |
+| **422** | APIValidationError is error format response related to input validation |  * message -  <br>  * url -  <br>  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+<a id="usercurrentmoveprojectissue"></a>
+# **UserCurrentMoveProjectIssue**
+> void UserCurrentMoveProjectIssue (long id, long issueId, MoveProjectIssueOption? body = null)
+
+Move an issue between a project's columns
+
+### Example
+```csharp
+using System.Collections.Generic;
+using System.Diagnostics;
+using Gitea.Net.Api;
+using Gitea.Net.Client;
+using Gitea.Net.Model;
+
+namespace Example
+{
+    public class UserCurrentMoveProjectIssueExample
+    {
+        public static void Main()
+        {
+            Configuration config = new Configuration();
+            config.BasePath = "/api/v1";
+            // Configure API key authorization: TOTPHeader
+            config.AddApiKey("X-GITEA-OTP", "YOUR_API_KEY");
+            // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+            // config.AddApiKeyPrefix("X-GITEA-OTP", "Bearer");
+            // Configure API key authorization: AuthorizationHeaderToken
+            config.AddApiKey("Authorization", "YOUR_API_KEY");
+            // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+            // config.AddApiKeyPrefix("Authorization", "Bearer");
+            // Configure API key authorization: SudoHeader
+            config.AddApiKey("Sudo", "YOUR_API_KEY");
+            // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+            // config.AddApiKeyPrefix("Sudo", "Bearer");
+            // Configure HTTP basic authorization: BasicAuth
+            config.Username = "YOUR_USERNAME";
+            config.Password = "YOUR_PASSWORD";
+            // Configure API key authorization: AccessToken
+            config.AddApiKey("access_token", "YOUR_API_KEY");
+            // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+            // config.AddApiKeyPrefix("access_token", "Bearer");
+            // Configure API key authorization: SudoParam
+            config.AddApiKey("sudo", "YOUR_API_KEY");
+            // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+            // config.AddApiKeyPrefix("sudo", "Bearer");
+            // Configure API key authorization: Token
+            config.AddApiKey("token", "YOUR_API_KEY");
+            // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+            // config.AddApiKeyPrefix("token", "Bearer");
+
+            var apiInstance = new UserApi(config);
+            var id = 789L;  // long | id of the project
+            var issueId = 789L;  // long | global id of the issue, not the repository-local index
+            var body = new MoveProjectIssueOption?(); // MoveProjectIssueOption? |  (optional) 
+
+            try
+            {
+                // Move an issue between a project's columns
+                apiInstance.UserCurrentMoveProjectIssue(id, issueId, body);
+            }
+            catch (ApiException  e)
+            {
+                Debug.Print("Exception when calling UserApi.UserCurrentMoveProjectIssue: " + e.Message);
+                Debug.Print("Status Code: " + e.ErrorCode);
+                Debug.Print(e.StackTrace);
+            }
+        }
+    }
+}
+```
+
+#### Using the UserCurrentMoveProjectIssueWithHttpInfo variant
+This returns an ApiResponse object which contains the response data, status code and headers.
+
+```csharp
+try
+{
+    // Move an issue between a project's columns
+    apiInstance.UserCurrentMoveProjectIssueWithHttpInfo(id, issueId, body);
+}
+catch (ApiException e)
+{
+    Debug.Print("Exception when calling UserApi.UserCurrentMoveProjectIssueWithHttpInfo: " + e.Message);
+    Debug.Print("Status Code: " + e.ErrorCode);
+    Debug.Print(e.StackTrace);
+}
+```
+
+### Parameters
+
+| Name | Type | Description | Notes |
+|------|------|-------------|-------|
+| **id** | **long** | id of the project |  |
+| **issueId** | **long** | global id of the issue, not the repository-local index |  |
+| **body** | [**MoveProjectIssueOption?**](MoveProjectIssueOption?.md) |  | [optional]  |
+
+### Return type
+
+void (empty response body)
+
+### Authorization
+
+[TOTPHeader](../README.md#TOTPHeader), [AuthorizationHeaderToken](../README.md#AuthorizationHeaderToken), [SudoHeader](../README.md#SudoHeader), [BasicAuth](../README.md#BasicAuth), [AccessToken](../README.md#AccessToken), [SudoParam](../README.md#SudoParam), [Token](../README.md#Token)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: Not defined
+
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+| **204** | APIEmpty is an empty response |  -  |
+| **403** | APIForbiddenError is a forbidden error response |  * message -  <br>  * url -  <br>  |
+| **404** | APINotFound is a not found empty response |  -  |
+| **422** | APIValidationError is error format response related to input validation |  * message -  <br>  * url -  <br>  |
+| **423** | APIRepoArchivedError is an error that is raised when an archived repo should be modified |  * message -  <br>  * url -  <br>  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
 <a id="usercurrentpostgpgkey"></a>
 # **UserCurrentPostGPGKey**
 > GPGKey UserCurrentPostGPGKey (CreateGPGKeyOption? form = null)
@@ -4058,6 +6627,8 @@ catch (ApiException e)
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 | **201** | GPGKey |  -  |
+| **401** | APIUnauthorizedError is an unauthorized error response |  * message -  <br>  * url -  <br>  |
+| **403** | APIForbiddenError is a forbidden error response |  * message -  <br>  * url -  <br>  |
 | **404** | APINotFound is a not found empty response |  -  |
 | **422** | APIValidationError is error format response related to input validation |  * message -  <br>  * url -  <br>  |
 
@@ -4177,6 +6748,8 @@ catch (ApiException e)
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 | **201** | PublicKey |  -  |
+| **401** | APIUnauthorizedError is an unauthorized error response |  * message -  <br>  * url -  <br>  |
+| **403** | APIForbiddenError is a forbidden error response |  * message -  <br>  * url -  <br>  |
 | **422** | APIValidationError is error format response related to input validation |  * message -  <br>  * url -  <br>  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
@@ -4232,7 +6805,7 @@ namespace Example
             // config.AddApiKeyPrefix("token", "Bearer");
 
             var apiInstance = new UserApi(config);
-            var username = "username_example";  // string | username of user to follow
+            var username = "username_example";  // string | username of the user to follow
 
             try
             {
@@ -4271,7 +6844,7 @@ catch (ApiException e)
 
 | Name | Type | Description | Notes |
 |------|------|-------------|-------|
-| **username** | **string** | username of user to follow |  |
+| **username** | **string** | username of the user to follow |  |
 
 ### Return type
 
@@ -4389,6 +6962,245 @@ catch (ApiException e)
 |------|------|-------------|-------|
 | **owner** | **string** | owner of the repo to star |  |
 | **repo** | **string** | name of the repo to star |  |
+
+### Return type
+
+void (empty response body)
+
+### Authorization
+
+[TOTPHeader](../README.md#TOTPHeader), [AuthorizationHeaderToken](../README.md#AuthorizationHeaderToken), [SudoHeader](../README.md#SudoHeader), [BasicAuth](../README.md#BasicAuth), [AccessToken](../README.md#AccessToken), [SudoParam](../README.md#SudoParam), [Token](../README.md#Token)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: Not defined
+
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+| **204** | APIEmpty is an empty response |  -  |
+| **403** | APIForbiddenError is a forbidden error response |  * message -  <br>  * url -  <br>  |
+| **404** | APINotFound is a not found empty response |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+<a id="usercurrentremoveissuefromprojectcolumn"></a>
+# **UserCurrentRemoveIssueFromProjectColumn**
+> void UserCurrentRemoveIssueFromProjectColumn (long id, long columnId, long issueId)
+
+Remove an issue from a project column
+
+### Example
+```csharp
+using System.Collections.Generic;
+using System.Diagnostics;
+using Gitea.Net.Api;
+using Gitea.Net.Client;
+using Gitea.Net.Model;
+
+namespace Example
+{
+    public class UserCurrentRemoveIssueFromProjectColumnExample
+    {
+        public static void Main()
+        {
+            Configuration config = new Configuration();
+            config.BasePath = "/api/v1";
+            // Configure API key authorization: TOTPHeader
+            config.AddApiKey("X-GITEA-OTP", "YOUR_API_KEY");
+            // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+            // config.AddApiKeyPrefix("X-GITEA-OTP", "Bearer");
+            // Configure API key authorization: AuthorizationHeaderToken
+            config.AddApiKey("Authorization", "YOUR_API_KEY");
+            // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+            // config.AddApiKeyPrefix("Authorization", "Bearer");
+            // Configure API key authorization: SudoHeader
+            config.AddApiKey("Sudo", "YOUR_API_KEY");
+            // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+            // config.AddApiKeyPrefix("Sudo", "Bearer");
+            // Configure HTTP basic authorization: BasicAuth
+            config.Username = "YOUR_USERNAME";
+            config.Password = "YOUR_PASSWORD";
+            // Configure API key authorization: AccessToken
+            config.AddApiKey("access_token", "YOUR_API_KEY");
+            // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+            // config.AddApiKeyPrefix("access_token", "Bearer");
+            // Configure API key authorization: SudoParam
+            config.AddApiKey("sudo", "YOUR_API_KEY");
+            // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+            // config.AddApiKeyPrefix("sudo", "Bearer");
+            // Configure API key authorization: Token
+            config.AddApiKey("token", "YOUR_API_KEY");
+            // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+            // config.AddApiKeyPrefix("token", "Bearer");
+
+            var apiInstance = new UserApi(config);
+            var id = 789L;  // long | id of the project
+            var columnId = 789L;  // long | id of the column
+            var issueId = 789L;  // long | global id of the issue, not the repository-local index
+
+            try
+            {
+                // Remove an issue from a project column
+                apiInstance.UserCurrentRemoveIssueFromProjectColumn(id, columnId, issueId);
+            }
+            catch (ApiException  e)
+            {
+                Debug.Print("Exception when calling UserApi.UserCurrentRemoveIssueFromProjectColumn: " + e.Message);
+                Debug.Print("Status Code: " + e.ErrorCode);
+                Debug.Print(e.StackTrace);
+            }
+        }
+    }
+}
+```
+
+#### Using the UserCurrentRemoveIssueFromProjectColumnWithHttpInfo variant
+This returns an ApiResponse object which contains the response data, status code and headers.
+
+```csharp
+try
+{
+    // Remove an issue from a project column
+    apiInstance.UserCurrentRemoveIssueFromProjectColumnWithHttpInfo(id, columnId, issueId);
+}
+catch (ApiException e)
+{
+    Debug.Print("Exception when calling UserApi.UserCurrentRemoveIssueFromProjectColumnWithHttpInfo: " + e.Message);
+    Debug.Print("Status Code: " + e.ErrorCode);
+    Debug.Print(e.StackTrace);
+}
+```
+
+### Parameters
+
+| Name | Type | Description | Notes |
+|------|------|-------------|-------|
+| **id** | **long** | id of the project |  |
+| **columnId** | **long** | id of the column |  |
+| **issueId** | **long** | global id of the issue, not the repository-local index |  |
+
+### Return type
+
+void (empty response body)
+
+### Authorization
+
+[TOTPHeader](../README.md#TOTPHeader), [AuthorizationHeaderToken](../README.md#AuthorizationHeaderToken), [SudoHeader](../README.md#SudoHeader), [BasicAuth](../README.md#BasicAuth), [AccessToken](../README.md#AccessToken), [SudoParam](../README.md#SudoParam), [Token](../README.md#Token)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: Not defined
+
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+| **204** | APIEmpty is an empty response |  -  |
+| **403** | APIForbiddenError is a forbidden error response |  * message -  <br>  * url -  <br>  |
+| **404** | APINotFound is a not found empty response |  -  |
+| **423** | APIRepoArchivedError is an error that is raised when an archived repo should be modified |  * message -  <br>  * url -  <br>  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+<a id="usercurrentsetdefaultprojectcolumn"></a>
+# **UserCurrentSetDefaultProjectColumn**
+> void UserCurrentSetDefaultProjectColumn (long id, long columnId)
+
+Set a project's default column
+
+The default column is where newly assigned issues land.
+
+### Example
+```csharp
+using System.Collections.Generic;
+using System.Diagnostics;
+using Gitea.Net.Api;
+using Gitea.Net.Client;
+using Gitea.Net.Model;
+
+namespace Example
+{
+    public class UserCurrentSetDefaultProjectColumnExample
+    {
+        public static void Main()
+        {
+            Configuration config = new Configuration();
+            config.BasePath = "/api/v1";
+            // Configure API key authorization: TOTPHeader
+            config.AddApiKey("X-GITEA-OTP", "YOUR_API_KEY");
+            // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+            // config.AddApiKeyPrefix("X-GITEA-OTP", "Bearer");
+            // Configure API key authorization: AuthorizationHeaderToken
+            config.AddApiKey("Authorization", "YOUR_API_KEY");
+            // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+            // config.AddApiKeyPrefix("Authorization", "Bearer");
+            // Configure API key authorization: SudoHeader
+            config.AddApiKey("Sudo", "YOUR_API_KEY");
+            // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+            // config.AddApiKeyPrefix("Sudo", "Bearer");
+            // Configure HTTP basic authorization: BasicAuth
+            config.Username = "YOUR_USERNAME";
+            config.Password = "YOUR_PASSWORD";
+            // Configure API key authorization: AccessToken
+            config.AddApiKey("access_token", "YOUR_API_KEY");
+            // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+            // config.AddApiKeyPrefix("access_token", "Bearer");
+            // Configure API key authorization: SudoParam
+            config.AddApiKey("sudo", "YOUR_API_KEY");
+            // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+            // config.AddApiKeyPrefix("sudo", "Bearer");
+            // Configure API key authorization: Token
+            config.AddApiKey("token", "YOUR_API_KEY");
+            // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+            // config.AddApiKeyPrefix("token", "Bearer");
+
+            var apiInstance = new UserApi(config);
+            var id = 789L;  // long | id of the project
+            var columnId = 789L;  // long | id of the column
+
+            try
+            {
+                // Set a project's default column
+                apiInstance.UserCurrentSetDefaultProjectColumn(id, columnId);
+            }
+            catch (ApiException  e)
+            {
+                Debug.Print("Exception when calling UserApi.UserCurrentSetDefaultProjectColumn: " + e.Message);
+                Debug.Print("Status Code: " + e.ErrorCode);
+                Debug.Print(e.StackTrace);
+            }
+        }
+    }
+}
+```
+
+#### Using the UserCurrentSetDefaultProjectColumnWithHttpInfo variant
+This returns an ApiResponse object which contains the response data, status code and headers.
+
+```csharp
+try
+{
+    // Set a project's default column
+    apiInstance.UserCurrentSetDefaultProjectColumnWithHttpInfo(id, columnId);
+}
+catch (ApiException e)
+{
+    Debug.Print("Exception when calling UserApi.UserCurrentSetDefaultProjectColumnWithHttpInfo: " + e.Message);
+    Debug.Print("Status Code: " + e.ErrorCode);
+    Debug.Print(e.StackTrace);
+}
+```
+
+### Parameters
+
+| Name | Type | Description | Notes |
+|------|------|-------------|-------|
+| **id** | **long** | id of the project |  |
+| **columnId** | **long** | id of the column |  |
 
 ### Return type
 
@@ -4587,7 +7399,7 @@ namespace Example
             // config.AddApiKeyPrefix("token", "Bearer");
 
             var apiInstance = new UserApi(config);
-            var username = "username_example";  // string | username of user
+            var username = "username_example";  // string | username of the user whose token is to be deleted
             var token = "token_example";  // string | token to be deleted, identified by ID and if not available by name
 
             try
@@ -4627,7 +7439,7 @@ catch (ApiException e)
 
 | Name | Type | Description | Notes |
 |------|------|-------------|-------|
-| **username** | **string** | username of user |  |
+| **username** | **string** | username of the user whose token is to be deleted |  |
 | **token** | **string** | token to be deleted, identified by ID and if not available by name |  |
 
 ### Return type
@@ -4864,7 +7676,7 @@ void (empty response body)
 
 ### HTTP request headers
 
- - **Content-Type**: application/json, text/plain
+ - **Content-Type**: application/json
  - **Accept**: Not defined
 
 
@@ -5273,7 +8085,7 @@ namespace Example
             // config.AddApiKeyPrefix("token", "Bearer");
 
             var apiInstance = new UserApi(config);
-            var username = "username_example";  // string | username of user to get
+            var username = "username_example";  // string | username of the user whose data is to be listed
 
             try
             {
@@ -5316,7 +8128,7 @@ catch (ApiException e)
 
 | Name | Type | Description | Notes |
 |------|------|-------------|-------|
-| **username** | **string** | username of user to get |  |
+| **username** | **string** | username of the user whose data is to be listed |  |
 
 ### Return type
 
@@ -5503,7 +8315,7 @@ namespace Example
             // config.AddApiKeyPrefix("token", "Bearer");
 
             var apiInstance = new UserApi(config);
-            var username = "username_example";  // string | username of user to get
+            var username = "username_example";  // string | username of the user whose heatmap is to be obtained
 
             try
             {
@@ -5546,7 +8358,7 @@ catch (ApiException e)
 
 | Name | Type | Description | Notes |
 |------|------|-------------|-------|
-| **username** | **string** | username of user to get |  |
+| **username** | **string** | username of the user whose heatmap is to be obtained |  |
 
 ### Return type
 
@@ -5924,114 +8736,6 @@ catch (ApiException e)
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-<a id="usergetrunnerregistrationtoken"></a>
-# **UserGetRunnerRegistrationToken**
-> void UserGetRunnerRegistrationToken ()
-
-Get an user's actions runner registration token
-
-### Example
-```csharp
-using System.Collections.Generic;
-using System.Diagnostics;
-using Gitea.Net.Api;
-using Gitea.Net.Client;
-using Gitea.Net.Model;
-
-namespace Example
-{
-    public class UserGetRunnerRegistrationTokenExample
-    {
-        public static void Main()
-        {
-            Configuration config = new Configuration();
-            config.BasePath = "/api/v1";
-            // Configure API key authorization: TOTPHeader
-            config.AddApiKey("X-GITEA-OTP", "YOUR_API_KEY");
-            // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-            // config.AddApiKeyPrefix("X-GITEA-OTP", "Bearer");
-            // Configure API key authorization: AuthorizationHeaderToken
-            config.AddApiKey("Authorization", "YOUR_API_KEY");
-            // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-            // config.AddApiKeyPrefix("Authorization", "Bearer");
-            // Configure API key authorization: SudoHeader
-            config.AddApiKey("Sudo", "YOUR_API_KEY");
-            // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-            // config.AddApiKeyPrefix("Sudo", "Bearer");
-            // Configure HTTP basic authorization: BasicAuth
-            config.Username = "YOUR_USERNAME";
-            config.Password = "YOUR_PASSWORD";
-            // Configure API key authorization: AccessToken
-            config.AddApiKey("access_token", "YOUR_API_KEY");
-            // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-            // config.AddApiKeyPrefix("access_token", "Bearer");
-            // Configure API key authorization: SudoParam
-            config.AddApiKey("sudo", "YOUR_API_KEY");
-            // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-            // config.AddApiKeyPrefix("sudo", "Bearer");
-            // Configure API key authorization: Token
-            config.AddApiKey("token", "YOUR_API_KEY");
-            // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-            // config.AddApiKeyPrefix("token", "Bearer");
-
-            var apiInstance = new UserApi(config);
-
-            try
-            {
-                // Get an user's actions runner registration token
-                apiInstance.UserGetRunnerRegistrationToken();
-            }
-            catch (ApiException  e)
-            {
-                Debug.Print("Exception when calling UserApi.UserGetRunnerRegistrationToken: " + e.Message);
-                Debug.Print("Status Code: " + e.ErrorCode);
-                Debug.Print(e.StackTrace);
-            }
-        }
-    }
-}
-```
-
-#### Using the UserGetRunnerRegistrationTokenWithHttpInfo variant
-This returns an ApiResponse object which contains the response data, status code and headers.
-
-```csharp
-try
-{
-    // Get an user's actions runner registration token
-    apiInstance.UserGetRunnerRegistrationTokenWithHttpInfo();
-}
-catch (ApiException e)
-{
-    Debug.Print("Exception when calling UserApi.UserGetRunnerRegistrationTokenWithHttpInfo: " + e.Message);
-    Debug.Print("Status Code: " + e.ErrorCode);
-    Debug.Print(e.StackTrace);
-}
-```
-
-### Parameters
-This endpoint does not need any parameter.
-### Return type
-
-void (empty response body)
-
-### Authorization
-
-[TOTPHeader](../README.md#TOTPHeader), [AuthorizationHeaderToken](../README.md#AuthorizationHeaderToken), [SudoHeader](../README.md#SudoHeader), [BasicAuth](../README.md#BasicAuth), [AccessToken](../README.md#AccessToken), [SudoParam](../README.md#SudoParam), [Token](../README.md#Token)
-
-### HTTP request headers
-
- - **Content-Type**: Not defined
- - **Accept**: Not defined
-
-
-### HTTP response details
-| Status code | Description | Response headers |
-|-------------|-------------|------------------|
-| **200** | RegistrationToken is response related to registration token |  * token -  <br>  |
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
-
 <a id="usergetstopwatches"></a>
 # **UserGetStopWatches**
 > List&lt;StopWatch&gt; UserGetStopWatches (int? page = null, int? limit = null)
@@ -6202,7 +8906,7 @@ namespace Example
             // config.AddApiKeyPrefix("token", "Bearer");
 
             var apiInstance = new UserApi(config);
-            var username = "username_example";  // string | username of user
+            var username = "username_example";  // string | username of to user whose access tokens are to be listed
             var page = 56;  // int? | page number of results to return (1-based) (optional) 
             var limit = 56;  // int? | page size of results (optional) 
 
@@ -6247,7 +8951,7 @@ catch (ApiException e)
 
 | Name | Type | Description | Notes |
 |------|------|-------------|-------|
-| **username** | **string** | username of user |  |
+| **username** | **string** | username of to user whose access tokens are to be listed |  |
 | **page** | **int?** | page number of results to return (1-based) | [optional]  |
 | **limit** | **int?** | page size of results | [optional]  |
 
@@ -6275,7 +8979,7 @@ catch (ApiException e)
 
 <a id="userlistactivityfeeds"></a>
 # **UserListActivityFeeds**
-> List&lt;Activity&gt; UserListActivityFeeds (string username, bool? onlyPerformedBy = null, DateOnly? date = null, int? page = null, int? limit = null)
+> List&lt;Activity&gt; UserListActivityFeeds (string username, bool? onlyPerformedBy = null, DateTime? date = null, int? page = null, int? limit = null)
 
 List a user's activity feeds
 
@@ -6324,9 +9028,9 @@ namespace Example
             // config.AddApiKeyPrefix("token", "Bearer");
 
             var apiInstance = new UserApi(config);
-            var username = "username_example";  // string | username of user
+            var username = "username_example";  // string | username of the user whose activity feeds are to be listed
             var onlyPerformedBy = true;  // bool? | if true, only show actions performed by the requested user (optional) 
-            var date = DateOnly.Parse("2013-10-20");  // DateOnly? | the date of the activities to be found (optional) 
+            var date = DateTime.Parse("2013-10-20");  // DateTime? | the date of the activities to be found (optional) 
             var page = 56;  // int? | page number of results to return (1-based) (optional) 
             var limit = 56;  // int? | page size of results (optional) 
 
@@ -6371,9 +9075,9 @@ catch (ApiException e)
 
 | Name | Type | Description | Notes |
 |------|------|-------------|-------|
-| **username** | **string** | username of user |  |
+| **username** | **string** | username of the user whose activity feeds are to be listed |  |
 | **onlyPerformedBy** | **bool?** | if true, only show actions performed by the requested user | [optional]  |
-| **date** | **DateOnly?** | the date of the activities to be found | [optional]  |
+| **date** | **DateTime?** | the date of the activities to be found | [optional]  |
 | **page** | **int?** | page number of results to return (1-based) | [optional]  |
 | **limit** | **int?** | page size of results | [optional]  |
 
@@ -6681,7 +9385,7 @@ namespace Example
             // config.AddApiKeyPrefix("token", "Bearer");
 
             var apiInstance = new UserApi(config);
-            var username = "username_example";  // string | username of user
+            var username = "username_example";  // string | username of the user whose followers are to be listed
             var page = 56;  // int? | page number of results to return (1-based) (optional) 
             var limit = 56;  // int? | page size of results (optional) 
 
@@ -6726,7 +9430,7 @@ catch (ApiException e)
 
 | Name | Type | Description | Notes |
 |------|------|-------------|-------|
-| **username** | **string** | username of user |  |
+| **username** | **string** | username of the user whose followers are to be listed |  |
 | **page** | **int?** | page number of results to return (1-based) | [optional]  |
 | **limit** | **int?** | page size of results | [optional]  |
 
@@ -6803,7 +9507,7 @@ namespace Example
             // config.AddApiKeyPrefix("token", "Bearer");
 
             var apiInstance = new UserApi(config);
-            var username = "username_example";  // string | username of user
+            var username = "username_example";  // string | username of the user whose followed users are to be listed
             var page = 56;  // int? | page number of results to return (1-based) (optional) 
             var limit = 56;  // int? | page size of results (optional) 
 
@@ -6848,7 +9552,7 @@ catch (ApiException e)
 
 | Name | Type | Description | Notes |
 |------|------|-------------|-------|
-| **username** | **string** | username of user |  |
+| **username** | **string** | username of the user whose followed users are to be listed |  |
 | **page** | **int?** | page number of results to return (1-based) | [optional]  |
 | **limit** | **int?** | page size of results | [optional]  |
 
@@ -6925,7 +9629,7 @@ namespace Example
             // config.AddApiKeyPrefix("token", "Bearer");
 
             var apiInstance = new UserApi(config);
-            var username = "username_example";  // string | username of user
+            var username = "username_example";  // string | username of the user whose GPG key list is to be obtained
             var page = 56;  // int? | page number of results to return (1-based) (optional) 
             var limit = 56;  // int? | page size of results (optional) 
 
@@ -6970,7 +9674,7 @@ catch (ApiException e)
 
 | Name | Type | Description | Notes |
 |------|------|-------------|-------|
-| **username** | **string** | username of user |  |
+| **username** | **string** | username of the user whose GPG key list is to be obtained |  |
 | **page** | **int?** | page number of results to return (1-based) | [optional]  |
 | **limit** | **int?** | page size of results | [optional]  |
 
@@ -7166,7 +9870,7 @@ namespace Example
             // config.AddApiKeyPrefix("token", "Bearer");
 
             var apiInstance = new UserApi(config);
-            var username = "username_example";  // string | username of user
+            var username = "username_example";  // string | username of the user whose public keys are to be listed
             var fingerprint = "fingerprint_example";  // string? | fingerprint of the key (optional) 
             var page = 56;  // int? | page number of results to return (1-based) (optional) 
             var limit = 56;  // int? | page size of results (optional) 
@@ -7212,7 +9916,7 @@ catch (ApiException e)
 
 | Name | Type | Description | Notes |
 |------|------|-------------|-------|
-| **username** | **string** | username of user |  |
+| **username** | **string** | username of the user whose public keys are to be listed |  |
 | **fingerprint** | **string?** | fingerprint of the key | [optional]  |
 | **page** | **int?** | page number of results to return (1-based) | [optional]  |
 | **limit** | **int?** | page size of results | [optional]  |
@@ -7235,6 +9939,130 @@ catch (ApiException e)
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 | **200** | PublicKeyList |  -  |
+| **404** | APINotFound is a not found empty response |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+<a id="userlistprojects"></a>
+# **UserListProjects**
+> List&lt;Project&gt; UserListProjects (string username, string? state = null, int? page = null, int? limit = null)
+
+List a user's projects
+
+### Example
+```csharp
+using System.Collections.Generic;
+using System.Diagnostics;
+using Gitea.Net.Api;
+using Gitea.Net.Client;
+using Gitea.Net.Model;
+
+namespace Example
+{
+    public class UserListProjectsExample
+    {
+        public static void Main()
+        {
+            Configuration config = new Configuration();
+            config.BasePath = "/api/v1";
+            // Configure API key authorization: TOTPHeader
+            config.AddApiKey("X-GITEA-OTP", "YOUR_API_KEY");
+            // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+            // config.AddApiKeyPrefix("X-GITEA-OTP", "Bearer");
+            // Configure API key authorization: AuthorizationHeaderToken
+            config.AddApiKey("Authorization", "YOUR_API_KEY");
+            // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+            // config.AddApiKeyPrefix("Authorization", "Bearer");
+            // Configure API key authorization: SudoHeader
+            config.AddApiKey("Sudo", "YOUR_API_KEY");
+            // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+            // config.AddApiKeyPrefix("Sudo", "Bearer");
+            // Configure HTTP basic authorization: BasicAuth
+            config.Username = "YOUR_USERNAME";
+            config.Password = "YOUR_PASSWORD";
+            // Configure API key authorization: AccessToken
+            config.AddApiKey("access_token", "YOUR_API_KEY");
+            // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+            // config.AddApiKeyPrefix("access_token", "Bearer");
+            // Configure API key authorization: SudoParam
+            config.AddApiKey("sudo", "YOUR_API_KEY");
+            // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+            // config.AddApiKeyPrefix("sudo", "Bearer");
+            // Configure API key authorization: Token
+            config.AddApiKey("token", "YOUR_API_KEY");
+            // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+            // config.AddApiKeyPrefix("token", "Bearer");
+
+            var apiInstance = new UserApi(config);
+            var username = "username_example";  // string | username of the user
+            var state = "open";  // string? | State of the project (open, closed, all) (optional)  (default to open)
+            var page = 56;  // int? | page number of results to return (1-based) (optional) 
+            var limit = 56;  // int? | page size of results (optional) 
+
+            try
+            {
+                // List a user's projects
+                List<Project> result = apiInstance.UserListProjects(username, state, page, limit);
+                Debug.WriteLine(result);
+            }
+            catch (ApiException  e)
+            {
+                Debug.Print("Exception when calling UserApi.UserListProjects: " + e.Message);
+                Debug.Print("Status Code: " + e.ErrorCode);
+                Debug.Print(e.StackTrace);
+            }
+        }
+    }
+}
+```
+
+#### Using the UserListProjectsWithHttpInfo variant
+This returns an ApiResponse object which contains the response data, status code and headers.
+
+```csharp
+try
+{
+    // List a user's projects
+    ApiResponse<List<Project>> response = apiInstance.UserListProjectsWithHttpInfo(username, state, page, limit);
+    Debug.Write("Status Code: " + response.StatusCode);
+    Debug.Write("Response Headers: " + response.Headers);
+    Debug.Write("Response Body: " + response.Data);
+}
+catch (ApiException e)
+{
+    Debug.Print("Exception when calling UserApi.UserListProjectsWithHttpInfo: " + e.Message);
+    Debug.Print("Status Code: " + e.ErrorCode);
+    Debug.Print(e.StackTrace);
+}
+```
+
+### Parameters
+
+| Name | Type | Description | Notes |
+|------|------|-------------|-------|
+| **username** | **string** | username of the user |  |
+| **state** | **string?** | State of the project (open, closed, all) | [optional] [default to open] |
+| **page** | **int?** | page number of results to return (1-based) | [optional]  |
+| **limit** | **int?** | page size of results | [optional]  |
+
+### Return type
+
+[**List&lt;Project&gt;**](Project.md)
+
+### Authorization
+
+[TOTPHeader](../README.md#TOTPHeader), [AuthorizationHeaderToken](../README.md#AuthorizationHeaderToken), [SudoHeader](../README.md#SudoHeader), [BasicAuth](../README.md#BasicAuth), [AccessToken](../README.md#AccessToken), [SudoParam](../README.md#SudoParam), [Token](../README.md#Token)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+| **200** | ProjectList |  -  |
 | **404** | APINotFound is a not found empty response |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
@@ -7290,7 +10118,7 @@ namespace Example
             // config.AddApiKeyPrefix("token", "Bearer");
 
             var apiInstance = new UserApi(config);
-            var username = "username_example";  // string | username of user
+            var username = "username_example";  // string | username of the user whose owned repos are to be listed
             var page = 56;  // int? | page number of results to return (1-based) (optional) 
             var limit = 56;  // int? | page size of results (optional) 
 
@@ -7335,7 +10163,7 @@ catch (ApiException e)
 
 | Name | Type | Description | Notes |
 |------|------|-------------|-------|
-| **username** | **string** | username of user |  |
+| **username** | **string** | username of the user whose owned repos are to be listed |  |
 | **page** | **int?** | page number of results to return (1-based) | [optional]  |
 | **limit** | **int?** | page size of results | [optional]  |
 
@@ -7412,7 +10240,7 @@ namespace Example
             // config.AddApiKeyPrefix("token", "Bearer");
 
             var apiInstance = new UserApi(config);
-            var username = "username_example";  // string | username of user
+            var username = "username_example";  // string | username of the user whose starred repos are to be listed
             var page = 56;  // int? | page number of results to return (1-based) (optional) 
             var limit = 56;  // int? | page size of results (optional) 
 
@@ -7457,7 +10285,7 @@ catch (ApiException e)
 
 | Name | Type | Description | Notes |
 |------|------|-------------|-------|
-| **username** | **string** | username of user |  |
+| **username** | **string** | username of the user whose starred repos are to be listed |  |
 | **page** | **int?** | page number of results to return (1-based) | [optional]  |
 | **limit** | **int?** | page size of results | [optional]  |
 
@@ -7479,6 +10307,7 @@ catch (ApiException e)
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 | **200** | RepositoryList |  -  |
+| **403** | APIForbiddenError is a forbidden error response |  * message -  <br>  * url -  <br>  |
 | **404** | APINotFound is a not found empty response |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
@@ -7534,7 +10363,7 @@ namespace Example
             // config.AddApiKeyPrefix("token", "Bearer");
 
             var apiInstance = new UserApi(config);
-            var username = "username_example";  // string | username of the user
+            var username = "username_example";  // string | username of the user whose watched repos are to be listed
             var page = 56;  // int? | page number of results to return (1-based) (optional) 
             var limit = 56;  // int? | page size of results (optional) 
 
@@ -7579,7 +10408,7 @@ catch (ApiException e)
 
 | Name | Type | Description | Notes |
 |------|------|-------------|-------|
-| **username** | **string** | username of the user |  |
+| **username** | **string** | username of the user whose watched repos are to be listed |  |
 | **page** | **int?** | page number of results to return (1-based) | [optional]  |
 | **limit** | **int?** | page size of results | [optional]  |
 
@@ -7898,7 +10727,7 @@ namespace Example
             // config.AddApiKeyPrefix("token", "Bearer");
 
             var apiInstance = new UserApi(config);
-            var username = "username_example";  // string | user to unblock
+            var username = "username_example";  // string | username of the user to unblock
 
             try
             {
@@ -7937,7 +10766,7 @@ catch (ApiException e)
 
 | Name | Type | Description | Notes |
 |------|------|-------------|-------|
-| **username** | **string** | user to unblock |  |
+| **username** | **string** | username of the user to unblock |  |
 
 ### Return type
 
@@ -8064,7 +10893,7 @@ void (empty response body)
 
 ### HTTP request headers
 
- - **Content-Type**: application/json, text/plain
+ - **Content-Type**: application/json
  - **Accept**: Not defined
 
 
@@ -8183,7 +11012,7 @@ catch (ApiException e)
 
 ### HTTP request headers
 
- - **Content-Type**: application/json, text/plain
+ - **Content-Type**: application/json
  - **Accept**: application/json
 
 
@@ -8191,6 +11020,7 @@ catch (ApiException e)
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 | **200** | OAuth2Application |  -  |
+| **400** | APIError is error format response |  * message -  <br>  * url -  <br>  |
 | **404** | APINotFound is a not found empty response |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
@@ -8304,6 +11134,8 @@ This endpoint does not need any parameter.
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 | **201** | GPGKey |  -  |
+| **401** | APIUnauthorizedError is an unauthorized error response |  * message -  <br>  * url -  <br>  |
+| **403** | APIForbiddenError is a forbidden error response |  * message -  <br>  * url -  <br>  |
 | **404** | APINotFound is a not found empty response |  -  |
 | **422** | APIValidationError is error format response related to input validation |  * message -  <br>  * url -  <br>  |
 

@@ -6,7 +6,7 @@ Note contains information related to a git note
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Commit** | [**Commit**](Commit.md) |  | [optional] 
-**Message** | **string** |  | [optional] 
+**Message** | **string** | The content message of the git note | [optional] 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

@@ -6,12 +6,12 @@ TrackedTime worked time for an issue / pr
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Created** | **DateTime** |  | [optional] 
-**Id** | **long** |  | [optional] 
+**Id** | **long** | ID is the unique identifier for the tracked time entry | [optional] 
 **Issue** | [**Issue**](Issue.md) |  | [optional] 
 **IssueId** | **long** | deprecated (only for backwards compatibility) | [optional] 
 **Time** | **long** | Time in seconds | [optional] 
 **UserId** | **long** | deprecated (only for backwards compatibility) | [optional] 
-**UserName** | **string** |  | [optional] 
+**UserName** | **string** | username of the user | [optional] 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

@@ -6,6 +6,7 @@ Secret represents a secret
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **CreatedAt** | **DateTime** |  | [optional] 
+**Description** | **string** | the secret&#39;s description | [optional] 
 **Name** | **string** | the secret&#39;s name | [optional] 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)

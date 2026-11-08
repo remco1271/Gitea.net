@@ -5,41 +5,76 @@ All URIs are relative to */api/v1*
 | Method | HTTP request | Description |
 |--------|--------------|-------------|
 | [**AcceptRepoTransfer**](RepositoryApi.md#acceptrepotransfer) | **POST** /repos/{owner}/{repo}/transfer/accept | Accept a repo transfer |
-| [**CreateCurrentUserRepo**](RepositoryApi.md#createcurrentuserrepo) | **POST** /user/repos | Create a repository |
+| [**ActionsDisableWorkflow**](RepositoryApi.md#actionsdisableworkflow) | **PUT** /repos/{owner}/{repo}/actions/workflows/{workflow_id}/disable | Disable a workflow |
+| [**ActionsDispatchWorkflow**](RepositoryApi.md#actionsdispatchworkflow) | **POST** /repos/{owner}/{repo}/actions/workflows/{workflow_id}/dispatches | Create a workflow dispatch event |
+| [**ActionsEnableWorkflow**](RepositoryApi.md#actionsenableworkflow) | **PUT** /repos/{owner}/{repo}/actions/workflows/{workflow_id}/enable | Enable a workflow |
+| [**ActionsGetWorkflow**](RepositoryApi.md#actionsgetworkflow) | **GET** /repos/{owner}/{repo}/actions/workflows/{workflow_id} | Get a workflow |
+| [**ActionsListRepositoryWorkflows**](RepositoryApi.md#actionslistrepositoryworkflows) | **GET** /repos/{owner}/{repo}/actions/workflows | List repository workflows |
+| [**ActionsListWorkflowRuns**](RepositoryApi.md#actionslistworkflowruns) | **GET** /repos/{owner}/{repo}/actions/workflows/{workflow_id}/runs | List runs for a workflow |
+| [**ApproveWorkflowRun**](RepositoryApi.md#approveworkflowrun) | **POST** /repos/{owner}/{repo}/actions/runs/{run}/approve | Approve a workflow run that requires approval |
+| [**CancelWorkflowRun**](RepositoryApi.md#cancelworkflowrun) | **POST** /repos/{owner}/{repo}/actions/runs/{run}/cancel | Cancel a workflow run and its jobs |
 | [**CreateFork**](RepositoryApi.md#createfork) | **POST** /repos/{owner}/{repo}/forks | Fork a repository |
 | [**CreateRepoVariable**](RepositoryApi.md#createrepovariable) | **POST** /repos/{owner}/{repo}/actions/variables/{variablename} | Create a repo-level variable |
+| [**DeleteActionRun**](RepositoryApi.md#deleteactionrun) | **DELETE** /repos/{owner}/{repo}/actions/runs/{run} | Delete a workflow run |
+| [**DeleteArtifact**](RepositoryApi.md#deleteartifact) | **DELETE** /repos/{owner}/{repo}/actions/artifacts/{artifact_id} | Deletes a specific artifact for a workflow run |
+| [**DeleteRepoRunner**](RepositoryApi.md#deletereporunner) | **DELETE** /repos/{owner}/{repo}/actions/runners/{runner_id} | Delete a repo-level runner |
 | [**DeleteRepoSecret**](RepositoryApi.md#deletereposecret) | **DELETE** /repos/{owner}/{repo}/actions/secrets/{secretname} | Delete a secret in a repository |
 | [**DeleteRepoVariable**](RepositoryApi.md#deleterepovariable) | **DELETE** /repos/{owner}/{repo}/actions/variables/{variablename} | Delete a repo-level variable |
+| [**DownloadActionsRunJobLogs**](RepositoryApi.md#downloadactionsrunjoblogs) | **GET** /repos/{owner}/{repo}/actions/jobs/{job_id}/logs | Downloads the job logs for a workflow run |
+| [**DownloadArtifact**](RepositoryApi.md#downloadartifact) | **GET** /repos/{owner}/{repo}/actions/artifacts/{artifact_id}/zip | Downloads a specific artifact for a workflow run redirects to blob url |
+| [**ForceCancelWorkflowRun**](RepositoryApi.md#forcecancelworkflowrun) | **POST** /repos/{owner}/{repo}/actions/runs/{run}/force-cancel | Force-cancel a workflow run |
 | [**GenerateRepo**](RepositoryApi.md#generaterepo) | **POST** /repos/{template_owner}/{template_repo}/generate | Create a repository using a template |
 | [**GetAnnotatedTag**](RepositoryApi.md#getannotatedtag) | **GET** /repos/{owner}/{repo}/git/tags/{sha} | Gets the tag object of an annotated tag (not lightweight tags) |
+| [**GetArtifact**](RepositoryApi.md#getartifact) | **GET** /repos/{owner}/{repo}/actions/artifacts/{artifact_id} | Gets a specific artifact for a workflow run |
+| [**GetArtifacts**](RepositoryApi.md#getartifacts) | **GET** /repos/{owner}/{repo}/actions/artifacts | Lists all artifacts for a repository |
+| [**GetArtifactsOfRun**](RepositoryApi.md#getartifactsofrun) | **GET** /repos/{owner}/{repo}/actions/runs/{run}/artifacts | Lists all artifacts for a repository run |
 | [**GetBlob**](RepositoryApi.md#getblob) | **GET** /repos/{owner}/{repo}/git/blobs/{sha} | Gets the blob of a repository. |
+| [**GetRepoRunner**](RepositoryApi.md#getreporunner) | **GET** /repos/{owner}/{repo}/actions/runners/{runner_id} | Get a repo-level runner |
+| [**GetRepoRunners**](RepositoryApi.md#getreporunners) | **GET** /repos/{owner}/{repo}/actions/runners | Get repo-level runners |
 | [**GetRepoVariable**](RepositoryApi.md#getrepovariable) | **GET** /repos/{owner}/{repo}/actions/variables/{variablename} | Get a repo-level variable |
 | [**GetRepoVariablesList**](RepositoryApi.md#getrepovariableslist) | **GET** /repos/{owner}/{repo}/actions/variables | Get repo-level variables list |
 | [**GetTree**](RepositoryApi.md#gettree) | **GET** /repos/{owner}/{repo}/git/trees/{sha} | Gets the tree of a repository. |
+| [**GetWorkflowJob**](RepositoryApi.md#getworkflowjob) | **GET** /repos/{owner}/{repo}/actions/jobs/{job_id} | Gets a specific workflow job for a workflow run |
+| [**GetWorkflowRun**](RepositoryApi.md#getworkflowrun) | **GET** /repos/{owner}/{repo}/actions/runs/{run} | Gets a specific workflow run |
+| [**GetWorkflowRunAttempt**](RepositoryApi.md#getworkflowrunattempt) | **GET** /repos/{owner}/{repo}/actions/runs/{run}/attempts/{attempt} | Gets a specific workflow run attempt |
+| [**GetWorkflowRunLogs**](RepositoryApi.md#getworkflowrunlogs) | **GET** /repos/{owner}/{repo}/actions/runs/{run}/logs | Download workflow run logs as archive |
+| [**GetWorkflowRuns**](RepositoryApi.md#getworkflowruns) | **GET** /repos/{owner}/{repo}/actions/runs | Lists all runs for a repository run |
+| [**ListActionTasks**](RepositoryApi.md#listactiontasks) | **GET** /repos/{owner}/{repo}/actions/tasks | List a repository&#39;s action tasks |
 | [**ListForks**](RepositoryApi.md#listforks) | **GET** /repos/{owner}/{repo}/forks | List a repository&#39;s forks |
+| [**ListWorkflowJobs**](RepositoryApi.md#listworkflowjobs) | **GET** /repos/{owner}/{repo}/actions/jobs | Lists all jobs for a repository |
+| [**ListWorkflowRunAttemptJobs**](RepositoryApi.md#listworkflowrunattemptjobs) | **GET** /repos/{owner}/{repo}/actions/runs/{run}/attempts/{attempt}/jobs | Lists all jobs for a workflow run attempt |
+| [**ListWorkflowRunJobs**](RepositoryApi.md#listworkflowrunjobs) | **GET** /repos/{owner}/{repo}/actions/runs/{run}/jobs | Lists all jobs for a workflow run |
 | [**RejectRepoTransfer**](RepositoryApi.md#rejectrepotransfer) | **POST** /repos/{owner}/{repo}/transfer/reject | Reject a repo transfer |
-| [**RepoAddCollaborator**](RepositoryApi.md#repoaddcollaborator) | **PUT** /repos/{owner}/{repo}/collaborators/{collaborator} | Add a collaborator to a repository |
+| [**RepoAddCollaborator**](RepositoryApi.md#repoaddcollaborator) | **PUT** /repos/{owner}/{repo}/collaborators/{collaborator} | Add or Update a collaborator to a repository |
+| [**RepoAddIssueToProjectColumn**](RepositoryApi.md#repoaddissuetoprojectcolumn) | **POST** /repos/{owner}/{repo}/projects/{id}/columns/{column_id}/issues/{issue_id} | Add an issue to a project column |
 | [**RepoAddPushMirror**](RepositoryApi.md#repoaddpushmirror) | **POST** /repos/{owner}/{repo}/push_mirrors | add a push mirror to the repository |
 | [**RepoAddTeam**](RepositoryApi.md#repoaddteam) | **PUT** /repos/{owner}/{repo}/teams/{team} | Add a team to a repository |
 | [**RepoAddTopic**](RepositoryApi.md#repoaddtopic) | **PUT** /repos/{owner}/{repo}/topics/{topic} | Add a topic to a repository |
 | [**RepoApplyDiffPatch**](RepositoryApi.md#repoapplydiffpatch) | **POST** /repos/{owner}/{repo}/diffpatch | Apply diff patch to repository |
 | [**RepoCancelScheduledAutoMerge**](RepositoryApi.md#repocancelscheduledautomerge) | **DELETE** /repos/{owner}/{repo}/pulls/{index}/merge | Cancel the scheduled auto merge for the given pull request |
 | [**RepoChangeFiles**](RepositoryApi.md#repochangefiles) | **POST** /repos/{owner}/{repo}/contents | Modify multiple files in a repository |
+| [**RepoCheckAssignee**](RepositoryApi.md#repocheckassignee) | **GET** /repos/{owner}/{repo}/assignees/{assignee} | Check if a user can be assigned to issues in a repository |
 | [**RepoCheckCollaborator**](RepositoryApi.md#repocheckcollaborator) | **GET** /repos/{owner}/{repo}/collaborators/{collaborator} | Check if a user is a collaborator of a repository |
 | [**RepoCheckTeam**](RepositoryApi.md#repocheckteam) | **GET** /repos/{owner}/{repo}/teams/{team} | Check if a team is assigned to a repository |
 | [**RepoCompareDiff**](RepositoryApi.md#repocomparediff) | **GET** /repos/{owner}/{repo}/compare/{basehead} | Get commit comparison information |
 | [**RepoCreateBranch**](RepositoryApi.md#repocreatebranch) | **POST** /repos/{owner}/{repo}/branches | Create a branch |
 | [**RepoCreateBranchProtection**](RepositoryApi.md#repocreatebranchprotection) | **POST** /repos/{owner}/{repo}/branch_protections | Create a branch protections for a repository |
+| [**RepoCreateDeployToken**](RepositoryApi.md#repocreatedeploytoken) | **POST** /repos/{owner}/{repo}/keys/tokens | Add a deploy token to a repository, it authenticates git over HTTPS |
 | [**RepoCreateFile**](RepositoryApi.md#repocreatefile) | **POST** /repos/{owner}/{repo}/contents/{filepath} | Create a file in a repository |
 | [**RepoCreateHook**](RepositoryApi.md#repocreatehook) | **POST** /repos/{owner}/{repo}/hooks | Create a hook |
 | [**RepoCreateKey**](RepositoryApi.md#repocreatekey) | **POST** /repos/{owner}/{repo}/keys | Add a key to a repository |
+| [**RepoCreateProject**](RepositoryApi.md#repocreateproject) | **POST** /repos/{owner}/{repo}/projects | Create a project owned by a repository |
+| [**RepoCreateProjectColumn**](RepositoryApi.md#repocreateprojectcolumn) | **POST** /repos/{owner}/{repo}/projects/{id}/columns | Create a column in a project |
 | [**RepoCreatePullRequest**](RepositoryApi.md#repocreatepullrequest) | **POST** /repos/{owner}/{repo}/pulls | Create a pull request |
-| [**RepoCreatePullReview**](RepositoryApi.md#repocreatepullreview) | **POST** /repos/{owner}/{repo}/pulls/{index}/reviews | Create a review to an pull request |
+| [**RepoCreatePullReview**](RepositoryApi.md#repocreatepullreview) | **POST** /repos/{owner}/{repo}/pulls/{index}/reviews | Create a review to a pull request |
+| [**RepoCreatePullReviewCommentReply**](RepositoryApi.md#repocreatepullreviewcommentreply) | **POST** /repos/{owner}/{repo}/pulls/{index}/comments/{id}/replies | Reply to a pull request review comment |
 | [**RepoCreatePullReviewRequests**](RepositoryApi.md#repocreatepullreviewrequests) | **POST** /repos/{owner}/{repo}/pulls/{index}/requested_reviewers | create review requests for a pull request |
 | [**RepoCreateRelease**](RepositoryApi.md#repocreaterelease) | **POST** /repos/{owner}/{repo}/releases | Create a release |
 | [**RepoCreateReleaseAttachment**](RepositoryApi.md#repocreatereleaseattachment) | **POST** /repos/{owner}/{repo}/releases/{id}/assets | Create a release attachment |
+| [**RepoCreateRunnerRegistrationToken**](RepositoryApi.md#repocreaterunnerregistrationtoken) | **POST** /repos/{owner}/{repo}/actions/runners/registration-token | Get a repository&#39;s actions runner registration token |
 | [**RepoCreateStatus**](RepositoryApi.md#repocreatestatus) | **POST** /repos/{owner}/{repo}/statuses/{sha} | Create a commit status |
 | [**RepoCreateTag**](RepositoryApi.md#repocreatetag) | **POST** /repos/{owner}/{repo}/tags | Create a new git tag in a repository |
+| [**RepoCreateTagProtection**](RepositoryApi.md#repocreatetagprotection) | **POST** /repos/{owner}/{repo}/tag_protections | Create a tag protections for a repository |
 | [**RepoCreateWikiPage**](RepositoryApi.md#repocreatewikipage) | **POST** /repos/{owner}/{repo}/wiki/new | Create a wiki page |
 | [**RepoDelete**](RepositoryApi.md#repodelete) | **DELETE** /repos/{owner}/{repo} | Delete a repository |
 | [**RepoDeleteAvatar**](RepositoryApi.md#repodeleteavatar) | **DELETE** /repos/{owner}/{repo}/avatar | Delete avatar |
@@ -50,6 +85,8 @@ All URIs are relative to */api/v1*
 | [**RepoDeleteGitHook**](RepositoryApi.md#repodeletegithook) | **DELETE** /repos/{owner}/{repo}/hooks/git/{id} | Delete a Git hook in a repository |
 | [**RepoDeleteHook**](RepositoryApi.md#repodeletehook) | **DELETE** /repos/{owner}/{repo}/hooks/{id} | Delete a hook in a repository |
 | [**RepoDeleteKey**](RepositoryApi.md#repodeletekey) | **DELETE** /repos/{owner}/{repo}/keys/{id} | Delete a key from a repository |
+| [**RepoDeleteProject**](RepositoryApi.md#repodeleteproject) | **DELETE** /repos/{owner}/{repo}/projects/{id} | Delete a project |
+| [**RepoDeleteProjectColumn**](RepositoryApi.md#repodeleteprojectcolumn) | **DELETE** /repos/{owner}/{repo}/projects/{id}/columns/{column_id} | Delete a project column |
 | [**RepoDeletePullReview**](RepositoryApi.md#repodeletepullreview) | **DELETE** /repos/{owner}/{repo}/pulls/{index}/reviews/{id} | Delete a specific review from a pull request |
 | [**RepoDeletePullReviewRequests**](RepositoryApi.md#repodeletepullreviewrequests) | **DELETE** /repos/{owner}/{repo}/pulls/{index}/requested_reviewers | cancel review requests for a pull request |
 | [**RepoDeletePushMirror**](RepositoryApi.md#repodeletepushmirror) | **DELETE** /repos/{owner}/{repo}/push_mirrors/{name} | deletes a push mirror from a repository by remoteName |
@@ -57,6 +94,7 @@ All URIs are relative to */api/v1*
 | [**RepoDeleteReleaseAttachment**](RepositoryApi.md#repodeletereleaseattachment) | **DELETE** /repos/{owner}/{repo}/releases/{id}/assets/{attachment_id} | Delete a release attachment |
 | [**RepoDeleteReleaseByTag**](RepositoryApi.md#repodeletereleasebytag) | **DELETE** /repos/{owner}/{repo}/releases/tags/{tag} | Delete a release by tag name |
 | [**RepoDeleteTag**](RepositoryApi.md#repodeletetag) | **DELETE** /repos/{owner}/{repo}/tags/{tag} | Delete a repository&#39;s tag by name |
+| [**RepoDeleteTagProtection**](RepositoryApi.md#repodeletetagprotection) | **DELETE** /repos/{owner}/{repo}/tag_protections/{id} | Delete a specific tag protection for the repository |
 | [**RepoDeleteTeam**](RepositoryApi.md#repodeleteteam) | **DELETE** /repos/{owner}/{repo}/teams/{team} | Delete a team from a repository |
 | [**RepoDeleteTopic**](RepositoryApi.md#repodeletetopic) | **DELETE** /repos/{owner}/{repo}/topics/{topic} | Delete a topic from a repository |
 | [**RepoDeleteWikiPage**](RepositoryApi.md#repodeletewikipage) | **DELETE** /repos/{owner}/{repo}/wiki/page/{pageName} | Delete a wiki page |
@@ -67,9 +105,12 @@ All URIs are relative to */api/v1*
 | [**RepoEditBranchProtection**](RepositoryApi.md#repoeditbranchprotection) | **PATCH** /repos/{owner}/{repo}/branch_protections/{name} | Edit a branch protections for a repository. Only fields that are set will be changed |
 | [**RepoEditGitHook**](RepositoryApi.md#repoeditgithook) | **PATCH** /repos/{owner}/{repo}/hooks/git/{id} | Edit a Git hook in a repository |
 | [**RepoEditHook**](RepositoryApi.md#repoedithook) | **PATCH** /repos/{owner}/{repo}/hooks/{id} | Edit a hook in a repository |
+| [**RepoEditProject**](RepositoryApi.md#repoeditproject) | **PATCH** /repos/{owner}/{repo}/projects/{id} | Edit a project |
+| [**RepoEditProjectColumn**](RepositoryApi.md#repoeditprojectcolumn) | **PATCH** /repos/{owner}/{repo}/projects/{id}/columns/{column_id} | Edit a project column |
 | [**RepoEditPullRequest**](RepositoryApi.md#repoeditpullrequest) | **PATCH** /repos/{owner}/{repo}/pulls/{index} | Update a pull request. If using deadline only the date will be taken into account, and time of day ignored. |
 | [**RepoEditRelease**](RepositoryApi.md#repoeditrelease) | **PATCH** /repos/{owner}/{repo}/releases/{id} | Update a release |
 | [**RepoEditReleaseAttachment**](RepositoryApi.md#repoeditreleaseattachment) | **PATCH** /repos/{owner}/{repo}/releases/{id}/assets/{attachment_id} | Edit a release attachment |
+| [**RepoEditTagProtection**](RepositoryApi.md#repoedittagprotection) | **PATCH** /repos/{owner}/{repo}/tag_protections/{id} | Edit a tag protections for a repository. Only fields that are set will be changed |
 | [**RepoEditWikiPage**](RepositoryApi.md#repoeditwikipage) | **PATCH** /repos/{owner}/{repo}/wiki/page/{pageName} | Edit a wiki page |
 | [**RepoGet**](RepositoryApi.md#repoget) | **GET** /repos/{owner}/{repo} | Get a repository |
 | [**RepoGetAllCommits**](RepositoryApi.md#repogetallcommits) | **GET** /repos/{owner}/{repo}/commits | Get a list of all commits from a repository |
@@ -79,10 +120,13 @@ All URIs are relative to */api/v1*
 | [**RepoGetBranchProtection**](RepositoryApi.md#repogetbranchprotection) | **GET** /repos/{owner}/{repo}/branch_protections/{name} | Get a specific branch protection for the repository |
 | [**RepoGetByID**](RepositoryApi.md#repogetbyid) | **GET** /repositories/{id} | Get a repository by id |
 | [**RepoGetCombinedStatusByRef**](RepositoryApi.md#repogetcombinedstatusbyref) | **GET** /repos/{owner}/{repo}/commits/{ref}/status | Get a commit&#39;s combined status, by branch/tag/commit reference |
-| [**RepoGetCommitPullRequest**](RepositoryApi.md#repogetcommitpullrequest) | **GET** /repos/{owner}/{repo}/commits/{sha}/pull | Get the pull request of the commit |
-| [**RepoGetContents**](RepositoryApi.md#repogetcontents) | **GET** /repos/{owner}/{repo}/contents/{filepath} | Gets the metadata and contents (if a file) of an entry in a repository, or a list of entries if a dir |
-| [**RepoGetContentsList**](RepositoryApi.md#repogetcontentslist) | **GET** /repos/{owner}/{repo}/contents | Gets the metadata of all the entries of the root dir |
+| [**RepoGetCommitPullRequest**](RepositoryApi.md#repogetcommitpullrequest) | **GET** /repos/{owner}/{repo}/commits/{sha}/pull | Get the merged pull request of the commit |
+| [**RepoGetContents**](RepositoryApi.md#repogetcontents) | **GET** /repos/{owner}/{repo}/contents/{filepath} | Gets the metadata and contents (if a file) of an entry in a repository, or a list of entries if a dir. |
+| [**RepoGetContentsExt**](RepositoryApi.md#repogetcontentsext) | **GET** /repos/{owner}/{repo}/contents-ext/{filepath} | The extended \&quot;contents\&quot; API, to get file metadata and/or content, or list a directory. |
+| [**RepoGetContentsList**](RepositoryApi.md#repogetcontentslist) | **GET** /repos/{owner}/{repo}/contents | Gets the metadata of all the entries of the root dir. |
 | [**RepoGetEditorConfig**](RepositoryApi.md#repogeteditorconfig) | **GET** /repos/{owner}/{repo}/editorconfig/{filepath} | Get the EditorConfig definitions of a file in a repository |
+| [**RepoGetFileContents**](RepositoryApi.md#repogetfilecontents) | **GET** /repos/{owner}/{repo}/file-contents | Get the metadata and contents of requested files |
+| [**RepoGetFileContentsPost**](RepositoryApi.md#repogetfilecontentspost) | **POST** /repos/{owner}/{repo}/file-contents | Get the metadata and contents of requested files |
 | [**RepoGetGitHook**](RepositoryApi.md#repogetgithook) | **GET** /repos/{owner}/{repo}/hooks/git/{id} | Get a Git hook |
 | [**RepoGetHook**](RepositoryApi.md#repogethook) | **GET** /repos/{owner}/{repo}/hooks/{id} | Get a hook |
 | [**RepoGetIssueConfig**](RepositoryApi.md#repogetissueconfig) | **GET** /repos/{owner}/{repo}/issue_config | Returns the issue config for a repo |
@@ -90,7 +134,10 @@ All URIs are relative to */api/v1*
 | [**RepoGetKey**](RepositoryApi.md#repogetkey) | **GET** /repos/{owner}/{repo}/keys/{id} | Get a repository&#39;s key by id |
 | [**RepoGetLanguages**](RepositoryApi.md#repogetlanguages) | **GET** /repos/{owner}/{repo}/languages | Get languages and number of bytes of code written |
 | [**RepoGetLatestRelease**](RepositoryApi.md#repogetlatestrelease) | **GET** /repos/{owner}/{repo}/releases/latest | Gets the most recent non-prerelease, non-draft release of a repository, sorted by created_at |
+| [**RepoGetLicenses**](RepositoryApi.md#repogetlicenses) | **GET** /repos/{owner}/{repo}/licenses | Get repo licenses |
 | [**RepoGetNote**](RepositoryApi.md#repogetnote) | **GET** /repos/{owner}/{repo}/git/notes/{sha} | Get a note corresponding to a single commit from a repository |
+| [**RepoGetProject**](RepositoryApi.md#repogetproject) | **GET** /repos/{owner}/{repo}/projects/{id} | Get a project |
+| [**RepoGetProjectColumn**](RepositoryApi.md#repogetprojectcolumn) | **GET** /repos/{owner}/{repo}/projects/{id}/columns/{column_id} | Get a project column |
 | [**RepoGetPullRequest**](RepositoryApi.md#repogetpullrequest) | **GET** /repos/{owner}/{repo}/pulls/{index} | Get a pull request |
 | [**RepoGetPullRequestByBaseHead**](RepositoryApi.md#repogetpullrequestbybasehead) | **GET** /repos/{owner}/{repo}/pulls/{base}/{head} | Get a pull request by base and head |
 | [**RepoGetPullRequestCommits**](RepositoryApi.md#repogetpullrequestcommits) | **GET** /repos/{owner}/{repo}/pulls/{index}/commits | Get commits for a pull request |
@@ -105,13 +152,13 @@ All URIs are relative to */api/v1*
 | [**RepoGetReleaseByTag**](RepositoryApi.md#repogetreleasebytag) | **GET** /repos/{owner}/{repo}/releases/tags/{tag} | Get a release by tag name |
 | [**RepoGetRepoPermissions**](RepositoryApi.md#repogetrepopermissions) | **GET** /repos/{owner}/{repo}/collaborators/{collaborator}/permission | Get repository permissions for a user |
 | [**RepoGetReviewers**](RepositoryApi.md#repogetreviewers) | **GET** /repos/{owner}/{repo}/reviewers | Return all users that can be requested to review in this repo |
-| [**RepoGetRunnerRegistrationToken**](RepositoryApi.md#repogetrunnerregistrationtoken) | **GET** /repos/{owner}/{repo}/runners/registration-token | Get a repository&#39;s actions runner registration token |
-| [**RepoGetSingleCommit**](RepositoryApi.md#repogetsinglecommit) | **GET** /repos/{owner}/{repo}/git/commits/{sha} | Get a single commit from a repository |
+| [**RepoGetSingleCommit**](RepositoryApi.md#repogetsinglecommit) | **GET** /repos/{owner}/{repo}/git/commits/{sha} | Get a single commit from a repository, it has a GitHub-compatible alias \&quot;/repos/{owner}/{repo}/commits/{ref}\&quot; |
 | [**RepoGetTag**](RepositoryApi.md#repogettag) | **GET** /repos/{owner}/{repo}/tags/{tag} | Get the tag of a repository by tag name |
+| [**RepoGetTagProtection**](RepositoryApi.md#repogettagprotection) | **GET** /repos/{owner}/{repo}/tag_protections/{id} | Get a specific tag protection for the repository |
 | [**RepoGetWikiPage**](RepositoryApi.md#repogetwikipage) | **GET** /repos/{owner}/{repo}/wiki/page/{pageName} | Get a wiki page |
 | [**RepoGetWikiPageRevisions**](RepositoryApi.md#repogetwikipagerevisions) | **GET** /repos/{owner}/{repo}/wiki/revisions/{pageName} | Get revisions of a wiki page |
 | [**RepoGetWikiPages**](RepositoryApi.md#repogetwikipages) | **GET** /repos/{owner}/{repo}/wiki/pages | Get all wiki pages |
-| [**RepoListActionsSecrets**](RepositoryApi.md#repolistactionssecrets) | **GET** /repos/{owner}/{repo}/actions/secrets | List an repo&#39;s actions secrets |
+| [**RepoListActionsSecrets**](RepositoryApi.md#repolistactionssecrets) | **GET** /repos/{owner}/{repo}/actions/secrets | List a repo&#39;s actions secrets |
 | [**RepoListActivityFeeds**](RepositoryApi.md#repolistactivityfeeds) | **GET** /repos/{owner}/{repo}/activities/feeds | List a repository&#39;s activity feeds |
 | [**RepoListAllGitRefs**](RepositoryApi.md#repolistallgitrefs) | **GET** /repos/{owner}/{repo}/git/refs | Get specified ref or filtered repository&#39;s refs |
 | [**RepoListBranchProtection**](RepositoryApi.md#repolistbranchprotection) | **GET** /repos/{owner}/{repo}/branch_protections | List branch protections for a repository |
@@ -123,6 +170,9 @@ All URIs are relative to */api/v1*
 | [**RepoListKeys**](RepositoryApi.md#repolistkeys) | **GET** /repos/{owner}/{repo}/keys | List a repository&#39;s keys |
 | [**RepoListPinnedIssues**](RepositoryApi.md#repolistpinnedissues) | **GET** /repos/{owner}/{repo}/issues/pinned | List a repo&#39;s pinned issues |
 | [**RepoListPinnedPullRequests**](RepositoryApi.md#repolistpinnedpullrequests) | **GET** /repos/{owner}/{repo}/pulls/pinned | List a repo&#39;s pinned pull requests |
+| [**RepoListProjectColumnIssues**](RepositoryApi.md#repolistprojectcolumnissues) | **GET** /repos/{owner}/{repo}/projects/{id}/columns/{column_id}/issues | List the issues in a project column |
+| [**RepoListProjectColumns**](RepositoryApi.md#repolistprojectcolumns) | **GET** /repos/{owner}/{repo}/projects/{id}/columns | List a project&#39;s columns |
+| [**RepoListProjects**](RepositoryApi.md#repolistprojects) | **GET** /repos/{owner}/{repo}/projects | List a repository&#39;s projects |
 | [**RepoListPullRequests**](RepositoryApi.md#repolistpullrequests) | **GET** /repos/{owner}/{repo}/pulls | List a repo&#39;s pull requests |
 | [**RepoListPullReviews**](RepositoryApi.md#repolistpullreviews) | **GET** /repos/{owner}/{repo}/pulls/{index}/reviews | List all reviews for a pull request |
 | [**RepoListPushMirrors**](RepositoryApi.md#repolistpushmirrors) | **GET** /repos/{owner}/{repo}/push_mirrors | Get all push mirrors of the repository |
@@ -132,28 +182,44 @@ All URIs are relative to */api/v1*
 | [**RepoListStatuses**](RepositoryApi.md#repoliststatuses) | **GET** /repos/{owner}/{repo}/statuses/{sha} | Get a commit&#39;s statuses |
 | [**RepoListStatusesByRef**](RepositoryApi.md#repoliststatusesbyref) | **GET** /repos/{owner}/{repo}/commits/{ref}/statuses | Get a commit&#39;s statuses, by branch/tag/commit reference |
 | [**RepoListSubscribers**](RepositoryApi.md#repolistsubscribers) | **GET** /repos/{owner}/{repo}/subscribers | List a repo&#39;s watchers |
+| [**RepoListTagProtection**](RepositoryApi.md#repolisttagprotection) | **GET** /repos/{owner}/{repo}/tag_protections | List tag protections for a repository |
 | [**RepoListTags**](RepositoryApi.md#repolisttags) | **GET** /repos/{owner}/{repo}/tags | List a repository&#39;s tags |
 | [**RepoListTeams**](RepositoryApi.md#repolistteams) | **GET** /repos/{owner}/{repo}/teams | List a repository&#39;s teams |
 | [**RepoListTopics**](RepositoryApi.md#repolisttopics) | **GET** /repos/{owner}/{repo}/topics | Get list of topics that a repository has |
 | [**RepoMergePullRequest**](RepositoryApi.md#repomergepullrequest) | **POST** /repos/{owner}/{repo}/pulls/{index}/merge | Merge a pull request |
+| [**RepoMergeUpstream**](RepositoryApi.md#repomergeupstream) | **POST** /repos/{owner}/{repo}/merge-upstream | Merge a branch from upstream |
 | [**RepoMigrate**](RepositoryApi.md#repomigrate) | **POST** /repos/migrate | Migrate a remote git repository |
 | [**RepoMirrorSync**](RepositoryApi.md#repomirrorsync) | **POST** /repos/{owner}/{repo}/mirror-sync | Sync a mirrored repository |
+| [**RepoMoveProjectColumns**](RepositoryApi.md#repomoveprojectcolumns) | **POST** /repos/{owner}/{repo}/projects/{id}/columns/move | Reorder a project&#39;s columns |
+| [**RepoMoveProjectIssue**](RepositoryApi.md#repomoveprojectissue) | **POST** /repos/{owner}/{repo}/projects/{id}/issues/{issue_id}/move | Move an issue between a project&#39;s columns |
 | [**RepoNewPinAllowed**](RepositoryApi.md#reponewpinallowed) | **GET** /repos/{owner}/{repo}/new_pin_allowed | Returns if new Issue Pins are allowed |
 | [**RepoPullRequestIsMerged**](RepositoryApi.md#repopullrequestismerged) | **GET** /repos/{owner}/{repo}/pulls/{index}/merge | Check if a pull request has been merged |
 | [**RepoPushMirrorSync**](RepositoryApi.md#repopushmirrorsync) | **POST** /repos/{owner}/{repo}/push_mirrors-sync | Sync all push mirrored repository |
+| [**RepoRemoveIssueFromProjectColumn**](RepositoryApi.md#reporemoveissuefromprojectcolumn) | **DELETE** /repos/{owner}/{repo}/projects/{id}/columns/{column_id}/issues/{issue_id} | Remove an issue from a project column |
+| [**RepoRenameBranch**](RepositoryApi.md#reporenamebranch) | **PATCH** /repos/{owner}/{repo}/branches/{branch} | Rename a branch |
+| [**RepoResolvePullReviewComment**](RepositoryApi.md#reporesolvepullreviewcomment) | **POST** /repos/{owner}/{repo}/pulls/comments/{id}/resolve | Resolve a pull request review comment |
 | [**RepoSearch**](RepositoryApi.md#reposearch) | **GET** /repos/search | Search for repositories |
+| [**RepoSetDefaultProjectColumn**](RepositoryApi.md#reposetdefaultprojectcolumn) | **POST** /repos/{owner}/{repo}/projects/{id}/columns/{column_id}/default | Set a project&#39;s default column |
 | [**RepoSigningKey**](RepositoryApi.md#reposigningkey) | **GET** /repos/{owner}/{repo}/signing-key.gpg | Get signing-key.gpg for given repository |
-| [**RepoSubmitPullReview**](RepositoryApi.md#reposubmitpullreview) | **POST** /repos/{owner}/{repo}/pulls/{index}/reviews/{id} | Submit a pending review to an pull request |
+| [**RepoSigningKeySSH**](RepositoryApi.md#reposigningkeyssh) | **GET** /repos/{owner}/{repo}/signing-key.pub | Get signing-key.pub for given repository |
+| [**RepoSubmitPullReview**](RepositoryApi.md#reposubmitpullreview) | **POST** /repos/{owner}/{repo}/pulls/{index}/reviews/{id} | Submit a pending review to a pull request |
 | [**RepoTestHook**](RepositoryApi.md#repotesthook) | **POST** /repos/{owner}/{repo}/hooks/{id}/tests | Test a push webhook |
 | [**RepoTrackedTimes**](RepositoryApi.md#repotrackedtimes) | **GET** /repos/{owner}/{repo}/times | List a repo&#39;s tracked times |
 | [**RepoTransfer**](RepositoryApi.md#repotransfer) | **POST** /repos/{owner}/{repo}/transfer | Transfer a repo ownership |
 | [**RepoUnDismissPullReview**](RepositoryApi.md#repoundismisspullreview) | **POST** /repos/{owner}/{repo}/pulls/{index}/reviews/{id}/undismissals | Cancel to dismiss a review for a pull request |
+| [**RepoUnresolvePullReviewComment**](RepositoryApi.md#repounresolvepullreviewcomment) | **POST** /repos/{owner}/{repo}/pulls/comments/{id}/unresolve | Unresolve a pull request review comment |
 | [**RepoUpdateAvatar**](RepositoryApi.md#repoupdateavatar) | **POST** /repos/{owner}/{repo}/avatar | Update avatar |
-| [**RepoUpdateFile**](RepositoryApi.md#repoupdatefile) | **PUT** /repos/{owner}/{repo}/contents/{filepath} | Update a file in a repository |
+| [**RepoUpdateBranch**](RepositoryApi.md#repoupdatebranch) | **PUT** /repos/{owner}/{repo}/branches/{branch} | Update a branch reference to a new commit |
+| [**RepoUpdateBranchProtectionPriories**](RepositoryApi.md#repoupdatebranchprotectionpriories) | **POST** /repos/{owner}/{repo}/branch_protections/priority | Update the priorities of branch protections for a repository. |
+| [**RepoUpdateFile**](RepositoryApi.md#repoupdatefile) | **PUT** /repos/{owner}/{repo}/contents/{filepath} | Update a file in a repository if SHA is set, or create the file if SHA is not set |
 | [**RepoUpdatePullRequest**](RepositoryApi.md#repoupdatepullrequest) | **POST** /repos/{owner}/{repo}/pulls/{index}/update | Merge PR&#39;s baseBranch into headBranch |
 | [**RepoUpdateTopics**](RepositoryApi.md#repoupdatetopics) | **PUT** /repos/{owner}/{repo}/topics | Replace list of topics for a repository |
 | [**RepoValidateIssueConfig**](RepositoryApi.md#repovalidateissueconfig) | **GET** /repos/{owner}/{repo}/issue_config/validate | Returns the validation information for a issue config |
+| [**RerunFailedWorkflowRun**](RepositoryApi.md#rerunfailedworkflowrun) | **POST** /repos/{owner}/{repo}/actions/runs/{run}/rerun-failed-jobs | Reruns all failed jobs in a workflow run |
+| [**RerunWorkflowJob**](RepositoryApi.md#rerunworkflowjob) | **POST** /repos/{owner}/{repo}/actions/runs/{run}/jobs/{job_id}/rerun | Reruns a specific workflow job in a run |
+| [**RerunWorkflowRun**](RepositoryApi.md#rerunworkflowrun) | **POST** /repos/{owner}/{repo}/actions/runs/{run}/rerun | Reruns an entire workflow run |
 | [**TopicSearch**](RepositoryApi.md#topicsearch) | **GET** /topics/search | search topics via keyword |
+| [**UpdateRepoRunner**](RepositoryApi.md#updatereporunner) | **PATCH** /repos/{owner}/{repo}/actions/runners/{runner_id} | Update a repo-level runner |
 | [**UpdateRepoSecret**](RepositoryApi.md#updatereposecret) | **PUT** /repos/{owner}/{repo}/actions/secrets/{secretname} | Create or Update a secret value in a repository |
 | [**UpdateRepoVariable**](RepositoryApi.md#updaterepovariable) | **PUT** /repos/{owner}/{repo}/actions/variables/{variablename} | Update a repo-level variable |
 | [**UserCurrentCheckSubscription**](RepositoryApi.md#usercurrentchecksubscription) | **GET** /repos/{owner}/{repo}/subscription | Check if the current user is watching a repo |
@@ -282,11 +348,11 @@ catch (ApiException e)
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-<a id="createcurrentuserrepo"></a>
-# **CreateCurrentUserRepo**
-> Repository CreateCurrentUserRepo (CreateRepoOption? body = null)
+<a id="actionsdisableworkflow"></a>
+# **ActionsDisableWorkflow**
+> void ActionsDisableWorkflow (string owner, string repo, string workflowId)
 
-Create a repository
+Disable a workflow
 
 ### Example
 ```csharp
@@ -298,7 +364,7 @@ using Gitea.Net.Model;
 
 namespace Example
 {
-    public class CreateCurrentUserRepoExample
+    public class ActionsDisableWorkflowExample
     {
         public static void Main()
         {
@@ -333,17 +399,18 @@ namespace Example
             // config.AddApiKeyPrefix("token", "Bearer");
 
             var apiInstance = new RepositoryApi(config);
-            var body = new CreateRepoOption?(); // CreateRepoOption? |  (optional) 
+            var owner = "owner_example";  // string | owner of the repo
+            var repo = "repo_example";  // string | name of the repo
+            var workflowId = "workflowId_example";  // string | id of the workflow
 
             try
             {
-                // Create a repository
-                Repository result = apiInstance.CreateCurrentUserRepo(body);
-                Debug.WriteLine(result);
+                // Disable a workflow
+                apiInstance.ActionsDisableWorkflow(owner, repo, workflowId);
             }
             catch (ApiException  e)
             {
-                Debug.Print("Exception when calling RepositoryApi.CreateCurrentUserRepo: " + e.Message);
+                Debug.Print("Exception when calling RepositoryApi.ActionsDisableWorkflow: " + e.Message);
                 Debug.Print("Status Code: " + e.ErrorCode);
                 Debug.Print(e.StackTrace);
             }
@@ -352,21 +419,18 @@ namespace Example
 }
 ```
 
-#### Using the CreateCurrentUserRepoWithHttpInfo variant
+#### Using the ActionsDisableWorkflowWithHttpInfo variant
 This returns an ApiResponse object which contains the response data, status code and headers.
 
 ```csharp
 try
 {
-    // Create a repository
-    ApiResponse<Repository> response = apiInstance.CreateCurrentUserRepoWithHttpInfo(body);
-    Debug.Write("Status Code: " + response.StatusCode);
-    Debug.Write("Response Headers: " + response.Headers);
-    Debug.Write("Response Body: " + response.Data);
+    // Disable a workflow
+    apiInstance.ActionsDisableWorkflowWithHttpInfo(owner, repo, workflowId);
 }
 catch (ApiException e)
 {
-    Debug.Print("Exception when calling RepositoryApi.CreateCurrentUserRepoWithHttpInfo: " + e.Message);
+    Debug.Print("Exception when calling RepositoryApi.ActionsDisableWorkflowWithHttpInfo: " + e.Message);
     Debug.Print("Status Code: " + e.ErrorCode);
     Debug.Print(e.StackTrace);
 }
@@ -376,11 +440,144 @@ catch (ApiException e)
 
 | Name | Type | Description | Notes |
 |------|------|-------------|-------|
-| **body** | [**CreateRepoOption?**](CreateRepoOption?.md) |  | [optional]  |
+| **owner** | **string** | owner of the repo |  |
+| **repo** | **string** | name of the repo |  |
+| **workflowId** | **string** | id of the workflow |  |
 
 ### Return type
 
-[**Repository**](Repository.md)
+void (empty response body)
+
+### Authorization
+
+[TOTPHeader](../README.md#TOTPHeader), [AuthorizationHeaderToken](../README.md#AuthorizationHeaderToken), [SudoHeader](../README.md#SudoHeader), [BasicAuth](../README.md#BasicAuth), [AccessToken](../README.md#AccessToken), [SudoParam](../README.md#SudoParam), [Token](../README.md#Token)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: Not defined
+
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+| **204** | No Content |  -  |
+| **400** | APIError is error format response |  * message -  <br>  * url -  <br>  |
+| **403** | APIForbiddenError is a forbidden error response |  * message -  <br>  * url -  <br>  |
+| **404** | APINotFound is a not found empty response |  -  |
+| **422** | APIValidationError is error format response related to input validation |  * message -  <br>  * url -  <br>  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+<a id="actionsdispatchworkflow"></a>
+# **ActionsDispatchWorkflow**
+> RunDetails ActionsDispatchWorkflow (string owner, string repo, string workflowId, bool? returnRunDetails = null, long? scopedWorkflowSourceRepoId = null, CreateActionWorkflowDispatch? body = null)
+
+Create a workflow dispatch event
+
+### Example
+```csharp
+using System.Collections.Generic;
+using System.Diagnostics;
+using Gitea.Net.Api;
+using Gitea.Net.Client;
+using Gitea.Net.Model;
+
+namespace Example
+{
+    public class ActionsDispatchWorkflowExample
+    {
+        public static void Main()
+        {
+            Configuration config = new Configuration();
+            config.BasePath = "/api/v1";
+            // Configure API key authorization: TOTPHeader
+            config.AddApiKey("X-GITEA-OTP", "YOUR_API_KEY");
+            // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+            // config.AddApiKeyPrefix("X-GITEA-OTP", "Bearer");
+            // Configure API key authorization: AuthorizationHeaderToken
+            config.AddApiKey("Authorization", "YOUR_API_KEY");
+            // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+            // config.AddApiKeyPrefix("Authorization", "Bearer");
+            // Configure API key authorization: SudoHeader
+            config.AddApiKey("Sudo", "YOUR_API_KEY");
+            // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+            // config.AddApiKeyPrefix("Sudo", "Bearer");
+            // Configure HTTP basic authorization: BasicAuth
+            config.Username = "YOUR_USERNAME";
+            config.Password = "YOUR_PASSWORD";
+            // Configure API key authorization: AccessToken
+            config.AddApiKey("access_token", "YOUR_API_KEY");
+            // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+            // config.AddApiKeyPrefix("access_token", "Bearer");
+            // Configure API key authorization: SudoParam
+            config.AddApiKey("sudo", "YOUR_API_KEY");
+            // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+            // config.AddApiKeyPrefix("sudo", "Bearer");
+            // Configure API key authorization: Token
+            config.AddApiKey("token", "YOUR_API_KEY");
+            // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+            // config.AddApiKeyPrefix("token", "Bearer");
+
+            var apiInstance = new RepositoryApi(config);
+            var owner = "owner_example";  // string | owner of the repo
+            var repo = "repo_example";  // string | name of the repo
+            var workflowId = "workflowId_example";  // string | id of the workflow
+            var returnRunDetails = true;  // bool? | Whether the response should include the workflow run ID and URLs. (optional) 
+            var scopedWorkflowSourceRepoId = 789L;  // long? | For a scoped workflow, the ID of the source repository providing it; omit or 0 for a repo-level workflow. (optional) 
+            var body = new CreateActionWorkflowDispatch?(); // CreateActionWorkflowDispatch? |  (optional) 
+
+            try
+            {
+                // Create a workflow dispatch event
+                RunDetails result = apiInstance.ActionsDispatchWorkflow(owner, repo, workflowId, returnRunDetails, scopedWorkflowSourceRepoId, body);
+                Debug.WriteLine(result);
+            }
+            catch (ApiException  e)
+            {
+                Debug.Print("Exception when calling RepositoryApi.ActionsDispatchWorkflow: " + e.Message);
+                Debug.Print("Status Code: " + e.ErrorCode);
+                Debug.Print(e.StackTrace);
+            }
+        }
+    }
+}
+```
+
+#### Using the ActionsDispatchWorkflowWithHttpInfo variant
+This returns an ApiResponse object which contains the response data, status code and headers.
+
+```csharp
+try
+{
+    // Create a workflow dispatch event
+    ApiResponse<RunDetails> response = apiInstance.ActionsDispatchWorkflowWithHttpInfo(owner, repo, workflowId, returnRunDetails, scopedWorkflowSourceRepoId, body);
+    Debug.Write("Status Code: " + response.StatusCode);
+    Debug.Write("Response Headers: " + response.Headers);
+    Debug.Write("Response Body: " + response.Data);
+}
+catch (ApiException e)
+{
+    Debug.Print("Exception when calling RepositoryApi.ActionsDispatchWorkflowWithHttpInfo: " + e.Message);
+    Debug.Print("Status Code: " + e.ErrorCode);
+    Debug.Print(e.StackTrace);
+}
+```
+
+### Parameters
+
+| Name | Type | Description | Notes |
+|------|------|-------------|-------|
+| **owner** | **string** | owner of the repo |  |
+| **repo** | **string** | name of the repo |  |
+| **workflowId** | **string** | id of the workflow |  |
+| **returnRunDetails** | **bool?** | Whether the response should include the workflow run ID and URLs. | [optional]  |
+| **scopedWorkflowSourceRepoId** | **long?** | For a scoped workflow, the ID of the source repository providing it; omit or 0 for a repo-level workflow. | [optional]  |
+| **body** | [**CreateActionWorkflowDispatch?**](CreateActionWorkflowDispatch?.md) |  | [optional]  |
+
+### Return type
+
+[**RunDetails**](RunDetails.md)
 
 ### Authorization
 
@@ -395,10 +592,776 @@ catch (ApiException e)
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-| **201** | Repository |  -  |
+| **200** | RunDetails |  -  |
+| **204** | No Content, if return_run_details is missing or false |  -  |
 | **400** | APIError is error format response |  * message -  <br>  * url -  <br>  |
-| **409** | The repository with the same name already exists. |  -  |
+| **403** | APIForbiddenError is a forbidden error response |  * message -  <br>  * url -  <br>  |
+| **404** | APINotFound is a not found empty response |  -  |
 | **422** | APIValidationError is error format response related to input validation |  * message -  <br>  * url -  <br>  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+<a id="actionsenableworkflow"></a>
+# **ActionsEnableWorkflow**
+> void ActionsEnableWorkflow (string owner, string repo, string workflowId)
+
+Enable a workflow
+
+### Example
+```csharp
+using System.Collections.Generic;
+using System.Diagnostics;
+using Gitea.Net.Api;
+using Gitea.Net.Client;
+using Gitea.Net.Model;
+
+namespace Example
+{
+    public class ActionsEnableWorkflowExample
+    {
+        public static void Main()
+        {
+            Configuration config = new Configuration();
+            config.BasePath = "/api/v1";
+            // Configure API key authorization: TOTPHeader
+            config.AddApiKey("X-GITEA-OTP", "YOUR_API_KEY");
+            // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+            // config.AddApiKeyPrefix("X-GITEA-OTP", "Bearer");
+            // Configure API key authorization: AuthorizationHeaderToken
+            config.AddApiKey("Authorization", "YOUR_API_KEY");
+            // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+            // config.AddApiKeyPrefix("Authorization", "Bearer");
+            // Configure API key authorization: SudoHeader
+            config.AddApiKey("Sudo", "YOUR_API_KEY");
+            // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+            // config.AddApiKeyPrefix("Sudo", "Bearer");
+            // Configure HTTP basic authorization: BasicAuth
+            config.Username = "YOUR_USERNAME";
+            config.Password = "YOUR_PASSWORD";
+            // Configure API key authorization: AccessToken
+            config.AddApiKey("access_token", "YOUR_API_KEY");
+            // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+            // config.AddApiKeyPrefix("access_token", "Bearer");
+            // Configure API key authorization: SudoParam
+            config.AddApiKey("sudo", "YOUR_API_KEY");
+            // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+            // config.AddApiKeyPrefix("sudo", "Bearer");
+            // Configure API key authorization: Token
+            config.AddApiKey("token", "YOUR_API_KEY");
+            // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+            // config.AddApiKeyPrefix("token", "Bearer");
+
+            var apiInstance = new RepositoryApi(config);
+            var owner = "owner_example";  // string | owner of the repo
+            var repo = "repo_example";  // string | name of the repo
+            var workflowId = "workflowId_example";  // string | id of the workflow
+
+            try
+            {
+                // Enable a workflow
+                apiInstance.ActionsEnableWorkflow(owner, repo, workflowId);
+            }
+            catch (ApiException  e)
+            {
+                Debug.Print("Exception when calling RepositoryApi.ActionsEnableWorkflow: " + e.Message);
+                Debug.Print("Status Code: " + e.ErrorCode);
+                Debug.Print(e.StackTrace);
+            }
+        }
+    }
+}
+```
+
+#### Using the ActionsEnableWorkflowWithHttpInfo variant
+This returns an ApiResponse object which contains the response data, status code and headers.
+
+```csharp
+try
+{
+    // Enable a workflow
+    apiInstance.ActionsEnableWorkflowWithHttpInfo(owner, repo, workflowId);
+}
+catch (ApiException e)
+{
+    Debug.Print("Exception when calling RepositoryApi.ActionsEnableWorkflowWithHttpInfo: " + e.Message);
+    Debug.Print("Status Code: " + e.ErrorCode);
+    Debug.Print(e.StackTrace);
+}
+```
+
+### Parameters
+
+| Name | Type | Description | Notes |
+|------|------|-------------|-------|
+| **owner** | **string** | owner of the repo |  |
+| **repo** | **string** | name of the repo |  |
+| **workflowId** | **string** | id of the workflow |  |
+
+### Return type
+
+void (empty response body)
+
+### Authorization
+
+[TOTPHeader](../README.md#TOTPHeader), [AuthorizationHeaderToken](../README.md#AuthorizationHeaderToken), [SudoHeader](../README.md#SudoHeader), [BasicAuth](../README.md#BasicAuth), [AccessToken](../README.md#AccessToken), [SudoParam](../README.md#SudoParam), [Token](../README.md#Token)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: Not defined
+
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+| **204** | No Content |  -  |
+| **400** | APIError is error format response |  * message -  <br>  * url -  <br>  |
+| **403** | APIForbiddenError is a forbidden error response |  * message -  <br>  * url -  <br>  |
+| **404** | APINotFound is a not found empty response |  -  |
+| **409** | APIConflict is a conflict empty response |  -  |
+| **422** | APIValidationError is error format response related to input validation |  * message -  <br>  * url -  <br>  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+<a id="actionsgetworkflow"></a>
+# **ActionsGetWorkflow**
+> ActionWorkflow ActionsGetWorkflow (string owner, string repo, string workflowId)
+
+Get a workflow
+
+### Example
+```csharp
+using System.Collections.Generic;
+using System.Diagnostics;
+using Gitea.Net.Api;
+using Gitea.Net.Client;
+using Gitea.Net.Model;
+
+namespace Example
+{
+    public class ActionsGetWorkflowExample
+    {
+        public static void Main()
+        {
+            Configuration config = new Configuration();
+            config.BasePath = "/api/v1";
+            // Configure API key authorization: TOTPHeader
+            config.AddApiKey("X-GITEA-OTP", "YOUR_API_KEY");
+            // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+            // config.AddApiKeyPrefix("X-GITEA-OTP", "Bearer");
+            // Configure API key authorization: AuthorizationHeaderToken
+            config.AddApiKey("Authorization", "YOUR_API_KEY");
+            // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+            // config.AddApiKeyPrefix("Authorization", "Bearer");
+            // Configure API key authorization: SudoHeader
+            config.AddApiKey("Sudo", "YOUR_API_KEY");
+            // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+            // config.AddApiKeyPrefix("Sudo", "Bearer");
+            // Configure HTTP basic authorization: BasicAuth
+            config.Username = "YOUR_USERNAME";
+            config.Password = "YOUR_PASSWORD";
+            // Configure API key authorization: AccessToken
+            config.AddApiKey("access_token", "YOUR_API_KEY");
+            // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+            // config.AddApiKeyPrefix("access_token", "Bearer");
+            // Configure API key authorization: SudoParam
+            config.AddApiKey("sudo", "YOUR_API_KEY");
+            // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+            // config.AddApiKeyPrefix("sudo", "Bearer");
+            // Configure API key authorization: Token
+            config.AddApiKey("token", "YOUR_API_KEY");
+            // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+            // config.AddApiKeyPrefix("token", "Bearer");
+
+            var apiInstance = new RepositoryApi(config);
+            var owner = "owner_example";  // string | owner of the repo
+            var repo = "repo_example";  // string | name of the repo
+            var workflowId = "workflowId_example";  // string | id of the workflow
+
+            try
+            {
+                // Get a workflow
+                ActionWorkflow result = apiInstance.ActionsGetWorkflow(owner, repo, workflowId);
+                Debug.WriteLine(result);
+            }
+            catch (ApiException  e)
+            {
+                Debug.Print("Exception when calling RepositoryApi.ActionsGetWorkflow: " + e.Message);
+                Debug.Print("Status Code: " + e.ErrorCode);
+                Debug.Print(e.StackTrace);
+            }
+        }
+    }
+}
+```
+
+#### Using the ActionsGetWorkflowWithHttpInfo variant
+This returns an ApiResponse object which contains the response data, status code and headers.
+
+```csharp
+try
+{
+    // Get a workflow
+    ApiResponse<ActionWorkflow> response = apiInstance.ActionsGetWorkflowWithHttpInfo(owner, repo, workflowId);
+    Debug.Write("Status Code: " + response.StatusCode);
+    Debug.Write("Response Headers: " + response.Headers);
+    Debug.Write("Response Body: " + response.Data);
+}
+catch (ApiException e)
+{
+    Debug.Print("Exception when calling RepositoryApi.ActionsGetWorkflowWithHttpInfo: " + e.Message);
+    Debug.Print("Status Code: " + e.ErrorCode);
+    Debug.Print(e.StackTrace);
+}
+```
+
+### Parameters
+
+| Name | Type | Description | Notes |
+|------|------|-------------|-------|
+| **owner** | **string** | owner of the repo |  |
+| **repo** | **string** | name of the repo |  |
+| **workflowId** | **string** | id of the workflow |  |
+
+### Return type
+
+[**ActionWorkflow**](ActionWorkflow.md)
+
+### Authorization
+
+[TOTPHeader](../README.md#TOTPHeader), [AuthorizationHeaderToken](../README.md#AuthorizationHeaderToken), [SudoHeader](../README.md#SudoHeader), [BasicAuth](../README.md#BasicAuth), [AccessToken](../README.md#AccessToken), [SudoParam](../README.md#SudoParam), [Token](../README.md#Token)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+| **200** | ActionWorkflow |  -  |
+| **400** | APIError is error format response |  * message -  <br>  * url -  <br>  |
+| **403** | APIForbiddenError is a forbidden error response |  * message -  <br>  * url -  <br>  |
+| **404** | APINotFound is a not found empty response |  -  |
+| **422** | APIValidationError is error format response related to input validation |  * message -  <br>  * url -  <br>  |
+| **500** | APIError is error format response |  * message -  <br>  * url -  <br>  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+<a id="actionslistrepositoryworkflows"></a>
+# **ActionsListRepositoryWorkflows**
+> ActionWorkflowResponse ActionsListRepositoryWorkflows (string owner, string repo)
+
+List repository workflows
+
+### Example
+```csharp
+using System.Collections.Generic;
+using System.Diagnostics;
+using Gitea.Net.Api;
+using Gitea.Net.Client;
+using Gitea.Net.Model;
+
+namespace Example
+{
+    public class ActionsListRepositoryWorkflowsExample
+    {
+        public static void Main()
+        {
+            Configuration config = new Configuration();
+            config.BasePath = "/api/v1";
+            // Configure API key authorization: TOTPHeader
+            config.AddApiKey("X-GITEA-OTP", "YOUR_API_KEY");
+            // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+            // config.AddApiKeyPrefix("X-GITEA-OTP", "Bearer");
+            // Configure API key authorization: AuthorizationHeaderToken
+            config.AddApiKey("Authorization", "YOUR_API_KEY");
+            // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+            // config.AddApiKeyPrefix("Authorization", "Bearer");
+            // Configure API key authorization: SudoHeader
+            config.AddApiKey("Sudo", "YOUR_API_KEY");
+            // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+            // config.AddApiKeyPrefix("Sudo", "Bearer");
+            // Configure HTTP basic authorization: BasicAuth
+            config.Username = "YOUR_USERNAME";
+            config.Password = "YOUR_PASSWORD";
+            // Configure API key authorization: AccessToken
+            config.AddApiKey("access_token", "YOUR_API_KEY");
+            // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+            // config.AddApiKeyPrefix("access_token", "Bearer");
+            // Configure API key authorization: SudoParam
+            config.AddApiKey("sudo", "YOUR_API_KEY");
+            // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+            // config.AddApiKeyPrefix("sudo", "Bearer");
+            // Configure API key authorization: Token
+            config.AddApiKey("token", "YOUR_API_KEY");
+            // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+            // config.AddApiKeyPrefix("token", "Bearer");
+
+            var apiInstance = new RepositoryApi(config);
+            var owner = "owner_example";  // string | owner of the repo
+            var repo = "repo_example";  // string | name of the repo
+
+            try
+            {
+                // List repository workflows
+                ActionWorkflowResponse result = apiInstance.ActionsListRepositoryWorkflows(owner, repo);
+                Debug.WriteLine(result);
+            }
+            catch (ApiException  e)
+            {
+                Debug.Print("Exception when calling RepositoryApi.ActionsListRepositoryWorkflows: " + e.Message);
+                Debug.Print("Status Code: " + e.ErrorCode);
+                Debug.Print(e.StackTrace);
+            }
+        }
+    }
+}
+```
+
+#### Using the ActionsListRepositoryWorkflowsWithHttpInfo variant
+This returns an ApiResponse object which contains the response data, status code and headers.
+
+```csharp
+try
+{
+    // List repository workflows
+    ApiResponse<ActionWorkflowResponse> response = apiInstance.ActionsListRepositoryWorkflowsWithHttpInfo(owner, repo);
+    Debug.Write("Status Code: " + response.StatusCode);
+    Debug.Write("Response Headers: " + response.Headers);
+    Debug.Write("Response Body: " + response.Data);
+}
+catch (ApiException e)
+{
+    Debug.Print("Exception when calling RepositoryApi.ActionsListRepositoryWorkflowsWithHttpInfo: " + e.Message);
+    Debug.Print("Status Code: " + e.ErrorCode);
+    Debug.Print(e.StackTrace);
+}
+```
+
+### Parameters
+
+| Name | Type | Description | Notes |
+|------|------|-------------|-------|
+| **owner** | **string** | owner of the repo |  |
+| **repo** | **string** | name of the repo |  |
+
+### Return type
+
+[**ActionWorkflowResponse**](ActionWorkflowResponse.md)
+
+### Authorization
+
+[TOTPHeader](../README.md#TOTPHeader), [AuthorizationHeaderToken](../README.md#AuthorizationHeaderToken), [SudoHeader](../README.md#SudoHeader), [BasicAuth](../README.md#BasicAuth), [AccessToken](../README.md#AccessToken), [SudoParam](../README.md#SudoParam), [Token](../README.md#Token)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+| **200** | ActionWorkflowList |  -  |
+| **400** | APIError is error format response |  * message -  <br>  * url -  <br>  |
+| **403** | APIForbiddenError is a forbidden error response |  * message -  <br>  * url -  <br>  |
+| **404** | APINotFound is a not found empty response |  -  |
+| **422** | APIValidationError is error format response related to input validation |  * message -  <br>  * url -  <br>  |
+| **500** | APIError is error format response |  * message -  <br>  * url -  <br>  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+<a id="actionslistworkflowruns"></a>
+# **ActionsListWorkflowRuns**
+> ActionWorkflowRunsResponse ActionsListWorkflowRuns (string owner, string repo, string workflowId, string? varEvent = null, string? branch = null, string? status = null, string? actor = null, string? headSha = null, bool? excludePullRequests = null, long? scopedWorkflowSourceRepoId = null, int? page = null, int? limit = null)
+
+List runs for a workflow
+
+### Example
+```csharp
+using System.Collections.Generic;
+using System.Diagnostics;
+using Gitea.Net.Api;
+using Gitea.Net.Client;
+using Gitea.Net.Model;
+
+namespace Example
+{
+    public class ActionsListWorkflowRunsExample
+    {
+        public static void Main()
+        {
+            Configuration config = new Configuration();
+            config.BasePath = "/api/v1";
+            // Configure API key authorization: TOTPHeader
+            config.AddApiKey("X-GITEA-OTP", "YOUR_API_KEY");
+            // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+            // config.AddApiKeyPrefix("X-GITEA-OTP", "Bearer");
+            // Configure API key authorization: AuthorizationHeaderToken
+            config.AddApiKey("Authorization", "YOUR_API_KEY");
+            // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+            // config.AddApiKeyPrefix("Authorization", "Bearer");
+            // Configure API key authorization: SudoHeader
+            config.AddApiKey("Sudo", "YOUR_API_KEY");
+            // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+            // config.AddApiKeyPrefix("Sudo", "Bearer");
+            // Configure HTTP basic authorization: BasicAuth
+            config.Username = "YOUR_USERNAME";
+            config.Password = "YOUR_PASSWORD";
+            // Configure API key authorization: AccessToken
+            config.AddApiKey("access_token", "YOUR_API_KEY");
+            // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+            // config.AddApiKeyPrefix("access_token", "Bearer");
+            // Configure API key authorization: SudoParam
+            config.AddApiKey("sudo", "YOUR_API_KEY");
+            // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+            // config.AddApiKeyPrefix("sudo", "Bearer");
+            // Configure API key authorization: Token
+            config.AddApiKey("token", "YOUR_API_KEY");
+            // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+            // config.AddApiKeyPrefix("token", "Bearer");
+
+            var apiInstance = new RepositoryApi(config);
+            var owner = "owner_example";  // string | owner of the repo
+            var repo = "repo_example";  // string | name of the repo
+            var workflowId = "workflowId_example";  // string | id of the workflow, must be the workflow file name (e.g. `build.yml`)
+            var varEvent = "varEvent_example";  // string? | workflow event name (optional) 
+            var branch = "branch_example";  // string? | workflow branch (optional) 
+            var status = "status_example";  // string? | workflow status (requested, pending, queued, in_progress, failure, success, skipped) (optional) 
+            var actor = "actor_example";  // string? | triggered by user (optional) 
+            var headSha = "headSha_example";  // string? | triggering sha of the workflow run (optional) 
+            var excludePullRequests = true;  // bool? | if true, the `pull_requests` field on each returned run is emptied (optional) 
+            var scopedWorkflowSourceRepoId = 789L;  // long? | For a scoped workflow, the ID of the source repository providing it; omit or 0 for a repo-level workflow. (optional) 
+            var page = 56;  // int? | page number of results to return (1-based) (optional) 
+            var limit = 56;  // int? | page size of results (optional) 
+
+            try
+            {
+                // List runs for a workflow
+                ActionWorkflowRunsResponse result = apiInstance.ActionsListWorkflowRuns(owner, repo, workflowId, varEvent, branch, status, actor, headSha, excludePullRequests, scopedWorkflowSourceRepoId, page, limit);
+                Debug.WriteLine(result);
+            }
+            catch (ApiException  e)
+            {
+                Debug.Print("Exception when calling RepositoryApi.ActionsListWorkflowRuns: " + e.Message);
+                Debug.Print("Status Code: " + e.ErrorCode);
+                Debug.Print(e.StackTrace);
+            }
+        }
+    }
+}
+```
+
+#### Using the ActionsListWorkflowRunsWithHttpInfo variant
+This returns an ApiResponse object which contains the response data, status code and headers.
+
+```csharp
+try
+{
+    // List runs for a workflow
+    ApiResponse<ActionWorkflowRunsResponse> response = apiInstance.ActionsListWorkflowRunsWithHttpInfo(owner, repo, workflowId, varEvent, branch, status, actor, headSha, excludePullRequests, scopedWorkflowSourceRepoId, page, limit);
+    Debug.Write("Status Code: " + response.StatusCode);
+    Debug.Write("Response Headers: " + response.Headers);
+    Debug.Write("Response Body: " + response.Data);
+}
+catch (ApiException e)
+{
+    Debug.Print("Exception when calling RepositoryApi.ActionsListWorkflowRunsWithHttpInfo: " + e.Message);
+    Debug.Print("Status Code: " + e.ErrorCode);
+    Debug.Print(e.StackTrace);
+}
+```
+
+### Parameters
+
+| Name | Type | Description | Notes |
+|------|------|-------------|-------|
+| **owner** | **string** | owner of the repo |  |
+| **repo** | **string** | name of the repo |  |
+| **workflowId** | **string** | id of the workflow, must be the workflow file name (e.g. &#x60;build.yml&#x60;) |  |
+| **varEvent** | **string?** | workflow event name | [optional]  |
+| **branch** | **string?** | workflow branch | [optional]  |
+| **status** | **string?** | workflow status (requested, pending, queued, in_progress, failure, success, skipped) | [optional]  |
+| **actor** | **string?** | triggered by user | [optional]  |
+| **headSha** | **string?** | triggering sha of the workflow run | [optional]  |
+| **excludePullRequests** | **bool?** | if true, the &#x60;pull_requests&#x60; field on each returned run is emptied | [optional]  |
+| **scopedWorkflowSourceRepoId** | **long?** | For a scoped workflow, the ID of the source repository providing it; omit or 0 for a repo-level workflow. | [optional]  |
+| **page** | **int?** | page number of results to return (1-based) | [optional]  |
+| **limit** | **int?** | page size of results | [optional]  |
+
+### Return type
+
+[**ActionWorkflowRunsResponse**](ActionWorkflowRunsResponse.md)
+
+### Authorization
+
+[TOTPHeader](../README.md#TOTPHeader), [AuthorizationHeaderToken](../README.md#AuthorizationHeaderToken), [SudoHeader](../README.md#SudoHeader), [BasicAuth](../README.md#BasicAuth), [AccessToken](../README.md#AccessToken), [SudoParam](../README.md#SudoParam), [Token](../README.md#Token)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+| **200** | WorkflowRunsList |  -  |
+| **400** | APIError is error format response |  * message -  <br>  * url -  <br>  |
+| **403** | APIForbiddenError is a forbidden error response |  * message -  <br>  * url -  <br>  |
+| **404** | APINotFound is a not found empty response |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+<a id="approveworkflowrun"></a>
+# **ApproveWorkflowRun**
+> ActionWorkflowRun ApproveWorkflowRun (string owner, string repo, int run)
+
+Approve a workflow run that requires approval
+
+### Example
+```csharp
+using System.Collections.Generic;
+using System.Diagnostics;
+using Gitea.Net.Api;
+using Gitea.Net.Client;
+using Gitea.Net.Model;
+
+namespace Example
+{
+    public class ApproveWorkflowRunExample
+    {
+        public static void Main()
+        {
+            Configuration config = new Configuration();
+            config.BasePath = "/api/v1";
+            // Configure API key authorization: TOTPHeader
+            config.AddApiKey("X-GITEA-OTP", "YOUR_API_KEY");
+            // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+            // config.AddApiKeyPrefix("X-GITEA-OTP", "Bearer");
+            // Configure API key authorization: AuthorizationHeaderToken
+            config.AddApiKey("Authorization", "YOUR_API_KEY");
+            // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+            // config.AddApiKeyPrefix("Authorization", "Bearer");
+            // Configure API key authorization: SudoHeader
+            config.AddApiKey("Sudo", "YOUR_API_KEY");
+            // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+            // config.AddApiKeyPrefix("Sudo", "Bearer");
+            // Configure HTTP basic authorization: BasicAuth
+            config.Username = "YOUR_USERNAME";
+            config.Password = "YOUR_PASSWORD";
+            // Configure API key authorization: AccessToken
+            config.AddApiKey("access_token", "YOUR_API_KEY");
+            // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+            // config.AddApiKeyPrefix("access_token", "Bearer");
+            // Configure API key authorization: SudoParam
+            config.AddApiKey("sudo", "YOUR_API_KEY");
+            // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+            // config.AddApiKeyPrefix("sudo", "Bearer");
+            // Configure API key authorization: Token
+            config.AddApiKey("token", "YOUR_API_KEY");
+            // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+            // config.AddApiKeyPrefix("token", "Bearer");
+
+            var apiInstance = new RepositoryApi(config);
+            var owner = "owner_example";  // string | owner of the repo
+            var repo = "repo_example";  // string | name of the repository
+            var run = 56;  // int | run ID
+
+            try
+            {
+                // Approve a workflow run that requires approval
+                ActionWorkflowRun result = apiInstance.ApproveWorkflowRun(owner, repo, run);
+                Debug.WriteLine(result);
+            }
+            catch (ApiException  e)
+            {
+                Debug.Print("Exception when calling RepositoryApi.ApproveWorkflowRun: " + e.Message);
+                Debug.Print("Status Code: " + e.ErrorCode);
+                Debug.Print(e.StackTrace);
+            }
+        }
+    }
+}
+```
+
+#### Using the ApproveWorkflowRunWithHttpInfo variant
+This returns an ApiResponse object which contains the response data, status code and headers.
+
+```csharp
+try
+{
+    // Approve a workflow run that requires approval
+    ApiResponse<ActionWorkflowRun> response = apiInstance.ApproveWorkflowRunWithHttpInfo(owner, repo, run);
+    Debug.Write("Status Code: " + response.StatusCode);
+    Debug.Write("Response Headers: " + response.Headers);
+    Debug.Write("Response Body: " + response.Data);
+}
+catch (ApiException e)
+{
+    Debug.Print("Exception when calling RepositoryApi.ApproveWorkflowRunWithHttpInfo: " + e.Message);
+    Debug.Print("Status Code: " + e.ErrorCode);
+    Debug.Print(e.StackTrace);
+}
+```
+
+### Parameters
+
+| Name | Type | Description | Notes |
+|------|------|-------------|-------|
+| **owner** | **string** | owner of the repo |  |
+| **repo** | **string** | name of the repository |  |
+| **run** | **int** | run ID |  |
+
+### Return type
+
+[**ActionWorkflowRun**](ActionWorkflowRun.md)
+
+### Authorization
+
+[TOTPHeader](../README.md#TOTPHeader), [AuthorizationHeaderToken](../README.md#AuthorizationHeaderToken), [SudoHeader](../README.md#SudoHeader), [BasicAuth](../README.md#BasicAuth), [AccessToken](../README.md#AccessToken), [SudoParam](../README.md#SudoParam), [Token](../README.md#Token)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+| **200** | WorkflowRun |  -  |
+| **400** | APIError is error format response |  * message -  <br>  * url -  <br>  |
+| **403** | APIForbiddenError is a forbidden error response |  * message -  <br>  * url -  <br>  |
+| **404** | APINotFound is a not found empty response |  -  |
+| **409** | APIConflict is a conflict empty response |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+<a id="cancelworkflowrun"></a>
+# **CancelWorkflowRun**
+> ActionWorkflowRun CancelWorkflowRun (string owner, string repo, int run)
+
+Cancel a workflow run and its jobs
+
+### Example
+```csharp
+using System.Collections.Generic;
+using System.Diagnostics;
+using Gitea.Net.Api;
+using Gitea.Net.Client;
+using Gitea.Net.Model;
+
+namespace Example
+{
+    public class CancelWorkflowRunExample
+    {
+        public static void Main()
+        {
+            Configuration config = new Configuration();
+            config.BasePath = "/api/v1";
+            // Configure API key authorization: TOTPHeader
+            config.AddApiKey("X-GITEA-OTP", "YOUR_API_KEY");
+            // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+            // config.AddApiKeyPrefix("X-GITEA-OTP", "Bearer");
+            // Configure API key authorization: AuthorizationHeaderToken
+            config.AddApiKey("Authorization", "YOUR_API_KEY");
+            // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+            // config.AddApiKeyPrefix("Authorization", "Bearer");
+            // Configure API key authorization: SudoHeader
+            config.AddApiKey("Sudo", "YOUR_API_KEY");
+            // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+            // config.AddApiKeyPrefix("Sudo", "Bearer");
+            // Configure HTTP basic authorization: BasicAuth
+            config.Username = "YOUR_USERNAME";
+            config.Password = "YOUR_PASSWORD";
+            // Configure API key authorization: AccessToken
+            config.AddApiKey("access_token", "YOUR_API_KEY");
+            // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+            // config.AddApiKeyPrefix("access_token", "Bearer");
+            // Configure API key authorization: SudoParam
+            config.AddApiKey("sudo", "YOUR_API_KEY");
+            // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+            // config.AddApiKeyPrefix("sudo", "Bearer");
+            // Configure API key authorization: Token
+            config.AddApiKey("token", "YOUR_API_KEY");
+            // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+            // config.AddApiKeyPrefix("token", "Bearer");
+
+            var apiInstance = new RepositoryApi(config);
+            var owner = "owner_example";  // string | owner of the repo
+            var repo = "repo_example";  // string | name of the repository
+            var run = 56;  // int | run ID
+
+            try
+            {
+                // Cancel a workflow run and its jobs
+                ActionWorkflowRun result = apiInstance.CancelWorkflowRun(owner, repo, run);
+                Debug.WriteLine(result);
+            }
+            catch (ApiException  e)
+            {
+                Debug.Print("Exception when calling RepositoryApi.CancelWorkflowRun: " + e.Message);
+                Debug.Print("Status Code: " + e.ErrorCode);
+                Debug.Print(e.StackTrace);
+            }
+        }
+    }
+}
+```
+
+#### Using the CancelWorkflowRunWithHttpInfo variant
+This returns an ApiResponse object which contains the response data, status code and headers.
+
+```csharp
+try
+{
+    // Cancel a workflow run and its jobs
+    ApiResponse<ActionWorkflowRun> response = apiInstance.CancelWorkflowRunWithHttpInfo(owner, repo, run);
+    Debug.Write("Status Code: " + response.StatusCode);
+    Debug.Write("Response Headers: " + response.Headers);
+    Debug.Write("Response Body: " + response.Data);
+}
+catch (ApiException e)
+{
+    Debug.Print("Exception when calling RepositoryApi.CancelWorkflowRunWithHttpInfo: " + e.Message);
+    Debug.Print("Status Code: " + e.ErrorCode);
+    Debug.Print(e.StackTrace);
+}
+```
+
+### Parameters
+
+| Name | Type | Description | Notes |
+|------|------|-------------|-------|
+| **owner** | **string** | owner of the repo |  |
+| **repo** | **string** | name of the repository |  |
+| **run** | **int** | run ID |  |
+
+### Return type
+
+[**ActionWorkflowRun**](ActionWorkflowRun.md)
+
+### Authorization
+
+[TOTPHeader](../README.md#TOTPHeader), [AuthorizationHeaderToken](../README.md#AuthorizationHeaderToken), [SudoHeader](../README.md#SudoHeader), [BasicAuth](../README.md#BasicAuth), [AccessToken](../README.md#AccessToken), [SudoParam](../README.md#SudoParam), [Token](../README.md#Token)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+| **200** | WorkflowRun |  -  |
+| **400** | APIError is error format response |  * message -  <br>  * url -  <br>  |
+| **403** | APIForbiddenError is a forbidden error response |  * message -  <br>  * url -  <br>  |
+| **404** | APINotFound is a not found empty response |  -  |
+| **409** | APIConflict is a conflict empty response |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
@@ -512,7 +1475,7 @@ catch (ApiException e)
 
 ### HTTP request headers
 
- - **Content-Type**: application/json, text/plain
+ - **Content-Type**: application/json
  - **Accept**: application/json
 
 
@@ -578,7 +1541,7 @@ namespace Example
             // config.AddApiKeyPrefix("token", "Bearer");
 
             var apiInstance = new RepositoryApi(config);
-            var owner = "owner_example";  // string | name of the owner
+            var owner = "owner_example";  // string | owner of the repo
             var repo = "repo_example";  // string | name of the repository
             var variablename = "variablename_example";  // string | name of the variable
             var body = new CreateVariableOption?(); // CreateVariableOption? |  (optional) 
@@ -620,7 +1583,7 @@ catch (ApiException e)
 
 | Name | Type | Description | Notes |
 |------|------|-------------|-------|
-| **owner** | **string** | name of the owner |  |
+| **owner** | **string** | owner of the repo |  |
 | **repo** | **string** | name of the repository |  |
 | **variablename** | **string** | name of the variable |  |
 | **body** | [**CreateVariableOption?**](CreateVariableOption?.md) |  | [optional]  |
@@ -635,7 +1598,7 @@ void (empty response body)
 
 ### HTTP request headers
 
- - **Content-Type**: application/json, text/plain
+ - **Content-Type**: application/json
  - **Accept**: Not defined
 
 
@@ -643,7 +1606,364 @@ void (empty response body)
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 | **201** | response when creating a repo-level variable |  -  |
-| **204** | response when creating a repo-level variable |  -  |
+| **400** | APIError is error format response |  * message -  <br>  * url -  <br>  |
+| **409** | variable name already exists. |  -  |
+| **500** | APIError is error format response |  * message -  <br>  * url -  <br>  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+<a id="deleteactionrun"></a>
+# **DeleteActionRun**
+> void DeleteActionRun (string owner, string repo, int run)
+
+Delete a workflow run
+
+### Example
+```csharp
+using System.Collections.Generic;
+using System.Diagnostics;
+using Gitea.Net.Api;
+using Gitea.Net.Client;
+using Gitea.Net.Model;
+
+namespace Example
+{
+    public class DeleteActionRunExample
+    {
+        public static void Main()
+        {
+            Configuration config = new Configuration();
+            config.BasePath = "/api/v1";
+            // Configure API key authorization: TOTPHeader
+            config.AddApiKey("X-GITEA-OTP", "YOUR_API_KEY");
+            // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+            // config.AddApiKeyPrefix("X-GITEA-OTP", "Bearer");
+            // Configure API key authorization: AuthorizationHeaderToken
+            config.AddApiKey("Authorization", "YOUR_API_KEY");
+            // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+            // config.AddApiKeyPrefix("Authorization", "Bearer");
+            // Configure API key authorization: SudoHeader
+            config.AddApiKey("Sudo", "YOUR_API_KEY");
+            // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+            // config.AddApiKeyPrefix("Sudo", "Bearer");
+            // Configure HTTP basic authorization: BasicAuth
+            config.Username = "YOUR_USERNAME";
+            config.Password = "YOUR_PASSWORD";
+            // Configure API key authorization: AccessToken
+            config.AddApiKey("access_token", "YOUR_API_KEY");
+            // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+            // config.AddApiKeyPrefix("access_token", "Bearer");
+            // Configure API key authorization: SudoParam
+            config.AddApiKey("sudo", "YOUR_API_KEY");
+            // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+            // config.AddApiKeyPrefix("sudo", "Bearer");
+            // Configure API key authorization: Token
+            config.AddApiKey("token", "YOUR_API_KEY");
+            // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+            // config.AddApiKeyPrefix("token", "Bearer");
+
+            var apiInstance = new RepositoryApi(config);
+            var owner = "owner_example";  // string | owner of the repo
+            var repo = "repo_example";  // string | name of the repository
+            var run = 56;  // int | runid of the workflow run
+
+            try
+            {
+                // Delete a workflow run
+                apiInstance.DeleteActionRun(owner, repo, run);
+            }
+            catch (ApiException  e)
+            {
+                Debug.Print("Exception when calling RepositoryApi.DeleteActionRun: " + e.Message);
+                Debug.Print("Status Code: " + e.ErrorCode);
+                Debug.Print(e.StackTrace);
+            }
+        }
+    }
+}
+```
+
+#### Using the DeleteActionRunWithHttpInfo variant
+This returns an ApiResponse object which contains the response data, status code and headers.
+
+```csharp
+try
+{
+    // Delete a workflow run
+    apiInstance.DeleteActionRunWithHttpInfo(owner, repo, run);
+}
+catch (ApiException e)
+{
+    Debug.Print("Exception when calling RepositoryApi.DeleteActionRunWithHttpInfo: " + e.Message);
+    Debug.Print("Status Code: " + e.ErrorCode);
+    Debug.Print(e.StackTrace);
+}
+```
+
+### Parameters
+
+| Name | Type | Description | Notes |
+|------|------|-------------|-------|
+| **owner** | **string** | owner of the repo |  |
+| **repo** | **string** | name of the repository |  |
+| **run** | **int** | runid of the workflow run |  |
+
+### Return type
+
+void (empty response body)
+
+### Authorization
+
+[TOTPHeader](../README.md#TOTPHeader), [AuthorizationHeaderToken](../README.md#AuthorizationHeaderToken), [SudoHeader](../README.md#SudoHeader), [BasicAuth](../README.md#BasicAuth), [AccessToken](../README.md#AccessToken), [SudoParam](../README.md#SudoParam), [Token](../README.md#Token)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: Not defined
+
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+| **204** | No Content |  -  |
+| **400** | APIError is error format response |  * message -  <br>  * url -  <br>  |
+| **404** | APINotFound is a not found empty response |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+<a id="deleteartifact"></a>
+# **DeleteArtifact**
+> void DeleteArtifact (string owner, string repo, string artifactId)
+
+Deletes a specific artifact for a workflow run
+
+### Example
+```csharp
+using System.Collections.Generic;
+using System.Diagnostics;
+using Gitea.Net.Api;
+using Gitea.Net.Client;
+using Gitea.Net.Model;
+
+namespace Example
+{
+    public class DeleteArtifactExample
+    {
+        public static void Main()
+        {
+            Configuration config = new Configuration();
+            config.BasePath = "/api/v1";
+            // Configure API key authorization: TOTPHeader
+            config.AddApiKey("X-GITEA-OTP", "YOUR_API_KEY");
+            // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+            // config.AddApiKeyPrefix("X-GITEA-OTP", "Bearer");
+            // Configure API key authorization: AuthorizationHeaderToken
+            config.AddApiKey("Authorization", "YOUR_API_KEY");
+            // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+            // config.AddApiKeyPrefix("Authorization", "Bearer");
+            // Configure API key authorization: SudoHeader
+            config.AddApiKey("Sudo", "YOUR_API_KEY");
+            // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+            // config.AddApiKeyPrefix("Sudo", "Bearer");
+            // Configure HTTP basic authorization: BasicAuth
+            config.Username = "YOUR_USERNAME";
+            config.Password = "YOUR_PASSWORD";
+            // Configure API key authorization: AccessToken
+            config.AddApiKey("access_token", "YOUR_API_KEY");
+            // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+            // config.AddApiKeyPrefix("access_token", "Bearer");
+            // Configure API key authorization: SudoParam
+            config.AddApiKey("sudo", "YOUR_API_KEY");
+            // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+            // config.AddApiKeyPrefix("sudo", "Bearer");
+            // Configure API key authorization: Token
+            config.AddApiKey("token", "YOUR_API_KEY");
+            // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+            // config.AddApiKeyPrefix("token", "Bearer");
+
+            var apiInstance = new RepositoryApi(config);
+            var owner = "owner_example";  // string | owner of the repo
+            var repo = "repo_example";  // string | name of the repository
+            var artifactId = "artifactId_example";  // string | id of the artifact
+
+            try
+            {
+                // Deletes a specific artifact for a workflow run
+                apiInstance.DeleteArtifact(owner, repo, artifactId);
+            }
+            catch (ApiException  e)
+            {
+                Debug.Print("Exception when calling RepositoryApi.DeleteArtifact: " + e.Message);
+                Debug.Print("Status Code: " + e.ErrorCode);
+                Debug.Print(e.StackTrace);
+            }
+        }
+    }
+}
+```
+
+#### Using the DeleteArtifactWithHttpInfo variant
+This returns an ApiResponse object which contains the response data, status code and headers.
+
+```csharp
+try
+{
+    // Deletes a specific artifact for a workflow run
+    apiInstance.DeleteArtifactWithHttpInfo(owner, repo, artifactId);
+}
+catch (ApiException e)
+{
+    Debug.Print("Exception when calling RepositoryApi.DeleteArtifactWithHttpInfo: " + e.Message);
+    Debug.Print("Status Code: " + e.ErrorCode);
+    Debug.Print(e.StackTrace);
+}
+```
+
+### Parameters
+
+| Name | Type | Description | Notes |
+|------|------|-------------|-------|
+| **owner** | **string** | owner of the repo |  |
+| **repo** | **string** | name of the repository |  |
+| **artifactId** | **string** | id of the artifact |  |
+
+### Return type
+
+void (empty response body)
+
+### Authorization
+
+[TOTPHeader](../README.md#TOTPHeader), [AuthorizationHeaderToken](../README.md#AuthorizationHeaderToken), [SudoHeader](../README.md#SudoHeader), [BasicAuth](../README.md#BasicAuth), [AccessToken](../README.md#AccessToken), [SudoParam](../README.md#SudoParam), [Token](../README.md#Token)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: Not defined
+
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+| **204** | No Content |  -  |
+| **400** | APIError is error format response |  * message -  <br>  * url -  <br>  |
+| **404** | APINotFound is a not found empty response |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+<a id="deletereporunner"></a>
+# **DeleteRepoRunner**
+> void DeleteRepoRunner (string owner, string repo, string runnerId)
+
+Delete a repo-level runner
+
+### Example
+```csharp
+using System.Collections.Generic;
+using System.Diagnostics;
+using Gitea.Net.Api;
+using Gitea.Net.Client;
+using Gitea.Net.Model;
+
+namespace Example
+{
+    public class DeleteRepoRunnerExample
+    {
+        public static void Main()
+        {
+            Configuration config = new Configuration();
+            config.BasePath = "/api/v1";
+            // Configure API key authorization: TOTPHeader
+            config.AddApiKey("X-GITEA-OTP", "YOUR_API_KEY");
+            // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+            // config.AddApiKeyPrefix("X-GITEA-OTP", "Bearer");
+            // Configure API key authorization: AuthorizationHeaderToken
+            config.AddApiKey("Authorization", "YOUR_API_KEY");
+            // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+            // config.AddApiKeyPrefix("Authorization", "Bearer");
+            // Configure API key authorization: SudoHeader
+            config.AddApiKey("Sudo", "YOUR_API_KEY");
+            // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+            // config.AddApiKeyPrefix("Sudo", "Bearer");
+            // Configure HTTP basic authorization: BasicAuth
+            config.Username = "YOUR_USERNAME";
+            config.Password = "YOUR_PASSWORD";
+            // Configure API key authorization: AccessToken
+            config.AddApiKey("access_token", "YOUR_API_KEY");
+            // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+            // config.AddApiKeyPrefix("access_token", "Bearer");
+            // Configure API key authorization: SudoParam
+            config.AddApiKey("sudo", "YOUR_API_KEY");
+            // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+            // config.AddApiKeyPrefix("sudo", "Bearer");
+            // Configure API key authorization: Token
+            config.AddApiKey("token", "YOUR_API_KEY");
+            // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+            // config.AddApiKeyPrefix("token", "Bearer");
+
+            var apiInstance = new RepositoryApi(config);
+            var owner = "owner_example";  // string | owner of the repo
+            var repo = "repo_example";  // string | name of the repo
+            var runnerId = "runnerId_example";  // string | id of the runner
+
+            try
+            {
+                // Delete a repo-level runner
+                apiInstance.DeleteRepoRunner(owner, repo, runnerId);
+            }
+            catch (ApiException  e)
+            {
+                Debug.Print("Exception when calling RepositoryApi.DeleteRepoRunner: " + e.Message);
+                Debug.Print("Status Code: " + e.ErrorCode);
+                Debug.Print(e.StackTrace);
+            }
+        }
+    }
+}
+```
+
+#### Using the DeleteRepoRunnerWithHttpInfo variant
+This returns an ApiResponse object which contains the response data, status code and headers.
+
+```csharp
+try
+{
+    // Delete a repo-level runner
+    apiInstance.DeleteRepoRunnerWithHttpInfo(owner, repo, runnerId);
+}
+catch (ApiException e)
+{
+    Debug.Print("Exception when calling RepositoryApi.DeleteRepoRunnerWithHttpInfo: " + e.Message);
+    Debug.Print("Status Code: " + e.ErrorCode);
+    Debug.Print(e.StackTrace);
+}
+```
+
+### Parameters
+
+| Name | Type | Description | Notes |
+|------|------|-------------|-------|
+| **owner** | **string** | owner of the repo |  |
+| **repo** | **string** | name of the repo |  |
+| **runnerId** | **string** | id of the runner |  |
+
+### Return type
+
+void (empty response body)
+
+### Authorization
+
+[TOTPHeader](../README.md#TOTPHeader), [AuthorizationHeaderToken](../README.md#AuthorizationHeaderToken), [SudoHeader](../README.md#SudoHeader), [BasicAuth](../README.md#BasicAuth), [AccessToken](../README.md#AccessToken), [SudoParam](../README.md#SudoParam), [Token](../README.md#Token)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: Not defined
+
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+| **204** | runner has been deleted |  -  |
 | **400** | APIError is error format response |  * message -  <br>  * url -  <br>  |
 | **404** | APINotFound is a not found empty response |  -  |
 
@@ -762,7 +2082,7 @@ void (empty response body)
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-| **204** | delete one secret of the organization |  -  |
+| **204** | delete one secret of the repository |  -  |
 | **400** | APIError is error format response |  * message -  <br>  * url -  <br>  |
 | **404** | APINotFound is a not found empty response |  -  |
 
@@ -819,7 +2139,7 @@ namespace Example
             // config.AddApiKeyPrefix("token", "Bearer");
 
             var apiInstance = new RepositoryApi(config);
-            var owner = "owner_example";  // string | name of the owner
+            var owner = "owner_example";  // string | owner of the repo
             var repo = "repo_example";  // string | name of the repository
             var variablename = "variablename_example";  // string | name of the variable
 
@@ -864,7 +2184,7 @@ catch (ApiException e)
 
 | Name | Type | Description | Notes |
 |------|------|-------------|-------|
-| **owner** | **string** | name of the owner |  |
+| **owner** | **string** | owner of the repo |  |
 | **repo** | **string** | name of the repository |  |
 | **variablename** | **string** | name of the variable |  |
 
@@ -890,6 +2210,371 @@ catch (ApiException e)
 | **204** | response when deleting a variable |  -  |
 | **400** | APIError is error format response |  * message -  <br>  * url -  <br>  |
 | **404** | APINotFound is a not found empty response |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+<a id="downloadactionsrunjoblogs"></a>
+# **DownloadActionsRunJobLogs**
+> void DownloadActionsRunJobLogs (string owner, string repo, int jobId)
+
+Downloads the job logs for a workflow run
+
+### Example
+```csharp
+using System.Collections.Generic;
+using System.Diagnostics;
+using Gitea.Net.Api;
+using Gitea.Net.Client;
+using Gitea.Net.Model;
+
+namespace Example
+{
+    public class DownloadActionsRunJobLogsExample
+    {
+        public static void Main()
+        {
+            Configuration config = new Configuration();
+            config.BasePath = "/api/v1";
+            // Configure API key authorization: TOTPHeader
+            config.AddApiKey("X-GITEA-OTP", "YOUR_API_KEY");
+            // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+            // config.AddApiKeyPrefix("X-GITEA-OTP", "Bearer");
+            // Configure API key authorization: AuthorizationHeaderToken
+            config.AddApiKey("Authorization", "YOUR_API_KEY");
+            // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+            // config.AddApiKeyPrefix("Authorization", "Bearer");
+            // Configure API key authorization: SudoHeader
+            config.AddApiKey("Sudo", "YOUR_API_KEY");
+            // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+            // config.AddApiKeyPrefix("Sudo", "Bearer");
+            // Configure HTTP basic authorization: BasicAuth
+            config.Username = "YOUR_USERNAME";
+            config.Password = "YOUR_PASSWORD";
+            // Configure API key authorization: AccessToken
+            config.AddApiKey("access_token", "YOUR_API_KEY");
+            // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+            // config.AddApiKeyPrefix("access_token", "Bearer");
+            // Configure API key authorization: SudoParam
+            config.AddApiKey("sudo", "YOUR_API_KEY");
+            // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+            // config.AddApiKeyPrefix("sudo", "Bearer");
+            // Configure API key authorization: Token
+            config.AddApiKey("token", "YOUR_API_KEY");
+            // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+            // config.AddApiKeyPrefix("token", "Bearer");
+
+            var apiInstance = new RepositoryApi(config);
+            var owner = "owner_example";  // string | owner of the repo
+            var repo = "repo_example";  // string | name of the repository
+            var jobId = 56;  // int | id of the job
+
+            try
+            {
+                // Downloads the job logs for a workflow run
+                apiInstance.DownloadActionsRunJobLogs(owner, repo, jobId);
+            }
+            catch (ApiException  e)
+            {
+                Debug.Print("Exception when calling RepositoryApi.DownloadActionsRunJobLogs: " + e.Message);
+                Debug.Print("Status Code: " + e.ErrorCode);
+                Debug.Print(e.StackTrace);
+            }
+        }
+    }
+}
+```
+
+#### Using the DownloadActionsRunJobLogsWithHttpInfo variant
+This returns an ApiResponse object which contains the response data, status code and headers.
+
+```csharp
+try
+{
+    // Downloads the job logs for a workflow run
+    apiInstance.DownloadActionsRunJobLogsWithHttpInfo(owner, repo, jobId);
+}
+catch (ApiException e)
+{
+    Debug.Print("Exception when calling RepositoryApi.DownloadActionsRunJobLogsWithHttpInfo: " + e.Message);
+    Debug.Print("Status Code: " + e.ErrorCode);
+    Debug.Print(e.StackTrace);
+}
+```
+
+### Parameters
+
+| Name | Type | Description | Notes |
+|------|------|-------------|-------|
+| **owner** | **string** | owner of the repo |  |
+| **repo** | **string** | name of the repository |  |
+| **jobId** | **int** | id of the job |  |
+
+### Return type
+
+void (empty response body)
+
+### Authorization
+
+[TOTPHeader](../README.md#TOTPHeader), [AuthorizationHeaderToken](../README.md#AuthorizationHeaderToken), [SudoHeader](../README.md#SudoHeader), [BasicAuth](../README.md#BasicAuth), [AccessToken](../README.md#AccessToken), [SudoParam](../README.md#SudoParam), [Token](../README.md#Token)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: Not defined
+
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+| **200** | output blob content |  -  |
+| **400** | APIError is error format response |  * message -  <br>  * url -  <br>  |
+| **404** | APINotFound is a not found empty response |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+<a id="downloadartifact"></a>
+# **DownloadArtifact**
+> void DownloadArtifact (string owner, string repo, string artifactId)
+
+Downloads a specific artifact for a workflow run redirects to blob url
+
+### Example
+```csharp
+using System.Collections.Generic;
+using System.Diagnostics;
+using Gitea.Net.Api;
+using Gitea.Net.Client;
+using Gitea.Net.Model;
+
+namespace Example
+{
+    public class DownloadArtifactExample
+    {
+        public static void Main()
+        {
+            Configuration config = new Configuration();
+            config.BasePath = "/api/v1";
+            // Configure API key authorization: TOTPHeader
+            config.AddApiKey("X-GITEA-OTP", "YOUR_API_KEY");
+            // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+            // config.AddApiKeyPrefix("X-GITEA-OTP", "Bearer");
+            // Configure API key authorization: AuthorizationHeaderToken
+            config.AddApiKey("Authorization", "YOUR_API_KEY");
+            // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+            // config.AddApiKeyPrefix("Authorization", "Bearer");
+            // Configure API key authorization: SudoHeader
+            config.AddApiKey("Sudo", "YOUR_API_KEY");
+            // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+            // config.AddApiKeyPrefix("Sudo", "Bearer");
+            // Configure HTTP basic authorization: BasicAuth
+            config.Username = "YOUR_USERNAME";
+            config.Password = "YOUR_PASSWORD";
+            // Configure API key authorization: AccessToken
+            config.AddApiKey("access_token", "YOUR_API_KEY");
+            // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+            // config.AddApiKeyPrefix("access_token", "Bearer");
+            // Configure API key authorization: SudoParam
+            config.AddApiKey("sudo", "YOUR_API_KEY");
+            // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+            // config.AddApiKeyPrefix("sudo", "Bearer");
+            // Configure API key authorization: Token
+            config.AddApiKey("token", "YOUR_API_KEY");
+            // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+            // config.AddApiKeyPrefix("token", "Bearer");
+
+            var apiInstance = new RepositoryApi(config);
+            var owner = "owner_example";  // string | owner of the repo
+            var repo = "repo_example";  // string | name of the repository
+            var artifactId = "artifactId_example";  // string | id of the artifact
+
+            try
+            {
+                // Downloads a specific artifact for a workflow run redirects to blob url
+                apiInstance.DownloadArtifact(owner, repo, artifactId);
+            }
+            catch (ApiException  e)
+            {
+                Debug.Print("Exception when calling RepositoryApi.DownloadArtifact: " + e.Message);
+                Debug.Print("Status Code: " + e.ErrorCode);
+                Debug.Print(e.StackTrace);
+            }
+        }
+    }
+}
+```
+
+#### Using the DownloadArtifactWithHttpInfo variant
+This returns an ApiResponse object which contains the response data, status code and headers.
+
+```csharp
+try
+{
+    // Downloads a specific artifact for a workflow run redirects to blob url
+    apiInstance.DownloadArtifactWithHttpInfo(owner, repo, artifactId);
+}
+catch (ApiException e)
+{
+    Debug.Print("Exception when calling RepositoryApi.DownloadArtifactWithHttpInfo: " + e.Message);
+    Debug.Print("Status Code: " + e.ErrorCode);
+    Debug.Print(e.StackTrace);
+}
+```
+
+### Parameters
+
+| Name | Type | Description | Notes |
+|------|------|-------------|-------|
+| **owner** | **string** | owner of the repo |  |
+| **repo** | **string** | name of the repository |  |
+| **artifactId** | **string** | id of the artifact |  |
+
+### Return type
+
+void (empty response body)
+
+### Authorization
+
+[TOTPHeader](../README.md#TOTPHeader), [AuthorizationHeaderToken](../README.md#AuthorizationHeaderToken), [SudoHeader](../README.md#SudoHeader), [BasicAuth](../README.md#BasicAuth), [AccessToken](../README.md#AccessToken), [SudoParam](../README.md#SudoParam), [Token](../README.md#Token)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: Not defined
+
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+| **302** | redirect to the blob download |  -  |
+| **400** | APIError is error format response |  * message -  <br>  * url -  <br>  |
+| **404** | APINotFound is a not found empty response |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+<a id="forcecancelworkflowrun"></a>
+# **ForceCancelWorkflowRun**
+> ActionWorkflowRun ForceCancelWorkflowRun (string owner, string repo, int run)
+
+Force-cancel a workflow run
+
+Cancels a workflow run without waiting for its runners to acknowledge the cancellation. The jobs are marked cancelled at once and anything a runner reports for them afterwards is discarded. Only use this endpoint when the workflow run does not respond to `POST /repos/{owner}/{repo}/actions/runs/{run}/cancel`. 
+
+### Example
+```csharp
+using System.Collections.Generic;
+using System.Diagnostics;
+using Gitea.Net.Api;
+using Gitea.Net.Client;
+using Gitea.Net.Model;
+
+namespace Example
+{
+    public class ForceCancelWorkflowRunExample
+    {
+        public static void Main()
+        {
+            Configuration config = new Configuration();
+            config.BasePath = "/api/v1";
+            // Configure API key authorization: TOTPHeader
+            config.AddApiKey("X-GITEA-OTP", "YOUR_API_KEY");
+            // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+            // config.AddApiKeyPrefix("X-GITEA-OTP", "Bearer");
+            // Configure API key authorization: AuthorizationHeaderToken
+            config.AddApiKey("Authorization", "YOUR_API_KEY");
+            // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+            // config.AddApiKeyPrefix("Authorization", "Bearer");
+            // Configure API key authorization: SudoHeader
+            config.AddApiKey("Sudo", "YOUR_API_KEY");
+            // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+            // config.AddApiKeyPrefix("Sudo", "Bearer");
+            // Configure HTTP basic authorization: BasicAuth
+            config.Username = "YOUR_USERNAME";
+            config.Password = "YOUR_PASSWORD";
+            // Configure API key authorization: AccessToken
+            config.AddApiKey("access_token", "YOUR_API_KEY");
+            // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+            // config.AddApiKeyPrefix("access_token", "Bearer");
+            // Configure API key authorization: SudoParam
+            config.AddApiKey("sudo", "YOUR_API_KEY");
+            // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+            // config.AddApiKeyPrefix("sudo", "Bearer");
+            // Configure API key authorization: Token
+            config.AddApiKey("token", "YOUR_API_KEY");
+            // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+            // config.AddApiKeyPrefix("token", "Bearer");
+
+            var apiInstance = new RepositoryApi(config);
+            var owner = "owner_example";  // string | owner of the repo
+            var repo = "repo_example";  // string | name of the repository
+            var run = 56;  // int | run ID
+
+            try
+            {
+                // Force-cancel a workflow run
+                ActionWorkflowRun result = apiInstance.ForceCancelWorkflowRun(owner, repo, run);
+                Debug.WriteLine(result);
+            }
+            catch (ApiException  e)
+            {
+                Debug.Print("Exception when calling RepositoryApi.ForceCancelWorkflowRun: " + e.Message);
+                Debug.Print("Status Code: " + e.ErrorCode);
+                Debug.Print(e.StackTrace);
+            }
+        }
+    }
+}
+```
+
+#### Using the ForceCancelWorkflowRunWithHttpInfo variant
+This returns an ApiResponse object which contains the response data, status code and headers.
+
+```csharp
+try
+{
+    // Force-cancel a workflow run
+    ApiResponse<ActionWorkflowRun> response = apiInstance.ForceCancelWorkflowRunWithHttpInfo(owner, repo, run);
+    Debug.Write("Status Code: " + response.StatusCode);
+    Debug.Write("Response Headers: " + response.Headers);
+    Debug.Write("Response Body: " + response.Data);
+}
+catch (ApiException e)
+{
+    Debug.Print("Exception when calling RepositoryApi.ForceCancelWorkflowRunWithHttpInfo: " + e.Message);
+    Debug.Print("Status Code: " + e.ErrorCode);
+    Debug.Print(e.StackTrace);
+}
+```
+
+### Parameters
+
+| Name | Type | Description | Notes |
+|------|------|-------------|-------|
+| **owner** | **string** | owner of the repo |  |
+| **repo** | **string** | name of the repository |  |
+| **run** | **int** | run ID |  |
+
+### Return type
+
+[**ActionWorkflowRun**](ActionWorkflowRun.md)
+
+### Authorization
+
+[TOTPHeader](../README.md#TOTPHeader), [AuthorizationHeaderToken](../README.md#AuthorizationHeaderToken), [SudoHeader](../README.md#SudoHeader), [BasicAuth](../README.md#BasicAuth), [AccessToken](../README.md#AccessToken), [SudoParam](../README.md#SudoParam), [Token](../README.md#Token)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+| **200** | WorkflowRun |  -  |
+| **400** | APIError is error format response |  * message -  <br>  * url -  <br>  |
+| **403** | APIForbiddenError is a forbidden error response |  * message -  <br>  * url -  <br>  |
+| **404** | APINotFound is a not found empty response |  -  |
+| **409** | APIConflict is a conflict empty response |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
@@ -944,7 +2629,7 @@ namespace Example
             // config.AddApiKeyPrefix("token", "Bearer");
 
             var apiInstance = new RepositoryApi(config);
-            var templateOwner = "templateOwner_example";  // string | name of the template repository owner
+            var templateOwner = "templateOwner_example";  // string | owner of the template repository
             var templateRepo = "templateRepo_example";  // string | name of the template repository
             var body = new GenerateRepoOption?(); // GenerateRepoOption? |  (optional) 
 
@@ -989,7 +2674,7 @@ catch (ApiException e)
 
 | Name | Type | Description | Notes |
 |------|------|-------------|-------|
-| **templateOwner** | **string** | name of the template repository owner |  |
+| **templateOwner** | **string** | owner of the template repository |  |
 | **templateRepo** | **string** | name of the template repository |  |
 | **body** | [**GenerateRepoOption?**](GenerateRepoOption?.md) |  | [optional]  |
 
@@ -1141,6 +2826,377 @@ catch (ApiException e)
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
+<a id="getartifact"></a>
+# **GetArtifact**
+> ActionArtifact GetArtifact (string owner, string repo, string artifactId)
+
+Gets a specific artifact for a workflow run
+
+### Example
+```csharp
+using System.Collections.Generic;
+using System.Diagnostics;
+using Gitea.Net.Api;
+using Gitea.Net.Client;
+using Gitea.Net.Model;
+
+namespace Example
+{
+    public class GetArtifactExample
+    {
+        public static void Main()
+        {
+            Configuration config = new Configuration();
+            config.BasePath = "/api/v1";
+            // Configure API key authorization: TOTPHeader
+            config.AddApiKey("X-GITEA-OTP", "YOUR_API_KEY");
+            // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+            // config.AddApiKeyPrefix("X-GITEA-OTP", "Bearer");
+            // Configure API key authorization: AuthorizationHeaderToken
+            config.AddApiKey("Authorization", "YOUR_API_KEY");
+            // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+            // config.AddApiKeyPrefix("Authorization", "Bearer");
+            // Configure API key authorization: SudoHeader
+            config.AddApiKey("Sudo", "YOUR_API_KEY");
+            // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+            // config.AddApiKeyPrefix("Sudo", "Bearer");
+            // Configure HTTP basic authorization: BasicAuth
+            config.Username = "YOUR_USERNAME";
+            config.Password = "YOUR_PASSWORD";
+            // Configure API key authorization: AccessToken
+            config.AddApiKey("access_token", "YOUR_API_KEY");
+            // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+            // config.AddApiKeyPrefix("access_token", "Bearer");
+            // Configure API key authorization: SudoParam
+            config.AddApiKey("sudo", "YOUR_API_KEY");
+            // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+            // config.AddApiKeyPrefix("sudo", "Bearer");
+            // Configure API key authorization: Token
+            config.AddApiKey("token", "YOUR_API_KEY");
+            // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+            // config.AddApiKeyPrefix("token", "Bearer");
+
+            var apiInstance = new RepositoryApi(config);
+            var owner = "owner_example";  // string | owner of the repo
+            var repo = "repo_example";  // string | name of the repository
+            var artifactId = "artifactId_example";  // string | id of the artifact
+
+            try
+            {
+                // Gets a specific artifact for a workflow run
+                ActionArtifact result = apiInstance.GetArtifact(owner, repo, artifactId);
+                Debug.WriteLine(result);
+            }
+            catch (ApiException  e)
+            {
+                Debug.Print("Exception when calling RepositoryApi.GetArtifact: " + e.Message);
+                Debug.Print("Status Code: " + e.ErrorCode);
+                Debug.Print(e.StackTrace);
+            }
+        }
+    }
+}
+```
+
+#### Using the GetArtifactWithHttpInfo variant
+This returns an ApiResponse object which contains the response data, status code and headers.
+
+```csharp
+try
+{
+    // Gets a specific artifact for a workflow run
+    ApiResponse<ActionArtifact> response = apiInstance.GetArtifactWithHttpInfo(owner, repo, artifactId);
+    Debug.Write("Status Code: " + response.StatusCode);
+    Debug.Write("Response Headers: " + response.Headers);
+    Debug.Write("Response Body: " + response.Data);
+}
+catch (ApiException e)
+{
+    Debug.Print("Exception when calling RepositoryApi.GetArtifactWithHttpInfo: " + e.Message);
+    Debug.Print("Status Code: " + e.ErrorCode);
+    Debug.Print(e.StackTrace);
+}
+```
+
+### Parameters
+
+| Name | Type | Description | Notes |
+|------|------|-------------|-------|
+| **owner** | **string** | owner of the repo |  |
+| **repo** | **string** | name of the repository |  |
+| **artifactId** | **string** | id of the artifact |  |
+
+### Return type
+
+[**ActionArtifact**](ActionArtifact.md)
+
+### Authorization
+
+[TOTPHeader](../README.md#TOTPHeader), [AuthorizationHeaderToken](../README.md#AuthorizationHeaderToken), [SudoHeader](../README.md#SudoHeader), [BasicAuth](../README.md#BasicAuth), [AccessToken](../README.md#AccessToken), [SudoParam](../README.md#SudoParam), [Token](../README.md#Token)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+| **200** | Artifact |  -  |
+| **400** | APIError is error format response |  * message -  <br>  * url -  <br>  |
+| **404** | APINotFound is a not found empty response |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+<a id="getartifacts"></a>
+# **GetArtifacts**
+> ActionArtifactsResponse GetArtifacts (string owner, string repo, string? name = null)
+
+Lists all artifacts for a repository
+
+### Example
+```csharp
+using System.Collections.Generic;
+using System.Diagnostics;
+using Gitea.Net.Api;
+using Gitea.Net.Client;
+using Gitea.Net.Model;
+
+namespace Example
+{
+    public class GetArtifactsExample
+    {
+        public static void Main()
+        {
+            Configuration config = new Configuration();
+            config.BasePath = "/api/v1";
+            // Configure API key authorization: TOTPHeader
+            config.AddApiKey("X-GITEA-OTP", "YOUR_API_KEY");
+            // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+            // config.AddApiKeyPrefix("X-GITEA-OTP", "Bearer");
+            // Configure API key authorization: AuthorizationHeaderToken
+            config.AddApiKey("Authorization", "YOUR_API_KEY");
+            // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+            // config.AddApiKeyPrefix("Authorization", "Bearer");
+            // Configure API key authorization: SudoHeader
+            config.AddApiKey("Sudo", "YOUR_API_KEY");
+            // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+            // config.AddApiKeyPrefix("Sudo", "Bearer");
+            // Configure HTTP basic authorization: BasicAuth
+            config.Username = "YOUR_USERNAME";
+            config.Password = "YOUR_PASSWORD";
+            // Configure API key authorization: AccessToken
+            config.AddApiKey("access_token", "YOUR_API_KEY");
+            // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+            // config.AddApiKeyPrefix("access_token", "Bearer");
+            // Configure API key authorization: SudoParam
+            config.AddApiKey("sudo", "YOUR_API_KEY");
+            // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+            // config.AddApiKeyPrefix("sudo", "Bearer");
+            // Configure API key authorization: Token
+            config.AddApiKey("token", "YOUR_API_KEY");
+            // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+            // config.AddApiKeyPrefix("token", "Bearer");
+
+            var apiInstance = new RepositoryApi(config);
+            var owner = "owner_example";  // string | owner of the repo
+            var repo = "repo_example";  // string | name of the repository
+            var name = "name_example";  // string? | name of the artifact (optional) 
+
+            try
+            {
+                // Lists all artifacts for a repository
+                ActionArtifactsResponse result = apiInstance.GetArtifacts(owner, repo, name);
+                Debug.WriteLine(result);
+            }
+            catch (ApiException  e)
+            {
+                Debug.Print("Exception when calling RepositoryApi.GetArtifacts: " + e.Message);
+                Debug.Print("Status Code: " + e.ErrorCode);
+                Debug.Print(e.StackTrace);
+            }
+        }
+    }
+}
+```
+
+#### Using the GetArtifactsWithHttpInfo variant
+This returns an ApiResponse object which contains the response data, status code and headers.
+
+```csharp
+try
+{
+    // Lists all artifacts for a repository
+    ApiResponse<ActionArtifactsResponse> response = apiInstance.GetArtifactsWithHttpInfo(owner, repo, name);
+    Debug.Write("Status Code: " + response.StatusCode);
+    Debug.Write("Response Headers: " + response.Headers);
+    Debug.Write("Response Body: " + response.Data);
+}
+catch (ApiException e)
+{
+    Debug.Print("Exception when calling RepositoryApi.GetArtifactsWithHttpInfo: " + e.Message);
+    Debug.Print("Status Code: " + e.ErrorCode);
+    Debug.Print(e.StackTrace);
+}
+```
+
+### Parameters
+
+| Name | Type | Description | Notes |
+|------|------|-------------|-------|
+| **owner** | **string** | owner of the repo |  |
+| **repo** | **string** | name of the repository |  |
+| **name** | **string?** | name of the artifact | [optional]  |
+
+### Return type
+
+[**ActionArtifactsResponse**](ActionArtifactsResponse.md)
+
+### Authorization
+
+[TOTPHeader](../README.md#TOTPHeader), [AuthorizationHeaderToken](../README.md#AuthorizationHeaderToken), [SudoHeader](../README.md#SudoHeader), [BasicAuth](../README.md#BasicAuth), [AccessToken](../README.md#AccessToken), [SudoParam](../README.md#SudoParam), [Token](../README.md#Token)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+| **200** | ArtifactsList |  -  |
+| **400** | APIError is error format response |  * message -  <br>  * url -  <br>  |
+| **404** | APINotFound is a not found empty response |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+<a id="getartifactsofrun"></a>
+# **GetArtifactsOfRun**
+> ActionArtifactsResponse GetArtifactsOfRun (string owner, string repo, int run, string? name = null)
+
+Lists all artifacts for a repository run
+
+### Example
+```csharp
+using System.Collections.Generic;
+using System.Diagnostics;
+using Gitea.Net.Api;
+using Gitea.Net.Client;
+using Gitea.Net.Model;
+
+namespace Example
+{
+    public class GetArtifactsOfRunExample
+    {
+        public static void Main()
+        {
+            Configuration config = new Configuration();
+            config.BasePath = "/api/v1";
+            // Configure API key authorization: TOTPHeader
+            config.AddApiKey("X-GITEA-OTP", "YOUR_API_KEY");
+            // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+            // config.AddApiKeyPrefix("X-GITEA-OTP", "Bearer");
+            // Configure API key authorization: AuthorizationHeaderToken
+            config.AddApiKey("Authorization", "YOUR_API_KEY");
+            // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+            // config.AddApiKeyPrefix("Authorization", "Bearer");
+            // Configure API key authorization: SudoHeader
+            config.AddApiKey("Sudo", "YOUR_API_KEY");
+            // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+            // config.AddApiKeyPrefix("Sudo", "Bearer");
+            // Configure HTTP basic authorization: BasicAuth
+            config.Username = "YOUR_USERNAME";
+            config.Password = "YOUR_PASSWORD";
+            // Configure API key authorization: AccessToken
+            config.AddApiKey("access_token", "YOUR_API_KEY");
+            // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+            // config.AddApiKeyPrefix("access_token", "Bearer");
+            // Configure API key authorization: SudoParam
+            config.AddApiKey("sudo", "YOUR_API_KEY");
+            // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+            // config.AddApiKeyPrefix("sudo", "Bearer");
+            // Configure API key authorization: Token
+            config.AddApiKey("token", "YOUR_API_KEY");
+            // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+            // config.AddApiKeyPrefix("token", "Bearer");
+
+            var apiInstance = new RepositoryApi(config);
+            var owner = "owner_example";  // string | owner of the repo
+            var repo = "repo_example";  // string | name of the repository
+            var run = 56;  // int | runid of the workflow run
+            var name = "name_example";  // string? | name of the artifact (optional) 
+
+            try
+            {
+                // Lists all artifacts for a repository run
+                ActionArtifactsResponse result = apiInstance.GetArtifactsOfRun(owner, repo, run, name);
+                Debug.WriteLine(result);
+            }
+            catch (ApiException  e)
+            {
+                Debug.Print("Exception when calling RepositoryApi.GetArtifactsOfRun: " + e.Message);
+                Debug.Print("Status Code: " + e.ErrorCode);
+                Debug.Print(e.StackTrace);
+            }
+        }
+    }
+}
+```
+
+#### Using the GetArtifactsOfRunWithHttpInfo variant
+This returns an ApiResponse object which contains the response data, status code and headers.
+
+```csharp
+try
+{
+    // Lists all artifacts for a repository run
+    ApiResponse<ActionArtifactsResponse> response = apiInstance.GetArtifactsOfRunWithHttpInfo(owner, repo, run, name);
+    Debug.Write("Status Code: " + response.StatusCode);
+    Debug.Write("Response Headers: " + response.Headers);
+    Debug.Write("Response Body: " + response.Data);
+}
+catch (ApiException e)
+{
+    Debug.Print("Exception when calling RepositoryApi.GetArtifactsOfRunWithHttpInfo: " + e.Message);
+    Debug.Print("Status Code: " + e.ErrorCode);
+    Debug.Print(e.StackTrace);
+}
+```
+
+### Parameters
+
+| Name | Type | Description | Notes |
+|------|------|-------------|-------|
+| **owner** | **string** | owner of the repo |  |
+| **repo** | **string** | name of the repository |  |
+| **run** | **int** | runid of the workflow run |  |
+| **name** | **string?** | name of the artifact | [optional]  |
+
+### Return type
+
+[**ActionArtifactsResponse**](ActionArtifactsResponse.md)
+
+### Authorization
+
+[TOTPHeader](../README.md#TOTPHeader), [AuthorizationHeaderToken](../README.md#AuthorizationHeaderToken), [SudoHeader](../README.md#SudoHeader), [BasicAuth](../README.md#BasicAuth), [AccessToken](../README.md#AccessToken), [SudoParam](../README.md#SudoParam), [Token](../README.md#Token)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+| **200** | ArtifactsList |  -  |
+| **400** | APIError is error format response |  * message -  <br>  * url -  <br>  |
+| **404** | APINotFound is a not found empty response |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
 <a id="getblob"></a>
 # **GetBlob**
 > GitBlobResponse GetBlob (string owner, string repo, string sha)
@@ -1264,6 +3320,252 @@ catch (ApiException e)
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
+<a id="getreporunner"></a>
+# **GetRepoRunner**
+> ActionRunner GetRepoRunner (string owner, string repo, string runnerId)
+
+Get a repo-level runner
+
+### Example
+```csharp
+using System.Collections.Generic;
+using System.Diagnostics;
+using Gitea.Net.Api;
+using Gitea.Net.Client;
+using Gitea.Net.Model;
+
+namespace Example
+{
+    public class GetRepoRunnerExample
+    {
+        public static void Main()
+        {
+            Configuration config = new Configuration();
+            config.BasePath = "/api/v1";
+            // Configure API key authorization: TOTPHeader
+            config.AddApiKey("X-GITEA-OTP", "YOUR_API_KEY");
+            // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+            // config.AddApiKeyPrefix("X-GITEA-OTP", "Bearer");
+            // Configure API key authorization: AuthorizationHeaderToken
+            config.AddApiKey("Authorization", "YOUR_API_KEY");
+            // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+            // config.AddApiKeyPrefix("Authorization", "Bearer");
+            // Configure API key authorization: SudoHeader
+            config.AddApiKey("Sudo", "YOUR_API_KEY");
+            // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+            // config.AddApiKeyPrefix("Sudo", "Bearer");
+            // Configure HTTP basic authorization: BasicAuth
+            config.Username = "YOUR_USERNAME";
+            config.Password = "YOUR_PASSWORD";
+            // Configure API key authorization: AccessToken
+            config.AddApiKey("access_token", "YOUR_API_KEY");
+            // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+            // config.AddApiKeyPrefix("access_token", "Bearer");
+            // Configure API key authorization: SudoParam
+            config.AddApiKey("sudo", "YOUR_API_KEY");
+            // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+            // config.AddApiKeyPrefix("sudo", "Bearer");
+            // Configure API key authorization: Token
+            config.AddApiKey("token", "YOUR_API_KEY");
+            // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+            // config.AddApiKeyPrefix("token", "Bearer");
+
+            var apiInstance = new RepositoryApi(config);
+            var owner = "owner_example";  // string | owner of the repo
+            var repo = "repo_example";  // string | name of the repo
+            var runnerId = "runnerId_example";  // string | id of the runner
+
+            try
+            {
+                // Get a repo-level runner
+                ActionRunner result = apiInstance.GetRepoRunner(owner, repo, runnerId);
+                Debug.WriteLine(result);
+            }
+            catch (ApiException  e)
+            {
+                Debug.Print("Exception when calling RepositoryApi.GetRepoRunner: " + e.Message);
+                Debug.Print("Status Code: " + e.ErrorCode);
+                Debug.Print(e.StackTrace);
+            }
+        }
+    }
+}
+```
+
+#### Using the GetRepoRunnerWithHttpInfo variant
+This returns an ApiResponse object which contains the response data, status code and headers.
+
+```csharp
+try
+{
+    // Get a repo-level runner
+    ApiResponse<ActionRunner> response = apiInstance.GetRepoRunnerWithHttpInfo(owner, repo, runnerId);
+    Debug.Write("Status Code: " + response.StatusCode);
+    Debug.Write("Response Headers: " + response.Headers);
+    Debug.Write("Response Body: " + response.Data);
+}
+catch (ApiException e)
+{
+    Debug.Print("Exception when calling RepositoryApi.GetRepoRunnerWithHttpInfo: " + e.Message);
+    Debug.Print("Status Code: " + e.ErrorCode);
+    Debug.Print(e.StackTrace);
+}
+```
+
+### Parameters
+
+| Name | Type | Description | Notes |
+|------|------|-------------|-------|
+| **owner** | **string** | owner of the repo |  |
+| **repo** | **string** | name of the repo |  |
+| **runnerId** | **string** | id of the runner |  |
+
+### Return type
+
+[**ActionRunner**](ActionRunner.md)
+
+### Authorization
+
+[TOTPHeader](../README.md#TOTPHeader), [AuthorizationHeaderToken](../README.md#AuthorizationHeaderToken), [SudoHeader](../README.md#SudoHeader), [BasicAuth](../README.md#BasicAuth), [AccessToken](../README.md#AccessToken), [SudoParam](../README.md#SudoParam), [Token](../README.md#Token)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+| **200** | Runner |  -  |
+| **400** | APIError is error format response |  * message -  <br>  * url -  <br>  |
+| **404** | APINotFound is a not found empty response |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+<a id="getreporunners"></a>
+# **GetRepoRunners**
+> ActionRunnersResponse GetRepoRunners (string owner, string repo, bool? disabled = null)
+
+Get repo-level runners
+
+### Example
+```csharp
+using System.Collections.Generic;
+using System.Diagnostics;
+using Gitea.Net.Api;
+using Gitea.Net.Client;
+using Gitea.Net.Model;
+
+namespace Example
+{
+    public class GetRepoRunnersExample
+    {
+        public static void Main()
+        {
+            Configuration config = new Configuration();
+            config.BasePath = "/api/v1";
+            // Configure API key authorization: TOTPHeader
+            config.AddApiKey("X-GITEA-OTP", "YOUR_API_KEY");
+            // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+            // config.AddApiKeyPrefix("X-GITEA-OTP", "Bearer");
+            // Configure API key authorization: AuthorizationHeaderToken
+            config.AddApiKey("Authorization", "YOUR_API_KEY");
+            // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+            // config.AddApiKeyPrefix("Authorization", "Bearer");
+            // Configure API key authorization: SudoHeader
+            config.AddApiKey("Sudo", "YOUR_API_KEY");
+            // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+            // config.AddApiKeyPrefix("Sudo", "Bearer");
+            // Configure HTTP basic authorization: BasicAuth
+            config.Username = "YOUR_USERNAME";
+            config.Password = "YOUR_PASSWORD";
+            // Configure API key authorization: AccessToken
+            config.AddApiKey("access_token", "YOUR_API_KEY");
+            // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+            // config.AddApiKeyPrefix("access_token", "Bearer");
+            // Configure API key authorization: SudoParam
+            config.AddApiKey("sudo", "YOUR_API_KEY");
+            // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+            // config.AddApiKeyPrefix("sudo", "Bearer");
+            // Configure API key authorization: Token
+            config.AddApiKey("token", "YOUR_API_KEY");
+            // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+            // config.AddApiKeyPrefix("token", "Bearer");
+
+            var apiInstance = new RepositoryApi(config);
+            var owner = "owner_example";  // string | owner of the repo
+            var repo = "repo_example";  // string | name of the repo
+            var disabled = true;  // bool? | filter by disabled status (true or false) (optional) 
+
+            try
+            {
+                // Get repo-level runners
+                ActionRunnersResponse result = apiInstance.GetRepoRunners(owner, repo, disabled);
+                Debug.WriteLine(result);
+            }
+            catch (ApiException  e)
+            {
+                Debug.Print("Exception when calling RepositoryApi.GetRepoRunners: " + e.Message);
+                Debug.Print("Status Code: " + e.ErrorCode);
+                Debug.Print(e.StackTrace);
+            }
+        }
+    }
+}
+```
+
+#### Using the GetRepoRunnersWithHttpInfo variant
+This returns an ApiResponse object which contains the response data, status code and headers.
+
+```csharp
+try
+{
+    // Get repo-level runners
+    ApiResponse<ActionRunnersResponse> response = apiInstance.GetRepoRunnersWithHttpInfo(owner, repo, disabled);
+    Debug.Write("Status Code: " + response.StatusCode);
+    Debug.Write("Response Headers: " + response.Headers);
+    Debug.Write("Response Body: " + response.Data);
+}
+catch (ApiException e)
+{
+    Debug.Print("Exception when calling RepositoryApi.GetRepoRunnersWithHttpInfo: " + e.Message);
+    Debug.Print("Status Code: " + e.ErrorCode);
+    Debug.Print(e.StackTrace);
+}
+```
+
+### Parameters
+
+| Name | Type | Description | Notes |
+|------|------|-------------|-------|
+| **owner** | **string** | owner of the repo |  |
+| **repo** | **string** | name of the repo |  |
+| **disabled** | **bool?** | filter by disabled status (true or false) | [optional]  |
+
+### Return type
+
+[**ActionRunnersResponse**](ActionRunnersResponse.md)
+
+### Authorization
+
+[TOTPHeader](../README.md#TOTPHeader), [AuthorizationHeaderToken](../README.md#AuthorizationHeaderToken), [SudoHeader](../README.md#SudoHeader), [BasicAuth](../README.md#BasicAuth), [AccessToken](../README.md#AccessToken), [SudoParam](../README.md#SudoParam), [Token](../README.md#Token)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+| **200** | RunnerList |  -  |
+| **400** | APIError is error format response |  * message -  <br>  * url -  <br>  |
+| **404** | APINotFound is a not found empty response |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
 <a id="getrepovariable"></a>
 # **GetRepoVariable**
 > ActionVariable GetRepoVariable (string owner, string repo, string variablename)
@@ -1315,7 +3617,7 @@ namespace Example
             // config.AddApiKeyPrefix("token", "Bearer");
 
             var apiInstance = new RepositoryApi(config);
-            var owner = "owner_example";  // string | name of the owner
+            var owner = "owner_example";  // string | owner of the repo
             var repo = "repo_example";  // string | name of the repository
             var variablename = "variablename_example";  // string | name of the variable
 
@@ -1360,7 +3662,7 @@ catch (ApiException e)
 
 | Name | Type | Description | Notes |
 |------|------|-------------|-------|
-| **owner** | **string** | name of the owner |  |
+| **owner** | **string** | owner of the repo |  |
 | **repo** | **string** | name of the repository |  |
 | **variablename** | **string** | name of the variable |  |
 
@@ -1438,7 +3740,7 @@ namespace Example
             // config.AddApiKeyPrefix("token", "Bearer");
 
             var apiInstance = new RepositoryApi(config);
-            var owner = "owner_example";  // string | name of the owner
+            var owner = "owner_example";  // string | owner of the repo
             var repo = "repo_example";  // string | name of the repository
             var page = 56;  // int? | page number of results to return (1-based) (optional) 
             var limit = 56;  // int? | page size of results (optional) 
@@ -1484,7 +3786,7 @@ catch (ApiException e)
 
 | Name | Type | Description | Notes |
 |------|------|-------------|-------|
-| **owner** | **string** | name of the owner |  |
+| **owner** | **string** | owner of the repo |  |
 | **repo** | **string** | name of the repository |  |
 | **page** | **int?** | page number of results to return (1-based) | [optional]  |
 | **limit** | **int?** | page size of results | [optional]  |
@@ -1641,6 +3943,760 @@ catch (ApiException e)
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
+<a id="getworkflowjob"></a>
+# **GetWorkflowJob**
+> ActionWorkflowJob GetWorkflowJob (string owner, string repo, string jobId)
+
+Gets a specific workflow job for a workflow run
+
+### Example
+```csharp
+using System.Collections.Generic;
+using System.Diagnostics;
+using Gitea.Net.Api;
+using Gitea.Net.Client;
+using Gitea.Net.Model;
+
+namespace Example
+{
+    public class GetWorkflowJobExample
+    {
+        public static void Main()
+        {
+            Configuration config = new Configuration();
+            config.BasePath = "/api/v1";
+            // Configure API key authorization: TOTPHeader
+            config.AddApiKey("X-GITEA-OTP", "YOUR_API_KEY");
+            // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+            // config.AddApiKeyPrefix("X-GITEA-OTP", "Bearer");
+            // Configure API key authorization: AuthorizationHeaderToken
+            config.AddApiKey("Authorization", "YOUR_API_KEY");
+            // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+            // config.AddApiKeyPrefix("Authorization", "Bearer");
+            // Configure API key authorization: SudoHeader
+            config.AddApiKey("Sudo", "YOUR_API_KEY");
+            // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+            // config.AddApiKeyPrefix("Sudo", "Bearer");
+            // Configure HTTP basic authorization: BasicAuth
+            config.Username = "YOUR_USERNAME";
+            config.Password = "YOUR_PASSWORD";
+            // Configure API key authorization: AccessToken
+            config.AddApiKey("access_token", "YOUR_API_KEY");
+            // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+            // config.AddApiKeyPrefix("access_token", "Bearer");
+            // Configure API key authorization: SudoParam
+            config.AddApiKey("sudo", "YOUR_API_KEY");
+            // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+            // config.AddApiKeyPrefix("sudo", "Bearer");
+            // Configure API key authorization: Token
+            config.AddApiKey("token", "YOUR_API_KEY");
+            // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+            // config.AddApiKeyPrefix("token", "Bearer");
+
+            var apiInstance = new RepositoryApi(config);
+            var owner = "owner_example";  // string | owner of the repo
+            var repo = "repo_example";  // string | name of the repository
+            var jobId = "jobId_example";  // string | id of the job
+
+            try
+            {
+                // Gets a specific workflow job for a workflow run
+                ActionWorkflowJob result = apiInstance.GetWorkflowJob(owner, repo, jobId);
+                Debug.WriteLine(result);
+            }
+            catch (ApiException  e)
+            {
+                Debug.Print("Exception when calling RepositoryApi.GetWorkflowJob: " + e.Message);
+                Debug.Print("Status Code: " + e.ErrorCode);
+                Debug.Print(e.StackTrace);
+            }
+        }
+    }
+}
+```
+
+#### Using the GetWorkflowJobWithHttpInfo variant
+This returns an ApiResponse object which contains the response data, status code and headers.
+
+```csharp
+try
+{
+    // Gets a specific workflow job for a workflow run
+    ApiResponse<ActionWorkflowJob> response = apiInstance.GetWorkflowJobWithHttpInfo(owner, repo, jobId);
+    Debug.Write("Status Code: " + response.StatusCode);
+    Debug.Write("Response Headers: " + response.Headers);
+    Debug.Write("Response Body: " + response.Data);
+}
+catch (ApiException e)
+{
+    Debug.Print("Exception when calling RepositoryApi.GetWorkflowJobWithHttpInfo: " + e.Message);
+    Debug.Print("Status Code: " + e.ErrorCode);
+    Debug.Print(e.StackTrace);
+}
+```
+
+### Parameters
+
+| Name | Type | Description | Notes |
+|------|------|-------------|-------|
+| **owner** | **string** | owner of the repo |  |
+| **repo** | **string** | name of the repository |  |
+| **jobId** | **string** | id of the job |  |
+
+### Return type
+
+[**ActionWorkflowJob**](ActionWorkflowJob.md)
+
+### Authorization
+
+[TOTPHeader](../README.md#TOTPHeader), [AuthorizationHeaderToken](../README.md#AuthorizationHeaderToken), [SudoHeader](../README.md#SudoHeader), [BasicAuth](../README.md#BasicAuth), [AccessToken](../README.md#AccessToken), [SudoParam](../README.md#SudoParam), [Token](../README.md#Token)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+| **200** | WorkflowJob |  -  |
+| **400** | APIError is error format response |  * message -  <br>  * url -  <br>  |
+| **404** | APINotFound is a not found empty response |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+<a id="getworkflowrun"></a>
+# **GetWorkflowRun**
+> ActionWorkflowRun GetWorkflowRun (string owner, string repo, int run)
+
+Gets a specific workflow run
+
+### Example
+```csharp
+using System.Collections.Generic;
+using System.Diagnostics;
+using Gitea.Net.Api;
+using Gitea.Net.Client;
+using Gitea.Net.Model;
+
+namespace Example
+{
+    public class GetWorkflowRunExample
+    {
+        public static void Main()
+        {
+            Configuration config = new Configuration();
+            config.BasePath = "/api/v1";
+            // Configure API key authorization: TOTPHeader
+            config.AddApiKey("X-GITEA-OTP", "YOUR_API_KEY");
+            // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+            // config.AddApiKeyPrefix("X-GITEA-OTP", "Bearer");
+            // Configure API key authorization: AuthorizationHeaderToken
+            config.AddApiKey("Authorization", "YOUR_API_KEY");
+            // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+            // config.AddApiKeyPrefix("Authorization", "Bearer");
+            // Configure API key authorization: SudoHeader
+            config.AddApiKey("Sudo", "YOUR_API_KEY");
+            // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+            // config.AddApiKeyPrefix("Sudo", "Bearer");
+            // Configure HTTP basic authorization: BasicAuth
+            config.Username = "YOUR_USERNAME";
+            config.Password = "YOUR_PASSWORD";
+            // Configure API key authorization: AccessToken
+            config.AddApiKey("access_token", "YOUR_API_KEY");
+            // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+            // config.AddApiKeyPrefix("access_token", "Bearer");
+            // Configure API key authorization: SudoParam
+            config.AddApiKey("sudo", "YOUR_API_KEY");
+            // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+            // config.AddApiKeyPrefix("sudo", "Bearer");
+            // Configure API key authorization: Token
+            config.AddApiKey("token", "YOUR_API_KEY");
+            // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+            // config.AddApiKeyPrefix("token", "Bearer");
+
+            var apiInstance = new RepositoryApi(config);
+            var owner = "owner_example";  // string | owner of the repo
+            var repo = "repo_example";  // string | name of the repository
+            var run = 56;  // int | id of the run
+
+            try
+            {
+                // Gets a specific workflow run
+                ActionWorkflowRun result = apiInstance.GetWorkflowRun(owner, repo, run);
+                Debug.WriteLine(result);
+            }
+            catch (ApiException  e)
+            {
+                Debug.Print("Exception when calling RepositoryApi.GetWorkflowRun: " + e.Message);
+                Debug.Print("Status Code: " + e.ErrorCode);
+                Debug.Print(e.StackTrace);
+            }
+        }
+    }
+}
+```
+
+#### Using the GetWorkflowRunWithHttpInfo variant
+This returns an ApiResponse object which contains the response data, status code and headers.
+
+```csharp
+try
+{
+    // Gets a specific workflow run
+    ApiResponse<ActionWorkflowRun> response = apiInstance.GetWorkflowRunWithHttpInfo(owner, repo, run);
+    Debug.Write("Status Code: " + response.StatusCode);
+    Debug.Write("Response Headers: " + response.Headers);
+    Debug.Write("Response Body: " + response.Data);
+}
+catch (ApiException e)
+{
+    Debug.Print("Exception when calling RepositoryApi.GetWorkflowRunWithHttpInfo: " + e.Message);
+    Debug.Print("Status Code: " + e.ErrorCode);
+    Debug.Print(e.StackTrace);
+}
+```
+
+### Parameters
+
+| Name | Type | Description | Notes |
+|------|------|-------------|-------|
+| **owner** | **string** | owner of the repo |  |
+| **repo** | **string** | name of the repository |  |
+| **run** | **int** | id of the run |  |
+
+### Return type
+
+[**ActionWorkflowRun**](ActionWorkflowRun.md)
+
+### Authorization
+
+[TOTPHeader](../README.md#TOTPHeader), [AuthorizationHeaderToken](../README.md#AuthorizationHeaderToken), [SudoHeader](../README.md#SudoHeader), [BasicAuth](../README.md#BasicAuth), [AccessToken](../README.md#AccessToken), [SudoParam](../README.md#SudoParam), [Token](../README.md#Token)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+| **200** | WorkflowRun |  -  |
+| **400** | APIError is error format response |  * message -  <br>  * url -  <br>  |
+| **404** | APINotFound is a not found empty response |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+<a id="getworkflowrunattempt"></a>
+# **GetWorkflowRunAttempt**
+> ActionWorkflowRun GetWorkflowRunAttempt (string owner, string repo, int run, int attempt)
+
+Gets a specific workflow run attempt
+
+### Example
+```csharp
+using System.Collections.Generic;
+using System.Diagnostics;
+using Gitea.Net.Api;
+using Gitea.Net.Client;
+using Gitea.Net.Model;
+
+namespace Example
+{
+    public class GetWorkflowRunAttemptExample
+    {
+        public static void Main()
+        {
+            Configuration config = new Configuration();
+            config.BasePath = "/api/v1";
+            // Configure API key authorization: TOTPHeader
+            config.AddApiKey("X-GITEA-OTP", "YOUR_API_KEY");
+            // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+            // config.AddApiKeyPrefix("X-GITEA-OTP", "Bearer");
+            // Configure API key authorization: AuthorizationHeaderToken
+            config.AddApiKey("Authorization", "YOUR_API_KEY");
+            // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+            // config.AddApiKeyPrefix("Authorization", "Bearer");
+            // Configure API key authorization: SudoHeader
+            config.AddApiKey("Sudo", "YOUR_API_KEY");
+            // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+            // config.AddApiKeyPrefix("Sudo", "Bearer");
+            // Configure HTTP basic authorization: BasicAuth
+            config.Username = "YOUR_USERNAME";
+            config.Password = "YOUR_PASSWORD";
+            // Configure API key authorization: AccessToken
+            config.AddApiKey("access_token", "YOUR_API_KEY");
+            // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+            // config.AddApiKeyPrefix("access_token", "Bearer");
+            // Configure API key authorization: SudoParam
+            config.AddApiKey("sudo", "YOUR_API_KEY");
+            // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+            // config.AddApiKeyPrefix("sudo", "Bearer");
+            // Configure API key authorization: Token
+            config.AddApiKey("token", "YOUR_API_KEY");
+            // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+            // config.AddApiKeyPrefix("token", "Bearer");
+
+            var apiInstance = new RepositoryApi(config);
+            var owner = "owner_example";  // string | owner of the repo
+            var repo = "repo_example";  // string | name of the repository
+            var run = 56;  // int | id of the run
+            var attempt = 56;  // int | logical attempt number of the run
+
+            try
+            {
+                // Gets a specific workflow run attempt
+                ActionWorkflowRun result = apiInstance.GetWorkflowRunAttempt(owner, repo, run, attempt);
+                Debug.WriteLine(result);
+            }
+            catch (ApiException  e)
+            {
+                Debug.Print("Exception when calling RepositoryApi.GetWorkflowRunAttempt: " + e.Message);
+                Debug.Print("Status Code: " + e.ErrorCode);
+                Debug.Print(e.StackTrace);
+            }
+        }
+    }
+}
+```
+
+#### Using the GetWorkflowRunAttemptWithHttpInfo variant
+This returns an ApiResponse object which contains the response data, status code and headers.
+
+```csharp
+try
+{
+    // Gets a specific workflow run attempt
+    ApiResponse<ActionWorkflowRun> response = apiInstance.GetWorkflowRunAttemptWithHttpInfo(owner, repo, run, attempt);
+    Debug.Write("Status Code: " + response.StatusCode);
+    Debug.Write("Response Headers: " + response.Headers);
+    Debug.Write("Response Body: " + response.Data);
+}
+catch (ApiException e)
+{
+    Debug.Print("Exception when calling RepositoryApi.GetWorkflowRunAttemptWithHttpInfo: " + e.Message);
+    Debug.Print("Status Code: " + e.ErrorCode);
+    Debug.Print(e.StackTrace);
+}
+```
+
+### Parameters
+
+| Name | Type | Description | Notes |
+|------|------|-------------|-------|
+| **owner** | **string** | owner of the repo |  |
+| **repo** | **string** | name of the repository |  |
+| **run** | **int** | id of the run |  |
+| **attempt** | **int** | logical attempt number of the run |  |
+
+### Return type
+
+[**ActionWorkflowRun**](ActionWorkflowRun.md)
+
+### Authorization
+
+[TOTPHeader](../README.md#TOTPHeader), [AuthorizationHeaderToken](../README.md#AuthorizationHeaderToken), [SudoHeader](../README.md#SudoHeader), [BasicAuth](../README.md#BasicAuth), [AccessToken](../README.md#AccessToken), [SudoParam](../README.md#SudoParam), [Token](../README.md#Token)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+| **200** | WorkflowRun |  -  |
+| **400** | APIError is error format response |  * message -  <br>  * url -  <br>  |
+| **404** | APINotFound is a not found empty response |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+<a id="getworkflowrunlogs"></a>
+# **GetWorkflowRunLogs**
+> void GetWorkflowRunLogs (string owner, string repo, int run)
+
+Download workflow run logs as archive
+
+### Example
+```csharp
+using System.Collections.Generic;
+using System.Diagnostics;
+using Gitea.Net.Api;
+using Gitea.Net.Client;
+using Gitea.Net.Model;
+
+namespace Example
+{
+    public class GetWorkflowRunLogsExample
+    {
+        public static void Main()
+        {
+            Configuration config = new Configuration();
+            config.BasePath = "/api/v1";
+            // Configure API key authorization: TOTPHeader
+            config.AddApiKey("X-GITEA-OTP", "YOUR_API_KEY");
+            // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+            // config.AddApiKeyPrefix("X-GITEA-OTP", "Bearer");
+            // Configure API key authorization: AuthorizationHeaderToken
+            config.AddApiKey("Authorization", "YOUR_API_KEY");
+            // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+            // config.AddApiKeyPrefix("Authorization", "Bearer");
+            // Configure API key authorization: SudoHeader
+            config.AddApiKey("Sudo", "YOUR_API_KEY");
+            // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+            // config.AddApiKeyPrefix("Sudo", "Bearer");
+            // Configure HTTP basic authorization: BasicAuth
+            config.Username = "YOUR_USERNAME";
+            config.Password = "YOUR_PASSWORD";
+            // Configure API key authorization: AccessToken
+            config.AddApiKey("access_token", "YOUR_API_KEY");
+            // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+            // config.AddApiKeyPrefix("access_token", "Bearer");
+            // Configure API key authorization: SudoParam
+            config.AddApiKey("sudo", "YOUR_API_KEY");
+            // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+            // config.AddApiKeyPrefix("sudo", "Bearer");
+            // Configure API key authorization: Token
+            config.AddApiKey("token", "YOUR_API_KEY");
+            // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+            // config.AddApiKeyPrefix("token", "Bearer");
+
+            var apiInstance = new RepositoryApi(config);
+            var owner = "owner_example";  // string | owner of the repo
+            var repo = "repo_example";  // string | name of the repository
+            var run = 56;  // int | run ID
+
+            try
+            {
+                // Download workflow run logs as archive
+                apiInstance.GetWorkflowRunLogs(owner, repo, run);
+            }
+            catch (ApiException  e)
+            {
+                Debug.Print("Exception when calling RepositoryApi.GetWorkflowRunLogs: " + e.Message);
+                Debug.Print("Status Code: " + e.ErrorCode);
+                Debug.Print(e.StackTrace);
+            }
+        }
+    }
+}
+```
+
+#### Using the GetWorkflowRunLogsWithHttpInfo variant
+This returns an ApiResponse object which contains the response data, status code and headers.
+
+```csharp
+try
+{
+    // Download workflow run logs as archive
+    apiInstance.GetWorkflowRunLogsWithHttpInfo(owner, repo, run);
+}
+catch (ApiException e)
+{
+    Debug.Print("Exception when calling RepositoryApi.GetWorkflowRunLogsWithHttpInfo: " + e.Message);
+    Debug.Print("Status Code: " + e.ErrorCode);
+    Debug.Print(e.StackTrace);
+}
+```
+
+### Parameters
+
+| Name | Type | Description | Notes |
+|------|------|-------------|-------|
+| **owner** | **string** | owner of the repo |  |
+| **repo** | **string** | name of the repository |  |
+| **run** | **int** | run ID |  |
+
+### Return type
+
+void (empty response body)
+
+### Authorization
+
+[TOTPHeader](../README.md#TOTPHeader), [AuthorizationHeaderToken](../README.md#AuthorizationHeaderToken), [SudoHeader](../README.md#SudoHeader), [BasicAuth](../README.md#BasicAuth), [AccessToken](../README.md#AccessToken), [SudoParam](../README.md#SudoParam), [Token](../README.md#Token)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: Not defined
+
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+| **200** | Logs archive |  -  |
+| **404** | APINotFound is a not found empty response |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+<a id="getworkflowruns"></a>
+# **GetWorkflowRuns**
+> ActionWorkflowRunsResponse GetWorkflowRuns (string owner, string repo, string? varEvent = null, string? branch = null, string? status = null, string? actor = null, string? headSha = null, bool? excludePullRequests = null, int? page = null, int? limit = null)
+
+Lists all runs for a repository run
+
+### Example
+```csharp
+using System.Collections.Generic;
+using System.Diagnostics;
+using Gitea.Net.Api;
+using Gitea.Net.Client;
+using Gitea.Net.Model;
+
+namespace Example
+{
+    public class GetWorkflowRunsExample
+    {
+        public static void Main()
+        {
+            Configuration config = new Configuration();
+            config.BasePath = "/api/v1";
+            // Configure API key authorization: TOTPHeader
+            config.AddApiKey("X-GITEA-OTP", "YOUR_API_KEY");
+            // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+            // config.AddApiKeyPrefix("X-GITEA-OTP", "Bearer");
+            // Configure API key authorization: AuthorizationHeaderToken
+            config.AddApiKey("Authorization", "YOUR_API_KEY");
+            // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+            // config.AddApiKeyPrefix("Authorization", "Bearer");
+            // Configure API key authorization: SudoHeader
+            config.AddApiKey("Sudo", "YOUR_API_KEY");
+            // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+            // config.AddApiKeyPrefix("Sudo", "Bearer");
+            // Configure HTTP basic authorization: BasicAuth
+            config.Username = "YOUR_USERNAME";
+            config.Password = "YOUR_PASSWORD";
+            // Configure API key authorization: AccessToken
+            config.AddApiKey("access_token", "YOUR_API_KEY");
+            // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+            // config.AddApiKeyPrefix("access_token", "Bearer");
+            // Configure API key authorization: SudoParam
+            config.AddApiKey("sudo", "YOUR_API_KEY");
+            // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+            // config.AddApiKeyPrefix("sudo", "Bearer");
+            // Configure API key authorization: Token
+            config.AddApiKey("token", "YOUR_API_KEY");
+            // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+            // config.AddApiKeyPrefix("token", "Bearer");
+
+            var apiInstance = new RepositoryApi(config);
+            var owner = "owner_example";  // string | owner of the repo
+            var repo = "repo_example";  // string | name of the repository
+            var varEvent = "varEvent_example";  // string? | workflow event name (optional) 
+            var branch = "branch_example";  // string? | workflow branch (optional) 
+            var status = "status_example";  // string? | workflow status (requested, pending, queued, in_progress, failure, success, skipped) (optional) 
+            var actor = "actor_example";  // string? | triggered by user (optional) 
+            var headSha = "headSha_example";  // string? | triggering sha of the workflow run (optional) 
+            var excludePullRequests = true;  // bool? | if true, the `pull_requests` field on each returned run is emptied (optional) 
+            var page = 56;  // int? | page number of results to return (1-based) (optional) 
+            var limit = 56;  // int? | page size of results (optional) 
+
+            try
+            {
+                // Lists all runs for a repository run
+                ActionWorkflowRunsResponse result = apiInstance.GetWorkflowRuns(owner, repo, varEvent, branch, status, actor, headSha, excludePullRequests, page, limit);
+                Debug.WriteLine(result);
+            }
+            catch (ApiException  e)
+            {
+                Debug.Print("Exception when calling RepositoryApi.GetWorkflowRuns: " + e.Message);
+                Debug.Print("Status Code: " + e.ErrorCode);
+                Debug.Print(e.StackTrace);
+            }
+        }
+    }
+}
+```
+
+#### Using the GetWorkflowRunsWithHttpInfo variant
+This returns an ApiResponse object which contains the response data, status code and headers.
+
+```csharp
+try
+{
+    // Lists all runs for a repository run
+    ApiResponse<ActionWorkflowRunsResponse> response = apiInstance.GetWorkflowRunsWithHttpInfo(owner, repo, varEvent, branch, status, actor, headSha, excludePullRequests, page, limit);
+    Debug.Write("Status Code: " + response.StatusCode);
+    Debug.Write("Response Headers: " + response.Headers);
+    Debug.Write("Response Body: " + response.Data);
+}
+catch (ApiException e)
+{
+    Debug.Print("Exception when calling RepositoryApi.GetWorkflowRunsWithHttpInfo: " + e.Message);
+    Debug.Print("Status Code: " + e.ErrorCode);
+    Debug.Print(e.StackTrace);
+}
+```
+
+### Parameters
+
+| Name | Type | Description | Notes |
+|------|------|-------------|-------|
+| **owner** | **string** | owner of the repo |  |
+| **repo** | **string** | name of the repository |  |
+| **varEvent** | **string?** | workflow event name | [optional]  |
+| **branch** | **string?** | workflow branch | [optional]  |
+| **status** | **string?** | workflow status (requested, pending, queued, in_progress, failure, success, skipped) | [optional]  |
+| **actor** | **string?** | triggered by user | [optional]  |
+| **headSha** | **string?** | triggering sha of the workflow run | [optional]  |
+| **excludePullRequests** | **bool?** | if true, the &#x60;pull_requests&#x60; field on each returned run is emptied | [optional]  |
+| **page** | **int?** | page number of results to return (1-based) | [optional]  |
+| **limit** | **int?** | page size of results | [optional]  |
+
+### Return type
+
+[**ActionWorkflowRunsResponse**](ActionWorkflowRunsResponse.md)
+
+### Authorization
+
+[TOTPHeader](../README.md#TOTPHeader), [AuthorizationHeaderToken](../README.md#AuthorizationHeaderToken), [SudoHeader](../README.md#SudoHeader), [BasicAuth](../README.md#BasicAuth), [AccessToken](../README.md#AccessToken), [SudoParam](../README.md#SudoParam), [Token](../README.md#Token)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+| **200** | WorkflowRunsList |  -  |
+| **400** | APIError is error format response |  * message -  <br>  * url -  <br>  |
+| **404** | APINotFound is a not found empty response |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+<a id="listactiontasks"></a>
+# **ListActionTasks**
+> ActionTaskResponse ListActionTasks (string owner, string repo, int? page = null, int? limit = null)
+
+List a repository's action tasks
+
+### Example
+```csharp
+using System.Collections.Generic;
+using System.Diagnostics;
+using Gitea.Net.Api;
+using Gitea.Net.Client;
+using Gitea.Net.Model;
+
+namespace Example
+{
+    public class ListActionTasksExample
+    {
+        public static void Main()
+        {
+            Configuration config = new Configuration();
+            config.BasePath = "/api/v1";
+            // Configure API key authorization: TOTPHeader
+            config.AddApiKey("X-GITEA-OTP", "YOUR_API_KEY");
+            // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+            // config.AddApiKeyPrefix("X-GITEA-OTP", "Bearer");
+            // Configure API key authorization: AuthorizationHeaderToken
+            config.AddApiKey("Authorization", "YOUR_API_KEY");
+            // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+            // config.AddApiKeyPrefix("Authorization", "Bearer");
+            // Configure API key authorization: SudoHeader
+            config.AddApiKey("Sudo", "YOUR_API_KEY");
+            // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+            // config.AddApiKeyPrefix("Sudo", "Bearer");
+            // Configure HTTP basic authorization: BasicAuth
+            config.Username = "YOUR_USERNAME";
+            config.Password = "YOUR_PASSWORD";
+            // Configure API key authorization: AccessToken
+            config.AddApiKey("access_token", "YOUR_API_KEY");
+            // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+            // config.AddApiKeyPrefix("access_token", "Bearer");
+            // Configure API key authorization: SudoParam
+            config.AddApiKey("sudo", "YOUR_API_KEY");
+            // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+            // config.AddApiKeyPrefix("sudo", "Bearer");
+            // Configure API key authorization: Token
+            config.AddApiKey("token", "YOUR_API_KEY");
+            // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+            // config.AddApiKeyPrefix("token", "Bearer");
+
+            var apiInstance = new RepositoryApi(config);
+            var owner = "owner_example";  // string | owner of the repo
+            var repo = "repo_example";  // string | name of the repo
+            var page = 56;  // int? | page number of results to return (1-based) (optional) 
+            var limit = 56;  // int? | page size of results, default maximum page size is 50 (optional) 
+
+            try
+            {
+                // List a repository's action tasks
+                ActionTaskResponse result = apiInstance.ListActionTasks(owner, repo, page, limit);
+                Debug.WriteLine(result);
+            }
+            catch (ApiException  e)
+            {
+                Debug.Print("Exception when calling RepositoryApi.ListActionTasks: " + e.Message);
+                Debug.Print("Status Code: " + e.ErrorCode);
+                Debug.Print(e.StackTrace);
+            }
+        }
+    }
+}
+```
+
+#### Using the ListActionTasksWithHttpInfo variant
+This returns an ApiResponse object which contains the response data, status code and headers.
+
+```csharp
+try
+{
+    // List a repository's action tasks
+    ApiResponse<ActionTaskResponse> response = apiInstance.ListActionTasksWithHttpInfo(owner, repo, page, limit);
+    Debug.Write("Status Code: " + response.StatusCode);
+    Debug.Write("Response Headers: " + response.Headers);
+    Debug.Write("Response Body: " + response.Data);
+}
+catch (ApiException e)
+{
+    Debug.Print("Exception when calling RepositoryApi.ListActionTasksWithHttpInfo: " + e.Message);
+    Debug.Print("Status Code: " + e.ErrorCode);
+    Debug.Print(e.StackTrace);
+}
+```
+
+### Parameters
+
+| Name | Type | Description | Notes |
+|------|------|-------------|-------|
+| **owner** | **string** | owner of the repo |  |
+| **repo** | **string** | name of the repo |  |
+| **page** | **int?** | page number of results to return (1-based) | [optional]  |
+| **limit** | **int?** | page size of results, default maximum page size is 50 | [optional]  |
+
+### Return type
+
+[**ActionTaskResponse**](ActionTaskResponse.md)
+
+### Authorization
+
+[TOTPHeader](../README.md#TOTPHeader), [AuthorizationHeaderToken](../README.md#AuthorizationHeaderToken), [SudoHeader](../README.md#SudoHeader), [BasicAuth](../README.md#BasicAuth), [AccessToken](../README.md#AccessToken), [SudoParam](../README.md#SudoParam), [Token](../README.md#Token)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+| **200** | TasksList |  -  |
+| **400** | APIError is error format response |  * message -  <br>  * url -  <br>  |
+| **403** | APIForbiddenError is a forbidden error response |  * message -  <br>  * url -  <br>  |
+| **404** | APINotFound is a not found empty response |  -  |
+| **409** | APIConflict is a conflict empty response |  -  |
+| **422** | APIValidationError is error format response related to input validation |  * message -  <br>  * url -  <br>  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
 <a id="listforks"></a>
 # **ListForks**
 > List&lt;Repository&gt; ListForks (string owner, string repo, int? page = null, int? limit = null)
@@ -1762,6 +4818,403 @@ catch (ApiException e)
 |-------------|-------------|------------------|
 | **200** | RepositoryList |  -  |
 | **404** | APINotFound is a not found empty response |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+<a id="listworkflowjobs"></a>
+# **ListWorkflowJobs**
+> ActionWorkflowJobsResponse ListWorkflowJobs (string owner, string repo, string? status = null, int? page = null, int? limit = null, string? sort = null, string? order = null)
+
+Lists all jobs for a repository
+
+### Example
+```csharp
+using System.Collections.Generic;
+using System.Diagnostics;
+using Gitea.Net.Api;
+using Gitea.Net.Client;
+using Gitea.Net.Model;
+
+namespace Example
+{
+    public class ListWorkflowJobsExample
+    {
+        public static void Main()
+        {
+            Configuration config = new Configuration();
+            config.BasePath = "/api/v1";
+            // Configure API key authorization: TOTPHeader
+            config.AddApiKey("X-GITEA-OTP", "YOUR_API_KEY");
+            // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+            // config.AddApiKeyPrefix("X-GITEA-OTP", "Bearer");
+            // Configure API key authorization: AuthorizationHeaderToken
+            config.AddApiKey("Authorization", "YOUR_API_KEY");
+            // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+            // config.AddApiKeyPrefix("Authorization", "Bearer");
+            // Configure API key authorization: SudoHeader
+            config.AddApiKey("Sudo", "YOUR_API_KEY");
+            // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+            // config.AddApiKeyPrefix("Sudo", "Bearer");
+            // Configure HTTP basic authorization: BasicAuth
+            config.Username = "YOUR_USERNAME";
+            config.Password = "YOUR_PASSWORD";
+            // Configure API key authorization: AccessToken
+            config.AddApiKey("access_token", "YOUR_API_KEY");
+            // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+            // config.AddApiKeyPrefix("access_token", "Bearer");
+            // Configure API key authorization: SudoParam
+            config.AddApiKey("sudo", "YOUR_API_KEY");
+            // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+            // config.AddApiKeyPrefix("sudo", "Bearer");
+            // Configure API key authorization: Token
+            config.AddApiKey("token", "YOUR_API_KEY");
+            // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+            // config.AddApiKeyPrefix("token", "Bearer");
+
+            var apiInstance = new RepositoryApi(config);
+            var owner = "owner_example";  // string | owner of the repo
+            var repo = "repo_example";  // string | name of the repository
+            var status = "status_example";  // string? | workflow status (requested, pending, queued, in_progress, failure, success, skipped) (optional) 
+            var page = 56;  // int? | page number of results to return (1-based) (optional) 
+            var limit = 56;  // int? | page size of results (optional) 
+            var sort = "sort_example";  // string? | sort jobs by attribute. Supported values are \"id\". Default is \"id\" (optional) 
+            var order = "order_example";  // string? | sort order, either \"asc\" (ascending) or \"desc\" (descending). Default is \"asc\" (optional) 
+
+            try
+            {
+                // Lists all jobs for a repository
+                ActionWorkflowJobsResponse result = apiInstance.ListWorkflowJobs(owner, repo, status, page, limit, sort, order);
+                Debug.WriteLine(result);
+            }
+            catch (ApiException  e)
+            {
+                Debug.Print("Exception when calling RepositoryApi.ListWorkflowJobs: " + e.Message);
+                Debug.Print("Status Code: " + e.ErrorCode);
+                Debug.Print(e.StackTrace);
+            }
+        }
+    }
+}
+```
+
+#### Using the ListWorkflowJobsWithHttpInfo variant
+This returns an ApiResponse object which contains the response data, status code and headers.
+
+```csharp
+try
+{
+    // Lists all jobs for a repository
+    ApiResponse<ActionWorkflowJobsResponse> response = apiInstance.ListWorkflowJobsWithHttpInfo(owner, repo, status, page, limit, sort, order);
+    Debug.Write("Status Code: " + response.StatusCode);
+    Debug.Write("Response Headers: " + response.Headers);
+    Debug.Write("Response Body: " + response.Data);
+}
+catch (ApiException e)
+{
+    Debug.Print("Exception when calling RepositoryApi.ListWorkflowJobsWithHttpInfo: " + e.Message);
+    Debug.Print("Status Code: " + e.ErrorCode);
+    Debug.Print(e.StackTrace);
+}
+```
+
+### Parameters
+
+| Name | Type | Description | Notes |
+|------|------|-------------|-------|
+| **owner** | **string** | owner of the repo |  |
+| **repo** | **string** | name of the repository |  |
+| **status** | **string?** | workflow status (requested, pending, queued, in_progress, failure, success, skipped) | [optional]  |
+| **page** | **int?** | page number of results to return (1-based) | [optional]  |
+| **limit** | **int?** | page size of results | [optional]  |
+| **sort** | **string?** | sort jobs by attribute. Supported values are \&quot;id\&quot;. Default is \&quot;id\&quot; | [optional]  |
+| **order** | **string?** | sort order, either \&quot;asc\&quot; (ascending) or \&quot;desc\&quot; (descending). Default is \&quot;asc\&quot; | [optional]  |
+
+### Return type
+
+[**ActionWorkflowJobsResponse**](ActionWorkflowJobsResponse.md)
+
+### Authorization
+
+[TOTPHeader](../README.md#TOTPHeader), [AuthorizationHeaderToken](../README.md#AuthorizationHeaderToken), [SudoHeader](../README.md#SudoHeader), [BasicAuth](../README.md#BasicAuth), [AccessToken](../README.md#AccessToken), [SudoParam](../README.md#SudoParam), [Token](../README.md#Token)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+| **200** | WorkflowJobsList |  -  |
+| **400** | APIError is error format response |  * message -  <br>  * url -  <br>  |
+| **404** | APINotFound is a not found empty response |  -  |
+| **422** | APIValidationError is error format response related to input validation |  * message -  <br>  * url -  <br>  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+<a id="listworkflowrunattemptjobs"></a>
+# **ListWorkflowRunAttemptJobs**
+> ActionWorkflowJobsResponse ListWorkflowRunAttemptJobs (string owner, string repo, int run, int attempt, string? status = null, int? page = null, int? limit = null)
+
+Lists all jobs for a workflow run attempt
+
+### Example
+```csharp
+using System.Collections.Generic;
+using System.Diagnostics;
+using Gitea.Net.Api;
+using Gitea.Net.Client;
+using Gitea.Net.Model;
+
+namespace Example
+{
+    public class ListWorkflowRunAttemptJobsExample
+    {
+        public static void Main()
+        {
+            Configuration config = new Configuration();
+            config.BasePath = "/api/v1";
+            // Configure API key authorization: TOTPHeader
+            config.AddApiKey("X-GITEA-OTP", "YOUR_API_KEY");
+            // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+            // config.AddApiKeyPrefix("X-GITEA-OTP", "Bearer");
+            // Configure API key authorization: AuthorizationHeaderToken
+            config.AddApiKey("Authorization", "YOUR_API_KEY");
+            // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+            // config.AddApiKeyPrefix("Authorization", "Bearer");
+            // Configure API key authorization: SudoHeader
+            config.AddApiKey("Sudo", "YOUR_API_KEY");
+            // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+            // config.AddApiKeyPrefix("Sudo", "Bearer");
+            // Configure HTTP basic authorization: BasicAuth
+            config.Username = "YOUR_USERNAME";
+            config.Password = "YOUR_PASSWORD";
+            // Configure API key authorization: AccessToken
+            config.AddApiKey("access_token", "YOUR_API_KEY");
+            // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+            // config.AddApiKeyPrefix("access_token", "Bearer");
+            // Configure API key authorization: SudoParam
+            config.AddApiKey("sudo", "YOUR_API_KEY");
+            // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+            // config.AddApiKeyPrefix("sudo", "Bearer");
+            // Configure API key authorization: Token
+            config.AddApiKey("token", "YOUR_API_KEY");
+            // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+            // config.AddApiKeyPrefix("token", "Bearer");
+
+            var apiInstance = new RepositoryApi(config);
+            var owner = "owner_example";  // string | owner of the repo
+            var repo = "repo_example";  // string | name of the repository
+            var run = 56;  // int | id of the workflow run
+            var attempt = 56;  // int | logical attempt number of the run
+            var status = "status_example";  // string? | workflow status (requested, pending, queued, in_progress, failure, success, skipped) (optional) 
+            var page = 56;  // int? | page number of results to return (1-based) (optional) 
+            var limit = 56;  // int? | page size of results (optional) 
+
+            try
+            {
+                // Lists all jobs for a workflow run attempt
+                ActionWorkflowJobsResponse result = apiInstance.ListWorkflowRunAttemptJobs(owner, repo, run, attempt, status, page, limit);
+                Debug.WriteLine(result);
+            }
+            catch (ApiException  e)
+            {
+                Debug.Print("Exception when calling RepositoryApi.ListWorkflowRunAttemptJobs: " + e.Message);
+                Debug.Print("Status Code: " + e.ErrorCode);
+                Debug.Print(e.StackTrace);
+            }
+        }
+    }
+}
+```
+
+#### Using the ListWorkflowRunAttemptJobsWithHttpInfo variant
+This returns an ApiResponse object which contains the response data, status code and headers.
+
+```csharp
+try
+{
+    // Lists all jobs for a workflow run attempt
+    ApiResponse<ActionWorkflowJobsResponse> response = apiInstance.ListWorkflowRunAttemptJobsWithHttpInfo(owner, repo, run, attempt, status, page, limit);
+    Debug.Write("Status Code: " + response.StatusCode);
+    Debug.Write("Response Headers: " + response.Headers);
+    Debug.Write("Response Body: " + response.Data);
+}
+catch (ApiException e)
+{
+    Debug.Print("Exception when calling RepositoryApi.ListWorkflowRunAttemptJobsWithHttpInfo: " + e.Message);
+    Debug.Print("Status Code: " + e.ErrorCode);
+    Debug.Print(e.StackTrace);
+}
+```
+
+### Parameters
+
+| Name | Type | Description | Notes |
+|------|------|-------------|-------|
+| **owner** | **string** | owner of the repo |  |
+| **repo** | **string** | name of the repository |  |
+| **run** | **int** | id of the workflow run |  |
+| **attempt** | **int** | logical attempt number of the run |  |
+| **status** | **string?** | workflow status (requested, pending, queued, in_progress, failure, success, skipped) | [optional]  |
+| **page** | **int?** | page number of results to return (1-based) | [optional]  |
+| **limit** | **int?** | page size of results | [optional]  |
+
+### Return type
+
+[**ActionWorkflowJobsResponse**](ActionWorkflowJobsResponse.md)
+
+### Authorization
+
+[TOTPHeader](../README.md#TOTPHeader), [AuthorizationHeaderToken](../README.md#AuthorizationHeaderToken), [SudoHeader](../README.md#SudoHeader), [BasicAuth](../README.md#BasicAuth), [AccessToken](../README.md#AccessToken), [SudoParam](../README.md#SudoParam), [Token](../README.md#Token)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+| **200** | WorkflowJobsList |  -  |
+| **400** | APIError is error format response |  * message -  <br>  * url -  <br>  |
+| **404** | APINotFound is a not found empty response |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+<a id="listworkflowrunjobs"></a>
+# **ListWorkflowRunJobs**
+> ActionWorkflowJobsResponse ListWorkflowRunJobs (string owner, string repo, int run, string? status = null, int? page = null, int? limit = null, string? sort = null, string? order = null)
+
+Lists all jobs for a workflow run
+
+### Example
+```csharp
+using System.Collections.Generic;
+using System.Diagnostics;
+using Gitea.Net.Api;
+using Gitea.Net.Client;
+using Gitea.Net.Model;
+
+namespace Example
+{
+    public class ListWorkflowRunJobsExample
+    {
+        public static void Main()
+        {
+            Configuration config = new Configuration();
+            config.BasePath = "/api/v1";
+            // Configure API key authorization: TOTPHeader
+            config.AddApiKey("X-GITEA-OTP", "YOUR_API_KEY");
+            // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+            // config.AddApiKeyPrefix("X-GITEA-OTP", "Bearer");
+            // Configure API key authorization: AuthorizationHeaderToken
+            config.AddApiKey("Authorization", "YOUR_API_KEY");
+            // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+            // config.AddApiKeyPrefix("Authorization", "Bearer");
+            // Configure API key authorization: SudoHeader
+            config.AddApiKey("Sudo", "YOUR_API_KEY");
+            // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+            // config.AddApiKeyPrefix("Sudo", "Bearer");
+            // Configure HTTP basic authorization: BasicAuth
+            config.Username = "YOUR_USERNAME";
+            config.Password = "YOUR_PASSWORD";
+            // Configure API key authorization: AccessToken
+            config.AddApiKey("access_token", "YOUR_API_KEY");
+            // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+            // config.AddApiKeyPrefix("access_token", "Bearer");
+            // Configure API key authorization: SudoParam
+            config.AddApiKey("sudo", "YOUR_API_KEY");
+            // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+            // config.AddApiKeyPrefix("sudo", "Bearer");
+            // Configure API key authorization: Token
+            config.AddApiKey("token", "YOUR_API_KEY");
+            // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+            // config.AddApiKeyPrefix("token", "Bearer");
+
+            var apiInstance = new RepositoryApi(config);
+            var owner = "owner_example";  // string | owner of the repo
+            var repo = "repo_example";  // string | name of the repository
+            var run = 56;  // int | runid of the workflow run
+            var status = "status_example";  // string? | workflow status (requested, pending, queued, in_progress, failure, success, skipped) (optional) 
+            var page = 56;  // int? | page number of results to return (1-based) (optional) 
+            var limit = 56;  // int? | page size of results (optional) 
+            var sort = "sort_example";  // string? | sort jobs by attribute. Supported values are \"id\". Default is \"id\" (optional) 
+            var order = "order_example";  // string? | sort order, either \"asc\" (ascending) or \"desc\" (descending). Default is \"asc\" (optional) 
+
+            try
+            {
+                // Lists all jobs for a workflow run
+                ActionWorkflowJobsResponse result = apiInstance.ListWorkflowRunJobs(owner, repo, run, status, page, limit, sort, order);
+                Debug.WriteLine(result);
+            }
+            catch (ApiException  e)
+            {
+                Debug.Print("Exception when calling RepositoryApi.ListWorkflowRunJobs: " + e.Message);
+                Debug.Print("Status Code: " + e.ErrorCode);
+                Debug.Print(e.StackTrace);
+            }
+        }
+    }
+}
+```
+
+#### Using the ListWorkflowRunJobsWithHttpInfo variant
+This returns an ApiResponse object which contains the response data, status code and headers.
+
+```csharp
+try
+{
+    // Lists all jobs for a workflow run
+    ApiResponse<ActionWorkflowJobsResponse> response = apiInstance.ListWorkflowRunJobsWithHttpInfo(owner, repo, run, status, page, limit, sort, order);
+    Debug.Write("Status Code: " + response.StatusCode);
+    Debug.Write("Response Headers: " + response.Headers);
+    Debug.Write("Response Body: " + response.Data);
+}
+catch (ApiException e)
+{
+    Debug.Print("Exception when calling RepositoryApi.ListWorkflowRunJobsWithHttpInfo: " + e.Message);
+    Debug.Print("Status Code: " + e.ErrorCode);
+    Debug.Print(e.StackTrace);
+}
+```
+
+### Parameters
+
+| Name | Type | Description | Notes |
+|------|------|-------------|-------|
+| **owner** | **string** | owner of the repo |  |
+| **repo** | **string** | name of the repository |  |
+| **run** | **int** | runid of the workflow run |  |
+| **status** | **string?** | workflow status (requested, pending, queued, in_progress, failure, success, skipped) | [optional]  |
+| **page** | **int?** | page number of results to return (1-based) | [optional]  |
+| **limit** | **int?** | page size of results | [optional]  |
+| **sort** | **string?** | sort jobs by attribute. Supported values are \&quot;id\&quot;. Default is \&quot;id\&quot; | [optional]  |
+| **order** | **string?** | sort order, either \&quot;asc\&quot; (ascending) or \&quot;desc\&quot; (descending). Default is \&quot;asc\&quot; | [optional]  |
+
+### Return type
+
+[**ActionWorkflowJobsResponse**](ActionWorkflowJobsResponse.md)
+
+### Authorization
+
+[TOTPHeader](../README.md#TOTPHeader), [AuthorizationHeaderToken](../README.md#AuthorizationHeaderToken), [SudoHeader](../README.md#SudoHeader), [BasicAuth](../README.md#BasicAuth), [AccessToken](../README.md#AccessToken), [SudoParam](../README.md#SudoParam), [Token](../README.md#Token)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+| **200** | WorkflowJobsList |  -  |
+| **400** | APIError is error format response |  * message -  <br>  * url -  <br>  |
+| **404** | APINotFound is a not found empty response |  -  |
+| **422** | APIValidationError is error format response related to input validation |  * message -  <br>  * url -  <br>  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
@@ -1890,7 +5343,7 @@ catch (ApiException e)
 # **RepoAddCollaborator**
 > void RepoAddCollaborator (string owner, string repo, string collaborator, AddCollaboratorOption? body = null)
 
-Add a collaborator to a repository
+Add or Update a collaborator to a repository
 
 ### Example
 ```csharp
@@ -1939,12 +5392,12 @@ namespace Example
             var apiInstance = new RepositoryApi(config);
             var owner = "owner_example";  // string | owner of the repo
             var repo = "repo_example";  // string | name of the repo
-            var collaborator = "collaborator_example";  // string | username of the collaborator to add
+            var collaborator = "collaborator_example";  // string | username of the user to add or update as a collaborator
             var body = new AddCollaboratorOption?(); // AddCollaboratorOption? |  (optional) 
 
             try
             {
-                // Add a collaborator to a repository
+                // Add or Update a collaborator to a repository
                 apiInstance.RepoAddCollaborator(owner, repo, collaborator, body);
             }
             catch (ApiException  e)
@@ -1964,7 +5417,7 @@ This returns an ApiResponse object which contains the response data, status code
 ```csharp
 try
 {
-    // Add a collaborator to a repository
+    // Add or Update a collaborator to a repository
     apiInstance.RepoAddCollaboratorWithHttpInfo(owner, repo, collaborator, body);
 }
 catch (ApiException e)
@@ -1981,7 +5434,7 @@ catch (ApiException e)
 |------|------|-------------|-------|
 | **owner** | **string** | owner of the repo |  |
 | **repo** | **string** | name of the repo |  |
-| **collaborator** | **string** | username of the collaborator to add |  |
+| **collaborator** | **string** | username of the user to add or update as a collaborator |  |
 | **body** | [**AddCollaboratorOption?**](AddCollaboratorOption?.md) |  | [optional]  |
 
 ### Return type
@@ -1994,7 +5447,7 @@ void (empty response body)
 
 ### HTTP request headers
 
- - **Content-Type**: application/json, text/plain
+ - **Content-Type**: application/json
  - **Accept**: Not defined
 
 
@@ -2005,6 +5458,133 @@ void (empty response body)
 | **403** | APIForbiddenError is a forbidden error response |  * message -  <br>  * url -  <br>  |
 | **404** | APINotFound is a not found empty response |  -  |
 | **422** | APIValidationError is error format response related to input validation |  * message -  <br>  * url -  <br>  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+<a id="repoaddissuetoprojectcolumn"></a>
+# **RepoAddIssueToProjectColumn**
+> void RepoAddIssueToProjectColumn (string owner, string repo, long id, long columnId, long issueId)
+
+Add an issue to a project column
+
+Assigns the issue to the project if it is not a member yet, then places it in the column.
+
+### Example
+```csharp
+using System.Collections.Generic;
+using System.Diagnostics;
+using Gitea.Net.Api;
+using Gitea.Net.Client;
+using Gitea.Net.Model;
+
+namespace Example
+{
+    public class RepoAddIssueToProjectColumnExample
+    {
+        public static void Main()
+        {
+            Configuration config = new Configuration();
+            config.BasePath = "/api/v1";
+            // Configure API key authorization: TOTPHeader
+            config.AddApiKey("X-GITEA-OTP", "YOUR_API_KEY");
+            // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+            // config.AddApiKeyPrefix("X-GITEA-OTP", "Bearer");
+            // Configure API key authorization: AuthorizationHeaderToken
+            config.AddApiKey("Authorization", "YOUR_API_KEY");
+            // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+            // config.AddApiKeyPrefix("Authorization", "Bearer");
+            // Configure API key authorization: SudoHeader
+            config.AddApiKey("Sudo", "YOUR_API_KEY");
+            // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+            // config.AddApiKeyPrefix("Sudo", "Bearer");
+            // Configure HTTP basic authorization: BasicAuth
+            config.Username = "YOUR_USERNAME";
+            config.Password = "YOUR_PASSWORD";
+            // Configure API key authorization: AccessToken
+            config.AddApiKey("access_token", "YOUR_API_KEY");
+            // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+            // config.AddApiKeyPrefix("access_token", "Bearer");
+            // Configure API key authorization: SudoParam
+            config.AddApiKey("sudo", "YOUR_API_KEY");
+            // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+            // config.AddApiKeyPrefix("sudo", "Bearer");
+            // Configure API key authorization: Token
+            config.AddApiKey("token", "YOUR_API_KEY");
+            // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+            // config.AddApiKeyPrefix("token", "Bearer");
+
+            var apiInstance = new RepositoryApi(config);
+            var owner = "owner_example";  // string | owner of the repo
+            var repo = "repo_example";  // string | name of the repo
+            var id = 789L;  // long | id of the project
+            var columnId = 789L;  // long | id of the column
+            var issueId = 789L;  // long | global id of the issue, not the repository-local index
+
+            try
+            {
+                // Add an issue to a project column
+                apiInstance.RepoAddIssueToProjectColumn(owner, repo, id, columnId, issueId);
+            }
+            catch (ApiException  e)
+            {
+                Debug.Print("Exception when calling RepositoryApi.RepoAddIssueToProjectColumn: " + e.Message);
+                Debug.Print("Status Code: " + e.ErrorCode);
+                Debug.Print(e.StackTrace);
+            }
+        }
+    }
+}
+```
+
+#### Using the RepoAddIssueToProjectColumnWithHttpInfo variant
+This returns an ApiResponse object which contains the response data, status code and headers.
+
+```csharp
+try
+{
+    // Add an issue to a project column
+    apiInstance.RepoAddIssueToProjectColumnWithHttpInfo(owner, repo, id, columnId, issueId);
+}
+catch (ApiException e)
+{
+    Debug.Print("Exception when calling RepositoryApi.RepoAddIssueToProjectColumnWithHttpInfo: " + e.Message);
+    Debug.Print("Status Code: " + e.ErrorCode);
+    Debug.Print(e.StackTrace);
+}
+```
+
+### Parameters
+
+| Name | Type | Description | Notes |
+|------|------|-------------|-------|
+| **owner** | **string** | owner of the repo |  |
+| **repo** | **string** | name of the repo |  |
+| **id** | **long** | id of the project |  |
+| **columnId** | **long** | id of the column |  |
+| **issueId** | **long** | global id of the issue, not the repository-local index |  |
+
+### Return type
+
+void (empty response body)
+
+### Authorization
+
+[TOTPHeader](../README.md#TOTPHeader), [AuthorizationHeaderToken](../README.md#AuthorizationHeaderToken), [SudoHeader](../README.md#SudoHeader), [BasicAuth](../README.md#BasicAuth), [AccessToken](../README.md#AccessToken), [SudoParam](../README.md#SudoParam), [Token](../README.md#Token)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: Not defined
+
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+| **201** | APIEmpty is an empty response |  -  |
+| **403** | APIForbiddenError is a forbidden error response |  * message -  <br>  * url -  <br>  |
+| **404** | APINotFound is a not found empty response |  -  |
+| **422** | APIValidationError is error format response related to input validation |  * message -  <br>  * url -  <br>  |
+| **423** | APIRepoArchivedError is an error that is raised when an archived repo should be modified |  * message -  <br>  * url -  <br>  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
@@ -2246,6 +5826,7 @@ void (empty response body)
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 | **204** | APIEmpty is an empty response |  -  |
+| **403** | APIForbiddenError is a forbidden error response |  * message -  <br>  * url -  <br>  |
 | **404** | APINotFound is a not found empty response |  -  |
 | **405** | APIError is error format response |  * message -  <br>  * url -  <br>  |
 | **422** | APIValidationError is error format response related to input validation |  * message -  <br>  * url -  <br>  |
@@ -2368,12 +5949,13 @@ void (empty response body)
 | **204** | APIEmpty is an empty response |  -  |
 | **404** | APINotFound is a not found empty response |  -  |
 | **422** | APIInvalidTopicsError is error format response to invalid topics |  * invalidTopics -  <br>  * message -  <br>  |
+| **423** | APIRepoArchivedError is an error that is raised when an archived repo should be modified |  * message -  <br>  * url -  <br>  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 <a id="repoapplydiffpatch"></a>
 # **RepoApplyDiffPatch**
-> FileResponse RepoApplyDiffPatch (string owner, string repo, UpdateFileOptions body)
+> FileResponse RepoApplyDiffPatch (string owner, string repo, ApplyDiffPatchFileOptions body)
 
 Apply diff patch to repository
 
@@ -2424,7 +6006,7 @@ namespace Example
             var apiInstance = new RepositoryApi(config);
             var owner = "owner_example";  // string | owner of the repo
             var repo = "repo_example";  // string | name of the repo
-            var body = new UpdateFileOptions(); // UpdateFileOptions | 
+            var body = new ApplyDiffPatchFileOptions(); // ApplyDiffPatchFileOptions | 
 
             try
             {
@@ -2469,7 +6051,7 @@ catch (ApiException e)
 |------|------|-------------|-------|
 | **owner** | **string** | owner of the repo |  |
 | **repo** | **string** | name of the repo |  |
-| **body** | [**UpdateFileOptions**](UpdateFileOptions.md) |  |  |
+| **body** | [**ApplyDiffPatchFileOptions**](ApplyDiffPatchFileOptions.md) |  |  |
 
 ### Return type
 
@@ -2739,6 +6321,125 @@ catch (ApiException e)
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
+<a id="repocheckassignee"></a>
+# **RepoCheckAssignee**
+> void RepoCheckAssignee (string owner, string repo, string assignee)
+
+Check if a user can be assigned to issues in a repository
+
+### Example
+```csharp
+using System.Collections.Generic;
+using System.Diagnostics;
+using Gitea.Net.Api;
+using Gitea.Net.Client;
+using Gitea.Net.Model;
+
+namespace Example
+{
+    public class RepoCheckAssigneeExample
+    {
+        public static void Main()
+        {
+            Configuration config = new Configuration();
+            config.BasePath = "/api/v1";
+            // Configure API key authorization: TOTPHeader
+            config.AddApiKey("X-GITEA-OTP", "YOUR_API_KEY");
+            // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+            // config.AddApiKeyPrefix("X-GITEA-OTP", "Bearer");
+            // Configure API key authorization: AuthorizationHeaderToken
+            config.AddApiKey("Authorization", "YOUR_API_KEY");
+            // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+            // config.AddApiKeyPrefix("Authorization", "Bearer");
+            // Configure API key authorization: SudoHeader
+            config.AddApiKey("Sudo", "YOUR_API_KEY");
+            // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+            // config.AddApiKeyPrefix("Sudo", "Bearer");
+            // Configure HTTP basic authorization: BasicAuth
+            config.Username = "YOUR_USERNAME";
+            config.Password = "YOUR_PASSWORD";
+            // Configure API key authorization: AccessToken
+            config.AddApiKey("access_token", "YOUR_API_KEY");
+            // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+            // config.AddApiKeyPrefix("access_token", "Bearer");
+            // Configure API key authorization: SudoParam
+            config.AddApiKey("sudo", "YOUR_API_KEY");
+            // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+            // config.AddApiKeyPrefix("sudo", "Bearer");
+            // Configure API key authorization: Token
+            config.AddApiKey("token", "YOUR_API_KEY");
+            // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+            // config.AddApiKeyPrefix("token", "Bearer");
+
+            var apiInstance = new RepositoryApi(config);
+            var owner = "owner_example";  // string | owner of the repo
+            var repo = "repo_example";  // string | name of the repo
+            var assignee = "assignee_example";  // string | username of the user to check for being an assignee
+
+            try
+            {
+                // Check if a user can be assigned to issues in a repository
+                apiInstance.RepoCheckAssignee(owner, repo, assignee);
+            }
+            catch (ApiException  e)
+            {
+                Debug.Print("Exception when calling RepositoryApi.RepoCheckAssignee: " + e.Message);
+                Debug.Print("Status Code: " + e.ErrorCode);
+                Debug.Print(e.StackTrace);
+            }
+        }
+    }
+}
+```
+
+#### Using the RepoCheckAssigneeWithHttpInfo variant
+This returns an ApiResponse object which contains the response data, status code and headers.
+
+```csharp
+try
+{
+    // Check if a user can be assigned to issues in a repository
+    apiInstance.RepoCheckAssigneeWithHttpInfo(owner, repo, assignee);
+}
+catch (ApiException e)
+{
+    Debug.Print("Exception when calling RepositoryApi.RepoCheckAssigneeWithHttpInfo: " + e.Message);
+    Debug.Print("Status Code: " + e.ErrorCode);
+    Debug.Print(e.StackTrace);
+}
+```
+
+### Parameters
+
+| Name | Type | Description | Notes |
+|------|------|-------------|-------|
+| **owner** | **string** | owner of the repo |  |
+| **repo** | **string** | name of the repo |  |
+| **assignee** | **string** | username of the user to check for being an assignee |  |
+
+### Return type
+
+void (empty response body)
+
+### Authorization
+
+[TOTPHeader](../README.md#TOTPHeader), [AuthorizationHeaderToken](../README.md#AuthorizationHeaderToken), [SudoHeader](../README.md#SudoHeader), [BasicAuth](../README.md#BasicAuth), [AccessToken](../README.md#AccessToken), [SudoParam](../README.md#SudoParam), [Token](../README.md#Token)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: Not defined
+
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+| **204** | APIEmpty is an empty response |  -  |
+| **400** | APIError is error format response |  * message -  <br>  * url -  <br>  |
+| **404** | APINotFound is a not found empty response |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
 <a id="repocheckcollaborator"></a>
 # **RepoCheckCollaborator**
 > void RepoCheckCollaborator (string owner, string repo, string collaborator)
@@ -2792,7 +6493,7 @@ namespace Example
             var apiInstance = new RepositoryApi(config);
             var owner = "owner_example";  // string | owner of the repo
             var repo = "repo_example";  // string | name of the repo
-            var collaborator = "collaborator_example";  // string | username of the collaborator
+            var collaborator = "collaborator_example";  // string | username of the user to check for being a collaborator
 
             try
             {
@@ -2833,7 +6534,7 @@ catch (ApiException e)
 |------|------|-------------|-------|
 | **owner** | **string** | owner of the repo |  |
 | **repo** | **string** | name of the repo |  |
-| **collaborator** | **string** | username of the collaborator |  |
+| **collaborator** | **string** | username of the user to check for being a collaborator |  |
 
 ### Return type
 
@@ -2983,9 +6684,11 @@ catch (ApiException e)
 
 <a id="repocomparediff"></a>
 # **RepoCompareDiff**
-> Compare RepoCompareDiff (string owner, string repo, string basehead)
+> Compare RepoCompareDiff (string owner, string repo, string basehead, string? output = null, bool? verification = null, bool? files = null)
 
 Get commit comparison information
+
+By default returns JSON commit comparison information. The raw diff or patch can be requested with the `output` query parameter set to `diff` or `patch` respectively. 
 
 ### Example
 ```csharp
@@ -3034,12 +6737,15 @@ namespace Example
             var apiInstance = new RepositoryApi(config);
             var owner = "owner_example";  // string | owner of the repo
             var repo = "repo_example";  // string | name of the repo
-            var basehead = "basehead_example";  // string | compare two branches or commits
+            var basehead = "basehead_example";  // string | compare two refs as `base...head` (or `base..head`); refs may be branches, tags, full or short SHAs (including branch names that contain slashes), optionally with a `^` or `~N` revision suffix.
+            var output = "diff";  // string? | return the raw comparison as `diff` or `patch` instead of JSON (optional) 
+            var verification = true;  // bool? | include verification for every commit (disable for speedup, default 'true') (optional) 
+            var files = true;  // bool? | include a list of affected files for every commit (disable for speedup, default 'true') (optional) 
 
             try
             {
                 // Get commit comparison information
-                Compare result = apiInstance.RepoCompareDiff(owner, repo, basehead);
+                Compare result = apiInstance.RepoCompareDiff(owner, repo, basehead, output, verification, files);
                 Debug.WriteLine(result);
             }
             catch (ApiException  e)
@@ -3060,7 +6766,7 @@ This returns an ApiResponse object which contains the response data, status code
 try
 {
     // Get commit comparison information
-    ApiResponse<Compare> response = apiInstance.RepoCompareDiffWithHttpInfo(owner, repo, basehead);
+    ApiResponse<Compare> response = apiInstance.RepoCompareDiffWithHttpInfo(owner, repo, basehead, output, verification, files);
     Debug.Write("Status Code: " + response.StatusCode);
     Debug.Write("Response Headers: " + response.Headers);
     Debug.Write("Response Body: " + response.Data);
@@ -3079,7 +6785,10 @@ catch (ApiException e)
 |------|------|-------------|-------|
 | **owner** | **string** | owner of the repo |  |
 | **repo** | **string** | name of the repo |  |
-| **basehead** | **string** | compare two branches or commits |  |
+| **basehead** | **string** | compare two refs as &#x60;base...head&#x60; (or &#x60;base..head&#x60;); refs may be branches, tags, full or short SHAs (including branch names that contain slashes), optionally with a &#x60;^&#x60; or &#x60;~N&#x60; revision suffix. |  |
+| **output** | **string?** | return the raw comparison as &#x60;diff&#x60; or &#x60;patch&#x60; instead of JSON | [optional]  |
+| **verification** | **bool?** | include verification for every commit (disable for speedup, default &#39;true&#39;) | [optional]  |
+| **files** | **bool?** | include a list of affected files for every commit (disable for speedup, default &#39;true&#39;) | [optional]  |
 
 ### Return type
 
@@ -3092,13 +6801,14 @@ catch (ApiException e)
 ### HTTP request headers
 
  - **Content-Type**: Not defined
- - **Accept**: application/json
+ - **Accept**: application/json, text/plain
 
 
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 | **200** |  |  -  |
+| **400** | APIError is error format response |  * message -  <br>  * url -  <br>  |
 | **404** | APINotFound is a not found empty response |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
@@ -3350,6 +7060,129 @@ catch (ApiException e)
 | **404** | APINotFound is a not found empty response |  -  |
 | **422** | APIValidationError is error format response related to input validation |  * message -  <br>  * url -  <br>  |
 | **423** | APIRepoArchivedError is an error that is raised when an archived repo should be modified |  * message -  <br>  * url -  <br>  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+<a id="repocreatedeploytoken"></a>
+# **RepoCreateDeployToken**
+> DeployKey RepoCreateDeployToken (string owner, string repo, CreateDeployKeyTokenOption? body = null)
+
+Add a deploy token to a repository, it authenticates git over HTTPS
+
+### Example
+```csharp
+using System.Collections.Generic;
+using System.Diagnostics;
+using Gitea.Net.Api;
+using Gitea.Net.Client;
+using Gitea.Net.Model;
+
+namespace Example
+{
+    public class RepoCreateDeployTokenExample
+    {
+        public static void Main()
+        {
+            Configuration config = new Configuration();
+            config.BasePath = "/api/v1";
+            // Configure API key authorization: TOTPHeader
+            config.AddApiKey("X-GITEA-OTP", "YOUR_API_KEY");
+            // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+            // config.AddApiKeyPrefix("X-GITEA-OTP", "Bearer");
+            // Configure API key authorization: AuthorizationHeaderToken
+            config.AddApiKey("Authorization", "YOUR_API_KEY");
+            // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+            // config.AddApiKeyPrefix("Authorization", "Bearer");
+            // Configure API key authorization: SudoHeader
+            config.AddApiKey("Sudo", "YOUR_API_KEY");
+            // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+            // config.AddApiKeyPrefix("Sudo", "Bearer");
+            // Configure HTTP basic authorization: BasicAuth
+            config.Username = "YOUR_USERNAME";
+            config.Password = "YOUR_PASSWORD";
+            // Configure API key authorization: AccessToken
+            config.AddApiKey("access_token", "YOUR_API_KEY");
+            // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+            // config.AddApiKeyPrefix("access_token", "Bearer");
+            // Configure API key authorization: SudoParam
+            config.AddApiKey("sudo", "YOUR_API_KEY");
+            // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+            // config.AddApiKeyPrefix("sudo", "Bearer");
+            // Configure API key authorization: Token
+            config.AddApiKey("token", "YOUR_API_KEY");
+            // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+            // config.AddApiKeyPrefix("token", "Bearer");
+
+            var apiInstance = new RepositoryApi(config);
+            var owner = "owner_example";  // string | owner of the repo
+            var repo = "repo_example";  // string | name of the repo
+            var body = new CreateDeployKeyTokenOption?(); // CreateDeployKeyTokenOption? |  (optional) 
+
+            try
+            {
+                // Add a deploy token to a repository, it authenticates git over HTTPS
+                DeployKey result = apiInstance.RepoCreateDeployToken(owner, repo, body);
+                Debug.WriteLine(result);
+            }
+            catch (ApiException  e)
+            {
+                Debug.Print("Exception when calling RepositoryApi.RepoCreateDeployToken: " + e.Message);
+                Debug.Print("Status Code: " + e.ErrorCode);
+                Debug.Print(e.StackTrace);
+            }
+        }
+    }
+}
+```
+
+#### Using the RepoCreateDeployTokenWithHttpInfo variant
+This returns an ApiResponse object which contains the response data, status code and headers.
+
+```csharp
+try
+{
+    // Add a deploy token to a repository, it authenticates git over HTTPS
+    ApiResponse<DeployKey> response = apiInstance.RepoCreateDeployTokenWithHttpInfo(owner, repo, body);
+    Debug.Write("Status Code: " + response.StatusCode);
+    Debug.Write("Response Headers: " + response.Headers);
+    Debug.Write("Response Body: " + response.Data);
+}
+catch (ApiException e)
+{
+    Debug.Print("Exception when calling RepositoryApi.RepoCreateDeployTokenWithHttpInfo: " + e.Message);
+    Debug.Print("Status Code: " + e.ErrorCode);
+    Debug.Print(e.StackTrace);
+}
+```
+
+### Parameters
+
+| Name | Type | Description | Notes |
+|------|------|-------------|-------|
+| **owner** | **string** | owner of the repo |  |
+| **repo** | **string** | name of the repo |  |
+| **body** | [**CreateDeployKeyTokenOption?**](CreateDeployKeyTokenOption?.md) |  | [optional]  |
+
+### Return type
+
+[**DeployKey**](DeployKey.md)
+
+### Authorization
+
+[TOTPHeader](../README.md#TOTPHeader), [AuthorizationHeaderToken](../README.md#AuthorizationHeaderToken), [SudoHeader](../README.md#SudoHeader), [BasicAuth](../README.md#BasicAuth), [AccessToken](../README.md#AccessToken), [SudoParam](../README.md#SudoParam), [Token](../README.md#Token)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+| **201** | DeployKey |  -  |
+| **404** | APINotFound is a not found empty response |  -  |
+| **422** | APIValidationError is error format response related to input validation |  * message -  <br>  * url -  <br>  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
@@ -3725,6 +7558,257 @@ catch (ApiException e)
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
+<a id="repocreateproject"></a>
+# **RepoCreateProject**
+> Project RepoCreateProject (string owner, string repo, CreateProjectOption? body = null)
+
+Create a project owned by a repository
+
+### Example
+```csharp
+using System.Collections.Generic;
+using System.Diagnostics;
+using Gitea.Net.Api;
+using Gitea.Net.Client;
+using Gitea.Net.Model;
+
+namespace Example
+{
+    public class RepoCreateProjectExample
+    {
+        public static void Main()
+        {
+            Configuration config = new Configuration();
+            config.BasePath = "/api/v1";
+            // Configure API key authorization: TOTPHeader
+            config.AddApiKey("X-GITEA-OTP", "YOUR_API_KEY");
+            // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+            // config.AddApiKeyPrefix("X-GITEA-OTP", "Bearer");
+            // Configure API key authorization: AuthorizationHeaderToken
+            config.AddApiKey("Authorization", "YOUR_API_KEY");
+            // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+            // config.AddApiKeyPrefix("Authorization", "Bearer");
+            // Configure API key authorization: SudoHeader
+            config.AddApiKey("Sudo", "YOUR_API_KEY");
+            // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+            // config.AddApiKeyPrefix("Sudo", "Bearer");
+            // Configure HTTP basic authorization: BasicAuth
+            config.Username = "YOUR_USERNAME";
+            config.Password = "YOUR_PASSWORD";
+            // Configure API key authorization: AccessToken
+            config.AddApiKey("access_token", "YOUR_API_KEY");
+            // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+            // config.AddApiKeyPrefix("access_token", "Bearer");
+            // Configure API key authorization: SudoParam
+            config.AddApiKey("sudo", "YOUR_API_KEY");
+            // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+            // config.AddApiKeyPrefix("sudo", "Bearer");
+            // Configure API key authorization: Token
+            config.AddApiKey("token", "YOUR_API_KEY");
+            // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+            // config.AddApiKeyPrefix("token", "Bearer");
+
+            var apiInstance = new RepositoryApi(config);
+            var owner = "owner_example";  // string | owner of the repo
+            var repo = "repo_example";  // string | name of the repo
+            var body = new CreateProjectOption?(); // CreateProjectOption? |  (optional) 
+
+            try
+            {
+                // Create a project owned by a repository
+                Project result = apiInstance.RepoCreateProject(owner, repo, body);
+                Debug.WriteLine(result);
+            }
+            catch (ApiException  e)
+            {
+                Debug.Print("Exception when calling RepositoryApi.RepoCreateProject: " + e.Message);
+                Debug.Print("Status Code: " + e.ErrorCode);
+                Debug.Print(e.StackTrace);
+            }
+        }
+    }
+}
+```
+
+#### Using the RepoCreateProjectWithHttpInfo variant
+This returns an ApiResponse object which contains the response data, status code and headers.
+
+```csharp
+try
+{
+    // Create a project owned by a repository
+    ApiResponse<Project> response = apiInstance.RepoCreateProjectWithHttpInfo(owner, repo, body);
+    Debug.Write("Status Code: " + response.StatusCode);
+    Debug.Write("Response Headers: " + response.Headers);
+    Debug.Write("Response Body: " + response.Data);
+}
+catch (ApiException e)
+{
+    Debug.Print("Exception when calling RepositoryApi.RepoCreateProjectWithHttpInfo: " + e.Message);
+    Debug.Print("Status Code: " + e.ErrorCode);
+    Debug.Print(e.StackTrace);
+}
+```
+
+### Parameters
+
+| Name | Type | Description | Notes |
+|------|------|-------------|-------|
+| **owner** | **string** | owner of the repo |  |
+| **repo** | **string** | name of the repo |  |
+| **body** | [**CreateProjectOption?**](CreateProjectOption?.md) |  | [optional]  |
+
+### Return type
+
+[**Project**](Project.md)
+
+### Authorization
+
+[TOTPHeader](../README.md#TOTPHeader), [AuthorizationHeaderToken](../README.md#AuthorizationHeaderToken), [SudoHeader](../README.md#SudoHeader), [BasicAuth](../README.md#BasicAuth), [AccessToken](../README.md#AccessToken), [SudoParam](../README.md#SudoParam), [Token](../README.md#Token)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+| **201** | Project |  -  |
+| **404** | APINotFound is a not found empty response |  -  |
+| **422** | APIValidationError is error format response related to input validation |  * message -  <br>  * url -  <br>  |
+| **423** | APIRepoArchivedError is an error that is raised when an archived repo should be modified |  * message -  <br>  * url -  <br>  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+<a id="repocreateprojectcolumn"></a>
+# **RepoCreateProjectColumn**
+> ProjectColumn RepoCreateProjectColumn (string owner, string repo, long id, CreateProjectColumnOption? body = null)
+
+Create a column in a project
+
+### Example
+```csharp
+using System.Collections.Generic;
+using System.Diagnostics;
+using Gitea.Net.Api;
+using Gitea.Net.Client;
+using Gitea.Net.Model;
+
+namespace Example
+{
+    public class RepoCreateProjectColumnExample
+    {
+        public static void Main()
+        {
+            Configuration config = new Configuration();
+            config.BasePath = "/api/v1";
+            // Configure API key authorization: TOTPHeader
+            config.AddApiKey("X-GITEA-OTP", "YOUR_API_KEY");
+            // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+            // config.AddApiKeyPrefix("X-GITEA-OTP", "Bearer");
+            // Configure API key authorization: AuthorizationHeaderToken
+            config.AddApiKey("Authorization", "YOUR_API_KEY");
+            // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+            // config.AddApiKeyPrefix("Authorization", "Bearer");
+            // Configure API key authorization: SudoHeader
+            config.AddApiKey("Sudo", "YOUR_API_KEY");
+            // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+            // config.AddApiKeyPrefix("Sudo", "Bearer");
+            // Configure HTTP basic authorization: BasicAuth
+            config.Username = "YOUR_USERNAME";
+            config.Password = "YOUR_PASSWORD";
+            // Configure API key authorization: AccessToken
+            config.AddApiKey("access_token", "YOUR_API_KEY");
+            // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+            // config.AddApiKeyPrefix("access_token", "Bearer");
+            // Configure API key authorization: SudoParam
+            config.AddApiKey("sudo", "YOUR_API_KEY");
+            // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+            // config.AddApiKeyPrefix("sudo", "Bearer");
+            // Configure API key authorization: Token
+            config.AddApiKey("token", "YOUR_API_KEY");
+            // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+            // config.AddApiKeyPrefix("token", "Bearer");
+
+            var apiInstance = new RepositoryApi(config);
+            var owner = "owner_example";  // string | owner of the repo
+            var repo = "repo_example";  // string | name of the repo
+            var id = 789L;  // long | id of the project
+            var body = new CreateProjectColumnOption?(); // CreateProjectColumnOption? |  (optional) 
+
+            try
+            {
+                // Create a column in a project
+                ProjectColumn result = apiInstance.RepoCreateProjectColumn(owner, repo, id, body);
+                Debug.WriteLine(result);
+            }
+            catch (ApiException  e)
+            {
+                Debug.Print("Exception when calling RepositoryApi.RepoCreateProjectColumn: " + e.Message);
+                Debug.Print("Status Code: " + e.ErrorCode);
+                Debug.Print(e.StackTrace);
+            }
+        }
+    }
+}
+```
+
+#### Using the RepoCreateProjectColumnWithHttpInfo variant
+This returns an ApiResponse object which contains the response data, status code and headers.
+
+```csharp
+try
+{
+    // Create a column in a project
+    ApiResponse<ProjectColumn> response = apiInstance.RepoCreateProjectColumnWithHttpInfo(owner, repo, id, body);
+    Debug.Write("Status Code: " + response.StatusCode);
+    Debug.Write("Response Headers: " + response.Headers);
+    Debug.Write("Response Body: " + response.Data);
+}
+catch (ApiException e)
+{
+    Debug.Print("Exception when calling RepositoryApi.RepoCreateProjectColumnWithHttpInfo: " + e.Message);
+    Debug.Print("Status Code: " + e.ErrorCode);
+    Debug.Print(e.StackTrace);
+}
+```
+
+### Parameters
+
+| Name | Type | Description | Notes |
+|------|------|-------------|-------|
+| **owner** | **string** | owner of the repo |  |
+| **repo** | **string** | name of the repo |  |
+| **id** | **long** | id of the project |  |
+| **body** | [**CreateProjectColumnOption?**](CreateProjectColumnOption?.md) |  | [optional]  |
+
+### Return type
+
+[**ProjectColumn**](ProjectColumn.md)
+
+### Authorization
+
+[TOTPHeader](../README.md#TOTPHeader), [AuthorizationHeaderToken](../README.md#AuthorizationHeaderToken), [SudoHeader](../README.md#SudoHeader), [BasicAuth](../README.md#BasicAuth), [AccessToken](../README.md#AccessToken), [SudoParam](../README.md#SudoParam), [Token](../README.md#Token)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+| **201** | ProjectColumn |  -  |
+| **403** | APIForbiddenError is a forbidden error response |  * message -  <br>  * url -  <br>  |
+| **404** | APINotFound is a not found empty response |  -  |
+| **422** | APIValidationError is error format response related to input validation |  * message -  <br>  * url -  <br>  |
+| **423** | APIRepoArchivedError is an error that is raised when an archived repo should be modified |  * message -  <br>  * url -  <br>  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
 <a id="repocreatepullrequest"></a>
 # **RepoCreatePullRequest**
 > PullRequest RepoCreatePullRequest (string owner, string repo, CreatePullRequestOption? body = null)
@@ -3855,7 +7939,7 @@ catch (ApiException e)
 # **RepoCreatePullReview**
 > PullReview RepoCreatePullReview (string owner, string repo, long index, CreatePullReviewOptions body)
 
-Create a review to an pull request
+Create a review to a pull request
 
 ### Example
 ```csharp
@@ -3909,7 +7993,7 @@ namespace Example
 
             try
             {
-                // Create a review to an pull request
+                // Create a review to a pull request
                 PullReview result = apiInstance.RepoCreatePullReview(owner, repo, index, body);
                 Debug.WriteLine(result);
             }
@@ -3930,7 +8014,7 @@ This returns an ApiResponse object which contains the response data, status code
 ```csharp
 try
 {
-    // Create a review to an pull request
+    // Create a review to a pull request
     ApiResponse<PullReview> response = apiInstance.RepoCreatePullReviewWithHttpInfo(owner, repo, index, body);
     Debug.Write("Status Code: " + response.StatusCode);
     Debug.Write("Response Headers: " + response.Headers);
@@ -3963,7 +8047,7 @@ catch (ApiException e)
 
 ### HTTP request headers
 
- - **Content-Type**: application/json, text/plain
+ - **Content-Type**: application/json
  - **Accept**: application/json
 
 
@@ -3971,6 +8055,134 @@ catch (ApiException e)
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 | **200** | PullReview |  -  |
+| **404** | APINotFound is a not found empty response |  -  |
+| **422** | APIValidationError is error format response related to input validation |  * message -  <br>  * url -  <br>  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+<a id="repocreatepullreviewcommentreply"></a>
+# **RepoCreatePullReviewCommentReply**
+> PullReviewComment RepoCreatePullReviewCommentReply (string owner, string repo, long index, long id, CreatePullReviewCommentReplyOptions body)
+
+Reply to a pull request review comment
+
+### Example
+```csharp
+using System.Collections.Generic;
+using System.Diagnostics;
+using Gitea.Net.Api;
+using Gitea.Net.Client;
+using Gitea.Net.Model;
+
+namespace Example
+{
+    public class RepoCreatePullReviewCommentReplyExample
+    {
+        public static void Main()
+        {
+            Configuration config = new Configuration();
+            config.BasePath = "/api/v1";
+            // Configure API key authorization: TOTPHeader
+            config.AddApiKey("X-GITEA-OTP", "YOUR_API_KEY");
+            // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+            // config.AddApiKeyPrefix("X-GITEA-OTP", "Bearer");
+            // Configure API key authorization: AuthorizationHeaderToken
+            config.AddApiKey("Authorization", "YOUR_API_KEY");
+            // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+            // config.AddApiKeyPrefix("Authorization", "Bearer");
+            // Configure API key authorization: SudoHeader
+            config.AddApiKey("Sudo", "YOUR_API_KEY");
+            // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+            // config.AddApiKeyPrefix("Sudo", "Bearer");
+            // Configure HTTP basic authorization: BasicAuth
+            config.Username = "YOUR_USERNAME";
+            config.Password = "YOUR_PASSWORD";
+            // Configure API key authorization: AccessToken
+            config.AddApiKey("access_token", "YOUR_API_KEY");
+            // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+            // config.AddApiKeyPrefix("access_token", "Bearer");
+            // Configure API key authorization: SudoParam
+            config.AddApiKey("sudo", "YOUR_API_KEY");
+            // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+            // config.AddApiKeyPrefix("sudo", "Bearer");
+            // Configure API key authorization: Token
+            config.AddApiKey("token", "YOUR_API_KEY");
+            // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+            // config.AddApiKeyPrefix("token", "Bearer");
+
+            var apiInstance = new RepositoryApi(config);
+            var owner = "owner_example";  // string | owner of the repo
+            var repo = "repo_example";  // string | name of the repo
+            var index = 789L;  // long | index of the pull request
+            var id = 789L;  // long | id of the review comment to reply to
+            var body = new CreatePullReviewCommentReplyOptions(); // CreatePullReviewCommentReplyOptions | 
+
+            try
+            {
+                // Reply to a pull request review comment
+                PullReviewComment result = apiInstance.RepoCreatePullReviewCommentReply(owner, repo, index, id, body);
+                Debug.WriteLine(result);
+            }
+            catch (ApiException  e)
+            {
+                Debug.Print("Exception when calling RepositoryApi.RepoCreatePullReviewCommentReply: " + e.Message);
+                Debug.Print("Status Code: " + e.ErrorCode);
+                Debug.Print(e.StackTrace);
+            }
+        }
+    }
+}
+```
+
+#### Using the RepoCreatePullReviewCommentReplyWithHttpInfo variant
+This returns an ApiResponse object which contains the response data, status code and headers.
+
+```csharp
+try
+{
+    // Reply to a pull request review comment
+    ApiResponse<PullReviewComment> response = apiInstance.RepoCreatePullReviewCommentReplyWithHttpInfo(owner, repo, index, id, body);
+    Debug.Write("Status Code: " + response.StatusCode);
+    Debug.Write("Response Headers: " + response.Headers);
+    Debug.Write("Response Body: " + response.Data);
+}
+catch (ApiException e)
+{
+    Debug.Print("Exception when calling RepositoryApi.RepoCreatePullReviewCommentReplyWithHttpInfo: " + e.Message);
+    Debug.Print("Status Code: " + e.ErrorCode);
+    Debug.Print(e.StackTrace);
+}
+```
+
+### Parameters
+
+| Name | Type | Description | Notes |
+|------|------|-------------|-------|
+| **owner** | **string** | owner of the repo |  |
+| **repo** | **string** | name of the repo |  |
+| **index** | **long** | index of the pull request |  |
+| **id** | **long** | id of the review comment to reply to |  |
+| **body** | [**CreatePullReviewCommentReplyOptions**](CreatePullReviewCommentReplyOptions.md) |  |  |
+
+### Return type
+
+[**PullReviewComment**](PullReviewComment.md)
+
+### Authorization
+
+[TOTPHeader](../README.md#TOTPHeader), [AuthorizationHeaderToken](../README.md#AuthorizationHeaderToken), [SudoHeader](../README.md#SudoHeader), [BasicAuth](../README.md#BasicAuth), [AccessToken](../README.md#AccessToken), [SudoParam](../README.md#SudoParam), [Token](../README.md#Token)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+| **201** | PullComment |  -  |
+| **400** | APIValidationError is error format response related to input validation |  * message -  <br>  * url -  <br>  |
 | **404** | APINotFound is a not found empty response |  -  |
 | **422** | APIValidationError is error format response related to input validation |  * message -  <br>  * url -  <br>  |
 
@@ -4088,7 +8300,7 @@ catch (ApiException e)
 
 ### HTTP request headers
 
- - **Content-Type**: application/json, text/plain
+ - **Content-Type**: application/json
  - **Accept**: application/json
 
 
@@ -4349,6 +8561,122 @@ catch (ApiException e)
 | **201** | Attachment |  -  |
 | **400** | APIError is error format response |  * message -  <br>  * url -  <br>  |
 | **404** | APINotFound is a not found empty response |  -  |
+| **413** | APIError is error format response |  * message -  <br>  * url -  <br>  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+<a id="repocreaterunnerregistrationtoken"></a>
+# **RepoCreateRunnerRegistrationToken**
+> void RepoCreateRunnerRegistrationToken (string owner, string repo)
+
+Get a repository's actions runner registration token
+
+### Example
+```csharp
+using System.Collections.Generic;
+using System.Diagnostics;
+using Gitea.Net.Api;
+using Gitea.Net.Client;
+using Gitea.Net.Model;
+
+namespace Example
+{
+    public class RepoCreateRunnerRegistrationTokenExample
+    {
+        public static void Main()
+        {
+            Configuration config = new Configuration();
+            config.BasePath = "/api/v1";
+            // Configure API key authorization: TOTPHeader
+            config.AddApiKey("X-GITEA-OTP", "YOUR_API_KEY");
+            // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+            // config.AddApiKeyPrefix("X-GITEA-OTP", "Bearer");
+            // Configure API key authorization: AuthorizationHeaderToken
+            config.AddApiKey("Authorization", "YOUR_API_KEY");
+            // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+            // config.AddApiKeyPrefix("Authorization", "Bearer");
+            // Configure API key authorization: SudoHeader
+            config.AddApiKey("Sudo", "YOUR_API_KEY");
+            // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+            // config.AddApiKeyPrefix("Sudo", "Bearer");
+            // Configure HTTP basic authorization: BasicAuth
+            config.Username = "YOUR_USERNAME";
+            config.Password = "YOUR_PASSWORD";
+            // Configure API key authorization: AccessToken
+            config.AddApiKey("access_token", "YOUR_API_KEY");
+            // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+            // config.AddApiKeyPrefix("access_token", "Bearer");
+            // Configure API key authorization: SudoParam
+            config.AddApiKey("sudo", "YOUR_API_KEY");
+            // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+            // config.AddApiKeyPrefix("sudo", "Bearer");
+            // Configure API key authorization: Token
+            config.AddApiKey("token", "YOUR_API_KEY");
+            // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+            // config.AddApiKeyPrefix("token", "Bearer");
+
+            var apiInstance = new RepositoryApi(config);
+            var owner = "owner_example";  // string | owner of the repo
+            var repo = "repo_example";  // string | name of the repo
+
+            try
+            {
+                // Get a repository's actions runner registration token
+                apiInstance.RepoCreateRunnerRegistrationToken(owner, repo);
+            }
+            catch (ApiException  e)
+            {
+                Debug.Print("Exception when calling RepositoryApi.RepoCreateRunnerRegistrationToken: " + e.Message);
+                Debug.Print("Status Code: " + e.ErrorCode);
+                Debug.Print(e.StackTrace);
+            }
+        }
+    }
+}
+```
+
+#### Using the RepoCreateRunnerRegistrationTokenWithHttpInfo variant
+This returns an ApiResponse object which contains the response data, status code and headers.
+
+```csharp
+try
+{
+    // Get a repository's actions runner registration token
+    apiInstance.RepoCreateRunnerRegistrationTokenWithHttpInfo(owner, repo);
+}
+catch (ApiException e)
+{
+    Debug.Print("Exception when calling RepositoryApi.RepoCreateRunnerRegistrationTokenWithHttpInfo: " + e.Message);
+    Debug.Print("Status Code: " + e.ErrorCode);
+    Debug.Print(e.StackTrace);
+}
+```
+
+### Parameters
+
+| Name | Type | Description | Notes |
+|------|------|-------------|-------|
+| **owner** | **string** | owner of the repo |  |
+| **repo** | **string** | name of the repo |  |
+
+### Return type
+
+void (empty response body)
+
+### Authorization
+
+[TOTPHeader](../README.md#TOTPHeader), [AuthorizationHeaderToken](../README.md#AuthorizationHeaderToken), [SudoHeader](../README.md#SudoHeader), [BasicAuth](../README.md#BasicAuth), [AccessToken](../README.md#AccessToken), [SudoParam](../README.md#SudoParam), [Token](../README.md#Token)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: Not defined
+
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+| **200** | RegistrationToken is response related to registration token |  * token -  <br>  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
@@ -4464,7 +8792,7 @@ catch (ApiException e)
 
 ### HTTP request headers
 
- - **Content-Type**: application/json, text/plain
+ - **Content-Type**: application/json
  - **Accept**: application/json
 
 
@@ -4587,7 +8915,7 @@ catch (ApiException e)
 
 ### HTTP request headers
 
- - **Content-Type**: application/json, text/plain
+ - **Content-Type**: application/json
  - **Accept**: application/json
 
 
@@ -4598,6 +8926,131 @@ catch (ApiException e)
 | **404** | APINotFound is a not found empty response |  -  |
 | **405** | APIEmpty is an empty response |  -  |
 | **409** | APIConflict is a conflict empty response |  -  |
+| **422** | APIValidationError is error format response related to input validation |  * message -  <br>  * url -  <br>  |
+| **423** | APIRepoArchivedError is an error that is raised when an archived repo should be modified |  * message -  <br>  * url -  <br>  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+<a id="repocreatetagprotection"></a>
+# **RepoCreateTagProtection**
+> TagProtection RepoCreateTagProtection (string owner, string repo, CreateTagProtectionOption? body = null)
+
+Create a tag protections for a repository
+
+### Example
+```csharp
+using System.Collections.Generic;
+using System.Diagnostics;
+using Gitea.Net.Api;
+using Gitea.Net.Client;
+using Gitea.Net.Model;
+
+namespace Example
+{
+    public class RepoCreateTagProtectionExample
+    {
+        public static void Main()
+        {
+            Configuration config = new Configuration();
+            config.BasePath = "/api/v1";
+            // Configure API key authorization: TOTPHeader
+            config.AddApiKey("X-GITEA-OTP", "YOUR_API_KEY");
+            // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+            // config.AddApiKeyPrefix("X-GITEA-OTP", "Bearer");
+            // Configure API key authorization: AuthorizationHeaderToken
+            config.AddApiKey("Authorization", "YOUR_API_KEY");
+            // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+            // config.AddApiKeyPrefix("Authorization", "Bearer");
+            // Configure API key authorization: SudoHeader
+            config.AddApiKey("Sudo", "YOUR_API_KEY");
+            // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+            // config.AddApiKeyPrefix("Sudo", "Bearer");
+            // Configure HTTP basic authorization: BasicAuth
+            config.Username = "YOUR_USERNAME";
+            config.Password = "YOUR_PASSWORD";
+            // Configure API key authorization: AccessToken
+            config.AddApiKey("access_token", "YOUR_API_KEY");
+            // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+            // config.AddApiKeyPrefix("access_token", "Bearer");
+            // Configure API key authorization: SudoParam
+            config.AddApiKey("sudo", "YOUR_API_KEY");
+            // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+            // config.AddApiKeyPrefix("sudo", "Bearer");
+            // Configure API key authorization: Token
+            config.AddApiKey("token", "YOUR_API_KEY");
+            // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+            // config.AddApiKeyPrefix("token", "Bearer");
+
+            var apiInstance = new RepositoryApi(config);
+            var owner = "owner_example";  // string | owner of the repo
+            var repo = "repo_example";  // string | name of the repo
+            var body = new CreateTagProtectionOption?(); // CreateTagProtectionOption? |  (optional) 
+
+            try
+            {
+                // Create a tag protections for a repository
+                TagProtection result = apiInstance.RepoCreateTagProtection(owner, repo, body);
+                Debug.WriteLine(result);
+            }
+            catch (ApiException  e)
+            {
+                Debug.Print("Exception when calling RepositoryApi.RepoCreateTagProtection: " + e.Message);
+                Debug.Print("Status Code: " + e.ErrorCode);
+                Debug.Print(e.StackTrace);
+            }
+        }
+    }
+}
+```
+
+#### Using the RepoCreateTagProtectionWithHttpInfo variant
+This returns an ApiResponse object which contains the response data, status code and headers.
+
+```csharp
+try
+{
+    // Create a tag protections for a repository
+    ApiResponse<TagProtection> response = apiInstance.RepoCreateTagProtectionWithHttpInfo(owner, repo, body);
+    Debug.Write("Status Code: " + response.StatusCode);
+    Debug.Write("Response Headers: " + response.Headers);
+    Debug.Write("Response Body: " + response.Data);
+}
+catch (ApiException e)
+{
+    Debug.Print("Exception when calling RepositoryApi.RepoCreateTagProtectionWithHttpInfo: " + e.Message);
+    Debug.Print("Status Code: " + e.ErrorCode);
+    Debug.Print(e.StackTrace);
+}
+```
+
+### Parameters
+
+| Name | Type | Description | Notes |
+|------|------|-------------|-------|
+| **owner** | **string** | owner of the repo |  |
+| **repo** | **string** | name of the repo |  |
+| **body** | [**CreateTagProtectionOption?**](CreateTagProtectionOption?.md) |  | [optional]  |
+
+### Return type
+
+[**TagProtection**](TagProtection.md)
+
+### Authorization
+
+[TOTPHeader](../README.md#TOTPHeader), [AuthorizationHeaderToken](../README.md#AuthorizationHeaderToken), [SudoHeader](../README.md#SudoHeader), [BasicAuth](../README.md#BasicAuth), [AccessToken](../README.md#AccessToken), [SudoParam](../README.md#SudoParam), [Token](../README.md#Token)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+| **201** | TagProtection |  -  |
+| **403** | APIForbiddenError is a forbidden error response |  * message -  <br>  * url -  <br>  |
+| **404** | APINotFound is a not found empty response |  -  |
 | **422** | APIValidationError is error format response related to input validation |  * message -  <br>  * url -  <br>  |
 | **423** | APIRepoArchivedError is an error that is raised when an archived repo should be modified |  * message -  <br>  * url -  <br>  |
 
@@ -4714,7 +9167,7 @@ catch (ApiException e)
 ### HTTP request headers
 
  - **Content-Type**: application/json
- - **Accept**: application/json, text/html
+ - **Accept**: application/json
 
 
 ### HTTP response details
@@ -5441,6 +9894,7 @@ catch (ApiException e)
 | **400** | APIError is error format response |  * message -  <br>  * url -  <br>  |
 | **403** | APIError is error format response |  * message -  <br>  * url -  <br>  |
 | **404** | APIError is error format response |  * message -  <br>  * url -  <br>  |
+| **422** | APIError is error format response |  * message -  <br>  * url -  <br>  |
 | **423** | APIRepoArchivedError is an error that is raised when an archived repo should be modified |  * message -  <br>  * url -  <br>  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
@@ -5800,6 +10254,250 @@ void (empty response body)
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
+<a id="repodeleteproject"></a>
+# **RepoDeleteProject**
+> void RepoDeleteProject (string owner, string repo, long id)
+
+Delete a project
+
+### Example
+```csharp
+using System.Collections.Generic;
+using System.Diagnostics;
+using Gitea.Net.Api;
+using Gitea.Net.Client;
+using Gitea.Net.Model;
+
+namespace Example
+{
+    public class RepoDeleteProjectExample
+    {
+        public static void Main()
+        {
+            Configuration config = new Configuration();
+            config.BasePath = "/api/v1";
+            // Configure API key authorization: TOTPHeader
+            config.AddApiKey("X-GITEA-OTP", "YOUR_API_KEY");
+            // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+            // config.AddApiKeyPrefix("X-GITEA-OTP", "Bearer");
+            // Configure API key authorization: AuthorizationHeaderToken
+            config.AddApiKey("Authorization", "YOUR_API_KEY");
+            // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+            // config.AddApiKeyPrefix("Authorization", "Bearer");
+            // Configure API key authorization: SudoHeader
+            config.AddApiKey("Sudo", "YOUR_API_KEY");
+            // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+            // config.AddApiKeyPrefix("Sudo", "Bearer");
+            // Configure HTTP basic authorization: BasicAuth
+            config.Username = "YOUR_USERNAME";
+            config.Password = "YOUR_PASSWORD";
+            // Configure API key authorization: AccessToken
+            config.AddApiKey("access_token", "YOUR_API_KEY");
+            // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+            // config.AddApiKeyPrefix("access_token", "Bearer");
+            // Configure API key authorization: SudoParam
+            config.AddApiKey("sudo", "YOUR_API_KEY");
+            // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+            // config.AddApiKeyPrefix("sudo", "Bearer");
+            // Configure API key authorization: Token
+            config.AddApiKey("token", "YOUR_API_KEY");
+            // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+            // config.AddApiKeyPrefix("token", "Bearer");
+
+            var apiInstance = new RepositoryApi(config);
+            var owner = "owner_example";  // string | owner of the repo
+            var repo = "repo_example";  // string | name of the repo
+            var id = 789L;  // long | id of the project
+
+            try
+            {
+                // Delete a project
+                apiInstance.RepoDeleteProject(owner, repo, id);
+            }
+            catch (ApiException  e)
+            {
+                Debug.Print("Exception when calling RepositoryApi.RepoDeleteProject: " + e.Message);
+                Debug.Print("Status Code: " + e.ErrorCode);
+                Debug.Print(e.StackTrace);
+            }
+        }
+    }
+}
+```
+
+#### Using the RepoDeleteProjectWithHttpInfo variant
+This returns an ApiResponse object which contains the response data, status code and headers.
+
+```csharp
+try
+{
+    // Delete a project
+    apiInstance.RepoDeleteProjectWithHttpInfo(owner, repo, id);
+}
+catch (ApiException e)
+{
+    Debug.Print("Exception when calling RepositoryApi.RepoDeleteProjectWithHttpInfo: " + e.Message);
+    Debug.Print("Status Code: " + e.ErrorCode);
+    Debug.Print(e.StackTrace);
+}
+```
+
+### Parameters
+
+| Name | Type | Description | Notes |
+|------|------|-------------|-------|
+| **owner** | **string** | owner of the repo |  |
+| **repo** | **string** | name of the repo |  |
+| **id** | **long** | id of the project |  |
+
+### Return type
+
+void (empty response body)
+
+### Authorization
+
+[TOTPHeader](../README.md#TOTPHeader), [AuthorizationHeaderToken](../README.md#AuthorizationHeaderToken), [SudoHeader](../README.md#SudoHeader), [BasicAuth](../README.md#BasicAuth), [AccessToken](../README.md#AccessToken), [SudoParam](../README.md#SudoParam), [Token](../README.md#Token)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: Not defined
+
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+| **204** | APIEmpty is an empty response |  -  |
+| **404** | APINotFound is a not found empty response |  -  |
+| **423** | APIRepoArchivedError is an error that is raised when an archived repo should be modified |  * message -  <br>  * url -  <br>  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+<a id="repodeleteprojectcolumn"></a>
+# **RepoDeleteProjectColumn**
+> void RepoDeleteProjectColumn (string owner, string repo, long id, long columnId)
+
+Delete a project column
+
+The default column cannot be deleted while it is still the column new issues land in.
+
+### Example
+```csharp
+using System.Collections.Generic;
+using System.Diagnostics;
+using Gitea.Net.Api;
+using Gitea.Net.Client;
+using Gitea.Net.Model;
+
+namespace Example
+{
+    public class RepoDeleteProjectColumnExample
+    {
+        public static void Main()
+        {
+            Configuration config = new Configuration();
+            config.BasePath = "/api/v1";
+            // Configure API key authorization: TOTPHeader
+            config.AddApiKey("X-GITEA-OTP", "YOUR_API_KEY");
+            // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+            // config.AddApiKeyPrefix("X-GITEA-OTP", "Bearer");
+            // Configure API key authorization: AuthorizationHeaderToken
+            config.AddApiKey("Authorization", "YOUR_API_KEY");
+            // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+            // config.AddApiKeyPrefix("Authorization", "Bearer");
+            // Configure API key authorization: SudoHeader
+            config.AddApiKey("Sudo", "YOUR_API_KEY");
+            // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+            // config.AddApiKeyPrefix("Sudo", "Bearer");
+            // Configure HTTP basic authorization: BasicAuth
+            config.Username = "YOUR_USERNAME";
+            config.Password = "YOUR_PASSWORD";
+            // Configure API key authorization: AccessToken
+            config.AddApiKey("access_token", "YOUR_API_KEY");
+            // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+            // config.AddApiKeyPrefix("access_token", "Bearer");
+            // Configure API key authorization: SudoParam
+            config.AddApiKey("sudo", "YOUR_API_KEY");
+            // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+            // config.AddApiKeyPrefix("sudo", "Bearer");
+            // Configure API key authorization: Token
+            config.AddApiKey("token", "YOUR_API_KEY");
+            // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+            // config.AddApiKeyPrefix("token", "Bearer");
+
+            var apiInstance = new RepositoryApi(config);
+            var owner = "owner_example";  // string | owner of the repo
+            var repo = "repo_example";  // string | name of the repo
+            var id = 789L;  // long | id of the project
+            var columnId = 789L;  // long | id of the column
+
+            try
+            {
+                // Delete a project column
+                apiInstance.RepoDeleteProjectColumn(owner, repo, id, columnId);
+            }
+            catch (ApiException  e)
+            {
+                Debug.Print("Exception when calling RepositoryApi.RepoDeleteProjectColumn: " + e.Message);
+                Debug.Print("Status Code: " + e.ErrorCode);
+                Debug.Print(e.StackTrace);
+            }
+        }
+    }
+}
+```
+
+#### Using the RepoDeleteProjectColumnWithHttpInfo variant
+This returns an ApiResponse object which contains the response data, status code and headers.
+
+```csharp
+try
+{
+    // Delete a project column
+    apiInstance.RepoDeleteProjectColumnWithHttpInfo(owner, repo, id, columnId);
+}
+catch (ApiException e)
+{
+    Debug.Print("Exception when calling RepositoryApi.RepoDeleteProjectColumnWithHttpInfo: " + e.Message);
+    Debug.Print("Status Code: " + e.ErrorCode);
+    Debug.Print(e.StackTrace);
+}
+```
+
+### Parameters
+
+| Name | Type | Description | Notes |
+|------|------|-------------|-------|
+| **owner** | **string** | owner of the repo |  |
+| **repo** | **string** | name of the repo |  |
+| **id** | **long** | id of the project |  |
+| **columnId** | **long** | id of the column |  |
+
+### Return type
+
+void (empty response body)
+
+### Authorization
+
+[TOTPHeader](../README.md#TOTPHeader), [AuthorizationHeaderToken](../README.md#AuthorizationHeaderToken), [SudoHeader](../README.md#SudoHeader), [BasicAuth](../README.md#BasicAuth), [AccessToken](../README.md#AccessToken), [SudoParam](../README.md#SudoParam), [Token](../README.md#Token)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: Not defined
+
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+| **204** | APIEmpty is an empty response |  -  |
+| **403** | APIForbiddenError is a forbidden error response |  * message -  <br>  * url -  <br>  |
+| **404** | APINotFound is a not found empty response |  -  |
+| **422** | APIValidationError is error format response related to input validation |  * message -  <br>  * url -  <br>  |
+| **423** | APIRepoArchivedError is an error that is raised when an archived repo should be modified |  * message -  <br>  * url -  <br>  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
 <a id="repodeletepullreview"></a>
 # **RepoDeletePullReview**
 > void RepoDeletePullReview (string owner, string repo, long index, long id)
@@ -6029,7 +10727,7 @@ void (empty response body)
 
 ### HTTP request headers
 
- - **Content-Type**: application/json, text/plain
+ - **Content-Type**: application/json
  - **Accept**: Not defined
 
 
@@ -6642,6 +11340,124 @@ void (empty response body)
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
+<a id="repodeletetagprotection"></a>
+# **RepoDeleteTagProtection**
+> void RepoDeleteTagProtection (string owner, string repo, int id)
+
+Delete a specific tag protection for the repository
+
+### Example
+```csharp
+using System.Collections.Generic;
+using System.Diagnostics;
+using Gitea.Net.Api;
+using Gitea.Net.Client;
+using Gitea.Net.Model;
+
+namespace Example
+{
+    public class RepoDeleteTagProtectionExample
+    {
+        public static void Main()
+        {
+            Configuration config = new Configuration();
+            config.BasePath = "/api/v1";
+            // Configure API key authorization: TOTPHeader
+            config.AddApiKey("X-GITEA-OTP", "YOUR_API_KEY");
+            // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+            // config.AddApiKeyPrefix("X-GITEA-OTP", "Bearer");
+            // Configure API key authorization: AuthorizationHeaderToken
+            config.AddApiKey("Authorization", "YOUR_API_KEY");
+            // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+            // config.AddApiKeyPrefix("Authorization", "Bearer");
+            // Configure API key authorization: SudoHeader
+            config.AddApiKey("Sudo", "YOUR_API_KEY");
+            // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+            // config.AddApiKeyPrefix("Sudo", "Bearer");
+            // Configure HTTP basic authorization: BasicAuth
+            config.Username = "YOUR_USERNAME";
+            config.Password = "YOUR_PASSWORD";
+            // Configure API key authorization: AccessToken
+            config.AddApiKey("access_token", "YOUR_API_KEY");
+            // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+            // config.AddApiKeyPrefix("access_token", "Bearer");
+            // Configure API key authorization: SudoParam
+            config.AddApiKey("sudo", "YOUR_API_KEY");
+            // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+            // config.AddApiKeyPrefix("sudo", "Bearer");
+            // Configure API key authorization: Token
+            config.AddApiKey("token", "YOUR_API_KEY");
+            // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+            // config.AddApiKeyPrefix("token", "Bearer");
+
+            var apiInstance = new RepositoryApi(config);
+            var owner = "owner_example";  // string | owner of the repo
+            var repo = "repo_example";  // string | name of the repo
+            var id = 56;  // int | id of protected tag
+
+            try
+            {
+                // Delete a specific tag protection for the repository
+                apiInstance.RepoDeleteTagProtection(owner, repo, id);
+            }
+            catch (ApiException  e)
+            {
+                Debug.Print("Exception when calling RepositoryApi.RepoDeleteTagProtection: " + e.Message);
+                Debug.Print("Status Code: " + e.ErrorCode);
+                Debug.Print(e.StackTrace);
+            }
+        }
+    }
+}
+```
+
+#### Using the RepoDeleteTagProtectionWithHttpInfo variant
+This returns an ApiResponse object which contains the response data, status code and headers.
+
+```csharp
+try
+{
+    // Delete a specific tag protection for the repository
+    apiInstance.RepoDeleteTagProtectionWithHttpInfo(owner, repo, id);
+}
+catch (ApiException e)
+{
+    Debug.Print("Exception when calling RepositoryApi.RepoDeleteTagProtectionWithHttpInfo: " + e.Message);
+    Debug.Print("Status Code: " + e.ErrorCode);
+    Debug.Print(e.StackTrace);
+}
+```
+
+### Parameters
+
+| Name | Type | Description | Notes |
+|------|------|-------------|-------|
+| **owner** | **string** | owner of the repo |  |
+| **repo** | **string** | name of the repo |  |
+| **id** | **int** | id of protected tag |  |
+
+### Return type
+
+void (empty response body)
+
+### Authorization
+
+[TOTPHeader](../README.md#TOTPHeader), [AuthorizationHeaderToken](../README.md#AuthorizationHeaderToken), [SudoHeader](../README.md#SudoHeader), [BasicAuth](../README.md#BasicAuth), [AccessToken](../README.md#AccessToken), [SudoParam](../README.md#SudoParam), [Token](../README.md#Token)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: Not defined
+
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+| **204** | APIEmpty is an empty response |  -  |
+| **404** | APINotFound is a not found empty response |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
 <a id="repodeleteteam"></a>
 # **RepoDeleteTeam**
 > void RepoDeleteTeam (string owner, string repo, string team)
@@ -6756,6 +11572,7 @@ void (empty response body)
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 | **204** | APIEmpty is an empty response |  -  |
+| **403** | APIForbiddenError is a forbidden error response |  * message -  <br>  * url -  <br>  |
 | **404** | APINotFound is a not found empty response |  -  |
 | **405** | APIError is error format response |  * message -  <br>  * url -  <br>  |
 | **422** | APIValidationError is error format response related to input validation |  * message -  <br>  * url -  <br>  |
@@ -6878,6 +11695,7 @@ void (empty response body)
 | **204** | APIEmpty is an empty response |  -  |
 | **404** | APINotFound is a not found empty response |  -  |
 | **422** | APIInvalidTopicsError is error format response to invalid topics |  * invalidTopics -  <br>  * message -  <br>  |
+| **423** | APIRepoArchivedError is an error that is raised when an archived repo should be modified |  * message -  <br>  * url -  <br>  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
@@ -7115,7 +11933,7 @@ catch (ApiException e)
 
 ### HTTP request headers
 
- - **Content-Type**: application/json, text/plain
+ - **Content-Type**: application/json
  - **Accept**: application/json
 
 
@@ -7489,7 +12307,7 @@ catch (ApiException e)
 
 ### HTTP request headers
 
- - **Content-Type**: application/json, text/plain
+ - **Content-Type**: application/json
  - **Accept**: application/json
 
 
@@ -7741,7 +12559,7 @@ catch (ApiException e)
 
 ### HTTP request headers
 
- - **Content-Type**: application/json, text/plain
+ - **Content-Type**: application/json
  - **Accept**: application/json
 
 
@@ -7865,7 +12683,7 @@ catch (ApiException e)
 
 ### HTTP request headers
 
- - **Content-Type**: application/json, text/plain
+ - **Content-Type**: application/json
  - **Accept**: application/json
 
 
@@ -7874,6 +12692,261 @@ catch (ApiException e)
 |-------------|-------------|------------------|
 | **200** | Hook |  -  |
 | **404** | APINotFound is a not found empty response |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+<a id="repoeditproject"></a>
+# **RepoEditProject**
+> Project RepoEditProject (string owner, string repo, long id, EditProjectOption? body = null)
+
+Edit a project
+
+### Example
+```csharp
+using System.Collections.Generic;
+using System.Diagnostics;
+using Gitea.Net.Api;
+using Gitea.Net.Client;
+using Gitea.Net.Model;
+
+namespace Example
+{
+    public class RepoEditProjectExample
+    {
+        public static void Main()
+        {
+            Configuration config = new Configuration();
+            config.BasePath = "/api/v1";
+            // Configure API key authorization: TOTPHeader
+            config.AddApiKey("X-GITEA-OTP", "YOUR_API_KEY");
+            // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+            // config.AddApiKeyPrefix("X-GITEA-OTP", "Bearer");
+            // Configure API key authorization: AuthorizationHeaderToken
+            config.AddApiKey("Authorization", "YOUR_API_KEY");
+            // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+            // config.AddApiKeyPrefix("Authorization", "Bearer");
+            // Configure API key authorization: SudoHeader
+            config.AddApiKey("Sudo", "YOUR_API_KEY");
+            // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+            // config.AddApiKeyPrefix("Sudo", "Bearer");
+            // Configure HTTP basic authorization: BasicAuth
+            config.Username = "YOUR_USERNAME";
+            config.Password = "YOUR_PASSWORD";
+            // Configure API key authorization: AccessToken
+            config.AddApiKey("access_token", "YOUR_API_KEY");
+            // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+            // config.AddApiKeyPrefix("access_token", "Bearer");
+            // Configure API key authorization: SudoParam
+            config.AddApiKey("sudo", "YOUR_API_KEY");
+            // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+            // config.AddApiKeyPrefix("sudo", "Bearer");
+            // Configure API key authorization: Token
+            config.AddApiKey("token", "YOUR_API_KEY");
+            // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+            // config.AddApiKeyPrefix("token", "Bearer");
+
+            var apiInstance = new RepositoryApi(config);
+            var owner = "owner_example";  // string | owner of the repo
+            var repo = "repo_example";  // string | name of the repo
+            var id = 789L;  // long | id of the project
+            var body = new EditProjectOption?(); // EditProjectOption? |  (optional) 
+
+            try
+            {
+                // Edit a project
+                Project result = apiInstance.RepoEditProject(owner, repo, id, body);
+                Debug.WriteLine(result);
+            }
+            catch (ApiException  e)
+            {
+                Debug.Print("Exception when calling RepositoryApi.RepoEditProject: " + e.Message);
+                Debug.Print("Status Code: " + e.ErrorCode);
+                Debug.Print(e.StackTrace);
+            }
+        }
+    }
+}
+```
+
+#### Using the RepoEditProjectWithHttpInfo variant
+This returns an ApiResponse object which contains the response data, status code and headers.
+
+```csharp
+try
+{
+    // Edit a project
+    ApiResponse<Project> response = apiInstance.RepoEditProjectWithHttpInfo(owner, repo, id, body);
+    Debug.Write("Status Code: " + response.StatusCode);
+    Debug.Write("Response Headers: " + response.Headers);
+    Debug.Write("Response Body: " + response.Data);
+}
+catch (ApiException e)
+{
+    Debug.Print("Exception when calling RepositoryApi.RepoEditProjectWithHttpInfo: " + e.Message);
+    Debug.Print("Status Code: " + e.ErrorCode);
+    Debug.Print(e.StackTrace);
+}
+```
+
+### Parameters
+
+| Name | Type | Description | Notes |
+|------|------|-------------|-------|
+| **owner** | **string** | owner of the repo |  |
+| **repo** | **string** | name of the repo |  |
+| **id** | **long** | id of the project |  |
+| **body** | [**EditProjectOption?**](EditProjectOption?.md) |  | [optional]  |
+
+### Return type
+
+[**Project**](Project.md)
+
+### Authorization
+
+[TOTPHeader](../README.md#TOTPHeader), [AuthorizationHeaderToken](../README.md#AuthorizationHeaderToken), [SudoHeader](../README.md#SudoHeader), [BasicAuth](../README.md#BasicAuth), [AccessToken](../README.md#AccessToken), [SudoParam](../README.md#SudoParam), [Token](../README.md#Token)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+| **200** | Project |  -  |
+| **404** | APINotFound is a not found empty response |  -  |
+| **422** | APIValidationError is error format response related to input validation |  * message -  <br>  * url -  <br>  |
+| **423** | APIRepoArchivedError is an error that is raised when an archived repo should be modified |  * message -  <br>  * url -  <br>  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+<a id="repoeditprojectcolumn"></a>
+# **RepoEditProjectColumn**
+> ProjectColumn RepoEditProjectColumn (string owner, string repo, long id, long columnId, EditProjectColumnOption? body = null)
+
+Edit a project column
+
+### Example
+```csharp
+using System.Collections.Generic;
+using System.Diagnostics;
+using Gitea.Net.Api;
+using Gitea.Net.Client;
+using Gitea.Net.Model;
+
+namespace Example
+{
+    public class RepoEditProjectColumnExample
+    {
+        public static void Main()
+        {
+            Configuration config = new Configuration();
+            config.BasePath = "/api/v1";
+            // Configure API key authorization: TOTPHeader
+            config.AddApiKey("X-GITEA-OTP", "YOUR_API_KEY");
+            // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+            // config.AddApiKeyPrefix("X-GITEA-OTP", "Bearer");
+            // Configure API key authorization: AuthorizationHeaderToken
+            config.AddApiKey("Authorization", "YOUR_API_KEY");
+            // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+            // config.AddApiKeyPrefix("Authorization", "Bearer");
+            // Configure API key authorization: SudoHeader
+            config.AddApiKey("Sudo", "YOUR_API_KEY");
+            // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+            // config.AddApiKeyPrefix("Sudo", "Bearer");
+            // Configure HTTP basic authorization: BasicAuth
+            config.Username = "YOUR_USERNAME";
+            config.Password = "YOUR_PASSWORD";
+            // Configure API key authorization: AccessToken
+            config.AddApiKey("access_token", "YOUR_API_KEY");
+            // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+            // config.AddApiKeyPrefix("access_token", "Bearer");
+            // Configure API key authorization: SudoParam
+            config.AddApiKey("sudo", "YOUR_API_KEY");
+            // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+            // config.AddApiKeyPrefix("sudo", "Bearer");
+            // Configure API key authorization: Token
+            config.AddApiKey("token", "YOUR_API_KEY");
+            // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+            // config.AddApiKeyPrefix("token", "Bearer");
+
+            var apiInstance = new RepositoryApi(config);
+            var owner = "owner_example";  // string | owner of the repo
+            var repo = "repo_example";  // string | name of the repo
+            var id = 789L;  // long | id of the project
+            var columnId = 789L;  // long | id of the column
+            var body = new EditProjectColumnOption?(); // EditProjectColumnOption? |  (optional) 
+
+            try
+            {
+                // Edit a project column
+                ProjectColumn result = apiInstance.RepoEditProjectColumn(owner, repo, id, columnId, body);
+                Debug.WriteLine(result);
+            }
+            catch (ApiException  e)
+            {
+                Debug.Print("Exception when calling RepositoryApi.RepoEditProjectColumn: " + e.Message);
+                Debug.Print("Status Code: " + e.ErrorCode);
+                Debug.Print(e.StackTrace);
+            }
+        }
+    }
+}
+```
+
+#### Using the RepoEditProjectColumnWithHttpInfo variant
+This returns an ApiResponse object which contains the response data, status code and headers.
+
+```csharp
+try
+{
+    // Edit a project column
+    ApiResponse<ProjectColumn> response = apiInstance.RepoEditProjectColumnWithHttpInfo(owner, repo, id, columnId, body);
+    Debug.Write("Status Code: " + response.StatusCode);
+    Debug.Write("Response Headers: " + response.Headers);
+    Debug.Write("Response Body: " + response.Data);
+}
+catch (ApiException e)
+{
+    Debug.Print("Exception when calling RepositoryApi.RepoEditProjectColumnWithHttpInfo: " + e.Message);
+    Debug.Print("Status Code: " + e.ErrorCode);
+    Debug.Print(e.StackTrace);
+}
+```
+
+### Parameters
+
+| Name | Type | Description | Notes |
+|------|------|-------------|-------|
+| **owner** | **string** | owner of the repo |  |
+| **repo** | **string** | name of the repo |  |
+| **id** | **long** | id of the project |  |
+| **columnId** | **long** | id of the column |  |
+| **body** | [**EditProjectColumnOption?**](EditProjectColumnOption?.md) |  | [optional]  |
+
+### Return type
+
+[**ProjectColumn**](ProjectColumn.md)
+
+### Authorization
+
+[TOTPHeader](../README.md#TOTPHeader), [AuthorizationHeaderToken](../README.md#AuthorizationHeaderToken), [SudoHeader](../README.md#SudoHeader), [BasicAuth](../README.md#BasicAuth), [AccessToken](../README.md#AccessToken), [SudoParam](../README.md#SudoParam), [Token](../README.md#Token)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+| **200** | ProjectColumn |  -  |
+| **403** | APIForbiddenError is a forbidden error response |  * message -  <br>  * url -  <br>  |
+| **404** | APINotFound is a not found empty response |  -  |
+| **422** | APIValidationError is error format response related to input validation |  * message -  <br>  * url -  <br>  |
+| **423** | APIRepoArchivedError is an error that is raised when an archived repo should be modified |  * message -  <br>  * url -  <br>  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
@@ -8252,6 +13325,133 @@ catch (ApiException e)
 |-------------|-------------|------------------|
 | **201** | Attachment |  -  |
 | **404** | APINotFound is a not found empty response |  -  |
+| **422** | APIValidationError is error format response related to input validation |  * message -  <br>  * url -  <br>  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+<a id="repoedittagprotection"></a>
+# **RepoEditTagProtection**
+> TagProtection RepoEditTagProtection (string owner, string repo, int id, EditTagProtectionOption? body = null)
+
+Edit a tag protections for a repository. Only fields that are set will be changed
+
+### Example
+```csharp
+using System.Collections.Generic;
+using System.Diagnostics;
+using Gitea.Net.Api;
+using Gitea.Net.Client;
+using Gitea.Net.Model;
+
+namespace Example
+{
+    public class RepoEditTagProtectionExample
+    {
+        public static void Main()
+        {
+            Configuration config = new Configuration();
+            config.BasePath = "/api/v1";
+            // Configure API key authorization: TOTPHeader
+            config.AddApiKey("X-GITEA-OTP", "YOUR_API_KEY");
+            // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+            // config.AddApiKeyPrefix("X-GITEA-OTP", "Bearer");
+            // Configure API key authorization: AuthorizationHeaderToken
+            config.AddApiKey("Authorization", "YOUR_API_KEY");
+            // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+            // config.AddApiKeyPrefix("Authorization", "Bearer");
+            // Configure API key authorization: SudoHeader
+            config.AddApiKey("Sudo", "YOUR_API_KEY");
+            // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+            // config.AddApiKeyPrefix("Sudo", "Bearer");
+            // Configure HTTP basic authorization: BasicAuth
+            config.Username = "YOUR_USERNAME";
+            config.Password = "YOUR_PASSWORD";
+            // Configure API key authorization: AccessToken
+            config.AddApiKey("access_token", "YOUR_API_KEY");
+            // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+            // config.AddApiKeyPrefix("access_token", "Bearer");
+            // Configure API key authorization: SudoParam
+            config.AddApiKey("sudo", "YOUR_API_KEY");
+            // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+            // config.AddApiKeyPrefix("sudo", "Bearer");
+            // Configure API key authorization: Token
+            config.AddApiKey("token", "YOUR_API_KEY");
+            // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+            // config.AddApiKeyPrefix("token", "Bearer");
+
+            var apiInstance = new RepositoryApi(config);
+            var owner = "owner_example";  // string | owner of the repo
+            var repo = "repo_example";  // string | name of the repo
+            var id = 56;  // int | id of protected tag
+            var body = new EditTagProtectionOption?(); // EditTagProtectionOption? |  (optional) 
+
+            try
+            {
+                // Edit a tag protections for a repository. Only fields that are set will be changed
+                TagProtection result = apiInstance.RepoEditTagProtection(owner, repo, id, body);
+                Debug.WriteLine(result);
+            }
+            catch (ApiException  e)
+            {
+                Debug.Print("Exception when calling RepositoryApi.RepoEditTagProtection: " + e.Message);
+                Debug.Print("Status Code: " + e.ErrorCode);
+                Debug.Print(e.StackTrace);
+            }
+        }
+    }
+}
+```
+
+#### Using the RepoEditTagProtectionWithHttpInfo variant
+This returns an ApiResponse object which contains the response data, status code and headers.
+
+```csharp
+try
+{
+    // Edit a tag protections for a repository. Only fields that are set will be changed
+    ApiResponse<TagProtection> response = apiInstance.RepoEditTagProtectionWithHttpInfo(owner, repo, id, body);
+    Debug.Write("Status Code: " + response.StatusCode);
+    Debug.Write("Response Headers: " + response.Headers);
+    Debug.Write("Response Body: " + response.Data);
+}
+catch (ApiException e)
+{
+    Debug.Print("Exception when calling RepositoryApi.RepoEditTagProtectionWithHttpInfo: " + e.Message);
+    Debug.Print("Status Code: " + e.ErrorCode);
+    Debug.Print(e.StackTrace);
+}
+```
+
+### Parameters
+
+| Name | Type | Description | Notes |
+|------|------|-------------|-------|
+| **owner** | **string** | owner of the repo |  |
+| **repo** | **string** | name of the repo |  |
+| **id** | **int** | id of protected tag |  |
+| **body** | [**EditTagProtectionOption?**](EditTagProtectionOption?.md) |  | [optional]  |
+
+### Return type
+
+[**TagProtection**](TagProtection.md)
+
+### Authorization
+
+[TOTPHeader](../README.md#TOTPHeader), [AuthorizationHeaderToken](../README.md#AuthorizationHeaderToken), [SudoHeader](../README.md#SudoHeader), [BasicAuth](../README.md#BasicAuth), [AccessToken](../README.md#AccessToken), [SudoParam](../README.md#SudoParam), [Token](../README.md#Token)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+| **200** | TagProtection |  -  |
+| **404** | APINotFound is a not found empty response |  -  |
+| **422** | APIValidationError is error format response related to input validation |  * message -  <br>  * url -  <br>  |
+| **423** | APIRepoArchivedError is an error that is raised when an archived repo should be modified |  * message -  <br>  * url -  <br>  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
@@ -8368,7 +13568,7 @@ catch (ApiException e)
 ### HTTP request headers
 
  - **Content-Type**: application/json
- - **Accept**: application/json, text/html
+ - **Accept**: application/json
 
 
 ### HTTP response details
@@ -8504,7 +13704,7 @@ catch (ApiException e)
 
 <a id="repogetallcommits"></a>
 # **RepoGetAllCommits**
-> List&lt;Commit&gt; RepoGetAllCommits (string owner, string repo, string? sha = null, string? path = null, bool? stat = null, bool? verification = null, bool? files = null, int? page = null, int? limit = null, string? not = null)
+> List&lt;Commit&gt; RepoGetAllCommits (string owner, string repo, string? sha = null, string? path = null, DateTime? since = null, DateTime? until = null, bool? stat = null, bool? verification = null, bool? files = null, int? page = null, int? limit = null, string? not = null)
 
 Get a list of all commits from a repository
 
@@ -8557,6 +13757,8 @@ namespace Example
             var repo = "repo_example";  // string | name of the repo
             var sha = "sha_example";  // string? | SHA or branch to start listing commits from (usually 'master') (optional) 
             var path = "path_example";  // string? | filepath of a file/dir (optional) 
+            var since = DateTime.Parse("2013-10-20T19:20:30+01:00");  // DateTime? | Only commits after this date will be returned (ISO 8601 format) (optional) 
+            var until = DateTime.Parse("2013-10-20T19:20:30+01:00");  // DateTime? | Only commits before this date will be returned (ISO 8601 format) (optional) 
             var stat = true;  // bool? | include diff stats for every commit (disable for speedup, default 'true') (optional) 
             var verification = true;  // bool? | include verification for every commit (disable for speedup, default 'true') (optional) 
             var files = true;  // bool? | include a list of affected files for every commit (disable for speedup, default 'true') (optional) 
@@ -8567,7 +13769,7 @@ namespace Example
             try
             {
                 // Get a list of all commits from a repository
-                List<Commit> result = apiInstance.RepoGetAllCommits(owner, repo, sha, path, stat, verification, files, page, limit, not);
+                List<Commit> result = apiInstance.RepoGetAllCommits(owner, repo, sha, path, since, until, stat, verification, files, page, limit, not);
                 Debug.WriteLine(result);
             }
             catch (ApiException  e)
@@ -8588,7 +13790,7 @@ This returns an ApiResponse object which contains the response data, status code
 try
 {
     // Get a list of all commits from a repository
-    ApiResponse<List<Commit>> response = apiInstance.RepoGetAllCommitsWithHttpInfo(owner, repo, sha, path, stat, verification, files, page, limit, not);
+    ApiResponse<List<Commit>> response = apiInstance.RepoGetAllCommitsWithHttpInfo(owner, repo, sha, path, since, until, stat, verification, files, page, limit, not);
     Debug.Write("Status Code: " + response.StatusCode);
     Debug.Write("Response Headers: " + response.Headers);
     Debug.Write("Response Body: " + response.Data);
@@ -8609,6 +13811,8 @@ catch (ApiException e)
 | **repo** | **string** | name of the repo |  |
 | **sha** | **string?** | SHA or branch to start listing commits from (usually &#39;master&#39;) | [optional]  |
 | **path** | **string?** | filepath of a file/dir | [optional]  |
+| **since** | **DateTime?** | Only commits after this date will be returned (ISO 8601 format) | [optional]  |
+| **until** | **DateTime?** | Only commits before this date will be returned (ISO 8601 format) | [optional]  |
 | **stat** | **bool?** | include diff stats for every commit (disable for speedup, default &#39;true&#39;) | [optional]  |
 | **verification** | **bool?** | include verification for every commit (disable for speedup, default &#39;true&#39;) | [optional]  |
 | **files** | **bool?** | include a list of affected files for every commit (disable for speedup, default &#39;true&#39;) | [optional]  |
@@ -8633,7 +13837,7 @@ catch (ApiException e)
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-| **200** | CommitList |  * X-HasMore - True if there is another page <br>  * X-PageCount - Total number of pages <br>  * X-PerPage - Commits per page <br>  * X-Total - Total commit count <br>  * X-Page - The current page <br>  |
+| **200** | CommitList |  * X-HasMore - True if there is another page <br>  * X-PageCount - Total number of pages <br>  * X-PerPage - Files per page <br>  * X-Total-Count - Total file count <br>  * X-Page - The current page <br>  |
 | **404** | APINotFound is a not found empty response |  -  |
 | **409** | EmptyRepository |  -  |
 
@@ -8641,7 +13845,7 @@ catch (ApiException e)
 
 <a id="repogetarchive"></a>
 # **RepoGetArchive**
-> void RepoGetArchive (string owner, string repo, string archive)
+> void RepoGetArchive (string owner, string repo, string archive, List<string>? path = null)
 
 Get an archive of a repository
 
@@ -8693,11 +13897,12 @@ namespace Example
             var owner = "owner_example";  // string | owner of the repo
             var repo = "repo_example";  // string | name of the repo
             var archive = "archive_example";  // string | the git reference for download with attached archive format (e.g. master.zip)
+            var path = new List<string>?(); // List<string>? | subpath of the repository to download (optional) 
 
             try
             {
                 // Get an archive of a repository
-                apiInstance.RepoGetArchive(owner, repo, archive);
+                apiInstance.RepoGetArchive(owner, repo, archive, path);
             }
             catch (ApiException  e)
             {
@@ -8717,7 +13922,7 @@ This returns an ApiResponse object which contains the response data, status code
 try
 {
     // Get an archive of a repository
-    apiInstance.RepoGetArchiveWithHttpInfo(owner, repo, archive);
+    apiInstance.RepoGetArchiveWithHttpInfo(owner, repo, archive, path);
 }
 catch (ApiException e)
 {
@@ -8734,6 +13939,7 @@ catch (ApiException e)
 | **owner** | **string** | owner of the repo |  |
 | **repo** | **string** | name of the repo |  |
 | **archive** | **string** | the git reference for download with attached archive format (e.g. master.zip) |  |
+| **path** | [**List&lt;string&gt;?**](string.md) | subpath of the repository to download | [optional]  |
 
 ### Return type
 
@@ -9370,7 +14576,7 @@ catch (ApiException e)
 # **RepoGetCommitPullRequest**
 > PullRequest RepoGetCommitPullRequest (string owner, string repo, string sha)
 
-Get the pull request of the commit
+Get the merged pull request of the commit
 
 ### Example
 ```csharp
@@ -9423,7 +14629,7 @@ namespace Example
 
             try
             {
-                // Get the pull request of the commit
+                // Get the merged pull request of the commit
                 PullRequest result = apiInstance.RepoGetCommitPullRequest(owner, repo, sha);
                 Debug.WriteLine(result);
             }
@@ -9444,7 +14650,7 @@ This returns an ApiResponse object which contains the response data, status code
 ```csharp
 try
 {
-    // Get the pull request of the commit
+    // Get the merged pull request of the commit
     ApiResponse<PullRequest> response = apiInstance.RepoGetCommitPullRequestWithHttpInfo(owner, repo, sha);
     Debug.Write("Status Code: " + response.StatusCode);
     Debug.Write("Response Headers: " + response.Headers);
@@ -9492,7 +14698,9 @@ catch (ApiException e)
 # **RepoGetContents**
 > ContentsResponse RepoGetContents (string owner, string repo, string filepath, string? varRef = null)
 
-Gets the metadata and contents (if a file) of an entry in a repository, or a list of entries if a dir
+Gets the metadata and contents (if a file) of an entry in a repository, or a list of entries if a dir.
+
+This API follows GitHub's design, and it is not easy to use. Recommend users to use the \"contents-ext\" API instead.
 
 ### Example
 ```csharp
@@ -9542,11 +14750,11 @@ namespace Example
             var owner = "owner_example";  // string | owner of the repo
             var repo = "repo_example";  // string | name of the repo
             var filepath = "filepath_example";  // string | path of the dir, file, symlink or submodule in the repo
-            var varRef = "varRef_example";  // string? | The name of the commit/branch/tag. Default the repository’s default branch (usually master) (optional) 
+            var varRef = "varRef_example";  // string? | The name of the commit/branch/tag. Default to the repository’s default branch. (optional) 
 
             try
             {
-                // Gets the metadata and contents (if a file) of an entry in a repository, or a list of entries if a dir
+                // Gets the metadata and contents (if a file) of an entry in a repository, or a list of entries if a dir.
                 ContentsResponse result = apiInstance.RepoGetContents(owner, repo, filepath, varRef);
                 Debug.WriteLine(result);
             }
@@ -9567,7 +14775,7 @@ This returns an ApiResponse object which contains the response data, status code
 ```csharp
 try
 {
-    // Gets the metadata and contents (if a file) of an entry in a repository, or a list of entries if a dir
+    // Gets the metadata and contents (if a file) of an entry in a repository, or a list of entries if a dir.
     ApiResponse<ContentsResponse> response = apiInstance.RepoGetContentsWithHttpInfo(owner, repo, filepath, varRef);
     Debug.Write("Status Code: " + response.StatusCode);
     Debug.Write("Response Headers: " + response.Headers);
@@ -9588,7 +14796,7 @@ catch (ApiException e)
 | **owner** | **string** | owner of the repo |  |
 | **repo** | **string** | name of the repo |  |
 | **filepath** | **string** | path of the dir, file, symlink or submodule in the repo |  |
-| **varRef** | **string?** | The name of the commit/branch/tag. Default the repository’s default branch (usually master) | [optional]  |
+| **varRef** | **string?** | The name of the commit/branch/tag. Default to the repository’s default branch. | [optional]  |
 
 ### Return type
 
@@ -9612,11 +14820,141 @@ catch (ApiException e)
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
+<a id="repogetcontentsext"></a>
+# **RepoGetContentsExt**
+> ContentsExtResponse RepoGetContentsExt (string owner, string repo, string filepath, string? varRef = null, string? includes = null)
+
+The extended \"contents\" API, to get file metadata and/or content, or list a directory.
+
+It guarantees that only one of the response fields is set if the request succeeds. Users can pass \"includes=file_content\" or \"includes=lfs_metadata\" to retrieve more fields. \"includes=file_content\" only works for single file, if you need to retrieve file contents in batch, use \"file-contents\" API after listing the directory.
+
+### Example
+```csharp
+using System.Collections.Generic;
+using System.Diagnostics;
+using Gitea.Net.Api;
+using Gitea.Net.Client;
+using Gitea.Net.Model;
+
+namespace Example
+{
+    public class RepoGetContentsExtExample
+    {
+        public static void Main()
+        {
+            Configuration config = new Configuration();
+            config.BasePath = "/api/v1";
+            // Configure API key authorization: TOTPHeader
+            config.AddApiKey("X-GITEA-OTP", "YOUR_API_KEY");
+            // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+            // config.AddApiKeyPrefix("X-GITEA-OTP", "Bearer");
+            // Configure API key authorization: AuthorizationHeaderToken
+            config.AddApiKey("Authorization", "YOUR_API_KEY");
+            // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+            // config.AddApiKeyPrefix("Authorization", "Bearer");
+            // Configure API key authorization: SudoHeader
+            config.AddApiKey("Sudo", "YOUR_API_KEY");
+            // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+            // config.AddApiKeyPrefix("Sudo", "Bearer");
+            // Configure HTTP basic authorization: BasicAuth
+            config.Username = "YOUR_USERNAME";
+            config.Password = "YOUR_PASSWORD";
+            // Configure API key authorization: AccessToken
+            config.AddApiKey("access_token", "YOUR_API_KEY");
+            // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+            // config.AddApiKeyPrefix("access_token", "Bearer");
+            // Configure API key authorization: SudoParam
+            config.AddApiKey("sudo", "YOUR_API_KEY");
+            // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+            // config.AddApiKeyPrefix("sudo", "Bearer");
+            // Configure API key authorization: Token
+            config.AddApiKey("token", "YOUR_API_KEY");
+            // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+            // config.AddApiKeyPrefix("token", "Bearer");
+
+            var apiInstance = new RepositoryApi(config);
+            var owner = "owner_example";  // string | owner of the repo
+            var repo = "repo_example";  // string | name of the repo
+            var filepath = "filepath_example";  // string | path of the dir, file, symlink or submodule in the repo. Swagger requires path parameter to be \"required\", you can leave it empty or pass a single dot (\".\") to get the root directory.
+            var varRef = "varRef_example";  // string? | the name of the commit/branch/tag, default to the repository’s default branch. (optional) 
+            var includes = "includes_example";  // string? | By default this API's response only contains file's metadata. Use comma-separated \"includes\" options to retrieve more fields. Option \"file_content\" will try to retrieve the file content, \"lfs_metadata\" will try to retrieve LFS metadata, \"commit_metadata\" will try to retrieve commit metadata, and \"commit_message\" will try to retrieve commit message. (optional) 
+
+            try
+            {
+                // The extended \"contents\" API, to get file metadata and/or content, or list a directory.
+                ContentsExtResponse result = apiInstance.RepoGetContentsExt(owner, repo, filepath, varRef, includes);
+                Debug.WriteLine(result);
+            }
+            catch (ApiException  e)
+            {
+                Debug.Print("Exception when calling RepositoryApi.RepoGetContentsExt: " + e.Message);
+                Debug.Print("Status Code: " + e.ErrorCode);
+                Debug.Print(e.StackTrace);
+            }
+        }
+    }
+}
+```
+
+#### Using the RepoGetContentsExtWithHttpInfo variant
+This returns an ApiResponse object which contains the response data, status code and headers.
+
+```csharp
+try
+{
+    // The extended \"contents\" API, to get file metadata and/or content, or list a directory.
+    ApiResponse<ContentsExtResponse> response = apiInstance.RepoGetContentsExtWithHttpInfo(owner, repo, filepath, varRef, includes);
+    Debug.Write("Status Code: " + response.StatusCode);
+    Debug.Write("Response Headers: " + response.Headers);
+    Debug.Write("Response Body: " + response.Data);
+}
+catch (ApiException e)
+{
+    Debug.Print("Exception when calling RepositoryApi.RepoGetContentsExtWithHttpInfo: " + e.Message);
+    Debug.Print("Status Code: " + e.ErrorCode);
+    Debug.Print(e.StackTrace);
+}
+```
+
+### Parameters
+
+| Name | Type | Description | Notes |
+|------|------|-------------|-------|
+| **owner** | **string** | owner of the repo |  |
+| **repo** | **string** | name of the repo |  |
+| **filepath** | **string** | path of the dir, file, symlink or submodule in the repo. Swagger requires path parameter to be \&quot;required\&quot;, you can leave it empty or pass a single dot (\&quot;.\&quot;) to get the root directory. |  |
+| **varRef** | **string?** | the name of the commit/branch/tag, default to the repository’s default branch. | [optional]  |
+| **includes** | **string?** | By default this API&#39;s response only contains file&#39;s metadata. Use comma-separated \&quot;includes\&quot; options to retrieve more fields. Option \&quot;file_content\&quot; will try to retrieve the file content, \&quot;lfs_metadata\&quot; will try to retrieve LFS metadata, \&quot;commit_metadata\&quot; will try to retrieve commit metadata, and \&quot;commit_message\&quot; will try to retrieve commit message. | [optional]  |
+
+### Return type
+
+[**ContentsExtResponse**](ContentsExtResponse.md)
+
+### Authorization
+
+[TOTPHeader](../README.md#TOTPHeader), [AuthorizationHeaderToken](../README.md#AuthorizationHeaderToken), [SudoHeader](../README.md#SudoHeader), [BasicAuth](../README.md#BasicAuth), [AccessToken](../README.md#AccessToken), [SudoParam](../README.md#SudoParam), [Token](../README.md#Token)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+| **200** |  |  -  |
+| **404** | APINotFound is a not found empty response |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
 <a id="repogetcontentslist"></a>
 # **RepoGetContentsList**
 > List&lt;ContentsResponse&gt; RepoGetContentsList (string owner, string repo, string? varRef = null)
 
-Gets the metadata of all the entries of the root dir
+Gets the metadata of all the entries of the root dir.
+
+This API follows GitHub's design, and it is not easy to use. Recommend users to use our \"contents-ext\" API instead.
 
 ### Example
 ```csharp
@@ -9665,11 +15003,11 @@ namespace Example
             var apiInstance = new RepositoryApi(config);
             var owner = "owner_example";  // string | owner of the repo
             var repo = "repo_example";  // string | name of the repo
-            var varRef = "varRef_example";  // string? | The name of the commit/branch/tag. Default the repository’s default branch (usually master) (optional) 
+            var varRef = "varRef_example";  // string? | The name of the commit/branch/tag. Default to the repository’s default branch. (optional) 
 
             try
             {
-                // Gets the metadata of all the entries of the root dir
+                // Gets the metadata of all the entries of the root dir.
                 List<ContentsResponse> result = apiInstance.RepoGetContentsList(owner, repo, varRef);
                 Debug.WriteLine(result);
             }
@@ -9690,7 +15028,7 @@ This returns an ApiResponse object which contains the response data, status code
 ```csharp
 try
 {
-    // Gets the metadata of all the entries of the root dir
+    // Gets the metadata of all the entries of the root dir.
     ApiResponse<List<ContentsResponse>> response = apiInstance.RepoGetContentsListWithHttpInfo(owner, repo, varRef);
     Debug.Write("Status Code: " + response.StatusCode);
     Debug.Write("Response Headers: " + response.Headers);
@@ -9710,7 +15048,7 @@ catch (ApiException e)
 |------|------|-------------|-------|
 | **owner** | **string** | owner of the repo |  |
 | **repo** | **string** | name of the repo |  |
-| **varRef** | **string?** | The name of the commit/branch/tag. Default the repository’s default branch (usually master) | [optional]  |
+| **varRef** | **string?** | The name of the commit/branch/tag. Default to the repository’s default branch. | [optional]  |
 
 ### Return type
 
@@ -9788,7 +15126,7 @@ namespace Example
             var owner = "owner_example";  // string | owner of the repo
             var repo = "repo_example";  // string | name of the repo
             var filepath = "filepath_example";  // string | filepath of file to get
-            var varRef = "varRef_example";  // string? | The name of the commit/branch/tag. Default the repository’s default branch (usually master) (optional) 
+            var varRef = "varRef_example";  // string? | The name of the commit/branch/tag. Default to the repository’s default branch. (optional) 
 
             try
             {
@@ -9830,7 +15168,7 @@ catch (ApiException e)
 | **owner** | **string** | owner of the repo |  |
 | **repo** | **string** | name of the repo |  |
 | **filepath** | **string** | filepath of file to get |  |
-| **varRef** | **string?** | The name of the commit/branch/tag. Default the repository’s default branch (usually master) | [optional]  |
+| **varRef** | **string?** | The name of the commit/branch/tag. Default to the repository’s default branch. | [optional]  |
 
 ### Return type
 
@@ -9850,6 +15188,258 @@ void (empty response body)
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 | **200** | success |  -  |
+| **404** | APINotFound is a not found empty response |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+<a id="repogetfilecontents"></a>
+# **RepoGetFileContents**
+> List&lt;ContentsResponse&gt; RepoGetFileContents (string owner, string repo, string body, string? varRef = null)
+
+Get the metadata and contents of requested files
+
+See the POST method. This GET method supports using JSON encoded request body in query parameter.
+
+### Example
+```csharp
+using System.Collections.Generic;
+using System.Diagnostics;
+using Gitea.Net.Api;
+using Gitea.Net.Client;
+using Gitea.Net.Model;
+
+namespace Example
+{
+    public class RepoGetFileContentsExample
+    {
+        public static void Main()
+        {
+            Configuration config = new Configuration();
+            config.BasePath = "/api/v1";
+            // Configure API key authorization: TOTPHeader
+            config.AddApiKey("X-GITEA-OTP", "YOUR_API_KEY");
+            // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+            // config.AddApiKeyPrefix("X-GITEA-OTP", "Bearer");
+            // Configure API key authorization: AuthorizationHeaderToken
+            config.AddApiKey("Authorization", "YOUR_API_KEY");
+            // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+            // config.AddApiKeyPrefix("Authorization", "Bearer");
+            // Configure API key authorization: SudoHeader
+            config.AddApiKey("Sudo", "YOUR_API_KEY");
+            // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+            // config.AddApiKeyPrefix("Sudo", "Bearer");
+            // Configure HTTP basic authorization: BasicAuth
+            config.Username = "YOUR_USERNAME";
+            config.Password = "YOUR_PASSWORD";
+            // Configure API key authorization: AccessToken
+            config.AddApiKey("access_token", "YOUR_API_KEY");
+            // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+            // config.AddApiKeyPrefix("access_token", "Bearer");
+            // Configure API key authorization: SudoParam
+            config.AddApiKey("sudo", "YOUR_API_KEY");
+            // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+            // config.AddApiKeyPrefix("sudo", "Bearer");
+            // Configure API key authorization: Token
+            config.AddApiKey("token", "YOUR_API_KEY");
+            // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+            // config.AddApiKeyPrefix("token", "Bearer");
+
+            var apiInstance = new RepositoryApi(config);
+            var owner = "owner_example";  // string | owner of the repo
+            var repo = "repo_example";  // string | name of the repo
+            var body = "body_example";  // string | The JSON encoded body (see the POST request): {\"files\": [\"filename1\", \"filename2\"]}
+            var varRef = "varRef_example";  // string? | The name of the commit/branch/tag. Default to the repository’s default branch. (optional) 
+
+            try
+            {
+                // Get the metadata and contents of requested files
+                List<ContentsResponse> result = apiInstance.RepoGetFileContents(owner, repo, body, varRef);
+                Debug.WriteLine(result);
+            }
+            catch (ApiException  e)
+            {
+                Debug.Print("Exception when calling RepositoryApi.RepoGetFileContents: " + e.Message);
+                Debug.Print("Status Code: " + e.ErrorCode);
+                Debug.Print(e.StackTrace);
+            }
+        }
+    }
+}
+```
+
+#### Using the RepoGetFileContentsWithHttpInfo variant
+This returns an ApiResponse object which contains the response data, status code and headers.
+
+```csharp
+try
+{
+    // Get the metadata and contents of requested files
+    ApiResponse<List<ContentsResponse>> response = apiInstance.RepoGetFileContentsWithHttpInfo(owner, repo, body, varRef);
+    Debug.Write("Status Code: " + response.StatusCode);
+    Debug.Write("Response Headers: " + response.Headers);
+    Debug.Write("Response Body: " + response.Data);
+}
+catch (ApiException e)
+{
+    Debug.Print("Exception when calling RepositoryApi.RepoGetFileContentsWithHttpInfo: " + e.Message);
+    Debug.Print("Status Code: " + e.ErrorCode);
+    Debug.Print(e.StackTrace);
+}
+```
+
+### Parameters
+
+| Name | Type | Description | Notes |
+|------|------|-------------|-------|
+| **owner** | **string** | owner of the repo |  |
+| **repo** | **string** | name of the repo |  |
+| **body** | **string** | The JSON encoded body (see the POST request): {\&quot;files\&quot;: [\&quot;filename1\&quot;, \&quot;filename2\&quot;]} |  |
+| **varRef** | **string?** | The name of the commit/branch/tag. Default to the repository’s default branch. | [optional]  |
+
+### Return type
+
+[**List&lt;ContentsResponse&gt;**](ContentsResponse.md)
+
+### Authorization
+
+[TOTPHeader](../README.md#TOTPHeader), [AuthorizationHeaderToken](../README.md#AuthorizationHeaderToken), [SudoHeader](../README.md#SudoHeader), [BasicAuth](../README.md#BasicAuth), [AccessToken](../README.md#AccessToken), [SudoParam](../README.md#SudoParam), [Token](../README.md#Token)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+| **200** | ContentsListResponse |  -  |
+| **404** | APINotFound is a not found empty response |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+<a id="repogetfilecontentspost"></a>
+# **RepoGetFileContentsPost**
+> List&lt;ContentsResponse&gt; RepoGetFileContentsPost (string owner, string repo, GetFilesOptions body, string? varRef = null)
+
+Get the metadata and contents of requested files
+
+Uses automatic pagination based on default page size and max response size and returns the maximum allowed number of files. Files which could not be retrieved are null. Files which are too large are being returned with `encoding == null`, `content == null` and `size > 0`, they can be requested separately by using the `download_url`.
+
+### Example
+```csharp
+using System.Collections.Generic;
+using System.Diagnostics;
+using Gitea.Net.Api;
+using Gitea.Net.Client;
+using Gitea.Net.Model;
+
+namespace Example
+{
+    public class RepoGetFileContentsPostExample
+    {
+        public static void Main()
+        {
+            Configuration config = new Configuration();
+            config.BasePath = "/api/v1";
+            // Configure API key authorization: TOTPHeader
+            config.AddApiKey("X-GITEA-OTP", "YOUR_API_KEY");
+            // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+            // config.AddApiKeyPrefix("X-GITEA-OTP", "Bearer");
+            // Configure API key authorization: AuthorizationHeaderToken
+            config.AddApiKey("Authorization", "YOUR_API_KEY");
+            // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+            // config.AddApiKeyPrefix("Authorization", "Bearer");
+            // Configure API key authorization: SudoHeader
+            config.AddApiKey("Sudo", "YOUR_API_KEY");
+            // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+            // config.AddApiKeyPrefix("Sudo", "Bearer");
+            // Configure HTTP basic authorization: BasicAuth
+            config.Username = "YOUR_USERNAME";
+            config.Password = "YOUR_PASSWORD";
+            // Configure API key authorization: AccessToken
+            config.AddApiKey("access_token", "YOUR_API_KEY");
+            // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+            // config.AddApiKeyPrefix("access_token", "Bearer");
+            // Configure API key authorization: SudoParam
+            config.AddApiKey("sudo", "YOUR_API_KEY");
+            // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+            // config.AddApiKeyPrefix("sudo", "Bearer");
+            // Configure API key authorization: Token
+            config.AddApiKey("token", "YOUR_API_KEY");
+            // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+            // config.AddApiKeyPrefix("token", "Bearer");
+
+            var apiInstance = new RepositoryApi(config);
+            var owner = "owner_example";  // string | owner of the repo
+            var repo = "repo_example";  // string | name of the repo
+            var body = new GetFilesOptions(); // GetFilesOptions | 
+            var varRef = "varRef_example";  // string? | The name of the commit/branch/tag. Default to the repository’s default branch. (optional) 
+
+            try
+            {
+                // Get the metadata and contents of requested files
+                List<ContentsResponse> result = apiInstance.RepoGetFileContentsPost(owner, repo, body, varRef);
+                Debug.WriteLine(result);
+            }
+            catch (ApiException  e)
+            {
+                Debug.Print("Exception when calling RepositoryApi.RepoGetFileContentsPost: " + e.Message);
+                Debug.Print("Status Code: " + e.ErrorCode);
+                Debug.Print(e.StackTrace);
+            }
+        }
+    }
+}
+```
+
+#### Using the RepoGetFileContentsPostWithHttpInfo variant
+This returns an ApiResponse object which contains the response data, status code and headers.
+
+```csharp
+try
+{
+    // Get the metadata and contents of requested files
+    ApiResponse<List<ContentsResponse>> response = apiInstance.RepoGetFileContentsPostWithHttpInfo(owner, repo, body, varRef);
+    Debug.Write("Status Code: " + response.StatusCode);
+    Debug.Write("Response Headers: " + response.Headers);
+    Debug.Write("Response Body: " + response.Data);
+}
+catch (ApiException e)
+{
+    Debug.Print("Exception when calling RepositoryApi.RepoGetFileContentsPostWithHttpInfo: " + e.Message);
+    Debug.Print("Status Code: " + e.ErrorCode);
+    Debug.Print(e.StackTrace);
+}
+```
+
+### Parameters
+
+| Name | Type | Description | Notes |
+|------|------|-------------|-------|
+| **owner** | **string** | owner of the repo |  |
+| **repo** | **string** | name of the repo |  |
+| **body** | [**GetFilesOptions**](GetFilesOptions.md) |  |  |
+| **varRef** | **string?** | The name of the commit/branch/tag. Default to the repository’s default branch. | [optional]  |
+
+### Return type
+
+[**List&lt;ContentsResponse&gt;**](ContentsResponse.md)
+
+### Authorization
+
+[TOTPHeader](../README.md#TOTPHeader), [AuthorizationHeaderToken](../README.md#AuthorizationHeaderToken), [SudoHeader](../README.md#SudoHeader), [BasicAuth](../README.md#BasicAuth), [AccessToken](../README.md#AccessToken), [SudoParam](../README.md#SudoParam), [Token](../README.md#Token)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+| **200** | ContentsListResponse |  -  |
 | **404** | APINotFound is a not found empty response |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
@@ -10700,6 +16290,126 @@ catch (ApiException e)
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
+<a id="repogetlicenses"></a>
+# **RepoGetLicenses**
+> List&lt;string&gt; RepoGetLicenses (string owner, string repo)
+
+Get repo licenses
+
+### Example
+```csharp
+using System.Collections.Generic;
+using System.Diagnostics;
+using Gitea.Net.Api;
+using Gitea.Net.Client;
+using Gitea.Net.Model;
+
+namespace Example
+{
+    public class RepoGetLicensesExample
+    {
+        public static void Main()
+        {
+            Configuration config = new Configuration();
+            config.BasePath = "/api/v1";
+            // Configure API key authorization: TOTPHeader
+            config.AddApiKey("X-GITEA-OTP", "YOUR_API_KEY");
+            // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+            // config.AddApiKeyPrefix("X-GITEA-OTP", "Bearer");
+            // Configure API key authorization: AuthorizationHeaderToken
+            config.AddApiKey("Authorization", "YOUR_API_KEY");
+            // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+            // config.AddApiKeyPrefix("Authorization", "Bearer");
+            // Configure API key authorization: SudoHeader
+            config.AddApiKey("Sudo", "YOUR_API_KEY");
+            // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+            // config.AddApiKeyPrefix("Sudo", "Bearer");
+            // Configure HTTP basic authorization: BasicAuth
+            config.Username = "YOUR_USERNAME";
+            config.Password = "YOUR_PASSWORD";
+            // Configure API key authorization: AccessToken
+            config.AddApiKey("access_token", "YOUR_API_KEY");
+            // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+            // config.AddApiKeyPrefix("access_token", "Bearer");
+            // Configure API key authorization: SudoParam
+            config.AddApiKey("sudo", "YOUR_API_KEY");
+            // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+            // config.AddApiKeyPrefix("sudo", "Bearer");
+            // Configure API key authorization: Token
+            config.AddApiKey("token", "YOUR_API_KEY");
+            // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+            // config.AddApiKeyPrefix("token", "Bearer");
+
+            var apiInstance = new RepositoryApi(config);
+            var owner = "owner_example";  // string | owner of the repo
+            var repo = "repo_example";  // string | name of the repo
+
+            try
+            {
+                // Get repo licenses
+                List<string> result = apiInstance.RepoGetLicenses(owner, repo);
+                Debug.WriteLine(result);
+            }
+            catch (ApiException  e)
+            {
+                Debug.Print("Exception when calling RepositoryApi.RepoGetLicenses: " + e.Message);
+                Debug.Print("Status Code: " + e.ErrorCode);
+                Debug.Print(e.StackTrace);
+            }
+        }
+    }
+}
+```
+
+#### Using the RepoGetLicensesWithHttpInfo variant
+This returns an ApiResponse object which contains the response data, status code and headers.
+
+```csharp
+try
+{
+    // Get repo licenses
+    ApiResponse<List<string>> response = apiInstance.RepoGetLicensesWithHttpInfo(owner, repo);
+    Debug.Write("Status Code: " + response.StatusCode);
+    Debug.Write("Response Headers: " + response.Headers);
+    Debug.Write("Response Body: " + response.Data);
+}
+catch (ApiException e)
+{
+    Debug.Print("Exception when calling RepositoryApi.RepoGetLicensesWithHttpInfo: " + e.Message);
+    Debug.Print("Status Code: " + e.ErrorCode);
+    Debug.Print(e.StackTrace);
+}
+```
+
+### Parameters
+
+| Name | Type | Description | Notes |
+|------|------|-------------|-------|
+| **owner** | **string** | owner of the repo |  |
+| **repo** | **string** | name of the repo |  |
+
+### Return type
+
+**List<string>**
+
+### Authorization
+
+[TOTPHeader](../README.md#TOTPHeader), [AuthorizationHeaderToken](../README.md#AuthorizationHeaderToken), [SudoHeader](../README.md#SudoHeader), [BasicAuth](../README.md#BasicAuth), [AccessToken](../README.md#AccessToken), [SudoParam](../README.md#SudoParam), [Token](../README.md#Token)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+| **200** | LicensesList |  -  |
+| **404** | APINotFound is a not found empty response |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
 <a id="repogetnote"></a>
 # **RepoGetNote**
 > Note RepoGetNote (string owner, string repo, string sha, bool? verification = null, bool? files = null)
@@ -10824,6 +16534,252 @@ catch (ApiException e)
 | **200** | Note |  -  |
 | **404** | APINotFound is a not found empty response |  -  |
 | **422** | APIValidationError is error format response related to input validation |  * message -  <br>  * url -  <br>  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+<a id="repogetproject"></a>
+# **RepoGetProject**
+> Project RepoGetProject (string owner, string repo, long id)
+
+Get a project
+
+### Example
+```csharp
+using System.Collections.Generic;
+using System.Diagnostics;
+using Gitea.Net.Api;
+using Gitea.Net.Client;
+using Gitea.Net.Model;
+
+namespace Example
+{
+    public class RepoGetProjectExample
+    {
+        public static void Main()
+        {
+            Configuration config = new Configuration();
+            config.BasePath = "/api/v1";
+            // Configure API key authorization: TOTPHeader
+            config.AddApiKey("X-GITEA-OTP", "YOUR_API_KEY");
+            // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+            // config.AddApiKeyPrefix("X-GITEA-OTP", "Bearer");
+            // Configure API key authorization: AuthorizationHeaderToken
+            config.AddApiKey("Authorization", "YOUR_API_KEY");
+            // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+            // config.AddApiKeyPrefix("Authorization", "Bearer");
+            // Configure API key authorization: SudoHeader
+            config.AddApiKey("Sudo", "YOUR_API_KEY");
+            // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+            // config.AddApiKeyPrefix("Sudo", "Bearer");
+            // Configure HTTP basic authorization: BasicAuth
+            config.Username = "YOUR_USERNAME";
+            config.Password = "YOUR_PASSWORD";
+            // Configure API key authorization: AccessToken
+            config.AddApiKey("access_token", "YOUR_API_KEY");
+            // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+            // config.AddApiKeyPrefix("access_token", "Bearer");
+            // Configure API key authorization: SudoParam
+            config.AddApiKey("sudo", "YOUR_API_KEY");
+            // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+            // config.AddApiKeyPrefix("sudo", "Bearer");
+            // Configure API key authorization: Token
+            config.AddApiKey("token", "YOUR_API_KEY");
+            // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+            // config.AddApiKeyPrefix("token", "Bearer");
+
+            var apiInstance = new RepositoryApi(config);
+            var owner = "owner_example";  // string | owner of the repo
+            var repo = "repo_example";  // string | name of the repo
+            var id = 789L;  // long | id of the project
+
+            try
+            {
+                // Get a project
+                Project result = apiInstance.RepoGetProject(owner, repo, id);
+                Debug.WriteLine(result);
+            }
+            catch (ApiException  e)
+            {
+                Debug.Print("Exception when calling RepositoryApi.RepoGetProject: " + e.Message);
+                Debug.Print("Status Code: " + e.ErrorCode);
+                Debug.Print(e.StackTrace);
+            }
+        }
+    }
+}
+```
+
+#### Using the RepoGetProjectWithHttpInfo variant
+This returns an ApiResponse object which contains the response data, status code and headers.
+
+```csharp
+try
+{
+    // Get a project
+    ApiResponse<Project> response = apiInstance.RepoGetProjectWithHttpInfo(owner, repo, id);
+    Debug.Write("Status Code: " + response.StatusCode);
+    Debug.Write("Response Headers: " + response.Headers);
+    Debug.Write("Response Body: " + response.Data);
+}
+catch (ApiException e)
+{
+    Debug.Print("Exception when calling RepositoryApi.RepoGetProjectWithHttpInfo: " + e.Message);
+    Debug.Print("Status Code: " + e.ErrorCode);
+    Debug.Print(e.StackTrace);
+}
+```
+
+### Parameters
+
+| Name | Type | Description | Notes |
+|------|------|-------------|-------|
+| **owner** | **string** | owner of the repo |  |
+| **repo** | **string** | name of the repo |  |
+| **id** | **long** | id of the project |  |
+
+### Return type
+
+[**Project**](Project.md)
+
+### Authorization
+
+[TOTPHeader](../README.md#TOTPHeader), [AuthorizationHeaderToken](../README.md#AuthorizationHeaderToken), [SudoHeader](../README.md#SudoHeader), [BasicAuth](../README.md#BasicAuth), [AccessToken](../README.md#AccessToken), [SudoParam](../README.md#SudoParam), [Token](../README.md#Token)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+| **200** | Project |  -  |
+| **404** | APINotFound is a not found empty response |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+<a id="repogetprojectcolumn"></a>
+# **RepoGetProjectColumn**
+> ProjectColumn RepoGetProjectColumn (string owner, string repo, long id, long columnId)
+
+Get a project column
+
+### Example
+```csharp
+using System.Collections.Generic;
+using System.Diagnostics;
+using Gitea.Net.Api;
+using Gitea.Net.Client;
+using Gitea.Net.Model;
+
+namespace Example
+{
+    public class RepoGetProjectColumnExample
+    {
+        public static void Main()
+        {
+            Configuration config = new Configuration();
+            config.BasePath = "/api/v1";
+            // Configure API key authorization: TOTPHeader
+            config.AddApiKey("X-GITEA-OTP", "YOUR_API_KEY");
+            // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+            // config.AddApiKeyPrefix("X-GITEA-OTP", "Bearer");
+            // Configure API key authorization: AuthorizationHeaderToken
+            config.AddApiKey("Authorization", "YOUR_API_KEY");
+            // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+            // config.AddApiKeyPrefix("Authorization", "Bearer");
+            // Configure API key authorization: SudoHeader
+            config.AddApiKey("Sudo", "YOUR_API_KEY");
+            // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+            // config.AddApiKeyPrefix("Sudo", "Bearer");
+            // Configure HTTP basic authorization: BasicAuth
+            config.Username = "YOUR_USERNAME";
+            config.Password = "YOUR_PASSWORD";
+            // Configure API key authorization: AccessToken
+            config.AddApiKey("access_token", "YOUR_API_KEY");
+            // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+            // config.AddApiKeyPrefix("access_token", "Bearer");
+            // Configure API key authorization: SudoParam
+            config.AddApiKey("sudo", "YOUR_API_KEY");
+            // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+            // config.AddApiKeyPrefix("sudo", "Bearer");
+            // Configure API key authorization: Token
+            config.AddApiKey("token", "YOUR_API_KEY");
+            // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+            // config.AddApiKeyPrefix("token", "Bearer");
+
+            var apiInstance = new RepositoryApi(config);
+            var owner = "owner_example";  // string | owner of the repo
+            var repo = "repo_example";  // string | name of the repo
+            var id = 789L;  // long | id of the project
+            var columnId = 789L;  // long | id of the column
+
+            try
+            {
+                // Get a project column
+                ProjectColumn result = apiInstance.RepoGetProjectColumn(owner, repo, id, columnId);
+                Debug.WriteLine(result);
+            }
+            catch (ApiException  e)
+            {
+                Debug.Print("Exception when calling RepositoryApi.RepoGetProjectColumn: " + e.Message);
+                Debug.Print("Status Code: " + e.ErrorCode);
+                Debug.Print(e.StackTrace);
+            }
+        }
+    }
+}
+```
+
+#### Using the RepoGetProjectColumnWithHttpInfo variant
+This returns an ApiResponse object which contains the response data, status code and headers.
+
+```csharp
+try
+{
+    // Get a project column
+    ApiResponse<ProjectColumn> response = apiInstance.RepoGetProjectColumnWithHttpInfo(owner, repo, id, columnId);
+    Debug.Write("Status Code: " + response.StatusCode);
+    Debug.Write("Response Headers: " + response.Headers);
+    Debug.Write("Response Body: " + response.Data);
+}
+catch (ApiException e)
+{
+    Debug.Print("Exception when calling RepositoryApi.RepoGetProjectColumnWithHttpInfo: " + e.Message);
+    Debug.Print("Status Code: " + e.ErrorCode);
+    Debug.Print(e.StackTrace);
+}
+```
+
+### Parameters
+
+| Name | Type | Description | Notes |
+|------|------|-------------|-------|
+| **owner** | **string** | owner of the repo |  |
+| **repo** | **string** | name of the repo |  |
+| **id** | **long** | id of the project |  |
+| **columnId** | **long** | id of the column |  |
+
+### Return type
+
+[**ProjectColumn**](ProjectColumn.md)
+
+### Authorization
+
+[TOTPHeader](../README.md#TOTPHeader), [AuthorizationHeaderToken](../README.md#AuthorizationHeaderToken), [SudoHeader](../README.md#SudoHeader), [BasicAuth](../README.md#BasicAuth), [AccessToken](../README.md#AccessToken), [SudoParam](../README.md#SudoParam), [Token](../README.md#Token)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+| **200** | ProjectColumn |  -  |
+| **404** | APINotFound is a not found empty response |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
@@ -11198,7 +17154,7 @@ catch (ApiException e)
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-| **200** | CommitList |  * X-HasMore - True if there is another page <br>  * X-PageCount - Total number of pages <br>  * X-PerPage - Commits per page <br>  * X-Total - Total commit count <br>  * X-Page - The current page <br>  |
+| **200** | CommitList |  * X-HasMore - True if there is another page <br>  * X-PageCount - Total number of pages <br>  * X-PerPage - Files per page <br>  * X-Total-Count - Total file count <br>  * X-Page - The current page <br>  |
 | **404** | APINotFound is a not found empty response |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
@@ -11328,7 +17284,7 @@ catch (ApiException e)
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-| **200** | ChangedFileList |  * X-HasMore - True if there is another page <br>  * X-PageCount - Total number of pages <br>  * X-PerPage - Commits per page <br>  * X-Total - Total commit count <br>  * X-Page - The current page <br>  |
+| **200** | ChangedFileList |  * X-HasMore - True if there is another page <br>  * X-PageCount - Total number of pages <br>  * X-PerPage - Files per page <br>  * X-Total-Count - Total file count <br>  * X-Page - The current page <br>  |
 | **404** | APINotFound is a not found empty response |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
@@ -11707,7 +17663,7 @@ catch (ApiException e)
 
 <a id="repogetrawfile"></a>
 # **RepoGetRawFile**
-> void RepoGetRawFile (string owner, string repo, string filepath, string? varRef = null)
+> System.IO.Stream RepoGetRawFile (string owner, string repo, string filepath, string? varRef = null)
 
 Get a file from a repository
 
@@ -11758,13 +17714,14 @@ namespace Example
             var apiInstance = new RepositoryApi(config);
             var owner = "owner_example";  // string | owner of the repo
             var repo = "repo_example";  // string | name of the repo
-            var filepath = "filepath_example";  // string | filepath of the file to get
-            var varRef = "varRef_example";  // string? | The name of the commit/branch/tag. Default the repository’s default branch (usually master) (optional) 
+            var filepath = "filepath_example";  // string | path of the file to get, it should be \"{ref}/{filepath}\". If there is no ref could be inferred, it will be treated as the default branch
+            var varRef = "varRef_example";  // string? | The name of the commit/branch/tag. Default to the repository’s default branch (optional) 
 
             try
             {
                 // Get a file from a repository
-                apiInstance.RepoGetRawFile(owner, repo, filepath, varRef);
+                System.IO.Stream result = apiInstance.RepoGetRawFile(owner, repo, filepath, varRef);
+                Debug.WriteLine(result);
             }
             catch (ApiException  e)
             {
@@ -11784,7 +17741,10 @@ This returns an ApiResponse object which contains the response data, status code
 try
 {
     // Get a file from a repository
-    apiInstance.RepoGetRawFileWithHttpInfo(owner, repo, filepath, varRef);
+    ApiResponse<System.IO.Stream> response = apiInstance.RepoGetRawFileWithHttpInfo(owner, repo, filepath, varRef);
+    Debug.Write("Status Code: " + response.StatusCode);
+    Debug.Write("Response Headers: " + response.Headers);
+    Debug.Write("Response Body: " + response.Data);
 }
 catch (ApiException e)
 {
@@ -11800,12 +17760,12 @@ catch (ApiException e)
 |------|------|-------------|-------|
 | **owner** | **string** | owner of the repo |  |
 | **repo** | **string** | name of the repo |  |
-| **filepath** | **string** | filepath of the file to get |  |
-| **varRef** | **string?** | The name of the commit/branch/tag. Default the repository’s default branch (usually master) | [optional]  |
+| **filepath** | **string** | path of the file to get, it should be \&quot;{ref}/{filepath}\&quot;. If there is no ref could be inferred, it will be treated as the default branch |  |
+| **varRef** | **string?** | The name of the commit/branch/tag. Default to the repository’s default branch | [optional]  |
 
 ### Return type
 
-void (empty response body)
+**System.IO.Stream**
 
 ### Authorization
 
@@ -11814,7 +17774,7 @@ void (empty response body)
 ### HTTP request headers
 
  - **Content-Type**: Not defined
- - **Accept**: Not defined
+ - **Accept**: application/octet-stream
 
 
 ### HTTP response details
@@ -11827,7 +17787,7 @@ void (empty response body)
 
 <a id="repogetrawfileorlfs"></a>
 # **RepoGetRawFileOrLFS**
-> void RepoGetRawFileOrLFS (string owner, string repo, string filepath, string? varRef = null)
+> System.IO.Stream RepoGetRawFileOrLFS (string owner, string repo, string filepath, string? varRef = null)
 
 Get a file or it's LFS object from a repository
 
@@ -11878,13 +17838,14 @@ namespace Example
             var apiInstance = new RepositoryApi(config);
             var owner = "owner_example";  // string | owner of the repo
             var repo = "repo_example";  // string | name of the repo
-            var filepath = "filepath_example";  // string | filepath of the file to get
-            var varRef = "varRef_example";  // string? | The name of the commit/branch/tag. Default the repository’s default branch (usually master) (optional) 
+            var filepath = "filepath_example";  // string | path of the file to get, it should be \"{ref}/{filepath}\". If there is no ref could be inferred, it will be treated as the default branch
+            var varRef = "varRef_example";  // string? | The name of the commit/branch/tag. Default to the repository’s default branch (optional) 
 
             try
             {
                 // Get a file or it's LFS object from a repository
-                apiInstance.RepoGetRawFileOrLFS(owner, repo, filepath, varRef);
+                System.IO.Stream result = apiInstance.RepoGetRawFileOrLFS(owner, repo, filepath, varRef);
+                Debug.WriteLine(result);
             }
             catch (ApiException  e)
             {
@@ -11904,7 +17865,10 @@ This returns an ApiResponse object which contains the response data, status code
 try
 {
     // Get a file or it's LFS object from a repository
-    apiInstance.RepoGetRawFileOrLFSWithHttpInfo(owner, repo, filepath, varRef);
+    ApiResponse<System.IO.Stream> response = apiInstance.RepoGetRawFileOrLFSWithHttpInfo(owner, repo, filepath, varRef);
+    Debug.Write("Status Code: " + response.StatusCode);
+    Debug.Write("Response Headers: " + response.Headers);
+    Debug.Write("Response Body: " + response.Data);
 }
 catch (ApiException e)
 {
@@ -11920,12 +17884,12 @@ catch (ApiException e)
 |------|------|-------------|-------|
 | **owner** | **string** | owner of the repo |  |
 | **repo** | **string** | name of the repo |  |
-| **filepath** | **string** | filepath of the file to get |  |
-| **varRef** | **string?** | The name of the commit/branch/tag. Default the repository’s default branch (usually master) | [optional]  |
+| **filepath** | **string** | path of the file to get, it should be \&quot;{ref}/{filepath}\&quot;. If there is no ref could be inferred, it will be treated as the default branch |  |
+| **varRef** | **string?** | The name of the commit/branch/tag. Default to the repository’s default branch | [optional]  |
 
 ### Return type
 
-void (empty response body)
+**System.IO.Stream**
 
 ### Authorization
 
@@ -11934,7 +17898,7 @@ void (empty response body)
 ### HTTP request headers
 
  - **Content-Type**: Not defined
- - **Accept**: Not defined
+ - **Accept**: application/octet-stream
 
 
 ### HTTP response details
@@ -12366,7 +18330,7 @@ namespace Example
             var apiInstance = new RepositoryApi(config);
             var owner = "owner_example";  // string | owner of the repo
             var repo = "repo_example";  // string | name of the repo
-            var collaborator = "collaborator_example";  // string | username of the collaborator
+            var collaborator = "collaborator_example";  // string | username of the collaborator whose permissions are to be obtained
 
             try
             {
@@ -12411,7 +18375,7 @@ catch (ApiException e)
 |------|------|-------------|-------|
 | **owner** | **string** | owner of the repo |  |
 | **repo** | **string** | name of the repo |  |
-| **collaborator** | **string** | username of the collaborator |  |
+| **collaborator** | **string** | username of the collaborator whose permissions are to be obtained |  |
 
 ### Return type
 
@@ -12556,126 +18520,11 @@ catch (ApiException e)
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-<a id="repogetrunnerregistrationtoken"></a>
-# **RepoGetRunnerRegistrationToken**
-> void RepoGetRunnerRegistrationToken (string owner, string repo)
-
-Get a repository's actions runner registration token
-
-### Example
-```csharp
-using System.Collections.Generic;
-using System.Diagnostics;
-using Gitea.Net.Api;
-using Gitea.Net.Client;
-using Gitea.Net.Model;
-
-namespace Example
-{
-    public class RepoGetRunnerRegistrationTokenExample
-    {
-        public static void Main()
-        {
-            Configuration config = new Configuration();
-            config.BasePath = "/api/v1";
-            // Configure API key authorization: TOTPHeader
-            config.AddApiKey("X-GITEA-OTP", "YOUR_API_KEY");
-            // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-            // config.AddApiKeyPrefix("X-GITEA-OTP", "Bearer");
-            // Configure API key authorization: AuthorizationHeaderToken
-            config.AddApiKey("Authorization", "YOUR_API_KEY");
-            // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-            // config.AddApiKeyPrefix("Authorization", "Bearer");
-            // Configure API key authorization: SudoHeader
-            config.AddApiKey("Sudo", "YOUR_API_KEY");
-            // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-            // config.AddApiKeyPrefix("Sudo", "Bearer");
-            // Configure HTTP basic authorization: BasicAuth
-            config.Username = "YOUR_USERNAME";
-            config.Password = "YOUR_PASSWORD";
-            // Configure API key authorization: AccessToken
-            config.AddApiKey("access_token", "YOUR_API_KEY");
-            // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-            // config.AddApiKeyPrefix("access_token", "Bearer");
-            // Configure API key authorization: SudoParam
-            config.AddApiKey("sudo", "YOUR_API_KEY");
-            // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-            // config.AddApiKeyPrefix("sudo", "Bearer");
-            // Configure API key authorization: Token
-            config.AddApiKey("token", "YOUR_API_KEY");
-            // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-            // config.AddApiKeyPrefix("token", "Bearer");
-
-            var apiInstance = new RepositoryApi(config);
-            var owner = "owner_example";  // string | owner of the repo
-            var repo = "repo_example";  // string | name of the repo
-
-            try
-            {
-                // Get a repository's actions runner registration token
-                apiInstance.RepoGetRunnerRegistrationToken(owner, repo);
-            }
-            catch (ApiException  e)
-            {
-                Debug.Print("Exception when calling RepositoryApi.RepoGetRunnerRegistrationToken: " + e.Message);
-                Debug.Print("Status Code: " + e.ErrorCode);
-                Debug.Print(e.StackTrace);
-            }
-        }
-    }
-}
-```
-
-#### Using the RepoGetRunnerRegistrationTokenWithHttpInfo variant
-This returns an ApiResponse object which contains the response data, status code and headers.
-
-```csharp
-try
-{
-    // Get a repository's actions runner registration token
-    apiInstance.RepoGetRunnerRegistrationTokenWithHttpInfo(owner, repo);
-}
-catch (ApiException e)
-{
-    Debug.Print("Exception when calling RepositoryApi.RepoGetRunnerRegistrationTokenWithHttpInfo: " + e.Message);
-    Debug.Print("Status Code: " + e.ErrorCode);
-    Debug.Print(e.StackTrace);
-}
-```
-
-### Parameters
-
-| Name | Type | Description | Notes |
-|------|------|-------------|-------|
-| **owner** | **string** | owner of the repo |  |
-| **repo** | **string** | name of the repo |  |
-
-### Return type
-
-void (empty response body)
-
-### Authorization
-
-[TOTPHeader](../README.md#TOTPHeader), [AuthorizationHeaderToken](../README.md#AuthorizationHeaderToken), [SudoHeader](../README.md#SudoHeader), [BasicAuth](../README.md#BasicAuth), [AccessToken](../README.md#AccessToken), [SudoParam](../README.md#SudoParam), [Token](../README.md#Token)
-
-### HTTP request headers
-
- - **Content-Type**: Not defined
- - **Accept**: Not defined
-
-
-### HTTP response details
-| Status code | Description | Response headers |
-|-------------|-------------|------------------|
-| **200** | RegistrationToken is response related to registration token |  * token -  <br>  |
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
-
 <a id="repogetsinglecommit"></a>
 # **RepoGetSingleCommit**
 > Commit RepoGetSingleCommit (string owner, string repo, string sha, bool? stat = null, bool? verification = null, bool? files = null)
 
-Get a single commit from a repository
+Get a single commit from a repository, it has a GitHub-compatible alias \"/repos/{owner}/{repo}/commits/{ref}\"
 
 ### Example
 ```csharp
@@ -12731,7 +18580,7 @@ namespace Example
 
             try
             {
-                // Get a single commit from a repository
+                // Get a single commit from a repository, it has a GitHub-compatible alias \"/repos/{owner}/{repo}/commits/{ref}\"
                 Commit result = apiInstance.RepoGetSingleCommit(owner, repo, sha, stat, verification, files);
                 Debug.WriteLine(result);
             }
@@ -12752,7 +18601,7 @@ This returns an ApiResponse object which contains the response data, status code
 ```csharp
 try
 {
-    // Get a single commit from a repository
+    // Get a single commit from a repository, it has a GitHub-compatible alias \"/repos/{owner}/{repo}/commits/{ref}\"
     ApiResponse<Commit> response = apiInstance.RepoGetSingleCommitWithHttpInfo(owner, repo, sha, stat, verification, files);
     Debug.Write("Status Code: " + response.StatusCode);
     Debug.Write("Response Headers: " + response.Headers);
@@ -12918,6 +18767,128 @@ catch (ApiException e)
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 | **200** | Tag |  -  |
+| **404** | APINotFound is a not found empty response |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+<a id="repogettagprotection"></a>
+# **RepoGetTagProtection**
+> TagProtection RepoGetTagProtection (string owner, string repo, int id)
+
+Get a specific tag protection for the repository
+
+### Example
+```csharp
+using System.Collections.Generic;
+using System.Diagnostics;
+using Gitea.Net.Api;
+using Gitea.Net.Client;
+using Gitea.Net.Model;
+
+namespace Example
+{
+    public class RepoGetTagProtectionExample
+    {
+        public static void Main()
+        {
+            Configuration config = new Configuration();
+            config.BasePath = "/api/v1";
+            // Configure API key authorization: TOTPHeader
+            config.AddApiKey("X-GITEA-OTP", "YOUR_API_KEY");
+            // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+            // config.AddApiKeyPrefix("X-GITEA-OTP", "Bearer");
+            // Configure API key authorization: AuthorizationHeaderToken
+            config.AddApiKey("Authorization", "YOUR_API_KEY");
+            // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+            // config.AddApiKeyPrefix("Authorization", "Bearer");
+            // Configure API key authorization: SudoHeader
+            config.AddApiKey("Sudo", "YOUR_API_KEY");
+            // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+            // config.AddApiKeyPrefix("Sudo", "Bearer");
+            // Configure HTTP basic authorization: BasicAuth
+            config.Username = "YOUR_USERNAME";
+            config.Password = "YOUR_PASSWORD";
+            // Configure API key authorization: AccessToken
+            config.AddApiKey("access_token", "YOUR_API_KEY");
+            // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+            // config.AddApiKeyPrefix("access_token", "Bearer");
+            // Configure API key authorization: SudoParam
+            config.AddApiKey("sudo", "YOUR_API_KEY");
+            // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+            // config.AddApiKeyPrefix("sudo", "Bearer");
+            // Configure API key authorization: Token
+            config.AddApiKey("token", "YOUR_API_KEY");
+            // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+            // config.AddApiKeyPrefix("token", "Bearer");
+
+            var apiInstance = new RepositoryApi(config);
+            var owner = "owner_example";  // string | owner of the repo
+            var repo = "repo_example";  // string | name of the repo
+            var id = 56;  // int | id of the tag protect to get
+
+            try
+            {
+                // Get a specific tag protection for the repository
+                TagProtection result = apiInstance.RepoGetTagProtection(owner, repo, id);
+                Debug.WriteLine(result);
+            }
+            catch (ApiException  e)
+            {
+                Debug.Print("Exception when calling RepositoryApi.RepoGetTagProtection: " + e.Message);
+                Debug.Print("Status Code: " + e.ErrorCode);
+                Debug.Print(e.StackTrace);
+            }
+        }
+    }
+}
+```
+
+#### Using the RepoGetTagProtectionWithHttpInfo variant
+This returns an ApiResponse object which contains the response data, status code and headers.
+
+```csharp
+try
+{
+    // Get a specific tag protection for the repository
+    ApiResponse<TagProtection> response = apiInstance.RepoGetTagProtectionWithHttpInfo(owner, repo, id);
+    Debug.Write("Status Code: " + response.StatusCode);
+    Debug.Write("Response Headers: " + response.Headers);
+    Debug.Write("Response Body: " + response.Data);
+}
+catch (ApiException e)
+{
+    Debug.Print("Exception when calling RepositoryApi.RepoGetTagProtectionWithHttpInfo: " + e.Message);
+    Debug.Print("Status Code: " + e.ErrorCode);
+    Debug.Print(e.StackTrace);
+}
+```
+
+### Parameters
+
+| Name | Type | Description | Notes |
+|------|------|-------------|-------|
+| **owner** | **string** | owner of the repo |  |
+| **repo** | **string** | name of the repo |  |
+| **id** | **int** | id of the tag protect to get |  |
+
+### Return type
+
+[**TagProtection**](TagProtection.md)
+
+### Authorization
+
+[TOTPHeader](../README.md#TOTPHeader), [AuthorizationHeaderToken](../README.md#AuthorizationHeaderToken), [SudoHeader](../README.md#SudoHeader), [BasicAuth](../README.md#BasicAuth), [AccessToken](../README.md#AccessToken), [SudoParam](../README.md#SudoParam), [Token](../README.md#Token)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+| **200** | TagProtection |  -  |
 | **404** | APINotFound is a not found empty response |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
@@ -13296,7 +19267,7 @@ catch (ApiException e)
 # **RepoListActionsSecrets**
 > List&lt;Secret&gt; RepoListActionsSecrets (string owner, string repo, int? page = null, int? limit = null)
 
-List an repo's actions secrets
+List a repo's actions secrets
 
 ### Example
 ```csharp
@@ -13343,14 +19314,14 @@ namespace Example
             // config.AddApiKeyPrefix("token", "Bearer");
 
             var apiInstance = new RepositoryApi(config);
-            var owner = "owner_example";  // string | owner of the repository
+            var owner = "owner_example";  // string | owner of the repo
             var repo = "repo_example";  // string | name of the repository
             var page = 56;  // int? | page number of results to return (1-based) (optional) 
             var limit = 56;  // int? | page size of results (optional) 
 
             try
             {
-                // List an repo's actions secrets
+                // List a repo's actions secrets
                 List<Secret> result = apiInstance.RepoListActionsSecrets(owner, repo, page, limit);
                 Debug.WriteLine(result);
             }
@@ -13371,7 +19342,7 @@ This returns an ApiResponse object which contains the response data, status code
 ```csharp
 try
 {
-    // List an repo's actions secrets
+    // List a repo's actions secrets
     ApiResponse<List<Secret>> response = apiInstance.RepoListActionsSecretsWithHttpInfo(owner, repo, page, limit);
     Debug.Write("Status Code: " + response.StatusCode);
     Debug.Write("Response Headers: " + response.Headers);
@@ -13389,7 +19360,7 @@ catch (ApiException e)
 
 | Name | Type | Description | Notes |
 |------|------|-------------|-------|
-| **owner** | **string** | owner of the repository |  |
+| **owner** | **string** | owner of the repo |  |
 | **repo** | **string** | name of the repository |  |
 | **page** | **int?** | page number of results to return (1-based) | [optional]  |
 | **limit** | **int?** | page size of results | [optional]  |
@@ -13418,7 +19389,7 @@ catch (ApiException e)
 
 <a id="repolistactivityfeeds"></a>
 # **RepoListActivityFeeds**
-> List&lt;Activity&gt; RepoListActivityFeeds (string owner, string repo, DateOnly? date = null, int? page = null, int? limit = null)
+> List&lt;Activity&gt; RepoListActivityFeeds (string owner, string repo, DateTime? date = null, int? page = null, int? limit = null)
 
 List a repository's activity feeds
 
@@ -13469,7 +19440,7 @@ namespace Example
             var apiInstance = new RepositoryApi(config);
             var owner = "owner_example";  // string | owner of the repo
             var repo = "repo_example";  // string | name of the repo
-            var date = DateOnly.Parse("2013-10-20");  // DateOnly? | the date of the activities to be found (optional) 
+            var date = DateTime.Parse("2013-10-20");  // DateTime? | the date of the activities to be found (optional) 
             var page = 56;  // int? | page number of results to return (1-based) (optional) 
             var limit = 56;  // int? | page size of results (optional) 
 
@@ -13516,7 +19487,7 @@ catch (ApiException e)
 |------|------|-------------|-------|
 | **owner** | **string** | owner of the repo |  |
 | **repo** | **string** | name of the repo |  |
-| **date** | **DateOnly?** | the date of the activities to be found | [optional]  |
+| **date** | **DateTime?** | the date of the activities to be found | [optional]  |
 | **page** | **int?** | page number of results to return (1-based) | [optional]  |
 | **limit** | **int?** | page size of results | [optional]  |
 
@@ -13783,7 +19754,7 @@ catch (ApiException e)
 
 <a id="repolistbranches"></a>
 # **RepoListBranches**
-> List&lt;Branch&gt; RepoListBranches (string owner, string repo, int? page = null, int? limit = null)
+> List&lt;Branch&gt; RepoListBranches (string owner, string repo, int? page = null, int? limit = null, string? q = null)
 
 List a repository's branches
 
@@ -13836,11 +19807,12 @@ namespace Example
             var repo = "repo_example";  // string | name of the repo
             var page = 56;  // int? | page number of results to return (1-based) (optional) 
             var limit = 56;  // int? | page size of results (optional) 
+            var q = "q_example";  // string? | branch name substring to filter by (optional) 
 
             try
             {
                 // List a repository's branches
-                List<Branch> result = apiInstance.RepoListBranches(owner, repo, page, limit);
+                List<Branch> result = apiInstance.RepoListBranches(owner, repo, page, limit, q);
                 Debug.WriteLine(result);
             }
             catch (ApiException  e)
@@ -13861,7 +19833,7 @@ This returns an ApiResponse object which contains the response data, status code
 try
 {
     // List a repository's branches
-    ApiResponse<List<Branch>> response = apiInstance.RepoListBranchesWithHttpInfo(owner, repo, page, limit);
+    ApiResponse<List<Branch>> response = apiInstance.RepoListBranchesWithHttpInfo(owner, repo, page, limit, q);
     Debug.Write("Status Code: " + response.StatusCode);
     Debug.Write("Response Headers: " + response.Headers);
     Debug.Write("Response Body: " + response.Data);
@@ -13882,6 +19854,7 @@ catch (ApiException e)
 | **repo** | **string** | name of the repo |  |
 | **page** | **int?** | page number of results to return (1-based) | [optional]  |
 | **limit** | **int?** | page size of results | [optional]  |
+| **q** | **string?** | branch name substring to filter by | [optional]  |
 
 ### Return type
 
@@ -14762,9 +20735,389 @@ catch (ApiException e)
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
+<a id="repolistprojectcolumnissues"></a>
+# **RepoListProjectColumnIssues**
+> List&lt;Issue&gt; RepoListProjectColumnIssues (string owner, string repo, long id, long columnId, int? page = null, int? limit = null)
+
+List the issues in a project column
+
+### Example
+```csharp
+using System.Collections.Generic;
+using System.Diagnostics;
+using Gitea.Net.Api;
+using Gitea.Net.Client;
+using Gitea.Net.Model;
+
+namespace Example
+{
+    public class RepoListProjectColumnIssuesExample
+    {
+        public static void Main()
+        {
+            Configuration config = new Configuration();
+            config.BasePath = "/api/v1";
+            // Configure API key authorization: TOTPHeader
+            config.AddApiKey("X-GITEA-OTP", "YOUR_API_KEY");
+            // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+            // config.AddApiKeyPrefix("X-GITEA-OTP", "Bearer");
+            // Configure API key authorization: AuthorizationHeaderToken
+            config.AddApiKey("Authorization", "YOUR_API_KEY");
+            // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+            // config.AddApiKeyPrefix("Authorization", "Bearer");
+            // Configure API key authorization: SudoHeader
+            config.AddApiKey("Sudo", "YOUR_API_KEY");
+            // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+            // config.AddApiKeyPrefix("Sudo", "Bearer");
+            // Configure HTTP basic authorization: BasicAuth
+            config.Username = "YOUR_USERNAME";
+            config.Password = "YOUR_PASSWORD";
+            // Configure API key authorization: AccessToken
+            config.AddApiKey("access_token", "YOUR_API_KEY");
+            // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+            // config.AddApiKeyPrefix("access_token", "Bearer");
+            // Configure API key authorization: SudoParam
+            config.AddApiKey("sudo", "YOUR_API_KEY");
+            // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+            // config.AddApiKeyPrefix("sudo", "Bearer");
+            // Configure API key authorization: Token
+            config.AddApiKey("token", "YOUR_API_KEY");
+            // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+            // config.AddApiKeyPrefix("token", "Bearer");
+
+            var apiInstance = new RepositoryApi(config);
+            var owner = "owner_example";  // string | owner of the repo
+            var repo = "repo_example";  // string | name of the repo
+            var id = 789L;  // long | id of the project
+            var columnId = 789L;  // long | id of the column
+            var page = 56;  // int? | page number of results to return (1-based) (optional) 
+            var limit = 56;  // int? | page size of results (optional) 
+
+            try
+            {
+                // List the issues in a project column
+                List<Issue> result = apiInstance.RepoListProjectColumnIssues(owner, repo, id, columnId, page, limit);
+                Debug.WriteLine(result);
+            }
+            catch (ApiException  e)
+            {
+                Debug.Print("Exception when calling RepositoryApi.RepoListProjectColumnIssues: " + e.Message);
+                Debug.Print("Status Code: " + e.ErrorCode);
+                Debug.Print(e.StackTrace);
+            }
+        }
+    }
+}
+```
+
+#### Using the RepoListProjectColumnIssuesWithHttpInfo variant
+This returns an ApiResponse object which contains the response data, status code and headers.
+
+```csharp
+try
+{
+    // List the issues in a project column
+    ApiResponse<List<Issue>> response = apiInstance.RepoListProjectColumnIssuesWithHttpInfo(owner, repo, id, columnId, page, limit);
+    Debug.Write("Status Code: " + response.StatusCode);
+    Debug.Write("Response Headers: " + response.Headers);
+    Debug.Write("Response Body: " + response.Data);
+}
+catch (ApiException e)
+{
+    Debug.Print("Exception when calling RepositoryApi.RepoListProjectColumnIssuesWithHttpInfo: " + e.Message);
+    Debug.Print("Status Code: " + e.ErrorCode);
+    Debug.Print(e.StackTrace);
+}
+```
+
+### Parameters
+
+| Name | Type | Description | Notes |
+|------|------|-------------|-------|
+| **owner** | **string** | owner of the repo |  |
+| **repo** | **string** | name of the repo |  |
+| **id** | **long** | id of the project |  |
+| **columnId** | **long** | id of the column |  |
+| **page** | **int?** | page number of results to return (1-based) | [optional]  |
+| **limit** | **int?** | page size of results | [optional]  |
+
+### Return type
+
+[**List&lt;Issue&gt;**](Issue.md)
+
+### Authorization
+
+[TOTPHeader](../README.md#TOTPHeader), [AuthorizationHeaderToken](../README.md#AuthorizationHeaderToken), [SudoHeader](../README.md#SudoHeader), [BasicAuth](../README.md#BasicAuth), [AccessToken](../README.md#AccessToken), [SudoParam](../README.md#SudoParam), [Token](../README.md#Token)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+| **200** | IssueList |  -  |
+| **404** | APINotFound is a not found empty response |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+<a id="repolistprojectcolumns"></a>
+# **RepoListProjectColumns**
+> List&lt;ProjectColumn&gt; RepoListProjectColumns (string owner, string repo, long id, int? page = null, int? limit = null)
+
+List a project's columns
+
+### Example
+```csharp
+using System.Collections.Generic;
+using System.Diagnostics;
+using Gitea.Net.Api;
+using Gitea.Net.Client;
+using Gitea.Net.Model;
+
+namespace Example
+{
+    public class RepoListProjectColumnsExample
+    {
+        public static void Main()
+        {
+            Configuration config = new Configuration();
+            config.BasePath = "/api/v1";
+            // Configure API key authorization: TOTPHeader
+            config.AddApiKey("X-GITEA-OTP", "YOUR_API_KEY");
+            // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+            // config.AddApiKeyPrefix("X-GITEA-OTP", "Bearer");
+            // Configure API key authorization: AuthorizationHeaderToken
+            config.AddApiKey("Authorization", "YOUR_API_KEY");
+            // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+            // config.AddApiKeyPrefix("Authorization", "Bearer");
+            // Configure API key authorization: SudoHeader
+            config.AddApiKey("Sudo", "YOUR_API_KEY");
+            // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+            // config.AddApiKeyPrefix("Sudo", "Bearer");
+            // Configure HTTP basic authorization: BasicAuth
+            config.Username = "YOUR_USERNAME";
+            config.Password = "YOUR_PASSWORD";
+            // Configure API key authorization: AccessToken
+            config.AddApiKey("access_token", "YOUR_API_KEY");
+            // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+            // config.AddApiKeyPrefix("access_token", "Bearer");
+            // Configure API key authorization: SudoParam
+            config.AddApiKey("sudo", "YOUR_API_KEY");
+            // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+            // config.AddApiKeyPrefix("sudo", "Bearer");
+            // Configure API key authorization: Token
+            config.AddApiKey("token", "YOUR_API_KEY");
+            // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+            // config.AddApiKeyPrefix("token", "Bearer");
+
+            var apiInstance = new RepositoryApi(config);
+            var owner = "owner_example";  // string | owner of the repo
+            var repo = "repo_example";  // string | name of the repo
+            var id = 789L;  // long | id of the project
+            var page = 56;  // int? | page number of results to return (1-based) (optional) 
+            var limit = 56;  // int? | page size of results (optional) 
+
+            try
+            {
+                // List a project's columns
+                List<ProjectColumn> result = apiInstance.RepoListProjectColumns(owner, repo, id, page, limit);
+                Debug.WriteLine(result);
+            }
+            catch (ApiException  e)
+            {
+                Debug.Print("Exception when calling RepositoryApi.RepoListProjectColumns: " + e.Message);
+                Debug.Print("Status Code: " + e.ErrorCode);
+                Debug.Print(e.StackTrace);
+            }
+        }
+    }
+}
+```
+
+#### Using the RepoListProjectColumnsWithHttpInfo variant
+This returns an ApiResponse object which contains the response data, status code and headers.
+
+```csharp
+try
+{
+    // List a project's columns
+    ApiResponse<List<ProjectColumn>> response = apiInstance.RepoListProjectColumnsWithHttpInfo(owner, repo, id, page, limit);
+    Debug.Write("Status Code: " + response.StatusCode);
+    Debug.Write("Response Headers: " + response.Headers);
+    Debug.Write("Response Body: " + response.Data);
+}
+catch (ApiException e)
+{
+    Debug.Print("Exception when calling RepositoryApi.RepoListProjectColumnsWithHttpInfo: " + e.Message);
+    Debug.Print("Status Code: " + e.ErrorCode);
+    Debug.Print(e.StackTrace);
+}
+```
+
+### Parameters
+
+| Name | Type | Description | Notes |
+|------|------|-------------|-------|
+| **owner** | **string** | owner of the repo |  |
+| **repo** | **string** | name of the repo |  |
+| **id** | **long** | id of the project |  |
+| **page** | **int?** | page number of results to return (1-based) | [optional]  |
+| **limit** | **int?** | page size of results | [optional]  |
+
+### Return type
+
+[**List&lt;ProjectColumn&gt;**](ProjectColumn.md)
+
+### Authorization
+
+[TOTPHeader](../README.md#TOTPHeader), [AuthorizationHeaderToken](../README.md#AuthorizationHeaderToken), [SudoHeader](../README.md#SudoHeader), [BasicAuth](../README.md#BasicAuth), [AccessToken](../README.md#AccessToken), [SudoParam](../README.md#SudoParam), [Token](../README.md#Token)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+| **200** | ProjectColumnList |  -  |
+| **404** | APINotFound is a not found empty response |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+<a id="repolistprojects"></a>
+# **RepoListProjects**
+> List&lt;Project&gt; RepoListProjects (string owner, string repo, string? state = null, int? page = null, int? limit = null)
+
+List a repository's projects
+
+### Example
+```csharp
+using System.Collections.Generic;
+using System.Diagnostics;
+using Gitea.Net.Api;
+using Gitea.Net.Client;
+using Gitea.Net.Model;
+
+namespace Example
+{
+    public class RepoListProjectsExample
+    {
+        public static void Main()
+        {
+            Configuration config = new Configuration();
+            config.BasePath = "/api/v1";
+            // Configure API key authorization: TOTPHeader
+            config.AddApiKey("X-GITEA-OTP", "YOUR_API_KEY");
+            // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+            // config.AddApiKeyPrefix("X-GITEA-OTP", "Bearer");
+            // Configure API key authorization: AuthorizationHeaderToken
+            config.AddApiKey("Authorization", "YOUR_API_KEY");
+            // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+            // config.AddApiKeyPrefix("Authorization", "Bearer");
+            // Configure API key authorization: SudoHeader
+            config.AddApiKey("Sudo", "YOUR_API_KEY");
+            // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+            // config.AddApiKeyPrefix("Sudo", "Bearer");
+            // Configure HTTP basic authorization: BasicAuth
+            config.Username = "YOUR_USERNAME";
+            config.Password = "YOUR_PASSWORD";
+            // Configure API key authorization: AccessToken
+            config.AddApiKey("access_token", "YOUR_API_KEY");
+            // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+            // config.AddApiKeyPrefix("access_token", "Bearer");
+            // Configure API key authorization: SudoParam
+            config.AddApiKey("sudo", "YOUR_API_KEY");
+            // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+            // config.AddApiKeyPrefix("sudo", "Bearer");
+            // Configure API key authorization: Token
+            config.AddApiKey("token", "YOUR_API_KEY");
+            // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+            // config.AddApiKeyPrefix("token", "Bearer");
+
+            var apiInstance = new RepositoryApi(config);
+            var owner = "owner_example";  // string | owner of the repo
+            var repo = "repo_example";  // string | name of the repo
+            var state = "open";  // string? | State of the project (open, closed, all) (optional)  (default to open)
+            var page = 56;  // int? | page number of results to return (1-based) (optional) 
+            var limit = 56;  // int? | page size of results (optional) 
+
+            try
+            {
+                // List a repository's projects
+                List<Project> result = apiInstance.RepoListProjects(owner, repo, state, page, limit);
+                Debug.WriteLine(result);
+            }
+            catch (ApiException  e)
+            {
+                Debug.Print("Exception when calling RepositoryApi.RepoListProjects: " + e.Message);
+                Debug.Print("Status Code: " + e.ErrorCode);
+                Debug.Print(e.StackTrace);
+            }
+        }
+    }
+}
+```
+
+#### Using the RepoListProjectsWithHttpInfo variant
+This returns an ApiResponse object which contains the response data, status code and headers.
+
+```csharp
+try
+{
+    // List a repository's projects
+    ApiResponse<List<Project>> response = apiInstance.RepoListProjectsWithHttpInfo(owner, repo, state, page, limit);
+    Debug.Write("Status Code: " + response.StatusCode);
+    Debug.Write("Response Headers: " + response.Headers);
+    Debug.Write("Response Body: " + response.Data);
+}
+catch (ApiException e)
+{
+    Debug.Print("Exception when calling RepositoryApi.RepoListProjectsWithHttpInfo: " + e.Message);
+    Debug.Print("Status Code: " + e.ErrorCode);
+    Debug.Print(e.StackTrace);
+}
+```
+
+### Parameters
+
+| Name | Type | Description | Notes |
+|------|------|-------------|-------|
+| **owner** | **string** | owner of the repo |  |
+| **repo** | **string** | name of the repo |  |
+| **state** | **string?** | State of the project (open, closed, all) | [optional] [default to open] |
+| **page** | **int?** | page number of results to return (1-based) | [optional]  |
+| **limit** | **int?** | page size of results | [optional]  |
+
+### Return type
+
+[**List&lt;Project&gt;**](Project.md)
+
+### Authorization
+
+[TOTPHeader](../README.md#TOTPHeader), [AuthorizationHeaderToken](../README.md#AuthorizationHeaderToken), [SudoHeader](../README.md#SudoHeader), [BasicAuth](../README.md#BasicAuth), [AccessToken](../README.md#AccessToken), [SudoParam](../README.md#SudoParam), [Token](../README.md#Token)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+| **200** | ProjectList |  -  |
+| **404** | APINotFound is a not found empty response |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
 <a id="repolistpullrequests"></a>
 # **RepoListPullRequests**
-> List&lt;PullRequest&gt; RepoListPullRequests (string owner, string repo, string? state = null, string? sort = null, long? milestone = null, List<long>? labels = null, int? page = null, int? limit = null)
+> List&lt;PullRequest&gt; RepoListPullRequests (string owner, string repo, string? baseBranch = null, string? state = null, string? sort = null, long? milestone = null, List<long>? labels = null, string? poster = null, int? page = null, int? limit = null)
 
 List a repo's pull requests
 
@@ -14814,18 +21167,20 @@ namespace Example
 
             var apiInstance = new RepositoryApi(config);
             var owner = "owner_example";  // string | owner of the repo
-            var repo = "repo_example";  // string | name of the repo
-            var state = "closed";  // string? | State of pull request: open or closed (optional) (optional) 
+            var repo = "repo_example";  // string | Name of the repo
+            var baseBranch = "baseBranch_example";  // string? | Filter by target base branch of the pull request (optional) 
+            var state = "open";  // string? | State of pull request (optional)  (default to open)
             var sort = "oldest";  // string? | Type of sort (optional) 
             var milestone = 789L;  // long? | ID of the milestone (optional) 
             var labels = new List<long>?(); // List<long>? | Label IDs (optional) 
-            var page = 56;  // int? | page number of results to return (1-based) (optional) 
-            var limit = 56;  // int? | page size of results (optional) 
+            var poster = "poster_example";  // string? | Filter by pull request author (optional) 
+            var page = 1;  // int? | Page number of results to return (1-based) (optional)  (default to 1)
+            var limit = 56;  // int? | Page size of results (optional) 
 
             try
             {
                 // List a repo's pull requests
-                List<PullRequest> result = apiInstance.RepoListPullRequests(owner, repo, state, sort, milestone, labels, page, limit);
+                List<PullRequest> result = apiInstance.RepoListPullRequests(owner, repo, baseBranch, state, sort, milestone, labels, poster, page, limit);
                 Debug.WriteLine(result);
             }
             catch (ApiException  e)
@@ -14846,7 +21201,7 @@ This returns an ApiResponse object which contains the response data, status code
 try
 {
     // List a repo's pull requests
-    ApiResponse<List<PullRequest>> response = apiInstance.RepoListPullRequestsWithHttpInfo(owner, repo, state, sort, milestone, labels, page, limit);
+    ApiResponse<List<PullRequest>> response = apiInstance.RepoListPullRequestsWithHttpInfo(owner, repo, baseBranch, state, sort, milestone, labels, poster, page, limit);
     Debug.Write("Status Code: " + response.StatusCode);
     Debug.Write("Response Headers: " + response.Headers);
     Debug.Write("Response Body: " + response.Data);
@@ -14864,13 +21219,15 @@ catch (ApiException e)
 | Name | Type | Description | Notes |
 |------|------|-------------|-------|
 | **owner** | **string** | owner of the repo |  |
-| **repo** | **string** | name of the repo |  |
-| **state** | **string?** | State of pull request: open or closed (optional) | [optional]  |
+| **repo** | **string** | Name of the repo |  |
+| **baseBranch** | **string?** | Filter by target base branch of the pull request | [optional]  |
+| **state** | **string?** | State of pull request | [optional] [default to open] |
 | **sort** | **string?** | Type of sort | [optional]  |
 | **milestone** | **long?** | ID of the milestone | [optional]  |
 | **labels** | [**List&lt;long&gt;?**](long.md) | Label IDs | [optional]  |
-| **page** | **int?** | page number of results to return (1-based) | [optional]  |
-| **limit** | **int?** | page size of results | [optional]  |
+| **poster** | **string?** | Filter by pull request author | [optional]  |
+| **page** | **int?** | Page number of results to return (1-based) | [optional] [default to 1] |
+| **limit** | **int?** | Page size of results | [optional]  |
 
 ### Return type
 
@@ -14891,6 +21248,7 @@ catch (ApiException e)
 |-------------|-------------|------------------|
 | **200** | PullRequestList |  -  |
 | **404** | APINotFound is a not found empty response |  -  |
+| **500** | APIError is error format response |  * message -  <br>  * url -  <br>  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
@@ -15270,7 +21628,7 @@ catch (ApiException e)
 
 <a id="repolistreleases"></a>
 # **RepoListReleases**
-> List&lt;Release&gt; RepoListReleases (string owner, string repo, bool? draft = null, bool? preRelease = null, int? page = null, int? limit = null)
+> List&lt;Release&gt; RepoListReleases (string owner, string repo, bool? draft = null, bool? preRelease = null, string? tagFilter = null, int? page = null, int? limit = null)
 
 List a repo's releases
 
@@ -15321,15 +21679,16 @@ namespace Example
             var apiInstance = new RepositoryApi(config);
             var owner = "owner_example";  // string | owner of the repo
             var repo = "repo_example";  // string | name of the repo
-            var draft = true;  // bool? | filter (exclude / include) drafts, if you dont have repo write access none will show (optional) 
+            var draft = true;  // bool? | filter (exclude / include) drafts, if you don't have repo write access none will show (optional) 
             var preRelease = true;  // bool? | filter (exclude / include) pre-releases (optional) 
+            var tagFilter = "tagFilter_example";  // string? | filter releases by tag. supports \"*\" as a wildcard (for example: v1*, *beta, *rc*). (optional) 
             var page = 56;  // int? | page number of results to return (1-based) (optional) 
             var limit = 56;  // int? | page size of results (optional) 
 
             try
             {
                 // List a repo's releases
-                List<Release> result = apiInstance.RepoListReleases(owner, repo, draft, preRelease, page, limit);
+                List<Release> result = apiInstance.RepoListReleases(owner, repo, draft, preRelease, tagFilter, page, limit);
                 Debug.WriteLine(result);
             }
             catch (ApiException  e)
@@ -15350,7 +21709,7 @@ This returns an ApiResponse object which contains the response data, status code
 try
 {
     // List a repo's releases
-    ApiResponse<List<Release>> response = apiInstance.RepoListReleasesWithHttpInfo(owner, repo, draft, preRelease, page, limit);
+    ApiResponse<List<Release>> response = apiInstance.RepoListReleasesWithHttpInfo(owner, repo, draft, preRelease, tagFilter, page, limit);
     Debug.Write("Status Code: " + response.StatusCode);
     Debug.Write("Response Headers: " + response.Headers);
     Debug.Write("Response Body: " + response.Data);
@@ -15369,8 +21728,9 @@ catch (ApiException e)
 |------|------|-------------|-------|
 | **owner** | **string** | owner of the repo |  |
 | **repo** | **string** | name of the repo |  |
-| **draft** | **bool?** | filter (exclude / include) drafts, if you dont have repo write access none will show | [optional]  |
+| **draft** | **bool?** | filter (exclude / include) drafts, if you don&#39;t have repo write access none will show | [optional]  |
 | **preRelease** | **bool?** | filter (exclude / include) pre-releases | [optional]  |
+| **tagFilter** | **string?** | filter releases by tag. supports \&quot;*\&quot; as a wildcard (for example: v1*, *beta, *rc*). | [optional]  |
 | **page** | **int?** | page number of results to return (1-based) | [optional]  |
 | **limit** | **int?** | page size of results | [optional]  |
 
@@ -15516,6 +21876,7 @@ catch (ApiException e)
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 | **200** | UserList |  -  |
+| **403** | APIForbiddenError is a forbidden error response |  * message -  <br>  * url -  <br>  |
 | **404** | APINotFound is a not found empty response |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
@@ -15903,6 +22264,125 @@ catch (ApiException e)
 |-------------|-------------|------------------|
 | **200** | UserList |  -  |
 | **404** | APINotFound is a not found empty response |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+<a id="repolisttagprotection"></a>
+# **RepoListTagProtection**
+> List&lt;TagProtection&gt; RepoListTagProtection (string owner, string repo)
+
+List tag protections for a repository
+
+### Example
+```csharp
+using System.Collections.Generic;
+using System.Diagnostics;
+using Gitea.Net.Api;
+using Gitea.Net.Client;
+using Gitea.Net.Model;
+
+namespace Example
+{
+    public class RepoListTagProtectionExample
+    {
+        public static void Main()
+        {
+            Configuration config = new Configuration();
+            config.BasePath = "/api/v1";
+            // Configure API key authorization: TOTPHeader
+            config.AddApiKey("X-GITEA-OTP", "YOUR_API_KEY");
+            // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+            // config.AddApiKeyPrefix("X-GITEA-OTP", "Bearer");
+            // Configure API key authorization: AuthorizationHeaderToken
+            config.AddApiKey("Authorization", "YOUR_API_KEY");
+            // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+            // config.AddApiKeyPrefix("Authorization", "Bearer");
+            // Configure API key authorization: SudoHeader
+            config.AddApiKey("Sudo", "YOUR_API_KEY");
+            // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+            // config.AddApiKeyPrefix("Sudo", "Bearer");
+            // Configure HTTP basic authorization: BasicAuth
+            config.Username = "YOUR_USERNAME";
+            config.Password = "YOUR_PASSWORD";
+            // Configure API key authorization: AccessToken
+            config.AddApiKey("access_token", "YOUR_API_KEY");
+            // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+            // config.AddApiKeyPrefix("access_token", "Bearer");
+            // Configure API key authorization: SudoParam
+            config.AddApiKey("sudo", "YOUR_API_KEY");
+            // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+            // config.AddApiKeyPrefix("sudo", "Bearer");
+            // Configure API key authorization: Token
+            config.AddApiKey("token", "YOUR_API_KEY");
+            // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+            // config.AddApiKeyPrefix("token", "Bearer");
+
+            var apiInstance = new RepositoryApi(config);
+            var owner = "owner_example";  // string | owner of the repo
+            var repo = "repo_example";  // string | name of the repo
+
+            try
+            {
+                // List tag protections for a repository
+                List<TagProtection> result = apiInstance.RepoListTagProtection(owner, repo);
+                Debug.WriteLine(result);
+            }
+            catch (ApiException  e)
+            {
+                Debug.Print("Exception when calling RepositoryApi.RepoListTagProtection: " + e.Message);
+                Debug.Print("Status Code: " + e.ErrorCode);
+                Debug.Print(e.StackTrace);
+            }
+        }
+    }
+}
+```
+
+#### Using the RepoListTagProtectionWithHttpInfo variant
+This returns an ApiResponse object which contains the response data, status code and headers.
+
+```csharp
+try
+{
+    // List tag protections for a repository
+    ApiResponse<List<TagProtection>> response = apiInstance.RepoListTagProtectionWithHttpInfo(owner, repo);
+    Debug.Write("Status Code: " + response.StatusCode);
+    Debug.Write("Response Headers: " + response.Headers);
+    Debug.Write("Response Body: " + response.Data);
+}
+catch (ApiException e)
+{
+    Debug.Print("Exception when calling RepositoryApi.RepoListTagProtectionWithHttpInfo: " + e.Message);
+    Debug.Print("Status Code: " + e.ErrorCode);
+    Debug.Print(e.StackTrace);
+}
+```
+
+### Parameters
+
+| Name | Type | Description | Notes |
+|------|------|-------------|-------|
+| **owner** | **string** | owner of the repo |  |
+| **repo** | **string** | name of the repo |  |
+
+### Return type
+
+[**List&lt;TagProtection&gt;**](TagProtection.md)
+
+### Authorization
+
+[TOTPHeader](../README.md#TOTPHeader), [AuthorizationHeaderToken](../README.md#AuthorizationHeaderToken), [SudoHeader](../README.md#SudoHeader), [BasicAuth](../README.md#BasicAuth), [AccessToken](../README.md#AccessToken), [SudoParam](../README.md#SudoParam), [Token](../README.md#Token)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+| **200** | TagProtectionList |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
@@ -16382,7 +22862,7 @@ void (empty response body)
 
 ### HTTP request headers
 
- - **Content-Type**: application/json, text/plain
+ - **Content-Type**: application/json
  - **Accept**: Not defined
 
 
@@ -16390,10 +22870,135 @@ void (empty response body)
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 | **200** | APIEmpty is an empty response |  -  |
+| **403** | APIForbiddenError is a forbidden error response |  * message -  <br>  * url -  <br>  |
 | **404** | APINotFound is a not found empty response |  -  |
 | **405** | APIEmpty is an empty response |  -  |
 | **409** | APIError is error format response |  * message -  <br>  * url -  <br>  |
 | **423** | APIRepoArchivedError is an error that is raised when an archived repo should be modified |  * message -  <br>  * url -  <br>  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+<a id="repomergeupstream"></a>
+# **RepoMergeUpstream**
+> MergeUpstreamResponse RepoMergeUpstream (string owner, string repo, MergeUpstreamRequest? body = null)
+
+Merge a branch from upstream
+
+### Example
+```csharp
+using System.Collections.Generic;
+using System.Diagnostics;
+using Gitea.Net.Api;
+using Gitea.Net.Client;
+using Gitea.Net.Model;
+
+namespace Example
+{
+    public class RepoMergeUpstreamExample
+    {
+        public static void Main()
+        {
+            Configuration config = new Configuration();
+            config.BasePath = "/api/v1";
+            // Configure API key authorization: TOTPHeader
+            config.AddApiKey("X-GITEA-OTP", "YOUR_API_KEY");
+            // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+            // config.AddApiKeyPrefix("X-GITEA-OTP", "Bearer");
+            // Configure API key authorization: AuthorizationHeaderToken
+            config.AddApiKey("Authorization", "YOUR_API_KEY");
+            // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+            // config.AddApiKeyPrefix("Authorization", "Bearer");
+            // Configure API key authorization: SudoHeader
+            config.AddApiKey("Sudo", "YOUR_API_KEY");
+            // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+            // config.AddApiKeyPrefix("Sudo", "Bearer");
+            // Configure HTTP basic authorization: BasicAuth
+            config.Username = "YOUR_USERNAME";
+            config.Password = "YOUR_PASSWORD";
+            // Configure API key authorization: AccessToken
+            config.AddApiKey("access_token", "YOUR_API_KEY");
+            // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+            // config.AddApiKeyPrefix("access_token", "Bearer");
+            // Configure API key authorization: SudoParam
+            config.AddApiKey("sudo", "YOUR_API_KEY");
+            // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+            // config.AddApiKeyPrefix("sudo", "Bearer");
+            // Configure API key authorization: Token
+            config.AddApiKey("token", "YOUR_API_KEY");
+            // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+            // config.AddApiKeyPrefix("token", "Bearer");
+
+            var apiInstance = new RepositoryApi(config);
+            var owner = "owner_example";  // string | owner of the repo
+            var repo = "repo_example";  // string | name of the repo
+            var body = new MergeUpstreamRequest?(); // MergeUpstreamRequest? |  (optional) 
+
+            try
+            {
+                // Merge a branch from upstream
+                MergeUpstreamResponse result = apiInstance.RepoMergeUpstream(owner, repo, body);
+                Debug.WriteLine(result);
+            }
+            catch (ApiException  e)
+            {
+                Debug.Print("Exception when calling RepositoryApi.RepoMergeUpstream: " + e.Message);
+                Debug.Print("Status Code: " + e.ErrorCode);
+                Debug.Print(e.StackTrace);
+            }
+        }
+    }
+}
+```
+
+#### Using the RepoMergeUpstreamWithHttpInfo variant
+This returns an ApiResponse object which contains the response data, status code and headers.
+
+```csharp
+try
+{
+    // Merge a branch from upstream
+    ApiResponse<MergeUpstreamResponse> response = apiInstance.RepoMergeUpstreamWithHttpInfo(owner, repo, body);
+    Debug.Write("Status Code: " + response.StatusCode);
+    Debug.Write("Response Headers: " + response.Headers);
+    Debug.Write("Response Body: " + response.Data);
+}
+catch (ApiException e)
+{
+    Debug.Print("Exception when calling RepositoryApi.RepoMergeUpstreamWithHttpInfo: " + e.Message);
+    Debug.Print("Status Code: " + e.ErrorCode);
+    Debug.Print(e.StackTrace);
+}
+```
+
+### Parameters
+
+| Name | Type | Description | Notes |
+|------|------|-------------|-------|
+| **owner** | **string** | owner of the repo |  |
+| **repo** | **string** | name of the repo |  |
+| **body** | [**MergeUpstreamRequest?**](MergeUpstreamRequest?.md) |  | [optional]  |
+
+### Return type
+
+[**MergeUpstreamResponse**](MergeUpstreamResponse.md)
+
+### Authorization
+
+[TOTPHeader](../README.md#TOTPHeader), [AuthorizationHeaderToken](../README.md#AuthorizationHeaderToken), [SudoHeader](../README.md#SudoHeader), [BasicAuth](../README.md#BasicAuth), [AccessToken](../README.md#AccessToken), [SudoParam](../README.md#SudoParam), [Token](../README.md#Token)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+| **200** |  |  -  |
+| **400** | APIError is error format response |  * message -  <br>  * url -  <br>  |
+| **404** | APINotFound is a not found empty response |  -  |
+| **409** | APIError is error format response |  * message -  <br>  * url -  <br>  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
@@ -16631,6 +23236,256 @@ void (empty response body)
 | **200** | APIEmpty is an empty response |  -  |
 | **403** | APIForbiddenError is a forbidden error response |  * message -  <br>  * url -  <br>  |
 | **404** | APINotFound is a not found empty response |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+<a id="repomoveprojectcolumns"></a>
+# **RepoMoveProjectColumns**
+> void RepoMoveProjectColumns (string owner, string repo, long id, MoveProjectColumnsOption? body = null)
+
+Reorder a project's columns
+
+Reorders every column of the project at once. The body lists all column IDs in their new order.
+
+### Example
+```csharp
+using System.Collections.Generic;
+using System.Diagnostics;
+using Gitea.Net.Api;
+using Gitea.Net.Client;
+using Gitea.Net.Model;
+
+namespace Example
+{
+    public class RepoMoveProjectColumnsExample
+    {
+        public static void Main()
+        {
+            Configuration config = new Configuration();
+            config.BasePath = "/api/v1";
+            // Configure API key authorization: TOTPHeader
+            config.AddApiKey("X-GITEA-OTP", "YOUR_API_KEY");
+            // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+            // config.AddApiKeyPrefix("X-GITEA-OTP", "Bearer");
+            // Configure API key authorization: AuthorizationHeaderToken
+            config.AddApiKey("Authorization", "YOUR_API_KEY");
+            // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+            // config.AddApiKeyPrefix("Authorization", "Bearer");
+            // Configure API key authorization: SudoHeader
+            config.AddApiKey("Sudo", "YOUR_API_KEY");
+            // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+            // config.AddApiKeyPrefix("Sudo", "Bearer");
+            // Configure HTTP basic authorization: BasicAuth
+            config.Username = "YOUR_USERNAME";
+            config.Password = "YOUR_PASSWORD";
+            // Configure API key authorization: AccessToken
+            config.AddApiKey("access_token", "YOUR_API_KEY");
+            // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+            // config.AddApiKeyPrefix("access_token", "Bearer");
+            // Configure API key authorization: SudoParam
+            config.AddApiKey("sudo", "YOUR_API_KEY");
+            // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+            // config.AddApiKeyPrefix("sudo", "Bearer");
+            // Configure API key authorization: Token
+            config.AddApiKey("token", "YOUR_API_KEY");
+            // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+            // config.AddApiKeyPrefix("token", "Bearer");
+
+            var apiInstance = new RepositoryApi(config);
+            var owner = "owner_example";  // string | owner of the repo
+            var repo = "repo_example";  // string | name of the repo
+            var id = 789L;  // long | id of the project
+            var body = new MoveProjectColumnsOption?(); // MoveProjectColumnsOption? |  (optional) 
+
+            try
+            {
+                // Reorder a project's columns
+                apiInstance.RepoMoveProjectColumns(owner, repo, id, body);
+            }
+            catch (ApiException  e)
+            {
+                Debug.Print("Exception when calling RepositoryApi.RepoMoveProjectColumns: " + e.Message);
+                Debug.Print("Status Code: " + e.ErrorCode);
+                Debug.Print(e.StackTrace);
+            }
+        }
+    }
+}
+```
+
+#### Using the RepoMoveProjectColumnsWithHttpInfo variant
+This returns an ApiResponse object which contains the response data, status code and headers.
+
+```csharp
+try
+{
+    // Reorder a project's columns
+    apiInstance.RepoMoveProjectColumnsWithHttpInfo(owner, repo, id, body);
+}
+catch (ApiException e)
+{
+    Debug.Print("Exception when calling RepositoryApi.RepoMoveProjectColumnsWithHttpInfo: " + e.Message);
+    Debug.Print("Status Code: " + e.ErrorCode);
+    Debug.Print(e.StackTrace);
+}
+```
+
+### Parameters
+
+| Name | Type | Description | Notes |
+|------|------|-------------|-------|
+| **owner** | **string** | owner of the repo |  |
+| **repo** | **string** | name of the repo |  |
+| **id** | **long** | id of the project |  |
+| **body** | [**MoveProjectColumnsOption?**](MoveProjectColumnsOption?.md) |  | [optional]  |
+
+### Return type
+
+void (empty response body)
+
+### Authorization
+
+[TOTPHeader](../README.md#TOTPHeader), [AuthorizationHeaderToken](../README.md#AuthorizationHeaderToken), [SudoHeader](../README.md#SudoHeader), [BasicAuth](../README.md#BasicAuth), [AccessToken](../README.md#AccessToken), [SudoParam](../README.md#SudoParam), [Token](../README.md#Token)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: Not defined
+
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+| **204** | APIEmpty is an empty response |  -  |
+| **403** | APIForbiddenError is a forbidden error response |  * message -  <br>  * url -  <br>  |
+| **404** | APINotFound is a not found empty response |  -  |
+| **422** | APIValidationError is error format response related to input validation |  * message -  <br>  * url -  <br>  |
+| **423** | APIRepoArchivedError is an error that is raised when an archived repo should be modified |  * message -  <br>  * url -  <br>  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+<a id="repomoveprojectissue"></a>
+# **RepoMoveProjectIssue**
+> void RepoMoveProjectIssue (string owner, string repo, long id, long issueId, MoveProjectIssueOption? body = null)
+
+Move an issue between a project's columns
+
+### Example
+```csharp
+using System.Collections.Generic;
+using System.Diagnostics;
+using Gitea.Net.Api;
+using Gitea.Net.Client;
+using Gitea.Net.Model;
+
+namespace Example
+{
+    public class RepoMoveProjectIssueExample
+    {
+        public static void Main()
+        {
+            Configuration config = new Configuration();
+            config.BasePath = "/api/v1";
+            // Configure API key authorization: TOTPHeader
+            config.AddApiKey("X-GITEA-OTP", "YOUR_API_KEY");
+            // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+            // config.AddApiKeyPrefix("X-GITEA-OTP", "Bearer");
+            // Configure API key authorization: AuthorizationHeaderToken
+            config.AddApiKey("Authorization", "YOUR_API_KEY");
+            // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+            // config.AddApiKeyPrefix("Authorization", "Bearer");
+            // Configure API key authorization: SudoHeader
+            config.AddApiKey("Sudo", "YOUR_API_KEY");
+            // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+            // config.AddApiKeyPrefix("Sudo", "Bearer");
+            // Configure HTTP basic authorization: BasicAuth
+            config.Username = "YOUR_USERNAME";
+            config.Password = "YOUR_PASSWORD";
+            // Configure API key authorization: AccessToken
+            config.AddApiKey("access_token", "YOUR_API_KEY");
+            // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+            // config.AddApiKeyPrefix("access_token", "Bearer");
+            // Configure API key authorization: SudoParam
+            config.AddApiKey("sudo", "YOUR_API_KEY");
+            // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+            // config.AddApiKeyPrefix("sudo", "Bearer");
+            // Configure API key authorization: Token
+            config.AddApiKey("token", "YOUR_API_KEY");
+            // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+            // config.AddApiKeyPrefix("token", "Bearer");
+
+            var apiInstance = new RepositoryApi(config);
+            var owner = "owner_example";  // string | owner of the repo
+            var repo = "repo_example";  // string | name of the repo
+            var id = 789L;  // long | id of the project
+            var issueId = 789L;  // long | global id of the issue, not the repository-local index
+            var body = new MoveProjectIssueOption?(); // MoveProjectIssueOption? |  (optional) 
+
+            try
+            {
+                // Move an issue between a project's columns
+                apiInstance.RepoMoveProjectIssue(owner, repo, id, issueId, body);
+            }
+            catch (ApiException  e)
+            {
+                Debug.Print("Exception when calling RepositoryApi.RepoMoveProjectIssue: " + e.Message);
+                Debug.Print("Status Code: " + e.ErrorCode);
+                Debug.Print(e.StackTrace);
+            }
+        }
+    }
+}
+```
+
+#### Using the RepoMoveProjectIssueWithHttpInfo variant
+This returns an ApiResponse object which contains the response data, status code and headers.
+
+```csharp
+try
+{
+    // Move an issue between a project's columns
+    apiInstance.RepoMoveProjectIssueWithHttpInfo(owner, repo, id, issueId, body);
+}
+catch (ApiException e)
+{
+    Debug.Print("Exception when calling RepositoryApi.RepoMoveProjectIssueWithHttpInfo: " + e.Message);
+    Debug.Print("Status Code: " + e.ErrorCode);
+    Debug.Print(e.StackTrace);
+}
+```
+
+### Parameters
+
+| Name | Type | Description | Notes |
+|------|------|-------------|-------|
+| **owner** | **string** | owner of the repo |  |
+| **repo** | **string** | name of the repo |  |
+| **id** | **long** | id of the project |  |
+| **issueId** | **long** | global id of the issue, not the repository-local index |  |
+| **body** | [**MoveProjectIssueOption?**](MoveProjectIssueOption?.md) |  | [optional]  |
+
+### Return type
+
+void (empty response body)
+
+### Authorization
+
+[TOTPHeader](../README.md#TOTPHeader), [AuthorizationHeaderToken](../README.md#AuthorizationHeaderToken), [SudoHeader](../README.md#SudoHeader), [BasicAuth](../README.md#BasicAuth), [AccessToken](../README.md#AccessToken), [SudoParam](../README.md#SudoParam), [Token](../README.md#Token)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: Not defined
+
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+| **204** | APIEmpty is an empty response |  -  |
+| **403** | APIForbiddenError is a forbidden error response |  * message -  <br>  * url -  <br>  |
+| **404** | APINotFound is a not found empty response |  -  |
+| **422** | APIValidationError is error format response related to input validation |  * message -  <br>  * url -  <br>  |
+| **423** | APIRepoArchivedError is an error that is raised when an archived repo should be modified |  * message -  <br>  * url -  <br>  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
@@ -16987,6 +23842,373 @@ void (empty response body)
 | **400** | APIError is error format response |  * message -  <br>  * url -  <br>  |
 | **403** | APIForbiddenError is a forbidden error response |  * message -  <br>  * url -  <br>  |
 | **404** | APINotFound is a not found empty response |  -  |
+| **422** | APIValidationError is error format response related to input validation |  * message -  <br>  * url -  <br>  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+<a id="reporemoveissuefromprojectcolumn"></a>
+# **RepoRemoveIssueFromProjectColumn**
+> void RepoRemoveIssueFromProjectColumn (string owner, string repo, long id, long columnId, long issueId)
+
+Remove an issue from a project column
+
+### Example
+```csharp
+using System.Collections.Generic;
+using System.Diagnostics;
+using Gitea.Net.Api;
+using Gitea.Net.Client;
+using Gitea.Net.Model;
+
+namespace Example
+{
+    public class RepoRemoveIssueFromProjectColumnExample
+    {
+        public static void Main()
+        {
+            Configuration config = new Configuration();
+            config.BasePath = "/api/v1";
+            // Configure API key authorization: TOTPHeader
+            config.AddApiKey("X-GITEA-OTP", "YOUR_API_KEY");
+            // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+            // config.AddApiKeyPrefix("X-GITEA-OTP", "Bearer");
+            // Configure API key authorization: AuthorizationHeaderToken
+            config.AddApiKey("Authorization", "YOUR_API_KEY");
+            // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+            // config.AddApiKeyPrefix("Authorization", "Bearer");
+            // Configure API key authorization: SudoHeader
+            config.AddApiKey("Sudo", "YOUR_API_KEY");
+            // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+            // config.AddApiKeyPrefix("Sudo", "Bearer");
+            // Configure HTTP basic authorization: BasicAuth
+            config.Username = "YOUR_USERNAME";
+            config.Password = "YOUR_PASSWORD";
+            // Configure API key authorization: AccessToken
+            config.AddApiKey("access_token", "YOUR_API_KEY");
+            // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+            // config.AddApiKeyPrefix("access_token", "Bearer");
+            // Configure API key authorization: SudoParam
+            config.AddApiKey("sudo", "YOUR_API_KEY");
+            // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+            // config.AddApiKeyPrefix("sudo", "Bearer");
+            // Configure API key authorization: Token
+            config.AddApiKey("token", "YOUR_API_KEY");
+            // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+            // config.AddApiKeyPrefix("token", "Bearer");
+
+            var apiInstance = new RepositoryApi(config);
+            var owner = "owner_example";  // string | owner of the repo
+            var repo = "repo_example";  // string | name of the repo
+            var id = 789L;  // long | id of the project
+            var columnId = 789L;  // long | id of the column
+            var issueId = 789L;  // long | global id of the issue, not the repository-local index
+
+            try
+            {
+                // Remove an issue from a project column
+                apiInstance.RepoRemoveIssueFromProjectColumn(owner, repo, id, columnId, issueId);
+            }
+            catch (ApiException  e)
+            {
+                Debug.Print("Exception when calling RepositoryApi.RepoRemoveIssueFromProjectColumn: " + e.Message);
+                Debug.Print("Status Code: " + e.ErrorCode);
+                Debug.Print(e.StackTrace);
+            }
+        }
+    }
+}
+```
+
+#### Using the RepoRemoveIssueFromProjectColumnWithHttpInfo variant
+This returns an ApiResponse object which contains the response data, status code and headers.
+
+```csharp
+try
+{
+    // Remove an issue from a project column
+    apiInstance.RepoRemoveIssueFromProjectColumnWithHttpInfo(owner, repo, id, columnId, issueId);
+}
+catch (ApiException e)
+{
+    Debug.Print("Exception when calling RepositoryApi.RepoRemoveIssueFromProjectColumnWithHttpInfo: " + e.Message);
+    Debug.Print("Status Code: " + e.ErrorCode);
+    Debug.Print(e.StackTrace);
+}
+```
+
+### Parameters
+
+| Name | Type | Description | Notes |
+|------|------|-------------|-------|
+| **owner** | **string** | owner of the repo |  |
+| **repo** | **string** | name of the repo |  |
+| **id** | **long** | id of the project |  |
+| **columnId** | **long** | id of the column |  |
+| **issueId** | **long** | global id of the issue, not the repository-local index |  |
+
+### Return type
+
+void (empty response body)
+
+### Authorization
+
+[TOTPHeader](../README.md#TOTPHeader), [AuthorizationHeaderToken](../README.md#AuthorizationHeaderToken), [SudoHeader](../README.md#SudoHeader), [BasicAuth](../README.md#BasicAuth), [AccessToken](../README.md#AccessToken), [SudoParam](../README.md#SudoParam), [Token](../README.md#Token)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: Not defined
+
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+| **204** | APIEmpty is an empty response |  -  |
+| **403** | APIForbiddenError is a forbidden error response |  * message -  <br>  * url -  <br>  |
+| **404** | APINotFound is a not found empty response |  -  |
+| **423** | APIRepoArchivedError is an error that is raised when an archived repo should be modified |  * message -  <br>  * url -  <br>  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+<a id="reporenamebranch"></a>
+# **RepoRenameBranch**
+> void RepoRenameBranch (string owner, string repo, string branch, RenameBranchRepoOption? body = null)
+
+Rename a branch
+
+### Example
+```csharp
+using System.Collections.Generic;
+using System.Diagnostics;
+using Gitea.Net.Api;
+using Gitea.Net.Client;
+using Gitea.Net.Model;
+
+namespace Example
+{
+    public class RepoRenameBranchExample
+    {
+        public static void Main()
+        {
+            Configuration config = new Configuration();
+            config.BasePath = "/api/v1";
+            // Configure API key authorization: TOTPHeader
+            config.AddApiKey("X-GITEA-OTP", "YOUR_API_KEY");
+            // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+            // config.AddApiKeyPrefix("X-GITEA-OTP", "Bearer");
+            // Configure API key authorization: AuthorizationHeaderToken
+            config.AddApiKey("Authorization", "YOUR_API_KEY");
+            // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+            // config.AddApiKeyPrefix("Authorization", "Bearer");
+            // Configure API key authorization: SudoHeader
+            config.AddApiKey("Sudo", "YOUR_API_KEY");
+            // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+            // config.AddApiKeyPrefix("Sudo", "Bearer");
+            // Configure HTTP basic authorization: BasicAuth
+            config.Username = "YOUR_USERNAME";
+            config.Password = "YOUR_PASSWORD";
+            // Configure API key authorization: AccessToken
+            config.AddApiKey("access_token", "YOUR_API_KEY");
+            // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+            // config.AddApiKeyPrefix("access_token", "Bearer");
+            // Configure API key authorization: SudoParam
+            config.AddApiKey("sudo", "YOUR_API_KEY");
+            // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+            // config.AddApiKeyPrefix("sudo", "Bearer");
+            // Configure API key authorization: Token
+            config.AddApiKey("token", "YOUR_API_KEY");
+            // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+            // config.AddApiKeyPrefix("token", "Bearer");
+
+            var apiInstance = new RepositoryApi(config);
+            var owner = "owner_example";  // string | owner of the repo
+            var repo = "repo_example";  // string | name of the repo
+            var branch = "branch_example";  // string | name of the branch
+            var body = new RenameBranchRepoOption?(); // RenameBranchRepoOption? |  (optional) 
+
+            try
+            {
+                // Rename a branch
+                apiInstance.RepoRenameBranch(owner, repo, branch, body);
+            }
+            catch (ApiException  e)
+            {
+                Debug.Print("Exception when calling RepositoryApi.RepoRenameBranch: " + e.Message);
+                Debug.Print("Status Code: " + e.ErrorCode);
+                Debug.Print(e.StackTrace);
+            }
+        }
+    }
+}
+```
+
+#### Using the RepoRenameBranchWithHttpInfo variant
+This returns an ApiResponse object which contains the response data, status code and headers.
+
+```csharp
+try
+{
+    // Rename a branch
+    apiInstance.RepoRenameBranchWithHttpInfo(owner, repo, branch, body);
+}
+catch (ApiException e)
+{
+    Debug.Print("Exception when calling RepositoryApi.RepoRenameBranchWithHttpInfo: " + e.Message);
+    Debug.Print("Status Code: " + e.ErrorCode);
+    Debug.Print(e.StackTrace);
+}
+```
+
+### Parameters
+
+| Name | Type | Description | Notes |
+|------|------|-------------|-------|
+| **owner** | **string** | owner of the repo |  |
+| **repo** | **string** | name of the repo |  |
+| **branch** | **string** | name of the branch |  |
+| **body** | [**RenameBranchRepoOption?**](RenameBranchRepoOption?.md) |  | [optional]  |
+
+### Return type
+
+void (empty response body)
+
+### Authorization
+
+[TOTPHeader](../README.md#TOTPHeader), [AuthorizationHeaderToken](../README.md#AuthorizationHeaderToken), [SudoHeader](../README.md#SudoHeader), [BasicAuth](../README.md#BasicAuth), [AccessToken](../README.md#AccessToken), [SudoParam](../README.md#SudoParam), [Token](../README.md#Token)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: Not defined
+
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+| **204** | APIEmpty is an empty response |  -  |
+| **403** | APIForbiddenError is a forbidden error response |  * message -  <br>  * url -  <br>  |
+| **404** | APINotFound is a not found empty response |  -  |
+| **422** | APIValidationError is error format response related to input validation |  * message -  <br>  * url -  <br>  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+<a id="reporesolvepullreviewcomment"></a>
+# **RepoResolvePullReviewComment**
+> void RepoResolvePullReviewComment (string owner, string repo, long id)
+
+Resolve a pull request review comment
+
+### Example
+```csharp
+using System.Collections.Generic;
+using System.Diagnostics;
+using Gitea.Net.Api;
+using Gitea.Net.Client;
+using Gitea.Net.Model;
+
+namespace Example
+{
+    public class RepoResolvePullReviewCommentExample
+    {
+        public static void Main()
+        {
+            Configuration config = new Configuration();
+            config.BasePath = "/api/v1";
+            // Configure API key authorization: TOTPHeader
+            config.AddApiKey("X-GITEA-OTP", "YOUR_API_KEY");
+            // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+            // config.AddApiKeyPrefix("X-GITEA-OTP", "Bearer");
+            // Configure API key authorization: AuthorizationHeaderToken
+            config.AddApiKey("Authorization", "YOUR_API_KEY");
+            // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+            // config.AddApiKeyPrefix("Authorization", "Bearer");
+            // Configure API key authorization: SudoHeader
+            config.AddApiKey("Sudo", "YOUR_API_KEY");
+            // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+            // config.AddApiKeyPrefix("Sudo", "Bearer");
+            // Configure HTTP basic authorization: BasicAuth
+            config.Username = "YOUR_USERNAME";
+            config.Password = "YOUR_PASSWORD";
+            // Configure API key authorization: AccessToken
+            config.AddApiKey("access_token", "YOUR_API_KEY");
+            // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+            // config.AddApiKeyPrefix("access_token", "Bearer");
+            // Configure API key authorization: SudoParam
+            config.AddApiKey("sudo", "YOUR_API_KEY");
+            // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+            // config.AddApiKeyPrefix("sudo", "Bearer");
+            // Configure API key authorization: Token
+            config.AddApiKey("token", "YOUR_API_KEY");
+            // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+            // config.AddApiKeyPrefix("token", "Bearer");
+
+            var apiInstance = new RepositoryApi(config);
+            var owner = "owner_example";  // string | owner of the repo
+            var repo = "repo_example";  // string | name of the repo
+            var id = 789L;  // long | id of the review comment
+
+            try
+            {
+                // Resolve a pull request review comment
+                apiInstance.RepoResolvePullReviewComment(owner, repo, id);
+            }
+            catch (ApiException  e)
+            {
+                Debug.Print("Exception when calling RepositoryApi.RepoResolvePullReviewComment: " + e.Message);
+                Debug.Print("Status Code: " + e.ErrorCode);
+                Debug.Print(e.StackTrace);
+            }
+        }
+    }
+}
+```
+
+#### Using the RepoResolvePullReviewCommentWithHttpInfo variant
+This returns an ApiResponse object which contains the response data, status code and headers.
+
+```csharp
+try
+{
+    // Resolve a pull request review comment
+    apiInstance.RepoResolvePullReviewCommentWithHttpInfo(owner, repo, id);
+}
+catch (ApiException e)
+{
+    Debug.Print("Exception when calling RepositoryApi.RepoResolvePullReviewCommentWithHttpInfo: " + e.Message);
+    Debug.Print("Status Code: " + e.ErrorCode);
+    Debug.Print(e.StackTrace);
+}
+```
+
+### Parameters
+
+| Name | Type | Description | Notes |
+|------|------|-------------|-------|
+| **owner** | **string** | owner of the repo |  |
+| **repo** | **string** | name of the repo |  |
+| **id** | **long** | id of the review comment |  |
+
+### Return type
+
+void (empty response body)
+
+### Authorization
+
+[TOTPHeader](../README.md#TOTPHeader), [AuthorizationHeaderToken](../README.md#AuthorizationHeaderToken), [SudoHeader](../README.md#SudoHeader), [BasicAuth](../README.md#BasicAuth), [AccessToken](../README.md#AccessToken), [SudoParam](../README.md#SudoParam), [Token](../README.md#Token)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: Not defined
+
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+| **204** | APIEmpty is an empty response |  -  |
+| **400** | APIValidationError is error format response related to input validation |  * message -  <br>  * url -  <br>  |
+| **403** | APIForbiddenError is a forbidden error response |  * message -  <br>  * url -  <br>  |
+| **404** | APINotFound is a not found empty response |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
@@ -17054,7 +24276,7 @@ namespace Example
             var archived = true;  // bool? | show only archived, non-archived or all repositories (defaults to all) (optional) 
             var mode = "mode_example";  // string? | type of repository to search for. Supported values are \"fork\", \"source\", \"mirror\" and \"collaborative\" (optional) 
             var exclusive = true;  // bool? | if `uid` is given, search only for repos that the user owns (optional) 
-            var sort = "sort_example";  // string? | sort repos by attribute. Supported values are \"alpha\", \"created\", \"updated\", \"size\", and \"id\". Default is \"alpha\" (optional) 
+            var sort = "sort_example";  // string? | sort repos by attribute. Supported values are \"alpha\", \"created\", \"updated\", \"size\", \"git_size\", \"lfs_size\", \"stars\", \"forks\" and \"id\". Default is \"alpha\" (optional) 
             var order = "order_example";  // string? | sort order, either \"asc\" (ascending) or \"desc\" (descending). Default is \"asc\", ignored if \"sort\" is not specified. (optional) 
             var page = 56;  // int? | page number of results to return (1-based) (optional) 
             var limit = 56;  // int? | page size of results (optional) 
@@ -17113,7 +24335,7 @@ catch (ApiException e)
 | **archived** | **bool?** | show only archived, non-archived or all repositories (defaults to all) | [optional]  |
 | **mode** | **string?** | type of repository to search for. Supported values are \&quot;fork\&quot;, \&quot;source\&quot;, \&quot;mirror\&quot; and \&quot;collaborative\&quot; | [optional]  |
 | **exclusive** | **bool?** | if &#x60;uid&#x60; is given, search only for repos that the user owns | [optional]  |
-| **sort** | **string?** | sort repos by attribute. Supported values are \&quot;alpha\&quot;, \&quot;created\&quot;, \&quot;updated\&quot;, \&quot;size\&quot;, and \&quot;id\&quot;. Default is \&quot;alpha\&quot; | [optional]  |
+| **sort** | **string?** | sort repos by attribute. Supported values are \&quot;alpha\&quot;, \&quot;created\&quot;, \&quot;updated\&quot;, \&quot;size\&quot;, \&quot;git_size\&quot;, \&quot;lfs_size\&quot;, \&quot;stars\&quot;, \&quot;forks\&quot; and \&quot;id\&quot;. Default is \&quot;alpha\&quot; | [optional]  |
 | **order** | **string?** | sort order, either \&quot;asc\&quot; (ascending) or \&quot;desc\&quot; (descending). Default is \&quot;asc\&quot;, ignored if \&quot;sort\&quot; is not specified. | [optional]  |
 | **page** | **int?** | page number of results to return (1-based) | [optional]  |
 | **limit** | **int?** | page size of results | [optional]  |
@@ -17137,6 +24359,130 @@ catch (ApiException e)
 |-------------|-------------|------------------|
 | **200** | SearchResults |  -  |
 | **422** | APIValidationError is error format response related to input validation |  * message -  <br>  * url -  <br>  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+<a id="reposetdefaultprojectcolumn"></a>
+# **RepoSetDefaultProjectColumn**
+> void RepoSetDefaultProjectColumn (string owner, string repo, long id, long columnId)
+
+Set a project's default column
+
+The default column is where newly assigned issues land.
+
+### Example
+```csharp
+using System.Collections.Generic;
+using System.Diagnostics;
+using Gitea.Net.Api;
+using Gitea.Net.Client;
+using Gitea.Net.Model;
+
+namespace Example
+{
+    public class RepoSetDefaultProjectColumnExample
+    {
+        public static void Main()
+        {
+            Configuration config = new Configuration();
+            config.BasePath = "/api/v1";
+            // Configure API key authorization: TOTPHeader
+            config.AddApiKey("X-GITEA-OTP", "YOUR_API_KEY");
+            // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+            // config.AddApiKeyPrefix("X-GITEA-OTP", "Bearer");
+            // Configure API key authorization: AuthorizationHeaderToken
+            config.AddApiKey("Authorization", "YOUR_API_KEY");
+            // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+            // config.AddApiKeyPrefix("Authorization", "Bearer");
+            // Configure API key authorization: SudoHeader
+            config.AddApiKey("Sudo", "YOUR_API_KEY");
+            // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+            // config.AddApiKeyPrefix("Sudo", "Bearer");
+            // Configure HTTP basic authorization: BasicAuth
+            config.Username = "YOUR_USERNAME";
+            config.Password = "YOUR_PASSWORD";
+            // Configure API key authorization: AccessToken
+            config.AddApiKey("access_token", "YOUR_API_KEY");
+            // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+            // config.AddApiKeyPrefix("access_token", "Bearer");
+            // Configure API key authorization: SudoParam
+            config.AddApiKey("sudo", "YOUR_API_KEY");
+            // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+            // config.AddApiKeyPrefix("sudo", "Bearer");
+            // Configure API key authorization: Token
+            config.AddApiKey("token", "YOUR_API_KEY");
+            // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+            // config.AddApiKeyPrefix("token", "Bearer");
+
+            var apiInstance = new RepositoryApi(config);
+            var owner = "owner_example";  // string | owner of the repo
+            var repo = "repo_example";  // string | name of the repo
+            var id = 789L;  // long | id of the project
+            var columnId = 789L;  // long | id of the column
+
+            try
+            {
+                // Set a project's default column
+                apiInstance.RepoSetDefaultProjectColumn(owner, repo, id, columnId);
+            }
+            catch (ApiException  e)
+            {
+                Debug.Print("Exception when calling RepositoryApi.RepoSetDefaultProjectColumn: " + e.Message);
+                Debug.Print("Status Code: " + e.ErrorCode);
+                Debug.Print(e.StackTrace);
+            }
+        }
+    }
+}
+```
+
+#### Using the RepoSetDefaultProjectColumnWithHttpInfo variant
+This returns an ApiResponse object which contains the response data, status code and headers.
+
+```csharp
+try
+{
+    // Set a project's default column
+    apiInstance.RepoSetDefaultProjectColumnWithHttpInfo(owner, repo, id, columnId);
+}
+catch (ApiException e)
+{
+    Debug.Print("Exception when calling RepositoryApi.RepoSetDefaultProjectColumnWithHttpInfo: " + e.Message);
+    Debug.Print("Status Code: " + e.ErrorCode);
+    Debug.Print(e.StackTrace);
+}
+```
+
+### Parameters
+
+| Name | Type | Description | Notes |
+|------|------|-------------|-------|
+| **owner** | **string** | owner of the repo |  |
+| **repo** | **string** | name of the repo |  |
+| **id** | **long** | id of the project |  |
+| **columnId** | **long** | id of the column |  |
+
+### Return type
+
+void (empty response body)
+
+### Authorization
+
+[TOTPHeader](../README.md#TOTPHeader), [AuthorizationHeaderToken](../README.md#AuthorizationHeaderToken), [SudoHeader](../README.md#SudoHeader), [BasicAuth](../README.md#BasicAuth), [AccessToken](../README.md#AccessToken), [SudoParam](../README.md#SudoParam), [Token](../README.md#Token)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: Not defined
+
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+| **204** | APIEmpty is an empty response |  -  |
+| **403** | APIForbiddenError is a forbidden error response |  * message -  <br>  * url -  <br>  |
+| **404** | APINotFound is a not found empty response |  -  |
+| **423** | APIRepoArchivedError is an error that is raised when an archived repo should be modified |  * message -  <br>  * url -  <br>  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
@@ -17259,11 +24605,130 @@ catch (ApiException e)
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
+<a id="reposigningkeyssh"></a>
+# **RepoSigningKeySSH**
+> string RepoSigningKeySSH (string owner, string repo)
+
+Get signing-key.pub for given repository
+
+### Example
+```csharp
+using System.Collections.Generic;
+using System.Diagnostics;
+using Gitea.Net.Api;
+using Gitea.Net.Client;
+using Gitea.Net.Model;
+
+namespace Example
+{
+    public class RepoSigningKeySSHExample
+    {
+        public static void Main()
+        {
+            Configuration config = new Configuration();
+            config.BasePath = "/api/v1";
+            // Configure API key authorization: TOTPHeader
+            config.AddApiKey("X-GITEA-OTP", "YOUR_API_KEY");
+            // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+            // config.AddApiKeyPrefix("X-GITEA-OTP", "Bearer");
+            // Configure API key authorization: AuthorizationHeaderToken
+            config.AddApiKey("Authorization", "YOUR_API_KEY");
+            // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+            // config.AddApiKeyPrefix("Authorization", "Bearer");
+            // Configure API key authorization: SudoHeader
+            config.AddApiKey("Sudo", "YOUR_API_KEY");
+            // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+            // config.AddApiKeyPrefix("Sudo", "Bearer");
+            // Configure HTTP basic authorization: BasicAuth
+            config.Username = "YOUR_USERNAME";
+            config.Password = "YOUR_PASSWORD";
+            // Configure API key authorization: AccessToken
+            config.AddApiKey("access_token", "YOUR_API_KEY");
+            // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+            // config.AddApiKeyPrefix("access_token", "Bearer");
+            // Configure API key authorization: SudoParam
+            config.AddApiKey("sudo", "YOUR_API_KEY");
+            // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+            // config.AddApiKeyPrefix("sudo", "Bearer");
+            // Configure API key authorization: Token
+            config.AddApiKey("token", "YOUR_API_KEY");
+            // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+            // config.AddApiKeyPrefix("token", "Bearer");
+
+            var apiInstance = new RepositoryApi(config);
+            var owner = "owner_example";  // string | owner of the repo
+            var repo = "repo_example";  // string | name of the repo
+
+            try
+            {
+                // Get signing-key.pub for given repository
+                string result = apiInstance.RepoSigningKeySSH(owner, repo);
+                Debug.WriteLine(result);
+            }
+            catch (ApiException  e)
+            {
+                Debug.Print("Exception when calling RepositoryApi.RepoSigningKeySSH: " + e.Message);
+                Debug.Print("Status Code: " + e.ErrorCode);
+                Debug.Print(e.StackTrace);
+            }
+        }
+    }
+}
+```
+
+#### Using the RepoSigningKeySSHWithHttpInfo variant
+This returns an ApiResponse object which contains the response data, status code and headers.
+
+```csharp
+try
+{
+    // Get signing-key.pub for given repository
+    ApiResponse<string> response = apiInstance.RepoSigningKeySSHWithHttpInfo(owner, repo);
+    Debug.Write("Status Code: " + response.StatusCode);
+    Debug.Write("Response Headers: " + response.Headers);
+    Debug.Write("Response Body: " + response.Data);
+}
+catch (ApiException e)
+{
+    Debug.Print("Exception when calling RepositoryApi.RepoSigningKeySSHWithHttpInfo: " + e.Message);
+    Debug.Print("Status Code: " + e.ErrorCode);
+    Debug.Print(e.StackTrace);
+}
+```
+
+### Parameters
+
+| Name | Type | Description | Notes |
+|------|------|-------------|-------|
+| **owner** | **string** | owner of the repo |  |
+| **repo** | **string** | name of the repo |  |
+
+### Return type
+
+**string**
+
+### Authorization
+
+[TOTPHeader](../README.md#TOTPHeader), [AuthorizationHeaderToken](../README.md#AuthorizationHeaderToken), [SudoHeader](../README.md#SudoHeader), [BasicAuth](../README.md#BasicAuth), [AccessToken](../README.md#AccessToken), [SudoParam](../README.md#SudoParam), [Token](../README.md#Token)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: text/plain
+
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+| **200** | ssh public key |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
 <a id="reposubmitpullreview"></a>
 # **RepoSubmitPullReview**
 > PullReview RepoSubmitPullReview (string owner, string repo, long index, long id, SubmitPullReviewOptions body)
 
-Submit a pending review to an pull request
+Submit a pending review to a pull request
 
 ### Example
 ```csharp
@@ -17318,7 +24783,7 @@ namespace Example
 
             try
             {
-                // Submit a pending review to an pull request
+                // Submit a pending review to a pull request
                 PullReview result = apiInstance.RepoSubmitPullReview(owner, repo, index, id, body);
                 Debug.WriteLine(result);
             }
@@ -17339,7 +24804,7 @@ This returns an ApiResponse object which contains the response data, status code
 ```csharp
 try
 {
-    // Submit a pending review to an pull request
+    // Submit a pending review to a pull request
     ApiResponse<PullReview> response = apiInstance.RepoSubmitPullReviewWithHttpInfo(owner, repo, index, id, body);
     Debug.Write("Status Code: " + response.StatusCode);
     Debug.Write("Response Headers: " + response.Headers);
@@ -17373,7 +24838,7 @@ catch (ApiException e)
 
 ### HTTP request headers
 
- - **Content-Type**: application/json, text/plain
+ - **Content-Type**: application/json
  - **Accept**: application/json
 
 
@@ -17748,7 +25213,7 @@ catch (ApiException e)
 
 ### HTTP request headers
 
- - **Content-Type**: application/json, text/plain
+ - **Content-Type**: application/json
  - **Accept**: application/json
 
 
@@ -17888,6 +25353,126 @@ catch (ApiException e)
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
+<a id="repounresolvepullreviewcomment"></a>
+# **RepoUnresolvePullReviewComment**
+> void RepoUnresolvePullReviewComment (string owner, string repo, long id)
+
+Unresolve a pull request review comment
+
+### Example
+```csharp
+using System.Collections.Generic;
+using System.Diagnostics;
+using Gitea.Net.Api;
+using Gitea.Net.Client;
+using Gitea.Net.Model;
+
+namespace Example
+{
+    public class RepoUnresolvePullReviewCommentExample
+    {
+        public static void Main()
+        {
+            Configuration config = new Configuration();
+            config.BasePath = "/api/v1";
+            // Configure API key authorization: TOTPHeader
+            config.AddApiKey("X-GITEA-OTP", "YOUR_API_KEY");
+            // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+            // config.AddApiKeyPrefix("X-GITEA-OTP", "Bearer");
+            // Configure API key authorization: AuthorizationHeaderToken
+            config.AddApiKey("Authorization", "YOUR_API_KEY");
+            // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+            // config.AddApiKeyPrefix("Authorization", "Bearer");
+            // Configure API key authorization: SudoHeader
+            config.AddApiKey("Sudo", "YOUR_API_KEY");
+            // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+            // config.AddApiKeyPrefix("Sudo", "Bearer");
+            // Configure HTTP basic authorization: BasicAuth
+            config.Username = "YOUR_USERNAME";
+            config.Password = "YOUR_PASSWORD";
+            // Configure API key authorization: AccessToken
+            config.AddApiKey("access_token", "YOUR_API_KEY");
+            // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+            // config.AddApiKeyPrefix("access_token", "Bearer");
+            // Configure API key authorization: SudoParam
+            config.AddApiKey("sudo", "YOUR_API_KEY");
+            // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+            // config.AddApiKeyPrefix("sudo", "Bearer");
+            // Configure API key authorization: Token
+            config.AddApiKey("token", "YOUR_API_KEY");
+            // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+            // config.AddApiKeyPrefix("token", "Bearer");
+
+            var apiInstance = new RepositoryApi(config);
+            var owner = "owner_example";  // string | owner of the repo
+            var repo = "repo_example";  // string | name of the repo
+            var id = 789L;  // long | id of the review comment
+
+            try
+            {
+                // Unresolve a pull request review comment
+                apiInstance.RepoUnresolvePullReviewComment(owner, repo, id);
+            }
+            catch (ApiException  e)
+            {
+                Debug.Print("Exception when calling RepositoryApi.RepoUnresolvePullReviewComment: " + e.Message);
+                Debug.Print("Status Code: " + e.ErrorCode);
+                Debug.Print(e.StackTrace);
+            }
+        }
+    }
+}
+```
+
+#### Using the RepoUnresolvePullReviewCommentWithHttpInfo variant
+This returns an ApiResponse object which contains the response data, status code and headers.
+
+```csharp
+try
+{
+    // Unresolve a pull request review comment
+    apiInstance.RepoUnresolvePullReviewCommentWithHttpInfo(owner, repo, id);
+}
+catch (ApiException e)
+{
+    Debug.Print("Exception when calling RepositoryApi.RepoUnresolvePullReviewCommentWithHttpInfo: " + e.Message);
+    Debug.Print("Status Code: " + e.ErrorCode);
+    Debug.Print(e.StackTrace);
+}
+```
+
+### Parameters
+
+| Name | Type | Description | Notes |
+|------|------|-------------|-------|
+| **owner** | **string** | owner of the repo |  |
+| **repo** | **string** | name of the repo |  |
+| **id** | **long** | id of the review comment |  |
+
+### Return type
+
+void (empty response body)
+
+### Authorization
+
+[TOTPHeader](../README.md#TOTPHeader), [AuthorizationHeaderToken](../README.md#AuthorizationHeaderToken), [SudoHeader](../README.md#SudoHeader), [BasicAuth](../README.md#BasicAuth), [AccessToken](../README.md#AccessToken), [SudoParam](../README.md#SudoParam), [Token](../README.md#Token)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: Not defined
+
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+| **204** | APIEmpty is an empty response |  -  |
+| **400** | APIValidationError is error format response related to input validation |  * message -  <br>  * url -  <br>  |
+| **403** | APIForbiddenError is a forbidden error response |  * message -  <br>  * url -  <br>  |
+| **404** | APINotFound is a not found empty response |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
 <a id="repoupdateavatar"></a>
 # **RepoUpdateAvatar**
 > void RepoUpdateAvatar (string owner, string repo, UpdateRepoAvatarOption? body = null)
@@ -17994,7 +25579,7 @@ void (empty response body)
 
 ### HTTP request headers
 
- - **Content-Type**: application/json, text/plain
+ - **Content-Type**: application/json
  - **Accept**: Not defined
 
 
@@ -18006,11 +25591,254 @@ void (empty response body)
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
+<a id="repoupdatebranch"></a>
+# **RepoUpdateBranch**
+> void RepoUpdateBranch (string owner, string repo, string branch, UpdateBranchRepoOption? body = null)
+
+Update a branch reference to a new commit
+
+### Example
+```csharp
+using System.Collections.Generic;
+using System.Diagnostics;
+using Gitea.Net.Api;
+using Gitea.Net.Client;
+using Gitea.Net.Model;
+
+namespace Example
+{
+    public class RepoUpdateBranchExample
+    {
+        public static void Main()
+        {
+            Configuration config = new Configuration();
+            config.BasePath = "/api/v1";
+            // Configure API key authorization: TOTPHeader
+            config.AddApiKey("X-GITEA-OTP", "YOUR_API_KEY");
+            // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+            // config.AddApiKeyPrefix("X-GITEA-OTP", "Bearer");
+            // Configure API key authorization: AuthorizationHeaderToken
+            config.AddApiKey("Authorization", "YOUR_API_KEY");
+            // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+            // config.AddApiKeyPrefix("Authorization", "Bearer");
+            // Configure API key authorization: SudoHeader
+            config.AddApiKey("Sudo", "YOUR_API_KEY");
+            // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+            // config.AddApiKeyPrefix("Sudo", "Bearer");
+            // Configure HTTP basic authorization: BasicAuth
+            config.Username = "YOUR_USERNAME";
+            config.Password = "YOUR_PASSWORD";
+            // Configure API key authorization: AccessToken
+            config.AddApiKey("access_token", "YOUR_API_KEY");
+            // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+            // config.AddApiKeyPrefix("access_token", "Bearer");
+            // Configure API key authorization: SudoParam
+            config.AddApiKey("sudo", "YOUR_API_KEY");
+            // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+            // config.AddApiKeyPrefix("sudo", "Bearer");
+            // Configure API key authorization: Token
+            config.AddApiKey("token", "YOUR_API_KEY");
+            // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+            // config.AddApiKeyPrefix("token", "Bearer");
+
+            var apiInstance = new RepositoryApi(config);
+            var owner = "owner_example";  // string | owner of the repo
+            var repo = "repo_example";  // string | name of the repo
+            var branch = "branch_example";  // string | name of the branch
+            var body = new UpdateBranchRepoOption?(); // UpdateBranchRepoOption? |  (optional) 
+
+            try
+            {
+                // Update a branch reference to a new commit
+                apiInstance.RepoUpdateBranch(owner, repo, branch, body);
+            }
+            catch (ApiException  e)
+            {
+                Debug.Print("Exception when calling RepositoryApi.RepoUpdateBranch: " + e.Message);
+                Debug.Print("Status Code: " + e.ErrorCode);
+                Debug.Print(e.StackTrace);
+            }
+        }
+    }
+}
+```
+
+#### Using the RepoUpdateBranchWithHttpInfo variant
+This returns an ApiResponse object which contains the response data, status code and headers.
+
+```csharp
+try
+{
+    // Update a branch reference to a new commit
+    apiInstance.RepoUpdateBranchWithHttpInfo(owner, repo, branch, body);
+}
+catch (ApiException e)
+{
+    Debug.Print("Exception when calling RepositoryApi.RepoUpdateBranchWithHttpInfo: " + e.Message);
+    Debug.Print("Status Code: " + e.ErrorCode);
+    Debug.Print(e.StackTrace);
+}
+```
+
+### Parameters
+
+| Name | Type | Description | Notes |
+|------|------|-------------|-------|
+| **owner** | **string** | owner of the repo |  |
+| **repo** | **string** | name of the repo |  |
+| **branch** | **string** | name of the branch |  |
+| **body** | [**UpdateBranchRepoOption?**](UpdateBranchRepoOption?.md) |  | [optional]  |
+
+### Return type
+
+void (empty response body)
+
+### Authorization
+
+[TOTPHeader](../README.md#TOTPHeader), [AuthorizationHeaderToken](../README.md#AuthorizationHeaderToken), [SudoHeader](../README.md#SudoHeader), [BasicAuth](../README.md#BasicAuth), [AccessToken](../README.md#AccessToken), [SudoParam](../README.md#SudoParam), [Token](../README.md#Token)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: Not defined
+
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+| **204** | APIEmpty is an empty response |  -  |
+| **403** | APIForbiddenError is a forbidden error response |  * message -  <br>  * url -  <br>  |
+| **404** | APINotFound is a not found empty response |  -  |
+| **409** | APIConflict is a conflict empty response |  -  |
+| **422** | APIValidationError is error format response related to input validation |  * message -  <br>  * url -  <br>  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+<a id="repoupdatebranchprotectionpriories"></a>
+# **RepoUpdateBranchProtectionPriories**
+> void RepoUpdateBranchProtectionPriories (string owner, string repo, UpdateBranchProtectionPriories? body = null)
+
+Update the priorities of branch protections for a repository.
+
+### Example
+```csharp
+using System.Collections.Generic;
+using System.Diagnostics;
+using Gitea.Net.Api;
+using Gitea.Net.Client;
+using Gitea.Net.Model;
+
+namespace Example
+{
+    public class RepoUpdateBranchProtectionPrioriesExample
+    {
+        public static void Main()
+        {
+            Configuration config = new Configuration();
+            config.BasePath = "/api/v1";
+            // Configure API key authorization: TOTPHeader
+            config.AddApiKey("X-GITEA-OTP", "YOUR_API_KEY");
+            // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+            // config.AddApiKeyPrefix("X-GITEA-OTP", "Bearer");
+            // Configure API key authorization: AuthorizationHeaderToken
+            config.AddApiKey("Authorization", "YOUR_API_KEY");
+            // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+            // config.AddApiKeyPrefix("Authorization", "Bearer");
+            // Configure API key authorization: SudoHeader
+            config.AddApiKey("Sudo", "YOUR_API_KEY");
+            // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+            // config.AddApiKeyPrefix("Sudo", "Bearer");
+            // Configure HTTP basic authorization: BasicAuth
+            config.Username = "YOUR_USERNAME";
+            config.Password = "YOUR_PASSWORD";
+            // Configure API key authorization: AccessToken
+            config.AddApiKey("access_token", "YOUR_API_KEY");
+            // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+            // config.AddApiKeyPrefix("access_token", "Bearer");
+            // Configure API key authorization: SudoParam
+            config.AddApiKey("sudo", "YOUR_API_KEY");
+            // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+            // config.AddApiKeyPrefix("sudo", "Bearer");
+            // Configure API key authorization: Token
+            config.AddApiKey("token", "YOUR_API_KEY");
+            // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+            // config.AddApiKeyPrefix("token", "Bearer");
+
+            var apiInstance = new RepositoryApi(config);
+            var owner = "owner_example";  // string | owner of the repo
+            var repo = "repo_example";  // string | name of the repo
+            var body = new UpdateBranchProtectionPriories?(); // UpdateBranchProtectionPriories? |  (optional) 
+
+            try
+            {
+                // Update the priorities of branch protections for a repository.
+                apiInstance.RepoUpdateBranchProtectionPriories(owner, repo, body);
+            }
+            catch (ApiException  e)
+            {
+                Debug.Print("Exception when calling RepositoryApi.RepoUpdateBranchProtectionPriories: " + e.Message);
+                Debug.Print("Status Code: " + e.ErrorCode);
+                Debug.Print(e.StackTrace);
+            }
+        }
+    }
+}
+```
+
+#### Using the RepoUpdateBranchProtectionPrioriesWithHttpInfo variant
+This returns an ApiResponse object which contains the response data, status code and headers.
+
+```csharp
+try
+{
+    // Update the priorities of branch protections for a repository.
+    apiInstance.RepoUpdateBranchProtectionPrioriesWithHttpInfo(owner, repo, body);
+}
+catch (ApiException e)
+{
+    Debug.Print("Exception when calling RepositoryApi.RepoUpdateBranchProtectionPrioriesWithHttpInfo: " + e.Message);
+    Debug.Print("Status Code: " + e.ErrorCode);
+    Debug.Print(e.StackTrace);
+}
+```
+
+### Parameters
+
+| Name | Type | Description | Notes |
+|------|------|-------------|-------|
+| **owner** | **string** | owner of the repo |  |
+| **repo** | **string** | name of the repo |  |
+| **body** | [**UpdateBranchProtectionPriories?**](UpdateBranchProtectionPriories?.md) |  | [optional]  |
+
+### Return type
+
+void (empty response body)
+
+### Authorization
+
+[TOTPHeader](../README.md#TOTPHeader), [AuthorizationHeaderToken](../README.md#AuthorizationHeaderToken), [SudoHeader](../README.md#SudoHeader), [BasicAuth](../README.md#BasicAuth), [AccessToken](../README.md#AccessToken), [SudoParam](../README.md#SudoParam), [Token](../README.md#Token)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: Not defined
+
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+| **204** | APIEmpty is an empty response |  -  |
+| **404** | APINotFound is a not found empty response |  -  |
+| **422** | APIValidationError is error format response related to input validation |  * message -  <br>  * url -  <br>  |
+| **423** | APIRepoArchivedError is an error that is raised when an archived repo should be modified |  * message -  <br>  * url -  <br>  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
 <a id="repoupdatefile"></a>
 # **RepoUpdateFile**
 > FileResponse RepoUpdateFile (string owner, string repo, string filepath, UpdateFileOptions body)
 
-Update a file in a repository
+Update a file in a repository if SHA is set, or create the file if SHA is not set
 
 ### Example
 ```csharp
@@ -18064,7 +25892,7 @@ namespace Example
 
             try
             {
-                // Update a file in a repository
+                // Update a file in a repository if SHA is set, or create the file if SHA is not set
                 FileResponse result = apiInstance.RepoUpdateFile(owner, repo, filepath, body);
                 Debug.WriteLine(result);
             }
@@ -18085,7 +25913,7 @@ This returns an ApiResponse object which contains the response data, status code
 ```csharp
 try
 {
-    // Update a file in a repository
+    // Update a file in a repository if SHA is set, or create the file if SHA is not set
     ApiResponse<FileResponse> response = apiInstance.RepoUpdateFileWithHttpInfo(owner, repo, filepath, body);
     Debug.Write("Status Code: " + response.StatusCode);
     Debug.Write("Response Headers: " + response.Headers);
@@ -18126,6 +25954,7 @@ catch (ApiException e)
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 | **200** | FileResponse |  -  |
+| **201** | FileResponse |  -  |
 | **403** | APIError is error format response |  * message -  <br>  * url -  <br>  |
 | **404** | APINotFound is a not found empty response |  -  |
 | **422** | APIError is error format response |  * message -  <br>  * url -  <br>  |
@@ -18362,7 +26191,7 @@ void (empty response body)
 
 ### HTTP request headers
 
- - **Content-Type**: application/json, text/plain
+ - **Content-Type**: application/json
  - **Accept**: Not defined
 
 
@@ -18372,6 +26201,7 @@ void (empty response body)
 | **204** | APIEmpty is an empty response |  -  |
 | **404** | APINotFound is a not found empty response |  -  |
 | **422** | APIInvalidTopicsError is error format response to invalid topics |  * invalidTopics -  <br>  * message -  <br>  |
+| **423** | APIRepoArchivedError is an error that is raised when an archived repo should be modified |  * message -  <br>  * url -  <br>  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
@@ -18495,9 +26325,385 @@ catch (ApiException e)
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
+<a id="rerunfailedworkflowrun"></a>
+# **RerunFailedWorkflowRun**
+> void RerunFailedWorkflowRun (string owner, string repo, int run)
+
+Reruns all failed jobs in a workflow run
+
+### Example
+```csharp
+using System.Collections.Generic;
+using System.Diagnostics;
+using Gitea.Net.Api;
+using Gitea.Net.Client;
+using Gitea.Net.Model;
+
+namespace Example
+{
+    public class RerunFailedWorkflowRunExample
+    {
+        public static void Main()
+        {
+            Configuration config = new Configuration();
+            config.BasePath = "/api/v1";
+            // Configure API key authorization: TOTPHeader
+            config.AddApiKey("X-GITEA-OTP", "YOUR_API_KEY");
+            // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+            // config.AddApiKeyPrefix("X-GITEA-OTP", "Bearer");
+            // Configure API key authorization: AuthorizationHeaderToken
+            config.AddApiKey("Authorization", "YOUR_API_KEY");
+            // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+            // config.AddApiKeyPrefix("Authorization", "Bearer");
+            // Configure API key authorization: SudoHeader
+            config.AddApiKey("Sudo", "YOUR_API_KEY");
+            // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+            // config.AddApiKeyPrefix("Sudo", "Bearer");
+            // Configure HTTP basic authorization: BasicAuth
+            config.Username = "YOUR_USERNAME";
+            config.Password = "YOUR_PASSWORD";
+            // Configure API key authorization: AccessToken
+            config.AddApiKey("access_token", "YOUR_API_KEY");
+            // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+            // config.AddApiKeyPrefix("access_token", "Bearer");
+            // Configure API key authorization: SudoParam
+            config.AddApiKey("sudo", "YOUR_API_KEY");
+            // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+            // config.AddApiKeyPrefix("sudo", "Bearer");
+            // Configure API key authorization: Token
+            config.AddApiKey("token", "YOUR_API_KEY");
+            // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+            // config.AddApiKeyPrefix("token", "Bearer");
+
+            var apiInstance = new RepositoryApi(config);
+            var owner = "owner_example";  // string | owner of the repo
+            var repo = "repo_example";  // string | name of the repository
+            var run = 56;  // int | id of the run
+
+            try
+            {
+                // Reruns all failed jobs in a workflow run
+                apiInstance.RerunFailedWorkflowRun(owner, repo, run);
+            }
+            catch (ApiException  e)
+            {
+                Debug.Print("Exception when calling RepositoryApi.RerunFailedWorkflowRun: " + e.Message);
+                Debug.Print("Status Code: " + e.ErrorCode);
+                Debug.Print(e.StackTrace);
+            }
+        }
+    }
+}
+```
+
+#### Using the RerunFailedWorkflowRunWithHttpInfo variant
+This returns an ApiResponse object which contains the response data, status code and headers.
+
+```csharp
+try
+{
+    // Reruns all failed jobs in a workflow run
+    apiInstance.RerunFailedWorkflowRunWithHttpInfo(owner, repo, run);
+}
+catch (ApiException e)
+{
+    Debug.Print("Exception when calling RepositoryApi.RerunFailedWorkflowRunWithHttpInfo: " + e.Message);
+    Debug.Print("Status Code: " + e.ErrorCode);
+    Debug.Print(e.StackTrace);
+}
+```
+
+### Parameters
+
+| Name | Type | Description | Notes |
+|------|------|-------------|-------|
+| **owner** | **string** | owner of the repo |  |
+| **repo** | **string** | name of the repository |  |
+| **run** | **int** | id of the run |  |
+
+### Return type
+
+void (empty response body)
+
+### Authorization
+
+[TOTPHeader](../README.md#TOTPHeader), [AuthorizationHeaderToken](../README.md#AuthorizationHeaderToken), [SudoHeader](../README.md#SudoHeader), [BasicAuth](../README.md#BasicAuth), [AccessToken](../README.md#AccessToken), [SudoParam](../README.md#SudoParam), [Token](../README.md#Token)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: Not defined
+
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+| **201** | APIEmpty is an empty response |  -  |
+| **400** | APIError is error format response |  * message -  <br>  * url -  <br>  |
+| **403** | APIForbiddenError is a forbidden error response |  * message -  <br>  * url -  <br>  |
+| **404** | APINotFound is a not found empty response |  -  |
+| **409** | APIError is error format response |  * message -  <br>  * url -  <br>  |
+| **422** | APIValidationError is error format response related to input validation |  * message -  <br>  * url -  <br>  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+<a id="rerunworkflowjob"></a>
+# **RerunWorkflowJob**
+> ActionWorkflowJob RerunWorkflowJob (string owner, string repo, int run, int jobId)
+
+Reruns a specific workflow job in a run
+
+### Example
+```csharp
+using System.Collections.Generic;
+using System.Diagnostics;
+using Gitea.Net.Api;
+using Gitea.Net.Client;
+using Gitea.Net.Model;
+
+namespace Example
+{
+    public class RerunWorkflowJobExample
+    {
+        public static void Main()
+        {
+            Configuration config = new Configuration();
+            config.BasePath = "/api/v1";
+            // Configure API key authorization: TOTPHeader
+            config.AddApiKey("X-GITEA-OTP", "YOUR_API_KEY");
+            // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+            // config.AddApiKeyPrefix("X-GITEA-OTP", "Bearer");
+            // Configure API key authorization: AuthorizationHeaderToken
+            config.AddApiKey("Authorization", "YOUR_API_KEY");
+            // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+            // config.AddApiKeyPrefix("Authorization", "Bearer");
+            // Configure API key authorization: SudoHeader
+            config.AddApiKey("Sudo", "YOUR_API_KEY");
+            // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+            // config.AddApiKeyPrefix("Sudo", "Bearer");
+            // Configure HTTP basic authorization: BasicAuth
+            config.Username = "YOUR_USERNAME";
+            config.Password = "YOUR_PASSWORD";
+            // Configure API key authorization: AccessToken
+            config.AddApiKey("access_token", "YOUR_API_KEY");
+            // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+            // config.AddApiKeyPrefix("access_token", "Bearer");
+            // Configure API key authorization: SudoParam
+            config.AddApiKey("sudo", "YOUR_API_KEY");
+            // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+            // config.AddApiKeyPrefix("sudo", "Bearer");
+            // Configure API key authorization: Token
+            config.AddApiKey("token", "YOUR_API_KEY");
+            // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+            // config.AddApiKeyPrefix("token", "Bearer");
+
+            var apiInstance = new RepositoryApi(config);
+            var owner = "owner_example";  // string | owner of the repo
+            var repo = "repo_example";  // string | name of the repository
+            var run = 56;  // int | id of the run
+            var jobId = 56;  // int | id of the job
+
+            try
+            {
+                // Reruns a specific workflow job in a run
+                ActionWorkflowJob result = apiInstance.RerunWorkflowJob(owner, repo, run, jobId);
+                Debug.WriteLine(result);
+            }
+            catch (ApiException  e)
+            {
+                Debug.Print("Exception when calling RepositoryApi.RerunWorkflowJob: " + e.Message);
+                Debug.Print("Status Code: " + e.ErrorCode);
+                Debug.Print(e.StackTrace);
+            }
+        }
+    }
+}
+```
+
+#### Using the RerunWorkflowJobWithHttpInfo variant
+This returns an ApiResponse object which contains the response data, status code and headers.
+
+```csharp
+try
+{
+    // Reruns a specific workflow job in a run
+    ApiResponse<ActionWorkflowJob> response = apiInstance.RerunWorkflowJobWithHttpInfo(owner, repo, run, jobId);
+    Debug.Write("Status Code: " + response.StatusCode);
+    Debug.Write("Response Headers: " + response.Headers);
+    Debug.Write("Response Body: " + response.Data);
+}
+catch (ApiException e)
+{
+    Debug.Print("Exception when calling RepositoryApi.RerunWorkflowJobWithHttpInfo: " + e.Message);
+    Debug.Print("Status Code: " + e.ErrorCode);
+    Debug.Print(e.StackTrace);
+}
+```
+
+### Parameters
+
+| Name | Type | Description | Notes |
+|------|------|-------------|-------|
+| **owner** | **string** | owner of the repo |  |
+| **repo** | **string** | name of the repository |  |
+| **run** | **int** | id of the run |  |
+| **jobId** | **int** | id of the job |  |
+
+### Return type
+
+[**ActionWorkflowJob**](ActionWorkflowJob.md)
+
+### Authorization
+
+[TOTPHeader](../README.md#TOTPHeader), [AuthorizationHeaderToken](../README.md#AuthorizationHeaderToken), [SudoHeader](../README.md#SudoHeader), [BasicAuth](../README.md#BasicAuth), [AccessToken](../README.md#AccessToken), [SudoParam](../README.md#SudoParam), [Token](../README.md#Token)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+| **201** | WorkflowJob |  -  |
+| **400** | APIError is error format response |  * message -  <br>  * url -  <br>  |
+| **403** | APIForbiddenError is a forbidden error response |  * message -  <br>  * url -  <br>  |
+| **404** | APINotFound is a not found empty response |  -  |
+| **409** | APIError is error format response |  * message -  <br>  * url -  <br>  |
+| **422** | APIValidationError is error format response related to input validation |  * message -  <br>  * url -  <br>  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+<a id="rerunworkflowrun"></a>
+# **RerunWorkflowRun**
+> ActionWorkflowRun RerunWorkflowRun (string owner, string repo, int run)
+
+Reruns an entire workflow run
+
+### Example
+```csharp
+using System.Collections.Generic;
+using System.Diagnostics;
+using Gitea.Net.Api;
+using Gitea.Net.Client;
+using Gitea.Net.Model;
+
+namespace Example
+{
+    public class RerunWorkflowRunExample
+    {
+        public static void Main()
+        {
+            Configuration config = new Configuration();
+            config.BasePath = "/api/v1";
+            // Configure API key authorization: TOTPHeader
+            config.AddApiKey("X-GITEA-OTP", "YOUR_API_KEY");
+            // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+            // config.AddApiKeyPrefix("X-GITEA-OTP", "Bearer");
+            // Configure API key authorization: AuthorizationHeaderToken
+            config.AddApiKey("Authorization", "YOUR_API_KEY");
+            // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+            // config.AddApiKeyPrefix("Authorization", "Bearer");
+            // Configure API key authorization: SudoHeader
+            config.AddApiKey("Sudo", "YOUR_API_KEY");
+            // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+            // config.AddApiKeyPrefix("Sudo", "Bearer");
+            // Configure HTTP basic authorization: BasicAuth
+            config.Username = "YOUR_USERNAME";
+            config.Password = "YOUR_PASSWORD";
+            // Configure API key authorization: AccessToken
+            config.AddApiKey("access_token", "YOUR_API_KEY");
+            // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+            // config.AddApiKeyPrefix("access_token", "Bearer");
+            // Configure API key authorization: SudoParam
+            config.AddApiKey("sudo", "YOUR_API_KEY");
+            // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+            // config.AddApiKeyPrefix("sudo", "Bearer");
+            // Configure API key authorization: Token
+            config.AddApiKey("token", "YOUR_API_KEY");
+            // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+            // config.AddApiKeyPrefix("token", "Bearer");
+
+            var apiInstance = new RepositoryApi(config);
+            var owner = "owner_example";  // string | owner of the repo
+            var repo = "repo_example";  // string | name of the repository
+            var run = 56;  // int | id of the run
+
+            try
+            {
+                // Reruns an entire workflow run
+                ActionWorkflowRun result = apiInstance.RerunWorkflowRun(owner, repo, run);
+                Debug.WriteLine(result);
+            }
+            catch (ApiException  e)
+            {
+                Debug.Print("Exception when calling RepositoryApi.RerunWorkflowRun: " + e.Message);
+                Debug.Print("Status Code: " + e.ErrorCode);
+                Debug.Print(e.StackTrace);
+            }
+        }
+    }
+}
+```
+
+#### Using the RerunWorkflowRunWithHttpInfo variant
+This returns an ApiResponse object which contains the response data, status code and headers.
+
+```csharp
+try
+{
+    // Reruns an entire workflow run
+    ApiResponse<ActionWorkflowRun> response = apiInstance.RerunWorkflowRunWithHttpInfo(owner, repo, run);
+    Debug.Write("Status Code: " + response.StatusCode);
+    Debug.Write("Response Headers: " + response.Headers);
+    Debug.Write("Response Body: " + response.Data);
+}
+catch (ApiException e)
+{
+    Debug.Print("Exception when calling RepositoryApi.RerunWorkflowRunWithHttpInfo: " + e.Message);
+    Debug.Print("Status Code: " + e.ErrorCode);
+    Debug.Print(e.StackTrace);
+}
+```
+
+### Parameters
+
+| Name | Type | Description | Notes |
+|------|------|-------------|-------|
+| **owner** | **string** | owner of the repo |  |
+| **repo** | **string** | name of the repository |  |
+| **run** | **int** | id of the run |  |
+
+### Return type
+
+[**ActionWorkflowRun**](ActionWorkflowRun.md)
+
+### Authorization
+
+[TOTPHeader](../README.md#TOTPHeader), [AuthorizationHeaderToken](../README.md#AuthorizationHeaderToken), [SudoHeader](../README.md#SudoHeader), [BasicAuth](../README.md#BasicAuth), [AccessToken](../README.md#AccessToken), [SudoParam](../README.md#SudoParam), [Token](../README.md#Token)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+| **201** | WorkflowRun |  -  |
+| **400** | APIError is error format response |  * message -  <br>  * url -  <br>  |
+| **403** | APIForbiddenError is a forbidden error response |  * message -  <br>  * url -  <br>  |
+| **404** | APINotFound is a not found empty response |  -  |
+| **409** | APIError is error format response |  * message -  <br>  * url -  <br>  |
+| **422** | APIValidationError is error format response related to input validation |  * message -  <br>  * url -  <br>  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
 <a id="topicsearch"></a>
 # **TopicSearch**
-> List&lt;TopicResponse&gt; TopicSearch (string q, int? page = null, int? limit = null)
+> TopicListResponse TopicSearch (string q, int? page = null, int? limit = null)
 
 search topics via keyword
 
@@ -18553,7 +26759,7 @@ namespace Example
             try
             {
                 // search topics via keyword
-                List<TopicResponse> result = apiInstance.TopicSearch(q, page, limit);
+                TopicListResponse result = apiInstance.TopicSearch(q, page, limit);
                 Debug.WriteLine(result);
             }
             catch (ApiException  e)
@@ -18574,7 +26780,7 @@ This returns an ApiResponse object which contains the response data, status code
 try
 {
     // search topics via keyword
-    ApiResponse<List<TopicResponse>> response = apiInstance.TopicSearchWithHttpInfo(q, page, limit);
+    ApiResponse<TopicListResponse> response = apiInstance.TopicSearchWithHttpInfo(q, page, limit);
     Debug.Write("Status Code: " + response.StatusCode);
     Debug.Write("Response Headers: " + response.Headers);
     Debug.Write("Response Body: " + response.Data);
@@ -18597,7 +26803,7 @@ catch (ApiException e)
 
 ### Return type
 
-[**List&lt;TopicResponse&gt;**](TopicResponse.md)
+[**TopicListResponse**](TopicListResponse.md)
 
 ### Authorization
 
@@ -18615,6 +26821,132 @@ catch (ApiException e)
 | **200** | TopicListResponse |  -  |
 | **403** | APIForbiddenError is a forbidden error response |  * message -  <br>  * url -  <br>  |
 | **404** | APINotFound is a not found empty response |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+<a id="updatereporunner"></a>
+# **UpdateRepoRunner**
+> ActionRunner UpdateRepoRunner (string owner, string repo, string runnerId, EditActionRunnerOption? body = null)
+
+Update a repo-level runner
+
+### Example
+```csharp
+using System.Collections.Generic;
+using System.Diagnostics;
+using Gitea.Net.Api;
+using Gitea.Net.Client;
+using Gitea.Net.Model;
+
+namespace Example
+{
+    public class UpdateRepoRunnerExample
+    {
+        public static void Main()
+        {
+            Configuration config = new Configuration();
+            config.BasePath = "/api/v1";
+            // Configure API key authorization: TOTPHeader
+            config.AddApiKey("X-GITEA-OTP", "YOUR_API_KEY");
+            // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+            // config.AddApiKeyPrefix("X-GITEA-OTP", "Bearer");
+            // Configure API key authorization: AuthorizationHeaderToken
+            config.AddApiKey("Authorization", "YOUR_API_KEY");
+            // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+            // config.AddApiKeyPrefix("Authorization", "Bearer");
+            // Configure API key authorization: SudoHeader
+            config.AddApiKey("Sudo", "YOUR_API_KEY");
+            // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+            // config.AddApiKeyPrefix("Sudo", "Bearer");
+            // Configure HTTP basic authorization: BasicAuth
+            config.Username = "YOUR_USERNAME";
+            config.Password = "YOUR_PASSWORD";
+            // Configure API key authorization: AccessToken
+            config.AddApiKey("access_token", "YOUR_API_KEY");
+            // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+            // config.AddApiKeyPrefix("access_token", "Bearer");
+            // Configure API key authorization: SudoParam
+            config.AddApiKey("sudo", "YOUR_API_KEY");
+            // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+            // config.AddApiKeyPrefix("sudo", "Bearer");
+            // Configure API key authorization: Token
+            config.AddApiKey("token", "YOUR_API_KEY");
+            // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+            // config.AddApiKeyPrefix("token", "Bearer");
+
+            var apiInstance = new RepositoryApi(config);
+            var owner = "owner_example";  // string | owner of the repo
+            var repo = "repo_example";  // string | name of the repo
+            var runnerId = "runnerId_example";  // string | id of the runner
+            var body = new EditActionRunnerOption?(); // EditActionRunnerOption? |  (optional) 
+
+            try
+            {
+                // Update a repo-level runner
+                ActionRunner result = apiInstance.UpdateRepoRunner(owner, repo, runnerId, body);
+                Debug.WriteLine(result);
+            }
+            catch (ApiException  e)
+            {
+                Debug.Print("Exception when calling RepositoryApi.UpdateRepoRunner: " + e.Message);
+                Debug.Print("Status Code: " + e.ErrorCode);
+                Debug.Print(e.StackTrace);
+            }
+        }
+    }
+}
+```
+
+#### Using the UpdateRepoRunnerWithHttpInfo variant
+This returns an ApiResponse object which contains the response data, status code and headers.
+
+```csharp
+try
+{
+    // Update a repo-level runner
+    ApiResponse<ActionRunner> response = apiInstance.UpdateRepoRunnerWithHttpInfo(owner, repo, runnerId, body);
+    Debug.Write("Status Code: " + response.StatusCode);
+    Debug.Write("Response Headers: " + response.Headers);
+    Debug.Write("Response Body: " + response.Data);
+}
+catch (ApiException e)
+{
+    Debug.Print("Exception when calling RepositoryApi.UpdateRepoRunnerWithHttpInfo: " + e.Message);
+    Debug.Print("Status Code: " + e.ErrorCode);
+    Debug.Print(e.StackTrace);
+}
+```
+
+### Parameters
+
+| Name | Type | Description | Notes |
+|------|------|-------------|-------|
+| **owner** | **string** | owner of the repo |  |
+| **repo** | **string** | name of the repo |  |
+| **runnerId** | **string** | id of the runner |  |
+| **body** | [**EditActionRunnerOption?**](EditActionRunnerOption?.md) |  | [optional]  |
+
+### Return type
+
+[**ActionRunner**](ActionRunner.md)
+
+### Authorization
+
+[TOTPHeader](../README.md#TOTPHeader), [AuthorizationHeaderToken](../README.md#AuthorizationHeaderToken), [SudoHeader](../README.md#SudoHeader), [BasicAuth](../README.md#BasicAuth), [AccessToken](../README.md#AccessToken), [SudoParam](../README.md#SudoParam), [Token](../README.md#Token)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+| **200** | Runner |  -  |
+| **400** | APIError is error format response |  * message -  <br>  * url -  <br>  |
+| **404** | APINotFound is a not found empty response |  -  |
+| **422** | APIValidationError is error format response related to input validation |  * message -  <br>  * url -  <br>  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
@@ -18791,7 +27123,7 @@ namespace Example
             // config.AddApiKeyPrefix("token", "Bearer");
 
             var apiInstance = new RepositoryApi(config);
-            var owner = "owner_example";  // string | name of the owner
+            var owner = "owner_example";  // string | owner of the repo
             var repo = "repo_example";  // string | name of the repository
             var variablename = "variablename_example";  // string | name of the variable
             var body = new UpdateVariableOption?(); // UpdateVariableOption? |  (optional) 
@@ -18833,7 +27165,7 @@ catch (ApiException e)
 
 | Name | Type | Description | Notes |
 |------|------|-------------|-------|
-| **owner** | **string** | name of the owner |  |
+| **owner** | **string** | owner of the repo |  |
 | **repo** | **string** | name of the repository |  |
 | **variablename** | **string** | name of the variable |  |
 | **body** | [**UpdateVariableOption?**](UpdateVariableOption?.md) |  | [optional]  |
@@ -18848,7 +27180,7 @@ void (empty response body)
 
 ### HTTP request headers
 
- - **Content-Type**: application/json, text/plain
+ - **Content-Type**: application/json
  - **Accept**: Not defined
 
 
@@ -18971,7 +27303,7 @@ catch (ApiException e)
 ### HTTP request headers
 
  - **Content-Type**: Not defined
- - **Accept**: application/json, text/html
+ - **Accept**: application/json
 
 
 ### HTTP response details
@@ -19207,7 +27539,7 @@ catch (ApiException e)
 ### HTTP request headers
 
  - **Content-Type**: Not defined
- - **Accept**: application/json, text/html
+ - **Accept**: application/json
 
 
 ### HTTP response details
@@ -19272,7 +27604,7 @@ namespace Example
             var apiInstance = new RepositoryApi(config);
             var owner = "owner_example";  // string | owner of the repo
             var repo = "repo_example";  // string | name of the repo
-            var user = "user_example";  // string | username of user
+            var user = "user_example";  // string | username of the user whose tracked times are to be listed
 
             try
             {
@@ -19317,7 +27649,7 @@ catch (ApiException e)
 |------|------|-------------|-------|
 | **owner** | **string** | owner of the repo |  |
 | **repo** | **string** | name of the repo |  |
-| **user** | **string** | username of user |  |
+| **user** | **string** | username of the user whose tracked times are to be listed |  |
 
 ### Return type
 
