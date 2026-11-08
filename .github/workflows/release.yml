@@ -11,14 +11,14 @@ on:
 env:
   GH_TOKEN: ${{ github.token }}
 
-permissions:
-  contents: write
-
 jobs:
   publish:
     runs-on: ubuntu-latest
+    # Job-level permissions replace the workflow-level ones, so list everything this job needs.
     permissions:
-      id-token: write  # enable GitHub OIDC token issuance for this job
+      contents: write   # push the tag, create the release, upload assets, generate release notes
+      actions: read     # download artifacts and read the build run
+      id-token: write   # NuGet trusted publishing (OIDC)
     steps:
       - name: Download build version
         uses: actions/download-artifact@v8
@@ -35,7 +35,7 @@ jobs:
           run-id: ${{ github.event.inputs.workflow_run_id }}
           github-token: ${{ secrets.GITHUB_TOKEN }}
           path: ./packages
-          
+
       - name: Load version from file
         run: |
           version=$(cat version.txt | xargs)
@@ -45,7 +45,7 @@ jobs:
         with:
           path: ./repo
           fetch-depth: 0
-          
+
       - name: Checkout release commit
         working-directory: ./repo
         run: |
@@ -53,135 +53,165 @@ jobs:
           COMMIT_HASH=$(gh run view ${{ github.event.inputs.workflow_run_id }} --json headSha -q ".headSha")
           git checkout $COMMIT_HASH
 
+      # Safe to re-run: an existing tag or release for this version is reused instead of failing.
       - name: Generate Release
         working-directory: ./repo
         shell: pwsh
         run: |
           $ErrorActionPreference = "Stop"
+          # Also stop when git/gh fail (ErrorActionPreference alone ignores native commands)
+          $PSNativeCommandUseErrorActionPreference = $true
 
-          $currentTag = Get-Content -Path "../version.txt" -Raw
-          $currentTag = $currentTag.Trim()
+          $currentTag = (Get-Content -Path "../version.txt" -Raw).Trim()
+          $releaseCommit = (git rev-parse HEAD).Trim()
 
-          # Get the previous release tag
-          Write-Host "Detecting previous release tag..."
-          $gitTags = git tag --list
+          function Get-TagVersion([string]$tag) {
+              $versionPart = $tag.Split('-')[0]
+              $parsed = $null
+              if ([System.Version]::TryParse($versionPart, [ref]$parsed)) { return $parsed }
+              return $null
+          }
 
-          $tags = $gitTags | ForEach-Object {
-              $fullTag = $_
-              $isPrerelease = $fullTag -like "*-*"
-
-              if ($isPrerelease) {
-                  # For prerelease versions, extract the version part before the hyphen
-                  $versionPart = $fullTag.Split('-')[0]
-              } else {
-                  $versionPart = $fullTag
-              }
-
-              try {
-                  $version = [System.Version]$versionPart
-                  [PSCustomObject]@{
-                      FullTag = $fullTag
-                      Version = $version
-                      IsPrerelease = $isPrerelease
-                  }
-              } catch {
-                  # Skip tags that cannot be parsed into a System.Version
-                  $null
-              }
-          } | Where-Object { $_ -ne $null }
-
+          $currentVersion = Get-TagVersion $currentTag
+          if ($null -eq $currentVersion) {
+              throw "Version '$currentTag' from version.txt is not a valid version."
+          }
           $isCurrentPrerelease = $currentTag -like "*-*"
-          $latestPrerelease = ($tags | Where-Object { $_.IsPrerelease } | Sort-Object Version -Descending | Select-Object -First 1).FullTag
-          $latestStable = ($tags | Where-Object { -not $_.IsPrerelease } |  Sort-Object Version -Descending | Select-Object -First 1).FullTag
-          $latestOverall = ($tags | Sort-Object Version -Descending | Select-Object -First 1).FullTag
 
-          if ($isCurrentPrerelease) {
-              $releaseArg = "--prerelease"
-              $previousTag = $latestOverall
-          } else {
-              $releaseArg = "--latest"
-              $previousTag = $latestStable
-          }
-
-          Write-Host "Current version is prerelease: $isCurrentPrerelease"
-          Write-Host "Latest prerelease: $latestPrerelease"
-          Write-Host "Latest stable: $latestStable"
-          Write-Host "Latest overall: $latestOverall"
-          Write-Host "---"
-          Write-Host "Current tag: $currentTag"
-          Write-Host "Previous tag: $previousTag"
-
-          # Push the tag to the repository
-          Write-Host "Tagging release commit..."
-          git tag $currentTag
-          git push origin $currentTag
-
-          # Generate release notes
-          Write-Host "Generating release notes..."
-          $headers = @{
-              "Authorization" = "Bearer ${{ github.token }}"
-              "Accept" = "application/vnd.github.v3+json"
-          }
-          $body = @{
-              "tag_name" = "$currentTag"
-              "previous_tag_name" = "$previousTag"
-          } | ConvertTo-Json
-          $apiUrl = "https://api.github.com/repos/remco1271/Gitea.net/releases/generate-notes"
-          $response = Invoke-RestMethod -Uri $apiUrl -Method Post -Headers $headers -Body $body -ContentType 'application/json'
-
-          $releaseName = $response.name
-          $releaseBody = $response.body
-
-          # Move dependencies to dedicated section
-          $lines = $releaseBody -split "`n"
-          $dependenciesLines = @()
-          $otherLines = @()
-          $changelog = ""
-
-          foreach ($line in $lines) {
-              if ($line -match 'Full Changelog') {
-                  $changelog = $line
-              } elseif ($line -match '@renovate') {
-                  $dependenciesLines += $line
-              } else {
-                  $otherLines += $line
+          # Previous release: the highest version below the current one (stable only for a stable release)
+          Write-Host "Detecting previous release tag..."
+          $tags = git tag --list | ForEach-Object {
+              $version = Get-TagVersion $_
+              if ($null -ne $version -and $_ -ne $currentTag) {
+                  [PSCustomObject]@{ FullTag = $_; Version = $version; IsPrerelease = $_ -like "*-*" }
               }
           }
-
-          $releaseBody = $otherLines -join "`n"
-          if ($dependenciesLines.Count -gt 0) {
-              $releaseBody += "`## Dependency Updates`n"
-              $releaseBody += "`n<details>`n"
-              $releaseBody += "`n<summary>Expand to see all changed dependencies</summary>`n`n"
-              $releaseBody += $dependenciesLines -join "`n"
-              $releaseBody += "`n`n</details>`n"
+          $candidates = $tags | Where-Object {
+              $_.Version -lt $currentVersion -or
+              # same version: an earlier prerelease (e.g. 28.4.0-alpha1 before 28.4.0-beta1)
+              ($_.Version -eq $currentVersion -and $_.IsPrerelease -and $isCurrentPrerelease -and [string]::CompareOrdinal($_.FullTag, $currentTag) -lt 0)
           }
-          $releaseBody += "`n" + $changelog
+          if (-not $isCurrentPrerelease) {
+              $candidates = $candidates | Where-Object { -not $_.IsPrerelease }
+          }
+          $previousTag = ($candidates | Sort-Object -Property @(
+              @{ Expression = { $_.Version }; Descending = $true },
+              @{ Expression = { -not $_.IsPrerelease }; Descending = $true },
+              @{ Expression = { $_.FullTag }; Descending = $true }
+          ) | Select-Object -First 1).FullTag
+          $releaseArg = if ($isCurrentPrerelease) { "--prerelease" } else { "--latest" }
 
-          Write-Host "Release name: $releaseName"
-          Write-Host "Release body:"
-          Write-Host $releaseBody
+          Write-Host "Current tag: $currentTag (prerelease: $isCurrentPrerelease)"
+          Write-Host "Release commit: $releaseCommit"
+          Write-Host "Previous tag: $(if ($previousTag) { $previousTag } else { '<none>' })"
 
-          # Create release
-          Write-Host "Creating release..."
-          $notesFilePath = "./RELEASE_NOTES.md"
-          $releaseBody | Out-File -FilePath $notesFilePath -Encoding utf8
-          gh release create $currentTag --title $releaseName --notes-file $notesFilePath $releaseArg --verify-tag
+          # Tag the release commit (reuse the tag if a previous attempt already pushed it)
+          $existingTagCommit = git rev-parse -q --verify "refs/tags/$currentTag^{commit}" 2>$null
+          if ($existingTagCommit) {
+              if ($existingTagCommit.Trim() -ne $releaseCommit) {
+                  throw "Tag $currentTag already exists on commit $existingTagCommit, not on $releaseCommit. Bump <Version> in src/Gitea.Net/Gitea.Net.csproj."
+              }
+              Write-Host "Tag $currentTag already exists on the release commit, reusing it."
+          } else {
+              Write-Host "Tagging release commit..."
+              git tag $currentTag $releaseCommit
+              git push origin "refs/tags/$currentTag"
+          }
 
-          # Upload artifacts
+          # Create the GitHub release unless a previous attempt already did
+          $PSNativeCommandUseErrorActionPreference = $false
+          gh release view $currentTag --json tagName *> $null
+          $releaseExists = $LASTEXITCODE -eq 0
+          $PSNativeCommandUseErrorActionPreference = $true
+
+          if ($releaseExists) {
+              Write-Host "Release $currentTag already exists, skipping creation."
+          } else {
+              Write-Host "Generating release notes..."
+              $headers = @{
+                  "Authorization" = "Bearer ${{ github.token }}"
+                  "Accept" = "application/vnd.github+json"
+              }
+              $request = @{ "tag_name" = $currentTag }
+              if ($previousTag) { $request["previous_tag_name"] = $previousTag }
+              $apiUrl = "https://api.github.com/repos/${{ github.repository }}/releases/generate-notes"
+              $response = Invoke-RestMethod -Uri $apiUrl -Method Post -Headers $headers -Body ($request | ConvertTo-Json) -ContentType 'application/json'
+
+              $releaseName = $response.name
+
+              # Move Renovate dependency updates to their own collapsed section
+              $dependencyLines = @()
+              $otherLines = @()
+              $changelog = ""
+              foreach ($line in ($response.body -split "`r?`n")) {
+                  if ($line -match 'Full Changelog') {
+                      $changelog = $line
+                  } elseif ($line -match '@renovate') {
+                      $dependencyLines += $line
+                  } else {
+                      $otherLines += $line
+                  }
+              }
+
+              $releaseBody = ($otherLines -join "`n").TrimEnd()
+              if ($dependencyLines.Count -gt 0) {
+                  $releaseBody += "`n`n## Dependency Updates`n`n"
+                  $releaseBody += "<details>`n<summary>Expand to see all changed dependencies</summary>`n`n"
+                  $releaseBody += $dependencyLines -join "`n"
+                  $releaseBody += "`n`n</details>"
+              }
+              if ($changelog) {
+                  $releaseBody += "`n`n" + $changelog
+              }
+
+              Write-Host "Release name: $releaseName"
+              Write-Host "Release body:"
+              Write-Host $releaseBody
+
+              Write-Host "Creating release..."
+              $notesFilePath = "../RELEASE_NOTES.md"
+              $releaseBody | Out-File -FilePath $notesFilePath -Encoding utf8
+              gh release create $currentTag --title $releaseName --notes-file $notesFilePath $releaseArg --verify-tag
+          }
+
+          # Upload (or replace) the packages on the release
           Write-Host "Uploading artifacts..."
-          gh release upload $currentTag (get-item ../packages/*.nupkg)
-          
-      # Get a short-lived NuGet API key
+          $assets = Get-ChildItem -Path ../packages -File | Where-Object { $_.Extension -in '.nupkg', '.snupkg' } | ForEach-Object { $_.FullName }
+          if (-not ($assets | Where-Object { $_ -like '*.nupkg' })) { throw "No .nupkg files found in ../packages" }
+          gh release upload $currentTag @assets --clobber
+
+      # Get a short-lived NuGet API key via trusted publishing.
+      # Needs a trusted publishing policy for this repo/workflow on nuget.org and the NUGET_USER secret
+      # (your nuget.org profile name, not your email address).
       - name: NuGet login (OIDC → temp API key)
         uses: NuGet/login@v1
         id: login
         with:
-          user: contoso-bot # Recommended: use a secret like ${{ secrets.NUGET_USER }} for your nuget.org username (profile name), NOT your email address
-    
-      # Push the package
+          user: ${{ secrets.NUGET_USER }}
+
+      # --skip-duplicate keeps re-runs working when a package is already on nuget.org.
+      # Symbols are pushed in their own step: the automatic .snupkg push is skipped
+      # whenever the .nupkg is skipped as a duplicate, so a re-run would never publish them.
       - name: Publish NuGet Packages
         run: |
-          for f in packages/*.nupkg; do
-            dotnet nuget push "$f" --api-key ${{steps.login.outputs.NUGET_API_KEY}} --source https://api.nuget.org/v3/index.json
+          shopt -s nullglob
+          packages=(packages/*.nupkg)
+          if [ ${#packages[@]} -eq 0 ]; then
+            echo "::error::No .nupkg files found in packages/"
+            exit 1
+          fi
+          for f in "${packages[@]}"; do
+            dotnet nuget push "$f" --api-key ${{ steps.login.outputs.NUGET_API_KEY }} --source https://api.nuget.org/v3/index.json --skip-duplicate --no-symbols
+          done
+
+      - name: Publish NuGet Symbol Packages
+        run: |
+          shopt -s nullglob
+          symbols=(packages/*.snupkg)
+          if [ ${#symbols[@]} -eq 0 ]; then
+            echo "::error::No .snupkg files found in packages/ (check IncludeSymbols in Gitea.Net.csproj)"
+            exit 1
+          fi
+          for f in "${symbols[@]}"; do
+            dotnet nuget push "$f" --api-key ${{ steps.login.outputs.NUGET_API_KEY }} --source https://api.nuget.org/v3/index.json --skip-duplicate
           done
