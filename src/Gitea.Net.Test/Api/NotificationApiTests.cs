@@ -75,7 +75,7 @@ namespace Gitea.Net.Test.Api
             instance.NotifyGetList(all, statusTypes, subjectType, since, before, page, limit);
             Verify(client.TakeSingle());
 
-            await instance.NotifyGetListAsync(all, statusTypes, subjectType, since, before, page, limit);
+            await instance.NotifyGetListAsync(all, statusTypes, subjectType, since, before, page, limit, cancellationToken: TestContext.Current.CancellationToken);
             Verify(client.TakeSingle());
         }
 
@@ -113,7 +113,7 @@ namespace Gitea.Net.Test.Api
             instance.NotifyGetRepoList(owner, repo, all, statusTypes, subjectType, since, before, page, limit);
             Verify(client.TakeSingle());
 
-            await instance.NotifyGetRepoListAsync(owner, repo, all, statusTypes, subjectType, since, before, page, limit);
+            await instance.NotifyGetRepoListAsync(owner, repo, all, statusTypes, subjectType, since, before, page, limit, cancellationToken: TestContext.Current.CancellationToken);
             Verify(client.TakeSingle());
         }
 
@@ -135,7 +135,7 @@ namespace Gitea.Net.Test.Api
             instance.NotifyGetThread(id);
             Verify(client.TakeSingle());
 
-            await instance.NotifyGetThreadAsync(id);
+            await instance.NotifyGetThreadAsync(id, cancellationToken: TestContext.Current.CancellationToken);
             Verify(client.TakeSingle());
         }
 
@@ -156,7 +156,7 @@ namespace Gitea.Net.Test.Api
             instance.NotifyNewAvailable();
             Verify(client.TakeSingle());
 
-            await instance.NotifyNewAvailableAsync();
+            await instance.NotifyNewAvailableAsync(cancellationToken: TestContext.Current.CancellationToken);
             Verify(client.TakeSingle());
         }
 
@@ -184,7 +184,7 @@ namespace Gitea.Net.Test.Api
             instance.NotifyReadList(lastReadAt, all, statusTypes, toStatus);
             Verify(client.TakeSingle());
 
-            await instance.NotifyReadListAsync(lastReadAt, all, statusTypes, toStatus);
+            await instance.NotifyReadListAsync(lastReadAt, all, statusTypes, toStatus, cancellationToken: TestContext.Current.CancellationToken);
             Verify(client.TakeSingle());
         }
 
@@ -216,7 +216,7 @@ namespace Gitea.Net.Test.Api
             instance.NotifyReadRepoList(owner, repo, all, statusTypes, toStatus, lastReadAt);
             Verify(client.TakeSingle());
 
-            await instance.NotifyReadRepoListAsync(owner, repo, all, statusTypes, toStatus, lastReadAt);
+            await instance.NotifyReadRepoListAsync(owner, repo, all, statusTypes, toStatus, lastReadAt, cancellationToken: TestContext.Current.CancellationToken);
             Verify(client.TakeSingle());
         }
 
@@ -240,7 +240,7 @@ namespace Gitea.Net.Test.Api
             instance.NotifyReadThread(id, toStatus);
             Verify(client.TakeSingle());
 
-            await instance.NotifyReadThreadAsync(id, toStatus);
+            await instance.NotifyReadThreadAsync(id, toStatus, cancellationToken: TestContext.Current.CancellationToken);
             Verify(client.TakeSingle());
         }
     }

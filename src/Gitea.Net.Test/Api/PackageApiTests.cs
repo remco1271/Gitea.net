@@ -67,7 +67,7 @@ namespace Gitea.Net.Test.Api
             instance.DeletePackage(owner, type, name);
             Verify(client.TakeSingle());
 
-            await instance.DeletePackageAsync(owner, type, name);
+            await instance.DeletePackageAsync(owner, type, name, cancellationToken: TestContext.Current.CancellationToken);
             Verify(client.TakeSingle());
         }
 
@@ -95,7 +95,7 @@ namespace Gitea.Net.Test.Api
             instance.DeletePackageVersion(owner, type, name, version);
             Verify(client.TakeSingle());
 
-            await instance.DeletePackageVersionAsync(owner, type, name, version);
+            await instance.DeletePackageVersionAsync(owner, type, name, version, cancellationToken: TestContext.Current.CancellationToken);
             Verify(client.TakeSingle());
         }
 
@@ -121,7 +121,7 @@ namespace Gitea.Net.Test.Api
             instance.GetLatestPackageVersion(owner, type, name);
             Verify(client.TakeSingle());
 
-            await instance.GetLatestPackageVersionAsync(owner, type, name);
+            await instance.GetLatestPackageVersionAsync(owner, type, name, cancellationToken: TestContext.Current.CancellationToken);
             Verify(client.TakeSingle());
         }
 
@@ -149,7 +149,7 @@ namespace Gitea.Net.Test.Api
             instance.GetPackage(owner, type, name, version);
             Verify(client.TakeSingle());
 
-            await instance.GetPackageAsync(owner, type, name, version);
+            await instance.GetPackageAsync(owner, type, name, version, cancellationToken: TestContext.Current.CancellationToken);
             Verify(client.TakeSingle());
         }
 
@@ -177,7 +177,7 @@ namespace Gitea.Net.Test.Api
             instance.LinkPackage(owner, type, name, repoName);
             Verify(client.TakeSingle());
 
-            await instance.LinkPackageAsync(owner, type, name, repoName);
+            await instance.LinkPackageAsync(owner, type, name, repoName, cancellationToken: TestContext.Current.CancellationToken);
             Verify(client.TakeSingle());
         }
 
@@ -205,7 +205,7 @@ namespace Gitea.Net.Test.Api
             instance.ListPackageFiles(owner, type, name, version);
             Verify(client.TakeSingle());
 
-            await instance.ListPackageFilesAsync(owner, type, name, version);
+            await instance.ListPackageFilesAsync(owner, type, name, version, cancellationToken: TestContext.Current.CancellationToken);
             Verify(client.TakeSingle());
         }
 
@@ -235,7 +235,7 @@ namespace Gitea.Net.Test.Api
             instance.ListPackageVersions(owner, type, name, page, limit);
             Verify(client.TakeSingle());
 
-            await instance.ListPackageVersionsAsync(owner, type, name, page, limit);
+            await instance.ListPackageVersionsAsync(owner, type, name, page, limit, cancellationToken: TestContext.Current.CancellationToken);
             Verify(client.TakeSingle());
         }
 
@@ -265,7 +265,7 @@ namespace Gitea.Net.Test.Api
             instance.ListPackages(owner, page, limit, type, q);
             Verify(client.TakeSingle());
 
-            await instance.ListPackagesAsync(owner, page, limit, type, q);
+            await instance.ListPackagesAsync(owner, page, limit, type, q, cancellationToken: TestContext.Current.CancellationToken);
             Verify(client.TakeSingle());
         }
 
@@ -291,7 +291,7 @@ namespace Gitea.Net.Test.Api
             instance.UnlinkPackage(owner, type, name);
             Verify(client.TakeSingle());
 
-            await instance.UnlinkPackageAsync(owner, type, name);
+            await instance.UnlinkPackageAsync(owner, type, name, cancellationToken: TestContext.Current.CancellationToken);
             Verify(client.TakeSingle());
         }
     }

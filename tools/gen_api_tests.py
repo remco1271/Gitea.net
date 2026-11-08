@@ -155,6 +155,8 @@ for api_file in api_files:
         if op["secured"]:
             checks.append("RequestAssert.HasAuthToken(r);")
         call = ", ".join(args)
+        # xunit.v3 (xUnit1051): pass the test's cancellation token to async calls
+        async_call = ", ".join(args + ["cancellationToken: TestContext.Current.CancellationToken"])
         check_body = "\n".join("                " + c for c in checks)
         dep = op.get("deprecated")
         pre = "#pragma warning disable CS0612 // deprecated endpoint\n" if dep else ""
@@ -175,7 +177,7 @@ for api_file in api_files:
             instance.{name}({call});
             Verify(client.TakeSingle());
 
-            await instance.{name}Async({call});
+            await instance.{name}Async({async_call});
             Verify(client.TakeSingle());
         }}
 """ + post)

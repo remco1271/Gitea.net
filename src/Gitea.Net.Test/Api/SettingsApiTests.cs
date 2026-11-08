@@ -62,7 +62,7 @@ namespace Gitea.Net.Test.Api
             instance.GetGeneralAPISettings();
             Verify(client.TakeSingle());
 
-            await instance.GetGeneralAPISettingsAsync();
+            await instance.GetGeneralAPISettingsAsync(cancellationToken: TestContext.Current.CancellationToken);
             Verify(client.TakeSingle());
         }
 
@@ -83,7 +83,7 @@ namespace Gitea.Net.Test.Api
             instance.GetGeneralAttachmentSettings();
             Verify(client.TakeSingle());
 
-            await instance.GetGeneralAttachmentSettingsAsync();
+            await instance.GetGeneralAttachmentSettingsAsync(cancellationToken: TestContext.Current.CancellationToken);
             Verify(client.TakeSingle());
         }
 
@@ -104,7 +104,7 @@ namespace Gitea.Net.Test.Api
             instance.GetGeneralRepositorySettings();
             Verify(client.TakeSingle());
 
-            await instance.GetGeneralRepositorySettingsAsync();
+            await instance.GetGeneralRepositorySettingsAsync(cancellationToken: TestContext.Current.CancellationToken);
             Verify(client.TakeSingle());
         }
 
@@ -125,7 +125,7 @@ namespace Gitea.Net.Test.Api
             instance.GetGeneralUISettings();
             Verify(client.TakeSingle());
 
-            await instance.GetGeneralUISettingsAsync();
+            await instance.GetGeneralUISettingsAsync(cancellationToken: TestContext.Current.CancellationToken);
             Verify(client.TakeSingle());
         }
     }

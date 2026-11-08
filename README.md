@@ -51,7 +51,14 @@ using Gitea.Net.Model;
 <a id="packaging"></a>
 ## Packaging
 
-The package version is calculated by [Nerdbank.GitVersioning](https://github.com/dotnet/Nerdbank.GitVersioning) from `version.json` and the git history. To create the package locally:
+The package version follows the Gitea API version: package `28.3.x` is built from Gitea API `28.3.0`. The version is set in `<Version>` in [src/Gitea.Net/Gitea.Net.csproj](src/Gitea.Net/Gitea.Net.csproj):
+
+- Regenerated for a new Gitea API version: set it to that API version (for example `28.4.0`).
+- Library-only changes or fixes: bump the last part (`28.3.0` → `28.3.1`).
+
+A push to `master` with a version that has no git tag yet creates a GitHub release and publishes it to NuGet. Pushes that keep the same version only build and test.
+
+To create the package locally:
 
 ```
 dotnet pack -c Release

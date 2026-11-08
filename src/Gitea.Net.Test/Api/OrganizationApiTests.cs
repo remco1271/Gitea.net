@@ -65,7 +65,7 @@ namespace Gitea.Net.Test.Api
             instance.CreateOrgRepo(org, body);
             Verify(client.TakeSingle());
 
-            await instance.CreateOrgRepoAsync(org, body);
+            await instance.CreateOrgRepoAsync(org, body, cancellationToken: TestContext.Current.CancellationToken);
             Verify(client.TakeSingle());
         }
 
@@ -90,7 +90,7 @@ namespace Gitea.Net.Test.Api
             instance.CreateOrgRepoDeprecated(org, body);
             Verify(client.TakeSingle());
 
-            await instance.CreateOrgRepoDeprecatedAsync(org, body);
+            await instance.CreateOrgRepoDeprecatedAsync(org, body, cancellationToken: TestContext.Current.CancellationToken);
             Verify(client.TakeSingle());
         }
 #pragma warning restore CS0612
@@ -117,7 +117,7 @@ namespace Gitea.Net.Test.Api
             instance.CreateOrgVariable(org, variablename, body);
             Verify(client.TakeSingle());
 
-            await instance.CreateOrgVariableAsync(org, variablename, body);
+            await instance.CreateOrgVariableAsync(org, variablename, body, cancellationToken: TestContext.Current.CancellationToken);
             Verify(client.TakeSingle());
         }
 
@@ -141,7 +141,7 @@ namespace Gitea.Net.Test.Api
             instance.DeleteOrgRunner(org, runnerId);
             Verify(client.TakeSingle());
 
-            await instance.DeleteOrgRunnerAsync(org, runnerId);
+            await instance.DeleteOrgRunnerAsync(org, runnerId, cancellationToken: TestContext.Current.CancellationToken);
             Verify(client.TakeSingle());
         }
 
@@ -165,7 +165,7 @@ namespace Gitea.Net.Test.Api
             instance.DeleteOrgSecret(org, secretname);
             Verify(client.TakeSingle());
 
-            await instance.DeleteOrgSecretAsync(org, secretname);
+            await instance.DeleteOrgSecretAsync(org, secretname, cancellationToken: TestContext.Current.CancellationToken);
             Verify(client.TakeSingle());
         }
 
@@ -189,7 +189,7 @@ namespace Gitea.Net.Test.Api
             instance.DeleteOrgVariable(org, variablename);
             Verify(client.TakeSingle());
 
-            await instance.DeleteOrgVariableAsync(org, variablename);
+            await instance.DeleteOrgVariableAsync(org, variablename, cancellationToken: TestContext.Current.CancellationToken);
             Verify(client.TakeSingle());
         }
 
@@ -213,7 +213,7 @@ namespace Gitea.Net.Test.Api
             instance.GetOrgRunner(org, runnerId);
             Verify(client.TakeSingle());
 
-            await instance.GetOrgRunnerAsync(org, runnerId);
+            await instance.GetOrgRunnerAsync(org, runnerId, cancellationToken: TestContext.Current.CancellationToken);
             Verify(client.TakeSingle());
         }
 
@@ -237,7 +237,7 @@ namespace Gitea.Net.Test.Api
             instance.GetOrgRunners(org, disabled);
             Verify(client.TakeSingle());
 
-            await instance.GetOrgRunnersAsync(org, disabled);
+            await instance.GetOrgRunnersAsync(org, disabled, cancellationToken: TestContext.Current.CancellationToken);
             Verify(client.TakeSingle());
         }
 
@@ -261,7 +261,7 @@ namespace Gitea.Net.Test.Api
             instance.GetOrgVariable(org, variablename);
             Verify(client.TakeSingle());
 
-            await instance.GetOrgVariableAsync(org, variablename);
+            await instance.GetOrgVariableAsync(org, variablename, cancellationToken: TestContext.Current.CancellationToken);
             Verify(client.TakeSingle());
         }
 
@@ -287,7 +287,7 @@ namespace Gitea.Net.Test.Api
             instance.GetOrgVariablesList(org, page, limit);
             Verify(client.TakeSingle());
 
-            await instance.GetOrgVariablesListAsync(org, page, limit);
+            await instance.GetOrgVariablesListAsync(org, page, limit, cancellationToken: TestContext.Current.CancellationToken);
             Verify(client.TakeSingle());
         }
 
@@ -315,7 +315,7 @@ namespace Gitea.Net.Test.Api
             instance.GetOrgWorkflowJobs(org, status, page, limit);
             Verify(client.TakeSingle());
 
-            await instance.GetOrgWorkflowJobsAsync(org, status, page, limit);
+            await instance.GetOrgWorkflowJobsAsync(org, status, page, limit, cancellationToken: TestContext.Current.CancellationToken);
             Verify(client.TakeSingle());
         }
 
@@ -351,7 +351,7 @@ namespace Gitea.Net.Test.Api
             instance.GetOrgWorkflowRuns(org, varEvent, branch, status, actor, headSha, page, limit);
             Verify(client.TakeSingle());
 
-            await instance.GetOrgWorkflowRunsAsync(org, varEvent, branch, status, actor, headSha, page, limit);
+            await instance.GetOrgWorkflowRunsAsync(org, varEvent, branch, status, actor, headSha, page, limit, cancellationToken: TestContext.Current.CancellationToken);
             Verify(client.TakeSingle());
         }
 
@@ -379,7 +379,7 @@ namespace Gitea.Net.Test.Api
             instance.OrgAddIssueToProjectColumn(org, id, columnId, issueId);
             Verify(client.TakeSingle());
 
-            await instance.OrgAddIssueToProjectColumnAsync(org, id, columnId, issueId);
+            await instance.OrgAddIssueToProjectColumnAsync(org, id, columnId, issueId, cancellationToken: TestContext.Current.CancellationToken);
             Verify(client.TakeSingle());
         }
 
@@ -403,7 +403,7 @@ namespace Gitea.Net.Test.Api
             instance.OrgAddTeamMember(id, username);
             Verify(client.TakeSingle());
 
-            await instance.OrgAddTeamMemberAsync(id, username);
+            await instance.OrgAddTeamMemberAsync(id, username, cancellationToken: TestContext.Current.CancellationToken);
             Verify(client.TakeSingle());
         }
 
@@ -429,7 +429,7 @@ namespace Gitea.Net.Test.Api
             instance.OrgAddTeamRepository(id, org, repo);
             Verify(client.TakeSingle());
 
-            await instance.OrgAddTeamRepositoryAsync(id, org, repo);
+            await instance.OrgAddTeamRepositoryAsync(id, org, repo, cancellationToken: TestContext.Current.CancellationToken);
             Verify(client.TakeSingle());
         }
 
@@ -453,7 +453,7 @@ namespace Gitea.Net.Test.Api
             instance.OrgConcealMember(org, username);
             Verify(client.TakeSingle());
 
-            await instance.OrgConcealMemberAsync(org, username);
+            await instance.OrgConcealMemberAsync(org, username, cancellationToken: TestContext.Current.CancellationToken);
             Verify(client.TakeSingle());
         }
 
@@ -475,7 +475,7 @@ namespace Gitea.Net.Test.Api
             instance.OrgCreate(organization);
             Verify(client.TakeSingle());
 
-            await instance.OrgCreateAsync(organization);
+            await instance.OrgCreateAsync(organization, cancellationToken: TestContext.Current.CancellationToken);
             Verify(client.TakeSingle());
         }
 
@@ -499,7 +499,7 @@ namespace Gitea.Net.Test.Api
             instance.OrgCreateHook(org, body);
             Verify(client.TakeSingle());
 
-            await instance.OrgCreateHookAsync(org, body);
+            await instance.OrgCreateHookAsync(org, body, cancellationToken: TestContext.Current.CancellationToken);
             Verify(client.TakeSingle());
         }
 
@@ -523,7 +523,7 @@ namespace Gitea.Net.Test.Api
             instance.OrgCreateLabel(org, body);
             Verify(client.TakeSingle());
 
-            await instance.OrgCreateLabelAsync(org, body);
+            await instance.OrgCreateLabelAsync(org, body, cancellationToken: TestContext.Current.CancellationToken);
             Verify(client.TakeSingle());
         }
 
@@ -547,7 +547,7 @@ namespace Gitea.Net.Test.Api
             instance.OrgCreateProject(org, body);
             Verify(client.TakeSingle());
 
-            await instance.OrgCreateProjectAsync(org, body);
+            await instance.OrgCreateProjectAsync(org, body, cancellationToken: TestContext.Current.CancellationToken);
             Verify(client.TakeSingle());
         }
 
@@ -573,7 +573,7 @@ namespace Gitea.Net.Test.Api
             instance.OrgCreateProjectColumn(org, id, body);
             Verify(client.TakeSingle());
 
-            await instance.OrgCreateProjectColumnAsync(org, id, body);
+            await instance.OrgCreateProjectColumnAsync(org, id, body, cancellationToken: TestContext.Current.CancellationToken);
             Verify(client.TakeSingle());
         }
 
@@ -595,7 +595,7 @@ namespace Gitea.Net.Test.Api
             instance.OrgCreateRunnerRegistrationToken(org);
             Verify(client.TakeSingle());
 
-            await instance.OrgCreateRunnerRegistrationTokenAsync(org);
+            await instance.OrgCreateRunnerRegistrationTokenAsync(org, cancellationToken: TestContext.Current.CancellationToken);
             Verify(client.TakeSingle());
         }
 
@@ -619,7 +619,7 @@ namespace Gitea.Net.Test.Api
             instance.OrgCreateTeam(org, body);
             Verify(client.TakeSingle());
 
-            await instance.OrgCreateTeamAsync(org, body);
+            await instance.OrgCreateTeamAsync(org, body, cancellationToken: TestContext.Current.CancellationToken);
             Verify(client.TakeSingle());
         }
 
@@ -641,7 +641,7 @@ namespace Gitea.Net.Test.Api
             instance.OrgDelete(org);
             Verify(client.TakeSingle());
 
-            await instance.OrgDeleteAsync(org);
+            await instance.OrgDeleteAsync(org, cancellationToken: TestContext.Current.CancellationToken);
             Verify(client.TakeSingle());
         }
 
@@ -663,7 +663,7 @@ namespace Gitea.Net.Test.Api
             instance.OrgDeleteAvatar(org);
             Verify(client.TakeSingle());
 
-            await instance.OrgDeleteAvatarAsync(org);
+            await instance.OrgDeleteAvatarAsync(org, cancellationToken: TestContext.Current.CancellationToken);
             Verify(client.TakeSingle());
         }
 
@@ -687,7 +687,7 @@ namespace Gitea.Net.Test.Api
             instance.OrgDeleteHook(org, id);
             Verify(client.TakeSingle());
 
-            await instance.OrgDeleteHookAsync(org, id);
+            await instance.OrgDeleteHookAsync(org, id, cancellationToken: TestContext.Current.CancellationToken);
             Verify(client.TakeSingle());
         }
 
@@ -711,7 +711,7 @@ namespace Gitea.Net.Test.Api
             instance.OrgDeleteLabel(org, id);
             Verify(client.TakeSingle());
 
-            await instance.OrgDeleteLabelAsync(org, id);
+            await instance.OrgDeleteLabelAsync(org, id, cancellationToken: TestContext.Current.CancellationToken);
             Verify(client.TakeSingle());
         }
 
@@ -735,7 +735,7 @@ namespace Gitea.Net.Test.Api
             instance.OrgDeleteMember(org, username);
             Verify(client.TakeSingle());
 
-            await instance.OrgDeleteMemberAsync(org, username);
+            await instance.OrgDeleteMemberAsync(org, username, cancellationToken: TestContext.Current.CancellationToken);
             Verify(client.TakeSingle());
         }
 
@@ -759,7 +759,7 @@ namespace Gitea.Net.Test.Api
             instance.OrgDeleteProject(org, id);
             Verify(client.TakeSingle());
 
-            await instance.OrgDeleteProjectAsync(org, id);
+            await instance.OrgDeleteProjectAsync(org, id, cancellationToken: TestContext.Current.CancellationToken);
             Verify(client.TakeSingle());
         }
 
@@ -785,7 +785,7 @@ namespace Gitea.Net.Test.Api
             instance.OrgDeleteProjectColumn(org, id, columnId);
             Verify(client.TakeSingle());
 
-            await instance.OrgDeleteProjectColumnAsync(org, id, columnId);
+            await instance.OrgDeleteProjectColumnAsync(org, id, columnId, cancellationToken: TestContext.Current.CancellationToken);
             Verify(client.TakeSingle());
         }
 
@@ -807,7 +807,7 @@ namespace Gitea.Net.Test.Api
             instance.OrgDeleteRepos(org);
             Verify(client.TakeSingle());
 
-            await instance.OrgDeleteReposAsync(org);
+            await instance.OrgDeleteReposAsync(org, cancellationToken: TestContext.Current.CancellationToken);
             Verify(client.TakeSingle());
         }
 
@@ -829,7 +829,7 @@ namespace Gitea.Net.Test.Api
             instance.OrgDeleteTeam(id);
             Verify(client.TakeSingle());
 
-            await instance.OrgDeleteTeamAsync(id);
+            await instance.OrgDeleteTeamAsync(id, cancellationToken: TestContext.Current.CancellationToken);
             Verify(client.TakeSingle());
         }
 
@@ -853,7 +853,7 @@ namespace Gitea.Net.Test.Api
             instance.OrgEdit(org, body);
             Verify(client.TakeSingle());
 
-            await instance.OrgEditAsync(org, body);
+            await instance.OrgEditAsync(org, body, cancellationToken: TestContext.Current.CancellationToken);
             Verify(client.TakeSingle());
         }
 
@@ -879,7 +879,7 @@ namespace Gitea.Net.Test.Api
             instance.OrgEditHook(org, id, body);
             Verify(client.TakeSingle());
 
-            await instance.OrgEditHookAsync(org, id, body);
+            await instance.OrgEditHookAsync(org, id, body, cancellationToken: TestContext.Current.CancellationToken);
             Verify(client.TakeSingle());
         }
 
@@ -905,7 +905,7 @@ namespace Gitea.Net.Test.Api
             instance.OrgEditLabel(org, id, body);
             Verify(client.TakeSingle());
 
-            await instance.OrgEditLabelAsync(org, id, body);
+            await instance.OrgEditLabelAsync(org, id, body, cancellationToken: TestContext.Current.CancellationToken);
             Verify(client.TakeSingle());
         }
 
@@ -931,7 +931,7 @@ namespace Gitea.Net.Test.Api
             instance.OrgEditProject(org, id, body);
             Verify(client.TakeSingle());
 
-            await instance.OrgEditProjectAsync(org, id, body);
+            await instance.OrgEditProjectAsync(org, id, body, cancellationToken: TestContext.Current.CancellationToken);
             Verify(client.TakeSingle());
         }
 
@@ -959,7 +959,7 @@ namespace Gitea.Net.Test.Api
             instance.OrgEditProjectColumn(org, id, columnId, body);
             Verify(client.TakeSingle());
 
-            await instance.OrgEditProjectColumnAsync(org, id, columnId, body);
+            await instance.OrgEditProjectColumnAsync(org, id, columnId, body, cancellationToken: TestContext.Current.CancellationToken);
             Verify(client.TakeSingle());
         }
 
@@ -983,7 +983,7 @@ namespace Gitea.Net.Test.Api
             instance.OrgEditTeam(id, body);
             Verify(client.TakeSingle());
 
-            await instance.OrgEditTeamAsync(id, body);
+            await instance.OrgEditTeamAsync(id, body, cancellationToken: TestContext.Current.CancellationToken);
             Verify(client.TakeSingle());
         }
 
@@ -1005,7 +1005,7 @@ namespace Gitea.Net.Test.Api
             instance.OrgGet(org);
             Verify(client.TakeSingle());
 
-            await instance.OrgGetAsync(org);
+            await instance.OrgGetAsync(org, cancellationToken: TestContext.Current.CancellationToken);
             Verify(client.TakeSingle());
         }
 
@@ -1029,7 +1029,7 @@ namespace Gitea.Net.Test.Api
             instance.OrgGetAll(page, limit);
             Verify(client.TakeSingle());
 
-            await instance.OrgGetAllAsync(page, limit);
+            await instance.OrgGetAllAsync(page, limit, cancellationToken: TestContext.Current.CancellationToken);
             Verify(client.TakeSingle());
         }
 
@@ -1053,7 +1053,7 @@ namespace Gitea.Net.Test.Api
             instance.OrgGetHook(org, id);
             Verify(client.TakeSingle());
 
-            await instance.OrgGetHookAsync(org, id);
+            await instance.OrgGetHookAsync(org, id, cancellationToken: TestContext.Current.CancellationToken);
             Verify(client.TakeSingle());
         }
 
@@ -1077,7 +1077,7 @@ namespace Gitea.Net.Test.Api
             instance.OrgGetLabel(org, id);
             Verify(client.TakeSingle());
 
-            await instance.OrgGetLabelAsync(org, id);
+            await instance.OrgGetLabelAsync(org, id, cancellationToken: TestContext.Current.CancellationToken);
             Verify(client.TakeSingle());
         }
 
@@ -1101,7 +1101,7 @@ namespace Gitea.Net.Test.Api
             instance.OrgGetProject(org, id);
             Verify(client.TakeSingle());
 
-            await instance.OrgGetProjectAsync(org, id);
+            await instance.OrgGetProjectAsync(org, id, cancellationToken: TestContext.Current.CancellationToken);
             Verify(client.TakeSingle());
         }
 
@@ -1127,7 +1127,7 @@ namespace Gitea.Net.Test.Api
             instance.OrgGetProjectColumn(org, id, columnId);
             Verify(client.TakeSingle());
 
-            await instance.OrgGetProjectColumnAsync(org, id, columnId);
+            await instance.OrgGetProjectColumnAsync(org, id, columnId, cancellationToken: TestContext.Current.CancellationToken);
             Verify(client.TakeSingle());
         }
 
@@ -1149,7 +1149,7 @@ namespace Gitea.Net.Test.Api
             instance.OrgGetTeam(id);
             Verify(client.TakeSingle());
 
-            await instance.OrgGetTeamAsync(id);
+            await instance.OrgGetTeamAsync(id, cancellationToken: TestContext.Current.CancellationToken);
             Verify(client.TakeSingle());
         }
 
@@ -1173,7 +1173,7 @@ namespace Gitea.Net.Test.Api
             instance.OrgGetUserPermissions(username, org);
             Verify(client.TakeSingle());
 
-            await instance.OrgGetUserPermissionsAsync(username, org);
+            await instance.OrgGetUserPermissionsAsync(username, org, cancellationToken: TestContext.Current.CancellationToken);
             Verify(client.TakeSingle());
         }
 
@@ -1197,7 +1197,7 @@ namespace Gitea.Net.Test.Api
             instance.OrgIsMember(org, username);
             Verify(client.TakeSingle());
 
-            await instance.OrgIsMemberAsync(org, username);
+            await instance.OrgIsMemberAsync(org, username, cancellationToken: TestContext.Current.CancellationToken);
             Verify(client.TakeSingle());
         }
 
@@ -1221,7 +1221,7 @@ namespace Gitea.Net.Test.Api
             instance.OrgIsPublicMember(org, username);
             Verify(client.TakeSingle());
 
-            await instance.OrgIsPublicMemberAsync(org, username);
+            await instance.OrgIsPublicMemberAsync(org, username, cancellationToken: TestContext.Current.CancellationToken);
             Verify(client.TakeSingle());
         }
 
@@ -1247,7 +1247,7 @@ namespace Gitea.Net.Test.Api
             instance.OrgListActionsSecrets(org, page, limit);
             Verify(client.TakeSingle());
 
-            await instance.OrgListActionsSecretsAsync(org, page, limit);
+            await instance.OrgListActionsSecretsAsync(org, page, limit, cancellationToken: TestContext.Current.CancellationToken);
             Verify(client.TakeSingle());
         }
 
@@ -1275,7 +1275,7 @@ namespace Gitea.Net.Test.Api
             instance.OrgListActivityFeeds(org, date, page, limit);
             Verify(client.TakeSingle());
 
-            await instance.OrgListActivityFeedsAsync(org, date, page, limit);
+            await instance.OrgListActivityFeedsAsync(org, date, page, limit, cancellationToken: TestContext.Current.CancellationToken);
             Verify(client.TakeSingle());
         }
 
@@ -1299,7 +1299,7 @@ namespace Gitea.Net.Test.Api
             instance.OrgListCurrentUserOrgs(page, limit);
             Verify(client.TakeSingle());
 
-            await instance.OrgListCurrentUserOrgsAsync(page, limit);
+            await instance.OrgListCurrentUserOrgsAsync(page, limit, cancellationToken: TestContext.Current.CancellationToken);
             Verify(client.TakeSingle());
         }
 
@@ -1325,7 +1325,7 @@ namespace Gitea.Net.Test.Api
             instance.OrgListHooks(org, page, limit);
             Verify(client.TakeSingle());
 
-            await instance.OrgListHooksAsync(org, page, limit);
+            await instance.OrgListHooksAsync(org, page, limit, cancellationToken: TestContext.Current.CancellationToken);
             Verify(client.TakeSingle());
         }
 
@@ -1351,7 +1351,7 @@ namespace Gitea.Net.Test.Api
             instance.OrgListLabels(org, page, limit);
             Verify(client.TakeSingle());
 
-            await instance.OrgListLabelsAsync(org, page, limit);
+            await instance.OrgListLabelsAsync(org, page, limit, cancellationToken: TestContext.Current.CancellationToken);
             Verify(client.TakeSingle());
         }
 
@@ -1377,7 +1377,7 @@ namespace Gitea.Net.Test.Api
             instance.OrgListMembers(org, page, limit);
             Verify(client.TakeSingle());
 
-            await instance.OrgListMembersAsync(org, page, limit);
+            await instance.OrgListMembersAsync(org, page, limit, cancellationToken: TestContext.Current.CancellationToken);
             Verify(client.TakeSingle());
         }
 
@@ -1407,7 +1407,7 @@ namespace Gitea.Net.Test.Api
             instance.OrgListProjectColumnIssues(org, id, columnId, page, limit);
             Verify(client.TakeSingle());
 
-            await instance.OrgListProjectColumnIssuesAsync(org, id, columnId, page, limit);
+            await instance.OrgListProjectColumnIssuesAsync(org, id, columnId, page, limit, cancellationToken: TestContext.Current.CancellationToken);
             Verify(client.TakeSingle());
         }
 
@@ -1435,7 +1435,7 @@ namespace Gitea.Net.Test.Api
             instance.OrgListProjectColumns(org, id, page, limit);
             Verify(client.TakeSingle());
 
-            await instance.OrgListProjectColumnsAsync(org, id, page, limit);
+            await instance.OrgListProjectColumnsAsync(org, id, page, limit, cancellationToken: TestContext.Current.CancellationToken);
             Verify(client.TakeSingle());
         }
 
@@ -1463,7 +1463,7 @@ namespace Gitea.Net.Test.Api
             instance.OrgListProjects(org, state, page, limit);
             Verify(client.TakeSingle());
 
-            await instance.OrgListProjectsAsync(org, state, page, limit);
+            await instance.OrgListProjectsAsync(org, state, page, limit, cancellationToken: TestContext.Current.CancellationToken);
             Verify(client.TakeSingle());
         }
 
@@ -1489,7 +1489,7 @@ namespace Gitea.Net.Test.Api
             instance.OrgListPublicMembers(org, page, limit);
             Verify(client.TakeSingle());
 
-            await instance.OrgListPublicMembersAsync(org, page, limit);
+            await instance.OrgListPublicMembersAsync(org, page, limit, cancellationToken: TestContext.Current.CancellationToken);
             Verify(client.TakeSingle());
         }
 
@@ -1515,7 +1515,7 @@ namespace Gitea.Net.Test.Api
             instance.OrgListRepos(org, page, limit);
             Verify(client.TakeSingle());
 
-            await instance.OrgListReposAsync(org, page, limit);
+            await instance.OrgListReposAsync(org, page, limit, cancellationToken: TestContext.Current.CancellationToken);
             Verify(client.TakeSingle());
         }
 
@@ -1543,7 +1543,7 @@ namespace Gitea.Net.Test.Api
             instance.OrgListTeamActivityFeeds(id, date, page, limit);
             Verify(client.TakeSingle());
 
-            await instance.OrgListTeamActivityFeedsAsync(id, date, page, limit);
+            await instance.OrgListTeamActivityFeedsAsync(id, date, page, limit, cancellationToken: TestContext.Current.CancellationToken);
             Verify(client.TakeSingle());
         }
 
@@ -1567,7 +1567,7 @@ namespace Gitea.Net.Test.Api
             instance.OrgListTeamMember(id, username);
             Verify(client.TakeSingle());
 
-            await instance.OrgListTeamMemberAsync(id, username);
+            await instance.OrgListTeamMemberAsync(id, username, cancellationToken: TestContext.Current.CancellationToken);
             Verify(client.TakeSingle());
         }
 
@@ -1593,7 +1593,7 @@ namespace Gitea.Net.Test.Api
             instance.OrgListTeamMembers(id, page, limit);
             Verify(client.TakeSingle());
 
-            await instance.OrgListTeamMembersAsync(id, page, limit);
+            await instance.OrgListTeamMembersAsync(id, page, limit, cancellationToken: TestContext.Current.CancellationToken);
             Verify(client.TakeSingle());
         }
 
@@ -1619,7 +1619,7 @@ namespace Gitea.Net.Test.Api
             instance.OrgListTeamRepo(id, org, repo);
             Verify(client.TakeSingle());
 
-            await instance.OrgListTeamRepoAsync(id, org, repo);
+            await instance.OrgListTeamRepoAsync(id, org, repo, cancellationToken: TestContext.Current.CancellationToken);
             Verify(client.TakeSingle());
         }
 
@@ -1645,7 +1645,7 @@ namespace Gitea.Net.Test.Api
             instance.OrgListTeamRepos(id, page, limit);
             Verify(client.TakeSingle());
 
-            await instance.OrgListTeamReposAsync(id, page, limit);
+            await instance.OrgListTeamReposAsync(id, page, limit, cancellationToken: TestContext.Current.CancellationToken);
             Verify(client.TakeSingle());
         }
 
@@ -1671,7 +1671,7 @@ namespace Gitea.Net.Test.Api
             instance.OrgListTeams(org, page, limit);
             Verify(client.TakeSingle());
 
-            await instance.OrgListTeamsAsync(org, page, limit);
+            await instance.OrgListTeamsAsync(org, page, limit, cancellationToken: TestContext.Current.CancellationToken);
             Verify(client.TakeSingle());
         }
 
@@ -1697,7 +1697,7 @@ namespace Gitea.Net.Test.Api
             instance.OrgListUserOrgs(username, page, limit);
             Verify(client.TakeSingle());
 
-            await instance.OrgListUserOrgsAsync(username, page, limit);
+            await instance.OrgListUserOrgsAsync(username, page, limit, cancellationToken: TestContext.Current.CancellationToken);
             Verify(client.TakeSingle());
         }
 
@@ -1723,7 +1723,7 @@ namespace Gitea.Net.Test.Api
             instance.OrgMoveProjectColumns(org, id, body);
             Verify(client.TakeSingle());
 
-            await instance.OrgMoveProjectColumnsAsync(org, id, body);
+            await instance.OrgMoveProjectColumnsAsync(org, id, body, cancellationToken: TestContext.Current.CancellationToken);
             Verify(client.TakeSingle());
         }
 
@@ -1751,7 +1751,7 @@ namespace Gitea.Net.Test.Api
             instance.OrgMoveProjectIssue(org, id, issueId, body);
             Verify(client.TakeSingle());
 
-            await instance.OrgMoveProjectIssueAsync(org, id, issueId, body);
+            await instance.OrgMoveProjectIssueAsync(org, id, issueId, body, cancellationToken: TestContext.Current.CancellationToken);
             Verify(client.TakeSingle());
         }
 
@@ -1775,7 +1775,7 @@ namespace Gitea.Net.Test.Api
             instance.OrgPublicizeMember(org, username);
             Verify(client.TakeSingle());
 
-            await instance.OrgPublicizeMemberAsync(org, username);
+            await instance.OrgPublicizeMemberAsync(org, username, cancellationToken: TestContext.Current.CancellationToken);
             Verify(client.TakeSingle());
         }
 
@@ -1803,7 +1803,7 @@ namespace Gitea.Net.Test.Api
             instance.OrgRemoveIssueFromProjectColumn(org, id, columnId, issueId);
             Verify(client.TakeSingle());
 
-            await instance.OrgRemoveIssueFromProjectColumnAsync(org, id, columnId, issueId);
+            await instance.OrgRemoveIssueFromProjectColumnAsync(org, id, columnId, issueId, cancellationToken: TestContext.Current.CancellationToken);
             Verify(client.TakeSingle());
         }
 
@@ -1827,7 +1827,7 @@ namespace Gitea.Net.Test.Api
             instance.OrgRemoveTeamMember(id, username);
             Verify(client.TakeSingle());
 
-            await instance.OrgRemoveTeamMemberAsync(id, username);
+            await instance.OrgRemoveTeamMemberAsync(id, username, cancellationToken: TestContext.Current.CancellationToken);
             Verify(client.TakeSingle());
         }
 
@@ -1853,7 +1853,7 @@ namespace Gitea.Net.Test.Api
             instance.OrgRemoveTeamRepository(id, org, repo);
             Verify(client.TakeSingle());
 
-            await instance.OrgRemoveTeamRepositoryAsync(id, org, repo);
+            await instance.OrgRemoveTeamRepositoryAsync(id, org, repo, cancellationToken: TestContext.Current.CancellationToken);
             Verify(client.TakeSingle());
         }
 
@@ -1879,7 +1879,7 @@ namespace Gitea.Net.Test.Api
             instance.OrgSetDefaultProjectColumn(org, id, columnId);
             Verify(client.TakeSingle());
 
-            await instance.OrgSetDefaultProjectColumnAsync(org, id, columnId);
+            await instance.OrgSetDefaultProjectColumnAsync(org, id, columnId, cancellationToken: TestContext.Current.CancellationToken);
             Verify(client.TakeSingle());
         }
 
@@ -1903,7 +1903,7 @@ namespace Gitea.Net.Test.Api
             instance.OrgUpdateAvatar(org, body);
             Verify(client.TakeSingle());
 
-            await instance.OrgUpdateAvatarAsync(org, body);
+            await instance.OrgUpdateAvatarAsync(org, body, cancellationToken: TestContext.Current.CancellationToken);
             Verify(client.TakeSingle());
         }
 
@@ -1929,7 +1929,7 @@ namespace Gitea.Net.Test.Api
             instance.OrganizationBlockUser(org, username, note);
             Verify(client.TakeSingle());
 
-            await instance.OrganizationBlockUserAsync(org, username, note);
+            await instance.OrganizationBlockUserAsync(org, username, note, cancellationToken: TestContext.Current.CancellationToken);
             Verify(client.TakeSingle());
         }
 
@@ -1953,7 +1953,7 @@ namespace Gitea.Net.Test.Api
             instance.OrganizationCheckUserBlock(org, username);
             Verify(client.TakeSingle());
 
-            await instance.OrganizationCheckUserBlockAsync(org, username);
+            await instance.OrganizationCheckUserBlockAsync(org, username, cancellationToken: TestContext.Current.CancellationToken);
             Verify(client.TakeSingle());
         }
 
@@ -1979,7 +1979,7 @@ namespace Gitea.Net.Test.Api
             instance.OrganizationListBlocks(org, page, limit);
             Verify(client.TakeSingle());
 
-            await instance.OrganizationListBlocksAsync(org, page, limit);
+            await instance.OrganizationListBlocksAsync(org, page, limit, cancellationToken: TestContext.Current.CancellationToken);
             Verify(client.TakeSingle());
         }
 
@@ -2003,7 +2003,7 @@ namespace Gitea.Net.Test.Api
             instance.OrganizationUnblockUser(org, username);
             Verify(client.TakeSingle());
 
-            await instance.OrganizationUnblockUserAsync(org, username);
+            await instance.OrganizationUnblockUserAsync(org, username, cancellationToken: TestContext.Current.CancellationToken);
             Verify(client.TakeSingle());
         }
 
@@ -2027,7 +2027,7 @@ namespace Gitea.Net.Test.Api
             instance.RenameOrg(org, body);
             Verify(client.TakeSingle());
 
-            await instance.RenameOrgAsync(org, body);
+            await instance.RenameOrgAsync(org, body, cancellationToken: TestContext.Current.CancellationToken);
             Verify(client.TakeSingle());
         }
 
@@ -2057,7 +2057,7 @@ namespace Gitea.Net.Test.Api
             instance.TeamSearch(org, q, includeDesc, page, limit);
             Verify(client.TakeSingle());
 
-            await instance.TeamSearchAsync(org, q, includeDesc, page, limit);
+            await instance.TeamSearchAsync(org, q, includeDesc, page, limit, cancellationToken: TestContext.Current.CancellationToken);
             Verify(client.TakeSingle());
         }
 
@@ -2083,7 +2083,7 @@ namespace Gitea.Net.Test.Api
             instance.UpdateOrgRunner(org, runnerId, body);
             Verify(client.TakeSingle());
 
-            await instance.UpdateOrgRunnerAsync(org, runnerId, body);
+            await instance.UpdateOrgRunnerAsync(org, runnerId, body, cancellationToken: TestContext.Current.CancellationToken);
             Verify(client.TakeSingle());
         }
 
@@ -2109,7 +2109,7 @@ namespace Gitea.Net.Test.Api
             instance.UpdateOrgSecret(org, secretname, body);
             Verify(client.TakeSingle());
 
-            await instance.UpdateOrgSecretAsync(org, secretname, body);
+            await instance.UpdateOrgSecretAsync(org, secretname, body, cancellationToken: TestContext.Current.CancellationToken);
             Verify(client.TakeSingle());
         }
 
@@ -2135,7 +2135,7 @@ namespace Gitea.Net.Test.Api
             instance.UpdateOrgVariable(org, variablename, body);
             Verify(client.TakeSingle());
 
-            await instance.UpdateOrgVariableAsync(org, variablename, body);
+            await instance.UpdateOrgVariableAsync(org, variablename, body, cancellationToken: TestContext.Current.CancellationToken);
             Verify(client.TakeSingle());
         }
     }

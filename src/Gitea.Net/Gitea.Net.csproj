@@ -8,6 +8,12 @@
   </PropertyGroup>
 
   <PropertyGroup>
+    <!--
+      Package and assembly version. Major.minor follow the Gitea API version (api/openapi.yaml).
+      For library-only changes bump the last part (28.3.0 -> 28.3.1).
+      CI publishes a new release when this version has no git tag yet.
+    -->
+    <Version>28.3.0</Version>
     <IncludeSymbols>True</IncludeSymbols>
     <SymbolPackageFormat>snupkg</SymbolPackageFormat>
   </PropertyGroup>
@@ -40,8 +46,6 @@
     <PackageReference Include="RestSharp"/>
     <PackageReference Include="Polly"/>
     <PackageReference Include="Newtonsoft.Json"/>
-    <!-- Sets assembly and package version from version.json + git history -->
-    <PackageReference Include="Nerdbank.GitVersioning" PrivateAssets="all"/>
   </ItemGroup>
 
 </Project>

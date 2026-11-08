@@ -63,7 +63,7 @@ namespace Gitea.Net.Test.Api
             instance.CreateCurrentUserRepo(body);
             Verify(client.TakeSingle());
 
-            await instance.CreateCurrentUserRepoAsync(body);
+            await instance.CreateCurrentUserRepoAsync(body, cancellationToken: TestContext.Current.CancellationToken);
             Verify(client.TakeSingle());
         }
 
@@ -87,7 +87,7 @@ namespace Gitea.Net.Test.Api
             instance.CreateUserVariable(variablename, body);
             Verify(client.TakeSingle());
 
-            await instance.CreateUserVariableAsync(variablename, body);
+            await instance.CreateUserVariableAsync(variablename, body, cancellationToken: TestContext.Current.CancellationToken);
             Verify(client.TakeSingle());
         }
 
@@ -109,7 +109,7 @@ namespace Gitea.Net.Test.Api
             instance.DeleteUserRunner(runnerId);
             Verify(client.TakeSingle());
 
-            await instance.DeleteUserRunnerAsync(runnerId);
+            await instance.DeleteUserRunnerAsync(runnerId, cancellationToken: TestContext.Current.CancellationToken);
             Verify(client.TakeSingle());
         }
 
@@ -131,7 +131,7 @@ namespace Gitea.Net.Test.Api
             instance.DeleteUserSecret(secretname);
             Verify(client.TakeSingle());
 
-            await instance.DeleteUserSecretAsync(secretname);
+            await instance.DeleteUserSecretAsync(secretname, cancellationToken: TestContext.Current.CancellationToken);
             Verify(client.TakeSingle());
         }
 
@@ -153,7 +153,7 @@ namespace Gitea.Net.Test.Api
             instance.DeleteUserVariable(variablename);
             Verify(client.TakeSingle());
 
-            await instance.DeleteUserVariableAsync(variablename);
+            await instance.DeleteUserVariableAsync(variablename, cancellationToken: TestContext.Current.CancellationToken);
             Verify(client.TakeSingle());
         }
 
@@ -175,7 +175,7 @@ namespace Gitea.Net.Test.Api
             instance.GetUserRunner(runnerId);
             Verify(client.TakeSingle());
 
-            await instance.GetUserRunnerAsync(runnerId);
+            await instance.GetUserRunnerAsync(runnerId, cancellationToken: TestContext.Current.CancellationToken);
             Verify(client.TakeSingle());
         }
 
@@ -197,7 +197,7 @@ namespace Gitea.Net.Test.Api
             instance.GetUserRunners(disabled);
             Verify(client.TakeSingle());
 
-            await instance.GetUserRunnersAsync(disabled);
+            await instance.GetUserRunnersAsync(disabled, cancellationToken: TestContext.Current.CancellationToken);
             Verify(client.TakeSingle());
         }
 
@@ -218,7 +218,7 @@ namespace Gitea.Net.Test.Api
             instance.GetUserSettings();
             Verify(client.TakeSingle());
 
-            await instance.GetUserSettingsAsync();
+            await instance.GetUserSettingsAsync(cancellationToken: TestContext.Current.CancellationToken);
             Verify(client.TakeSingle());
         }
 
@@ -240,7 +240,7 @@ namespace Gitea.Net.Test.Api
             instance.GetUserVariable(variablename);
             Verify(client.TakeSingle());
 
-            await instance.GetUserVariableAsync(variablename);
+            await instance.GetUserVariableAsync(variablename, cancellationToken: TestContext.Current.CancellationToken);
             Verify(client.TakeSingle());
         }
 
@@ -264,7 +264,7 @@ namespace Gitea.Net.Test.Api
             instance.GetUserVariablesList(page, limit);
             Verify(client.TakeSingle());
 
-            await instance.GetUserVariablesListAsync(page, limit);
+            await instance.GetUserVariablesListAsync(page, limit, cancellationToken: TestContext.Current.CancellationToken);
             Verify(client.TakeSingle());
         }
 
@@ -294,7 +294,7 @@ namespace Gitea.Net.Test.Api
             instance.GetUserWorkflowJobs(status, page, limit, sort, order);
             Verify(client.TakeSingle());
 
-            await instance.GetUserWorkflowJobsAsync(status, page, limit, sort, order);
+            await instance.GetUserWorkflowJobsAsync(status, page, limit, sort, order, cancellationToken: TestContext.Current.CancellationToken);
             Verify(client.TakeSingle());
         }
 
@@ -328,7 +328,7 @@ namespace Gitea.Net.Test.Api
             instance.GetUserWorkflowRuns(varEvent, branch, status, actor, headSha, page, limit);
             Verify(client.TakeSingle());
 
-            await instance.GetUserWorkflowRunsAsync(varEvent, branch, status, actor, headSha, page, limit);
+            await instance.GetUserWorkflowRunsAsync(varEvent, branch, status, actor, headSha, page, limit, cancellationToken: TestContext.Current.CancellationToken);
             Verify(client.TakeSingle());
         }
 
@@ -349,7 +349,7 @@ namespace Gitea.Net.Test.Api
             instance.GetVerificationToken();
             Verify(client.TakeSingle());
 
-            await instance.GetVerificationTokenAsync();
+            await instance.GetVerificationTokenAsync(cancellationToken: TestContext.Current.CancellationToken);
             Verify(client.TakeSingle());
         }
 
@@ -373,7 +373,7 @@ namespace Gitea.Net.Test.Api
             instance.UpdateUserRunner(runnerId, body);
             Verify(client.TakeSingle());
 
-            await instance.UpdateUserRunnerAsync(runnerId, body);
+            await instance.UpdateUserRunnerAsync(runnerId, body, cancellationToken: TestContext.Current.CancellationToken);
             Verify(client.TakeSingle());
         }
 
@@ -397,7 +397,7 @@ namespace Gitea.Net.Test.Api
             instance.UpdateUserSecret(secretname, body);
             Verify(client.TakeSingle());
 
-            await instance.UpdateUserSecretAsync(secretname, body);
+            await instance.UpdateUserSecretAsync(secretname, body, cancellationToken: TestContext.Current.CancellationToken);
             Verify(client.TakeSingle());
         }
 
@@ -419,7 +419,7 @@ namespace Gitea.Net.Test.Api
             instance.UpdateUserSettings(body);
             Verify(client.TakeSingle());
 
-            await instance.UpdateUserSettingsAsync(body);
+            await instance.UpdateUserSettingsAsync(body, cancellationToken: TestContext.Current.CancellationToken);
             Verify(client.TakeSingle());
         }
 
@@ -443,7 +443,7 @@ namespace Gitea.Net.Test.Api
             instance.UpdateUserVariable(variablename, body);
             Verify(client.TakeSingle());
 
-            await instance.UpdateUserVariableAsync(variablename, body);
+            await instance.UpdateUserVariableAsync(variablename, body, cancellationToken: TestContext.Current.CancellationToken);
             Verify(client.TakeSingle());
         }
 
@@ -465,7 +465,7 @@ namespace Gitea.Net.Test.Api
             instance.UserAddEmail(body);
             Verify(client.TakeSingle());
 
-            await instance.UserAddEmailAsync(body);
+            await instance.UserAddEmailAsync(body, cancellationToken: TestContext.Current.CancellationToken);
             Verify(client.TakeSingle());
         }
 
@@ -489,7 +489,7 @@ namespace Gitea.Net.Test.Api
             instance.UserBlockUser(username, note);
             Verify(client.TakeSingle());
 
-            await instance.UserBlockUserAsync(username, note);
+            await instance.UserBlockUserAsync(username, note, cancellationToken: TestContext.Current.CancellationToken);
             Verify(client.TakeSingle());
         }
 
@@ -513,7 +513,7 @@ namespace Gitea.Net.Test.Api
             instance.UserCheckFollowing(username, target);
             Verify(client.TakeSingle());
 
-            await instance.UserCheckFollowingAsync(username, target);
+            await instance.UserCheckFollowingAsync(username, target, cancellationToken: TestContext.Current.CancellationToken);
             Verify(client.TakeSingle());
         }
 
@@ -535,7 +535,7 @@ namespace Gitea.Net.Test.Api
             instance.UserCheckUserBlock(username);
             Verify(client.TakeSingle());
 
-            await instance.UserCheckUserBlockAsync(username);
+            await instance.UserCheckUserBlockAsync(username, cancellationToken: TestContext.Current.CancellationToken);
             Verify(client.TakeSingle());
         }
 
@@ -557,7 +557,7 @@ namespace Gitea.Net.Test.Api
             instance.UserCreateHook(body);
             Verify(client.TakeSingle());
 
-            await instance.UserCreateHookAsync(body);
+            await instance.UserCreateHookAsync(body, cancellationToken: TestContext.Current.CancellationToken);
             Verify(client.TakeSingle());
         }
 
@@ -579,7 +579,7 @@ namespace Gitea.Net.Test.Api
             instance.UserCreateOAuth2Application(body);
             Verify(client.TakeSingle());
 
-            await instance.UserCreateOAuth2ApplicationAsync(body);
+            await instance.UserCreateOAuth2ApplicationAsync(body, cancellationToken: TestContext.Current.CancellationToken);
             Verify(client.TakeSingle());
         }
 
@@ -600,7 +600,7 @@ namespace Gitea.Net.Test.Api
             instance.UserCreateRunnerRegistrationToken();
             Verify(client.TakeSingle());
 
-            await instance.UserCreateRunnerRegistrationTokenAsync();
+            await instance.UserCreateRunnerRegistrationTokenAsync(cancellationToken: TestContext.Current.CancellationToken);
             Verify(client.TakeSingle());
         }
 
@@ -624,7 +624,7 @@ namespace Gitea.Net.Test.Api
             instance.UserCreateToken(username, body);
             Verify(client.TakeSingle());
 
-            await instance.UserCreateTokenAsync(username, body);
+            await instance.UserCreateTokenAsync(username, body, cancellationToken: TestContext.Current.CancellationToken);
             Verify(client.TakeSingle());
         }
 
@@ -650,7 +650,7 @@ namespace Gitea.Net.Test.Api
             instance.UserCurrentAddIssueToProjectColumn(id, columnId, issueId);
             Verify(client.TakeSingle());
 
-            await instance.UserCurrentAddIssueToProjectColumnAsync(id, columnId, issueId);
+            await instance.UserCurrentAddIssueToProjectColumnAsync(id, columnId, issueId, cancellationToken: TestContext.Current.CancellationToken);
             Verify(client.TakeSingle());
         }
 
@@ -672,7 +672,7 @@ namespace Gitea.Net.Test.Api
             instance.UserCurrentCheckFollowing(username);
             Verify(client.TakeSingle());
 
-            await instance.UserCurrentCheckFollowingAsync(username);
+            await instance.UserCurrentCheckFollowingAsync(username, cancellationToken: TestContext.Current.CancellationToken);
             Verify(client.TakeSingle());
         }
 
@@ -696,7 +696,7 @@ namespace Gitea.Net.Test.Api
             instance.UserCurrentCheckStarring(owner, repo);
             Verify(client.TakeSingle());
 
-            await instance.UserCurrentCheckStarringAsync(owner, repo);
+            await instance.UserCurrentCheckStarringAsync(owner, repo, cancellationToken: TestContext.Current.CancellationToken);
             Verify(client.TakeSingle());
         }
 
@@ -718,7 +718,7 @@ namespace Gitea.Net.Test.Api
             instance.UserCurrentCreateProject(body);
             Verify(client.TakeSingle());
 
-            await instance.UserCurrentCreateProjectAsync(body);
+            await instance.UserCurrentCreateProjectAsync(body, cancellationToken: TestContext.Current.CancellationToken);
             Verify(client.TakeSingle());
         }
 
@@ -742,7 +742,7 @@ namespace Gitea.Net.Test.Api
             instance.UserCurrentCreateProjectColumn(id, body);
             Verify(client.TakeSingle());
 
-            await instance.UserCurrentCreateProjectColumnAsync(id, body);
+            await instance.UserCurrentCreateProjectColumnAsync(id, body, cancellationToken: TestContext.Current.CancellationToken);
             Verify(client.TakeSingle());
         }
 
@@ -764,7 +764,7 @@ namespace Gitea.Net.Test.Api
             instance.UserCurrentDeleteFollow(username);
             Verify(client.TakeSingle());
 
-            await instance.UserCurrentDeleteFollowAsync(username);
+            await instance.UserCurrentDeleteFollowAsync(username, cancellationToken: TestContext.Current.CancellationToken);
             Verify(client.TakeSingle());
         }
 
@@ -786,7 +786,7 @@ namespace Gitea.Net.Test.Api
             instance.UserCurrentDeleteGPGKey(id);
             Verify(client.TakeSingle());
 
-            await instance.UserCurrentDeleteGPGKeyAsync(id);
+            await instance.UserCurrentDeleteGPGKeyAsync(id, cancellationToken: TestContext.Current.CancellationToken);
             Verify(client.TakeSingle());
         }
 
@@ -808,7 +808,7 @@ namespace Gitea.Net.Test.Api
             instance.UserCurrentDeleteKey(id);
             Verify(client.TakeSingle());
 
-            await instance.UserCurrentDeleteKeyAsync(id);
+            await instance.UserCurrentDeleteKeyAsync(id, cancellationToken: TestContext.Current.CancellationToken);
             Verify(client.TakeSingle());
         }
 
@@ -830,7 +830,7 @@ namespace Gitea.Net.Test.Api
             instance.UserCurrentDeleteProject(id);
             Verify(client.TakeSingle());
 
-            await instance.UserCurrentDeleteProjectAsync(id);
+            await instance.UserCurrentDeleteProjectAsync(id, cancellationToken: TestContext.Current.CancellationToken);
             Verify(client.TakeSingle());
         }
 
@@ -854,7 +854,7 @@ namespace Gitea.Net.Test.Api
             instance.UserCurrentDeleteProjectColumn(id, columnId);
             Verify(client.TakeSingle());
 
-            await instance.UserCurrentDeleteProjectColumnAsync(id, columnId);
+            await instance.UserCurrentDeleteProjectColumnAsync(id, columnId, cancellationToken: TestContext.Current.CancellationToken);
             Verify(client.TakeSingle());
         }
 
@@ -878,7 +878,7 @@ namespace Gitea.Net.Test.Api
             instance.UserCurrentDeleteStar(owner, repo);
             Verify(client.TakeSingle());
 
-            await instance.UserCurrentDeleteStarAsync(owner, repo);
+            await instance.UserCurrentDeleteStarAsync(owner, repo, cancellationToken: TestContext.Current.CancellationToken);
             Verify(client.TakeSingle());
         }
 
@@ -902,7 +902,7 @@ namespace Gitea.Net.Test.Api
             instance.UserCurrentEditProject(id, body);
             Verify(client.TakeSingle());
 
-            await instance.UserCurrentEditProjectAsync(id, body);
+            await instance.UserCurrentEditProjectAsync(id, body, cancellationToken: TestContext.Current.CancellationToken);
             Verify(client.TakeSingle());
         }
 
@@ -928,7 +928,7 @@ namespace Gitea.Net.Test.Api
             instance.UserCurrentEditProjectColumn(id, columnId, body);
             Verify(client.TakeSingle());
 
-            await instance.UserCurrentEditProjectColumnAsync(id, columnId, body);
+            await instance.UserCurrentEditProjectColumnAsync(id, columnId, body, cancellationToken: TestContext.Current.CancellationToken);
             Verify(client.TakeSingle());
         }
 
@@ -950,7 +950,7 @@ namespace Gitea.Net.Test.Api
             instance.UserCurrentGetGPGKey(id);
             Verify(client.TakeSingle());
 
-            await instance.UserCurrentGetGPGKeyAsync(id);
+            await instance.UserCurrentGetGPGKeyAsync(id, cancellationToken: TestContext.Current.CancellationToken);
             Verify(client.TakeSingle());
         }
 
@@ -972,7 +972,7 @@ namespace Gitea.Net.Test.Api
             instance.UserCurrentGetKey(id);
             Verify(client.TakeSingle());
 
-            await instance.UserCurrentGetKeyAsync(id);
+            await instance.UserCurrentGetKeyAsync(id, cancellationToken: TestContext.Current.CancellationToken);
             Verify(client.TakeSingle());
         }
 
@@ -994,7 +994,7 @@ namespace Gitea.Net.Test.Api
             instance.UserCurrentGetProject(id);
             Verify(client.TakeSingle());
 
-            await instance.UserCurrentGetProjectAsync(id);
+            await instance.UserCurrentGetProjectAsync(id, cancellationToken: TestContext.Current.CancellationToken);
             Verify(client.TakeSingle());
         }
 
@@ -1018,7 +1018,7 @@ namespace Gitea.Net.Test.Api
             instance.UserCurrentGetProjectColumn(id, columnId);
             Verify(client.TakeSingle());
 
-            await instance.UserCurrentGetProjectColumnAsync(id, columnId);
+            await instance.UserCurrentGetProjectColumnAsync(id, columnId, cancellationToken: TestContext.Current.CancellationToken);
             Verify(client.TakeSingle());
         }
 
@@ -1042,7 +1042,7 @@ namespace Gitea.Net.Test.Api
             instance.UserCurrentListFollowers(page, limit);
             Verify(client.TakeSingle());
 
-            await instance.UserCurrentListFollowersAsync(page, limit);
+            await instance.UserCurrentListFollowersAsync(page, limit, cancellationToken: TestContext.Current.CancellationToken);
             Verify(client.TakeSingle());
         }
 
@@ -1066,7 +1066,7 @@ namespace Gitea.Net.Test.Api
             instance.UserCurrentListFollowing(page, limit);
             Verify(client.TakeSingle());
 
-            await instance.UserCurrentListFollowingAsync(page, limit);
+            await instance.UserCurrentListFollowingAsync(page, limit, cancellationToken: TestContext.Current.CancellationToken);
             Verify(client.TakeSingle());
         }
 
@@ -1090,7 +1090,7 @@ namespace Gitea.Net.Test.Api
             instance.UserCurrentListGPGKeys(page, limit);
             Verify(client.TakeSingle());
 
-            await instance.UserCurrentListGPGKeysAsync(page, limit);
+            await instance.UserCurrentListGPGKeysAsync(page, limit, cancellationToken: TestContext.Current.CancellationToken);
             Verify(client.TakeSingle());
         }
 
@@ -1116,7 +1116,7 @@ namespace Gitea.Net.Test.Api
             instance.UserCurrentListKeys(fingerprint, page, limit);
             Verify(client.TakeSingle());
 
-            await instance.UserCurrentListKeysAsync(fingerprint, page, limit);
+            await instance.UserCurrentListKeysAsync(fingerprint, page, limit, cancellationToken: TestContext.Current.CancellationToken);
             Verify(client.TakeSingle());
         }
 
@@ -1144,7 +1144,7 @@ namespace Gitea.Net.Test.Api
             instance.UserCurrentListProjectColumnIssues(id, columnId, page, limit);
             Verify(client.TakeSingle());
 
-            await instance.UserCurrentListProjectColumnIssuesAsync(id, columnId, page, limit);
+            await instance.UserCurrentListProjectColumnIssuesAsync(id, columnId, page, limit, cancellationToken: TestContext.Current.CancellationToken);
             Verify(client.TakeSingle());
         }
 
@@ -1170,7 +1170,7 @@ namespace Gitea.Net.Test.Api
             instance.UserCurrentListProjectColumns(id, page, limit);
             Verify(client.TakeSingle());
 
-            await instance.UserCurrentListProjectColumnsAsync(id, page, limit);
+            await instance.UserCurrentListProjectColumnsAsync(id, page, limit, cancellationToken: TestContext.Current.CancellationToken);
             Verify(client.TakeSingle());
         }
 
@@ -1196,7 +1196,7 @@ namespace Gitea.Net.Test.Api
             instance.UserCurrentListProjects(state, page, limit);
             Verify(client.TakeSingle());
 
-            await instance.UserCurrentListProjectsAsync(state, page, limit);
+            await instance.UserCurrentListProjectsAsync(state, page, limit, cancellationToken: TestContext.Current.CancellationToken);
             Verify(client.TakeSingle());
         }
 
@@ -1220,7 +1220,7 @@ namespace Gitea.Net.Test.Api
             instance.UserCurrentListRepos(page, limit);
             Verify(client.TakeSingle());
 
-            await instance.UserCurrentListReposAsync(page, limit);
+            await instance.UserCurrentListReposAsync(page, limit, cancellationToken: TestContext.Current.CancellationToken);
             Verify(client.TakeSingle());
         }
 
@@ -1244,7 +1244,7 @@ namespace Gitea.Net.Test.Api
             instance.UserCurrentListStarred(page, limit);
             Verify(client.TakeSingle());
 
-            await instance.UserCurrentListStarredAsync(page, limit);
+            await instance.UserCurrentListStarredAsync(page, limit, cancellationToken: TestContext.Current.CancellationToken);
             Verify(client.TakeSingle());
         }
 
@@ -1268,7 +1268,7 @@ namespace Gitea.Net.Test.Api
             instance.UserCurrentListSubscriptions(page, limit);
             Verify(client.TakeSingle());
 
-            await instance.UserCurrentListSubscriptionsAsync(page, limit);
+            await instance.UserCurrentListSubscriptionsAsync(page, limit, cancellationToken: TestContext.Current.CancellationToken);
             Verify(client.TakeSingle());
         }
 
@@ -1292,7 +1292,7 @@ namespace Gitea.Net.Test.Api
             instance.UserCurrentMoveProjectColumns(id, body);
             Verify(client.TakeSingle());
 
-            await instance.UserCurrentMoveProjectColumnsAsync(id, body);
+            await instance.UserCurrentMoveProjectColumnsAsync(id, body, cancellationToken: TestContext.Current.CancellationToken);
             Verify(client.TakeSingle());
         }
 
@@ -1318,7 +1318,7 @@ namespace Gitea.Net.Test.Api
             instance.UserCurrentMoveProjectIssue(id, issueId, body);
             Verify(client.TakeSingle());
 
-            await instance.UserCurrentMoveProjectIssueAsync(id, issueId, body);
+            await instance.UserCurrentMoveProjectIssueAsync(id, issueId, body, cancellationToken: TestContext.Current.CancellationToken);
             Verify(client.TakeSingle());
         }
 
@@ -1340,7 +1340,7 @@ namespace Gitea.Net.Test.Api
             instance.UserCurrentPostGPGKey(form);
             Verify(client.TakeSingle());
 
-            await instance.UserCurrentPostGPGKeyAsync(form);
+            await instance.UserCurrentPostGPGKeyAsync(form, cancellationToken: TestContext.Current.CancellationToken);
             Verify(client.TakeSingle());
         }
 
@@ -1362,7 +1362,7 @@ namespace Gitea.Net.Test.Api
             instance.UserCurrentPostKey(body);
             Verify(client.TakeSingle());
 
-            await instance.UserCurrentPostKeyAsync(body);
+            await instance.UserCurrentPostKeyAsync(body, cancellationToken: TestContext.Current.CancellationToken);
             Verify(client.TakeSingle());
         }
 
@@ -1384,7 +1384,7 @@ namespace Gitea.Net.Test.Api
             instance.UserCurrentPutFollow(username);
             Verify(client.TakeSingle());
 
-            await instance.UserCurrentPutFollowAsync(username);
+            await instance.UserCurrentPutFollowAsync(username, cancellationToken: TestContext.Current.CancellationToken);
             Verify(client.TakeSingle());
         }
 
@@ -1408,7 +1408,7 @@ namespace Gitea.Net.Test.Api
             instance.UserCurrentPutStar(owner, repo);
             Verify(client.TakeSingle());
 
-            await instance.UserCurrentPutStarAsync(owner, repo);
+            await instance.UserCurrentPutStarAsync(owner, repo, cancellationToken: TestContext.Current.CancellationToken);
             Verify(client.TakeSingle());
         }
 
@@ -1434,7 +1434,7 @@ namespace Gitea.Net.Test.Api
             instance.UserCurrentRemoveIssueFromProjectColumn(id, columnId, issueId);
             Verify(client.TakeSingle());
 
-            await instance.UserCurrentRemoveIssueFromProjectColumnAsync(id, columnId, issueId);
+            await instance.UserCurrentRemoveIssueFromProjectColumnAsync(id, columnId, issueId, cancellationToken: TestContext.Current.CancellationToken);
             Verify(client.TakeSingle());
         }
 
@@ -1458,7 +1458,7 @@ namespace Gitea.Net.Test.Api
             instance.UserCurrentSetDefaultProjectColumn(id, columnId);
             Verify(client.TakeSingle());
 
-            await instance.UserCurrentSetDefaultProjectColumnAsync(id, columnId);
+            await instance.UserCurrentSetDefaultProjectColumnAsync(id, columnId, cancellationToken: TestContext.Current.CancellationToken);
             Verify(client.TakeSingle());
         }
 
@@ -1486,7 +1486,7 @@ namespace Gitea.Net.Test.Api
             instance.UserCurrentTrackedTimes(page, limit, since, before);
             Verify(client.TakeSingle());
 
-            await instance.UserCurrentTrackedTimesAsync(page, limit, since, before);
+            await instance.UserCurrentTrackedTimesAsync(page, limit, since, before, cancellationToken: TestContext.Current.CancellationToken);
             Verify(client.TakeSingle());
         }
 
@@ -1510,7 +1510,7 @@ namespace Gitea.Net.Test.Api
             instance.UserDeleteAccessToken(username, token);
             Verify(client.TakeSingle());
 
-            await instance.UserDeleteAccessTokenAsync(username, token);
+            await instance.UserDeleteAccessTokenAsync(username, token, cancellationToken: TestContext.Current.CancellationToken);
             Verify(client.TakeSingle());
         }
 
@@ -1531,7 +1531,7 @@ namespace Gitea.Net.Test.Api
             instance.UserDeleteAvatar();
             Verify(client.TakeSingle());
 
-            await instance.UserDeleteAvatarAsync();
+            await instance.UserDeleteAvatarAsync(cancellationToken: TestContext.Current.CancellationToken);
             Verify(client.TakeSingle());
         }
 
@@ -1553,7 +1553,7 @@ namespace Gitea.Net.Test.Api
             instance.UserDeleteEmail(body);
             Verify(client.TakeSingle());
 
-            await instance.UserDeleteEmailAsync(body);
+            await instance.UserDeleteEmailAsync(body, cancellationToken: TestContext.Current.CancellationToken);
             Verify(client.TakeSingle());
         }
 
@@ -1575,7 +1575,7 @@ namespace Gitea.Net.Test.Api
             instance.UserDeleteHook(id);
             Verify(client.TakeSingle());
 
-            await instance.UserDeleteHookAsync(id);
+            await instance.UserDeleteHookAsync(id, cancellationToken: TestContext.Current.CancellationToken);
             Verify(client.TakeSingle());
         }
 
@@ -1597,7 +1597,7 @@ namespace Gitea.Net.Test.Api
             instance.UserDeleteOAuth2Application(id);
             Verify(client.TakeSingle());
 
-            await instance.UserDeleteOAuth2ApplicationAsync(id);
+            await instance.UserDeleteOAuth2ApplicationAsync(id, cancellationToken: TestContext.Current.CancellationToken);
             Verify(client.TakeSingle());
         }
 
@@ -1621,7 +1621,7 @@ namespace Gitea.Net.Test.Api
             instance.UserEditHook(id, body);
             Verify(client.TakeSingle());
 
-            await instance.UserEditHookAsync(id, body);
+            await instance.UserEditHookAsync(id, body, cancellationToken: TestContext.Current.CancellationToken);
             Verify(client.TakeSingle());
         }
 
@@ -1643,7 +1643,7 @@ namespace Gitea.Net.Test.Api
             instance.UserGet(username);
             Verify(client.TakeSingle());
 
-            await instance.UserGetAsync(username);
+            await instance.UserGetAsync(username, cancellationToken: TestContext.Current.CancellationToken);
             Verify(client.TakeSingle());
         }
 
@@ -1664,7 +1664,7 @@ namespace Gitea.Net.Test.Api
             instance.UserGetCurrent();
             Verify(client.TakeSingle());
 
-            await instance.UserGetCurrentAsync();
+            await instance.UserGetCurrentAsync(cancellationToken: TestContext.Current.CancellationToken);
             Verify(client.TakeSingle());
         }
 
@@ -1686,7 +1686,7 @@ namespace Gitea.Net.Test.Api
             instance.UserGetHeatmapData(username);
             Verify(client.TakeSingle());
 
-            await instance.UserGetHeatmapDataAsync(username);
+            await instance.UserGetHeatmapDataAsync(username, cancellationToken: TestContext.Current.CancellationToken);
             Verify(client.TakeSingle());
         }
 
@@ -1708,7 +1708,7 @@ namespace Gitea.Net.Test.Api
             instance.UserGetHook(id);
             Verify(client.TakeSingle());
 
-            await instance.UserGetHookAsync(id);
+            await instance.UserGetHookAsync(id, cancellationToken: TestContext.Current.CancellationToken);
             Verify(client.TakeSingle());
         }
 
@@ -1730,7 +1730,7 @@ namespace Gitea.Net.Test.Api
             instance.UserGetOAuth2Application(id);
             Verify(client.TakeSingle());
 
-            await instance.UserGetOAuth2ApplicationAsync(id);
+            await instance.UserGetOAuth2ApplicationAsync(id, cancellationToken: TestContext.Current.CancellationToken);
             Verify(client.TakeSingle());
         }
 
@@ -1754,7 +1754,7 @@ namespace Gitea.Net.Test.Api
             instance.UserGetOauth2Application(page, limit);
             Verify(client.TakeSingle());
 
-            await instance.UserGetOauth2ApplicationAsync(page, limit);
+            await instance.UserGetOauth2ApplicationAsync(page, limit, cancellationToken: TestContext.Current.CancellationToken);
             Verify(client.TakeSingle());
         }
 
@@ -1778,7 +1778,7 @@ namespace Gitea.Net.Test.Api
             instance.UserGetStopWatches(page, limit);
             Verify(client.TakeSingle());
 
-            await instance.UserGetStopWatchesAsync(page, limit);
+            await instance.UserGetStopWatchesAsync(page, limit, cancellationToken: TestContext.Current.CancellationToken);
             Verify(client.TakeSingle());
         }
 
@@ -1804,7 +1804,7 @@ namespace Gitea.Net.Test.Api
             instance.UserGetTokens(username, page, limit);
             Verify(client.TakeSingle());
 
-            await instance.UserGetTokensAsync(username, page, limit);
+            await instance.UserGetTokensAsync(username, page, limit, cancellationToken: TestContext.Current.CancellationToken);
             Verify(client.TakeSingle());
         }
 
@@ -1834,7 +1834,7 @@ namespace Gitea.Net.Test.Api
             instance.UserListActivityFeeds(username, onlyPerformedBy, date, page, limit);
             Verify(client.TakeSingle());
 
-            await instance.UserListActivityFeedsAsync(username, onlyPerformedBy, date, page, limit);
+            await instance.UserListActivityFeedsAsync(username, onlyPerformedBy, date, page, limit, cancellationToken: TestContext.Current.CancellationToken);
             Verify(client.TakeSingle());
         }
 
@@ -1858,7 +1858,7 @@ namespace Gitea.Net.Test.Api
             instance.UserListBlocks(page, limit);
             Verify(client.TakeSingle());
 
-            await instance.UserListBlocksAsync(page, limit);
+            await instance.UserListBlocksAsync(page, limit, cancellationToken: TestContext.Current.CancellationToken);
             Verify(client.TakeSingle());
         }
 
@@ -1879,7 +1879,7 @@ namespace Gitea.Net.Test.Api
             instance.UserListEmails();
             Verify(client.TakeSingle());
 
-            await instance.UserListEmailsAsync();
+            await instance.UserListEmailsAsync(cancellationToken: TestContext.Current.CancellationToken);
             Verify(client.TakeSingle());
         }
 
@@ -1905,7 +1905,7 @@ namespace Gitea.Net.Test.Api
             instance.UserListFollowers(username, page, limit);
             Verify(client.TakeSingle());
 
-            await instance.UserListFollowersAsync(username, page, limit);
+            await instance.UserListFollowersAsync(username, page, limit, cancellationToken: TestContext.Current.CancellationToken);
             Verify(client.TakeSingle());
         }
 
@@ -1931,7 +1931,7 @@ namespace Gitea.Net.Test.Api
             instance.UserListFollowing(username, page, limit);
             Verify(client.TakeSingle());
 
-            await instance.UserListFollowingAsync(username, page, limit);
+            await instance.UserListFollowingAsync(username, page, limit, cancellationToken: TestContext.Current.CancellationToken);
             Verify(client.TakeSingle());
         }
 
@@ -1957,7 +1957,7 @@ namespace Gitea.Net.Test.Api
             instance.UserListGPGKeys(username, page, limit);
             Verify(client.TakeSingle());
 
-            await instance.UserListGPGKeysAsync(username, page, limit);
+            await instance.UserListGPGKeysAsync(username, page, limit, cancellationToken: TestContext.Current.CancellationToken);
             Verify(client.TakeSingle());
         }
 
@@ -1981,7 +1981,7 @@ namespace Gitea.Net.Test.Api
             instance.UserListHooks(page, limit);
             Verify(client.TakeSingle());
 
-            await instance.UserListHooksAsync(page, limit);
+            await instance.UserListHooksAsync(page, limit, cancellationToken: TestContext.Current.CancellationToken);
             Verify(client.TakeSingle());
         }
 
@@ -2009,7 +2009,7 @@ namespace Gitea.Net.Test.Api
             instance.UserListKeys(username, fingerprint, page, limit);
             Verify(client.TakeSingle());
 
-            await instance.UserListKeysAsync(username, fingerprint, page, limit);
+            await instance.UserListKeysAsync(username, fingerprint, page, limit, cancellationToken: TestContext.Current.CancellationToken);
             Verify(client.TakeSingle());
         }
 
@@ -2037,7 +2037,7 @@ namespace Gitea.Net.Test.Api
             instance.UserListProjects(username, state, page, limit);
             Verify(client.TakeSingle());
 
-            await instance.UserListProjectsAsync(username, state, page, limit);
+            await instance.UserListProjectsAsync(username, state, page, limit, cancellationToken: TestContext.Current.CancellationToken);
             Verify(client.TakeSingle());
         }
 
@@ -2063,7 +2063,7 @@ namespace Gitea.Net.Test.Api
             instance.UserListRepos(username, page, limit);
             Verify(client.TakeSingle());
 
-            await instance.UserListReposAsync(username, page, limit);
+            await instance.UserListReposAsync(username, page, limit, cancellationToken: TestContext.Current.CancellationToken);
             Verify(client.TakeSingle());
         }
 
@@ -2089,7 +2089,7 @@ namespace Gitea.Net.Test.Api
             instance.UserListStarred(username, page, limit);
             Verify(client.TakeSingle());
 
-            await instance.UserListStarredAsync(username, page, limit);
+            await instance.UserListStarredAsync(username, page, limit, cancellationToken: TestContext.Current.CancellationToken);
             Verify(client.TakeSingle());
         }
 
@@ -2115,7 +2115,7 @@ namespace Gitea.Net.Test.Api
             instance.UserListSubscriptions(username, page, limit);
             Verify(client.TakeSingle());
 
-            await instance.UserListSubscriptionsAsync(username, page, limit);
+            await instance.UserListSubscriptionsAsync(username, page, limit, cancellationToken: TestContext.Current.CancellationToken);
             Verify(client.TakeSingle());
         }
 
@@ -2139,7 +2139,7 @@ namespace Gitea.Net.Test.Api
             instance.UserListTeams(page, limit);
             Verify(client.TakeSingle());
 
-            await instance.UserListTeamsAsync(page, limit);
+            await instance.UserListTeamsAsync(page, limit, cancellationToken: TestContext.Current.CancellationToken);
             Verify(client.TakeSingle());
         }
 
@@ -2167,7 +2167,7 @@ namespace Gitea.Net.Test.Api
             instance.UserSearch(q, uid, page, limit);
             Verify(client.TakeSingle());
 
-            await instance.UserSearchAsync(q, uid, page, limit);
+            await instance.UserSearchAsync(q, uid, page, limit, cancellationToken: TestContext.Current.CancellationToken);
             Verify(client.TakeSingle());
         }
 
@@ -2189,7 +2189,7 @@ namespace Gitea.Net.Test.Api
             instance.UserUnblockUser(username);
             Verify(client.TakeSingle());
 
-            await instance.UserUnblockUserAsync(username);
+            await instance.UserUnblockUserAsync(username, cancellationToken: TestContext.Current.CancellationToken);
             Verify(client.TakeSingle());
         }
 
@@ -2211,7 +2211,7 @@ namespace Gitea.Net.Test.Api
             instance.UserUpdateAvatar(body);
             Verify(client.TakeSingle());
 
-            await instance.UserUpdateAvatarAsync(body);
+            await instance.UserUpdateAvatarAsync(body, cancellationToken: TestContext.Current.CancellationToken);
             Verify(client.TakeSingle());
         }
 
@@ -2235,7 +2235,7 @@ namespace Gitea.Net.Test.Api
             instance.UserUpdateOAuth2Application(id, body);
             Verify(client.TakeSingle());
 
-            await instance.UserUpdateOAuth2ApplicationAsync(id, body);
+            await instance.UserUpdateOAuth2ApplicationAsync(id, body, cancellationToken: TestContext.Current.CancellationToken);
             Verify(client.TakeSingle());
         }
 
@@ -2256,7 +2256,7 @@ namespace Gitea.Net.Test.Api
             instance.UserVerifyGPGKey();
             Verify(client.TakeSingle());
 
-            await instance.UserVerifyGPGKeyAsync();
+            await instance.UserVerifyGPGKeyAsync(cancellationToken: TestContext.Current.CancellationToken);
             Verify(client.TakeSingle());
         }
     }

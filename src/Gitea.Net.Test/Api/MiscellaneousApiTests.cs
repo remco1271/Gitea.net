@@ -62,7 +62,7 @@ namespace Gitea.Net.Test.Api
             instance.DeleteCurrentToken();
             Verify(client.TakeSingle());
 
-            await instance.DeleteCurrentTokenAsync();
+            await instance.DeleteCurrentTokenAsync(cancellationToken: TestContext.Current.CancellationToken);
             Verify(client.TakeSingle());
         }
 
@@ -83,7 +83,7 @@ namespace Gitea.Net.Test.Api
             instance.GetCurrentToken();
             Verify(client.TakeSingle());
 
-            await instance.GetCurrentTokenAsync();
+            await instance.GetCurrentTokenAsync(cancellationToken: TestContext.Current.CancellationToken);
             Verify(client.TakeSingle());
         }
 
@@ -105,7 +105,7 @@ namespace Gitea.Net.Test.Api
             instance.GetGitignoreTemplateInfo(name);
             Verify(client.TakeSingle());
 
-            await instance.GetGitignoreTemplateInfoAsync(name);
+            await instance.GetGitignoreTemplateInfoAsync(name, cancellationToken: TestContext.Current.CancellationToken);
             Verify(client.TakeSingle());
         }
 
@@ -127,7 +127,7 @@ namespace Gitea.Net.Test.Api
             instance.GetLabelTemplateInfo(name);
             Verify(client.TakeSingle());
 
-            await instance.GetLabelTemplateInfoAsync(name);
+            await instance.GetLabelTemplateInfoAsync(name, cancellationToken: TestContext.Current.CancellationToken);
             Verify(client.TakeSingle());
         }
 
@@ -149,7 +149,7 @@ namespace Gitea.Net.Test.Api
             instance.GetLicenseTemplateInfo(name);
             Verify(client.TakeSingle());
 
-            await instance.GetLicenseTemplateInfoAsync(name);
+            await instance.GetLicenseTemplateInfoAsync(name, cancellationToken: TestContext.Current.CancellationToken);
             Verify(client.TakeSingle());
         }
 
@@ -170,7 +170,7 @@ namespace Gitea.Net.Test.Api
             instance.GetSigningKey();
             Verify(client.TakeSingle());
 
-            await instance.GetSigningKeyAsync();
+            await instance.GetSigningKeyAsync(cancellationToken: TestContext.Current.CancellationToken);
             Verify(client.TakeSingle());
         }
 
@@ -191,7 +191,7 @@ namespace Gitea.Net.Test.Api
             instance.GetSigningKeySSH();
             Verify(client.TakeSingle());
 
-            await instance.GetSigningKeySSHAsync();
+            await instance.GetSigningKeySSHAsync(cancellationToken: TestContext.Current.CancellationToken);
             Verify(client.TakeSingle());
         }
 
@@ -212,7 +212,7 @@ namespace Gitea.Net.Test.Api
             instance.GetVersion();
             Verify(client.TakeSingle());
 
-            await instance.GetVersionAsync();
+            await instance.GetVersionAsync(cancellationToken: TestContext.Current.CancellationToken);
             Verify(client.TakeSingle());
         }
 
@@ -233,7 +233,7 @@ namespace Gitea.Net.Test.Api
             instance.ListGitignoresTemplates();
             Verify(client.TakeSingle());
 
-            await instance.ListGitignoresTemplatesAsync();
+            await instance.ListGitignoresTemplatesAsync(cancellationToken: TestContext.Current.CancellationToken);
             Verify(client.TakeSingle());
         }
 
@@ -254,7 +254,7 @@ namespace Gitea.Net.Test.Api
             instance.ListLabelTemplates();
             Verify(client.TakeSingle());
 
-            await instance.ListLabelTemplatesAsync();
+            await instance.ListLabelTemplatesAsync(cancellationToken: TestContext.Current.CancellationToken);
             Verify(client.TakeSingle());
         }
 
@@ -275,7 +275,7 @@ namespace Gitea.Net.Test.Api
             instance.ListLicenseTemplates();
             Verify(client.TakeSingle());
 
-            await instance.ListLicenseTemplatesAsync();
+            await instance.ListLicenseTemplatesAsync(cancellationToken: TestContext.Current.CancellationToken);
             Verify(client.TakeSingle());
         }
 
@@ -297,7 +297,7 @@ namespace Gitea.Net.Test.Api
             instance.RenderMarkdown(body);
             Verify(client.TakeSingle());
 
-            await instance.RenderMarkdownAsync(body);
+            await instance.RenderMarkdownAsync(body, cancellationToken: TestContext.Current.CancellationToken);
             Verify(client.TakeSingle());
         }
 
@@ -319,7 +319,7 @@ namespace Gitea.Net.Test.Api
             instance.RenderMarkdownRaw(body);
             Verify(client.TakeSingle());
 
-            await instance.RenderMarkdownRawAsync(body);
+            await instance.RenderMarkdownRawAsync(body, cancellationToken: TestContext.Current.CancellationToken);
             Verify(client.TakeSingle());
         }
 
@@ -341,7 +341,7 @@ namespace Gitea.Net.Test.Api
             instance.RenderMarkup(body);
             Verify(client.TakeSingle());
 
-            await instance.RenderMarkupAsync(body);
+            await instance.RenderMarkupAsync(body, cancellationToken: TestContext.Current.CancellationToken);
             Verify(client.TakeSingle());
         }
     }

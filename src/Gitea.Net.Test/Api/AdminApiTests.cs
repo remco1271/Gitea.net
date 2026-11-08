@@ -65,7 +65,7 @@ namespace Gitea.Net.Test.Api
             instance.AdminAddUserBadges(username, body);
             Verify(client.TakeSingle());
 
-            await instance.AdminAddUserBadgesAsync(username, body);
+            await instance.AdminAddUserBadgesAsync(username, body, cancellationToken: TestContext.Current.CancellationToken);
             Verify(client.TakeSingle());
         }
 
@@ -89,7 +89,7 @@ namespace Gitea.Net.Test.Api
             instance.AdminAdoptRepository(owner, repo);
             Verify(client.TakeSingle());
 
-            await instance.AdminAdoptRepositoryAsync(owner, repo);
+            await instance.AdminAdoptRepositoryAsync(owner, repo, cancellationToken: TestContext.Current.CancellationToken);
             Verify(client.TakeSingle());
         }
 
@@ -111,7 +111,7 @@ namespace Gitea.Net.Test.Api
             instance.AdminCreateHook(body);
             Verify(client.TakeSingle());
 
-            await instance.AdminCreateHookAsync(body);
+            await instance.AdminCreateHookAsync(body, cancellationToken: TestContext.Current.CancellationToken);
             Verify(client.TakeSingle());
         }
 
@@ -135,7 +135,7 @@ namespace Gitea.Net.Test.Api
             instance.AdminCreateOrg(username, organization);
             Verify(client.TakeSingle());
 
-            await instance.AdminCreateOrgAsync(username, organization);
+            await instance.AdminCreateOrgAsync(username, organization, cancellationToken: TestContext.Current.CancellationToken);
             Verify(client.TakeSingle());
         }
 
@@ -159,7 +159,7 @@ namespace Gitea.Net.Test.Api
             instance.AdminCreatePublicKey(username, key);
             Verify(client.TakeSingle());
 
-            await instance.AdminCreatePublicKeyAsync(username, key);
+            await instance.AdminCreatePublicKeyAsync(username, key, cancellationToken: TestContext.Current.CancellationToken);
             Verify(client.TakeSingle());
         }
 
@@ -183,7 +183,7 @@ namespace Gitea.Net.Test.Api
             instance.AdminCreateRepo(username, repository);
             Verify(client.TakeSingle());
 
-            await instance.AdminCreateRepoAsync(username, repository);
+            await instance.AdminCreateRepoAsync(username, repository, cancellationToken: TestContext.Current.CancellationToken);
             Verify(client.TakeSingle());
         }
 
@@ -204,7 +204,7 @@ namespace Gitea.Net.Test.Api
             instance.AdminCreateRunnerRegistrationToken();
             Verify(client.TakeSingle());
 
-            await instance.AdminCreateRunnerRegistrationTokenAsync();
+            await instance.AdminCreateRunnerRegistrationTokenAsync(cancellationToken: TestContext.Current.CancellationToken);
             Verify(client.TakeSingle());
         }
 
@@ -226,7 +226,7 @@ namespace Gitea.Net.Test.Api
             instance.AdminCreateUser(body);
             Verify(client.TakeSingle());
 
-            await instance.AdminCreateUserAsync(body);
+            await instance.AdminCreateUserAsync(body, cancellationToken: TestContext.Current.CancellationToken);
             Verify(client.TakeSingle());
         }
 
@@ -250,7 +250,7 @@ namespace Gitea.Net.Test.Api
             instance.AdminCronList(page, limit);
             Verify(client.TakeSingle());
 
-            await instance.AdminCronListAsync(page, limit);
+            await instance.AdminCronListAsync(page, limit, cancellationToken: TestContext.Current.CancellationToken);
             Verify(client.TakeSingle());
         }
 
@@ -272,7 +272,7 @@ namespace Gitea.Net.Test.Api
             instance.AdminCronRun(task);
             Verify(client.TakeSingle());
 
-            await instance.AdminCronRunAsync(task);
+            await instance.AdminCronRunAsync(task, cancellationToken: TestContext.Current.CancellationToken);
             Verify(client.TakeSingle());
         }
 
@@ -294,7 +294,7 @@ namespace Gitea.Net.Test.Api
             instance.AdminDeleteHook(id);
             Verify(client.TakeSingle());
 
-            await instance.AdminDeleteHookAsync(id);
+            await instance.AdminDeleteHookAsync(id, cancellationToken: TestContext.Current.CancellationToken);
             Verify(client.TakeSingle());
         }
 
@@ -318,7 +318,7 @@ namespace Gitea.Net.Test.Api
             instance.AdminDeleteUnadoptedRepository(owner, repo);
             Verify(client.TakeSingle());
 
-            await instance.AdminDeleteUnadoptedRepositoryAsync(owner, repo);
+            await instance.AdminDeleteUnadoptedRepositoryAsync(owner, repo, cancellationToken: TestContext.Current.CancellationToken);
             Verify(client.TakeSingle());
         }
 
@@ -342,7 +342,7 @@ namespace Gitea.Net.Test.Api
             instance.AdminDeleteUser(username, purge);
             Verify(client.TakeSingle());
 
-            await instance.AdminDeleteUserAsync(username, purge);
+            await instance.AdminDeleteUserAsync(username, purge, cancellationToken: TestContext.Current.CancellationToken);
             Verify(client.TakeSingle());
         }
 
@@ -366,7 +366,7 @@ namespace Gitea.Net.Test.Api
             instance.AdminDeleteUserBadges(username, body);
             Verify(client.TakeSingle());
 
-            await instance.AdminDeleteUserBadgesAsync(username, body);
+            await instance.AdminDeleteUserBadgesAsync(username, body, cancellationToken: TestContext.Current.CancellationToken);
             Verify(client.TakeSingle());
         }
 
@@ -390,7 +390,7 @@ namespace Gitea.Net.Test.Api
             instance.AdminDeleteUserPublicKey(username, id);
             Verify(client.TakeSingle());
 
-            await instance.AdminDeleteUserPublicKeyAsync(username, id);
+            await instance.AdminDeleteUserPublicKeyAsync(username, id, cancellationToken: TestContext.Current.CancellationToken);
             Verify(client.TakeSingle());
         }
 
@@ -414,7 +414,7 @@ namespace Gitea.Net.Test.Api
             instance.AdminEditHook(id, body);
             Verify(client.TakeSingle());
 
-            await instance.AdminEditHookAsync(id, body);
+            await instance.AdminEditHookAsync(id, body, cancellationToken: TestContext.Current.CancellationToken);
             Verify(client.TakeSingle());
         }
 
@@ -438,7 +438,7 @@ namespace Gitea.Net.Test.Api
             instance.AdminEditUser(username, body);
             Verify(client.TakeSingle());
 
-            await instance.AdminEditUserAsync(username, body);
+            await instance.AdminEditUserAsync(username, body, cancellationToken: TestContext.Current.CancellationToken);
             Verify(client.TakeSingle());
         }
 
@@ -462,7 +462,7 @@ namespace Gitea.Net.Test.Api
             instance.AdminGetAllEmails(page, limit);
             Verify(client.TakeSingle());
 
-            await instance.AdminGetAllEmailsAsync(page, limit);
+            await instance.AdminGetAllEmailsAsync(page, limit, cancellationToken: TestContext.Current.CancellationToken);
             Verify(client.TakeSingle());
         }
 
@@ -486,7 +486,7 @@ namespace Gitea.Net.Test.Api
             instance.AdminGetAllOrgs(page, limit);
             Verify(client.TakeSingle());
 
-            await instance.AdminGetAllOrgsAsync(page, limit);
+            await instance.AdminGetAllOrgsAsync(page, limit, cancellationToken: TestContext.Current.CancellationToken);
             Verify(client.TakeSingle());
         }
 
@@ -508,7 +508,7 @@ namespace Gitea.Net.Test.Api
             instance.AdminGetHook(id);
             Verify(client.TakeSingle());
 
-            await instance.AdminGetHookAsync(id);
+            await instance.AdminGetHookAsync(id, cancellationToken: TestContext.Current.CancellationToken);
             Verify(client.TakeSingle());
         }
 
@@ -534,7 +534,7 @@ namespace Gitea.Net.Test.Api
             instance.AdminListHooks(page, limit, type);
             Verify(client.TakeSingle());
 
-            await instance.AdminListHooksAsync(page, limit, type);
+            await instance.AdminListHooksAsync(page, limit, type, cancellationToken: TestContext.Current.CancellationToken);
             Verify(client.TakeSingle());
         }
 
@@ -562,7 +562,7 @@ namespace Gitea.Net.Test.Api
             instance.AdminListPackages(page, limit, type, q);
             Verify(client.TakeSingle());
 
-            await instance.AdminListPackagesAsync(page, limit, type, q);
+            await instance.AdminListPackagesAsync(page, limit, type, q, cancellationToken: TestContext.Current.CancellationToken);
             Verify(client.TakeSingle());
         }
 
@@ -584,7 +584,7 @@ namespace Gitea.Net.Test.Api
             instance.AdminListUserBadges(username);
             Verify(client.TakeSingle());
 
-            await instance.AdminListUserBadgesAsync(username);
+            await instance.AdminListUserBadgesAsync(username, cancellationToken: TestContext.Current.CancellationToken);
             Verify(client.TakeSingle());
         }
 
@@ -608,7 +608,7 @@ namespace Gitea.Net.Test.Api
             instance.AdminRenameUser(username, body);
             Verify(client.TakeSingle());
 
-            await instance.AdminRenameUserAsync(username, body);
+            await instance.AdminRenameUserAsync(username, body, cancellationToken: TestContext.Current.CancellationToken);
             Verify(client.TakeSingle());
         }
 
@@ -634,7 +634,7 @@ namespace Gitea.Net.Test.Api
             instance.AdminSearchEmails(q, page, limit);
             Verify(client.TakeSingle());
 
-            await instance.AdminSearchEmailsAsync(q, page, limit);
+            await instance.AdminSearchEmailsAsync(q, page, limit, cancellationToken: TestContext.Current.CancellationToken);
             Verify(client.TakeSingle());
         }
 
@@ -680,7 +680,7 @@ namespace Gitea.Net.Test.Api
             instance.AdminSearchUsers(sourceId, loginName, page, limit, sort, order, q, visibility, isActive, isAdmin, isRestricted, is2faEnabled, isProhibitLogin);
             Verify(client.TakeSingle());
 
-            await instance.AdminSearchUsersAsync(sourceId, loginName, page, limit, sort, order, q, visibility, isActive, isAdmin, isRestricted, is2faEnabled, isProhibitLogin);
+            await instance.AdminSearchUsersAsync(sourceId, loginName, page, limit, sort, order, q, visibility, isActive, isAdmin, isRestricted, is2faEnabled, isProhibitLogin, cancellationToken: TestContext.Current.CancellationToken);
             Verify(client.TakeSingle());
         }
 
@@ -706,7 +706,7 @@ namespace Gitea.Net.Test.Api
             instance.AdminUnadoptedList(page, limit, query);
             Verify(client.TakeSingle());
 
-            await instance.AdminUnadoptedListAsync(page, limit, query);
+            await instance.AdminUnadoptedListAsync(page, limit, query, cancellationToken: TestContext.Current.CancellationToken);
             Verify(client.TakeSingle());
         }
 
@@ -728,7 +728,7 @@ namespace Gitea.Net.Test.Api
             instance.DeleteAdminRunner(runnerId);
             Verify(client.TakeSingle());
 
-            await instance.DeleteAdminRunnerAsync(runnerId);
+            await instance.DeleteAdminRunnerAsync(runnerId, cancellationToken: TestContext.Current.CancellationToken);
             Verify(client.TakeSingle());
         }
 
@@ -750,7 +750,7 @@ namespace Gitea.Net.Test.Api
             instance.GetAdminRunner(runnerId);
             Verify(client.TakeSingle());
 
-            await instance.GetAdminRunnerAsync(runnerId);
+            await instance.GetAdminRunnerAsync(runnerId, cancellationToken: TestContext.Current.CancellationToken);
             Verify(client.TakeSingle());
         }
 
@@ -772,7 +772,7 @@ namespace Gitea.Net.Test.Api
             instance.GetAdminRunners(disabled);
             Verify(client.TakeSingle());
 
-            await instance.GetAdminRunnersAsync(disabled);
+            await instance.GetAdminRunnersAsync(disabled, cancellationToken: TestContext.Current.CancellationToken);
             Verify(client.TakeSingle());
         }
 
@@ -802,7 +802,7 @@ namespace Gitea.Net.Test.Api
             instance.ListAdminWorkflowJobs(status, page, limit, sort, order);
             Verify(client.TakeSingle());
 
-            await instance.ListAdminWorkflowJobsAsync(status, page, limit, sort, order);
+            await instance.ListAdminWorkflowJobsAsync(status, page, limit, sort, order, cancellationToken: TestContext.Current.CancellationToken);
             Verify(client.TakeSingle());
         }
 
@@ -836,7 +836,7 @@ namespace Gitea.Net.Test.Api
             instance.ListAdminWorkflowRuns(varEvent, branch, status, actor, headSha, page, limit);
             Verify(client.TakeSingle());
 
-            await instance.ListAdminWorkflowRunsAsync(varEvent, branch, status, actor, headSha, page, limit);
+            await instance.ListAdminWorkflowRunsAsync(varEvent, branch, status, actor, headSha, page, limit, cancellationToken: TestContext.Current.CancellationToken);
             Verify(client.TakeSingle());
         }
 
@@ -860,7 +860,7 @@ namespace Gitea.Net.Test.Api
             instance.UpdateAdminRunner(runnerId, body);
             Verify(client.TakeSingle());
 
-            await instance.UpdateAdminRunnerAsync(runnerId, body);
+            await instance.UpdateAdminRunnerAsync(runnerId, body, cancellationToken: TestContext.Current.CancellationToken);
             Verify(client.TakeSingle());
         }
     }
