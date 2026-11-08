@@ -106,8 +106,11 @@ jobs:
           Write-Host "Previous tag: $(if ($previousTag) { $previousTag } else { '<none>' })"
 
           # Tag the release commit (reuse the tag if a previous attempt already pushed it)
+          # rev-parse exits with 1 when the tag doesn't exist, which is the normal case here
+          $PSNativeCommandUseErrorActionPreference = $false
           $existingTagCommit = git rev-parse -q --verify "refs/tags/$currentTag^{commit}" 2>$null
-          if ($existingTagCommit) {
+          $PSNativeCommandUseErrorActionPreference = $true
+          if ($LASTEXITCODE -eq 0 -and $existingTagCommit) {
               if ($existingTagCommit.Trim() -ne $releaseCommit) {
                   throw "Tag $currentTag already exists on commit $existingTagCommit, not on $releaseCommit. Bump <Version> in src/Gitea.Net/Gitea.Net.csproj."
               }
