@@ -8,12 +8,8 @@
   </PropertyGroup>
 
   <PropertyGroup>
-    <Version>1.0.2</Version>
-    <VersionPrefix>1.0.2</VersionPrefix>
     <IncludeSymbols>True</IncludeSymbols>
     <SymbolPackageFormat>snupkg</SymbolPackageFormat>
-    <GenerateNuspecDependsOn>$(GenerateNuspecDependsOn);SetPackageVersion</GenerateNuspecDependsOn>
-    <GeneratePackageOnBuild>True</GeneratePackageOnBuild>
   </PropertyGroup>
 
   <PropertyGroup>
@@ -34,14 +30,6 @@
     <PackageReadmeFile>README.md</PackageReadmeFile>
   </PropertyGroup>
 
-  <Target Name="SetPackageVersion" DependsOnTargets="Build">
-    <PropertyGroup>
-      <!-- <PackageVersion>$([System.DateTime]::Now.ToString(&quot;yyyy.MM.dd.HHmmss&quot;))</PackageVersion> -->
-      <!-- You can customize the format and the rule about how version increases here. -->
-      <PackageVersion>$([System.DateTime]::Now.ToString("yy.MM.dd"))</PackageVersion>
-    </PropertyGroup>
-  </Target>
-
   <ItemGroup>
     <None Include="MIT-LICENSE.txt" Pack="true" PackagePath="\"/>
     <None Include="..\..\README.md" Pack="true" PackagePath="\"/>
@@ -52,6 +40,8 @@
     <PackageReference Include="RestSharp"/>
     <PackageReference Include="Polly"/>
     <PackageReference Include="Newtonsoft.Json"/>
+    <!-- Sets assembly and package version from version.json + git history -->
+    <PackageReference Include="Nerdbank.GitVersioning" PrivateAssets="all"/>
   </ItemGroup>
 
 </Project>

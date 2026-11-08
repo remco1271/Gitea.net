@@ -35,11 +35,14 @@ NOTE: RestSharp for .Net Core creates a new socket for each api call, which can 
 
 <a id="installation"></a>
 ## Installation
-Run the following command to generate the DLL
-- [Mac/Linux] `/bin/sh build.sh`
-- [Windows] `build.bat`
+Install the package from NuGet:
+```
+dotnet add package Gitea.Net.API
+```
 
-Then include the DLL (under the `bin` folder) in the C# project, and use the namespaces:
+Or build it from source with `dotnet build -c Release`.
+
+Then use the namespaces:
 ```csharp
 using Gitea.Net.Api;
 using Gitea.Net.Client;
@@ -48,15 +51,13 @@ using Gitea.Net.Model;
 <a id="packaging"></a>
 ## Packaging
 
-A `.nuspec` is included with the project. You can follow the Nuget quickstart to [create](https://docs.microsoft.com/en-us/nuget/quickstart/create-and-publish-a-package#create-the-package) and [publish](https://docs.microsoft.com/en-us/nuget/quickstart/create-and-publish-a-package#publish-the-package) packages.
-
-This `.nuspec` uses placeholders from the `.csproj`, so build the `.csproj` directly:
+The package version is calculated by [Nerdbank.GitVersioning](https://github.com/dotnet/Nerdbank.GitVersioning) from `version.json` and the git history. To create the package locally:
 
 ```
-nuget pack -Build -OutputDirectory out Gitea.Net.csproj
+dotnet pack -c Release
 ```
 
-Then, publish to a [local feed](https://docs.microsoft.com/en-us/nuget/hosting-packages/local-feeds) or [other host](https://docs.microsoft.com/en-us/nuget/hosting-packages/overview) and consume the new package via Nuget as usual.
+The `.nupkg` and `.snupkg` files are written to `src/Gitea.Net/bin/Release`. Releases are built and published to NuGet by the GitHub Actions workflows.
 
 <a id="usage"></a>
 ## Usage

@@ -3,7 +3,6 @@
 Gitea.Net.sln
 README.md
 api/openapi.yaml
-appveyor.yml
 docs/APIError.md
 docs/AccessToken.md
 docs/ActionArtifact.md

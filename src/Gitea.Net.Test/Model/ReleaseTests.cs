@@ -76,6 +76,12 @@ namespace Gitea.Net.Test.Model
         [Fact]
         public async Task UpdateRealease()
         {
+            // Editing a release needs a token; without one (e.g. in CI) there is nothing to test.
+            if (string.IsNullOrEmpty(GITEA_TOKEN))
+            {
+                return;
+            }
+
             // TODO uncomment below to test the method and replace null with proper value
             //var result = instance.GetRelease(GITEA_TOKEN, GITEA_REPOURL, "v1.0.0");
             //Assert.NotNull(result);

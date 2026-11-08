@@ -16,10 +16,15 @@ jobs:
 
     steps:
     - uses: actions/checkout@v7
+      with:
+        fetch-depth: 0 # Nerdbank.GitVersioning needs the full history
     - name: Setup .NET
       uses: actions/setup-dotnet@v6
       with:
-        dotnet-version: 10.0.401
+        dotnet-version: |
+          8.0.x
+          9.0.x
+          10.0.x
     - name: Restore dependencies
       run: dotnet restore
     - name: Build
