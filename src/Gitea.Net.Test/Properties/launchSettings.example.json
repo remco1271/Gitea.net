@@ -1,0 +1,14 @@
+{
+  "$schema": "https://json.schemastore.org/launchsettings.json",
+  "profiles": {
+    "Gitea.Net.Test": {
+      "commandName": "Project",
+      "environmentVariables": {
+        "VELOPACK_GITEA_SERVER": "https://gitea.com",
+        "VELOPACK_GITEA_USERNAME": "remco1271",
+        "VELOPACK_GITEA_RELEASE_REPO": "GiteaTest",
+        "VELOPACK_GITEA_TEST_TOKEN": "Random token here"
+      }
+    }
+  }
+}

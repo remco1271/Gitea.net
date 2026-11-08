@@ -1,5 +1,5 @@
 # Gitea.Net.Model.GenerateRepoOption
-GenerateRepoOption options when creating repository using a template
+GenerateRepoOption options when creating a repository using a template
 
 ## Properties
 
@@ -11,8 +11,8 @@ Name | Type | Description | Notes
 **GitContent** | **bool** | include git content of default branch in template repo | [optional] 
 **GitHooks** | **bool** | include git hooks in template repo | [optional] 
 **Labels** | **bool** | include labels in template repo | [optional] 
-**Name** | **string** | Name of the repository to create | 
-**Owner** | **string** | The organization or person who will own the new repository | 
+**Name** | **string** |  | 
+**Owner** | **string** | the organization&#39;s name or individual user&#39;s name who will own the new repository | 
 **Private** | **bool** | Whether the repository is private | [optional] 
 **ProtectedBranch** | **bool** | include protected branches in template repo | [optional] 
 **Topics** | **bool** | include topics in template repo | [optional] 

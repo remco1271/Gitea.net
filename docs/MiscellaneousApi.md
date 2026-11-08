@@ -4,11 +4,13 @@ All URIs are relative to */api/v1*
 
 | Method | HTTP request | Description |
 |--------|--------------|-------------|
+| [**DeleteCurrentToken**](MiscellaneousApi.md#deletecurrenttoken) | **DELETE** /token | Delete the currently authenticated token |
+| [**GetCurrentToken**](MiscellaneousApi.md#getcurrenttoken) | **GET** /token | Get the currently authenticated token |
 | [**GetGitignoreTemplateInfo**](MiscellaneousApi.md#getgitignoretemplateinfo) | **GET** /gitignore/templates/{name} | Returns information about a gitignore template |
 | [**GetLabelTemplateInfo**](MiscellaneousApi.md#getlabeltemplateinfo) | **GET** /label/templates/{name} | Returns all labels in a template |
 | [**GetLicenseTemplateInfo**](MiscellaneousApi.md#getlicensetemplateinfo) | **GET** /licenses/{name} | Returns information about a license template |
-| [**GetNodeInfo**](MiscellaneousApi.md#getnodeinfo) | **GET** /nodeinfo | Returns the nodeinfo of the Gitea application |
 | [**GetSigningKey**](MiscellaneousApi.md#getsigningkey) | **GET** /signing-key.gpg | Get default signing-key.gpg |
+| [**GetSigningKeySSH**](MiscellaneousApi.md#getsigningkeyssh) | **GET** /signing-key.pub | Get default signing-key.pub |
 | [**GetVersion**](MiscellaneousApi.md#getversion) | **GET** /version | Returns the version of the Gitea application |
 | [**ListGitignoresTemplates**](MiscellaneousApi.md#listgitignorestemplates) | **GET** /gitignore/templates | Returns a list of all gitignore templates |
 | [**ListLabelTemplates**](MiscellaneousApi.md#listlabeltemplates) | **GET** /label/templates | Returns a list of all label templates |
@@ -16,6 +18,226 @@ All URIs are relative to */api/v1*
 | [**RenderMarkdown**](MiscellaneousApi.md#rendermarkdown) | **POST** /markdown | Render a markdown document as HTML |
 | [**RenderMarkdownRaw**](MiscellaneousApi.md#rendermarkdownraw) | **POST** /markdown/raw | Render raw markdown as HTML |
 | [**RenderMarkup**](MiscellaneousApi.md#rendermarkup) | **POST** /markup | Render a markup document as HTML |
+
+<a id="deletecurrenttoken"></a>
+# **DeleteCurrentToken**
+> void DeleteCurrentToken ()
+
+Delete the currently authenticated token
+
+### Example
+```csharp
+using System.Collections.Generic;
+using System.Diagnostics;
+using Gitea.Net.Api;
+using Gitea.Net.Client;
+using Gitea.Net.Model;
+
+namespace Example
+{
+    public class DeleteCurrentTokenExample
+    {
+        public static void Main()
+        {
+            Configuration config = new Configuration();
+            config.BasePath = "/api/v1";
+            // Configure API key authorization: TOTPHeader
+            config.AddApiKey("X-GITEA-OTP", "YOUR_API_KEY");
+            // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+            // config.AddApiKeyPrefix("X-GITEA-OTP", "Bearer");
+            // Configure API key authorization: AuthorizationHeaderToken
+            config.AddApiKey("Authorization", "YOUR_API_KEY");
+            // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+            // config.AddApiKeyPrefix("Authorization", "Bearer");
+            // Configure API key authorization: SudoHeader
+            config.AddApiKey("Sudo", "YOUR_API_KEY");
+            // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+            // config.AddApiKeyPrefix("Sudo", "Bearer");
+            // Configure HTTP basic authorization: BasicAuth
+            config.Username = "YOUR_USERNAME";
+            config.Password = "YOUR_PASSWORD";
+            // Configure API key authorization: AccessToken
+            config.AddApiKey("access_token", "YOUR_API_KEY");
+            // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+            // config.AddApiKeyPrefix("access_token", "Bearer");
+            // Configure API key authorization: SudoParam
+            config.AddApiKey("sudo", "YOUR_API_KEY");
+            // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+            // config.AddApiKeyPrefix("sudo", "Bearer");
+            // Configure API key authorization: Token
+            config.AddApiKey("token", "YOUR_API_KEY");
+            // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+            // config.AddApiKeyPrefix("token", "Bearer");
+
+            var apiInstance = new MiscellaneousApi(config);
+
+            try
+            {
+                // Delete the currently authenticated token
+                apiInstance.DeleteCurrentToken();
+            }
+            catch (ApiException  e)
+            {
+                Debug.Print("Exception when calling MiscellaneousApi.DeleteCurrentToken: " + e.Message);
+                Debug.Print("Status Code: " + e.ErrorCode);
+                Debug.Print(e.StackTrace);
+            }
+        }
+    }
+}
+```
+
+#### Using the DeleteCurrentTokenWithHttpInfo variant
+This returns an ApiResponse object which contains the response data, status code and headers.
+
+```csharp
+try
+{
+    // Delete the currently authenticated token
+    apiInstance.DeleteCurrentTokenWithHttpInfo();
+}
+catch (ApiException e)
+{
+    Debug.Print("Exception when calling MiscellaneousApi.DeleteCurrentTokenWithHttpInfo: " + e.Message);
+    Debug.Print("Status Code: " + e.ErrorCode);
+    Debug.Print(e.StackTrace);
+}
+```
+
+### Parameters
+This endpoint does not need any parameter.
+### Return type
+
+void (empty response body)
+
+### Authorization
+
+[TOTPHeader](../README.md#TOTPHeader), [AuthorizationHeaderToken](../README.md#AuthorizationHeaderToken), [SudoHeader](../README.md#SudoHeader), [BasicAuth](../README.md#BasicAuth), [AccessToken](../README.md#AccessToken), [SudoParam](../README.md#SudoParam), [Token](../README.md#Token)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: Not defined
+
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+| **204** | token deleted |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+<a id="getcurrenttoken"></a>
+# **GetCurrentToken**
+> CurrentAccessToken GetCurrentToken ()
+
+Get the currently authenticated token
+
+### Example
+```csharp
+using System.Collections.Generic;
+using System.Diagnostics;
+using Gitea.Net.Api;
+using Gitea.Net.Client;
+using Gitea.Net.Model;
+
+namespace Example
+{
+    public class GetCurrentTokenExample
+    {
+        public static void Main()
+        {
+            Configuration config = new Configuration();
+            config.BasePath = "/api/v1";
+            // Configure API key authorization: TOTPHeader
+            config.AddApiKey("X-GITEA-OTP", "YOUR_API_KEY");
+            // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+            // config.AddApiKeyPrefix("X-GITEA-OTP", "Bearer");
+            // Configure API key authorization: AuthorizationHeaderToken
+            config.AddApiKey("Authorization", "YOUR_API_KEY");
+            // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+            // config.AddApiKeyPrefix("Authorization", "Bearer");
+            // Configure API key authorization: SudoHeader
+            config.AddApiKey("Sudo", "YOUR_API_KEY");
+            // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+            // config.AddApiKeyPrefix("Sudo", "Bearer");
+            // Configure HTTP basic authorization: BasicAuth
+            config.Username = "YOUR_USERNAME";
+            config.Password = "YOUR_PASSWORD";
+            // Configure API key authorization: AccessToken
+            config.AddApiKey("access_token", "YOUR_API_KEY");
+            // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+            // config.AddApiKeyPrefix("access_token", "Bearer");
+            // Configure API key authorization: SudoParam
+            config.AddApiKey("sudo", "YOUR_API_KEY");
+            // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+            // config.AddApiKeyPrefix("sudo", "Bearer");
+            // Configure API key authorization: Token
+            config.AddApiKey("token", "YOUR_API_KEY");
+            // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+            // config.AddApiKeyPrefix("token", "Bearer");
+
+            var apiInstance = new MiscellaneousApi(config);
+
+            try
+            {
+                // Get the currently authenticated token
+                CurrentAccessToken result = apiInstance.GetCurrentToken();
+                Debug.WriteLine(result);
+            }
+            catch (ApiException  e)
+            {
+                Debug.Print("Exception when calling MiscellaneousApi.GetCurrentToken: " + e.Message);
+                Debug.Print("Status Code: " + e.ErrorCode);
+                Debug.Print(e.StackTrace);
+            }
+        }
+    }
+}
+```
+
+#### Using the GetCurrentTokenWithHttpInfo variant
+This returns an ApiResponse object which contains the response data, status code and headers.
+
+```csharp
+try
+{
+    // Get the currently authenticated token
+    ApiResponse<CurrentAccessToken> response = apiInstance.GetCurrentTokenWithHttpInfo();
+    Debug.Write("Status Code: " + response.StatusCode);
+    Debug.Write("Response Headers: " + response.Headers);
+    Debug.Write("Response Body: " + response.Data);
+}
+catch (ApiException e)
+{
+    Debug.Print("Exception when calling MiscellaneousApi.GetCurrentTokenWithHttpInfo: " + e.Message);
+    Debug.Print("Status Code: " + e.ErrorCode);
+    Debug.Print(e.StackTrace);
+}
+```
+
+### Parameters
+This endpoint does not need any parameter.
+### Return type
+
+[**CurrentAccessToken**](CurrentAccessToken.md)
+
+### Authorization
+
+[TOTPHeader](../README.md#TOTPHeader), [AuthorizationHeaderToken](../README.md#AuthorizationHeaderToken), [SudoHeader](../README.md#SudoHeader), [BasicAuth](../README.md#BasicAuth), [AccessToken](../README.md#AccessToken), [SudoParam](../README.md#SudoParam), [Token](../README.md#Token)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+| **200** | CurrentAccessToken represents the currently authenticated access token. |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 <a id="getgitignoretemplateinfo"></a>
 # **GetGitignoreTemplateInfo**
@@ -371,118 +593,6 @@ catch (ApiException e)
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-<a id="getnodeinfo"></a>
-# **GetNodeInfo**
-> NodeInfo GetNodeInfo ()
-
-Returns the nodeinfo of the Gitea application
-
-### Example
-```csharp
-using System.Collections.Generic;
-using System.Diagnostics;
-using Gitea.Net.Api;
-using Gitea.Net.Client;
-using Gitea.Net.Model;
-
-namespace Example
-{
-    public class GetNodeInfoExample
-    {
-        public static void Main()
-        {
-            Configuration config = new Configuration();
-            config.BasePath = "/api/v1";
-            // Configure API key authorization: TOTPHeader
-            config.AddApiKey("X-GITEA-OTP", "YOUR_API_KEY");
-            // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-            // config.AddApiKeyPrefix("X-GITEA-OTP", "Bearer");
-            // Configure API key authorization: AuthorizationHeaderToken
-            config.AddApiKey("Authorization", "YOUR_API_KEY");
-            // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-            // config.AddApiKeyPrefix("Authorization", "Bearer");
-            // Configure API key authorization: SudoHeader
-            config.AddApiKey("Sudo", "YOUR_API_KEY");
-            // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-            // config.AddApiKeyPrefix("Sudo", "Bearer");
-            // Configure HTTP basic authorization: BasicAuth
-            config.Username = "YOUR_USERNAME";
-            config.Password = "YOUR_PASSWORD";
-            // Configure API key authorization: AccessToken
-            config.AddApiKey("access_token", "YOUR_API_KEY");
-            // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-            // config.AddApiKeyPrefix("access_token", "Bearer");
-            // Configure API key authorization: SudoParam
-            config.AddApiKey("sudo", "YOUR_API_KEY");
-            // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-            // config.AddApiKeyPrefix("sudo", "Bearer");
-            // Configure API key authorization: Token
-            config.AddApiKey("token", "YOUR_API_KEY");
-            // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-            // config.AddApiKeyPrefix("token", "Bearer");
-
-            var apiInstance = new MiscellaneousApi(config);
-
-            try
-            {
-                // Returns the nodeinfo of the Gitea application
-                NodeInfo result = apiInstance.GetNodeInfo();
-                Debug.WriteLine(result);
-            }
-            catch (ApiException  e)
-            {
-                Debug.Print("Exception when calling MiscellaneousApi.GetNodeInfo: " + e.Message);
-                Debug.Print("Status Code: " + e.ErrorCode);
-                Debug.Print(e.StackTrace);
-            }
-        }
-    }
-}
-```
-
-#### Using the GetNodeInfoWithHttpInfo variant
-This returns an ApiResponse object which contains the response data, status code and headers.
-
-```csharp
-try
-{
-    // Returns the nodeinfo of the Gitea application
-    ApiResponse<NodeInfo> response = apiInstance.GetNodeInfoWithHttpInfo();
-    Debug.Write("Status Code: " + response.StatusCode);
-    Debug.Write("Response Headers: " + response.Headers);
-    Debug.Write("Response Body: " + response.Data);
-}
-catch (ApiException e)
-{
-    Debug.Print("Exception when calling MiscellaneousApi.GetNodeInfoWithHttpInfo: " + e.Message);
-    Debug.Print("Status Code: " + e.ErrorCode);
-    Debug.Print(e.StackTrace);
-}
-```
-
-### Parameters
-This endpoint does not need any parameter.
-### Return type
-
-[**NodeInfo**](NodeInfo.md)
-
-### Authorization
-
-[TOTPHeader](../README.md#TOTPHeader), [AuthorizationHeaderToken](../README.md#AuthorizationHeaderToken), [SudoHeader](../README.md#SudoHeader), [BasicAuth](../README.md#BasicAuth), [AccessToken](../README.md#AccessToken), [SudoParam](../README.md#SudoParam), [Token](../README.md#Token)
-
-### HTTP request headers
-
- - **Content-Type**: Not defined
- - **Accept**: application/json
-
-
-### HTTP response details
-| Status code | Description | Response headers |
-|-------------|-------------|------------------|
-| **200** | NodeInfo |  -  |
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
-
 <a id="getsigningkey"></a>
 # **GetSigningKey**
 > string GetSigningKey ()
@@ -592,6 +702,118 @@ This endpoint does not need any parameter.
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 | **200** | GPG armored public key |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+<a id="getsigningkeyssh"></a>
+# **GetSigningKeySSH**
+> string GetSigningKeySSH ()
+
+Get default signing-key.pub
+
+### Example
+```csharp
+using System.Collections.Generic;
+using System.Diagnostics;
+using Gitea.Net.Api;
+using Gitea.Net.Client;
+using Gitea.Net.Model;
+
+namespace Example
+{
+    public class GetSigningKeySSHExample
+    {
+        public static void Main()
+        {
+            Configuration config = new Configuration();
+            config.BasePath = "/api/v1";
+            // Configure API key authorization: TOTPHeader
+            config.AddApiKey("X-GITEA-OTP", "YOUR_API_KEY");
+            // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+            // config.AddApiKeyPrefix("X-GITEA-OTP", "Bearer");
+            // Configure API key authorization: AuthorizationHeaderToken
+            config.AddApiKey("Authorization", "YOUR_API_KEY");
+            // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+            // config.AddApiKeyPrefix("Authorization", "Bearer");
+            // Configure API key authorization: SudoHeader
+            config.AddApiKey("Sudo", "YOUR_API_KEY");
+            // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+            // config.AddApiKeyPrefix("Sudo", "Bearer");
+            // Configure HTTP basic authorization: BasicAuth
+            config.Username = "YOUR_USERNAME";
+            config.Password = "YOUR_PASSWORD";
+            // Configure API key authorization: AccessToken
+            config.AddApiKey("access_token", "YOUR_API_KEY");
+            // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+            // config.AddApiKeyPrefix("access_token", "Bearer");
+            // Configure API key authorization: SudoParam
+            config.AddApiKey("sudo", "YOUR_API_KEY");
+            // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+            // config.AddApiKeyPrefix("sudo", "Bearer");
+            // Configure API key authorization: Token
+            config.AddApiKey("token", "YOUR_API_KEY");
+            // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+            // config.AddApiKeyPrefix("token", "Bearer");
+
+            var apiInstance = new MiscellaneousApi(config);
+
+            try
+            {
+                // Get default signing-key.pub
+                string result = apiInstance.GetSigningKeySSH();
+                Debug.WriteLine(result);
+            }
+            catch (ApiException  e)
+            {
+                Debug.Print("Exception when calling MiscellaneousApi.GetSigningKeySSH: " + e.Message);
+                Debug.Print("Status Code: " + e.ErrorCode);
+                Debug.Print(e.StackTrace);
+            }
+        }
+    }
+}
+```
+
+#### Using the GetSigningKeySSHWithHttpInfo variant
+This returns an ApiResponse object which contains the response data, status code and headers.
+
+```csharp
+try
+{
+    // Get default signing-key.pub
+    ApiResponse<string> response = apiInstance.GetSigningKeySSHWithHttpInfo();
+    Debug.Write("Status Code: " + response.StatusCode);
+    Debug.Write("Response Headers: " + response.Headers);
+    Debug.Write("Response Body: " + response.Data);
+}
+catch (ApiException e)
+{
+    Debug.Print("Exception when calling MiscellaneousApi.GetSigningKeySSHWithHttpInfo: " + e.Message);
+    Debug.Print("Status Code: " + e.ErrorCode);
+    Debug.Print(e.StackTrace);
+}
+```
+
+### Parameters
+This endpoint does not need any parameter.
+### Return type
+
+**string**
+
+### Authorization
+
+[TOTPHeader](../README.md#TOTPHeader), [AuthorizationHeaderToken](../README.md#AuthorizationHeaderToken), [SudoHeader](../README.md#SudoHeader), [BasicAuth](../README.md#BasicAuth), [AccessToken](../README.md#AccessToken), [SudoParam](../README.md#SudoParam), [Token](../README.md#Token)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: text/plain
+
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+| **200** | ssh public key |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 

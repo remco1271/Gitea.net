@@ -4,9 +4,11 @@ All URIs are relative to */api/v1*
 
 | Method | HTTP request | Description |
 |--------|--------------|-------------|
+| [**IssueAddAssignees**](IssueApi.md#issueaddassignees) | **POST** /repos/{owner}/{repo}/issues/{index}/assignees | Add assignees to an issue |
 | [**IssueAddLabel**](IssueApi.md#issueaddlabel) | **POST** /repos/{owner}/{repo}/issues/{index}/labels | Add a label to an issue |
 | [**IssueAddSubscription**](IssueApi.md#issueaddsubscription) | **PUT** /repos/{owner}/{repo}/issues/{index}/subscriptions/{user} | Subscribe user to issue |
 | [**IssueAddTime**](IssueApi.md#issueaddtime) | **POST** /repos/{owner}/{repo}/issues/{index}/times | Add tracked time to a issue |
+| [**IssueCheckAssignee**](IssueApi.md#issuecheckassignee) | **GET** /repos/{owner}/{repo}/issues/{index}/assignees/{assignee} | Check if a user can be assigned to an issue |
 | [**IssueCheckSubscription**](IssueApi.md#issuechecksubscription) | **GET** /repos/{owner}/{repo}/issues/{index}/subscriptions/check | Check if user is subscribed to an issue |
 | [**IssueClearLabels**](IssueApi.md#issueclearlabels) | **DELETE** /repos/{owner}/{repo}/issues/{index}/labels | Remove all labels from an issue |
 | [**IssueCreateComment**](IssueApi.md#issuecreatecomment) | **POST** /repos/{owner}/{repo}/issues/{index}/comments | Add a comment to an issue |
@@ -56,8 +58,10 @@ All URIs are relative to */api/v1*
 | [**IssueListIssueDependencies**](IssueApi.md#issuelistissuedependencies) | **GET** /repos/{owner}/{repo}/issues/{index}/dependencies | List an issue&#39;s dependencies, i.e all issues that block this issue. |
 | [**IssueListIssues**](IssueApi.md#issuelistissues) | **GET** /repos/{owner}/{repo}/issues | List a repository&#39;s issues |
 | [**IssueListLabels**](IssueApi.md#issuelistlabels) | **GET** /repos/{owner}/{repo}/labels | Get all of a repository&#39;s labels |
+| [**IssueLockIssue**](IssueApi.md#issuelockissue) | **PUT** /repos/{owner}/{repo}/issues/{index}/lock | Lock an issue |
 | [**IssuePostCommentReaction**](IssueApi.md#issuepostcommentreaction) | **POST** /repos/{owner}/{repo}/issues/comments/{id}/reactions | Add a reaction to a comment of an issue |
 | [**IssuePostIssueReaction**](IssueApi.md#issuepostissuereaction) | **POST** /repos/{owner}/{repo}/issues/{index}/reactions | Add a reaction to an issue |
+| [**IssueRemoveAssignees**](IssueApi.md#issueremoveassignees) | **DELETE** /repos/{owner}/{repo}/issues/{index}/assignees | Remove assignees from an issue |
 | [**IssueRemoveIssueBlocking**](IssueApi.md#issueremoveissueblocking) | **DELETE** /repos/{owner}/{repo}/issues/{index}/blocks | Unblock the issue given in the body by the issue in path |
 | [**IssueRemoveIssueDependencies**](IssueApi.md#issueremoveissuedependencies) | **DELETE** /repos/{owner}/{repo}/issues/{index}/dependencies | Remove an issue dependency |
 | [**IssueRemoveLabel**](IssueApi.md#issueremovelabel) | **DELETE** /repos/{owner}/{repo}/issues/{index}/labels/{id} | Remove a label from an issue |
@@ -68,9 +72,137 @@ All URIs are relative to */api/v1*
 | [**IssueStopStopWatch**](IssueApi.md#issuestopstopwatch) | **POST** /repos/{owner}/{repo}/issues/{index}/stopwatch/stop | Stop an issue&#39;s existing stopwatch. |
 | [**IssueSubscriptions**](IssueApi.md#issuesubscriptions) | **GET** /repos/{owner}/{repo}/issues/{index}/subscriptions | Get users who subscribed on an issue. |
 | [**IssueTrackedTimes**](IssueApi.md#issuetrackedtimes) | **GET** /repos/{owner}/{repo}/issues/{index}/times | List an issue&#39;s tracked times |
+| [**IssueUnlockIssue**](IssueApi.md#issueunlockissue) | **DELETE** /repos/{owner}/{repo}/issues/{index}/lock | Unlock an issue |
 | [**MoveIssuePin**](IssueApi.md#moveissuepin) | **PATCH** /repos/{owner}/{repo}/issues/{index}/pin/{position} | Moves the Pin to the given Position |
 | [**PinIssue**](IssueApi.md#pinissue) | **POST** /repos/{owner}/{repo}/issues/{index}/pin | Pin an Issue |
 | [**UnpinIssue**](IssueApi.md#unpinissue) | **DELETE** /repos/{owner}/{repo}/issues/{index}/pin | Unpin an Issue |
+
+<a id="issueaddassignees"></a>
+# **IssueAddAssignees**
+> Issue IssueAddAssignees (string owner, string repo, long index, IssueAssigneesOption body)
+
+Add assignees to an issue
+
+### Example
+```csharp
+using System.Collections.Generic;
+using System.Diagnostics;
+using Gitea.Net.Api;
+using Gitea.Net.Client;
+using Gitea.Net.Model;
+
+namespace Example
+{
+    public class IssueAddAssigneesExample
+    {
+        public static void Main()
+        {
+            Configuration config = new Configuration();
+            config.BasePath = "/api/v1";
+            // Configure API key authorization: TOTPHeader
+            config.AddApiKey("X-GITEA-OTP", "YOUR_API_KEY");
+            // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+            // config.AddApiKeyPrefix("X-GITEA-OTP", "Bearer");
+            // Configure API key authorization: AuthorizationHeaderToken
+            config.AddApiKey("Authorization", "YOUR_API_KEY");
+            // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+            // config.AddApiKeyPrefix("Authorization", "Bearer");
+            // Configure API key authorization: SudoHeader
+            config.AddApiKey("Sudo", "YOUR_API_KEY");
+            // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+            // config.AddApiKeyPrefix("Sudo", "Bearer");
+            // Configure HTTP basic authorization: BasicAuth
+            config.Username = "YOUR_USERNAME";
+            config.Password = "YOUR_PASSWORD";
+            // Configure API key authorization: AccessToken
+            config.AddApiKey("access_token", "YOUR_API_KEY");
+            // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+            // config.AddApiKeyPrefix("access_token", "Bearer");
+            // Configure API key authorization: SudoParam
+            config.AddApiKey("sudo", "YOUR_API_KEY");
+            // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+            // config.AddApiKeyPrefix("sudo", "Bearer");
+            // Configure API key authorization: Token
+            config.AddApiKey("token", "YOUR_API_KEY");
+            // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+            // config.AddApiKeyPrefix("token", "Bearer");
+
+            var apiInstance = new IssueApi(config);
+            var owner = "owner_example";  // string | owner of the repo
+            var repo = "repo_example";  // string | name of the repo
+            var index = 789L;  // long | index of the issue
+            var body = new IssueAssigneesOption(); // IssueAssigneesOption | 
+
+            try
+            {
+                // Add assignees to an issue
+                Issue result = apiInstance.IssueAddAssignees(owner, repo, index, body);
+                Debug.WriteLine(result);
+            }
+            catch (ApiException  e)
+            {
+                Debug.Print("Exception when calling IssueApi.IssueAddAssignees: " + e.Message);
+                Debug.Print("Status Code: " + e.ErrorCode);
+                Debug.Print(e.StackTrace);
+            }
+        }
+    }
+}
+```
+
+#### Using the IssueAddAssigneesWithHttpInfo variant
+This returns an ApiResponse object which contains the response data, status code and headers.
+
+```csharp
+try
+{
+    // Add assignees to an issue
+    ApiResponse<Issue> response = apiInstance.IssueAddAssigneesWithHttpInfo(owner, repo, index, body);
+    Debug.Write("Status Code: " + response.StatusCode);
+    Debug.Write("Response Headers: " + response.Headers);
+    Debug.Write("Response Body: " + response.Data);
+}
+catch (ApiException e)
+{
+    Debug.Print("Exception when calling IssueApi.IssueAddAssigneesWithHttpInfo: " + e.Message);
+    Debug.Print("Status Code: " + e.ErrorCode);
+    Debug.Print(e.StackTrace);
+}
+```
+
+### Parameters
+
+| Name | Type | Description | Notes |
+|------|------|-------------|-------|
+| **owner** | **string** | owner of the repo |  |
+| **repo** | **string** | name of the repo |  |
+| **index** | **long** | index of the issue |  |
+| **body** | [**IssueAssigneesOption**](IssueAssigneesOption.md) |  |  |
+
+### Return type
+
+[**Issue**](Issue.md)
+
+### Authorization
+
+[TOTPHeader](../README.md#TOTPHeader), [AuthorizationHeaderToken](../README.md#AuthorizationHeaderToken), [SudoHeader](../README.md#SudoHeader), [BasicAuth](../README.md#BasicAuth), [AccessToken](../README.md#AccessToken), [SudoParam](../README.md#SudoParam), [Token](../README.md#Token)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+| **201** | Issue |  -  |
+| **400** | APIError is error format response |  * message -  <br>  * url -  <br>  |
+| **403** | APIForbiddenError is a forbidden error response |  * message -  <br>  * url -  <br>  |
+| **404** | APINotFound is a not found empty response |  -  |
+| **422** | APIValidationError is error format response related to input validation |  * message -  <br>  * url -  <br>  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 <a id="issueaddlabel"></a>
 # **IssueAddLabel**
@@ -194,6 +326,7 @@ catch (ApiException e)
 | **200** | LabelList |  -  |
 | **403** | APIForbiddenError is a forbidden error response |  * message -  <br>  * url -  <br>  |
 | **404** | APINotFound is a not found empty response |  -  |
+| **423** | APIRepoArchivedError is an error that is raised when an archived repo should be modified |  * message -  <br>  * url -  <br>  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
@@ -251,7 +384,7 @@ namespace Example
             var owner = "owner_example";  // string | owner of the repo
             var repo = "repo_example";  // string | name of the repo
             var index = 789L;  // long | index of the issue
-            var user = "user_example";  // string | user to subscribe
+            var user = "user_example";  // string | username of the user to subscribe the issue to
 
             try
             {
@@ -293,7 +426,7 @@ catch (ApiException e)
 | **owner** | **string** | owner of the repo |  |
 | **repo** | **string** | name of the repo |  |
 | **index** | **long** | index of the issue |  |
-| **user** | **string** | user to subscribe |  |
+| **user** | **string** | username of the user to subscribe the issue to |  |
 
 ### Return type
 
@@ -441,6 +574,127 @@ catch (ApiException e)
 | **200** | TrackedTime |  -  |
 | **400** | APIError is error format response |  * message -  <br>  * url -  <br>  |
 | **403** | APIForbiddenError is a forbidden error response |  * message -  <br>  * url -  <br>  |
+| **404** | APINotFound is a not found empty response |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+<a id="issuecheckassignee"></a>
+# **IssueCheckAssignee**
+> void IssueCheckAssignee (string owner, string repo, long index, string assignee)
+
+Check if a user can be assigned to an issue
+
+### Example
+```csharp
+using System.Collections.Generic;
+using System.Diagnostics;
+using Gitea.Net.Api;
+using Gitea.Net.Client;
+using Gitea.Net.Model;
+
+namespace Example
+{
+    public class IssueCheckAssigneeExample
+    {
+        public static void Main()
+        {
+            Configuration config = new Configuration();
+            config.BasePath = "/api/v1";
+            // Configure API key authorization: TOTPHeader
+            config.AddApiKey("X-GITEA-OTP", "YOUR_API_KEY");
+            // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+            // config.AddApiKeyPrefix("X-GITEA-OTP", "Bearer");
+            // Configure API key authorization: AuthorizationHeaderToken
+            config.AddApiKey("Authorization", "YOUR_API_KEY");
+            // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+            // config.AddApiKeyPrefix("Authorization", "Bearer");
+            // Configure API key authorization: SudoHeader
+            config.AddApiKey("Sudo", "YOUR_API_KEY");
+            // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+            // config.AddApiKeyPrefix("Sudo", "Bearer");
+            // Configure HTTP basic authorization: BasicAuth
+            config.Username = "YOUR_USERNAME";
+            config.Password = "YOUR_PASSWORD";
+            // Configure API key authorization: AccessToken
+            config.AddApiKey("access_token", "YOUR_API_KEY");
+            // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+            // config.AddApiKeyPrefix("access_token", "Bearer");
+            // Configure API key authorization: SudoParam
+            config.AddApiKey("sudo", "YOUR_API_KEY");
+            // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+            // config.AddApiKeyPrefix("sudo", "Bearer");
+            // Configure API key authorization: Token
+            config.AddApiKey("token", "YOUR_API_KEY");
+            // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+            // config.AddApiKeyPrefix("token", "Bearer");
+
+            var apiInstance = new IssueApi(config);
+            var owner = "owner_example";  // string | owner of the repo
+            var repo = "repo_example";  // string | name of the repo
+            var index = 789L;  // long | index of the issue
+            var assignee = "assignee_example";  // string | username of the user to check for being an assignee
+
+            try
+            {
+                // Check if a user can be assigned to an issue
+                apiInstance.IssueCheckAssignee(owner, repo, index, assignee);
+            }
+            catch (ApiException  e)
+            {
+                Debug.Print("Exception when calling IssueApi.IssueCheckAssignee: " + e.Message);
+                Debug.Print("Status Code: " + e.ErrorCode);
+                Debug.Print(e.StackTrace);
+            }
+        }
+    }
+}
+```
+
+#### Using the IssueCheckAssigneeWithHttpInfo variant
+This returns an ApiResponse object which contains the response data, status code and headers.
+
+```csharp
+try
+{
+    // Check if a user can be assigned to an issue
+    apiInstance.IssueCheckAssigneeWithHttpInfo(owner, repo, index, assignee);
+}
+catch (ApiException e)
+{
+    Debug.Print("Exception when calling IssueApi.IssueCheckAssigneeWithHttpInfo: " + e.Message);
+    Debug.Print("Status Code: " + e.ErrorCode);
+    Debug.Print(e.StackTrace);
+}
+```
+
+### Parameters
+
+| Name | Type | Description | Notes |
+|------|------|-------------|-------|
+| **owner** | **string** | owner of the repo |  |
+| **repo** | **string** | name of the repo |  |
+| **index** | **long** | index of the issue |  |
+| **assignee** | **string** | username of the user to check for being an assignee |  |
+
+### Return type
+
+void (empty response body)
+
+### Authorization
+
+[TOTPHeader](../README.md#TOTPHeader), [AuthorizationHeaderToken](../README.md#AuthorizationHeaderToken), [SudoHeader](../README.md#SudoHeader), [BasicAuth](../README.md#BasicAuth), [AccessToken](../README.md#AccessToken), [SudoParam](../README.md#SudoParam), [Token](../README.md#Token)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: Not defined
+
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+| **204** | APIEmpty is an empty response |  -  |
+| **400** | APIError is error format response |  * message -  <br>  * url -  <br>  |
 | **404** | APINotFound is a not found empty response |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
@@ -683,6 +937,7 @@ void (empty response body)
 | **204** | APIEmpty is an empty response |  -  |
 | **403** | APIForbiddenError is a forbidden error response |  * message -  <br>  * url -  <br>  |
 | **404** | APINotFound is a not found empty response |  -  |
+| **423** | APIRepoArchivedError is an error that is raised when an archived repo should be modified |  * message -  <br>  * url -  <br>  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
@@ -1062,6 +1317,7 @@ catch (ApiException e)
 | **201** | Attachment |  -  |
 | **400** | APIError is error format response |  * message -  <br>  * url -  <br>  |
 | **404** | APIError is error format response |  * message -  <br>  * url -  <br>  |
+| **413** | APIError is error format response |  * message -  <br>  * url -  <br>  |
 | **422** | APIValidationError is error format response related to input validation |  * message -  <br>  * url -  <br>  |
 | **423** | APIRepoArchivedError is an error that is raised when an archived repo should be modified |  * message -  <br>  * url -  <br>  |
 
@@ -1179,7 +1435,7 @@ catch (ApiException e)
 
 ### HTTP request headers
 
- - **Content-Type**: application/json, text/plain
+ - **Content-Type**: application/json
  - **Accept**: application/json
 
 
@@ -1316,6 +1572,7 @@ catch (ApiException e)
 | **400** | APIError is error format response |  * message -  <br>  * url -  <br>  |
 | **403** | APIForbiddenError is a forbidden error response |  * message -  <br>  * url -  <br>  |
 | **404** | APIError is error format response |  * message -  <br>  * url -  <br>  |
+| **413** | APIError is error format response |  * message -  <br>  * url -  <br>  |
 | **422** | APIValidationError is error format response related to input validation |  * message -  <br>  * url -  <br>  |
 | **423** | APIRepoArchivedError is an error that is raised when an archived repo should be modified |  * message -  <br>  * url -  <br>  |
 
@@ -1433,7 +1690,7 @@ catch (ApiException e)
 
 ### HTTP request headers
 
- - **Content-Type**: application/json, text/plain
+ - **Content-Type**: application/json
  - **Accept**: application/json
 
 
@@ -1807,6 +2064,7 @@ void (empty response body)
 | **204** | APIEmpty is an empty response |  -  |
 | **403** | APIForbiddenError is a forbidden error response |  * message -  <br>  * url -  <br>  |
 | **404** | APINotFound is a not found empty response |  -  |
+| **423** | APIRepoArchivedError is an error that is raised when an archived repo should be modified |  * message -  <br>  * url -  <br>  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
@@ -2165,7 +2423,7 @@ void (empty response body)
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-| **200** | APIEmpty is an empty response |  -  |
+| **204** | APIEmpty is an empty response |  -  |
 | **403** | APIForbiddenError is a forbidden error response |  * message -  <br>  * url -  <br>  |
 | **404** | APINotFound is a not found empty response |  -  |
 
@@ -2528,7 +2786,7 @@ void (empty response body)
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-| **200** | APIEmpty is an empty response |  -  |
+| **204** | APIEmpty is an empty response |  -  |
 | **403** | APIForbiddenError is a forbidden error response |  * message -  <br>  * url -  <br>  |
 | **404** | APINotFound is a not found empty response |  -  |
 
@@ -2886,7 +3144,7 @@ void (empty response body)
 | **204** | APIEmpty is an empty response |  -  |
 | **403** | Not repo writer, user does not have rights to toggle stopwatch |  -  |
 | **404** | APINotFound is a not found empty response |  -  |
-| **409** | Cannot cancel a non existent stopwatch |  -  |
+| **409** | Cannot cancel a non-existent stopwatch |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
@@ -2944,7 +3202,7 @@ namespace Example
             var owner = "owner_example";  // string | owner of the repo
             var repo = "repo_example";  // string | name of the repo
             var index = 789L;  // long | index of the issue
-            var user = "user_example";  // string | user witch unsubscribe
+            var user = "user_example";  // string | username of the user to unsubscribe from an issue
 
             try
             {
@@ -2986,7 +3244,7 @@ catch (ApiException e)
 | **owner** | **string** | owner of the repo |  |
 | **repo** | **string** | name of the repo |  |
 | **index** | **long** | index of the issue |  |
-| **user** | **string** | user witch unsubscribe |  |
+| **user** | **string** | username of the user to unsubscribe from an issue |  |
 
 ### Return type
 
@@ -3395,6 +3653,8 @@ catch (ApiException e)
 
 Edit an issue. If using deadline only the date will be taken into account, and time of day ignored.
 
+Pass `content_version` to enable optimistic locking on body edits. If the version doesn't match the current value, the request fails with 409 Conflict. 
+
 ### Example
 ```csharp
 using System.Collections.Generic;
@@ -3512,6 +3772,7 @@ catch (ApiException e)
 | **403** | APIForbiddenError is a forbidden error response |  * message -  <br>  * url -  <br>  |
 | **404** | APINotFound is a not found empty response |  -  |
 | **412** | APIError is error format response |  * message -  <br>  * url -  <br>  |
+| **423** | APIRepoArchivedError is an error that is raised when an archived repo should be modified |  * message -  <br>  * url -  <br>  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
@@ -3638,6 +3899,7 @@ catch (ApiException e)
 |-------------|-------------|------------------|
 | **201** | Attachment |  -  |
 | **404** | APIError is error format response |  * message -  <br>  * url -  <br>  |
+| **422** | APIValidationError is error format response related to input validation |  * message -  <br>  * url -  <br>  |
 | **423** | APIRepoArchivedError is an error that is raised when an archived repo should be modified |  * message -  <br>  * url -  <br>  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
@@ -3765,6 +4027,7 @@ catch (ApiException e)
 |-------------|-------------|------------------|
 | **201** | Attachment |  -  |
 | **404** | APIError is error format response |  * message -  <br>  * url -  <br>  |
+| **422** | APIValidationError is error format response related to input validation |  * message -  <br>  * url -  <br>  |
 | **423** | APIRepoArchivedError is an error that is raised when an archived repo should be modified |  * message -  <br>  * url -  <br>  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
@@ -6315,7 +6578,7 @@ namespace Example
             var owner = "owner_example";  // string | owner of the repo
             var repo = "repo_example";  // string | name of the repo
             var state = "closed";  // string? | whether issue is open or closed (optional) 
-            var labels = "labels_example";  // string? | comma separated list of labels. Fetch only issues that have any of this labels. Non existent labels are discarded (optional) 
+            var labels = "labels_example";  // string? | comma separated list of label names. Fetch only issues that have any of this label names. Non existent labels are discarded. (optional) 
             var q = "q_example";  // string? | search string (optional) 
             var type = "issues";  // string? | filter by type (issues / pulls) if set (optional) 
             var milestones = "milestones_example";  // string? | comma separated list of milestone names or ids. It uses names and fall back to ids. Fetch only issues that have any of this milestones. Non existent milestones are discarded (optional) 
@@ -6371,7 +6634,7 @@ catch (ApiException e)
 | **owner** | **string** | owner of the repo |  |
 | **repo** | **string** | name of the repo |  |
 | **state** | **string?** | whether issue is open or closed | [optional]  |
-| **labels** | **string?** | comma separated list of labels. Fetch only issues that have any of this labels. Non existent labels are discarded | [optional]  |
+| **labels** | **string?** | comma separated list of label names. Fetch only issues that have any of this label names. Non existent labels are discarded. | [optional]  |
 | **q** | **string?** | search string | [optional]  |
 | **type** | **string?** | filter by type (issues / pulls) if set | [optional]  |
 | **milestones** | **string?** | comma separated list of milestone names or ids. It uses names and fall back to ids. Fetch only issues that have any of this milestones. Non existent milestones are discarded | [optional]  |
@@ -6525,6 +6788,127 @@ catch (ApiException e)
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 | **200** | LabelList |  -  |
+| **404** | APINotFound is a not found empty response |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+<a id="issuelockissue"></a>
+# **IssueLockIssue**
+> void IssueLockIssue (string owner, string repo, long index, LockIssueOption? body = null)
+
+Lock an issue
+
+### Example
+```csharp
+using System.Collections.Generic;
+using System.Diagnostics;
+using Gitea.Net.Api;
+using Gitea.Net.Client;
+using Gitea.Net.Model;
+
+namespace Example
+{
+    public class IssueLockIssueExample
+    {
+        public static void Main()
+        {
+            Configuration config = new Configuration();
+            config.BasePath = "/api/v1";
+            // Configure API key authorization: TOTPHeader
+            config.AddApiKey("X-GITEA-OTP", "YOUR_API_KEY");
+            // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+            // config.AddApiKeyPrefix("X-GITEA-OTP", "Bearer");
+            // Configure API key authorization: AuthorizationHeaderToken
+            config.AddApiKey("Authorization", "YOUR_API_KEY");
+            // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+            // config.AddApiKeyPrefix("Authorization", "Bearer");
+            // Configure API key authorization: SudoHeader
+            config.AddApiKey("Sudo", "YOUR_API_KEY");
+            // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+            // config.AddApiKeyPrefix("Sudo", "Bearer");
+            // Configure HTTP basic authorization: BasicAuth
+            config.Username = "YOUR_USERNAME";
+            config.Password = "YOUR_PASSWORD";
+            // Configure API key authorization: AccessToken
+            config.AddApiKey("access_token", "YOUR_API_KEY");
+            // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+            // config.AddApiKeyPrefix("access_token", "Bearer");
+            // Configure API key authorization: SudoParam
+            config.AddApiKey("sudo", "YOUR_API_KEY");
+            // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+            // config.AddApiKeyPrefix("sudo", "Bearer");
+            // Configure API key authorization: Token
+            config.AddApiKey("token", "YOUR_API_KEY");
+            // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+            // config.AddApiKeyPrefix("token", "Bearer");
+
+            var apiInstance = new IssueApi(config);
+            var owner = "owner_example";  // string | owner of the repo
+            var repo = "repo_example";  // string | name of the repo
+            var index = 789L;  // long | index of the issue
+            var body = new LockIssueOption?(); // LockIssueOption? |  (optional) 
+
+            try
+            {
+                // Lock an issue
+                apiInstance.IssueLockIssue(owner, repo, index, body);
+            }
+            catch (ApiException  e)
+            {
+                Debug.Print("Exception when calling IssueApi.IssueLockIssue: " + e.Message);
+                Debug.Print("Status Code: " + e.ErrorCode);
+                Debug.Print(e.StackTrace);
+            }
+        }
+    }
+}
+```
+
+#### Using the IssueLockIssueWithHttpInfo variant
+This returns an ApiResponse object which contains the response data, status code and headers.
+
+```csharp
+try
+{
+    // Lock an issue
+    apiInstance.IssueLockIssueWithHttpInfo(owner, repo, index, body);
+}
+catch (ApiException e)
+{
+    Debug.Print("Exception when calling IssueApi.IssueLockIssueWithHttpInfo: " + e.Message);
+    Debug.Print("Status Code: " + e.ErrorCode);
+    Debug.Print(e.StackTrace);
+}
+```
+
+### Parameters
+
+| Name | Type | Description | Notes |
+|------|------|-------------|-------|
+| **owner** | **string** | owner of the repo |  |
+| **repo** | **string** | name of the repo |  |
+| **index** | **long** | index of the issue |  |
+| **body** | [**LockIssueOption?**](LockIssueOption?.md) |  | [optional]  |
+
+### Return type
+
+void (empty response body)
+
+### Authorization
+
+[TOTPHeader](../README.md#TOTPHeader), [AuthorizationHeaderToken](../README.md#AuthorizationHeaderToken), [SudoHeader](../README.md#SudoHeader), [BasicAuth](../README.md#BasicAuth), [AccessToken](../README.md#AccessToken), [SudoParam](../README.md#SudoParam), [Token](../README.md#Token)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: Not defined
+
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+| **204** | APIEmpty is an empty response |  -  |
+| **403** | APIForbiddenError is a forbidden error response |  * message -  <br>  * url -  <br>  |
 | **404** | APINotFound is a not found empty response |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
@@ -6781,6 +7165,132 @@ catch (ApiException e)
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
+<a id="issueremoveassignees"></a>
+# **IssueRemoveAssignees**
+> Issue IssueRemoveAssignees (string owner, string repo, long index, IssueAssigneesOption body)
+
+Remove assignees from an issue
+
+### Example
+```csharp
+using System.Collections.Generic;
+using System.Diagnostics;
+using Gitea.Net.Api;
+using Gitea.Net.Client;
+using Gitea.Net.Model;
+
+namespace Example
+{
+    public class IssueRemoveAssigneesExample
+    {
+        public static void Main()
+        {
+            Configuration config = new Configuration();
+            config.BasePath = "/api/v1";
+            // Configure API key authorization: TOTPHeader
+            config.AddApiKey("X-GITEA-OTP", "YOUR_API_KEY");
+            // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+            // config.AddApiKeyPrefix("X-GITEA-OTP", "Bearer");
+            // Configure API key authorization: AuthorizationHeaderToken
+            config.AddApiKey("Authorization", "YOUR_API_KEY");
+            // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+            // config.AddApiKeyPrefix("Authorization", "Bearer");
+            // Configure API key authorization: SudoHeader
+            config.AddApiKey("Sudo", "YOUR_API_KEY");
+            // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+            // config.AddApiKeyPrefix("Sudo", "Bearer");
+            // Configure HTTP basic authorization: BasicAuth
+            config.Username = "YOUR_USERNAME";
+            config.Password = "YOUR_PASSWORD";
+            // Configure API key authorization: AccessToken
+            config.AddApiKey("access_token", "YOUR_API_KEY");
+            // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+            // config.AddApiKeyPrefix("access_token", "Bearer");
+            // Configure API key authorization: SudoParam
+            config.AddApiKey("sudo", "YOUR_API_KEY");
+            // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+            // config.AddApiKeyPrefix("sudo", "Bearer");
+            // Configure API key authorization: Token
+            config.AddApiKey("token", "YOUR_API_KEY");
+            // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+            // config.AddApiKeyPrefix("token", "Bearer");
+
+            var apiInstance = new IssueApi(config);
+            var owner = "owner_example";  // string | owner of the repo
+            var repo = "repo_example";  // string | name of the repo
+            var index = 789L;  // long | index of the issue
+            var body = new IssueAssigneesOption(); // IssueAssigneesOption | 
+
+            try
+            {
+                // Remove assignees from an issue
+                Issue result = apiInstance.IssueRemoveAssignees(owner, repo, index, body);
+                Debug.WriteLine(result);
+            }
+            catch (ApiException  e)
+            {
+                Debug.Print("Exception when calling IssueApi.IssueRemoveAssignees: " + e.Message);
+                Debug.Print("Status Code: " + e.ErrorCode);
+                Debug.Print(e.StackTrace);
+            }
+        }
+    }
+}
+```
+
+#### Using the IssueRemoveAssigneesWithHttpInfo variant
+This returns an ApiResponse object which contains the response data, status code and headers.
+
+```csharp
+try
+{
+    // Remove assignees from an issue
+    ApiResponse<Issue> response = apiInstance.IssueRemoveAssigneesWithHttpInfo(owner, repo, index, body);
+    Debug.Write("Status Code: " + response.StatusCode);
+    Debug.Write("Response Headers: " + response.Headers);
+    Debug.Write("Response Body: " + response.Data);
+}
+catch (ApiException e)
+{
+    Debug.Print("Exception when calling IssueApi.IssueRemoveAssigneesWithHttpInfo: " + e.Message);
+    Debug.Print("Status Code: " + e.ErrorCode);
+    Debug.Print(e.StackTrace);
+}
+```
+
+### Parameters
+
+| Name | Type | Description | Notes |
+|------|------|-------------|-------|
+| **owner** | **string** | owner of the repo |  |
+| **repo** | **string** | name of the repo |  |
+| **index** | **long** | index of the issue |  |
+| **body** | [**IssueAssigneesOption**](IssueAssigneesOption.md) |  |  |
+
+### Return type
+
+[**Issue**](Issue.md)
+
+### Authorization
+
+[TOTPHeader](../README.md#TOTPHeader), [AuthorizationHeaderToken](../README.md#AuthorizationHeaderToken), [SudoHeader](../README.md#SudoHeader), [BasicAuth](../README.md#BasicAuth), [AccessToken](../README.md#AccessToken), [SudoParam](../README.md#SudoParam), [Token](../README.md#Token)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+| **200** | Issue |  -  |
+| **403** | APIForbiddenError is a forbidden error response |  * message -  <br>  * url -  <br>  |
+| **404** | APINotFound is a not found empty response |  -  |
+| **422** | APIValidationError is error format response related to input validation |  * message -  <br>  * url -  <br>  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
 <a id="issueremoveissueblocking"></a>
 # **IssueRemoveIssueBlocking**
 > Issue IssueRemoveIssueBlocking (string owner, string repo, string index, IssueMeta? body = null)
@@ -6893,7 +7403,7 @@ catch (ApiException e)
 
 ### HTTP request headers
 
- - **Content-Type**: application/json, text/plain
+ - **Content-Type**: application/json
  - **Accept**: application/json
 
 
@@ -7017,7 +7527,7 @@ catch (ApiException e)
 
 ### HTTP request headers
 
- - **Content-Type**: application/json, text/plain
+ - **Content-Type**: application/json
  - **Accept**: application/json
 
 
@@ -7149,6 +7659,7 @@ void (empty response body)
 | **403** | APIForbiddenError is a forbidden error response |  * message -  <br>  * url -  <br>  |
 | **404** | APINotFound is a not found empty response |  -  |
 | **422** | APIValidationError is error format response related to input validation |  * message -  <br>  * url -  <br>  |
+| **423** | APIRepoArchivedError is an error that is raised when an archived repo should be modified |  * message -  <br>  * url -  <br>  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
@@ -7274,6 +7785,7 @@ catch (ApiException e)
 | **200** | LabelList |  -  |
 | **403** | APIForbiddenError is a forbidden error response |  * message -  <br>  * url -  <br>  |
 | **404** | APINotFound is a not found empty response |  -  |
+| **423** | APIRepoArchivedError is an error that is raised when an archived repo should be modified |  * message -  <br>  * url -  <br>  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
@@ -7399,7 +7911,7 @@ void (empty response body)
 
 <a id="issuesearchissues"></a>
 # **IssueSearchIssues**
-> List&lt;Issue&gt; IssueSearchIssues (string? state = null, string? labels = null, string? milestones = null, string? q = null, long? priorityRepoId = null, string? type = null, DateTime? since = null, DateTime? before = null, bool? assigned = null, bool? created = null, bool? mentioned = null, bool? reviewRequested = null, bool? reviewed = null, string? owner = null, string? team = null, int? page = null, int? limit = null)
+> List&lt;Issue&gt; IssueSearchIssues (string? state = null, string? labels = null, string? milestones = null, string? q = null, string? type = null, DateTime? since = null, DateTime? before = null, bool? assigned = null, bool? created = null, bool? mentioned = null, bool? reviewRequested = null, bool? reviewed = null, string? owner = null, string? createdBy = null, string? team = null, int? page = null, int? limit = null)
 
 Search for issues across the repositories that the user has access to
 
@@ -7448,28 +7960,28 @@ namespace Example
             // config.AddApiKeyPrefix("token", "Bearer");
 
             var apiInstance = new IssueApi(config);
-            var state = "state_example";  // string? | whether issue is open or closed (optional) 
-            var labels = "labels_example";  // string? | comma separated list of labels. Fetch only issues that have any of this labels. Non existent labels are discarded (optional) 
-            var milestones = "milestones_example";  // string? | comma separated list of milestone names. Fetch only issues that have any of this milestones. Non existent are discarded (optional) 
-            var q = "q_example";  // string? | search string (optional) 
-            var priorityRepoId = 789L;  // long? | repository to prioritize in the results (optional) 
-            var type = "type_example";  // string? | filter by type (issues / pulls) if set (optional) 
-            var since = DateTime.Parse("2013-10-20T19:20:30+01:00");  // DateTime? | Only show notifications updated after the given time. This is a timestamp in RFC 3339 format (optional) 
-            var before = DateTime.Parse("2013-10-20T19:20:30+01:00");  // DateTime? | Only show notifications updated before the given time. This is a timestamp in RFC 3339 format (optional) 
-            var assigned = true;  // bool? | filter (issues / pulls) assigned to you, default is false (optional) 
-            var created = true;  // bool? | filter (issues / pulls) created by you, default is false (optional) 
-            var mentioned = true;  // bool? | filter (issues / pulls) mentioning you, default is false (optional) 
-            var reviewRequested = true;  // bool? | filter pulls requesting your review, default is false (optional) 
-            var reviewed = true;  // bool? | filter pulls reviewed by you, default is false (optional) 
-            var owner = "owner_example";  // string? | filter by owner (optional) 
-            var team = "team_example";  // string? | filter by team (requires organization owner parameter to be provided) (optional) 
-            var page = 56;  // int? | page number of results to return (1-based) (optional) 
-            var limit = 56;  // int? | page size of results (optional) 
+            var state = "open";  // string? | State of the issue (optional)  (default to open)
+            var labels = "labels_example";  // string? | Comma-separated list of label names. Fetch only issues that have any of these labels. Non existent labels are discarded. (optional) 
+            var milestones = "milestones_example";  // string? | Comma-separated list of milestone names. Fetch only issues that have any of these milestones. Non existent milestones are discarded. (optional) 
+            var q = "q_example";  // string? | Search string (optional) 
+            var type = "issues";  // string? | Filter by issue type (optional) 
+            var since = DateTime.Parse("2013-10-20T19:20:30+01:00");  // DateTime? | Only show issues updated after the given time (RFC 3339 format) (optional) 
+            var before = DateTime.Parse("2013-10-20T19:20:30+01:00");  // DateTime? | Only show issues updated before the given time (RFC 3339 format) (optional) 
+            var assigned = false;  // bool? | Filter issues or pulls assigned to the authenticated user (optional)  (default to false)
+            var created = false;  // bool? | Filter issues or pulls created by the authenticated user (optional)  (default to false)
+            var mentioned = false;  // bool? | Filter issues or pulls mentioning the authenticated user (optional)  (default to false)
+            var reviewRequested = false;  // bool? | Filter pull requests where the authenticated user's review was requested (optional)  (default to false)
+            var reviewed = false;  // bool? | Filter pull requests reviewed by the authenticated user (optional)  (default to false)
+            var owner = "owner_example";  // string? | Filter by repository owner (optional) 
+            var createdBy = "createdBy_example";  // string? | Only show items which were created by the given user (optional) 
+            var team = "team_example";  // string? | Filter by team (requires organization owner parameter) (optional) 
+            var page = 1;  // int? | Page number of results to return (1-based) (optional)  (default to 1)
+            var limit = 56;  // int? | Number of items per page (optional) 
 
             try
             {
                 // Search for issues across the repositories that the user has access to
-                List<Issue> result = apiInstance.IssueSearchIssues(state, labels, milestones, q, priorityRepoId, type, since, before, assigned, created, mentioned, reviewRequested, reviewed, owner, team, page, limit);
+                List<Issue> result = apiInstance.IssueSearchIssues(state, labels, milestones, q, type, since, before, assigned, created, mentioned, reviewRequested, reviewed, owner, createdBy, team, page, limit);
                 Debug.WriteLine(result);
             }
             catch (ApiException  e)
@@ -7490,7 +8002,7 @@ This returns an ApiResponse object which contains the response data, status code
 try
 {
     // Search for issues across the repositories that the user has access to
-    ApiResponse<List<Issue>> response = apiInstance.IssueSearchIssuesWithHttpInfo(state, labels, milestones, q, priorityRepoId, type, since, before, assigned, created, mentioned, reviewRequested, reviewed, owner, team, page, limit);
+    ApiResponse<List<Issue>> response = apiInstance.IssueSearchIssuesWithHttpInfo(state, labels, milestones, q, type, since, before, assigned, created, mentioned, reviewRequested, reviewed, owner, createdBy, team, page, limit);
     Debug.Write("Status Code: " + response.StatusCode);
     Debug.Write("Response Headers: " + response.Headers);
     Debug.Write("Response Body: " + response.Data);
@@ -7507,23 +8019,23 @@ catch (ApiException e)
 
 | Name | Type | Description | Notes |
 |------|------|-------------|-------|
-| **state** | **string?** | whether issue is open or closed | [optional]  |
-| **labels** | **string?** | comma separated list of labels. Fetch only issues that have any of this labels. Non existent labels are discarded | [optional]  |
-| **milestones** | **string?** | comma separated list of milestone names. Fetch only issues that have any of this milestones. Non existent are discarded | [optional]  |
-| **q** | **string?** | search string | [optional]  |
-| **priorityRepoId** | **long?** | repository to prioritize in the results | [optional]  |
-| **type** | **string?** | filter by type (issues / pulls) if set | [optional]  |
-| **since** | **DateTime?** | Only show notifications updated after the given time. This is a timestamp in RFC 3339 format | [optional]  |
-| **before** | **DateTime?** | Only show notifications updated before the given time. This is a timestamp in RFC 3339 format | [optional]  |
-| **assigned** | **bool?** | filter (issues / pulls) assigned to you, default is false | [optional]  |
-| **created** | **bool?** | filter (issues / pulls) created by you, default is false | [optional]  |
-| **mentioned** | **bool?** | filter (issues / pulls) mentioning you, default is false | [optional]  |
-| **reviewRequested** | **bool?** | filter pulls requesting your review, default is false | [optional]  |
-| **reviewed** | **bool?** | filter pulls reviewed by you, default is false | [optional]  |
-| **owner** | **string?** | filter by owner | [optional]  |
-| **team** | **string?** | filter by team (requires organization owner parameter to be provided) | [optional]  |
-| **page** | **int?** | page number of results to return (1-based) | [optional]  |
-| **limit** | **int?** | page size of results | [optional]  |
+| **state** | **string?** | State of the issue | [optional] [default to open] |
+| **labels** | **string?** | Comma-separated list of label names. Fetch only issues that have any of these labels. Non existent labels are discarded. | [optional]  |
+| **milestones** | **string?** | Comma-separated list of milestone names. Fetch only issues that have any of these milestones. Non existent milestones are discarded. | [optional]  |
+| **q** | **string?** | Search string | [optional]  |
+| **type** | **string?** | Filter by issue type | [optional]  |
+| **since** | **DateTime?** | Only show issues updated after the given time (RFC 3339 format) | [optional]  |
+| **before** | **DateTime?** | Only show issues updated before the given time (RFC 3339 format) | [optional]  |
+| **assigned** | **bool?** | Filter issues or pulls assigned to the authenticated user | [optional] [default to false] |
+| **created** | **bool?** | Filter issues or pulls created by the authenticated user | [optional] [default to false] |
+| **mentioned** | **bool?** | Filter issues or pulls mentioning the authenticated user | [optional] [default to false] |
+| **reviewRequested** | **bool?** | Filter pull requests where the authenticated user&#39;s review was requested | [optional] [default to false] |
+| **reviewed** | **bool?** | Filter pull requests reviewed by the authenticated user | [optional] [default to false] |
+| **owner** | **string?** | Filter by repository owner | [optional]  |
+| **createdBy** | **string?** | Only show items which were created by the given user | [optional]  |
+| **team** | **string?** | Filter by team (requires organization owner parameter) | [optional]  |
+| **page** | **int?** | Page number of results to return (1-based) | [optional] [default to 1] |
+| **limit** | **int?** | Number of items per page | [optional]  |
 
 ### Return type
 
@@ -7543,6 +8055,8 @@ catch (ApiException e)
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 | **200** | IssueList |  -  |
+| **400** | APIError is error format response |  * message -  <br>  * url -  <br>  |
+| **422** | APIValidationError is error format response related to input validation |  * message -  <br>  * url -  <br>  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
@@ -7782,7 +8296,7 @@ void (empty response body)
 | **201** | APIEmpty is an empty response |  -  |
 | **403** | Not repo writer, user does not have rights to toggle stopwatch |  -  |
 | **404** | APINotFound is a not found empty response |  -  |
-| **409** | Cannot stop a non existent stopwatch |  -  |
+| **409** | Cannot stop a non-existent stopwatch |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
@@ -8040,6 +8554,125 @@ catch (ApiException e)
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 | **200** | TrackedTimeList |  -  |
+| **404** | APINotFound is a not found empty response |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+<a id="issueunlockissue"></a>
+# **IssueUnlockIssue**
+> void IssueUnlockIssue (string owner, string repo, long index)
+
+Unlock an issue
+
+### Example
+```csharp
+using System.Collections.Generic;
+using System.Diagnostics;
+using Gitea.Net.Api;
+using Gitea.Net.Client;
+using Gitea.Net.Model;
+
+namespace Example
+{
+    public class IssueUnlockIssueExample
+    {
+        public static void Main()
+        {
+            Configuration config = new Configuration();
+            config.BasePath = "/api/v1";
+            // Configure API key authorization: TOTPHeader
+            config.AddApiKey("X-GITEA-OTP", "YOUR_API_KEY");
+            // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+            // config.AddApiKeyPrefix("X-GITEA-OTP", "Bearer");
+            // Configure API key authorization: AuthorizationHeaderToken
+            config.AddApiKey("Authorization", "YOUR_API_KEY");
+            // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+            // config.AddApiKeyPrefix("Authorization", "Bearer");
+            // Configure API key authorization: SudoHeader
+            config.AddApiKey("Sudo", "YOUR_API_KEY");
+            // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+            // config.AddApiKeyPrefix("Sudo", "Bearer");
+            // Configure HTTP basic authorization: BasicAuth
+            config.Username = "YOUR_USERNAME";
+            config.Password = "YOUR_PASSWORD";
+            // Configure API key authorization: AccessToken
+            config.AddApiKey("access_token", "YOUR_API_KEY");
+            // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+            // config.AddApiKeyPrefix("access_token", "Bearer");
+            // Configure API key authorization: SudoParam
+            config.AddApiKey("sudo", "YOUR_API_KEY");
+            // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+            // config.AddApiKeyPrefix("sudo", "Bearer");
+            // Configure API key authorization: Token
+            config.AddApiKey("token", "YOUR_API_KEY");
+            // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+            // config.AddApiKeyPrefix("token", "Bearer");
+
+            var apiInstance = new IssueApi(config);
+            var owner = "owner_example";  // string | owner of the repo
+            var repo = "repo_example";  // string | name of the repo
+            var index = 789L;  // long | index of the issue
+
+            try
+            {
+                // Unlock an issue
+                apiInstance.IssueUnlockIssue(owner, repo, index);
+            }
+            catch (ApiException  e)
+            {
+                Debug.Print("Exception when calling IssueApi.IssueUnlockIssue: " + e.Message);
+                Debug.Print("Status Code: " + e.ErrorCode);
+                Debug.Print(e.StackTrace);
+            }
+        }
+    }
+}
+```
+
+#### Using the IssueUnlockIssueWithHttpInfo variant
+This returns an ApiResponse object which contains the response data, status code and headers.
+
+```csharp
+try
+{
+    // Unlock an issue
+    apiInstance.IssueUnlockIssueWithHttpInfo(owner, repo, index);
+}
+catch (ApiException e)
+{
+    Debug.Print("Exception when calling IssueApi.IssueUnlockIssueWithHttpInfo: " + e.Message);
+    Debug.Print("Status Code: " + e.ErrorCode);
+    Debug.Print(e.StackTrace);
+}
+```
+
+### Parameters
+
+| Name | Type | Description | Notes |
+|------|------|-------------|-------|
+| **owner** | **string** | owner of the repo |  |
+| **repo** | **string** | name of the repo |  |
+| **index** | **long** | index of the issue |  |
+
+### Return type
+
+void (empty response body)
+
+### Authorization
+
+[TOTPHeader](../README.md#TOTPHeader), [AuthorizationHeaderToken](../README.md#AuthorizationHeaderToken), [SudoHeader](../README.md#SudoHeader), [BasicAuth](../README.md#BasicAuth), [AccessToken](../README.md#AccessToken), [SudoParam](../README.md#SudoParam), [Token](../README.md#Token)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: Not defined
+
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+| **204** | APIEmpty is an empty response |  -  |
+| **403** | APIForbiddenError is a forbidden error response |  * message -  <br>  * url -  <br>  |
 | **404** | APINotFound is a not found empty response |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)

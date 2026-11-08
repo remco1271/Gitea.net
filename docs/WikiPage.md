@@ -5,14 +5,14 @@ WikiPage a wiki page
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**CommitCount** | **long** |  | [optional] 
+**CommitCount** | **long** | The number of commits that modified this page | [optional] 
 **ContentBase64** | **string** | Page content, base64 encoded | [optional] 
-**Footer** | **string** |  | [optional] 
-**HtmlUrl** | **string** |  | [optional] 
+**Footer** | **string** | The footer content for the wiki page | [optional] 
+**HtmlUrl** | **string** | The HTML URL to view the wiki page | [optional] 
 **LastCommit** | [**WikiCommit**](WikiCommit.md) |  | [optional] 
-**Sidebar** | **string** |  | [optional] 
-**SubUrl** | **string** |  | [optional] 
-**Title** | **string** |  | [optional] 
+**Sidebar** | **string** | The sidebar content for the wiki page | [optional] 
+**SubUrl** | **string** | The sub URL path for the wiki page | [optional] 
+**Title** | **string** | The title of the wiki page | [optional] 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

@@ -7,7 +7,7 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Created** | **DateTime** |  | [optional] 
 **Time** | **long** | time in seconds | 
-**UserName** | **string** | User who spent the time (optional) | [optional] 
+**UserName** | **string** | username of the user who spent the time working on the issue (optional) | [optional] 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

@@ -5,13 +5,14 @@ CreateTeamOption options for creating a team
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**CanCreateOrgRepo** | **bool** |  | [optional] 
-**Description** | **string** |  | [optional] 
-**IncludesAllRepositories** | **bool** |  | [optional] 
+**CanCreateOrgRepo** | **bool** | Whether the team can create repositories in the organization | [optional] 
+**Description** | **string** | The description of the team | [optional] 
+**IncludesAllRepositories** | **bool** | Whether the team has access to all repositories in the organization | [optional] 
 **Name** | **string** |  | 
-**Permission** | **string** |  | [optional] 
-**Units** | **List&lt;string&gt;** |  | [optional] 
+**Permission** | **string** | All units have this permission (read/write/admin) | [optional] 
+**Units** | **List&lt;string&gt;** | Deprecated: This variable should be replaced by UnitsMap and will be dropped in later versions. | [optional] 
 **UnitsMap** | **Dictionary&lt;string, string&gt;** |  | [optional] 
+**Visibility** | **string** | Team visibility within the organization. Defaults to \&quot;private\&quot;. | [optional] 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

@@ -7,32 +7,47 @@ All URIs are relative to */api/v1*
 | [**CreateOrgRepo**](OrganizationApi.md#createorgrepo) | **POST** /orgs/{org}/repos | Create a repository in an organization |
 | [**CreateOrgRepoDeprecated**](OrganizationApi.md#createorgrepodeprecated) | **POST** /org/{org}/repos | Create a repository in an organization |
 | [**CreateOrgVariable**](OrganizationApi.md#createorgvariable) | **POST** /orgs/{org}/actions/variables/{variablename} | Create an org-level variable |
+| [**DeleteOrgRunner**](OrganizationApi.md#deleteorgrunner) | **DELETE** /orgs/{org}/actions/runners/{runner_id} | Delete an org-level runner |
 | [**DeleteOrgSecret**](OrganizationApi.md#deleteorgsecret) | **DELETE** /orgs/{org}/actions/secrets/{secretname} | Delete a secret in an organization |
 | [**DeleteOrgVariable**](OrganizationApi.md#deleteorgvariable) | **DELETE** /orgs/{org}/actions/variables/{variablename} | Delete an org-level variable |
+| [**GetOrgRunner**](OrganizationApi.md#getorgrunner) | **GET** /orgs/{org}/actions/runners/{runner_id} | Get an org-level runner |
+| [**GetOrgRunners**](OrganizationApi.md#getorgrunners) | **GET** /orgs/{org}/actions/runners | Get org-level runners |
 | [**GetOrgVariable**](OrganizationApi.md#getorgvariable) | **GET** /orgs/{org}/actions/variables/{variablename} | Get an org-level variable |
 | [**GetOrgVariablesList**](OrganizationApi.md#getorgvariableslist) | **GET** /orgs/{org}/actions/variables | Get an org-level variables list |
+| [**GetOrgWorkflowJobs**](OrganizationApi.md#getorgworkflowjobs) | **GET** /orgs/{org}/actions/jobs | Get org-level workflow jobs |
+| [**GetOrgWorkflowRuns**](OrganizationApi.md#getorgworkflowruns) | **GET** /orgs/{org}/actions/runs | Get org-level workflow runs |
+| [**OrgAddIssueToProjectColumn**](OrganizationApi.md#orgaddissuetoprojectcolumn) | **POST** /orgs/{org}/projects/{id}/columns/{column_id}/issues/{issue_id} | Add an issue to a project column |
 | [**OrgAddTeamMember**](OrganizationApi.md#orgaddteammember) | **PUT** /teams/{id}/members/{username} | Add a team member |
 | [**OrgAddTeamRepository**](OrganizationApi.md#orgaddteamrepository) | **PUT** /teams/{id}/repos/{org}/{repo} | Add a repository to a team |
 | [**OrgConcealMember**](OrganizationApi.md#orgconcealmember) | **DELETE** /orgs/{org}/public_members/{username} | Conceal a user&#39;s membership |
 | [**OrgCreate**](OrganizationApi.md#orgcreate) | **POST** /orgs | Create an organization |
 | [**OrgCreateHook**](OrganizationApi.md#orgcreatehook) | **POST** /orgs/{org}/hooks | Create a hook |
 | [**OrgCreateLabel**](OrganizationApi.md#orgcreatelabel) | **POST** /orgs/{org}/labels | Create a label for an organization |
+| [**OrgCreateProject**](OrganizationApi.md#orgcreateproject) | **POST** /orgs/{org}/projects | Create a project owned by an organization |
+| [**OrgCreateProjectColumn**](OrganizationApi.md#orgcreateprojectcolumn) | **POST** /orgs/{org}/projects/{id}/columns | Create a column in a project |
+| [**OrgCreateRunnerRegistrationToken**](OrganizationApi.md#orgcreaterunnerregistrationtoken) | **POST** /orgs/{org}/actions/runners/registration-token | Get an organization&#39;s actions runner registration token |
 | [**OrgCreateTeam**](OrganizationApi.md#orgcreateteam) | **POST** /orgs/{org}/teams | Create a team |
 | [**OrgDelete**](OrganizationApi.md#orgdelete) | **DELETE** /orgs/{org} | Delete an organization |
 | [**OrgDeleteAvatar**](OrganizationApi.md#orgdeleteavatar) | **DELETE** /orgs/{org}/avatar | Delete Avatar |
 | [**OrgDeleteHook**](OrganizationApi.md#orgdeletehook) | **DELETE** /orgs/{org}/hooks/{id} | Delete a hook |
 | [**OrgDeleteLabel**](OrganizationApi.md#orgdeletelabel) | **DELETE** /orgs/{org}/labels/{id} | Delete a label |
 | [**OrgDeleteMember**](OrganizationApi.md#orgdeletemember) | **DELETE** /orgs/{org}/members/{username} | Remove a member from an organization |
+| [**OrgDeleteProject**](OrganizationApi.md#orgdeleteproject) | **DELETE** /orgs/{org}/projects/{id} | Delete a project |
+| [**OrgDeleteProjectColumn**](OrganizationApi.md#orgdeleteprojectcolumn) | **DELETE** /orgs/{org}/projects/{id}/columns/{column_id} | Delete a project column |
+| [**OrgDeleteRepos**](OrganizationApi.md#orgdeleterepos) | **DELETE** /orgs/{org}/repos | Delete all repositories in an organization |
 | [**OrgDeleteTeam**](OrganizationApi.md#orgdeleteteam) | **DELETE** /teams/{id} | Delete a team |
 | [**OrgEdit**](OrganizationApi.md#orgedit) | **PATCH** /orgs/{org} | Edit an organization |
 | [**OrgEditHook**](OrganizationApi.md#orgedithook) | **PATCH** /orgs/{org}/hooks/{id} | Update a hook |
 | [**OrgEditLabel**](OrganizationApi.md#orgeditlabel) | **PATCH** /orgs/{org}/labels/{id} | Update a label |
+| [**OrgEditProject**](OrganizationApi.md#orgeditproject) | **PATCH** /orgs/{org}/projects/{id} | Edit a project |
+| [**OrgEditProjectColumn**](OrganizationApi.md#orgeditprojectcolumn) | **PATCH** /orgs/{org}/projects/{id}/columns/{column_id} | Edit a project column |
 | [**OrgEditTeam**](OrganizationApi.md#orgeditteam) | **PATCH** /teams/{id} | Edit a team |
 | [**OrgGet**](OrganizationApi.md#orgget) | **GET** /orgs/{org} | Get an organization |
 | [**OrgGetAll**](OrganizationApi.md#orggetall) | **GET** /orgs | Get list of organizations |
 | [**OrgGetHook**](OrganizationApi.md#orggethook) | **GET** /orgs/{org}/hooks/{id} | Get a hook |
 | [**OrgGetLabel**](OrganizationApi.md#orggetlabel) | **GET** /orgs/{org}/labels/{id} | Get a single label |
-| [**OrgGetRunnerRegistrationToken**](OrganizationApi.md#orggetrunnerregistrationtoken) | **GET** /orgs/{org}/actions/runners/registration-token | Get an organization&#39;s actions runner registration token |
+| [**OrgGetProject**](OrganizationApi.md#orggetproject) | **GET** /orgs/{org}/projects/{id} | Get a project |
+| [**OrgGetProjectColumn**](OrganizationApi.md#orggetprojectcolumn) | **GET** /orgs/{org}/projects/{id}/columns/{column_id} | Get a project column |
 | [**OrgGetTeam**](OrganizationApi.md#orggetteam) | **GET** /teams/{id} | Get a team |
 | [**OrgGetUserPermissions**](OrganizationApi.md#orggetuserpermissions) | **GET** /users/{username}/orgs/{org}/permissions | Get user permissions in organization |
 | [**OrgIsMember**](OrganizationApi.md#orgismember) | **GET** /orgs/{org}/members/{username} | Check if a user is a member of an organization |
@@ -43,6 +58,9 @@ All URIs are relative to */api/v1*
 | [**OrgListHooks**](OrganizationApi.md#orglisthooks) | **GET** /orgs/{org}/hooks | List an organization&#39;s webhooks |
 | [**OrgListLabels**](OrganizationApi.md#orglistlabels) | **GET** /orgs/{org}/labels | List an organization&#39;s labels |
 | [**OrgListMembers**](OrganizationApi.md#orglistmembers) | **GET** /orgs/{org}/members | List an organization&#39;s members |
+| [**OrgListProjectColumnIssues**](OrganizationApi.md#orglistprojectcolumnissues) | **GET** /orgs/{org}/projects/{id}/columns/{column_id}/issues | List the issues in a project column |
+| [**OrgListProjectColumns**](OrganizationApi.md#orglistprojectcolumns) | **GET** /orgs/{org}/projects/{id}/columns | List a project&#39;s columns |
+| [**OrgListProjects**](OrganizationApi.md#orglistprojects) | **GET** /orgs/{org}/projects | List an organization&#39;s projects |
 | [**OrgListPublicMembers**](OrganizationApi.md#orglistpublicmembers) | **GET** /orgs/{org}/public_members | List an organization&#39;s public members |
 | [**OrgListRepos**](OrganizationApi.md#orglistrepos) | **GET** /orgs/{org}/repos | List an organization&#39;s repos |
 | [**OrgListTeamActivityFeeds**](OrganizationApi.md#orglistteamactivityfeeds) | **GET** /teams/{id}/activities/feeds | List a team&#39;s activity feeds |
@@ -52,15 +70,21 @@ All URIs are relative to */api/v1*
 | [**OrgListTeamRepos**](OrganizationApi.md#orglistteamrepos) | **GET** /teams/{id}/repos | List a team&#39;s repos |
 | [**OrgListTeams**](OrganizationApi.md#orglistteams) | **GET** /orgs/{org}/teams | List an organization&#39;s teams |
 | [**OrgListUserOrgs**](OrganizationApi.md#orglistuserorgs) | **GET** /users/{username}/orgs | List a user&#39;s organizations |
+| [**OrgMoveProjectColumns**](OrganizationApi.md#orgmoveprojectcolumns) | **POST** /orgs/{org}/projects/{id}/columns/move | Reorder a project&#39;s columns |
+| [**OrgMoveProjectIssue**](OrganizationApi.md#orgmoveprojectissue) | **POST** /orgs/{org}/projects/{id}/issues/{issue_id}/move | Move an issue between a project&#39;s columns |
 | [**OrgPublicizeMember**](OrganizationApi.md#orgpublicizemember) | **PUT** /orgs/{org}/public_members/{username} | Publicize a user&#39;s membership |
+| [**OrgRemoveIssueFromProjectColumn**](OrganizationApi.md#orgremoveissuefromprojectcolumn) | **DELETE** /orgs/{org}/projects/{id}/columns/{column_id}/issues/{issue_id} | Remove an issue from a project column |
 | [**OrgRemoveTeamMember**](OrganizationApi.md#orgremoveteammember) | **DELETE** /teams/{id}/members/{username} | Remove a team member |
 | [**OrgRemoveTeamRepository**](OrganizationApi.md#orgremoveteamrepository) | **DELETE** /teams/{id}/repos/{org}/{repo} | Remove a repository from a team |
+| [**OrgSetDefaultProjectColumn**](OrganizationApi.md#orgsetdefaultprojectcolumn) | **POST** /orgs/{org}/projects/{id}/columns/{column_id}/default | Set a project&#39;s default column |
 | [**OrgUpdateAvatar**](OrganizationApi.md#orgupdateavatar) | **POST** /orgs/{org}/avatar | Update Avatar |
 | [**OrganizationBlockUser**](OrganizationApi.md#organizationblockuser) | **PUT** /orgs/{org}/blocks/{username} | Block a user |
 | [**OrganizationCheckUserBlock**](OrganizationApi.md#organizationcheckuserblock) | **GET** /orgs/{org}/blocks/{username} | Check if a user is blocked by the organization |
 | [**OrganizationListBlocks**](OrganizationApi.md#organizationlistblocks) | **GET** /orgs/{org}/blocks | List users blocked by the organization |
 | [**OrganizationUnblockUser**](OrganizationApi.md#organizationunblockuser) | **DELETE** /orgs/{org}/blocks/{username} | Unblock a user |
+| [**RenameOrg**](OrganizationApi.md#renameorg) | **POST** /orgs/{org}/rename | Rename an organization |
 | [**TeamSearch**](OrganizationApi.md#teamsearch) | **GET** /orgs/{org}/teams/search | Search for teams within an organization |
+| [**UpdateOrgRunner**](OrganizationApi.md#updateorgrunner) | **PATCH** /orgs/{org}/actions/runners/{runner_id} | Update an org-level runner |
 | [**UpdateOrgSecret**](OrganizationApi.md#updateorgsecret) | **PUT** /orgs/{org}/actions/secrets/{secretname} | Create or Update a secret value in an organization |
 | [**UpdateOrgVariable**](OrganizationApi.md#updateorgvariable) | **PUT** /orgs/{org}/actions/variables/{variablename} | Update an org-level variable |
 
@@ -421,8 +445,125 @@ void (empty response body)
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-| **201** | response when creating an org-level variable |  -  |
-| **204** | response when creating an org-level variable |  -  |
+| **201** | successfully created the org-level variable |  -  |
+| **400** | APIError is error format response |  * message -  <br>  * url -  <br>  |
+| **409** | variable name already exists. |  -  |
+| **500** | APIError is error format response |  * message -  <br>  * url -  <br>  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+<a id="deleteorgrunner"></a>
+# **DeleteOrgRunner**
+> void DeleteOrgRunner (string org, string runnerId)
+
+Delete an org-level runner
+
+### Example
+```csharp
+using System.Collections.Generic;
+using System.Diagnostics;
+using Gitea.Net.Api;
+using Gitea.Net.Client;
+using Gitea.Net.Model;
+
+namespace Example
+{
+    public class DeleteOrgRunnerExample
+    {
+        public static void Main()
+        {
+            Configuration config = new Configuration();
+            config.BasePath = "/api/v1";
+            // Configure API key authorization: TOTPHeader
+            config.AddApiKey("X-GITEA-OTP", "YOUR_API_KEY");
+            // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+            // config.AddApiKeyPrefix("X-GITEA-OTP", "Bearer");
+            // Configure API key authorization: AuthorizationHeaderToken
+            config.AddApiKey("Authorization", "YOUR_API_KEY");
+            // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+            // config.AddApiKeyPrefix("Authorization", "Bearer");
+            // Configure API key authorization: SudoHeader
+            config.AddApiKey("Sudo", "YOUR_API_KEY");
+            // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+            // config.AddApiKeyPrefix("Sudo", "Bearer");
+            // Configure HTTP basic authorization: BasicAuth
+            config.Username = "YOUR_USERNAME";
+            config.Password = "YOUR_PASSWORD";
+            // Configure API key authorization: AccessToken
+            config.AddApiKey("access_token", "YOUR_API_KEY");
+            // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+            // config.AddApiKeyPrefix("access_token", "Bearer");
+            // Configure API key authorization: SudoParam
+            config.AddApiKey("sudo", "YOUR_API_KEY");
+            // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+            // config.AddApiKeyPrefix("sudo", "Bearer");
+            // Configure API key authorization: Token
+            config.AddApiKey("token", "YOUR_API_KEY");
+            // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+            // config.AddApiKeyPrefix("token", "Bearer");
+
+            var apiInstance = new OrganizationApi(config);
+            var org = "org_example";  // string | name of the organization
+            var runnerId = "runnerId_example";  // string | id of the runner
+
+            try
+            {
+                // Delete an org-level runner
+                apiInstance.DeleteOrgRunner(org, runnerId);
+            }
+            catch (ApiException  e)
+            {
+                Debug.Print("Exception when calling OrganizationApi.DeleteOrgRunner: " + e.Message);
+                Debug.Print("Status Code: " + e.ErrorCode);
+                Debug.Print(e.StackTrace);
+            }
+        }
+    }
+}
+```
+
+#### Using the DeleteOrgRunnerWithHttpInfo variant
+This returns an ApiResponse object which contains the response data, status code and headers.
+
+```csharp
+try
+{
+    // Delete an org-level runner
+    apiInstance.DeleteOrgRunnerWithHttpInfo(org, runnerId);
+}
+catch (ApiException e)
+{
+    Debug.Print("Exception when calling OrganizationApi.DeleteOrgRunnerWithHttpInfo: " + e.Message);
+    Debug.Print("Status Code: " + e.ErrorCode);
+    Debug.Print(e.StackTrace);
+}
+```
+
+### Parameters
+
+| Name | Type | Description | Notes |
+|------|------|-------------|-------|
+| **org** | **string** | name of the organization |  |
+| **runnerId** | **string** | id of the runner |  |
+
+### Return type
+
+void (empty response body)
+
+### Authorization
+
+[TOTPHeader](../README.md#TOTPHeader), [AuthorizationHeaderToken](../README.md#AuthorizationHeaderToken), [SudoHeader](../README.md#SudoHeader), [BasicAuth](../README.md#BasicAuth), [AccessToken](../README.md#AccessToken), [SudoParam](../README.md#SudoParam), [Token](../README.md#Token)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: Not defined
+
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+| **204** | runner has been deleted |  -  |
 | **400** | APIError is error format response |  * message -  <br>  * url -  <br>  |
 | **404** | APINotFound is a not found empty response |  -  |
 
@@ -663,6 +804,248 @@ catch (ApiException e)
 | **200** | ActionVariable |  -  |
 | **201** | response when deleting a variable |  -  |
 | **204** | response when deleting a variable |  -  |
+| **400** | APIError is error format response |  * message -  <br>  * url -  <br>  |
+| **404** | APINotFound is a not found empty response |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+<a id="getorgrunner"></a>
+# **GetOrgRunner**
+> ActionRunner GetOrgRunner (string org, string runnerId)
+
+Get an org-level runner
+
+### Example
+```csharp
+using System.Collections.Generic;
+using System.Diagnostics;
+using Gitea.Net.Api;
+using Gitea.Net.Client;
+using Gitea.Net.Model;
+
+namespace Example
+{
+    public class GetOrgRunnerExample
+    {
+        public static void Main()
+        {
+            Configuration config = new Configuration();
+            config.BasePath = "/api/v1";
+            // Configure API key authorization: TOTPHeader
+            config.AddApiKey("X-GITEA-OTP", "YOUR_API_KEY");
+            // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+            // config.AddApiKeyPrefix("X-GITEA-OTP", "Bearer");
+            // Configure API key authorization: AuthorizationHeaderToken
+            config.AddApiKey("Authorization", "YOUR_API_KEY");
+            // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+            // config.AddApiKeyPrefix("Authorization", "Bearer");
+            // Configure API key authorization: SudoHeader
+            config.AddApiKey("Sudo", "YOUR_API_KEY");
+            // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+            // config.AddApiKeyPrefix("Sudo", "Bearer");
+            // Configure HTTP basic authorization: BasicAuth
+            config.Username = "YOUR_USERNAME";
+            config.Password = "YOUR_PASSWORD";
+            // Configure API key authorization: AccessToken
+            config.AddApiKey("access_token", "YOUR_API_KEY");
+            // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+            // config.AddApiKeyPrefix("access_token", "Bearer");
+            // Configure API key authorization: SudoParam
+            config.AddApiKey("sudo", "YOUR_API_KEY");
+            // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+            // config.AddApiKeyPrefix("sudo", "Bearer");
+            // Configure API key authorization: Token
+            config.AddApiKey("token", "YOUR_API_KEY");
+            // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+            // config.AddApiKeyPrefix("token", "Bearer");
+
+            var apiInstance = new OrganizationApi(config);
+            var org = "org_example";  // string | name of the organization
+            var runnerId = "runnerId_example";  // string | id of the runner
+
+            try
+            {
+                // Get an org-level runner
+                ActionRunner result = apiInstance.GetOrgRunner(org, runnerId);
+                Debug.WriteLine(result);
+            }
+            catch (ApiException  e)
+            {
+                Debug.Print("Exception when calling OrganizationApi.GetOrgRunner: " + e.Message);
+                Debug.Print("Status Code: " + e.ErrorCode);
+                Debug.Print(e.StackTrace);
+            }
+        }
+    }
+}
+```
+
+#### Using the GetOrgRunnerWithHttpInfo variant
+This returns an ApiResponse object which contains the response data, status code and headers.
+
+```csharp
+try
+{
+    // Get an org-level runner
+    ApiResponse<ActionRunner> response = apiInstance.GetOrgRunnerWithHttpInfo(org, runnerId);
+    Debug.Write("Status Code: " + response.StatusCode);
+    Debug.Write("Response Headers: " + response.Headers);
+    Debug.Write("Response Body: " + response.Data);
+}
+catch (ApiException e)
+{
+    Debug.Print("Exception when calling OrganizationApi.GetOrgRunnerWithHttpInfo: " + e.Message);
+    Debug.Print("Status Code: " + e.ErrorCode);
+    Debug.Print(e.StackTrace);
+}
+```
+
+### Parameters
+
+| Name | Type | Description | Notes |
+|------|------|-------------|-------|
+| **org** | **string** | name of the organization |  |
+| **runnerId** | **string** | id of the runner |  |
+
+### Return type
+
+[**ActionRunner**](ActionRunner.md)
+
+### Authorization
+
+[TOTPHeader](../README.md#TOTPHeader), [AuthorizationHeaderToken](../README.md#AuthorizationHeaderToken), [SudoHeader](../README.md#SudoHeader), [BasicAuth](../README.md#BasicAuth), [AccessToken](../README.md#AccessToken), [SudoParam](../README.md#SudoParam), [Token](../README.md#Token)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+| **200** | Runner |  -  |
+| **400** | APIError is error format response |  * message -  <br>  * url -  <br>  |
+| **404** | APINotFound is a not found empty response |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+<a id="getorgrunners"></a>
+# **GetOrgRunners**
+> ActionRunnersResponse GetOrgRunners (string org, bool? disabled = null)
+
+Get org-level runners
+
+### Example
+```csharp
+using System.Collections.Generic;
+using System.Diagnostics;
+using Gitea.Net.Api;
+using Gitea.Net.Client;
+using Gitea.Net.Model;
+
+namespace Example
+{
+    public class GetOrgRunnersExample
+    {
+        public static void Main()
+        {
+            Configuration config = new Configuration();
+            config.BasePath = "/api/v1";
+            // Configure API key authorization: TOTPHeader
+            config.AddApiKey("X-GITEA-OTP", "YOUR_API_KEY");
+            // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+            // config.AddApiKeyPrefix("X-GITEA-OTP", "Bearer");
+            // Configure API key authorization: AuthorizationHeaderToken
+            config.AddApiKey("Authorization", "YOUR_API_KEY");
+            // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+            // config.AddApiKeyPrefix("Authorization", "Bearer");
+            // Configure API key authorization: SudoHeader
+            config.AddApiKey("Sudo", "YOUR_API_KEY");
+            // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+            // config.AddApiKeyPrefix("Sudo", "Bearer");
+            // Configure HTTP basic authorization: BasicAuth
+            config.Username = "YOUR_USERNAME";
+            config.Password = "YOUR_PASSWORD";
+            // Configure API key authorization: AccessToken
+            config.AddApiKey("access_token", "YOUR_API_KEY");
+            // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+            // config.AddApiKeyPrefix("access_token", "Bearer");
+            // Configure API key authorization: SudoParam
+            config.AddApiKey("sudo", "YOUR_API_KEY");
+            // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+            // config.AddApiKeyPrefix("sudo", "Bearer");
+            // Configure API key authorization: Token
+            config.AddApiKey("token", "YOUR_API_KEY");
+            // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+            // config.AddApiKeyPrefix("token", "Bearer");
+
+            var apiInstance = new OrganizationApi(config);
+            var org = "org_example";  // string | name of the organization
+            var disabled = true;  // bool? | filter by disabled status (true or false) (optional) 
+
+            try
+            {
+                // Get org-level runners
+                ActionRunnersResponse result = apiInstance.GetOrgRunners(org, disabled);
+                Debug.WriteLine(result);
+            }
+            catch (ApiException  e)
+            {
+                Debug.Print("Exception when calling OrganizationApi.GetOrgRunners: " + e.Message);
+                Debug.Print("Status Code: " + e.ErrorCode);
+                Debug.Print(e.StackTrace);
+            }
+        }
+    }
+}
+```
+
+#### Using the GetOrgRunnersWithHttpInfo variant
+This returns an ApiResponse object which contains the response data, status code and headers.
+
+```csharp
+try
+{
+    // Get org-level runners
+    ApiResponse<ActionRunnersResponse> response = apiInstance.GetOrgRunnersWithHttpInfo(org, disabled);
+    Debug.Write("Status Code: " + response.StatusCode);
+    Debug.Write("Response Headers: " + response.Headers);
+    Debug.Write("Response Body: " + response.Data);
+}
+catch (ApiException e)
+{
+    Debug.Print("Exception when calling OrganizationApi.GetOrgRunnersWithHttpInfo: " + e.Message);
+    Debug.Print("Status Code: " + e.ErrorCode);
+    Debug.Print(e.StackTrace);
+}
+```
+
+### Parameters
+
+| Name | Type | Description | Notes |
+|------|------|-------------|-------|
+| **org** | **string** | name of the organization |  |
+| **disabled** | **bool?** | filter by disabled status (true or false) | [optional]  |
+
+### Return type
+
+[**ActionRunnersResponse**](ActionRunnersResponse.md)
+
+### Authorization
+
+[TOTPHeader](../README.md#TOTPHeader), [AuthorizationHeaderToken](../README.md#AuthorizationHeaderToken), [SudoHeader](../README.md#SudoHeader), [BasicAuth](../README.md#BasicAuth), [AccessToken](../README.md#AccessToken), [SudoParam](../README.md#SudoParam), [Token](../README.md#Token)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+| **200** | RunnerList |  -  |
 | **400** | APIError is error format response |  * message -  <br>  * url -  <br>  |
 | **404** | APINotFound is a not found empty response |  -  |
 
@@ -912,6 +1295,389 @@ catch (ApiException e)
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
+<a id="getorgworkflowjobs"></a>
+# **GetOrgWorkflowJobs**
+> ActionWorkflowJobsResponse GetOrgWorkflowJobs (string org, string? status = null, int? page = null, int? limit = null)
+
+Get org-level workflow jobs
+
+### Example
+```csharp
+using System.Collections.Generic;
+using System.Diagnostics;
+using Gitea.Net.Api;
+using Gitea.Net.Client;
+using Gitea.Net.Model;
+
+namespace Example
+{
+    public class GetOrgWorkflowJobsExample
+    {
+        public static void Main()
+        {
+            Configuration config = new Configuration();
+            config.BasePath = "/api/v1";
+            // Configure API key authorization: TOTPHeader
+            config.AddApiKey("X-GITEA-OTP", "YOUR_API_KEY");
+            // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+            // config.AddApiKeyPrefix("X-GITEA-OTP", "Bearer");
+            // Configure API key authorization: AuthorizationHeaderToken
+            config.AddApiKey("Authorization", "YOUR_API_KEY");
+            // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+            // config.AddApiKeyPrefix("Authorization", "Bearer");
+            // Configure API key authorization: SudoHeader
+            config.AddApiKey("Sudo", "YOUR_API_KEY");
+            // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+            // config.AddApiKeyPrefix("Sudo", "Bearer");
+            // Configure HTTP basic authorization: BasicAuth
+            config.Username = "YOUR_USERNAME";
+            config.Password = "YOUR_PASSWORD";
+            // Configure API key authorization: AccessToken
+            config.AddApiKey("access_token", "YOUR_API_KEY");
+            // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+            // config.AddApiKeyPrefix("access_token", "Bearer");
+            // Configure API key authorization: SudoParam
+            config.AddApiKey("sudo", "YOUR_API_KEY");
+            // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+            // config.AddApiKeyPrefix("sudo", "Bearer");
+            // Configure API key authorization: Token
+            config.AddApiKey("token", "YOUR_API_KEY");
+            // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+            // config.AddApiKeyPrefix("token", "Bearer");
+
+            var apiInstance = new OrganizationApi(config);
+            var org = "org_example";  // string | name of the organization
+            var status = "status_example";  // string? | workflow status (requested, pending, queued, in_progress, failure, success, skipped) (optional) 
+            var page = 56;  // int? | page number of results to return (1-based) (optional) 
+            var limit = 56;  // int? | page size of results (optional) 
+
+            try
+            {
+                // Get org-level workflow jobs
+                ActionWorkflowJobsResponse result = apiInstance.GetOrgWorkflowJobs(org, status, page, limit);
+                Debug.WriteLine(result);
+            }
+            catch (ApiException  e)
+            {
+                Debug.Print("Exception when calling OrganizationApi.GetOrgWorkflowJobs: " + e.Message);
+                Debug.Print("Status Code: " + e.ErrorCode);
+                Debug.Print(e.StackTrace);
+            }
+        }
+    }
+}
+```
+
+#### Using the GetOrgWorkflowJobsWithHttpInfo variant
+This returns an ApiResponse object which contains the response data, status code and headers.
+
+```csharp
+try
+{
+    // Get org-level workflow jobs
+    ApiResponse<ActionWorkflowJobsResponse> response = apiInstance.GetOrgWorkflowJobsWithHttpInfo(org, status, page, limit);
+    Debug.Write("Status Code: " + response.StatusCode);
+    Debug.Write("Response Headers: " + response.Headers);
+    Debug.Write("Response Body: " + response.Data);
+}
+catch (ApiException e)
+{
+    Debug.Print("Exception when calling OrganizationApi.GetOrgWorkflowJobsWithHttpInfo: " + e.Message);
+    Debug.Print("Status Code: " + e.ErrorCode);
+    Debug.Print(e.StackTrace);
+}
+```
+
+### Parameters
+
+| Name | Type | Description | Notes |
+|------|------|-------------|-------|
+| **org** | **string** | name of the organization |  |
+| **status** | **string?** | workflow status (requested, pending, queued, in_progress, failure, success, skipped) | [optional]  |
+| **page** | **int?** | page number of results to return (1-based) | [optional]  |
+| **limit** | **int?** | page size of results | [optional]  |
+
+### Return type
+
+[**ActionWorkflowJobsResponse**](ActionWorkflowJobsResponse.md)
+
+### Authorization
+
+[TOTPHeader](../README.md#TOTPHeader), [AuthorizationHeaderToken](../README.md#AuthorizationHeaderToken), [SudoHeader](../README.md#SudoHeader), [BasicAuth](../README.md#BasicAuth), [AccessToken](../README.md#AccessToken), [SudoParam](../README.md#SudoParam), [Token](../README.md#Token)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+| **200** | WorkflowJobsList |  -  |
+| **400** | APIError is error format response |  * message -  <br>  * url -  <br>  |
+| **404** | APINotFound is a not found empty response |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+<a id="getorgworkflowruns"></a>
+# **GetOrgWorkflowRuns**
+> ActionWorkflowRunsResponse GetOrgWorkflowRuns (string org, string? varEvent = null, string? branch = null, string? status = null, string? actor = null, string? headSha = null, int? page = null, int? limit = null)
+
+Get org-level workflow runs
+
+### Example
+```csharp
+using System.Collections.Generic;
+using System.Diagnostics;
+using Gitea.Net.Api;
+using Gitea.Net.Client;
+using Gitea.Net.Model;
+
+namespace Example
+{
+    public class GetOrgWorkflowRunsExample
+    {
+        public static void Main()
+        {
+            Configuration config = new Configuration();
+            config.BasePath = "/api/v1";
+            // Configure API key authorization: TOTPHeader
+            config.AddApiKey("X-GITEA-OTP", "YOUR_API_KEY");
+            // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+            // config.AddApiKeyPrefix("X-GITEA-OTP", "Bearer");
+            // Configure API key authorization: AuthorizationHeaderToken
+            config.AddApiKey("Authorization", "YOUR_API_KEY");
+            // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+            // config.AddApiKeyPrefix("Authorization", "Bearer");
+            // Configure API key authorization: SudoHeader
+            config.AddApiKey("Sudo", "YOUR_API_KEY");
+            // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+            // config.AddApiKeyPrefix("Sudo", "Bearer");
+            // Configure HTTP basic authorization: BasicAuth
+            config.Username = "YOUR_USERNAME";
+            config.Password = "YOUR_PASSWORD";
+            // Configure API key authorization: AccessToken
+            config.AddApiKey("access_token", "YOUR_API_KEY");
+            // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+            // config.AddApiKeyPrefix("access_token", "Bearer");
+            // Configure API key authorization: SudoParam
+            config.AddApiKey("sudo", "YOUR_API_KEY");
+            // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+            // config.AddApiKeyPrefix("sudo", "Bearer");
+            // Configure API key authorization: Token
+            config.AddApiKey("token", "YOUR_API_KEY");
+            // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+            // config.AddApiKeyPrefix("token", "Bearer");
+
+            var apiInstance = new OrganizationApi(config);
+            var org = "org_example";  // string | name of the organization
+            var varEvent = "varEvent_example";  // string? | workflow event name (optional) 
+            var branch = "branch_example";  // string? | workflow branch (optional) 
+            var status = "status_example";  // string? | workflow status (requested, pending, queued, in_progress, failure, success, skipped) (optional) 
+            var actor = "actor_example";  // string? | triggered by user (optional) 
+            var headSha = "headSha_example";  // string? | triggering sha of the workflow run (optional) 
+            var page = 56;  // int? | page number of results to return (1-based) (optional) 
+            var limit = 56;  // int? | page size of results (optional) 
+
+            try
+            {
+                // Get org-level workflow runs
+                ActionWorkflowRunsResponse result = apiInstance.GetOrgWorkflowRuns(org, varEvent, branch, status, actor, headSha, page, limit);
+                Debug.WriteLine(result);
+            }
+            catch (ApiException  e)
+            {
+                Debug.Print("Exception when calling OrganizationApi.GetOrgWorkflowRuns: " + e.Message);
+                Debug.Print("Status Code: " + e.ErrorCode);
+                Debug.Print(e.StackTrace);
+            }
+        }
+    }
+}
+```
+
+#### Using the GetOrgWorkflowRunsWithHttpInfo variant
+This returns an ApiResponse object which contains the response data, status code and headers.
+
+```csharp
+try
+{
+    // Get org-level workflow runs
+    ApiResponse<ActionWorkflowRunsResponse> response = apiInstance.GetOrgWorkflowRunsWithHttpInfo(org, varEvent, branch, status, actor, headSha, page, limit);
+    Debug.Write("Status Code: " + response.StatusCode);
+    Debug.Write("Response Headers: " + response.Headers);
+    Debug.Write("Response Body: " + response.Data);
+}
+catch (ApiException e)
+{
+    Debug.Print("Exception when calling OrganizationApi.GetOrgWorkflowRunsWithHttpInfo: " + e.Message);
+    Debug.Print("Status Code: " + e.ErrorCode);
+    Debug.Print(e.StackTrace);
+}
+```
+
+### Parameters
+
+| Name | Type | Description | Notes |
+|------|------|-------------|-------|
+| **org** | **string** | name of the organization |  |
+| **varEvent** | **string?** | workflow event name | [optional]  |
+| **branch** | **string?** | workflow branch | [optional]  |
+| **status** | **string?** | workflow status (requested, pending, queued, in_progress, failure, success, skipped) | [optional]  |
+| **actor** | **string?** | triggered by user | [optional]  |
+| **headSha** | **string?** | triggering sha of the workflow run | [optional]  |
+| **page** | **int?** | page number of results to return (1-based) | [optional]  |
+| **limit** | **int?** | page size of results | [optional]  |
+
+### Return type
+
+[**ActionWorkflowRunsResponse**](ActionWorkflowRunsResponse.md)
+
+### Authorization
+
+[TOTPHeader](../README.md#TOTPHeader), [AuthorizationHeaderToken](../README.md#AuthorizationHeaderToken), [SudoHeader](../README.md#SudoHeader), [BasicAuth](../README.md#BasicAuth), [AccessToken](../README.md#AccessToken), [SudoParam](../README.md#SudoParam), [Token](../README.md#Token)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+| **200** | WorkflowRunsList |  -  |
+| **400** | APIError is error format response |  * message -  <br>  * url -  <br>  |
+| **404** | APINotFound is a not found empty response |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+<a id="orgaddissuetoprojectcolumn"></a>
+# **OrgAddIssueToProjectColumn**
+> void OrgAddIssueToProjectColumn (string org, long id, long columnId, long issueId)
+
+Add an issue to a project column
+
+Assigns the issue to the project if it is not a member yet, then places it in the column.
+
+### Example
+```csharp
+using System.Collections.Generic;
+using System.Diagnostics;
+using Gitea.Net.Api;
+using Gitea.Net.Client;
+using Gitea.Net.Model;
+
+namespace Example
+{
+    public class OrgAddIssueToProjectColumnExample
+    {
+        public static void Main()
+        {
+            Configuration config = new Configuration();
+            config.BasePath = "/api/v1";
+            // Configure API key authorization: TOTPHeader
+            config.AddApiKey("X-GITEA-OTP", "YOUR_API_KEY");
+            // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+            // config.AddApiKeyPrefix("X-GITEA-OTP", "Bearer");
+            // Configure API key authorization: AuthorizationHeaderToken
+            config.AddApiKey("Authorization", "YOUR_API_KEY");
+            // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+            // config.AddApiKeyPrefix("Authorization", "Bearer");
+            // Configure API key authorization: SudoHeader
+            config.AddApiKey("Sudo", "YOUR_API_KEY");
+            // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+            // config.AddApiKeyPrefix("Sudo", "Bearer");
+            // Configure HTTP basic authorization: BasicAuth
+            config.Username = "YOUR_USERNAME";
+            config.Password = "YOUR_PASSWORD";
+            // Configure API key authorization: AccessToken
+            config.AddApiKey("access_token", "YOUR_API_KEY");
+            // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+            // config.AddApiKeyPrefix("access_token", "Bearer");
+            // Configure API key authorization: SudoParam
+            config.AddApiKey("sudo", "YOUR_API_KEY");
+            // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+            // config.AddApiKeyPrefix("sudo", "Bearer");
+            // Configure API key authorization: Token
+            config.AddApiKey("token", "YOUR_API_KEY");
+            // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+            // config.AddApiKeyPrefix("token", "Bearer");
+
+            var apiInstance = new OrganizationApi(config);
+            var org = "org_example";  // string | name of the organization
+            var id = 789L;  // long | id of the project
+            var columnId = 789L;  // long | id of the column
+            var issueId = 789L;  // long | global id of the issue, not the repository-local index
+
+            try
+            {
+                // Add an issue to a project column
+                apiInstance.OrgAddIssueToProjectColumn(org, id, columnId, issueId);
+            }
+            catch (ApiException  e)
+            {
+                Debug.Print("Exception when calling OrganizationApi.OrgAddIssueToProjectColumn: " + e.Message);
+                Debug.Print("Status Code: " + e.ErrorCode);
+                Debug.Print(e.StackTrace);
+            }
+        }
+    }
+}
+```
+
+#### Using the OrgAddIssueToProjectColumnWithHttpInfo variant
+This returns an ApiResponse object which contains the response data, status code and headers.
+
+```csharp
+try
+{
+    // Add an issue to a project column
+    apiInstance.OrgAddIssueToProjectColumnWithHttpInfo(org, id, columnId, issueId);
+}
+catch (ApiException e)
+{
+    Debug.Print("Exception when calling OrganizationApi.OrgAddIssueToProjectColumnWithHttpInfo: " + e.Message);
+    Debug.Print("Status Code: " + e.ErrorCode);
+    Debug.Print(e.StackTrace);
+}
+```
+
+### Parameters
+
+| Name | Type | Description | Notes |
+|------|------|-------------|-------|
+| **org** | **string** | name of the organization |  |
+| **id** | **long** | id of the project |  |
+| **columnId** | **long** | id of the column |  |
+| **issueId** | **long** | global id of the issue, not the repository-local index |  |
+
+### Return type
+
+void (empty response body)
+
+### Authorization
+
+[TOTPHeader](../README.md#TOTPHeader), [AuthorizationHeaderToken](../README.md#AuthorizationHeaderToken), [SudoHeader](../README.md#SudoHeader), [BasicAuth](../README.md#BasicAuth), [AccessToken](../README.md#AccessToken), [SudoParam](../README.md#SudoParam), [Token](../README.md#Token)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: Not defined
+
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+| **201** | APIEmpty is an empty response |  -  |
+| **403** | APIForbiddenError is a forbidden error response |  * message -  <br>  * url -  <br>  |
+| **404** | APINotFound is a not found empty response |  -  |
+| **422** | APIValidationError is error format response related to input validation |  * message -  <br>  * url -  <br>  |
+| **423** | APIRepoArchivedError is an error that is raised when an archived repo should be modified |  * message -  <br>  * url -  <br>  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
 <a id="orgaddteammember"></a>
 # **OrgAddTeamMember**
 > void OrgAddTeamMember (long id, string username)
@@ -964,7 +1730,7 @@ namespace Example
 
             var apiInstance = new OrganizationApi(config);
             var id = 789L;  // long | id of the team
-            var username = "username_example";  // string | username of the user to add
+            var username = "username_example";  // string | username of the user to add to a team
 
             try
             {
@@ -1004,7 +1770,7 @@ catch (ApiException e)
 | Name | Type | Description | Notes |
 |------|------|-------------|-------|
 | **id** | **long** | id of the team |  |
-| **username** | **string** | username of the user to add |  |
+| **username** | **string** | username of the user to add to a team |  |
 
 ### Return type
 
@@ -1200,7 +1966,7 @@ namespace Example
 
             var apiInstance = new OrganizationApi(config);
             var org = "org_example";  // string | name of the organization
-            var username = "username_example";  // string | username of the user
+            var username = "username_example";  // string | username of the user whose membership is to be concealed
 
             try
             {
@@ -1240,7 +2006,7 @@ catch (ApiException e)
 | Name | Type | Description | Notes |
 |------|------|-------------|-------|
 | **org** | **string** | name of the organization |  |
-| **username** | **string** | username of the user |  |
+| **username** | **string** | username of the user whose membership is to be concealed |  |
 
 ### Return type
 
@@ -1622,6 +2388,364 @@ catch (ApiException e)
 | **201** | Label |  -  |
 | **404** | APINotFound is a not found empty response |  -  |
 | **422** | APIValidationError is error format response related to input validation |  * message -  <br>  * url -  <br>  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+<a id="orgcreateproject"></a>
+# **OrgCreateProject**
+> Project OrgCreateProject (string org, CreateProjectOption? body = null)
+
+Create a project owned by an organization
+
+### Example
+```csharp
+using System.Collections.Generic;
+using System.Diagnostics;
+using Gitea.Net.Api;
+using Gitea.Net.Client;
+using Gitea.Net.Model;
+
+namespace Example
+{
+    public class OrgCreateProjectExample
+    {
+        public static void Main()
+        {
+            Configuration config = new Configuration();
+            config.BasePath = "/api/v1";
+            // Configure API key authorization: TOTPHeader
+            config.AddApiKey("X-GITEA-OTP", "YOUR_API_KEY");
+            // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+            // config.AddApiKeyPrefix("X-GITEA-OTP", "Bearer");
+            // Configure API key authorization: AuthorizationHeaderToken
+            config.AddApiKey("Authorization", "YOUR_API_KEY");
+            // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+            // config.AddApiKeyPrefix("Authorization", "Bearer");
+            // Configure API key authorization: SudoHeader
+            config.AddApiKey("Sudo", "YOUR_API_KEY");
+            // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+            // config.AddApiKeyPrefix("Sudo", "Bearer");
+            // Configure HTTP basic authorization: BasicAuth
+            config.Username = "YOUR_USERNAME";
+            config.Password = "YOUR_PASSWORD";
+            // Configure API key authorization: AccessToken
+            config.AddApiKey("access_token", "YOUR_API_KEY");
+            // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+            // config.AddApiKeyPrefix("access_token", "Bearer");
+            // Configure API key authorization: SudoParam
+            config.AddApiKey("sudo", "YOUR_API_KEY");
+            // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+            // config.AddApiKeyPrefix("sudo", "Bearer");
+            // Configure API key authorization: Token
+            config.AddApiKey("token", "YOUR_API_KEY");
+            // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+            // config.AddApiKeyPrefix("token", "Bearer");
+
+            var apiInstance = new OrganizationApi(config);
+            var org = "org_example";  // string | name of the organization
+            var body = new CreateProjectOption?(); // CreateProjectOption? |  (optional) 
+
+            try
+            {
+                // Create a project owned by an organization
+                Project result = apiInstance.OrgCreateProject(org, body);
+                Debug.WriteLine(result);
+            }
+            catch (ApiException  e)
+            {
+                Debug.Print("Exception when calling OrganizationApi.OrgCreateProject: " + e.Message);
+                Debug.Print("Status Code: " + e.ErrorCode);
+                Debug.Print(e.StackTrace);
+            }
+        }
+    }
+}
+```
+
+#### Using the OrgCreateProjectWithHttpInfo variant
+This returns an ApiResponse object which contains the response data, status code and headers.
+
+```csharp
+try
+{
+    // Create a project owned by an organization
+    ApiResponse<Project> response = apiInstance.OrgCreateProjectWithHttpInfo(org, body);
+    Debug.Write("Status Code: " + response.StatusCode);
+    Debug.Write("Response Headers: " + response.Headers);
+    Debug.Write("Response Body: " + response.Data);
+}
+catch (ApiException e)
+{
+    Debug.Print("Exception when calling OrganizationApi.OrgCreateProjectWithHttpInfo: " + e.Message);
+    Debug.Print("Status Code: " + e.ErrorCode);
+    Debug.Print(e.StackTrace);
+}
+```
+
+### Parameters
+
+| Name | Type | Description | Notes |
+|------|------|-------------|-------|
+| **org** | **string** | name of the organization |  |
+| **body** | [**CreateProjectOption?**](CreateProjectOption?.md) |  | [optional]  |
+
+### Return type
+
+[**Project**](Project.md)
+
+### Authorization
+
+[TOTPHeader](../README.md#TOTPHeader), [AuthorizationHeaderToken](../README.md#AuthorizationHeaderToken), [SudoHeader](../README.md#SudoHeader), [BasicAuth](../README.md#BasicAuth), [AccessToken](../README.md#AccessToken), [SudoParam](../README.md#SudoParam), [Token](../README.md#Token)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+| **201** | Project |  -  |
+| **404** | APINotFound is a not found empty response |  -  |
+| **422** | APIValidationError is error format response related to input validation |  * message -  <br>  * url -  <br>  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+<a id="orgcreateprojectcolumn"></a>
+# **OrgCreateProjectColumn**
+> ProjectColumn OrgCreateProjectColumn (string org, long id, CreateProjectColumnOption? body = null)
+
+Create a column in a project
+
+### Example
+```csharp
+using System.Collections.Generic;
+using System.Diagnostics;
+using Gitea.Net.Api;
+using Gitea.Net.Client;
+using Gitea.Net.Model;
+
+namespace Example
+{
+    public class OrgCreateProjectColumnExample
+    {
+        public static void Main()
+        {
+            Configuration config = new Configuration();
+            config.BasePath = "/api/v1";
+            // Configure API key authorization: TOTPHeader
+            config.AddApiKey("X-GITEA-OTP", "YOUR_API_KEY");
+            // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+            // config.AddApiKeyPrefix("X-GITEA-OTP", "Bearer");
+            // Configure API key authorization: AuthorizationHeaderToken
+            config.AddApiKey("Authorization", "YOUR_API_KEY");
+            // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+            // config.AddApiKeyPrefix("Authorization", "Bearer");
+            // Configure API key authorization: SudoHeader
+            config.AddApiKey("Sudo", "YOUR_API_KEY");
+            // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+            // config.AddApiKeyPrefix("Sudo", "Bearer");
+            // Configure HTTP basic authorization: BasicAuth
+            config.Username = "YOUR_USERNAME";
+            config.Password = "YOUR_PASSWORD";
+            // Configure API key authorization: AccessToken
+            config.AddApiKey("access_token", "YOUR_API_KEY");
+            // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+            // config.AddApiKeyPrefix("access_token", "Bearer");
+            // Configure API key authorization: SudoParam
+            config.AddApiKey("sudo", "YOUR_API_KEY");
+            // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+            // config.AddApiKeyPrefix("sudo", "Bearer");
+            // Configure API key authorization: Token
+            config.AddApiKey("token", "YOUR_API_KEY");
+            // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+            // config.AddApiKeyPrefix("token", "Bearer");
+
+            var apiInstance = new OrganizationApi(config);
+            var org = "org_example";  // string | name of the organization
+            var id = 789L;  // long | id of the project
+            var body = new CreateProjectColumnOption?(); // CreateProjectColumnOption? |  (optional) 
+
+            try
+            {
+                // Create a column in a project
+                ProjectColumn result = apiInstance.OrgCreateProjectColumn(org, id, body);
+                Debug.WriteLine(result);
+            }
+            catch (ApiException  e)
+            {
+                Debug.Print("Exception when calling OrganizationApi.OrgCreateProjectColumn: " + e.Message);
+                Debug.Print("Status Code: " + e.ErrorCode);
+                Debug.Print(e.StackTrace);
+            }
+        }
+    }
+}
+```
+
+#### Using the OrgCreateProjectColumnWithHttpInfo variant
+This returns an ApiResponse object which contains the response data, status code and headers.
+
+```csharp
+try
+{
+    // Create a column in a project
+    ApiResponse<ProjectColumn> response = apiInstance.OrgCreateProjectColumnWithHttpInfo(org, id, body);
+    Debug.Write("Status Code: " + response.StatusCode);
+    Debug.Write("Response Headers: " + response.Headers);
+    Debug.Write("Response Body: " + response.Data);
+}
+catch (ApiException e)
+{
+    Debug.Print("Exception when calling OrganizationApi.OrgCreateProjectColumnWithHttpInfo: " + e.Message);
+    Debug.Print("Status Code: " + e.ErrorCode);
+    Debug.Print(e.StackTrace);
+}
+```
+
+### Parameters
+
+| Name | Type | Description | Notes |
+|------|------|-------------|-------|
+| **org** | **string** | name of the organization |  |
+| **id** | **long** | id of the project |  |
+| **body** | [**CreateProjectColumnOption?**](CreateProjectColumnOption?.md) |  | [optional]  |
+
+### Return type
+
+[**ProjectColumn**](ProjectColumn.md)
+
+### Authorization
+
+[TOTPHeader](../README.md#TOTPHeader), [AuthorizationHeaderToken](../README.md#AuthorizationHeaderToken), [SudoHeader](../README.md#SudoHeader), [BasicAuth](../README.md#BasicAuth), [AccessToken](../README.md#AccessToken), [SudoParam](../README.md#SudoParam), [Token](../README.md#Token)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+| **201** | ProjectColumn |  -  |
+| **403** | APIForbiddenError is a forbidden error response |  * message -  <br>  * url -  <br>  |
+| **404** | APINotFound is a not found empty response |  -  |
+| **422** | APIValidationError is error format response related to input validation |  * message -  <br>  * url -  <br>  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+<a id="orgcreaterunnerregistrationtoken"></a>
+# **OrgCreateRunnerRegistrationToken**
+> void OrgCreateRunnerRegistrationToken (string org)
+
+Get an organization's actions runner registration token
+
+### Example
+```csharp
+using System.Collections.Generic;
+using System.Diagnostics;
+using Gitea.Net.Api;
+using Gitea.Net.Client;
+using Gitea.Net.Model;
+
+namespace Example
+{
+    public class OrgCreateRunnerRegistrationTokenExample
+    {
+        public static void Main()
+        {
+            Configuration config = new Configuration();
+            config.BasePath = "/api/v1";
+            // Configure API key authorization: TOTPHeader
+            config.AddApiKey("X-GITEA-OTP", "YOUR_API_KEY");
+            // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+            // config.AddApiKeyPrefix("X-GITEA-OTP", "Bearer");
+            // Configure API key authorization: AuthorizationHeaderToken
+            config.AddApiKey("Authorization", "YOUR_API_KEY");
+            // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+            // config.AddApiKeyPrefix("Authorization", "Bearer");
+            // Configure API key authorization: SudoHeader
+            config.AddApiKey("Sudo", "YOUR_API_KEY");
+            // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+            // config.AddApiKeyPrefix("Sudo", "Bearer");
+            // Configure HTTP basic authorization: BasicAuth
+            config.Username = "YOUR_USERNAME";
+            config.Password = "YOUR_PASSWORD";
+            // Configure API key authorization: AccessToken
+            config.AddApiKey("access_token", "YOUR_API_KEY");
+            // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+            // config.AddApiKeyPrefix("access_token", "Bearer");
+            // Configure API key authorization: SudoParam
+            config.AddApiKey("sudo", "YOUR_API_KEY");
+            // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+            // config.AddApiKeyPrefix("sudo", "Bearer");
+            // Configure API key authorization: Token
+            config.AddApiKey("token", "YOUR_API_KEY");
+            // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+            // config.AddApiKeyPrefix("token", "Bearer");
+
+            var apiInstance = new OrganizationApi(config);
+            var org = "org_example";  // string | name of the organization
+
+            try
+            {
+                // Get an organization's actions runner registration token
+                apiInstance.OrgCreateRunnerRegistrationToken(org);
+            }
+            catch (ApiException  e)
+            {
+                Debug.Print("Exception when calling OrganizationApi.OrgCreateRunnerRegistrationToken: " + e.Message);
+                Debug.Print("Status Code: " + e.ErrorCode);
+                Debug.Print(e.StackTrace);
+            }
+        }
+    }
+}
+```
+
+#### Using the OrgCreateRunnerRegistrationTokenWithHttpInfo variant
+This returns an ApiResponse object which contains the response data, status code and headers.
+
+```csharp
+try
+{
+    // Get an organization's actions runner registration token
+    apiInstance.OrgCreateRunnerRegistrationTokenWithHttpInfo(org);
+}
+catch (ApiException e)
+{
+    Debug.Print("Exception when calling OrganizationApi.OrgCreateRunnerRegistrationTokenWithHttpInfo: " + e.Message);
+    Debug.Print("Status Code: " + e.ErrorCode);
+    Debug.Print(e.StackTrace);
+}
+```
+
+### Parameters
+
+| Name | Type | Description | Notes |
+|------|------|-------------|-------|
+| **org** | **string** | name of the organization |  |
+
+### Return type
+
+void (empty response body)
+
+### Authorization
+
+[TOTPHeader](../README.md#TOTPHeader), [AuthorizationHeaderToken](../README.md#AuthorizationHeaderToken), [SudoHeader](../README.md#SudoHeader), [BasicAuth](../README.md#BasicAuth), [AccessToken](../README.md#AccessToken), [SudoParam](../README.md#SudoParam), [Token](../README.md#Token)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: Not defined
+
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+| **200** | RegistrationToken is response related to registration token |  * token -  <br>  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
@@ -2258,7 +3382,7 @@ namespace Example
 
             var apiInstance = new OrganizationApi(config);
             var org = "org_example";  // string | name of the organization
-            var username = "username_example";  // string | username of the user
+            var username = "username_example";  // string | username of the user to remove from the organization
 
             try
             {
@@ -2298,7 +3422,7 @@ catch (ApiException e)
 | Name | Type | Description | Notes |
 |------|------|-------------|-------|
 | **org** | **string** | name of the organization |  |
-| **username** | **string** | username of the user |  |
+| **username** | **string** | username of the user to remove from the organization |  |
 
 ### Return type
 
@@ -2318,6 +3442,360 @@ void (empty response body)
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 | **204** | member removed |  -  |
+| **404** | APINotFound is a not found empty response |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+<a id="orgdeleteproject"></a>
+# **OrgDeleteProject**
+> void OrgDeleteProject (string org, long id)
+
+Delete a project
+
+### Example
+```csharp
+using System.Collections.Generic;
+using System.Diagnostics;
+using Gitea.Net.Api;
+using Gitea.Net.Client;
+using Gitea.Net.Model;
+
+namespace Example
+{
+    public class OrgDeleteProjectExample
+    {
+        public static void Main()
+        {
+            Configuration config = new Configuration();
+            config.BasePath = "/api/v1";
+            // Configure API key authorization: TOTPHeader
+            config.AddApiKey("X-GITEA-OTP", "YOUR_API_KEY");
+            // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+            // config.AddApiKeyPrefix("X-GITEA-OTP", "Bearer");
+            // Configure API key authorization: AuthorizationHeaderToken
+            config.AddApiKey("Authorization", "YOUR_API_KEY");
+            // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+            // config.AddApiKeyPrefix("Authorization", "Bearer");
+            // Configure API key authorization: SudoHeader
+            config.AddApiKey("Sudo", "YOUR_API_KEY");
+            // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+            // config.AddApiKeyPrefix("Sudo", "Bearer");
+            // Configure HTTP basic authorization: BasicAuth
+            config.Username = "YOUR_USERNAME";
+            config.Password = "YOUR_PASSWORD";
+            // Configure API key authorization: AccessToken
+            config.AddApiKey("access_token", "YOUR_API_KEY");
+            // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+            // config.AddApiKeyPrefix("access_token", "Bearer");
+            // Configure API key authorization: SudoParam
+            config.AddApiKey("sudo", "YOUR_API_KEY");
+            // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+            // config.AddApiKeyPrefix("sudo", "Bearer");
+            // Configure API key authorization: Token
+            config.AddApiKey("token", "YOUR_API_KEY");
+            // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+            // config.AddApiKeyPrefix("token", "Bearer");
+
+            var apiInstance = new OrganizationApi(config);
+            var org = "org_example";  // string | name of the organization
+            var id = 789L;  // long | id of the project
+
+            try
+            {
+                // Delete a project
+                apiInstance.OrgDeleteProject(org, id);
+            }
+            catch (ApiException  e)
+            {
+                Debug.Print("Exception when calling OrganizationApi.OrgDeleteProject: " + e.Message);
+                Debug.Print("Status Code: " + e.ErrorCode);
+                Debug.Print(e.StackTrace);
+            }
+        }
+    }
+}
+```
+
+#### Using the OrgDeleteProjectWithHttpInfo variant
+This returns an ApiResponse object which contains the response data, status code and headers.
+
+```csharp
+try
+{
+    // Delete a project
+    apiInstance.OrgDeleteProjectWithHttpInfo(org, id);
+}
+catch (ApiException e)
+{
+    Debug.Print("Exception when calling OrganizationApi.OrgDeleteProjectWithHttpInfo: " + e.Message);
+    Debug.Print("Status Code: " + e.ErrorCode);
+    Debug.Print(e.StackTrace);
+}
+```
+
+### Parameters
+
+| Name | Type | Description | Notes |
+|------|------|-------------|-------|
+| **org** | **string** | name of the organization |  |
+| **id** | **long** | id of the project |  |
+
+### Return type
+
+void (empty response body)
+
+### Authorization
+
+[TOTPHeader](../README.md#TOTPHeader), [AuthorizationHeaderToken](../README.md#AuthorizationHeaderToken), [SudoHeader](../README.md#SudoHeader), [BasicAuth](../README.md#BasicAuth), [AccessToken](../README.md#AccessToken), [SudoParam](../README.md#SudoParam), [Token](../README.md#Token)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: Not defined
+
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+| **204** | APIEmpty is an empty response |  -  |
+| **404** | APINotFound is a not found empty response |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+<a id="orgdeleteprojectcolumn"></a>
+# **OrgDeleteProjectColumn**
+> void OrgDeleteProjectColumn (string org, long id, long columnId)
+
+Delete a project column
+
+The default column cannot be deleted while it is still the column new issues land in.
+
+### Example
+```csharp
+using System.Collections.Generic;
+using System.Diagnostics;
+using Gitea.Net.Api;
+using Gitea.Net.Client;
+using Gitea.Net.Model;
+
+namespace Example
+{
+    public class OrgDeleteProjectColumnExample
+    {
+        public static void Main()
+        {
+            Configuration config = new Configuration();
+            config.BasePath = "/api/v1";
+            // Configure API key authorization: TOTPHeader
+            config.AddApiKey("X-GITEA-OTP", "YOUR_API_KEY");
+            // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+            // config.AddApiKeyPrefix("X-GITEA-OTP", "Bearer");
+            // Configure API key authorization: AuthorizationHeaderToken
+            config.AddApiKey("Authorization", "YOUR_API_KEY");
+            // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+            // config.AddApiKeyPrefix("Authorization", "Bearer");
+            // Configure API key authorization: SudoHeader
+            config.AddApiKey("Sudo", "YOUR_API_KEY");
+            // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+            // config.AddApiKeyPrefix("Sudo", "Bearer");
+            // Configure HTTP basic authorization: BasicAuth
+            config.Username = "YOUR_USERNAME";
+            config.Password = "YOUR_PASSWORD";
+            // Configure API key authorization: AccessToken
+            config.AddApiKey("access_token", "YOUR_API_KEY");
+            // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+            // config.AddApiKeyPrefix("access_token", "Bearer");
+            // Configure API key authorization: SudoParam
+            config.AddApiKey("sudo", "YOUR_API_KEY");
+            // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+            // config.AddApiKeyPrefix("sudo", "Bearer");
+            // Configure API key authorization: Token
+            config.AddApiKey("token", "YOUR_API_KEY");
+            // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+            // config.AddApiKeyPrefix("token", "Bearer");
+
+            var apiInstance = new OrganizationApi(config);
+            var org = "org_example";  // string | name of the organization
+            var id = 789L;  // long | id of the project
+            var columnId = 789L;  // long | id of the column
+
+            try
+            {
+                // Delete a project column
+                apiInstance.OrgDeleteProjectColumn(org, id, columnId);
+            }
+            catch (ApiException  e)
+            {
+                Debug.Print("Exception when calling OrganizationApi.OrgDeleteProjectColumn: " + e.Message);
+                Debug.Print("Status Code: " + e.ErrorCode);
+                Debug.Print(e.StackTrace);
+            }
+        }
+    }
+}
+```
+
+#### Using the OrgDeleteProjectColumnWithHttpInfo variant
+This returns an ApiResponse object which contains the response data, status code and headers.
+
+```csharp
+try
+{
+    // Delete a project column
+    apiInstance.OrgDeleteProjectColumnWithHttpInfo(org, id, columnId);
+}
+catch (ApiException e)
+{
+    Debug.Print("Exception when calling OrganizationApi.OrgDeleteProjectColumnWithHttpInfo: " + e.Message);
+    Debug.Print("Status Code: " + e.ErrorCode);
+    Debug.Print(e.StackTrace);
+}
+```
+
+### Parameters
+
+| Name | Type | Description | Notes |
+|------|------|-------------|-------|
+| **org** | **string** | name of the organization |  |
+| **id** | **long** | id of the project |  |
+| **columnId** | **long** | id of the column |  |
+
+### Return type
+
+void (empty response body)
+
+### Authorization
+
+[TOTPHeader](../README.md#TOTPHeader), [AuthorizationHeaderToken](../README.md#AuthorizationHeaderToken), [SudoHeader](../README.md#SudoHeader), [BasicAuth](../README.md#BasicAuth), [AccessToken](../README.md#AccessToken), [SudoParam](../README.md#SudoParam), [Token](../README.md#Token)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: Not defined
+
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+| **204** | APIEmpty is an empty response |  -  |
+| **403** | APIForbiddenError is a forbidden error response |  * message -  <br>  * url -  <br>  |
+| **404** | APINotFound is a not found empty response |  -  |
+| **422** | APIValidationError is error format response related to input validation |  * message -  <br>  * url -  <br>  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+<a id="orgdeleterepos"></a>
+# **OrgDeleteRepos**
+> void OrgDeleteRepos (string org)
+
+Delete all repositories in an organization
+
+### Example
+```csharp
+using System.Collections.Generic;
+using System.Diagnostics;
+using Gitea.Net.Api;
+using Gitea.Net.Client;
+using Gitea.Net.Model;
+
+namespace Example
+{
+    public class OrgDeleteReposExample
+    {
+        public static void Main()
+        {
+            Configuration config = new Configuration();
+            config.BasePath = "/api/v1";
+            // Configure API key authorization: TOTPHeader
+            config.AddApiKey("X-GITEA-OTP", "YOUR_API_KEY");
+            // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+            // config.AddApiKeyPrefix("X-GITEA-OTP", "Bearer");
+            // Configure API key authorization: AuthorizationHeaderToken
+            config.AddApiKey("Authorization", "YOUR_API_KEY");
+            // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+            // config.AddApiKeyPrefix("Authorization", "Bearer");
+            // Configure API key authorization: SudoHeader
+            config.AddApiKey("Sudo", "YOUR_API_KEY");
+            // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+            // config.AddApiKeyPrefix("Sudo", "Bearer");
+            // Configure HTTP basic authorization: BasicAuth
+            config.Username = "YOUR_USERNAME";
+            config.Password = "YOUR_PASSWORD";
+            // Configure API key authorization: AccessToken
+            config.AddApiKey("access_token", "YOUR_API_KEY");
+            // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+            // config.AddApiKeyPrefix("access_token", "Bearer");
+            // Configure API key authorization: SudoParam
+            config.AddApiKey("sudo", "YOUR_API_KEY");
+            // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+            // config.AddApiKeyPrefix("sudo", "Bearer");
+            // Configure API key authorization: Token
+            config.AddApiKey("token", "YOUR_API_KEY");
+            // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+            // config.AddApiKeyPrefix("token", "Bearer");
+
+            var apiInstance = new OrganizationApi(config);
+            var org = "org_example";  // string | name of the organization
+
+            try
+            {
+                // Delete all repositories in an organization
+                apiInstance.OrgDeleteRepos(org);
+            }
+            catch (ApiException  e)
+            {
+                Debug.Print("Exception when calling OrganizationApi.OrgDeleteRepos: " + e.Message);
+                Debug.Print("Status Code: " + e.ErrorCode);
+                Debug.Print(e.StackTrace);
+            }
+        }
+    }
+}
+```
+
+#### Using the OrgDeleteReposWithHttpInfo variant
+This returns an ApiResponse object which contains the response data, status code and headers.
+
+```csharp
+try
+{
+    // Delete all repositories in an organization
+    apiInstance.OrgDeleteReposWithHttpInfo(org);
+}
+catch (ApiException e)
+{
+    Debug.Print("Exception when calling OrganizationApi.OrgDeleteReposWithHttpInfo: " + e.Message);
+    Debug.Print("Status Code: " + e.ErrorCode);
+    Debug.Print(e.StackTrace);
+}
+```
+
+### Parameters
+
+| Name | Type | Description | Notes |
+|------|------|-------------|-------|
+| **org** | **string** | name of the organization |  |
+
+### Return type
+
+void (empty response body)
+
+### Authorization
+
+[TOTPHeader](../README.md#TOTPHeader), [AuthorizationHeaderToken](../README.md#AuthorizationHeaderToken), [SudoHeader](../README.md#SudoHeader), [BasicAuth](../README.md#BasicAuth), [AccessToken](../README.md#AccessToken), [SudoParam](../README.md#SudoParam), [Token](../README.md#Token)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: Not defined
+
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+| **202** | APIEmpty is an empty response |  -  |
+| **204** | APIEmpty is an empty response |  -  |
+| **403** | APIForbiddenError is a forbidden error response |  * message -  <br>  * url -  <br>  |
 | **404** | APINotFound is a not found empty response |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
@@ -2796,6 +4274,255 @@ catch (ApiException e)
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 | **200** | Label |  -  |
+| **404** | APINotFound is a not found empty response |  -  |
+| **422** | APIValidationError is error format response related to input validation |  * message -  <br>  * url -  <br>  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+<a id="orgeditproject"></a>
+# **OrgEditProject**
+> Project OrgEditProject (string org, long id, EditProjectOption? body = null)
+
+Edit a project
+
+### Example
+```csharp
+using System.Collections.Generic;
+using System.Diagnostics;
+using Gitea.Net.Api;
+using Gitea.Net.Client;
+using Gitea.Net.Model;
+
+namespace Example
+{
+    public class OrgEditProjectExample
+    {
+        public static void Main()
+        {
+            Configuration config = new Configuration();
+            config.BasePath = "/api/v1";
+            // Configure API key authorization: TOTPHeader
+            config.AddApiKey("X-GITEA-OTP", "YOUR_API_KEY");
+            // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+            // config.AddApiKeyPrefix("X-GITEA-OTP", "Bearer");
+            // Configure API key authorization: AuthorizationHeaderToken
+            config.AddApiKey("Authorization", "YOUR_API_KEY");
+            // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+            // config.AddApiKeyPrefix("Authorization", "Bearer");
+            // Configure API key authorization: SudoHeader
+            config.AddApiKey("Sudo", "YOUR_API_KEY");
+            // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+            // config.AddApiKeyPrefix("Sudo", "Bearer");
+            // Configure HTTP basic authorization: BasicAuth
+            config.Username = "YOUR_USERNAME";
+            config.Password = "YOUR_PASSWORD";
+            // Configure API key authorization: AccessToken
+            config.AddApiKey("access_token", "YOUR_API_KEY");
+            // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+            // config.AddApiKeyPrefix("access_token", "Bearer");
+            // Configure API key authorization: SudoParam
+            config.AddApiKey("sudo", "YOUR_API_KEY");
+            // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+            // config.AddApiKeyPrefix("sudo", "Bearer");
+            // Configure API key authorization: Token
+            config.AddApiKey("token", "YOUR_API_KEY");
+            // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+            // config.AddApiKeyPrefix("token", "Bearer");
+
+            var apiInstance = new OrganizationApi(config);
+            var org = "org_example";  // string | name of the organization
+            var id = 789L;  // long | id of the project
+            var body = new EditProjectOption?(); // EditProjectOption? |  (optional) 
+
+            try
+            {
+                // Edit a project
+                Project result = apiInstance.OrgEditProject(org, id, body);
+                Debug.WriteLine(result);
+            }
+            catch (ApiException  e)
+            {
+                Debug.Print("Exception when calling OrganizationApi.OrgEditProject: " + e.Message);
+                Debug.Print("Status Code: " + e.ErrorCode);
+                Debug.Print(e.StackTrace);
+            }
+        }
+    }
+}
+```
+
+#### Using the OrgEditProjectWithHttpInfo variant
+This returns an ApiResponse object which contains the response data, status code and headers.
+
+```csharp
+try
+{
+    // Edit a project
+    ApiResponse<Project> response = apiInstance.OrgEditProjectWithHttpInfo(org, id, body);
+    Debug.Write("Status Code: " + response.StatusCode);
+    Debug.Write("Response Headers: " + response.Headers);
+    Debug.Write("Response Body: " + response.Data);
+}
+catch (ApiException e)
+{
+    Debug.Print("Exception when calling OrganizationApi.OrgEditProjectWithHttpInfo: " + e.Message);
+    Debug.Print("Status Code: " + e.ErrorCode);
+    Debug.Print(e.StackTrace);
+}
+```
+
+### Parameters
+
+| Name | Type | Description | Notes |
+|------|------|-------------|-------|
+| **org** | **string** | name of the organization |  |
+| **id** | **long** | id of the project |  |
+| **body** | [**EditProjectOption?**](EditProjectOption?.md) |  | [optional]  |
+
+### Return type
+
+[**Project**](Project.md)
+
+### Authorization
+
+[TOTPHeader](../README.md#TOTPHeader), [AuthorizationHeaderToken](../README.md#AuthorizationHeaderToken), [SudoHeader](../README.md#SudoHeader), [BasicAuth](../README.md#BasicAuth), [AccessToken](../README.md#AccessToken), [SudoParam](../README.md#SudoParam), [Token](../README.md#Token)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+| **200** | Project |  -  |
+| **404** | APINotFound is a not found empty response |  -  |
+| **422** | APIValidationError is error format response related to input validation |  * message -  <br>  * url -  <br>  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+<a id="orgeditprojectcolumn"></a>
+# **OrgEditProjectColumn**
+> ProjectColumn OrgEditProjectColumn (string org, long id, long columnId, EditProjectColumnOption? body = null)
+
+Edit a project column
+
+### Example
+```csharp
+using System.Collections.Generic;
+using System.Diagnostics;
+using Gitea.Net.Api;
+using Gitea.Net.Client;
+using Gitea.Net.Model;
+
+namespace Example
+{
+    public class OrgEditProjectColumnExample
+    {
+        public static void Main()
+        {
+            Configuration config = new Configuration();
+            config.BasePath = "/api/v1";
+            // Configure API key authorization: TOTPHeader
+            config.AddApiKey("X-GITEA-OTP", "YOUR_API_KEY");
+            // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+            // config.AddApiKeyPrefix("X-GITEA-OTP", "Bearer");
+            // Configure API key authorization: AuthorizationHeaderToken
+            config.AddApiKey("Authorization", "YOUR_API_KEY");
+            // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+            // config.AddApiKeyPrefix("Authorization", "Bearer");
+            // Configure API key authorization: SudoHeader
+            config.AddApiKey("Sudo", "YOUR_API_KEY");
+            // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+            // config.AddApiKeyPrefix("Sudo", "Bearer");
+            // Configure HTTP basic authorization: BasicAuth
+            config.Username = "YOUR_USERNAME";
+            config.Password = "YOUR_PASSWORD";
+            // Configure API key authorization: AccessToken
+            config.AddApiKey("access_token", "YOUR_API_KEY");
+            // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+            // config.AddApiKeyPrefix("access_token", "Bearer");
+            // Configure API key authorization: SudoParam
+            config.AddApiKey("sudo", "YOUR_API_KEY");
+            // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+            // config.AddApiKeyPrefix("sudo", "Bearer");
+            // Configure API key authorization: Token
+            config.AddApiKey("token", "YOUR_API_KEY");
+            // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+            // config.AddApiKeyPrefix("token", "Bearer");
+
+            var apiInstance = new OrganizationApi(config);
+            var org = "org_example";  // string | name of the organization
+            var id = 789L;  // long | id of the project
+            var columnId = 789L;  // long | id of the column
+            var body = new EditProjectColumnOption?(); // EditProjectColumnOption? |  (optional) 
+
+            try
+            {
+                // Edit a project column
+                ProjectColumn result = apiInstance.OrgEditProjectColumn(org, id, columnId, body);
+                Debug.WriteLine(result);
+            }
+            catch (ApiException  e)
+            {
+                Debug.Print("Exception when calling OrganizationApi.OrgEditProjectColumn: " + e.Message);
+                Debug.Print("Status Code: " + e.ErrorCode);
+                Debug.Print(e.StackTrace);
+            }
+        }
+    }
+}
+```
+
+#### Using the OrgEditProjectColumnWithHttpInfo variant
+This returns an ApiResponse object which contains the response data, status code and headers.
+
+```csharp
+try
+{
+    // Edit a project column
+    ApiResponse<ProjectColumn> response = apiInstance.OrgEditProjectColumnWithHttpInfo(org, id, columnId, body);
+    Debug.Write("Status Code: " + response.StatusCode);
+    Debug.Write("Response Headers: " + response.Headers);
+    Debug.Write("Response Body: " + response.Data);
+}
+catch (ApiException e)
+{
+    Debug.Print("Exception when calling OrganizationApi.OrgEditProjectColumnWithHttpInfo: " + e.Message);
+    Debug.Print("Status Code: " + e.ErrorCode);
+    Debug.Print(e.StackTrace);
+}
+```
+
+### Parameters
+
+| Name | Type | Description | Notes |
+|------|------|-------------|-------|
+| **org** | **string** | name of the organization |  |
+| **id** | **long** | id of the project |  |
+| **columnId** | **long** | id of the column |  |
+| **body** | [**EditProjectColumnOption?**](EditProjectColumnOption?.md) |  | [optional]  |
+
+### Return type
+
+[**ProjectColumn**](ProjectColumn.md)
+
+### Authorization
+
+[TOTPHeader](../README.md#TOTPHeader), [AuthorizationHeaderToken](../README.md#AuthorizationHeaderToken), [SudoHeader](../README.md#SudoHeader), [BasicAuth](../README.md#BasicAuth), [AccessToken](../README.md#AccessToken), [SudoParam](../README.md#SudoParam), [Token](../README.md#Token)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+| **200** | ProjectColumn |  -  |
+| **403** | APIForbiddenError is a forbidden error response |  * message -  <br>  * url -  <br>  |
 | **404** | APINotFound is a not found empty response |  -  |
 | **422** | APIValidationError is error format response related to input validation |  * message -  <br>  * url -  <br>  |
 
@@ -3398,11 +5125,11 @@ catch (ApiException e)
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-<a id="orggetrunnerregistrationtoken"></a>
-# **OrgGetRunnerRegistrationToken**
-> void OrgGetRunnerRegistrationToken (string org)
+<a id="orggetproject"></a>
+# **OrgGetProject**
+> Project OrgGetProject (string org, long id)
 
-Get an organization's actions runner registration token
+Get a project
 
 ### Example
 ```csharp
@@ -3414,7 +5141,7 @@ using Gitea.Net.Model;
 
 namespace Example
 {
-    public class OrgGetRunnerRegistrationTokenExample
+    public class OrgGetProjectExample
     {
         public static void Main()
         {
@@ -3450,15 +5177,17 @@ namespace Example
 
             var apiInstance = new OrganizationApi(config);
             var org = "org_example";  // string | name of the organization
+            var id = 789L;  // long | id of the project
 
             try
             {
-                // Get an organization's actions runner registration token
-                apiInstance.OrgGetRunnerRegistrationToken(org);
+                // Get a project
+                Project result = apiInstance.OrgGetProject(org, id);
+                Debug.WriteLine(result);
             }
             catch (ApiException  e)
             {
-                Debug.Print("Exception when calling OrganizationApi.OrgGetRunnerRegistrationToken: " + e.Message);
+                Debug.Print("Exception when calling OrganizationApi.OrgGetProject: " + e.Message);
                 Debug.Print("Status Code: " + e.ErrorCode);
                 Debug.Print(e.StackTrace);
             }
@@ -3467,18 +5196,21 @@ namespace Example
 }
 ```
 
-#### Using the OrgGetRunnerRegistrationTokenWithHttpInfo variant
+#### Using the OrgGetProjectWithHttpInfo variant
 This returns an ApiResponse object which contains the response data, status code and headers.
 
 ```csharp
 try
 {
-    // Get an organization's actions runner registration token
-    apiInstance.OrgGetRunnerRegistrationTokenWithHttpInfo(org);
+    // Get a project
+    ApiResponse<Project> response = apiInstance.OrgGetProjectWithHttpInfo(org, id);
+    Debug.Write("Status Code: " + response.StatusCode);
+    Debug.Write("Response Headers: " + response.Headers);
+    Debug.Write("Response Body: " + response.Data);
 }
 catch (ApiException e)
 {
-    Debug.Print("Exception when calling OrganizationApi.OrgGetRunnerRegistrationTokenWithHttpInfo: " + e.Message);
+    Debug.Print("Exception when calling OrganizationApi.OrgGetProjectWithHttpInfo: " + e.Message);
     Debug.Print("Status Code: " + e.ErrorCode);
     Debug.Print(e.StackTrace);
 }
@@ -3489,10 +5221,11 @@ catch (ApiException e)
 | Name | Type | Description | Notes |
 |------|------|-------------|-------|
 | **org** | **string** | name of the organization |  |
+| **id** | **long** | id of the project |  |
 
 ### Return type
 
-void (empty response body)
+[**Project**](Project.md)
 
 ### Authorization
 
@@ -3501,13 +5234,136 @@ void (empty response body)
 ### HTTP request headers
 
  - **Content-Type**: Not defined
- - **Accept**: Not defined
+ - **Accept**: application/json
 
 
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-| **200** | RegistrationToken is response related to registration token |  * token -  <br>  |
+| **200** | Project |  -  |
+| **404** | APINotFound is a not found empty response |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+<a id="orggetprojectcolumn"></a>
+# **OrgGetProjectColumn**
+> ProjectColumn OrgGetProjectColumn (string org, long id, long columnId)
+
+Get a project column
+
+### Example
+```csharp
+using System.Collections.Generic;
+using System.Diagnostics;
+using Gitea.Net.Api;
+using Gitea.Net.Client;
+using Gitea.Net.Model;
+
+namespace Example
+{
+    public class OrgGetProjectColumnExample
+    {
+        public static void Main()
+        {
+            Configuration config = new Configuration();
+            config.BasePath = "/api/v1";
+            // Configure API key authorization: TOTPHeader
+            config.AddApiKey("X-GITEA-OTP", "YOUR_API_KEY");
+            // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+            // config.AddApiKeyPrefix("X-GITEA-OTP", "Bearer");
+            // Configure API key authorization: AuthorizationHeaderToken
+            config.AddApiKey("Authorization", "YOUR_API_KEY");
+            // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+            // config.AddApiKeyPrefix("Authorization", "Bearer");
+            // Configure API key authorization: SudoHeader
+            config.AddApiKey("Sudo", "YOUR_API_KEY");
+            // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+            // config.AddApiKeyPrefix("Sudo", "Bearer");
+            // Configure HTTP basic authorization: BasicAuth
+            config.Username = "YOUR_USERNAME";
+            config.Password = "YOUR_PASSWORD";
+            // Configure API key authorization: AccessToken
+            config.AddApiKey("access_token", "YOUR_API_KEY");
+            // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+            // config.AddApiKeyPrefix("access_token", "Bearer");
+            // Configure API key authorization: SudoParam
+            config.AddApiKey("sudo", "YOUR_API_KEY");
+            // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+            // config.AddApiKeyPrefix("sudo", "Bearer");
+            // Configure API key authorization: Token
+            config.AddApiKey("token", "YOUR_API_KEY");
+            // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+            // config.AddApiKeyPrefix("token", "Bearer");
+
+            var apiInstance = new OrganizationApi(config);
+            var org = "org_example";  // string | name of the organization
+            var id = 789L;  // long | id of the project
+            var columnId = 789L;  // long | id of the column
+
+            try
+            {
+                // Get a project column
+                ProjectColumn result = apiInstance.OrgGetProjectColumn(org, id, columnId);
+                Debug.WriteLine(result);
+            }
+            catch (ApiException  e)
+            {
+                Debug.Print("Exception when calling OrganizationApi.OrgGetProjectColumn: " + e.Message);
+                Debug.Print("Status Code: " + e.ErrorCode);
+                Debug.Print(e.StackTrace);
+            }
+        }
+    }
+}
+```
+
+#### Using the OrgGetProjectColumnWithHttpInfo variant
+This returns an ApiResponse object which contains the response data, status code and headers.
+
+```csharp
+try
+{
+    // Get a project column
+    ApiResponse<ProjectColumn> response = apiInstance.OrgGetProjectColumnWithHttpInfo(org, id, columnId);
+    Debug.Write("Status Code: " + response.StatusCode);
+    Debug.Write("Response Headers: " + response.Headers);
+    Debug.Write("Response Body: " + response.Data);
+}
+catch (ApiException e)
+{
+    Debug.Print("Exception when calling OrganizationApi.OrgGetProjectColumnWithHttpInfo: " + e.Message);
+    Debug.Print("Status Code: " + e.ErrorCode);
+    Debug.Print(e.StackTrace);
+}
+```
+
+### Parameters
+
+| Name | Type | Description | Notes |
+|------|------|-------------|-------|
+| **org** | **string** | name of the organization |  |
+| **id** | **long** | id of the project |  |
+| **columnId** | **long** | id of the column |  |
+
+### Return type
+
+[**ProjectColumn**](ProjectColumn.md)
+
+### Authorization
+
+[TOTPHeader](../README.md#TOTPHeader), [AuthorizationHeaderToken](../README.md#AuthorizationHeaderToken), [SudoHeader](../README.md#SudoHeader), [BasicAuth](../README.md#BasicAuth), [AccessToken](../README.md#AccessToken), [SudoParam](../README.md#SudoParam), [Token](../README.md#Token)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+| **200** | ProjectColumn |  -  |
+| **404** | APINotFound is a not found empty response |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
@@ -3680,7 +5536,7 @@ namespace Example
             // config.AddApiKeyPrefix("token", "Bearer");
 
             var apiInstance = new OrganizationApi(config);
-            var username = "username_example";  // string | username of user
+            var username = "username_example";  // string | username of the user whose permissions are to be obtained
             var org = "org_example";  // string | name of the organization
 
             try
@@ -3724,7 +5580,7 @@ catch (ApiException e)
 
 | Name | Type | Description | Notes |
 |------|------|-------------|-------|
-| **username** | **string** | username of user |  |
+| **username** | **string** | username of the user whose permissions are to be obtained |  |
 | **org** | **string** | name of the organization |  |
 
 ### Return type
@@ -3802,7 +5658,7 @@ namespace Example
 
             var apiInstance = new OrganizationApi(config);
             var org = "org_example";  // string | name of the organization
-            var username = "username_example";  // string | username of the user
+            var username = "username_example";  // string | username of the user to check for an organization membership
 
             try
             {
@@ -3842,7 +5698,7 @@ catch (ApiException e)
 | Name | Type | Description | Notes |
 |------|------|-------------|-------|
 | **org** | **string** | name of the organization |  |
-| **username** | **string** | username of the user |  |
+| **username** | **string** | username of the user to check for an organization membership |  |
 
 ### Return type
 
@@ -3919,7 +5775,7 @@ namespace Example
 
             var apiInstance = new OrganizationApi(config);
             var org = "org_example";  // string | name of the organization
-            var username = "username_example";  // string | username of the user
+            var username = "username_example";  // string | username of the user to check for a public organization membership
 
             try
             {
@@ -3959,7 +5815,7 @@ catch (ApiException e)
 | Name | Type | Description | Notes |
 |------|------|-------------|-------|
 | **org** | **string** | name of the organization |  |
-| **username** | **string** | username of the user |  |
+| **username** | **string** | username of the user to check for a public organization membership |  |
 
 ### Return type
 
@@ -4107,7 +5963,7 @@ catch (ApiException e)
 
 <a id="orglistactivityfeeds"></a>
 # **OrgListActivityFeeds**
-> List&lt;Activity&gt; OrgListActivityFeeds (string org, DateOnly? date = null, int? page = null, int? limit = null)
+> List&lt;Activity&gt; OrgListActivityFeeds (string org, DateTime? date = null, int? page = null, int? limit = null)
 
 List an organization's activity feeds
 
@@ -4157,7 +6013,7 @@ namespace Example
 
             var apiInstance = new OrganizationApi(config);
             var org = "org_example";  // string | name of the org
-            var date = DateOnly.Parse("2013-10-20");  // DateOnly? | the date of the activities to be found (optional) 
+            var date = DateTime.Parse("2013-10-20");  // DateTime? | the date of the activities to be found (optional) 
             var page = 56;  // int? | page number of results to return (1-based) (optional) 
             var limit = 56;  // int? | page size of results (optional) 
 
@@ -4203,7 +6059,7 @@ catch (ApiException e)
 | Name | Type | Description | Notes |
 |------|------|-------------|-------|
 | **org** | **string** | name of the org |  |
-| **date** | **DateOnly?** | the date of the activities to be found | [optional]  |
+| **date** | **DateTime?** | the date of the activities to be found | [optional]  |
 | **page** | **int?** | page number of results to return (1-based) | [optional]  |
 | **limit** | **int?** | page size of results | [optional]  |
 
@@ -4715,6 +6571,380 @@ catch (ApiException e)
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
+<a id="orglistprojectcolumnissues"></a>
+# **OrgListProjectColumnIssues**
+> List&lt;Issue&gt; OrgListProjectColumnIssues (string org, long id, long columnId, int? page = null, int? limit = null)
+
+List the issues in a project column
+
+### Example
+```csharp
+using System.Collections.Generic;
+using System.Diagnostics;
+using Gitea.Net.Api;
+using Gitea.Net.Client;
+using Gitea.Net.Model;
+
+namespace Example
+{
+    public class OrgListProjectColumnIssuesExample
+    {
+        public static void Main()
+        {
+            Configuration config = new Configuration();
+            config.BasePath = "/api/v1";
+            // Configure API key authorization: TOTPHeader
+            config.AddApiKey("X-GITEA-OTP", "YOUR_API_KEY");
+            // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+            // config.AddApiKeyPrefix("X-GITEA-OTP", "Bearer");
+            // Configure API key authorization: AuthorizationHeaderToken
+            config.AddApiKey("Authorization", "YOUR_API_KEY");
+            // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+            // config.AddApiKeyPrefix("Authorization", "Bearer");
+            // Configure API key authorization: SudoHeader
+            config.AddApiKey("Sudo", "YOUR_API_KEY");
+            // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+            // config.AddApiKeyPrefix("Sudo", "Bearer");
+            // Configure HTTP basic authorization: BasicAuth
+            config.Username = "YOUR_USERNAME";
+            config.Password = "YOUR_PASSWORD";
+            // Configure API key authorization: AccessToken
+            config.AddApiKey("access_token", "YOUR_API_KEY");
+            // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+            // config.AddApiKeyPrefix("access_token", "Bearer");
+            // Configure API key authorization: SudoParam
+            config.AddApiKey("sudo", "YOUR_API_KEY");
+            // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+            // config.AddApiKeyPrefix("sudo", "Bearer");
+            // Configure API key authorization: Token
+            config.AddApiKey("token", "YOUR_API_KEY");
+            // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+            // config.AddApiKeyPrefix("token", "Bearer");
+
+            var apiInstance = new OrganizationApi(config);
+            var org = "org_example";  // string | name of the organization
+            var id = 789L;  // long | id of the project
+            var columnId = 789L;  // long | id of the column
+            var page = 56;  // int? | page number of results to return (1-based) (optional) 
+            var limit = 56;  // int? | page size of results (optional) 
+
+            try
+            {
+                // List the issues in a project column
+                List<Issue> result = apiInstance.OrgListProjectColumnIssues(org, id, columnId, page, limit);
+                Debug.WriteLine(result);
+            }
+            catch (ApiException  e)
+            {
+                Debug.Print("Exception when calling OrganizationApi.OrgListProjectColumnIssues: " + e.Message);
+                Debug.Print("Status Code: " + e.ErrorCode);
+                Debug.Print(e.StackTrace);
+            }
+        }
+    }
+}
+```
+
+#### Using the OrgListProjectColumnIssuesWithHttpInfo variant
+This returns an ApiResponse object which contains the response data, status code and headers.
+
+```csharp
+try
+{
+    // List the issues in a project column
+    ApiResponse<List<Issue>> response = apiInstance.OrgListProjectColumnIssuesWithHttpInfo(org, id, columnId, page, limit);
+    Debug.Write("Status Code: " + response.StatusCode);
+    Debug.Write("Response Headers: " + response.Headers);
+    Debug.Write("Response Body: " + response.Data);
+}
+catch (ApiException e)
+{
+    Debug.Print("Exception when calling OrganizationApi.OrgListProjectColumnIssuesWithHttpInfo: " + e.Message);
+    Debug.Print("Status Code: " + e.ErrorCode);
+    Debug.Print(e.StackTrace);
+}
+```
+
+### Parameters
+
+| Name | Type | Description | Notes |
+|------|------|-------------|-------|
+| **org** | **string** | name of the organization |  |
+| **id** | **long** | id of the project |  |
+| **columnId** | **long** | id of the column |  |
+| **page** | **int?** | page number of results to return (1-based) | [optional]  |
+| **limit** | **int?** | page size of results | [optional]  |
+
+### Return type
+
+[**List&lt;Issue&gt;**](Issue.md)
+
+### Authorization
+
+[TOTPHeader](../README.md#TOTPHeader), [AuthorizationHeaderToken](../README.md#AuthorizationHeaderToken), [SudoHeader](../README.md#SudoHeader), [BasicAuth](../README.md#BasicAuth), [AccessToken](../README.md#AccessToken), [SudoParam](../README.md#SudoParam), [Token](../README.md#Token)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+| **200** | IssueList |  -  |
+| **404** | APINotFound is a not found empty response |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+<a id="orglistprojectcolumns"></a>
+# **OrgListProjectColumns**
+> List&lt;ProjectColumn&gt; OrgListProjectColumns (string org, long id, int? page = null, int? limit = null)
+
+List a project's columns
+
+### Example
+```csharp
+using System.Collections.Generic;
+using System.Diagnostics;
+using Gitea.Net.Api;
+using Gitea.Net.Client;
+using Gitea.Net.Model;
+
+namespace Example
+{
+    public class OrgListProjectColumnsExample
+    {
+        public static void Main()
+        {
+            Configuration config = new Configuration();
+            config.BasePath = "/api/v1";
+            // Configure API key authorization: TOTPHeader
+            config.AddApiKey("X-GITEA-OTP", "YOUR_API_KEY");
+            // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+            // config.AddApiKeyPrefix("X-GITEA-OTP", "Bearer");
+            // Configure API key authorization: AuthorizationHeaderToken
+            config.AddApiKey("Authorization", "YOUR_API_KEY");
+            // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+            // config.AddApiKeyPrefix("Authorization", "Bearer");
+            // Configure API key authorization: SudoHeader
+            config.AddApiKey("Sudo", "YOUR_API_KEY");
+            // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+            // config.AddApiKeyPrefix("Sudo", "Bearer");
+            // Configure HTTP basic authorization: BasicAuth
+            config.Username = "YOUR_USERNAME";
+            config.Password = "YOUR_PASSWORD";
+            // Configure API key authorization: AccessToken
+            config.AddApiKey("access_token", "YOUR_API_KEY");
+            // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+            // config.AddApiKeyPrefix("access_token", "Bearer");
+            // Configure API key authorization: SudoParam
+            config.AddApiKey("sudo", "YOUR_API_KEY");
+            // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+            // config.AddApiKeyPrefix("sudo", "Bearer");
+            // Configure API key authorization: Token
+            config.AddApiKey("token", "YOUR_API_KEY");
+            // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+            // config.AddApiKeyPrefix("token", "Bearer");
+
+            var apiInstance = new OrganizationApi(config);
+            var org = "org_example";  // string | name of the organization
+            var id = 789L;  // long | id of the project
+            var page = 56;  // int? | page number of results to return (1-based) (optional) 
+            var limit = 56;  // int? | page size of results (optional) 
+
+            try
+            {
+                // List a project's columns
+                List<ProjectColumn> result = apiInstance.OrgListProjectColumns(org, id, page, limit);
+                Debug.WriteLine(result);
+            }
+            catch (ApiException  e)
+            {
+                Debug.Print("Exception when calling OrganizationApi.OrgListProjectColumns: " + e.Message);
+                Debug.Print("Status Code: " + e.ErrorCode);
+                Debug.Print(e.StackTrace);
+            }
+        }
+    }
+}
+```
+
+#### Using the OrgListProjectColumnsWithHttpInfo variant
+This returns an ApiResponse object which contains the response data, status code and headers.
+
+```csharp
+try
+{
+    // List a project's columns
+    ApiResponse<List<ProjectColumn>> response = apiInstance.OrgListProjectColumnsWithHttpInfo(org, id, page, limit);
+    Debug.Write("Status Code: " + response.StatusCode);
+    Debug.Write("Response Headers: " + response.Headers);
+    Debug.Write("Response Body: " + response.Data);
+}
+catch (ApiException e)
+{
+    Debug.Print("Exception when calling OrganizationApi.OrgListProjectColumnsWithHttpInfo: " + e.Message);
+    Debug.Print("Status Code: " + e.ErrorCode);
+    Debug.Print(e.StackTrace);
+}
+```
+
+### Parameters
+
+| Name | Type | Description | Notes |
+|------|------|-------------|-------|
+| **org** | **string** | name of the organization |  |
+| **id** | **long** | id of the project |  |
+| **page** | **int?** | page number of results to return (1-based) | [optional]  |
+| **limit** | **int?** | page size of results | [optional]  |
+
+### Return type
+
+[**List&lt;ProjectColumn&gt;**](ProjectColumn.md)
+
+### Authorization
+
+[TOTPHeader](../README.md#TOTPHeader), [AuthorizationHeaderToken](../README.md#AuthorizationHeaderToken), [SudoHeader](../README.md#SudoHeader), [BasicAuth](../README.md#BasicAuth), [AccessToken](../README.md#AccessToken), [SudoParam](../README.md#SudoParam), [Token](../README.md#Token)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+| **200** | ProjectColumnList |  -  |
+| **404** | APINotFound is a not found empty response |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+<a id="orglistprojects"></a>
+# **OrgListProjects**
+> List&lt;Project&gt; OrgListProjects (string org, string? state = null, int? page = null, int? limit = null)
+
+List an organization's projects
+
+### Example
+```csharp
+using System.Collections.Generic;
+using System.Diagnostics;
+using Gitea.Net.Api;
+using Gitea.Net.Client;
+using Gitea.Net.Model;
+
+namespace Example
+{
+    public class OrgListProjectsExample
+    {
+        public static void Main()
+        {
+            Configuration config = new Configuration();
+            config.BasePath = "/api/v1";
+            // Configure API key authorization: TOTPHeader
+            config.AddApiKey("X-GITEA-OTP", "YOUR_API_KEY");
+            // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+            // config.AddApiKeyPrefix("X-GITEA-OTP", "Bearer");
+            // Configure API key authorization: AuthorizationHeaderToken
+            config.AddApiKey("Authorization", "YOUR_API_KEY");
+            // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+            // config.AddApiKeyPrefix("Authorization", "Bearer");
+            // Configure API key authorization: SudoHeader
+            config.AddApiKey("Sudo", "YOUR_API_KEY");
+            // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+            // config.AddApiKeyPrefix("Sudo", "Bearer");
+            // Configure HTTP basic authorization: BasicAuth
+            config.Username = "YOUR_USERNAME";
+            config.Password = "YOUR_PASSWORD";
+            // Configure API key authorization: AccessToken
+            config.AddApiKey("access_token", "YOUR_API_KEY");
+            // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+            // config.AddApiKeyPrefix("access_token", "Bearer");
+            // Configure API key authorization: SudoParam
+            config.AddApiKey("sudo", "YOUR_API_KEY");
+            // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+            // config.AddApiKeyPrefix("sudo", "Bearer");
+            // Configure API key authorization: Token
+            config.AddApiKey("token", "YOUR_API_KEY");
+            // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+            // config.AddApiKeyPrefix("token", "Bearer");
+
+            var apiInstance = new OrganizationApi(config);
+            var org = "org_example";  // string | name of the organization
+            var state = "open";  // string? | State of the project (open, closed, all) (optional)  (default to open)
+            var page = 56;  // int? | page number of results to return (1-based) (optional) 
+            var limit = 56;  // int? | page size of results (optional) 
+
+            try
+            {
+                // List an organization's projects
+                List<Project> result = apiInstance.OrgListProjects(org, state, page, limit);
+                Debug.WriteLine(result);
+            }
+            catch (ApiException  e)
+            {
+                Debug.Print("Exception when calling OrganizationApi.OrgListProjects: " + e.Message);
+                Debug.Print("Status Code: " + e.ErrorCode);
+                Debug.Print(e.StackTrace);
+            }
+        }
+    }
+}
+```
+
+#### Using the OrgListProjectsWithHttpInfo variant
+This returns an ApiResponse object which contains the response data, status code and headers.
+
+```csharp
+try
+{
+    // List an organization's projects
+    ApiResponse<List<Project>> response = apiInstance.OrgListProjectsWithHttpInfo(org, state, page, limit);
+    Debug.Write("Status Code: " + response.StatusCode);
+    Debug.Write("Response Headers: " + response.Headers);
+    Debug.Write("Response Body: " + response.Data);
+}
+catch (ApiException e)
+{
+    Debug.Print("Exception when calling OrganizationApi.OrgListProjectsWithHttpInfo: " + e.Message);
+    Debug.Print("Status Code: " + e.ErrorCode);
+    Debug.Print(e.StackTrace);
+}
+```
+
+### Parameters
+
+| Name | Type | Description | Notes |
+|------|------|-------------|-------|
+| **org** | **string** | name of the organization |  |
+| **state** | **string?** | State of the project (open, closed, all) | [optional] [default to open] |
+| **page** | **int?** | page number of results to return (1-based) | [optional]  |
+| **limit** | **int?** | page size of results | [optional]  |
+
+### Return type
+
+[**List&lt;Project&gt;**](Project.md)
+
+### Authorization
+
+[TOTPHeader](../README.md#TOTPHeader), [AuthorizationHeaderToken](../README.md#AuthorizationHeaderToken), [SudoHeader](../README.md#SudoHeader), [BasicAuth](../README.md#BasicAuth), [AccessToken](../README.md#AccessToken), [SudoParam](../README.md#SudoParam), [Token](../README.md#Token)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+| **200** | ProjectList |  -  |
+| **404** | APINotFound is a not found empty response |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
 <a id="orglistpublicmembers"></a>
 # **OrgListPublicMembers**
 > List&lt;User&gt; OrgListPublicMembers (string org, int? page = null, int? limit = null)
@@ -4961,7 +7191,7 @@ catch (ApiException e)
 
 <a id="orglistteamactivityfeeds"></a>
 # **OrgListTeamActivityFeeds**
-> List&lt;Activity&gt; OrgListTeamActivityFeeds (long id, DateOnly? date = null, int? page = null, int? limit = null)
+> List&lt;Activity&gt; OrgListTeamActivityFeeds (long id, DateTime? date = null, int? page = null, int? limit = null)
 
 List a team's activity feeds
 
@@ -5011,7 +7241,7 @@ namespace Example
 
             var apiInstance = new OrganizationApi(config);
             var id = 789L;  // long | id of the team
-            var date = DateOnly.Parse("2013-10-20");  // DateOnly? | the date of the activities to be found (optional) 
+            var date = DateTime.Parse("2013-10-20");  // DateTime? | the date of the activities to be found (optional) 
             var page = 56;  // int? | page number of results to return (1-based) (optional) 
             var limit = 56;  // int? | page size of results (optional) 
 
@@ -5057,7 +7287,7 @@ catch (ApiException e)
 | Name | Type | Description | Notes |
 |------|------|-------------|-------|
 | **id** | **long** | id of the team |  |
-| **date** | **DateOnly?** | the date of the activities to be found | [optional]  |
+| **date** | **DateTime?** | the date of the activities to be found | [optional]  |
 | **page** | **int?** | page number of results to return (1-based) | [optional]  |
 | **limit** | **int?** | page size of results | [optional]  |
 
@@ -5135,7 +7365,7 @@ namespace Example
 
             var apiInstance = new OrganizationApi(config);
             var id = 789L;  // long | id of the team
-            var username = "username_example";  // string | username of the member to list
+            var username = "username_example";  // string | username of the user whose data is to be listed
 
             try
             {
@@ -5179,7 +7409,7 @@ catch (ApiException e)
 | Name | Type | Description | Notes |
 |------|------|-------------|-------|
 | **id** | **long** | id of the team |  |
-| **username** | **string** | username of the member to list |  |
+| **username** | **string** | username of the user whose data is to be listed |  |
 
 ### Return type
 
@@ -5742,7 +7972,7 @@ namespace Example
             // config.AddApiKeyPrefix("token", "Bearer");
 
             var apiInstance = new OrganizationApi(config);
-            var username = "username_example";  // string | username of user
+            var username = "username_example";  // string | username of the user whose organizations are to be listed
             var page = 56;  // int? | page number of results to return (1-based) (optional) 
             var limit = 56;  // int? | page size of results (optional) 
 
@@ -5787,7 +8017,7 @@ catch (ApiException e)
 
 | Name | Type | Description | Notes |
 |------|------|-------------|-------|
-| **username** | **string** | username of user |  |
+| **username** | **string** | username of the user whose organizations are to be listed |  |
 | **page** | **int?** | page number of results to return (1-based) | [optional]  |
 | **limit** | **int?** | page size of results | [optional]  |
 
@@ -5810,6 +8040,251 @@ catch (ApiException e)
 |-------------|-------------|------------------|
 | **200** | OrganizationList |  -  |
 | **404** | APINotFound is a not found empty response |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+<a id="orgmoveprojectcolumns"></a>
+# **OrgMoveProjectColumns**
+> void OrgMoveProjectColumns (string org, long id, MoveProjectColumnsOption? body = null)
+
+Reorder a project's columns
+
+Reorders every column of the project at once. The body lists all column IDs in their new order.
+
+### Example
+```csharp
+using System.Collections.Generic;
+using System.Diagnostics;
+using Gitea.Net.Api;
+using Gitea.Net.Client;
+using Gitea.Net.Model;
+
+namespace Example
+{
+    public class OrgMoveProjectColumnsExample
+    {
+        public static void Main()
+        {
+            Configuration config = new Configuration();
+            config.BasePath = "/api/v1";
+            // Configure API key authorization: TOTPHeader
+            config.AddApiKey("X-GITEA-OTP", "YOUR_API_KEY");
+            // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+            // config.AddApiKeyPrefix("X-GITEA-OTP", "Bearer");
+            // Configure API key authorization: AuthorizationHeaderToken
+            config.AddApiKey("Authorization", "YOUR_API_KEY");
+            // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+            // config.AddApiKeyPrefix("Authorization", "Bearer");
+            // Configure API key authorization: SudoHeader
+            config.AddApiKey("Sudo", "YOUR_API_KEY");
+            // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+            // config.AddApiKeyPrefix("Sudo", "Bearer");
+            // Configure HTTP basic authorization: BasicAuth
+            config.Username = "YOUR_USERNAME";
+            config.Password = "YOUR_PASSWORD";
+            // Configure API key authorization: AccessToken
+            config.AddApiKey("access_token", "YOUR_API_KEY");
+            // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+            // config.AddApiKeyPrefix("access_token", "Bearer");
+            // Configure API key authorization: SudoParam
+            config.AddApiKey("sudo", "YOUR_API_KEY");
+            // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+            // config.AddApiKeyPrefix("sudo", "Bearer");
+            // Configure API key authorization: Token
+            config.AddApiKey("token", "YOUR_API_KEY");
+            // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+            // config.AddApiKeyPrefix("token", "Bearer");
+
+            var apiInstance = new OrganizationApi(config);
+            var org = "org_example";  // string | name of the organization
+            var id = 789L;  // long | id of the project
+            var body = new MoveProjectColumnsOption?(); // MoveProjectColumnsOption? |  (optional) 
+
+            try
+            {
+                // Reorder a project's columns
+                apiInstance.OrgMoveProjectColumns(org, id, body);
+            }
+            catch (ApiException  e)
+            {
+                Debug.Print("Exception when calling OrganizationApi.OrgMoveProjectColumns: " + e.Message);
+                Debug.Print("Status Code: " + e.ErrorCode);
+                Debug.Print(e.StackTrace);
+            }
+        }
+    }
+}
+```
+
+#### Using the OrgMoveProjectColumnsWithHttpInfo variant
+This returns an ApiResponse object which contains the response data, status code and headers.
+
+```csharp
+try
+{
+    // Reorder a project's columns
+    apiInstance.OrgMoveProjectColumnsWithHttpInfo(org, id, body);
+}
+catch (ApiException e)
+{
+    Debug.Print("Exception when calling OrganizationApi.OrgMoveProjectColumnsWithHttpInfo: " + e.Message);
+    Debug.Print("Status Code: " + e.ErrorCode);
+    Debug.Print(e.StackTrace);
+}
+```
+
+### Parameters
+
+| Name | Type | Description | Notes |
+|------|------|-------------|-------|
+| **org** | **string** | name of the organization |  |
+| **id** | **long** | id of the project |  |
+| **body** | [**MoveProjectColumnsOption?**](MoveProjectColumnsOption?.md) |  | [optional]  |
+
+### Return type
+
+void (empty response body)
+
+### Authorization
+
+[TOTPHeader](../README.md#TOTPHeader), [AuthorizationHeaderToken](../README.md#AuthorizationHeaderToken), [SudoHeader](../README.md#SudoHeader), [BasicAuth](../README.md#BasicAuth), [AccessToken](../README.md#AccessToken), [SudoParam](../README.md#SudoParam), [Token](../README.md#Token)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: Not defined
+
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+| **204** | APIEmpty is an empty response |  -  |
+| **403** | APIForbiddenError is a forbidden error response |  * message -  <br>  * url -  <br>  |
+| **404** | APINotFound is a not found empty response |  -  |
+| **422** | APIValidationError is error format response related to input validation |  * message -  <br>  * url -  <br>  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+<a id="orgmoveprojectissue"></a>
+# **OrgMoveProjectIssue**
+> void OrgMoveProjectIssue (string org, long id, long issueId, MoveProjectIssueOption? body = null)
+
+Move an issue between a project's columns
+
+### Example
+```csharp
+using System.Collections.Generic;
+using System.Diagnostics;
+using Gitea.Net.Api;
+using Gitea.Net.Client;
+using Gitea.Net.Model;
+
+namespace Example
+{
+    public class OrgMoveProjectIssueExample
+    {
+        public static void Main()
+        {
+            Configuration config = new Configuration();
+            config.BasePath = "/api/v1";
+            // Configure API key authorization: TOTPHeader
+            config.AddApiKey("X-GITEA-OTP", "YOUR_API_KEY");
+            // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+            // config.AddApiKeyPrefix("X-GITEA-OTP", "Bearer");
+            // Configure API key authorization: AuthorizationHeaderToken
+            config.AddApiKey("Authorization", "YOUR_API_KEY");
+            // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+            // config.AddApiKeyPrefix("Authorization", "Bearer");
+            // Configure API key authorization: SudoHeader
+            config.AddApiKey("Sudo", "YOUR_API_KEY");
+            // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+            // config.AddApiKeyPrefix("Sudo", "Bearer");
+            // Configure HTTP basic authorization: BasicAuth
+            config.Username = "YOUR_USERNAME";
+            config.Password = "YOUR_PASSWORD";
+            // Configure API key authorization: AccessToken
+            config.AddApiKey("access_token", "YOUR_API_KEY");
+            // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+            // config.AddApiKeyPrefix("access_token", "Bearer");
+            // Configure API key authorization: SudoParam
+            config.AddApiKey("sudo", "YOUR_API_KEY");
+            // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+            // config.AddApiKeyPrefix("sudo", "Bearer");
+            // Configure API key authorization: Token
+            config.AddApiKey("token", "YOUR_API_KEY");
+            // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+            // config.AddApiKeyPrefix("token", "Bearer");
+
+            var apiInstance = new OrganizationApi(config);
+            var org = "org_example";  // string | name of the organization
+            var id = 789L;  // long | id of the project
+            var issueId = 789L;  // long | global id of the issue, not the repository-local index
+            var body = new MoveProjectIssueOption?(); // MoveProjectIssueOption? |  (optional) 
+
+            try
+            {
+                // Move an issue between a project's columns
+                apiInstance.OrgMoveProjectIssue(org, id, issueId, body);
+            }
+            catch (ApiException  e)
+            {
+                Debug.Print("Exception when calling OrganizationApi.OrgMoveProjectIssue: " + e.Message);
+                Debug.Print("Status Code: " + e.ErrorCode);
+                Debug.Print(e.StackTrace);
+            }
+        }
+    }
+}
+```
+
+#### Using the OrgMoveProjectIssueWithHttpInfo variant
+This returns an ApiResponse object which contains the response data, status code and headers.
+
+```csharp
+try
+{
+    // Move an issue between a project's columns
+    apiInstance.OrgMoveProjectIssueWithHttpInfo(org, id, issueId, body);
+}
+catch (ApiException e)
+{
+    Debug.Print("Exception when calling OrganizationApi.OrgMoveProjectIssueWithHttpInfo: " + e.Message);
+    Debug.Print("Status Code: " + e.ErrorCode);
+    Debug.Print(e.StackTrace);
+}
+```
+
+### Parameters
+
+| Name | Type | Description | Notes |
+|------|------|-------------|-------|
+| **org** | **string** | name of the organization |  |
+| **id** | **long** | id of the project |  |
+| **issueId** | **long** | global id of the issue, not the repository-local index |  |
+| **body** | [**MoveProjectIssueOption?**](MoveProjectIssueOption?.md) |  | [optional]  |
+
+### Return type
+
+void (empty response body)
+
+### Authorization
+
+[TOTPHeader](../README.md#TOTPHeader), [AuthorizationHeaderToken](../README.md#AuthorizationHeaderToken), [SudoHeader](../README.md#SudoHeader), [BasicAuth](../README.md#BasicAuth), [AccessToken](../README.md#AccessToken), [SudoParam](../README.md#SudoParam), [Token](../README.md#Token)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: Not defined
+
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+| **204** | APIEmpty is an empty response |  -  |
+| **403** | APIForbiddenError is a forbidden error response |  * message -  <br>  * url -  <br>  |
+| **404** | APINotFound is a not found empty response |  -  |
+| **422** | APIValidationError is error format response related to input validation |  * message -  <br>  * url -  <br>  |
+| **423** | APIRepoArchivedError is an error that is raised when an archived repo should be modified |  * message -  <br>  * url -  <br>  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
@@ -5865,7 +8340,7 @@ namespace Example
 
             var apiInstance = new OrganizationApi(config);
             var org = "org_example";  // string | name of the organization
-            var username = "username_example";  // string | username of the user
+            var username = "username_example";  // string | username of the user whose membership is to be publicized
 
             try
             {
@@ -5905,7 +8380,7 @@ catch (ApiException e)
 | Name | Type | Description | Notes |
 |------|------|-------------|-------|
 | **org** | **string** | name of the organization |  |
-| **username** | **string** | username of the user |  |
+| **username** | **string** | username of the user whose membership is to be publicized |  |
 
 ### Return type
 
@@ -5927,6 +8402,128 @@ void (empty response body)
 | **204** | membership publicized |  -  |
 | **403** | APIForbiddenError is a forbidden error response |  * message -  <br>  * url -  <br>  |
 | **404** | APINotFound is a not found empty response |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+<a id="orgremoveissuefromprojectcolumn"></a>
+# **OrgRemoveIssueFromProjectColumn**
+> void OrgRemoveIssueFromProjectColumn (string org, long id, long columnId, long issueId)
+
+Remove an issue from a project column
+
+### Example
+```csharp
+using System.Collections.Generic;
+using System.Diagnostics;
+using Gitea.Net.Api;
+using Gitea.Net.Client;
+using Gitea.Net.Model;
+
+namespace Example
+{
+    public class OrgRemoveIssueFromProjectColumnExample
+    {
+        public static void Main()
+        {
+            Configuration config = new Configuration();
+            config.BasePath = "/api/v1";
+            // Configure API key authorization: TOTPHeader
+            config.AddApiKey("X-GITEA-OTP", "YOUR_API_KEY");
+            // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+            // config.AddApiKeyPrefix("X-GITEA-OTP", "Bearer");
+            // Configure API key authorization: AuthorizationHeaderToken
+            config.AddApiKey("Authorization", "YOUR_API_KEY");
+            // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+            // config.AddApiKeyPrefix("Authorization", "Bearer");
+            // Configure API key authorization: SudoHeader
+            config.AddApiKey("Sudo", "YOUR_API_KEY");
+            // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+            // config.AddApiKeyPrefix("Sudo", "Bearer");
+            // Configure HTTP basic authorization: BasicAuth
+            config.Username = "YOUR_USERNAME";
+            config.Password = "YOUR_PASSWORD";
+            // Configure API key authorization: AccessToken
+            config.AddApiKey("access_token", "YOUR_API_KEY");
+            // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+            // config.AddApiKeyPrefix("access_token", "Bearer");
+            // Configure API key authorization: SudoParam
+            config.AddApiKey("sudo", "YOUR_API_KEY");
+            // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+            // config.AddApiKeyPrefix("sudo", "Bearer");
+            // Configure API key authorization: Token
+            config.AddApiKey("token", "YOUR_API_KEY");
+            // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+            // config.AddApiKeyPrefix("token", "Bearer");
+
+            var apiInstance = new OrganizationApi(config);
+            var org = "org_example";  // string | name of the organization
+            var id = 789L;  // long | id of the project
+            var columnId = 789L;  // long | id of the column
+            var issueId = 789L;  // long | global id of the issue, not the repository-local index
+
+            try
+            {
+                // Remove an issue from a project column
+                apiInstance.OrgRemoveIssueFromProjectColumn(org, id, columnId, issueId);
+            }
+            catch (ApiException  e)
+            {
+                Debug.Print("Exception when calling OrganizationApi.OrgRemoveIssueFromProjectColumn: " + e.Message);
+                Debug.Print("Status Code: " + e.ErrorCode);
+                Debug.Print(e.StackTrace);
+            }
+        }
+    }
+}
+```
+
+#### Using the OrgRemoveIssueFromProjectColumnWithHttpInfo variant
+This returns an ApiResponse object which contains the response data, status code and headers.
+
+```csharp
+try
+{
+    // Remove an issue from a project column
+    apiInstance.OrgRemoveIssueFromProjectColumnWithHttpInfo(org, id, columnId, issueId);
+}
+catch (ApiException e)
+{
+    Debug.Print("Exception when calling OrganizationApi.OrgRemoveIssueFromProjectColumnWithHttpInfo: " + e.Message);
+    Debug.Print("Status Code: " + e.ErrorCode);
+    Debug.Print(e.StackTrace);
+}
+```
+
+### Parameters
+
+| Name | Type | Description | Notes |
+|------|------|-------------|-------|
+| **org** | **string** | name of the organization |  |
+| **id** | **long** | id of the project |  |
+| **columnId** | **long** | id of the column |  |
+| **issueId** | **long** | global id of the issue, not the repository-local index |  |
+
+### Return type
+
+void (empty response body)
+
+### Authorization
+
+[TOTPHeader](../README.md#TOTPHeader), [AuthorizationHeaderToken](../README.md#AuthorizationHeaderToken), [SudoHeader](../README.md#SudoHeader), [BasicAuth](../README.md#BasicAuth), [AccessToken](../README.md#AccessToken), [SudoParam](../README.md#SudoParam), [Token](../README.md#Token)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: Not defined
+
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+| **204** | APIEmpty is an empty response |  -  |
+| **403** | APIForbiddenError is a forbidden error response |  * message -  <br>  * url -  <br>  |
+| **404** | APINotFound is a not found empty response |  -  |
+| **423** | APIRepoArchivedError is an error that is raised when an archived repo should be modified |  * message -  <br>  * url -  <br>  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
@@ -5982,7 +8579,7 @@ namespace Example
 
             var apiInstance = new OrganizationApi(config);
             var id = 789L;  // long | id of the team
-            var username = "username_example";  // string | username of the user to remove
+            var username = "username_example";  // string | username of the user to remove from a team
 
             try
             {
@@ -6022,7 +8619,7 @@ catch (ApiException e)
 | Name | Type | Description | Notes |
 |------|------|-------------|-------|
 | **id** | **long** | id of the team |  |
-| **username** | **string** | username of the user to remove |  |
+| **username** | **string** | username of the user to remove from a team |  |
 
 ### Return type
 
@@ -6167,6 +8764,127 @@ void (empty response body)
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
+<a id="orgsetdefaultprojectcolumn"></a>
+# **OrgSetDefaultProjectColumn**
+> void OrgSetDefaultProjectColumn (string org, long id, long columnId)
+
+Set a project's default column
+
+The default column is where newly assigned issues land.
+
+### Example
+```csharp
+using System.Collections.Generic;
+using System.Diagnostics;
+using Gitea.Net.Api;
+using Gitea.Net.Client;
+using Gitea.Net.Model;
+
+namespace Example
+{
+    public class OrgSetDefaultProjectColumnExample
+    {
+        public static void Main()
+        {
+            Configuration config = new Configuration();
+            config.BasePath = "/api/v1";
+            // Configure API key authorization: TOTPHeader
+            config.AddApiKey("X-GITEA-OTP", "YOUR_API_KEY");
+            // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+            // config.AddApiKeyPrefix("X-GITEA-OTP", "Bearer");
+            // Configure API key authorization: AuthorizationHeaderToken
+            config.AddApiKey("Authorization", "YOUR_API_KEY");
+            // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+            // config.AddApiKeyPrefix("Authorization", "Bearer");
+            // Configure API key authorization: SudoHeader
+            config.AddApiKey("Sudo", "YOUR_API_KEY");
+            // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+            // config.AddApiKeyPrefix("Sudo", "Bearer");
+            // Configure HTTP basic authorization: BasicAuth
+            config.Username = "YOUR_USERNAME";
+            config.Password = "YOUR_PASSWORD";
+            // Configure API key authorization: AccessToken
+            config.AddApiKey("access_token", "YOUR_API_KEY");
+            // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+            // config.AddApiKeyPrefix("access_token", "Bearer");
+            // Configure API key authorization: SudoParam
+            config.AddApiKey("sudo", "YOUR_API_KEY");
+            // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+            // config.AddApiKeyPrefix("sudo", "Bearer");
+            // Configure API key authorization: Token
+            config.AddApiKey("token", "YOUR_API_KEY");
+            // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+            // config.AddApiKeyPrefix("token", "Bearer");
+
+            var apiInstance = new OrganizationApi(config);
+            var org = "org_example";  // string | name of the organization
+            var id = 789L;  // long | id of the project
+            var columnId = 789L;  // long | id of the column
+
+            try
+            {
+                // Set a project's default column
+                apiInstance.OrgSetDefaultProjectColumn(org, id, columnId);
+            }
+            catch (ApiException  e)
+            {
+                Debug.Print("Exception when calling OrganizationApi.OrgSetDefaultProjectColumn: " + e.Message);
+                Debug.Print("Status Code: " + e.ErrorCode);
+                Debug.Print(e.StackTrace);
+            }
+        }
+    }
+}
+```
+
+#### Using the OrgSetDefaultProjectColumnWithHttpInfo variant
+This returns an ApiResponse object which contains the response data, status code and headers.
+
+```csharp
+try
+{
+    // Set a project's default column
+    apiInstance.OrgSetDefaultProjectColumnWithHttpInfo(org, id, columnId);
+}
+catch (ApiException e)
+{
+    Debug.Print("Exception when calling OrganizationApi.OrgSetDefaultProjectColumnWithHttpInfo: " + e.Message);
+    Debug.Print("Status Code: " + e.ErrorCode);
+    Debug.Print(e.StackTrace);
+}
+```
+
+### Parameters
+
+| Name | Type | Description | Notes |
+|------|------|-------------|-------|
+| **org** | **string** | name of the organization |  |
+| **id** | **long** | id of the project |  |
+| **columnId** | **long** | id of the column |  |
+
+### Return type
+
+void (empty response body)
+
+### Authorization
+
+[TOTPHeader](../README.md#TOTPHeader), [AuthorizationHeaderToken](../README.md#AuthorizationHeaderToken), [SudoHeader](../README.md#SudoHeader), [BasicAuth](../README.md#BasicAuth), [AccessToken](../README.md#AccessToken), [SudoParam](../README.md#SudoParam), [Token](../README.md#Token)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: Not defined
+
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+| **204** | APIEmpty is an empty response |  -  |
+| **403** | APIForbiddenError is a forbidden error response |  * message -  <br>  * url -  <br>  |
+| **404** | APINotFound is a not found empty response |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
 <a id="orgupdateavatar"></a>
 # **OrgUpdateAvatar**
 > void OrgUpdateAvatar (string org, UpdateUserAvatarOption? body = null)
@@ -6271,7 +8989,7 @@ void (empty response body)
 
 ### HTTP request headers
 
- - **Content-Type**: application/json, text/plain
+ - **Content-Type**: application/json
  - **Accept**: Not defined
 
 
@@ -6335,7 +9053,7 @@ namespace Example
 
             var apiInstance = new OrganizationApi(config);
             var org = "org_example";  // string | name of the organization
-            var username = "username_example";  // string | user to block
+            var username = "username_example";  // string | username of the user to block
             var note = "note_example";  // string? | optional note for the block (optional) 
 
             try
@@ -6376,7 +9094,7 @@ catch (ApiException e)
 | Name | Type | Description | Notes |
 |------|------|-------------|-------|
 | **org** | **string** | name of the organization |  |
-| **username** | **string** | user to block |  |
+| **username** | **string** | username of the user to block |  |
 | **note** | **string?** | optional note for the block | [optional]  |
 
 ### Return type
@@ -6454,7 +9172,7 @@ namespace Example
 
             var apiInstance = new OrganizationApi(config);
             var org = "org_example";  // string | name of the organization
-            var username = "username_example";  // string | user to check
+            var username = "username_example";  // string | username of the user to check
 
             try
             {
@@ -6494,7 +9212,7 @@ catch (ApiException e)
 | Name | Type | Description | Notes |
 |------|------|-------------|-------|
 | **org** | **string** | name of the organization |  |
-| **username** | **string** | user to check |  |
+| **username** | **string** | username of the user to check |  |
 
 ### Return type
 
@@ -6691,7 +9409,7 @@ namespace Example
 
             var apiInstance = new OrganizationApi(config);
             var org = "org_example";  // string | name of the organization
-            var username = "username_example";  // string | user to unblock
+            var username = "username_example";  // string | username of the user to unblock
 
             try
             {
@@ -6731,7 +9449,7 @@ catch (ApiException e)
 | Name | Type | Description | Notes |
 |------|------|-------------|-------|
 | **org** | **string** | name of the organization |  |
-| **username** | **string** | user to unblock |  |
+| **username** | **string** | username of the user to unblock |  |
 
 ### Return type
 
@@ -6752,6 +9470,123 @@ void (empty response body)
 |-------------|-------------|------------------|
 | **204** | APIEmpty is an empty response |  -  |
 | **404** | APINotFound is a not found empty response |  -  |
+| **422** | APIValidationError is error format response related to input validation |  * message -  <br>  * url -  <br>  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+<a id="renameorg"></a>
+# **RenameOrg**
+> void RenameOrg (string org, RenameOrgOption body)
+
+Rename an organization
+
+### Example
+```csharp
+using System.Collections.Generic;
+using System.Diagnostics;
+using Gitea.Net.Api;
+using Gitea.Net.Client;
+using Gitea.Net.Model;
+
+namespace Example
+{
+    public class RenameOrgExample
+    {
+        public static void Main()
+        {
+            Configuration config = new Configuration();
+            config.BasePath = "/api/v1";
+            // Configure API key authorization: TOTPHeader
+            config.AddApiKey("X-GITEA-OTP", "YOUR_API_KEY");
+            // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+            // config.AddApiKeyPrefix("X-GITEA-OTP", "Bearer");
+            // Configure API key authorization: AuthorizationHeaderToken
+            config.AddApiKey("Authorization", "YOUR_API_KEY");
+            // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+            // config.AddApiKeyPrefix("Authorization", "Bearer");
+            // Configure API key authorization: SudoHeader
+            config.AddApiKey("Sudo", "YOUR_API_KEY");
+            // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+            // config.AddApiKeyPrefix("Sudo", "Bearer");
+            // Configure HTTP basic authorization: BasicAuth
+            config.Username = "YOUR_USERNAME";
+            config.Password = "YOUR_PASSWORD";
+            // Configure API key authorization: AccessToken
+            config.AddApiKey("access_token", "YOUR_API_KEY");
+            // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+            // config.AddApiKeyPrefix("access_token", "Bearer");
+            // Configure API key authorization: SudoParam
+            config.AddApiKey("sudo", "YOUR_API_KEY");
+            // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+            // config.AddApiKeyPrefix("sudo", "Bearer");
+            // Configure API key authorization: Token
+            config.AddApiKey("token", "YOUR_API_KEY");
+            // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+            // config.AddApiKeyPrefix("token", "Bearer");
+
+            var apiInstance = new OrganizationApi(config);
+            var org = "org_example";  // string | existing org name
+            var body = new RenameOrgOption(); // RenameOrgOption | 
+
+            try
+            {
+                // Rename an organization
+                apiInstance.RenameOrg(org, body);
+            }
+            catch (ApiException  e)
+            {
+                Debug.Print("Exception when calling OrganizationApi.RenameOrg: " + e.Message);
+                Debug.Print("Status Code: " + e.ErrorCode);
+                Debug.Print(e.StackTrace);
+            }
+        }
+    }
+}
+```
+
+#### Using the RenameOrgWithHttpInfo variant
+This returns an ApiResponse object which contains the response data, status code and headers.
+
+```csharp
+try
+{
+    // Rename an organization
+    apiInstance.RenameOrgWithHttpInfo(org, body);
+}
+catch (ApiException e)
+{
+    Debug.Print("Exception when calling OrganizationApi.RenameOrgWithHttpInfo: " + e.Message);
+    Debug.Print("Status Code: " + e.ErrorCode);
+    Debug.Print(e.StackTrace);
+}
+```
+
+### Parameters
+
+| Name | Type | Description | Notes |
+|------|------|-------------|-------|
+| **org** | **string** | existing org name |  |
+| **body** | [**RenameOrgOption**](RenameOrgOption.md) |  |  |
+
+### Return type
+
+void (empty response body)
+
+### Authorization
+
+[TOTPHeader](../README.md#TOTPHeader), [AuthorizationHeaderToken](../README.md#AuthorizationHeaderToken), [SudoHeader](../README.md#SudoHeader), [BasicAuth](../README.md#BasicAuth), [AccessToken](../README.md#AccessToken), [SudoParam](../README.md#SudoParam), [Token](../README.md#Token)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: Not defined
+
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+| **204** | APIEmpty is an empty response |  -  |
+| **403** | APIForbiddenError is a forbidden error response |  * message -  <br>  * url -  <br>  |
 | **422** | APIValidationError is error format response related to input validation |  * message -  <br>  * url -  <br>  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
@@ -6879,6 +9714,130 @@ catch (ApiException e)
 |-------------|-------------|------------------|
 | **200** | SearchResults of a successful search |  -  |
 | **404** | APINotFound is a not found empty response |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+<a id="updateorgrunner"></a>
+# **UpdateOrgRunner**
+> ActionRunner UpdateOrgRunner (string org, string runnerId, EditActionRunnerOption? body = null)
+
+Update an org-level runner
+
+### Example
+```csharp
+using System.Collections.Generic;
+using System.Diagnostics;
+using Gitea.Net.Api;
+using Gitea.Net.Client;
+using Gitea.Net.Model;
+
+namespace Example
+{
+    public class UpdateOrgRunnerExample
+    {
+        public static void Main()
+        {
+            Configuration config = new Configuration();
+            config.BasePath = "/api/v1";
+            // Configure API key authorization: TOTPHeader
+            config.AddApiKey("X-GITEA-OTP", "YOUR_API_KEY");
+            // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+            // config.AddApiKeyPrefix("X-GITEA-OTP", "Bearer");
+            // Configure API key authorization: AuthorizationHeaderToken
+            config.AddApiKey("Authorization", "YOUR_API_KEY");
+            // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+            // config.AddApiKeyPrefix("Authorization", "Bearer");
+            // Configure API key authorization: SudoHeader
+            config.AddApiKey("Sudo", "YOUR_API_KEY");
+            // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+            // config.AddApiKeyPrefix("Sudo", "Bearer");
+            // Configure HTTP basic authorization: BasicAuth
+            config.Username = "YOUR_USERNAME";
+            config.Password = "YOUR_PASSWORD";
+            // Configure API key authorization: AccessToken
+            config.AddApiKey("access_token", "YOUR_API_KEY");
+            // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+            // config.AddApiKeyPrefix("access_token", "Bearer");
+            // Configure API key authorization: SudoParam
+            config.AddApiKey("sudo", "YOUR_API_KEY");
+            // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+            // config.AddApiKeyPrefix("sudo", "Bearer");
+            // Configure API key authorization: Token
+            config.AddApiKey("token", "YOUR_API_KEY");
+            // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+            // config.AddApiKeyPrefix("token", "Bearer");
+
+            var apiInstance = new OrganizationApi(config);
+            var org = "org_example";  // string | name of the organization
+            var runnerId = "runnerId_example";  // string | id of the runner
+            var body = new EditActionRunnerOption?(); // EditActionRunnerOption? |  (optional) 
+
+            try
+            {
+                // Update an org-level runner
+                ActionRunner result = apiInstance.UpdateOrgRunner(org, runnerId, body);
+                Debug.WriteLine(result);
+            }
+            catch (ApiException  e)
+            {
+                Debug.Print("Exception when calling OrganizationApi.UpdateOrgRunner: " + e.Message);
+                Debug.Print("Status Code: " + e.ErrorCode);
+                Debug.Print(e.StackTrace);
+            }
+        }
+    }
+}
+```
+
+#### Using the UpdateOrgRunnerWithHttpInfo variant
+This returns an ApiResponse object which contains the response data, status code and headers.
+
+```csharp
+try
+{
+    // Update an org-level runner
+    ApiResponse<ActionRunner> response = apiInstance.UpdateOrgRunnerWithHttpInfo(org, runnerId, body);
+    Debug.Write("Status Code: " + response.StatusCode);
+    Debug.Write("Response Headers: " + response.Headers);
+    Debug.Write("Response Body: " + response.Data);
+}
+catch (ApiException e)
+{
+    Debug.Print("Exception when calling OrganizationApi.UpdateOrgRunnerWithHttpInfo: " + e.Message);
+    Debug.Print("Status Code: " + e.ErrorCode);
+    Debug.Print(e.StackTrace);
+}
+```
+
+### Parameters
+
+| Name | Type | Description | Notes |
+|------|------|-------------|-------|
+| **org** | **string** | name of the organization |  |
+| **runnerId** | **string** | id of the runner |  |
+| **body** | [**EditActionRunnerOption?**](EditActionRunnerOption?.md) |  | [optional]  |
+
+### Return type
+
+[**ActionRunner**](ActionRunner.md)
+
+### Authorization
+
+[TOTPHeader](../README.md#TOTPHeader), [AuthorizationHeaderToken](../README.md#AuthorizationHeaderToken), [SudoHeader](../README.md#SudoHeader), [BasicAuth](../README.md#BasicAuth), [AccessToken](../README.md#AccessToken), [SudoParam](../README.md#SudoParam), [Token](../README.md#Token)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+| **200** | Runner |  -  |
+| **400** | APIError is error format response |  * message -  <br>  * url -  <br>  |
+| **404** | APINotFound is a not found empty response |  -  |
+| **422** | APIValidationError is error format response related to input validation |  * message -  <br>  * url -  <br>  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 

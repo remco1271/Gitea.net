@@ -8,12 +8,14 @@
   </PropertyGroup>
 
   <PropertyGroup>
-    <Version>1.0.2</Version>
-    <VersionPrefix>1.0.2</VersionPrefix>
+    <!--
+      Package and assembly version. Major.minor follow the Gitea API version (api/openapi.yaml).
+      For library-only changes bump the last part (28.3.0 -> 28.3.1).
+      CI publishes a new release when this version has no git tag yet.
+    -->
+    <Version>28.3.0</Version>
     <IncludeSymbols>True</IncludeSymbols>
     <SymbolPackageFormat>snupkg</SymbolPackageFormat>
-    <GenerateNuspecDependsOn>$(GenerateNuspecDependsOn);SetPackageVersion</GenerateNuspecDependsOn>
-    <GeneratePackageOnBuild>True</GeneratePackageOnBuild>
   </PropertyGroup>
 
   <PropertyGroup>
@@ -33,14 +35,6 @@
     <PackageIcon>Gitea Icon.png</PackageIcon>
     <PackageReadmeFile>README.md</PackageReadmeFile>
   </PropertyGroup>
-
-  <Target Name="SetPackageVersion" DependsOnTargets="Build">
-    <PropertyGroup>
-      <!-- <PackageVersion>$([System.DateTime]::Now.ToString(&quot;yyyy.MM.dd.HHmmss&quot;))</PackageVersion> -->
-      <!-- You can customize the format and the rule about how version increases here. -->
-      <PackageVersion>$([System.DateTime]::Now.ToString("yy.MM.dd"))</PackageVersion>
-    </PropertyGroup>
-  </Target>
 
   <ItemGroup>
     <None Include="MIT-LICENSE.txt" Pack="true" PackagePath="\"/>

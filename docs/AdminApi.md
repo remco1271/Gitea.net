@@ -10,6 +10,7 @@ All URIs are relative to */api/v1*
 | [**AdminCreateOrg**](AdminApi.md#admincreateorg) | **POST** /admin/users/{username}/orgs | Create an organization |
 | [**AdminCreatePublicKey**](AdminApi.md#admincreatepublickey) | **POST** /admin/users/{username}/keys | Add a public key on behalf of a user |
 | [**AdminCreateRepo**](AdminApi.md#admincreaterepo) | **POST** /admin/users/{username}/repos | Create a repository on behalf of a user |
+| [**AdminCreateRunnerRegistrationToken**](AdminApi.md#admincreaterunnerregistrationtoken) | **POST** /admin/actions/runners/registration-token | Get a global actions runner registration token |
 | [**AdminCreateUser**](AdminApi.md#admincreateuser) | **POST** /admin/users | Create a user |
 | [**AdminCronList**](AdminApi.md#admincronlist) | **GET** /admin/cron | List cron tasks |
 | [**AdminCronRun**](AdminApi.md#admincronrun) | **POST** /admin/cron/{task} | Run cron task |
@@ -23,13 +24,19 @@ All URIs are relative to */api/v1*
 | [**AdminGetAllEmails**](AdminApi.md#admingetallemails) | **GET** /admin/emails | List all emails |
 | [**AdminGetAllOrgs**](AdminApi.md#admingetallorgs) | **GET** /admin/orgs | List all organizations |
 | [**AdminGetHook**](AdminApi.md#admingethook) | **GET** /admin/hooks/{id} | Get a hook |
-| [**AdminGetRunnerRegistrationToken**](AdminApi.md#admingetrunnerregistrationtoken) | **GET** /admin/runners/registration-token | Get an global actions runner registration token |
 | [**AdminListHooks**](AdminApi.md#adminlisthooks) | **GET** /admin/hooks | List system&#39;s webhooks |
+| [**AdminListPackages**](AdminApi.md#adminlistpackages) | **GET** /admin/packages | List all packages |
 | [**AdminListUserBadges**](AdminApi.md#adminlistuserbadges) | **GET** /admin/users/{username}/badges | List a user&#39;s badges |
 | [**AdminRenameUser**](AdminApi.md#adminrenameuser) | **POST** /admin/users/{username}/rename | Rename a user |
 | [**AdminSearchEmails**](AdminApi.md#adminsearchemails) | **GET** /admin/emails/search | Search all emails |
 | [**AdminSearchUsers**](AdminApi.md#adminsearchusers) | **GET** /admin/users | Search users according filter conditions |
 | [**AdminUnadoptedList**](AdminApi.md#adminunadoptedlist) | **GET** /admin/unadopted | List unadopted repositories |
+| [**DeleteAdminRunner**](AdminApi.md#deleteadminrunner) | **DELETE** /admin/actions/runners/{runner_id} | Delete a global runner |
+| [**GetAdminRunner**](AdminApi.md#getadminrunner) | **GET** /admin/actions/runners/{runner_id} | Get a global runner |
+| [**GetAdminRunners**](AdminApi.md#getadminrunners) | **GET** /admin/actions/runners | Get all runners |
+| [**ListAdminWorkflowJobs**](AdminApi.md#listadminworkflowjobs) | **GET** /admin/actions/jobs | Lists all jobs |
+| [**ListAdminWorkflowRuns**](AdminApi.md#listadminworkflowruns) | **GET** /admin/actions/runs | Lists all runs |
+| [**UpdateAdminRunner**](AdminApi.md#updateadminrunner) | **PATCH** /admin/actions/runners/{runner_id} | Update a global runner |
 
 <a id="adminadduserbadges"></a>
 # **AdminAddUserBadges**
@@ -82,7 +89,7 @@ namespace Example
             // config.AddApiKeyPrefix("token", "Bearer");
 
             var apiInstance = new AdminApi(config);
-            var username = "username_example";  // string | username of user
+            var username = "username_example";  // string | username of the user to whom a badge is to be added
             var body = new UserBadgeOption?(); // UserBadgeOption? |  (optional) 
 
             try
@@ -122,7 +129,7 @@ catch (ApiException e)
 
 | Name | Type | Description | Notes |
 |------|------|-------------|-------|
-| **username** | **string** | username of user |  |
+| **username** | **string** | username of the user to whom a badge is to be added |  |
 | **body** | [**UserBadgeOption?**](UserBadgeOption?.md) |  | [optional]  |
 
 ### Return type
@@ -432,7 +439,7 @@ namespace Example
             // config.AddApiKeyPrefix("token", "Bearer");
 
             var apiInstance = new AdminApi(config);
-            var username = "username_example";  // string | username of the user that will own the created organization
+            var username = "username_example";  // string | username of the user who will own the created organization
             var organization = new CreateOrgOption(); // CreateOrgOption | 
 
             try
@@ -476,7 +483,7 @@ catch (ApiException e)
 
 | Name | Type | Description | Notes |
 |------|------|-------------|-------|
-| **username** | **string** | username of the user that will own the created organization |  |
+| **username** | **string** | username of the user who will own the created organization |  |
 | **organization** | [**CreateOrgOption**](CreateOrgOption.md) |  |  |
 
 ### Return type
@@ -553,7 +560,7 @@ namespace Example
             // config.AddApiKeyPrefix("token", "Bearer");
 
             var apiInstance = new AdminApi(config);
-            var username = "username_example";  // string | username of the user
+            var username = "username_example";  // string | username of the user who is to receive a public key
             var key = new CreateKeyOption?(); // CreateKeyOption? |  (optional) 
 
             try
@@ -597,7 +604,7 @@ catch (ApiException e)
 
 | Name | Type | Description | Notes |
 |------|------|-------------|-------|
-| **username** | **string** | username of the user |  |
+| **username** | **string** | username of the user who is to receive a public key |  |
 | **key** | [**CreateKeyOption?**](CreateKeyOption?.md) |  | [optional]  |
 
 ### Return type
@@ -674,7 +681,7 @@ namespace Example
             // config.AddApiKeyPrefix("token", "Bearer");
 
             var apiInstance = new AdminApi(config);
-            var username = "username_example";  // string | username of the user. This user will own the created repository
+            var username = "username_example";  // string | username of the user who will own the created repository
             var repository = new CreateRepoOption(); // CreateRepoOption | 
 
             try
@@ -718,7 +725,7 @@ catch (ApiException e)
 
 | Name | Type | Description | Notes |
 |------|------|-------------|-------|
-| **username** | **string** | username of the user. This user will own the created repository |  |
+| **username** | **string** | username of the user who will own the created repository |  |
 | **repository** | [**CreateRepoOption**](CreateRepoOption.md) |  |  |
 
 ### Return type
@@ -744,6 +751,114 @@ catch (ApiException e)
 | **404** | APINotFound is a not found empty response |  -  |
 | **409** | APIError is error format response |  * message -  <br>  * url -  <br>  |
 | **422** | APIValidationError is error format response related to input validation |  * message -  <br>  * url -  <br>  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+<a id="admincreaterunnerregistrationtoken"></a>
+# **AdminCreateRunnerRegistrationToken**
+> void AdminCreateRunnerRegistrationToken ()
+
+Get a global actions runner registration token
+
+### Example
+```csharp
+using System.Collections.Generic;
+using System.Diagnostics;
+using Gitea.Net.Api;
+using Gitea.Net.Client;
+using Gitea.Net.Model;
+
+namespace Example
+{
+    public class AdminCreateRunnerRegistrationTokenExample
+    {
+        public static void Main()
+        {
+            Configuration config = new Configuration();
+            config.BasePath = "/api/v1";
+            // Configure API key authorization: TOTPHeader
+            config.AddApiKey("X-GITEA-OTP", "YOUR_API_KEY");
+            // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+            // config.AddApiKeyPrefix("X-GITEA-OTP", "Bearer");
+            // Configure API key authorization: AuthorizationHeaderToken
+            config.AddApiKey("Authorization", "YOUR_API_KEY");
+            // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+            // config.AddApiKeyPrefix("Authorization", "Bearer");
+            // Configure API key authorization: SudoHeader
+            config.AddApiKey("Sudo", "YOUR_API_KEY");
+            // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+            // config.AddApiKeyPrefix("Sudo", "Bearer");
+            // Configure HTTP basic authorization: BasicAuth
+            config.Username = "YOUR_USERNAME";
+            config.Password = "YOUR_PASSWORD";
+            // Configure API key authorization: AccessToken
+            config.AddApiKey("access_token", "YOUR_API_KEY");
+            // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+            // config.AddApiKeyPrefix("access_token", "Bearer");
+            // Configure API key authorization: SudoParam
+            config.AddApiKey("sudo", "YOUR_API_KEY");
+            // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+            // config.AddApiKeyPrefix("sudo", "Bearer");
+            // Configure API key authorization: Token
+            config.AddApiKey("token", "YOUR_API_KEY");
+            // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+            // config.AddApiKeyPrefix("token", "Bearer");
+
+            var apiInstance = new AdminApi(config);
+
+            try
+            {
+                // Get a global actions runner registration token
+                apiInstance.AdminCreateRunnerRegistrationToken();
+            }
+            catch (ApiException  e)
+            {
+                Debug.Print("Exception when calling AdminApi.AdminCreateRunnerRegistrationToken: " + e.Message);
+                Debug.Print("Status Code: " + e.ErrorCode);
+                Debug.Print(e.StackTrace);
+            }
+        }
+    }
+}
+```
+
+#### Using the AdminCreateRunnerRegistrationTokenWithHttpInfo variant
+This returns an ApiResponse object which contains the response data, status code and headers.
+
+```csharp
+try
+{
+    // Get a global actions runner registration token
+    apiInstance.AdminCreateRunnerRegistrationTokenWithHttpInfo();
+}
+catch (ApiException e)
+{
+    Debug.Print("Exception when calling AdminApi.AdminCreateRunnerRegistrationTokenWithHttpInfo: " + e.Message);
+    Debug.Print("Status Code: " + e.ErrorCode);
+    Debug.Print(e.StackTrace);
+}
+```
+
+### Parameters
+This endpoint does not need any parameter.
+### Return type
+
+void (empty response body)
+
+### Authorization
+
+[TOTPHeader](../README.md#TOTPHeader), [AuthorizationHeaderToken](../README.md#AuthorizationHeaderToken), [SudoHeader](../README.md#SudoHeader), [BasicAuth](../README.md#BasicAuth), [AccessToken](../README.md#AccessToken), [SudoParam](../README.md#SudoParam), [Token](../README.md#Token)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: Not defined
+
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+| **200** | RegistrationToken is response related to registration token |  * token -  <br>  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
@@ -863,6 +978,7 @@ catch (ApiException e)
 | **201** | User |  -  |
 | **400** | APIError is error format response |  * message -  <br>  * url -  <br>  |
 | **403** | APIForbiddenError is a forbidden error response |  * message -  <br>  * url -  <br>  |
+| **409** | APIError is error format response |  * message -  <br>  * url -  <br>  |
 | **422** | APIValidationError is error format response related to input validation |  * message -  <br>  * url -  <br>  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
@@ -1381,7 +1497,7 @@ namespace Example
             // config.AddApiKeyPrefix("token", "Bearer");
 
             var apiInstance = new AdminApi(config);
-            var username = "username_example";  // string | username of user to delete
+            var username = "username_example";  // string | username of the user to delete
             var purge = true;  // bool? | purge the user from the system completely (optional) 
 
             try
@@ -1421,7 +1537,7 @@ catch (ApiException e)
 
 | Name | Type | Description | Notes |
 |------|------|-------------|-------|
-| **username** | **string** | username of user to delete |  |
+| **username** | **string** | username of the user to delete |  |
 | **purge** | **bool?** | purge the user from the system completely | [optional]  |
 
 ### Return type
@@ -1499,7 +1615,7 @@ namespace Example
             // config.AddApiKeyPrefix("token", "Bearer");
 
             var apiInstance = new AdminApi(config);
-            var username = "username_example";  // string | username of user
+            var username = "username_example";  // string | username of the user whose badge is to be deleted
             var body = new UserBadgeOption?(); // UserBadgeOption? |  (optional) 
 
             try
@@ -1539,7 +1655,7 @@ catch (ApiException e)
 
 | Name | Type | Description | Notes |
 |------|------|-------------|-------|
-| **username** | **string** | username of user |  |
+| **username** | **string** | username of the user whose badge is to be deleted |  |
 | **body** | [**UserBadgeOption?**](UserBadgeOption?.md) |  | [optional]  |
 
 ### Return type
@@ -1552,7 +1668,7 @@ void (empty response body)
 
 ### HTTP request headers
 
- - **Content-Type**: application/json, text/plain
+ - **Content-Type**: application/json
  - **Accept**: Not defined
 
 
@@ -1616,7 +1732,7 @@ namespace Example
             // config.AddApiKeyPrefix("token", "Bearer");
 
             var apiInstance = new AdminApi(config);
-            var username = "username_example";  // string | username of user
+            var username = "username_example";  // string | username of the user whose public key is to be deleted
             var id = 789L;  // long | id of the key to delete
 
             try
@@ -1656,7 +1772,7 @@ catch (ApiException e)
 
 | Name | Type | Description | Notes |
 |------|------|-------------|-------|
-| **username** | **string** | username of user |  |
+| **username** | **string** | username of the user whose public key is to be deleted |  |
 | **id** | **long** | id of the key to delete |  |
 
 ### Return type
@@ -1852,7 +1968,7 @@ namespace Example
             // config.AddApiKeyPrefix("token", "Bearer");
 
             var apiInstance = new AdminApi(config);
-            var username = "username_example";  // string | username of user to edit
+            var username = "username_example";  // string | username of the user whose data is to be edited
             var body = new EditUserOption?(); // EditUserOption? |  (optional) 
 
             try
@@ -1896,7 +2012,7 @@ catch (ApiException e)
 
 | Name | Type | Description | Notes |
 |------|------|-------------|-------|
-| **username** | **string** | username of user to edit |  |
+| **username** | **string** | username of the user whose data is to be edited |  |
 | **body** | [**EditUserOption?**](EditUserOption?.md) |  | [optional]  |
 
 ### Return type
@@ -1919,6 +2035,7 @@ catch (ApiException e)
 | **200** | User |  -  |
 | **400** | APIError is error format response |  * message -  <br>  * url -  <br>  |
 | **403** | APIForbiddenError is a forbidden error response |  * message -  <br>  * url -  <br>  |
+| **409** | APIError is error format response |  * message -  <br>  * url -  <br>  |
 | **422** | APIValidationError is error format response related to input validation |  * message -  <br>  * url -  <br>  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
@@ -2280,117 +2397,9 @@ catch (ApiException e)
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-<a id="admingetrunnerregistrationtoken"></a>
-# **AdminGetRunnerRegistrationToken**
-> void AdminGetRunnerRegistrationToken ()
-
-Get an global actions runner registration token
-
-### Example
-```csharp
-using System.Collections.Generic;
-using System.Diagnostics;
-using Gitea.Net.Api;
-using Gitea.Net.Client;
-using Gitea.Net.Model;
-
-namespace Example
-{
-    public class AdminGetRunnerRegistrationTokenExample
-    {
-        public static void Main()
-        {
-            Configuration config = new Configuration();
-            config.BasePath = "/api/v1";
-            // Configure API key authorization: TOTPHeader
-            config.AddApiKey("X-GITEA-OTP", "YOUR_API_KEY");
-            // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-            // config.AddApiKeyPrefix("X-GITEA-OTP", "Bearer");
-            // Configure API key authorization: AuthorizationHeaderToken
-            config.AddApiKey("Authorization", "YOUR_API_KEY");
-            // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-            // config.AddApiKeyPrefix("Authorization", "Bearer");
-            // Configure API key authorization: SudoHeader
-            config.AddApiKey("Sudo", "YOUR_API_KEY");
-            // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-            // config.AddApiKeyPrefix("Sudo", "Bearer");
-            // Configure HTTP basic authorization: BasicAuth
-            config.Username = "YOUR_USERNAME";
-            config.Password = "YOUR_PASSWORD";
-            // Configure API key authorization: AccessToken
-            config.AddApiKey("access_token", "YOUR_API_KEY");
-            // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-            // config.AddApiKeyPrefix("access_token", "Bearer");
-            // Configure API key authorization: SudoParam
-            config.AddApiKey("sudo", "YOUR_API_KEY");
-            // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-            // config.AddApiKeyPrefix("sudo", "Bearer");
-            // Configure API key authorization: Token
-            config.AddApiKey("token", "YOUR_API_KEY");
-            // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-            // config.AddApiKeyPrefix("token", "Bearer");
-
-            var apiInstance = new AdminApi(config);
-
-            try
-            {
-                // Get an global actions runner registration token
-                apiInstance.AdminGetRunnerRegistrationToken();
-            }
-            catch (ApiException  e)
-            {
-                Debug.Print("Exception when calling AdminApi.AdminGetRunnerRegistrationToken: " + e.Message);
-                Debug.Print("Status Code: " + e.ErrorCode);
-                Debug.Print(e.StackTrace);
-            }
-        }
-    }
-}
-```
-
-#### Using the AdminGetRunnerRegistrationTokenWithHttpInfo variant
-This returns an ApiResponse object which contains the response data, status code and headers.
-
-```csharp
-try
-{
-    // Get an global actions runner registration token
-    apiInstance.AdminGetRunnerRegistrationTokenWithHttpInfo();
-}
-catch (ApiException e)
-{
-    Debug.Print("Exception when calling AdminApi.AdminGetRunnerRegistrationTokenWithHttpInfo: " + e.Message);
-    Debug.Print("Status Code: " + e.ErrorCode);
-    Debug.Print(e.StackTrace);
-}
-```
-
-### Parameters
-This endpoint does not need any parameter.
-### Return type
-
-void (empty response body)
-
-### Authorization
-
-[TOTPHeader](../README.md#TOTPHeader), [AuthorizationHeaderToken](../README.md#AuthorizationHeaderToken), [SudoHeader](../README.md#SudoHeader), [BasicAuth](../README.md#BasicAuth), [AccessToken](../README.md#AccessToken), [SudoParam](../README.md#SudoParam), [Token](../README.md#Token)
-
-### HTTP request headers
-
- - **Content-Type**: Not defined
- - **Accept**: Not defined
-
-
-### HTTP response details
-| Status code | Description | Response headers |
-|-------------|-------------|------------------|
-| **200** | RegistrationToken is response related to registration token |  * token -  <br>  |
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
-
 <a id="adminlisthooks"></a>
 # **AdminListHooks**
-> List&lt;Hook&gt; AdminListHooks (int? page = null, int? limit = null)
+> List&lt;Hook&gt; AdminListHooks (int? page = null, int? limit = null, string? type = null)
 
 List system's webhooks
 
@@ -2441,11 +2450,12 @@ namespace Example
             var apiInstance = new AdminApi(config);
             var page = 56;  // int? | page number of results to return (1-based) (optional) 
             var limit = 56;  // int? | page size of results (optional) 
+            var type = "system";  // string? | system, default or both kinds of webhooks (optional)  (default to system)
 
             try
             {
                 // List system's webhooks
-                List<Hook> result = apiInstance.AdminListHooks(page, limit);
+                List<Hook> result = apiInstance.AdminListHooks(page, limit, type);
                 Debug.WriteLine(result);
             }
             catch (ApiException  e)
@@ -2466,7 +2476,7 @@ This returns an ApiResponse object which contains the response data, status code
 try
 {
     // List system's webhooks
-    ApiResponse<List<Hook>> response = apiInstance.AdminListHooksWithHttpInfo(page, limit);
+    ApiResponse<List<Hook>> response = apiInstance.AdminListHooksWithHttpInfo(page, limit, type);
     Debug.Write("Status Code: " + response.StatusCode);
     Debug.Write("Response Headers: " + response.Headers);
     Debug.Write("Response Body: " + response.Data);
@@ -2485,6 +2495,7 @@ catch (ApiException e)
 |------|------|-------------|-------|
 | **page** | **int?** | page number of results to return (1-based) | [optional]  |
 | **limit** | **int?** | page size of results | [optional]  |
+| **type** | **string?** | system, default or both kinds of webhooks | [optional] [default to system] |
 
 ### Return type
 
@@ -2504,6 +2515,130 @@ catch (ApiException e)
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 | **200** | HookList |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+<a id="adminlistpackages"></a>
+# **AdminListPackages**
+> List&lt;Package&gt; AdminListPackages (int? page = null, int? limit = null, string? type = null, string? q = null)
+
+List all packages
+
+### Example
+```csharp
+using System.Collections.Generic;
+using System.Diagnostics;
+using Gitea.Net.Api;
+using Gitea.Net.Client;
+using Gitea.Net.Model;
+
+namespace Example
+{
+    public class AdminListPackagesExample
+    {
+        public static void Main()
+        {
+            Configuration config = new Configuration();
+            config.BasePath = "/api/v1";
+            // Configure API key authorization: TOTPHeader
+            config.AddApiKey("X-GITEA-OTP", "YOUR_API_KEY");
+            // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+            // config.AddApiKeyPrefix("X-GITEA-OTP", "Bearer");
+            // Configure API key authorization: AuthorizationHeaderToken
+            config.AddApiKey("Authorization", "YOUR_API_KEY");
+            // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+            // config.AddApiKeyPrefix("Authorization", "Bearer");
+            // Configure API key authorization: SudoHeader
+            config.AddApiKey("Sudo", "YOUR_API_KEY");
+            // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+            // config.AddApiKeyPrefix("Sudo", "Bearer");
+            // Configure HTTP basic authorization: BasicAuth
+            config.Username = "YOUR_USERNAME";
+            config.Password = "YOUR_PASSWORD";
+            // Configure API key authorization: AccessToken
+            config.AddApiKey("access_token", "YOUR_API_KEY");
+            // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+            // config.AddApiKeyPrefix("access_token", "Bearer");
+            // Configure API key authorization: SudoParam
+            config.AddApiKey("sudo", "YOUR_API_KEY");
+            // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+            // config.AddApiKeyPrefix("sudo", "Bearer");
+            // Configure API key authorization: Token
+            config.AddApiKey("token", "YOUR_API_KEY");
+            // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+            // config.AddApiKeyPrefix("token", "Bearer");
+
+            var apiInstance = new AdminApi(config);
+            var page = 56;  // int? | page number of results to return (1-based) (optional) 
+            var limit = 56;  // int? | page size of results (optional) 
+            var type = "alpine";  // string? | package type filter (optional) 
+            var q = "q_example";  // string? | name filter (optional) 
+
+            try
+            {
+                // List all packages
+                List<Package> result = apiInstance.AdminListPackages(page, limit, type, q);
+                Debug.WriteLine(result);
+            }
+            catch (ApiException  e)
+            {
+                Debug.Print("Exception when calling AdminApi.AdminListPackages: " + e.Message);
+                Debug.Print("Status Code: " + e.ErrorCode);
+                Debug.Print(e.StackTrace);
+            }
+        }
+    }
+}
+```
+
+#### Using the AdminListPackagesWithHttpInfo variant
+This returns an ApiResponse object which contains the response data, status code and headers.
+
+```csharp
+try
+{
+    // List all packages
+    ApiResponse<List<Package>> response = apiInstance.AdminListPackagesWithHttpInfo(page, limit, type, q);
+    Debug.Write("Status Code: " + response.StatusCode);
+    Debug.Write("Response Headers: " + response.Headers);
+    Debug.Write("Response Body: " + response.Data);
+}
+catch (ApiException e)
+{
+    Debug.Print("Exception when calling AdminApi.AdminListPackagesWithHttpInfo: " + e.Message);
+    Debug.Print("Status Code: " + e.ErrorCode);
+    Debug.Print(e.StackTrace);
+}
+```
+
+### Parameters
+
+| Name | Type | Description | Notes |
+|------|------|-------------|-------|
+| **page** | **int?** | page number of results to return (1-based) | [optional]  |
+| **limit** | **int?** | page size of results | [optional]  |
+| **type** | **string?** | package type filter | [optional]  |
+| **q** | **string?** | name filter | [optional]  |
+
+### Return type
+
+[**List&lt;Package&gt;**](Package.md)
+
+### Authorization
+
+[TOTPHeader](../README.md#TOTPHeader), [AuthorizationHeaderToken](../README.md#AuthorizationHeaderToken), [SudoHeader](../README.md#SudoHeader), [BasicAuth](../README.md#BasicAuth), [AccessToken](../README.md#AccessToken), [SudoParam](../README.md#SudoParam), [Token](../README.md#Token)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+| **200** | PackageList |  -  |
+| **403** | APIForbiddenError is a forbidden error response |  * message -  <br>  * url -  <br>  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
@@ -2558,7 +2693,7 @@ namespace Example
             // config.AddApiKeyPrefix("token", "Bearer");
 
             var apiInstance = new AdminApi(config);
-            var username = "username_example";  // string | username of user
+            var username = "username_example";  // string | username of the user whose badges are to be listed
 
             try
             {
@@ -2601,7 +2736,7 @@ catch (ApiException e)
 
 | Name | Type | Description | Notes |
 |------|------|-------------|-------|
-| **username** | **string** | username of user |  |
+| **username** | **string** | username of the user whose badges are to be listed |  |
 
 ### Return type
 
@@ -2676,7 +2811,7 @@ namespace Example
             // config.AddApiKeyPrefix("token", "Bearer");
 
             var apiInstance = new AdminApi(config);
-            var username = "username_example";  // string | existing username of user
+            var username = "username_example";  // string | current username of the user
             var body = new RenameUserOption(); // RenameUserOption | 
 
             try
@@ -2716,7 +2851,7 @@ catch (ApiException e)
 
 | Name | Type | Description | Notes |
 |------|------|-------------|-------|
-| **username** | **string** | existing username of user |  |
+| **username** | **string** | current username of the user |  |
 | **body** | [**RenameUserOption**](RenameUserOption.md) |  |  |
 
 ### Return type
@@ -2729,7 +2864,7 @@ void (empty response body)
 
 ### HTTP request headers
 
- - **Content-Type**: application/json, text/plain
+ - **Content-Type**: application/json
  - **Accept**: Not defined
 
 
@@ -2866,7 +3001,7 @@ catch (ApiException e)
 
 <a id="adminsearchusers"></a>
 # **AdminSearchUsers**
-> List&lt;User&gt; AdminSearchUsers (long? sourceId = null, string? loginName = null, int? page = null, int? limit = null)
+> List&lt;User&gt; AdminSearchUsers (long? sourceId = null, string? loginName = null, int? page = null, int? limit = null, string? sort = null, string? order = null, string? q = null, string? visibility = null, bool? isActive = null, bool? isAdmin = null, bool? isRestricted = null, bool? is2faEnabled = null, bool? isProhibitLogin = null)
 
 Search users according filter conditions
 
@@ -2916,14 +3051,23 @@ namespace Example
 
             var apiInstance = new AdminApi(config);
             var sourceId = 789L;  // long? | ID of the user's login source to search for (optional) 
-            var loginName = "loginName_example";  // string? | user's login name to search for (optional) 
+            var loginName = "loginName_example";  // string? | identifier of the user, provided by the external authenticator (optional) 
             var page = 56;  // int? | page number of results to return (1-based) (optional) 
             var limit = 56;  // int? | page size of results (optional) 
+            var sort = "sort_example";  // string? | sort users by attribute. Supported values are \"name\", \"created\", \"updated\" and \"id\". Default is \"name\" (optional) 
+            var order = "order_example";  // string? | sort order, either \"asc\" (ascending) or \"desc\" (descending). Default is \"asc\", ignored if \"sort\" is not specified. (optional) 
+            var q = "q_example";  // string? | search term (username, full name, email) (optional) 
+            var visibility = "visibility_example";  // string? | visibility filter. Supported values are \"public\", \"limited\" and \"private\". (optional) 
+            var isActive = true;  // bool? | filter active users (optional) 
+            var isAdmin = true;  // bool? | filter admin users (optional) 
+            var isRestricted = true;  // bool? | filter restricted users (optional) 
+            var is2faEnabled = true;  // bool? | filter 2FA enabled users (optional) 
+            var isProhibitLogin = true;  // bool? | filter login prohibited users (optional) 
 
             try
             {
                 // Search users according filter conditions
-                List<User> result = apiInstance.AdminSearchUsers(sourceId, loginName, page, limit);
+                List<User> result = apiInstance.AdminSearchUsers(sourceId, loginName, page, limit, sort, order, q, visibility, isActive, isAdmin, isRestricted, is2faEnabled, isProhibitLogin);
                 Debug.WriteLine(result);
             }
             catch (ApiException  e)
@@ -2944,7 +3088,7 @@ This returns an ApiResponse object which contains the response data, status code
 try
 {
     // Search users according filter conditions
-    ApiResponse<List<User>> response = apiInstance.AdminSearchUsersWithHttpInfo(sourceId, loginName, page, limit);
+    ApiResponse<List<User>> response = apiInstance.AdminSearchUsersWithHttpInfo(sourceId, loginName, page, limit, sort, order, q, visibility, isActive, isAdmin, isRestricted, is2faEnabled, isProhibitLogin);
     Debug.Write("Status Code: " + response.StatusCode);
     Debug.Write("Response Headers: " + response.Headers);
     Debug.Write("Response Body: " + response.Data);
@@ -2962,9 +3106,18 @@ catch (ApiException e)
 | Name | Type | Description | Notes |
 |------|------|-------------|-------|
 | **sourceId** | **long?** | ID of the user&#39;s login source to search for | [optional]  |
-| **loginName** | **string?** | user&#39;s login name to search for | [optional]  |
+| **loginName** | **string?** | identifier of the user, provided by the external authenticator | [optional]  |
 | **page** | **int?** | page number of results to return (1-based) | [optional]  |
 | **limit** | **int?** | page size of results | [optional]  |
+| **sort** | **string?** | sort users by attribute. Supported values are \&quot;name\&quot;, \&quot;created\&quot;, \&quot;updated\&quot; and \&quot;id\&quot;. Default is \&quot;name\&quot; | [optional]  |
+| **order** | **string?** | sort order, either \&quot;asc\&quot; (ascending) or \&quot;desc\&quot; (descending). Default is \&quot;asc\&quot;, ignored if \&quot;sort\&quot; is not specified. | [optional]  |
+| **q** | **string?** | search term (username, full name, email) | [optional]  |
+| **visibility** | **string?** | visibility filter. Supported values are \&quot;public\&quot;, \&quot;limited\&quot; and \&quot;private\&quot;. | [optional]  |
+| **isActive** | **bool?** | filter active users | [optional]  |
+| **isAdmin** | **bool?** | filter admin users | [optional]  |
+| **isRestricted** | **bool?** | filter restricted users | [optional]  |
+| **is2faEnabled** | **bool?** | filter 2FA enabled users | [optional]  |
+| **isProhibitLogin** | **bool?** | filter login prohibited users | [optional]  |
 
 ### Return type
 
@@ -2985,12 +3138,13 @@ catch (ApiException e)
 |-------------|-------------|------------------|
 | **200** | UserList |  -  |
 | **403** | APIForbiddenError is a forbidden error response |  * message -  <br>  * url -  <br>  |
+| **422** | APIValidationError is error format response related to input validation |  * message -  <br>  * url -  <br>  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 <a id="adminunadoptedlist"></a>
 # **AdminUnadoptedList**
-> List&lt;string&gt; AdminUnadoptedList (int? page = null, int? limit = null, string? pattern = null)
+> List&lt;string&gt; AdminUnadoptedList (int? page = null, int? limit = null, string? query = null)
 
 List unadopted repositories
 
@@ -3041,12 +3195,12 @@ namespace Example
             var apiInstance = new AdminApi(config);
             var page = 56;  // int? | page number of results to return (1-based) (optional) 
             var limit = 56;  // int? | page size of results (optional) 
-            var pattern = "pattern_example";  // string? | pattern of repositories to search for (optional) 
+            var query = "query_example";  // string? | glob pattern of repositories to search for, in the form owner or owner/repo (optional) 
 
             try
             {
                 // List unadopted repositories
-                List<string> result = apiInstance.AdminUnadoptedList(page, limit, pattern);
+                List<string> result = apiInstance.AdminUnadoptedList(page, limit, query);
                 Debug.WriteLine(result);
             }
             catch (ApiException  e)
@@ -3067,7 +3221,7 @@ This returns an ApiResponse object which contains the response data, status code
 try
 {
     // List unadopted repositories
-    ApiResponse<List<string>> response = apiInstance.AdminUnadoptedListWithHttpInfo(page, limit, pattern);
+    ApiResponse<List<string>> response = apiInstance.AdminUnadoptedListWithHttpInfo(page, limit, query);
     Debug.Write("Status Code: " + response.StatusCode);
     Debug.Write("Response Headers: " + response.Headers);
     Debug.Write("Response Body: " + response.Data);
@@ -3086,7 +3240,7 @@ catch (ApiException e)
 |------|------|-------------|-------|
 | **page** | **int?** | page number of results to return (1-based) | [optional]  |
 | **limit** | **int?** | page size of results | [optional]  |
-| **pattern** | **string?** | pattern of repositories to search for | [optional]  |
+| **query** | **string?** | glob pattern of repositories to search for, in the form owner or owner/repo | [optional]  |
 
 ### Return type
 
@@ -3107,6 +3261,740 @@ catch (ApiException e)
 |-------------|-------------|------------------|
 | **200** | StringSlice |  -  |
 | **403** | APIForbiddenError is a forbidden error response |  * message -  <br>  * url -  <br>  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+<a id="deleteadminrunner"></a>
+# **DeleteAdminRunner**
+> void DeleteAdminRunner (string runnerId)
+
+Delete a global runner
+
+### Example
+```csharp
+using System.Collections.Generic;
+using System.Diagnostics;
+using Gitea.Net.Api;
+using Gitea.Net.Client;
+using Gitea.Net.Model;
+
+namespace Example
+{
+    public class DeleteAdminRunnerExample
+    {
+        public static void Main()
+        {
+            Configuration config = new Configuration();
+            config.BasePath = "/api/v1";
+            // Configure API key authorization: TOTPHeader
+            config.AddApiKey("X-GITEA-OTP", "YOUR_API_KEY");
+            // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+            // config.AddApiKeyPrefix("X-GITEA-OTP", "Bearer");
+            // Configure API key authorization: AuthorizationHeaderToken
+            config.AddApiKey("Authorization", "YOUR_API_KEY");
+            // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+            // config.AddApiKeyPrefix("Authorization", "Bearer");
+            // Configure API key authorization: SudoHeader
+            config.AddApiKey("Sudo", "YOUR_API_KEY");
+            // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+            // config.AddApiKeyPrefix("Sudo", "Bearer");
+            // Configure HTTP basic authorization: BasicAuth
+            config.Username = "YOUR_USERNAME";
+            config.Password = "YOUR_PASSWORD";
+            // Configure API key authorization: AccessToken
+            config.AddApiKey("access_token", "YOUR_API_KEY");
+            // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+            // config.AddApiKeyPrefix("access_token", "Bearer");
+            // Configure API key authorization: SudoParam
+            config.AddApiKey("sudo", "YOUR_API_KEY");
+            // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+            // config.AddApiKeyPrefix("sudo", "Bearer");
+            // Configure API key authorization: Token
+            config.AddApiKey("token", "YOUR_API_KEY");
+            // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+            // config.AddApiKeyPrefix("token", "Bearer");
+
+            var apiInstance = new AdminApi(config);
+            var runnerId = "runnerId_example";  // string | id of the runner
+
+            try
+            {
+                // Delete a global runner
+                apiInstance.DeleteAdminRunner(runnerId);
+            }
+            catch (ApiException  e)
+            {
+                Debug.Print("Exception when calling AdminApi.DeleteAdminRunner: " + e.Message);
+                Debug.Print("Status Code: " + e.ErrorCode);
+                Debug.Print(e.StackTrace);
+            }
+        }
+    }
+}
+```
+
+#### Using the DeleteAdminRunnerWithHttpInfo variant
+This returns an ApiResponse object which contains the response data, status code and headers.
+
+```csharp
+try
+{
+    // Delete a global runner
+    apiInstance.DeleteAdminRunnerWithHttpInfo(runnerId);
+}
+catch (ApiException e)
+{
+    Debug.Print("Exception when calling AdminApi.DeleteAdminRunnerWithHttpInfo: " + e.Message);
+    Debug.Print("Status Code: " + e.ErrorCode);
+    Debug.Print(e.StackTrace);
+}
+```
+
+### Parameters
+
+| Name | Type | Description | Notes |
+|------|------|-------------|-------|
+| **runnerId** | **string** | id of the runner |  |
+
+### Return type
+
+void (empty response body)
+
+### Authorization
+
+[TOTPHeader](../README.md#TOTPHeader), [AuthorizationHeaderToken](../README.md#AuthorizationHeaderToken), [SudoHeader](../README.md#SudoHeader), [BasicAuth](../README.md#BasicAuth), [AccessToken](../README.md#AccessToken), [SudoParam](../README.md#SudoParam), [Token](../README.md#Token)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: Not defined
+
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+| **204** | runner has been deleted |  -  |
+| **400** | APIError is error format response |  * message -  <br>  * url -  <br>  |
+| **404** | APINotFound is a not found empty response |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+<a id="getadminrunner"></a>
+# **GetAdminRunner**
+> ActionRunner GetAdminRunner (string runnerId)
+
+Get a global runner
+
+### Example
+```csharp
+using System.Collections.Generic;
+using System.Diagnostics;
+using Gitea.Net.Api;
+using Gitea.Net.Client;
+using Gitea.Net.Model;
+
+namespace Example
+{
+    public class GetAdminRunnerExample
+    {
+        public static void Main()
+        {
+            Configuration config = new Configuration();
+            config.BasePath = "/api/v1";
+            // Configure API key authorization: TOTPHeader
+            config.AddApiKey("X-GITEA-OTP", "YOUR_API_KEY");
+            // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+            // config.AddApiKeyPrefix("X-GITEA-OTP", "Bearer");
+            // Configure API key authorization: AuthorizationHeaderToken
+            config.AddApiKey("Authorization", "YOUR_API_KEY");
+            // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+            // config.AddApiKeyPrefix("Authorization", "Bearer");
+            // Configure API key authorization: SudoHeader
+            config.AddApiKey("Sudo", "YOUR_API_KEY");
+            // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+            // config.AddApiKeyPrefix("Sudo", "Bearer");
+            // Configure HTTP basic authorization: BasicAuth
+            config.Username = "YOUR_USERNAME";
+            config.Password = "YOUR_PASSWORD";
+            // Configure API key authorization: AccessToken
+            config.AddApiKey("access_token", "YOUR_API_KEY");
+            // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+            // config.AddApiKeyPrefix("access_token", "Bearer");
+            // Configure API key authorization: SudoParam
+            config.AddApiKey("sudo", "YOUR_API_KEY");
+            // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+            // config.AddApiKeyPrefix("sudo", "Bearer");
+            // Configure API key authorization: Token
+            config.AddApiKey("token", "YOUR_API_KEY");
+            // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+            // config.AddApiKeyPrefix("token", "Bearer");
+
+            var apiInstance = new AdminApi(config);
+            var runnerId = "runnerId_example";  // string | id of the runner
+
+            try
+            {
+                // Get a global runner
+                ActionRunner result = apiInstance.GetAdminRunner(runnerId);
+                Debug.WriteLine(result);
+            }
+            catch (ApiException  e)
+            {
+                Debug.Print("Exception when calling AdminApi.GetAdminRunner: " + e.Message);
+                Debug.Print("Status Code: " + e.ErrorCode);
+                Debug.Print(e.StackTrace);
+            }
+        }
+    }
+}
+```
+
+#### Using the GetAdminRunnerWithHttpInfo variant
+This returns an ApiResponse object which contains the response data, status code and headers.
+
+```csharp
+try
+{
+    // Get a global runner
+    ApiResponse<ActionRunner> response = apiInstance.GetAdminRunnerWithHttpInfo(runnerId);
+    Debug.Write("Status Code: " + response.StatusCode);
+    Debug.Write("Response Headers: " + response.Headers);
+    Debug.Write("Response Body: " + response.Data);
+}
+catch (ApiException e)
+{
+    Debug.Print("Exception when calling AdminApi.GetAdminRunnerWithHttpInfo: " + e.Message);
+    Debug.Print("Status Code: " + e.ErrorCode);
+    Debug.Print(e.StackTrace);
+}
+```
+
+### Parameters
+
+| Name | Type | Description | Notes |
+|------|------|-------------|-------|
+| **runnerId** | **string** | id of the runner |  |
+
+### Return type
+
+[**ActionRunner**](ActionRunner.md)
+
+### Authorization
+
+[TOTPHeader](../README.md#TOTPHeader), [AuthorizationHeaderToken](../README.md#AuthorizationHeaderToken), [SudoHeader](../README.md#SudoHeader), [BasicAuth](../README.md#BasicAuth), [AccessToken](../README.md#AccessToken), [SudoParam](../README.md#SudoParam), [Token](../README.md#Token)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+| **200** | Runner |  -  |
+| **400** | APIError is error format response |  * message -  <br>  * url -  <br>  |
+| **404** | APINotFound is a not found empty response |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+<a id="getadminrunners"></a>
+# **GetAdminRunners**
+> ActionRunnersResponse GetAdminRunners (bool? disabled = null)
+
+Get all runners
+
+### Example
+```csharp
+using System.Collections.Generic;
+using System.Diagnostics;
+using Gitea.Net.Api;
+using Gitea.Net.Client;
+using Gitea.Net.Model;
+
+namespace Example
+{
+    public class GetAdminRunnersExample
+    {
+        public static void Main()
+        {
+            Configuration config = new Configuration();
+            config.BasePath = "/api/v1";
+            // Configure API key authorization: TOTPHeader
+            config.AddApiKey("X-GITEA-OTP", "YOUR_API_KEY");
+            // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+            // config.AddApiKeyPrefix("X-GITEA-OTP", "Bearer");
+            // Configure API key authorization: AuthorizationHeaderToken
+            config.AddApiKey("Authorization", "YOUR_API_KEY");
+            // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+            // config.AddApiKeyPrefix("Authorization", "Bearer");
+            // Configure API key authorization: SudoHeader
+            config.AddApiKey("Sudo", "YOUR_API_KEY");
+            // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+            // config.AddApiKeyPrefix("Sudo", "Bearer");
+            // Configure HTTP basic authorization: BasicAuth
+            config.Username = "YOUR_USERNAME";
+            config.Password = "YOUR_PASSWORD";
+            // Configure API key authorization: AccessToken
+            config.AddApiKey("access_token", "YOUR_API_KEY");
+            // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+            // config.AddApiKeyPrefix("access_token", "Bearer");
+            // Configure API key authorization: SudoParam
+            config.AddApiKey("sudo", "YOUR_API_KEY");
+            // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+            // config.AddApiKeyPrefix("sudo", "Bearer");
+            // Configure API key authorization: Token
+            config.AddApiKey("token", "YOUR_API_KEY");
+            // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+            // config.AddApiKeyPrefix("token", "Bearer");
+
+            var apiInstance = new AdminApi(config);
+            var disabled = true;  // bool? | filter by disabled status (true or false) (optional) 
+
+            try
+            {
+                // Get all runners
+                ActionRunnersResponse result = apiInstance.GetAdminRunners(disabled);
+                Debug.WriteLine(result);
+            }
+            catch (ApiException  e)
+            {
+                Debug.Print("Exception when calling AdminApi.GetAdminRunners: " + e.Message);
+                Debug.Print("Status Code: " + e.ErrorCode);
+                Debug.Print(e.StackTrace);
+            }
+        }
+    }
+}
+```
+
+#### Using the GetAdminRunnersWithHttpInfo variant
+This returns an ApiResponse object which contains the response data, status code and headers.
+
+```csharp
+try
+{
+    // Get all runners
+    ApiResponse<ActionRunnersResponse> response = apiInstance.GetAdminRunnersWithHttpInfo(disabled);
+    Debug.Write("Status Code: " + response.StatusCode);
+    Debug.Write("Response Headers: " + response.Headers);
+    Debug.Write("Response Body: " + response.Data);
+}
+catch (ApiException e)
+{
+    Debug.Print("Exception when calling AdminApi.GetAdminRunnersWithHttpInfo: " + e.Message);
+    Debug.Print("Status Code: " + e.ErrorCode);
+    Debug.Print(e.StackTrace);
+}
+```
+
+### Parameters
+
+| Name | Type | Description | Notes |
+|------|------|-------------|-------|
+| **disabled** | **bool?** | filter by disabled status (true or false) | [optional]  |
+
+### Return type
+
+[**ActionRunnersResponse**](ActionRunnersResponse.md)
+
+### Authorization
+
+[TOTPHeader](../README.md#TOTPHeader), [AuthorizationHeaderToken](../README.md#AuthorizationHeaderToken), [SudoHeader](../README.md#SudoHeader), [BasicAuth](../README.md#BasicAuth), [AccessToken](../README.md#AccessToken), [SudoParam](../README.md#SudoParam), [Token](../README.md#Token)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+| **200** | RunnerList |  -  |
+| **400** | APIError is error format response |  * message -  <br>  * url -  <br>  |
+| **404** | APINotFound is a not found empty response |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+<a id="listadminworkflowjobs"></a>
+# **ListAdminWorkflowJobs**
+> ActionWorkflowJobsResponse ListAdminWorkflowJobs (string? status = null, int? page = null, int? limit = null, string? sort = null, string? order = null)
+
+Lists all jobs
+
+### Example
+```csharp
+using System.Collections.Generic;
+using System.Diagnostics;
+using Gitea.Net.Api;
+using Gitea.Net.Client;
+using Gitea.Net.Model;
+
+namespace Example
+{
+    public class ListAdminWorkflowJobsExample
+    {
+        public static void Main()
+        {
+            Configuration config = new Configuration();
+            config.BasePath = "/api/v1";
+            // Configure API key authorization: TOTPHeader
+            config.AddApiKey("X-GITEA-OTP", "YOUR_API_KEY");
+            // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+            // config.AddApiKeyPrefix("X-GITEA-OTP", "Bearer");
+            // Configure API key authorization: AuthorizationHeaderToken
+            config.AddApiKey("Authorization", "YOUR_API_KEY");
+            // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+            // config.AddApiKeyPrefix("Authorization", "Bearer");
+            // Configure API key authorization: SudoHeader
+            config.AddApiKey("Sudo", "YOUR_API_KEY");
+            // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+            // config.AddApiKeyPrefix("Sudo", "Bearer");
+            // Configure HTTP basic authorization: BasicAuth
+            config.Username = "YOUR_USERNAME";
+            config.Password = "YOUR_PASSWORD";
+            // Configure API key authorization: AccessToken
+            config.AddApiKey("access_token", "YOUR_API_KEY");
+            // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+            // config.AddApiKeyPrefix("access_token", "Bearer");
+            // Configure API key authorization: SudoParam
+            config.AddApiKey("sudo", "YOUR_API_KEY");
+            // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+            // config.AddApiKeyPrefix("sudo", "Bearer");
+            // Configure API key authorization: Token
+            config.AddApiKey("token", "YOUR_API_KEY");
+            // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+            // config.AddApiKeyPrefix("token", "Bearer");
+
+            var apiInstance = new AdminApi(config);
+            var status = "status_example";  // string? | workflow status (requested, pending, queued, in_progress, failure, success, skipped) (optional) 
+            var page = 56;  // int? | page number of results to return (1-based) (optional) 
+            var limit = 56;  // int? | page size of results (optional) 
+            var sort = "sort_example";  // string? | sort jobs by attribute. Supported values are \"id\". Default is \"id\" (optional) 
+            var order = "order_example";  // string? | sort order, either \"asc\" (ascending) or \"desc\" (descending). Default is \"asc\" (optional) 
+
+            try
+            {
+                // Lists all jobs
+                ActionWorkflowJobsResponse result = apiInstance.ListAdminWorkflowJobs(status, page, limit, sort, order);
+                Debug.WriteLine(result);
+            }
+            catch (ApiException  e)
+            {
+                Debug.Print("Exception when calling AdminApi.ListAdminWorkflowJobs: " + e.Message);
+                Debug.Print("Status Code: " + e.ErrorCode);
+                Debug.Print(e.StackTrace);
+            }
+        }
+    }
+}
+```
+
+#### Using the ListAdminWorkflowJobsWithHttpInfo variant
+This returns an ApiResponse object which contains the response data, status code and headers.
+
+```csharp
+try
+{
+    // Lists all jobs
+    ApiResponse<ActionWorkflowJobsResponse> response = apiInstance.ListAdminWorkflowJobsWithHttpInfo(status, page, limit, sort, order);
+    Debug.Write("Status Code: " + response.StatusCode);
+    Debug.Write("Response Headers: " + response.Headers);
+    Debug.Write("Response Body: " + response.Data);
+}
+catch (ApiException e)
+{
+    Debug.Print("Exception when calling AdminApi.ListAdminWorkflowJobsWithHttpInfo: " + e.Message);
+    Debug.Print("Status Code: " + e.ErrorCode);
+    Debug.Print(e.StackTrace);
+}
+```
+
+### Parameters
+
+| Name | Type | Description | Notes |
+|------|------|-------------|-------|
+| **status** | **string?** | workflow status (requested, pending, queued, in_progress, failure, success, skipped) | [optional]  |
+| **page** | **int?** | page number of results to return (1-based) | [optional]  |
+| **limit** | **int?** | page size of results | [optional]  |
+| **sort** | **string?** | sort jobs by attribute. Supported values are \&quot;id\&quot;. Default is \&quot;id\&quot; | [optional]  |
+| **order** | **string?** | sort order, either \&quot;asc\&quot; (ascending) or \&quot;desc\&quot; (descending). Default is \&quot;asc\&quot; | [optional]  |
+
+### Return type
+
+[**ActionWorkflowJobsResponse**](ActionWorkflowJobsResponse.md)
+
+### Authorization
+
+[TOTPHeader](../README.md#TOTPHeader), [AuthorizationHeaderToken](../README.md#AuthorizationHeaderToken), [SudoHeader](../README.md#SudoHeader), [BasicAuth](../README.md#BasicAuth), [AccessToken](../README.md#AccessToken), [SudoParam](../README.md#SudoParam), [Token](../README.md#Token)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+| **200** | WorkflowJobsList |  -  |
+| **400** | APIError is error format response |  * message -  <br>  * url -  <br>  |
+| **404** | APINotFound is a not found empty response |  -  |
+| **422** | APIValidationError is error format response related to input validation |  * message -  <br>  * url -  <br>  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+<a id="listadminworkflowruns"></a>
+# **ListAdminWorkflowRuns**
+> ActionWorkflowRunsResponse ListAdminWorkflowRuns (string? varEvent = null, string? branch = null, string? status = null, string? actor = null, string? headSha = null, int? page = null, int? limit = null)
+
+Lists all runs
+
+### Example
+```csharp
+using System.Collections.Generic;
+using System.Diagnostics;
+using Gitea.Net.Api;
+using Gitea.Net.Client;
+using Gitea.Net.Model;
+
+namespace Example
+{
+    public class ListAdminWorkflowRunsExample
+    {
+        public static void Main()
+        {
+            Configuration config = new Configuration();
+            config.BasePath = "/api/v1";
+            // Configure API key authorization: TOTPHeader
+            config.AddApiKey("X-GITEA-OTP", "YOUR_API_KEY");
+            // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+            // config.AddApiKeyPrefix("X-GITEA-OTP", "Bearer");
+            // Configure API key authorization: AuthorizationHeaderToken
+            config.AddApiKey("Authorization", "YOUR_API_KEY");
+            // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+            // config.AddApiKeyPrefix("Authorization", "Bearer");
+            // Configure API key authorization: SudoHeader
+            config.AddApiKey("Sudo", "YOUR_API_KEY");
+            // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+            // config.AddApiKeyPrefix("Sudo", "Bearer");
+            // Configure HTTP basic authorization: BasicAuth
+            config.Username = "YOUR_USERNAME";
+            config.Password = "YOUR_PASSWORD";
+            // Configure API key authorization: AccessToken
+            config.AddApiKey("access_token", "YOUR_API_KEY");
+            // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+            // config.AddApiKeyPrefix("access_token", "Bearer");
+            // Configure API key authorization: SudoParam
+            config.AddApiKey("sudo", "YOUR_API_KEY");
+            // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+            // config.AddApiKeyPrefix("sudo", "Bearer");
+            // Configure API key authorization: Token
+            config.AddApiKey("token", "YOUR_API_KEY");
+            // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+            // config.AddApiKeyPrefix("token", "Bearer");
+
+            var apiInstance = new AdminApi(config);
+            var varEvent = "varEvent_example";  // string? | workflow event name (optional) 
+            var branch = "branch_example";  // string? | workflow branch (optional) 
+            var status = "status_example";  // string? | workflow status (requested, pending, queued, in_progress, failure, success, skipped) (optional) 
+            var actor = "actor_example";  // string? | triggered by user (optional) 
+            var headSha = "headSha_example";  // string? | triggering sha of the workflow run (optional) 
+            var page = 56;  // int? | page number of results to return (1-based) (optional) 
+            var limit = 56;  // int? | page size of results (optional) 
+
+            try
+            {
+                // Lists all runs
+                ActionWorkflowRunsResponse result = apiInstance.ListAdminWorkflowRuns(varEvent, branch, status, actor, headSha, page, limit);
+                Debug.WriteLine(result);
+            }
+            catch (ApiException  e)
+            {
+                Debug.Print("Exception when calling AdminApi.ListAdminWorkflowRuns: " + e.Message);
+                Debug.Print("Status Code: " + e.ErrorCode);
+                Debug.Print(e.StackTrace);
+            }
+        }
+    }
+}
+```
+
+#### Using the ListAdminWorkflowRunsWithHttpInfo variant
+This returns an ApiResponse object which contains the response data, status code and headers.
+
+```csharp
+try
+{
+    // Lists all runs
+    ApiResponse<ActionWorkflowRunsResponse> response = apiInstance.ListAdminWorkflowRunsWithHttpInfo(varEvent, branch, status, actor, headSha, page, limit);
+    Debug.Write("Status Code: " + response.StatusCode);
+    Debug.Write("Response Headers: " + response.Headers);
+    Debug.Write("Response Body: " + response.Data);
+}
+catch (ApiException e)
+{
+    Debug.Print("Exception when calling AdminApi.ListAdminWorkflowRunsWithHttpInfo: " + e.Message);
+    Debug.Print("Status Code: " + e.ErrorCode);
+    Debug.Print(e.StackTrace);
+}
+```
+
+### Parameters
+
+| Name | Type | Description | Notes |
+|------|------|-------------|-------|
+| **varEvent** | **string?** | workflow event name | [optional]  |
+| **branch** | **string?** | workflow branch | [optional]  |
+| **status** | **string?** | workflow status (requested, pending, queued, in_progress, failure, success, skipped) | [optional]  |
+| **actor** | **string?** | triggered by user | [optional]  |
+| **headSha** | **string?** | triggering sha of the workflow run | [optional]  |
+| **page** | **int?** | page number of results to return (1-based) | [optional]  |
+| **limit** | **int?** | page size of results | [optional]  |
+
+### Return type
+
+[**ActionWorkflowRunsResponse**](ActionWorkflowRunsResponse.md)
+
+### Authorization
+
+[TOTPHeader](../README.md#TOTPHeader), [AuthorizationHeaderToken](../README.md#AuthorizationHeaderToken), [SudoHeader](../README.md#SudoHeader), [BasicAuth](../README.md#BasicAuth), [AccessToken](../README.md#AccessToken), [SudoParam](../README.md#SudoParam), [Token](../README.md#Token)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+| **200** | WorkflowRunsList |  -  |
+| **400** | APIError is error format response |  * message -  <br>  * url -  <br>  |
+| **404** | APINotFound is a not found empty response |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+<a id="updateadminrunner"></a>
+# **UpdateAdminRunner**
+> ActionRunner UpdateAdminRunner (string runnerId, EditActionRunnerOption? body = null)
+
+Update a global runner
+
+### Example
+```csharp
+using System.Collections.Generic;
+using System.Diagnostics;
+using Gitea.Net.Api;
+using Gitea.Net.Client;
+using Gitea.Net.Model;
+
+namespace Example
+{
+    public class UpdateAdminRunnerExample
+    {
+        public static void Main()
+        {
+            Configuration config = new Configuration();
+            config.BasePath = "/api/v1";
+            // Configure API key authorization: TOTPHeader
+            config.AddApiKey("X-GITEA-OTP", "YOUR_API_KEY");
+            // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+            // config.AddApiKeyPrefix("X-GITEA-OTP", "Bearer");
+            // Configure API key authorization: AuthorizationHeaderToken
+            config.AddApiKey("Authorization", "YOUR_API_KEY");
+            // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+            // config.AddApiKeyPrefix("Authorization", "Bearer");
+            // Configure API key authorization: SudoHeader
+            config.AddApiKey("Sudo", "YOUR_API_KEY");
+            // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+            // config.AddApiKeyPrefix("Sudo", "Bearer");
+            // Configure HTTP basic authorization: BasicAuth
+            config.Username = "YOUR_USERNAME";
+            config.Password = "YOUR_PASSWORD";
+            // Configure API key authorization: AccessToken
+            config.AddApiKey("access_token", "YOUR_API_KEY");
+            // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+            // config.AddApiKeyPrefix("access_token", "Bearer");
+            // Configure API key authorization: SudoParam
+            config.AddApiKey("sudo", "YOUR_API_KEY");
+            // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+            // config.AddApiKeyPrefix("sudo", "Bearer");
+            // Configure API key authorization: Token
+            config.AddApiKey("token", "YOUR_API_KEY");
+            // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+            // config.AddApiKeyPrefix("token", "Bearer");
+
+            var apiInstance = new AdminApi(config);
+            var runnerId = "runnerId_example";  // string | id of the runner
+            var body = new EditActionRunnerOption?(); // EditActionRunnerOption? |  (optional) 
+
+            try
+            {
+                // Update a global runner
+                ActionRunner result = apiInstance.UpdateAdminRunner(runnerId, body);
+                Debug.WriteLine(result);
+            }
+            catch (ApiException  e)
+            {
+                Debug.Print("Exception when calling AdminApi.UpdateAdminRunner: " + e.Message);
+                Debug.Print("Status Code: " + e.ErrorCode);
+                Debug.Print(e.StackTrace);
+            }
+        }
+    }
+}
+```
+
+#### Using the UpdateAdminRunnerWithHttpInfo variant
+This returns an ApiResponse object which contains the response data, status code and headers.
+
+```csharp
+try
+{
+    // Update a global runner
+    ApiResponse<ActionRunner> response = apiInstance.UpdateAdminRunnerWithHttpInfo(runnerId, body);
+    Debug.Write("Status Code: " + response.StatusCode);
+    Debug.Write("Response Headers: " + response.Headers);
+    Debug.Write("Response Body: " + response.Data);
+}
+catch (ApiException e)
+{
+    Debug.Print("Exception when calling AdminApi.UpdateAdminRunnerWithHttpInfo: " + e.Message);
+    Debug.Print("Status Code: " + e.ErrorCode);
+    Debug.Print(e.StackTrace);
+}
+```
+
+### Parameters
+
+| Name | Type | Description | Notes |
+|------|------|-------------|-------|
+| **runnerId** | **string** | id of the runner |  |
+| **body** | [**EditActionRunnerOption?**](EditActionRunnerOption?.md) |  | [optional]  |
+
+### Return type
+
+[**ActionRunner**](ActionRunner.md)
+
+### Authorization
+
+[TOTPHeader](../README.md#TOTPHeader), [AuthorizationHeaderToken](../README.md#AuthorizationHeaderToken), [SudoHeader](../README.md#SudoHeader), [BasicAuth](../README.md#BasicAuth), [AccessToken](../README.md#AccessToken), [SudoParam](../README.md#SudoParam), [Token](../README.md#Token)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+| **200** | Runner |  -  |
+| **400** | APIError is error format response |  * message -  <br>  * url -  <br>  |
+| **404** | APINotFound is a not found empty response |  -  |
+| **422** | APIValidationError is error format response related to input validation |  * message -  <br>  * url -  <br>  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 

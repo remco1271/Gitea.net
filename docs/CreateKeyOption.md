@@ -1,5 +1,4 @@
 # Gitea.Net.Model.CreateKeyOption
-CreateKeyOption options when creating a key
 
 ## Properties
 

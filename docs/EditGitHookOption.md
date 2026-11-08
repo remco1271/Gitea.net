@@ -5,7 +5,7 @@ EditGitHookOption options when modifying one Git hook
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Content** | **string** |  | [optional] 
+**Content** | **string** | Content is the new script content for the hook | [optional] 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 
